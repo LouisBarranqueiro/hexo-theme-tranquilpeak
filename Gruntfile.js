@@ -10,7 +10,7 @@ module.exports = function(grunt){
 					expand: true,
 					cwd: 'source/scss',
 					src: ['style.scss'],
-					dest: 'source/css/',
+					dest: 'source/.tmp/css/',
 					ext: '.css'
 				}]
 			}
@@ -19,7 +19,7 @@ module.exports = function(grunt){
 			prod: {
 				files: [{
 					expand: true,
-					cwd: 'source/css',
+					cwd: 'source/.tmp/css',
 					src: ['style.css'],
 					dest: 'source/css',
 					ext: '.min.css'
@@ -38,10 +38,13 @@ module.exports = function(grunt){
 				}
 			}
 		},
+		clean: {
+				prod: 'source/.tmp'
+		},
 		watch: {
 			scss: {
 				files: ['source/**/*.scss'],
-				tasks: ['Compile SCSS', 'Minify CSS']
+				tasks: ['Compile SCSS', 'Minify CSS', 'Clean Prod']
 			},
 			js: {
 				files: ['source/js/components/*.js'],
@@ -55,6 +58,7 @@ module.exports = function(grunt){
 	grunt.registerTask('Compile SCSS', ['sass']);
 	grunt.registerTask('Minify CSS', ['cssmin']);
 	grunt.registerTask('Minify JS', ['uglify']);
+	grunt.registerTask('Clean Prod', ['clean:prod']);
 	grunt.registerTask('Watch SCSS', ['watch:scss']);
 	grunt.registerTask('Watch JS', ['watch:js']);
 
