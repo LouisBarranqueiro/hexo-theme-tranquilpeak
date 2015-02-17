@@ -1,0 +1,21 @@
+// Mobiles
+// --------------------
+@media #{$small-and-down} {
+    .hide-sm {
+        display: none;
+    }
+}
+// Tablets
+// --------------------
+@media #{$medium-only} {
+    .hide-m {
+        display: none;
+    }
+}
+// Desktops
+// --------------------
+@media #{$large-and-up} {
+    .hide-lg {
+        display: none;
+    }
+}
