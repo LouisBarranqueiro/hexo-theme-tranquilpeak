@@ -1,0 +1,10 @@
+<header class="header">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
+    <% if (theme.author.gravatar) { %>
+        <img class="logo" src="<%- gravatar(config.email, 30) %>" />
+    <% } else if (theme.author.figure) { %>
+        <img class="logo" src="<%- theme.author.figure %>" />
+    <% } else { %>
+        <img class="logo" src="/images/default-figure.png" />
+    <% } %>
+</header>

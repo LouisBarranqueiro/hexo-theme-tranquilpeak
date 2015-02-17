@@ -1,0 +1,73 @@
+// Import of fonts
+// --------------------
+@import 'fonts.scss';
+
+// Typography settings
+// --------------------
+$font-family-base: 'Roboto', sans-serif;
+
+$font-size-base:   13px;
+$font-size-xlarge: 14px;
+$font-size-large:  13.5px;
+$font-size-small:  12px;
+$font-size-xsmall: 11px;
+
+$font-size-h1: 36px;
+$font-size-h2: 30px;
+$font-size-h3: 24px;
+$font-size-h4: 18px;
+$font-size-h5: $font-size-base;
+$font-size-h6: $font-size-small;
+
+$font-size-dd: 13.5px;
+$font-size-dt: $font-size-small;
+
+$font-size-label: $font-size-small;
+
+$line-height-base: 1.4;
+
+$headings-font-family: inherit;
+$headings-font-weight: 500;
+$headings-line-height: 1.1;
+$headings-color:       inherit;
+
+
+// background colors
+// --------------------
+$bg-color-base:  #fafafa;
+$bg-color-white: #ffffff;
+$bg-color-black: #000000;
+
+
+// Fonts color
+// --------------------
+$font-color-white: #fff;
+$font-color-black: #000;
+
+
+// Media Query Ranges
+// --------------------
+$small-screen-up:  601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up:  1201px !default;
+$small-screen:     600px !default;
+$medium-screen:    992px !default;
+$large-screen:     1200px !default;
+
+$medium-and-up:   "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up:    "only screen and (min-width : #{$medium-screen-up})" !default;
+$small-and-down:  "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only:     "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+// Buttons settings
+// --------------------
+$btn-bg-default: #aeaeae;
+$btn-bg-success: #4dc657;
+$btn-bg-danger:  #f5311d;
+$btn-bg-primary: #5a95e5;
+
+// Sidebar settings
+// --------------------
+$tablet-sidebar-width: 75px;
+$desktop-sidebar-width: 210px;
