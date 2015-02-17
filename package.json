@@ -1,5 +1,6 @@
 {
   "name": "tranquil-peak-hexo-theme",
+  "version": "",
   "private": true,
   "devDependencies": {
     "grunt": "^0.4.5",
