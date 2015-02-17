@@ -1,0 +1,14 @@
+{
+  "name": "tranquil-peak-hexo-theme",
+  "version": "0.1",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-concat": "^0.5.0",
+    "load-grunt-tasks": "~0.2.0"
+  }
+}
