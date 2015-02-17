@@ -3,6 +3,9 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		sass: {
 			prod: {
+				options: {
+					sourcemap: 'none'
+				},
 				files: [{
 					expand: true,
 					cwd: 'source/scss',
