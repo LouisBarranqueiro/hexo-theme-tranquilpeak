@@ -70,7 +70,7 @@
 
 
     $(document).ready(function() {
-        var sidebar = new Sidebar($('#sidebar'), $('#btn-open-sidebar'), $('.two-columns, header'));
+        var sidebar = new Sidebar($('#sidebar'), $('#btn-open-sidebar'), $('.header, .main'));
         sidebar.init();
     })
 }(jQuery);
