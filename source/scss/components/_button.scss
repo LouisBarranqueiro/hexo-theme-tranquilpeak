@@ -1,0 +1,37 @@
+.btn {
+    font-size:     $font-size-base;
+    width:         auto;
+    height:        auto;
+    padding:       12px 20px;
+    border-radius: 3px;
+    color:         #fff;
+    border:        none;
+    box-shadow:    rgba(0, 0, 0, 0.14902) 0px 4px 9px 0px;
+    cursor:        pointer;
+    font-size:     13px;
+    margin:        0px 0px 0px 0px;
+}
+.btn--success {
+    background:    $btn-bg-success;
+    border-bottom: 3px solid darken($btn-bg-success, 15);
+}
+.btn--success:hover {
+    background: lighten($btn-bg-success, 5);
+    @include box-shadow(0px, 4px, 9px, rgba(0, 0, 0, 0.14902));
+}
+.btn--danger {
+    background:    $btn-bg-danger;
+    border-bottom: 3px solid darken($btn-bg-danger, 15);
+}
+.btn--danger:hover {
+    background: lighten($btn-bg-danger, 5);
+    @include box-shadow(0px, 4px, 9px, rgba(0, 0, 0, 0.14902));
+}
+.btn--primary {
+    background:    $btn-bg-primary;
+    border-bottom: 3px solid darken($btn-bg-primary, 15);
+}
+.btn--primary:hover {
+    background: lighten($btn-bg-primary, 5);
+    @include box-shadow(0px, 4px, 9px, rgba(0, 0, 0, 0.14902));
+}

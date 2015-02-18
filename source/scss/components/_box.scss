@@ -1,0 +1,6 @@
+.box {
+    border-radius: 3px;
+    border:        1px solid #d0dbed;
+    @include       box-shadow(0, 3px, 0px, #d0dbed);
+    background:    #fafbfc;
+}
