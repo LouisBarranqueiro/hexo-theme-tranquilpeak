@@ -1,0 +1,48 @@
+// Typography
+// -------------------------
+
+// Alignement
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-nowrap {
+    white-space: nowrap;
+}
+
+// Transformation
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+// Size
+.text-xsmall {
+    font-size: $font-size-xsmall;
+}
+.text-small {
+    font-size: $font-size-small;
+}
+.text-base {
+    font-size: $font-size-base;
+}
+.text-large {
+    font-size: $font-size-large;
+}
+.text-xlarge {
+    font-size: $font-size-xlarge;
+}
+

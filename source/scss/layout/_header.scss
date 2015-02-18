@@ -15,13 +15,19 @@
             color:    #88909a;
             cursor:   pointer;
         }
-        .logo {
+        .header-logo {
             display:       block;
             width:         30px;
+            height:        30px;
             position:      relative;
             top:           12.5px;
             border-radius: 3px;
             margin:        0px auto;
+        }
+        .header-title {
+            line-height: 55px;
+            margin:      0px 0px 0px 0px;
+            color:       #88909a;
         }
     }
 }

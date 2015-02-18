@@ -1,6 +1,7 @@
 # General
 general:
-    logo:
+    # logo (35px)
+    logo: images/demo/logo.jpg
 
 # Personal profile
 author:
