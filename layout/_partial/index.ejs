@@ -1,0 +1,34 @@
+<section class="main posts">
+    <% page.posts.each(function(post) { %>
+        <article class="box post">
+            <%
+            if (post.photos.length) {
+                var thumbImg = config.root + config.photos_dir + '/' + post.photos[0];
+            %>
+                <div class="post-thumbimg">
+                    <img alt="" src="<%- thumbImg %>"/>
+                </div>
+            <% } %>
+            <div class="post-info">
+                <h1 class="post-title"><%- post.title %></h1>
+                <div class="post-date text-xsmall">
+                    <%- post.date.format(' MMM DD, YYYY').toUpperCase() %>
+                    <% if (!post.updated) { %>
+                    <%- ' - updated : ' + post.updated.format('MMM DD, YYYY') %>
+                    <% } %>
+                </div>
+                <div class="post-readingtime text-xsmall">
+                    <% if (post.readingtime) { %>
+                    <%- ' - ' + post.readingtime + ' min read'.toUpperCase() %>
+                    <% } %>
+                </div>
+                <div class="post-snippet text-large">
+                    <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %>
+                </div>
+                <div class="post-tags">
+                    <%- partial('post/tag', {tags: post.tags})%>
+                </div>
+            </div>
+        </article>
+    <% }) %>
+</section>
