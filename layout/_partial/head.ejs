@@ -1,8 +1,8 @@
 <%
-var title = page.title;
+var title = config.title + ' - ';
 
 if (is_archive()){
-    title = 'Archives';
+    title += 'archives';
 
     if (is_month()) {
         title += ' : ' + page.year + '/' + page.month;
@@ -12,7 +12,10 @@ if (is_archive()){
     }
 }
 else if (is_tag()) {
-    title = 'Tag : ' + page.tag;
+    title += 'tag : ' + page.tag;
+}
+else {
+  title += page.title;
 }
 %>
 <head>
