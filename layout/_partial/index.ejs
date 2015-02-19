@@ -3,14 +3,14 @@
         <article class="box post">
             <%
             if (post.photos.length) {
-                var thumbImg = config.root + config.photos_dir + '/' + post.photos[0];
+                var thumbImg = post.permalink + post.photos[0];
             %>
                 <div class="post-thumbimg">
                     <img alt="" src="<%- thumbImg %>"/>
                 </div>
             <% } %>
             <div class="post-info">
-                <h1 class="post-title"><%- post.title %></h1>
+                <a href="<%- post.permalink %>"><h1 class="post-title"><%- post.title %></h1></a>
                 <div class="post-date text-xsmall">
                     <%- post.date.format(' MMM DD, YYYY').toUpperCase() %>
                     <% if (!post.updated) { %>
