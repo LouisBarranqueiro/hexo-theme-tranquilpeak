@@ -27,6 +27,9 @@
                 margin-top:    0px;
                 margin-bottom: 8px;
                 font-weight:   700;
+                text-overflow: ellipsis;
+                word-break:    initial;
+                overflow:      hidden;
             }
             .post-date {
                 color:   #b1bdcc;
@@ -63,6 +66,12 @@
             }
             .post-info {
                 width: 100%;
+
+                .post-tags {
+                    .tag {
+                        margin-top: 5px;
+                    }
+                }
             }
         }
     }
