@@ -1,107 +1,88 @@
+// All
+// --------------------
 .posts {
-    // Mobiles
-    // --------------------
-    @media #{$small-and-down} {
-        .post {
-            padding: 10px;
-            margin-bottom: 30px;
+    .post {
+        padding:       10px;
+        margin-bottom: 30px;
 
-            .post-thumbimg {
-                display: none;
-                border-radius: 3px;
-                width: $image-thumb-width;
-                height: $image-thumb-width !important;
-                overflow: hidden;
-                margin-right: 15px;
+        .post-thumbimg {
+            border-radius: 3px;
+            width:         $image-thumb-width;
+            height:        $image-thumb-width !important;
+            overflow:      hidden;
+            margin-right:  15px;
 
-                img {
-                    display: none;
-                    width: 100%;
-                    height: 100%;
-                }
+            img {
+                width:  100%;
+                height: 100%;
             }
-            .post-info {
-                display: inline-block;
-                vertical-align: top;
-                width: 100%;
+        }
+        .post-info {
+            display:        inline-block;
+            vertical-align: top;
 
-                .post-title {
-                    color: #233152;
-                    font-size: $font-size-h2;
-                    margin-top: 0px;
-                    margin-bottom: 8px;
-                    font-weight: 700;
-                }
-                .post-date {
-                    color: #b1bdcc;
-                    display: inline-block;
-                }
-                .post-readingtime {
-                    color: #b1bdcc;
-                    display: inline-block;
-                    margin-bottom: 15px
-                }
-                .post-snippet {
-                    color: #7f8994;
-                    margin-bottom: 10px;
-                }
-                .post-tags {
-                    display: block;
-                    margin-bottom: 0px;
-                }
+            .post-title {
+                color:         #233152;
+                font-size:     $font-size-h2;
+                margin-top:    0px;
+                margin-bottom: 8px;
+                font-weight:   700;
+            }
+            .post-date {
+                color:   #b1bdcc;
+                display: inline-block;
+            }
+            .post-readingtime {
+                color:         #b1bdcc;
+                display:       inline-block;
+                margin-bottom: 15px
+            }
+            .post-snippet {
+                color:         #7f8994;
+                margin-bottom: 10px;
+            }
+            .post-tags {
+                display:       block;
+                margin-bottom: 0px;
             }
         }
     }
+}
 
-    // Tablets & desktops
-    // --------------------
-    @media #{$medium-and-up} {
+// Mobiles
+// --------------------
+@media #{$small-and-down} {
+    .posts {
         .post {
-            padding: 10px;
-            margin-bottom: 30px;
-
             .post-thumbimg {
-                display: inline-block;
-                border-radius: 3px;
-                width: $image-thumb-width;
-                height: $image-thumb-width !important;
-                overflow: hidden;
-                margin-right: 15px;
+                display: none;
 
                 img {
-                    width: 100%;
+                    display: none;
+                }
+            }
+            .post-info {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Tablets & desktops
+// --------------------
+@media #{$medium-and-up} {
+    .posts {
+        .post {
+            .post-thumbimg {
+                display: inline-block;
+
+                img {
+                    width:  100%;
                     height: 100%;
                 }
             }
             .post-info {
-                display: inline-block;
-                vertical-align: top;
                 width: calc(100% - #{$image-thumb-width} - 20px);
-
-                .post-title {
-                    color: #233152;
-                    font-size: $font-size-h2;
-                    margin-top: 0px;
-                    margin-bottom: 8px;
-                    font-weight: 700;
-                }
-                .post-date {
-                    color: #b1bdcc;
-                    display: inline-block;
-                }
-                .post-readingtime {
-                    color: #b1bdcc;
-                    display: inline-block;
-                    margin-bottom: 15px
-                }
-                .post-snippet {
-                    color: #7f8994;
-                    margin-bottom: 10px;
-                }
-                .post-tags {
-                    display: block;
-                    margin-bottom: 0px;
-                }
             }
         }
     }

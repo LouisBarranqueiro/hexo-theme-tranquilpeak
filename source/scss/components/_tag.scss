@@ -1,21 +1,21 @@
 .tag {
-    display: inline-block;
-    width: auto;
-    height: auto;
-    background: $font-color-link;
-    color: $font-color-white;
-    border-radius: 3px;
+    display:        inline-block;
+    width:          auto;
+    height:         auto;
+    background:     $font-color-link;
+    color:          $font-color-white;
+    border-radius:  3px;
     text-transform: uppercase;
-    padding: 2px 7px 0px 7px;
-    text-align: center;
-    font-size: 10px;
-    border-bottom: 3px solid darken($font-color-link, 15);
+    padding:        2px 7px 0px 7px;
+    text-align:     center;
+    font-size:      10px;
+    border-bottom:  3px solid darken($font-color-link, 15);
     letter-spacing: 0.3px;
-    margin-right: 5px;
+    margin-right:   5px;
 }
 .tag:hover {
-    color: $font-color-white;
-    background: lighten($font-color-link, 5);
+    color:         $font-color-white;
+    background:    lighten($font-color-link, 5);
     border-bottom: 3px solid darken($font-color-link, 10);
     @include box-shadow(0px, 4px, 9px, rgba(0, 0, 0, 0.14902));
 }
