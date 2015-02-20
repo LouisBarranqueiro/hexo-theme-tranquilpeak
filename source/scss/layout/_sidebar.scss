@@ -5,6 +5,7 @@
     position:   fixed;
     top:        0px;
     background: #111a23;
+    overflow:   scroll;
 
     ul.sidebar-menu, ul.sidebar-profile {
         padding-left:  0px;
@@ -58,6 +59,9 @@
                     padding-left: 23px;
                     padding-top:  0px;
 
+                    .fa, .profile-picture {
+                        margin-right: 15px;
+                    }
                     .desc {
                         display:        inline-block;
                         width:          auto;
