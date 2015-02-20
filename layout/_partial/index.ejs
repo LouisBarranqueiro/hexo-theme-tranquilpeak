@@ -1,6 +1,6 @@
 <section class="main posts">
     <% page.posts.each(function(post) { %>
-        <article class="box post">
+        <article class=" post">
             <%
             if (post.photos.length) {
                 var thumbImg = post.permalink + post.photos[0];
@@ -31,4 +31,5 @@
             </div>
         </article>
     <% }) %>
+    <%- partial('pagination', {type: 'page'}) %>
 </section>

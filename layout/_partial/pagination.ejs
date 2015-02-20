@@ -1,0 +1,13 @@
+<ul class="pagination">
+    <% if (page.prev) { %>
+        <li class="pagination-nav">
+            <a class="btn btn--success" href="<%- config.root %><%- page.prev_link %>">Newer posts</a>
+        </li>
+    <% } %>
+    <li class="pagination-number">Page <%- page.current %> of <%- page.total %></li>
+    <% if (page.next) { %>
+        <li class="pagination-nav">
+            <a class="btn btn--success" href="<%- config.root %><%- page.next_link %>">Older posts</a>
+        </li>
+    <% } %>
+</ul>
