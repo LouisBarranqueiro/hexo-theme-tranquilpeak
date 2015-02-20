@@ -2,9 +2,7 @@
 // --------------------
 .posts {
     .post {
-        padding:       10px 10px 20px 10px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #d0dbed;
+        padding: 10px;
 
         .post-thumbimg {
             border-radius: calc(#{$image-thumb-width} / 2);
@@ -26,29 +24,38 @@
                 color:         #233152;
                 font-size:     $font-size-h2;
                 margin-top:    0px;
-                margin-bottom: 8px;
+                margin-bottom: 0px;
                 font-weight:   700;
                 text-overflow: ellipsis;
                 word-break:    initial;
                 overflow:      hidden;
             }
             .post-date {
-                color:   #b1bdcc;
-                display: inline-block;
+                color:      #b1bdcc;
+                display:    inline-block;
+                margin-top: 10px;
             }
             .post-readingtime {
-                color:         #b1bdcc;
-                display:       inline-block;
-                margin-bottom: 15px
+                color:   #b1bdcc;
+                display: inline-block;
             }
             .post-snippet {
                 color:         #7f8994;
                 margin-bottom: 10px;
             }
             .post-tags {
-                display:       block;
-                margin-bottom: 0px;
+                display: inline-block;
+                margin:  8px 0px 10px 2px;
             }
+        }
+        .post-separator {
+            display:       block;
+            width:         40%;
+            max-width:     350px;
+            height:        1px;
+            border-bottom: 1px solid #d0dbed;
+            margin:        10px 0px 10px 0px;
+
         }
     }
 }
@@ -84,15 +91,20 @@
     .posts {
         .post {
             .post-thumbimg {
-                display: inline-block;
+                display: none;
 
                 img {
-                    width:  100%;
-                    height: 100%;
+                    display: none;
                 }
             }
             .post-info {
-                width: calc(100% - #{$image-thumb-width} - 20px);
+                width: 100%;
+
+                .post-tags {
+                    .tag {
+                        margin-top: 5px;
+                    }
+                }
             }
         }
     }
