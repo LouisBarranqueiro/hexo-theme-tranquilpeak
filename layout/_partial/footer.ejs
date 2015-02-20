@@ -1,0 +1,9 @@
+<footer class="footer">
+    <span class="copyrights">
+        <% if (config.author) { %>
+        Copyrights &copy; <%= new Date().getFullYear() %> <%= config.author %>. All Rights Reserved.
+        <% } else { %>
+        Copyrights &copy; <%= new Date().getFullYear() %> <%= config.title %>. All Rights Reserved.
+        <% } %>
+    </span>
+</footer>
