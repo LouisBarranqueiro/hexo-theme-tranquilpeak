@@ -1,14 +1,15 @@
 .btn {
-    font-size:     $font-size-base;
+    font-size:     $font-size-large;
+    letter-spacing: 0.3px;
+    font-weight:   700;
     width:         auto;
     height:        auto;
     padding:       12px 20px;
-    border-radius: 3px;
+    border-radius: 30px;
     color:         #fff;
     border:        none;
     box-shadow:    rgba(0, 0, 0, 0.14902) 0px 4px 9px 0px;
     cursor:        pointer;
-    font-size:     13px;
     margin:        0px 0px 0px 0px;
 }
 .btn--success {
