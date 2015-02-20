@@ -4,7 +4,10 @@
     <body>
         <%- partial('_partial/header') %>
         <%- partial('_partial/sidebar') %>
-        <%- body %>
+        <div class="main">
+            <%- body %>
+            <%- partial('_partial/footer') %>
+        </div>
     </body>
     <%- partial('_partial/script') %>
 </html>
