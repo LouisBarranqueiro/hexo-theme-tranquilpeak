@@ -2,11 +2,12 @@
 // --------------------
 .posts {
     .post {
-        padding:       10px;
-        margin-bottom: 30px;
+        padding:       10px 10px 20px 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #d0dbed;
 
         .post-thumbimg {
-            border-radius: 3px;
+            border-radius: calc(#{$image-thumb-width} / 2);
             width:         $image-thumb-width;
             height:        $image-thumb-width !important;
             overflow:      hidden;
