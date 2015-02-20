@@ -5,18 +5,14 @@
         padding: 10px;
 
         .post-thumbimg {
-            border-radius: calc(#{$image-thumb-width} / 2);
-            width:         $image-thumb-width;
-            height:        $image-thumb-width !important;
-            overflow:      hidden;
-            margin-right:  15px;
+            display: none;
 
             img {
-                width:  100%;
-                height: 100%;
+                display: none;
             }
         }
         .post-info {
+            width:          100%;
             display:        inline-block;
             vertical-align: top;
 
@@ -46,6 +42,10 @@
             .post-tags {
                 display: inline-block;
                 margin:  8px 0px 10px 2px;
+
+                .tag {
+                    margin-top: 5px;
+                }
             }
         }
         .post-separator {
@@ -60,51 +60,27 @@
     }
 }
 
-// Mobiles
-// --------------------
-@media #{$small-and-down} {
-    .posts {
-        .post {
-            .post-thumbimg {
-                display: none;
-
-                img {
-                    display: none;
-                }
-            }
-            .post-info {
-                width: 100%;
-
-                .post-tags {
-                    .tag {
-                        margin-top: 5px;
-                    }
-                }
-            }
-        }
-    }
-}
-
 // Tablets & desktops
 // --------------------
 @media #{$medium-and-up} {
     .posts {
-        .post {
+        .post.post--thumbimg {
             .post-thumbimg {
-                display: none;
+                display:       inline-block;
+                border-radius: calc(#{$thumb-image-width} / 2);
+                width:         $thumb-image-width;
+                height:        $thumb-image-width !important;
+                overflow:      hidden;
+                margin-right:  15px;
 
                 img {
-                    display: none;
+                    display: block;
+                    width:   100%;
+                    height:  100%;
                 }
             }
             .post-info {
-                width: 100%;
-
-                .post-tags {
-                    .tag {
-                        margin-top: 5px;
-                    }
-                }
+                width: calc(100% - (#{$thumb-image-width} + 20px));
             }
         }
     }

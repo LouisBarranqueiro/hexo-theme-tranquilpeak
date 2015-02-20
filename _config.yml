@@ -2,8 +2,9 @@
 general:
     # logo (35px)
     logo: images/demo/logo.jpg
+    rss:
 
-# Personal profile
+# Author informations
 author:
     gravatar: gravatar@gmail.com
     figure:
@@ -16,5 +17,9 @@ author:
     facebook: https://facebook.com/
     googleplus: https://plus.google.com/
 
+# Configuration
 config:
-    rss:
+    # Post thumb image
+    ## 1: Enable
+    ## 0: Disable
+    thumbimg: 0

@@ -1,36 +1,45 @@
+<%
+    var thumbImgClass = '';
+
+    if (theme.config.thumbimg) {
+        thumbImgClass = 'post--thumbimg';
+    }
+%>
 <div class="posts">
     <% page.posts.each(function(post) { %>
-    <article class=" post">
-        <%
-        if (post.photos.length) {
-            var thumbImg = post.permalink + post.photos[0];
-        %>
-        <div class="post-thumbimg">
-            <img alt="" src="<%- thumbImg %>"/>
-        </div>
-        <% } %>
-        <div class="post-info">
-            <a href="<%- post.permalink %>"><h1 class="post-title"><%- post.title %></h1></a>
-            <div class="post-date text-xsmall">
-                <%- post.date.format(' MMM DD, YYYY').toUpperCase() %>
-                <% if (!post.updated) { %>
-                <%- ' - updated : ' + post.updated.format('MMM DD, YYYY') %>
-                <% } %>
+        <article class="post <%- thumbImgClass %>">
+            <%
+                var thumbImg = null;
+
+                if ((post.photos.length) && (theme.config.thumbimg)) {
+                    thumbImg = post.permalink + post.photos[0];
+            %>
+                <div class="post-thumbimg">
+                    <img alt="" src="<%- thumbImg %>"/>
+                </div>
+            <% } %>
+            <div class="post-info">
+                <a href="<%- post.permalink %>"><h1 class="post-title"><%- post.title %></h1></a>
+                <div class="post-date text-xsmall">
+                    <%- post.date.format(' MMM DD, YYYY').toUpperCase() %>
+                    <% if (!post.updated) { %>
+                        <%- ' - updated : ' + post.updated.format('MMM DD, YYYY') %>
+                    <% } %>
+                </div>
+                <div class="post-readingtime text-xsmall">
+                    <% if (post.readingtime) { %>
+                        <%- ' - ' + post.readingtime + ' min read - '.toUpperCase() %>
+                    <% } %>
+                </div>
+                <div class="post-tags">
+                    <%- partial('post/tag', {tags: post.tags})%>
+                </div>
+                <div class="post-snippet text-large">
+                    <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 230) + '...' %>
+                </div>
             </div>
-            <div class="post-readingtime text-xsmall">
-                <% if (post.readingtime) { %>
-                <%- ' - ' + post.readingtime + ' min read - '.toUpperCase() %>
-                <% } %>
-            </div>
-            <div class="post-tags">
-                <%- partial('post/tag', {tags: post.tags})%>
-            </div>
-            <div class="post-snippet text-large">
-                <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %>
-            </div>
-        </div>
-        <div class="post-separator"></div>
-    </article>
+            <div class="post-separator"></div>
+        </article>
     <% }) %>
     <%- partial('pagination', {type: 'page'}) %>
 </div>
