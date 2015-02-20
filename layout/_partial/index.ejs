@@ -1,4 +1,4 @@
-<section class="main posts">
+<div class="posts">
     <% page.posts.each(function(post) { %>
         <article class=" post">
             <%
@@ -32,4 +32,4 @@
         </article>
     <% }) %>
     <%- partial('pagination', {type: 'page'}) %>
-</section>
+</div>
