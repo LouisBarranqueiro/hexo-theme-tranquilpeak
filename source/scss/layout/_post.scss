@@ -1,0 +1,95 @@
+// All
+// --------------------
+.post {
+    padding: 10px;
+
+    .post-thumbimg {
+        display: none;
+
+        img {
+            display: none;
+        }
+    }
+    .post-info {
+        width:          100%;
+        display:        inline-block;
+        vertical-align: top;
+
+        .post-title {
+            color:         #233152;
+            font-size:     $font-size-h2;
+            margin-top:    0px;
+            margin-bottom: 0px;
+            font-weight:   700;
+            text-overflow: ellipsis;
+            word-break:    initial;
+            overflow:      hidden;
+        }
+        .post-date {
+            color:      #b1bdcc;
+            display:    inline-block;
+            margin-top: 5px;
+        }
+        .post-readingtime {
+            color:   #b1bdcc;
+            display: inline-block;
+        }
+        .post-snippet {
+            color:         #7f8994;
+            margin-bottom: 10px;
+        }
+        .post-content {
+            color:         #7f8994;
+            margin-bottom: 10px;
+
+            img {
+                width:         auto;
+                max-width:     calc(90% - 20px);
+                padding:       5px;
+                border:        1px solid #d0dbed;
+                border-radius: 30px;
+            }
+        }
+        .post-tags {
+            display: inline-block;
+            margin:  8px 0px 20px 2px;
+
+            .tag {
+                margin-top: 5px;
+            }
+        }
+    }
+    .post-separator {
+        display:       block;
+        width:         40%;
+        max-width:     350px;
+        height:        1px;
+        border-bottom: 1px solid #d0dbed;
+        margin:        10px 0px 10px 0px;
+
+    }
+}
+
+// Tablets & desktops
+// --------------------
+@media #{$medium-and-up} {
+    .post.post--thumbimg {
+        .post-thumbimg {
+            display:       inline-block;
+            border-radius: calc(#{$thumb-image-width} / 2);
+            width:         $thumb-image-width;
+            height:        $thumb-image-width !important;
+            overflow:      hidden;
+            margin-right:  15px;
+
+            img {
+                display: block;
+                width:   100%;
+                height:  100%;
+            }
+        }
+        .post-info {
+            width: calc(100% - (#{$thumb-image-width} + 20px));
+        }
+    }
+}

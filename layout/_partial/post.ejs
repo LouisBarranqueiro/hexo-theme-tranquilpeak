@@ -1,0 +1,22 @@
+<article class="post">
+    <div class="post-info">
+        <a href="<%- post.permalink %>"><h1 class="post-title"><%- post.title %></h1></a>
+        <div class="post-date text-xsmall">
+            <%- post.date.format(' MMM DD, YYYY').toUpperCase() %>
+            <% if (!post.updated) { %>
+            <%- ' - updated : ' + post.updated.format('MMM DD, YYYY') %>
+            <% } %>
+        </div>
+        <div class="post-readingtime text-xsmall">
+            <% if (post.readingtime) { %>
+            <%- ' - ' + post.readingtime + ' min read - '.toUpperCase() %>
+            <% } %>
+        </div>
+        <div class="post-tags">
+            <%- partial('post/tag', {tags: post.tags})%>
+        </div>
+        <div class="post-content text-xlarge">
+            <%- post.content %>
+        </div>
+    </div>
+</article>
