@@ -22,6 +22,10 @@
     .pagination-number {
         color: #7f8994;
     }
+
+    .pagination-number--single {
+        width: 100% !important;
+    }
 }
 
 // Mobiles
@@ -49,7 +53,6 @@
         .pagination-number {
             display: inline-block;
             width:   32.5%;
-            margin:  0px;
         }
     }
 }
