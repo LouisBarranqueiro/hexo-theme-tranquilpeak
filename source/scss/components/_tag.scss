@@ -9,13 +9,13 @@
     padding:        2px 10px 0px 10px;
     text-align:     center;
     font-size:      10px;
-    border-bottom:  3px solid darken($font-color-link, 15);
+    border-bottom:  3px solid darken($font-color-link, 13);
     letter-spacing: 0.3px;
     margin-right:   5px;
 }
 .tag:hover {
     color:         $font-color-white;
     background:    lighten($font-color-link, 5);
-    border-bottom: 3px solid darken($font-color-link, 10);
-    @include box-shadow(0px, 4px, 9px, rgba(0, 0, 0, 0.14902));
+    border-bottom: 3px solid darken($font-color-link, 8);
+    @include box-shadow(0px, 4px, 7px, rgba(0, 0, 0, 0.15));
 }
