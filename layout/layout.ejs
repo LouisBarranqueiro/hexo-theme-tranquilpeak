@@ -5,8 +5,10 @@
         <%- partial('_partial/header') %>
         <%- partial('_partial/sidebar') %>
         <div class="main">
-            <%- body %>
-            <%- partial('_partial/footer') %>
+            <div class="main-content">
+                <%- body %>
+                <%- partial('_partial/footer') %>
+            </div>
         </div>
     </body>
     <%- partial('_partial/script') %>

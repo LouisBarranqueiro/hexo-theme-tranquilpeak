@@ -4,6 +4,12 @@
     display:    block;
     height:     auto;
     padding:    20px;
+
+    .main-content {
+        width:     100%;
+        max-width: $main-content-width;
+        margin:    0 auto;
+    }
 }
 
 // Mobiles
@@ -30,6 +36,5 @@
     .main {
         float: right;
         width: calc(100% - (#{$desktop-sidebar-width} + 40px));
-
     }
 }
