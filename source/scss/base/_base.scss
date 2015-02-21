@@ -63,9 +63,12 @@ a,
 a:hover,
 a:active,
 a:visited {
+    color:           inherit;
     text-decoration: none;
 }
-a:hover,
-a:active {
-    color: #5a95e5;
+
+a.link:hover,
+a.link:active {
+    color:           inherit;
+    text-decoration: underline;
 }

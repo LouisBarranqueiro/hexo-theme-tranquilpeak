@@ -1,4 +1,5 @@
-.tag {
+a.tag,
+tag {
     display:        inline-block;
     width:          auto;
     height:         auto;
@@ -13,8 +14,8 @@
     letter-spacing: 0.3px;
     margin-right:   5px;
 }
-.tag:hover {
-    color:         $font-color-white;
+a.tag:hover,
+tag:hover {
     background:    lighten($font-color-link, 5);
     border-bottom: 3px solid darken($font-color-link, 8);
     @include box-shadow(0px, 4px, 7px, rgba(0, 0, 0, 0.15));
