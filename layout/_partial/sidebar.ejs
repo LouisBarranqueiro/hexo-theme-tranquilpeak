@@ -1,16 +1,16 @@
 <nav id="sidebar" class="sidebar">
     <ul class="sidebar-menu">
         <li>
-            <a href=""><i class="fa fa-lg fa-home"></i><span class="desc hide-m">Home</span></a>
+            <a href="<%- config.url %>"><i class="fa fa-lg fa-home"></i><span class="desc hide-m">Home</span></a>
         </li>
         <li>
-            <a href=""><i class="fa fa-lg fa-newspaper-o"></i><span class="desc hide-m">Posts</span></a>
+            <a href="<%- config.url + config.root + 'posts' %>"><i class="fa fa-lg fa-newspaper-o"></i><span class="desc hide-m">Posts</span></a>
         </li>
         <li>
-            <a href=""><i class="fa fa-lg fa-tags"></i><span class="desc hide-m">Tags</span></a>
+            <a href="<%- config.url + config.root + 'tags' %>"><i class="fa fa-lg fa-tags"></i><span class="desc hide-m">Tags</span></a>
         </li>
         <li>
-            <a href=""><i class="fa fa-lg fa-archive"></i><span class="desc hide-m">Archives</span></a>
+            <a href="<%- config.url + config.root + 'archives' %>"><i class="fa fa-lg fa-archive"></i><span class="desc hide-m">Archives</span></a>
         </li>
     </ul>
     <ul class="sidebar-profile">
