@@ -1,0 +1,49 @@
+
+// All
+// --------------------
+.post-nav {
+    margin-bottom: 50px;
+
+    li {
+        margin: 0px;
+
+        a {
+            font-size: $font-size-large;
+            color:     $font-color-link;
+        }
+    }
+
+}
+// Mobiles
+// --------------------
+@media #{$small-and-down} {
+    .post-nav {
+        li {
+            display:    block;
+            width:      100%;
+            text-align: center;
+        }
+        li:first-child {
+            margin-bottom: 20px;
+        }
+    }
+}
+// Mobiles
+// --------------------
+@media #{$medium-and-up} {
+    .post-nav {
+        li {
+            display:        inline-block;
+            vertical-align: top;
+            width:          calc(50% - 13px);
+            text-align:     center;
+        }
+        li:first-child {
+            margin-bottom: 20px;
+            text-align:    left;
+        }
+        li:last-child {
+            text-align: right;
+        }
+    }
+}

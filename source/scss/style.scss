@@ -4,6 +4,7 @@
 // Mixins
 @import 'mixins/box-shadow.scss';
 @import 'mixins/button.scss';
+@import 'mixins/tag.scss';
 
 // Base
 @import 'base/base.scss';
@@ -13,6 +14,7 @@
 @import 'layout/header.scss';
 @import 'layout/main.scss';
 @import 'layout/post.scss';
+@import 'layout/post-nav.scss';
 @import 'layout/sidebar.scss';
 @import 'layout/social-share.scss';
 
