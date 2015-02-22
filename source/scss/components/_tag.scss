@@ -1,22 +1,27 @@
 a.tag,
-tag {
+.tag {
     display:        inline-block;
     width:          auto;
     height:         auto;
     background:     $font-color-link;
     color:          $font-color-white;
-    border-radius:  30px;
+    border-radius:  3px;
     text-transform: uppercase;
     padding:        2px 10px 0px 10px;
     text-align:     center;
     font-size:      10px;
-    border-bottom:  3px solid darken($font-color-link, 13);
     letter-spacing: 0.3px;
     margin-right:   5px;
 }
-a.tag:hover,
-tag:hover {
-    background:    lighten($font-color-link, 5);
-    border-bottom: 3px solid darken($font-color-link, 8);
-    @include box-shadow(0px, 4px, 7px, rgba(0, 0, 0, 0.15));
+a.tag--success,
+.tag--success {
+    @include tag-variant($btn-bg-success);
+}
+a.tag--primary,
+.tag--primary {
+    @include tag-variant($btn-bg-primary);
+}
+a.tag--danger,
+.tag--danger {
+    @include tag-variant($btn-bg-danger);
 }
