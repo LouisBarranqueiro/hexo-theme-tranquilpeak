@@ -1,4 +1,4 @@
-<article class="post">
+<section class="post">
     <div class="post-info">
         <h1 class="post-title"><%- post.title %></h1>
         <div class="post-date text-xsmall">
@@ -19,6 +19,12 @@
             <%- post.content %>
         </div>
     </div>
-</article>
+</section>
+<section>
+    <%- partial('post/social-share') %>
+    <%- partial('post/nav') %>
+    <% if (config.disqus_shortname) { %>
+        <%- partial('post/disqus') %>
+    <% } %>
+</section>
 
-<%- partial('post/socialshare', {type: 'post'}) %>
