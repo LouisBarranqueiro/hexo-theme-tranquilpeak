@@ -1,5 +1,5 @@
 <% if (typeof tags !== 'undefined' && tags.length > 0) { %>
     <% tags.limit(15).each(function(item){ %>
-        <a class="tag" href="<%- config.root %><%- item.path %>"><%= item.name %></a>
+        <a class="tag tag--primary" href="<%- config.root %><%- item.path %>"><%= item.name %></a>
     <% }); %>
 <% } %>
