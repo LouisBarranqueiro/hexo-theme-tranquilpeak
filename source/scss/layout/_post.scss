@@ -42,13 +42,14 @@
         .post-content {
             color:         #7f8994;
             margin-bottom: 10px;
+            line-height: 1.5;
 
             img {
                 width:         auto;
-                max-width:     calc(90% - 20px);
+                max-width:     100%;
                 padding:       5px;
                 border:        1px solid #d0dbed;
-                border-radius: 30px;
+                border-radius: 3px;
             }
         }
         .post-tags {
@@ -77,9 +78,11 @@
     .post.post--thumbimg {
         .post-thumbimg {
             display:       inline-block;
-            border-radius: calc(#{$thumb-image-width} / 2);
-            width:         $thumb-image-width;
-            height:        $thumb-image-width !important;
+            padding:       5px;
+            border:        1px solid #d0dbed;
+            border-radius: 3px;
+            width:         calc(#{$thumb-image-width} - 10px);
+            height:        calc(#{$thumb-image-width} - 10px) !important;
             overflow:      hidden;
             margin-right:  15px;
 
@@ -90,7 +93,7 @@
             }
         }
         .post-info {
-            width: calc(100% - (#{$thumb-image-width} + 20px));
+            width: calc(100% - (#{$thumb-image-width} + 30px));
         }
     }
 }
