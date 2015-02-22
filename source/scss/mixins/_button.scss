@@ -1,4 +1,4 @@
-@mixin button-variant($color) {
+@mixin button-color-variant($color) {
     background:    $color;
     border-bottom: 3px solid darken($color, 15);
 
@@ -8,4 +8,9 @@
         border-bottom: 3px solid darken($color, 10);
         @include box-shadow(0px, 4px, 9px, rgba(0, 0, 0, 0.25));
     }
+}
+
+@mixin button-size-variant($font-size, $padding-top-bottom, $padding-left-right) {
+    font-size: $font-size;
+    padding:   $padding-top-bottom $padding-left-right;
 }

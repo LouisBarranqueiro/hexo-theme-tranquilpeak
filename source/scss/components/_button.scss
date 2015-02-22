@@ -1,11 +1,10 @@
 .btn {
-    font-size:      $font-size-large;
-    letter-spacing: 0.3px;
-    font-weight:    700;
+    font-size:      $font-size-base;
     width:          auto;
     height:         auto;
-    padding:        12px 20px;
-    border-radius:  30px;
+    border-radius:  3px;
+    letter-spacing: $letter-spacing-base;
+    padding:        8px 15px;
     color:          #fff;
     border:         none;
     box-shadow:     rgba(0, 0, 0, 0.14902) 0px 4px 9px 0px;
@@ -13,22 +12,26 @@
     margin:         0px 0px 0px 0px;
 }
 .btn--success {
-    @include button-variant($btn-bg-success);
+    @include button-color-variant($btn-bg-success);
 }
 .btn--primary {
-    @include button-variant($btn-bg-primary);
+    @include button-color-variant($btn-bg-primary);
 }
 .btn--danger {
-    @include button-variant($btn-bg-danger);
+    @include button-color-variant($btn-bg-danger);
 }
 .btn--facebook {
-    @include button-variant(#33508e);
+    @include button-color-variant(#33508e);
 }
 .btn--twitter {
-    @include button-variant(#53a0d9);
+    @include button-color-variant(#53a0d9);
 }
 .btn--googleplus {
-    @include button-variant(#d84232);
+    @include button-color-variant(#d84232);
 }
-
-
+.btn--xsmall {
+    @include button-size-variant($font-size-xsmall, 5px, 8px);
+}
+.btn--small {
+    @include button-size-variant($font-size-small, 8px, 10px);
+}
