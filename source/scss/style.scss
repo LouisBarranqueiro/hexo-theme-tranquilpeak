@@ -1,27 +1,28 @@
 // Variables
-@import 'variables.scss';
+@import 'tools/variables.scss';
 
 // Mixins
-@import 'mixins/box-shadow.scss';
-@import 'mixins/button.scss';
-@import 'mixins/tag.scss';
+@import 'tools/mixins/box-shadow.scss';
+@import 'tools/mixins/button.scss';
+@import 'tools/mixins/tag.scss';
 
 // Base
 @import 'base/base.scss';
 
 // Layout
+@import 'layout/archive.scss';
 @import 'layout/footer.scss';
 @import 'layout/header.scss';
 @import 'layout/main.scss';
-@import 'layout/post.scss';
-@import 'layout/post-nav.scss';
 @import 'layout/sidebar.scss';
-@import 'layout/social-share.scss';
 
-// Components
-@import 'components/box.scss';
-@import 'components/button.scss';
-@import 'components/hide.scss';
-@import 'components/pagination.scss';
-@import 'components/tag.scss';
-@import 'components/type.scss';
+// Modules
+@import 'modules/box.scss';
+@import 'modules/button.scss';
+@import 'modules/hide.scss';
+@import 'modules/pagination.scss';
+@import 'modules/tag.scss';
+@import 'modules/type.scss';
+@import 'modules/post.scss';
+@import 'modules/post-nav.scss';
+@import 'modules/social-share.scss';
