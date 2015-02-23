@@ -26,6 +26,9 @@
             overflow:      hidden;
 
         }
+        .post-title:hover {
+            text-decoration: underline;
+        }
         .post-date {
             color:      #b1bdcc;
             display:    inline-block;
@@ -42,7 +45,7 @@
         .post-content {
             color:         #7f8994;
             margin-bottom: 10px;
-            line-height: 1.5;
+            line-height:   1.5;
 
             img {
                 width:         auto;
@@ -55,10 +58,6 @@
         .post-tags {
             display: inline-block;
             margin:  8px 0px 20px 2px;
-
-            .tag {
-                margin-top: 5px;
-            }
         }
     }
     .post-separator {
