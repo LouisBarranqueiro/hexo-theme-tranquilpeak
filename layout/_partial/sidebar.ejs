@@ -31,6 +31,11 @@
                 <a href="<%- theme.author.github %>"><i class="fa fa-lg fa-github"></i><span class="desc hide-m">GitHub</span></a>
             </li>
         <% } %>
+        <% if (theme.author.stackoverflow) { %>
+        <li>
+            <a href="<%- theme.author.stackoverflow %>"><i class="fa fa-lg fa-stack-overflow"></i><span class="desc hide-m">Stack Overflow</span></a>
+        </li>
+        <% } %>
         <% if (theme.author.twitter) { %>
             <li>
                 <a href="<%- theme.author.twitter %>"><i class="fa fa-lg fa-twitter"></i><span class="desc hide-m">Twitter</span></a>
