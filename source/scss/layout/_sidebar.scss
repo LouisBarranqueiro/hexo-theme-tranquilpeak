@@ -1,6 +1,6 @@
 // All
 // --------------------
-.sidebar {
+#sidebar {
     height:     100%;
     position:   fixed;
     top:        0px;
@@ -44,12 +44,11 @@
 // Mobiles
 // --------------------
 @media #{$small-and-down} {
-    .sidebar {
+    #sidebar {
         display: none;
         width:   $desktop-sidebar-width;
 
         ul.sidebar-menu, ul.sidebar-profile {
-
             li {
                 text-align: left;
 
@@ -80,11 +79,10 @@
 // Tablets
 // --------------------
 @media #{$medium-only} {
-    .sidebar {
+    #sidebar {
         width: $tablet-sidebar-width;
 
         ul.sidebar-menu, ul.sidebar-profile {
-
             li {
                 text-align: center;
 
@@ -100,7 +98,7 @@
 // Desktops
 // --------------------
 @media #{$large-and-up} {
-    .sidebar {
+    #sidebar {
         width: $desktop-sidebar-width;
 
         ul.sidebar-menu, ul.sidebar-profile {

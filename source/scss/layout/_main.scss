@@ -1,11 +1,11 @@
 // All
 // --------------------
-.main {
+#main {
     display:    block;
     height:     auto;
     padding:    20px;
 
-    .main-content {
+    #main-content {
         width:     100%;
         max-width: $main-content-width;
         margin:    0 auto;
@@ -15,7 +15,7 @@
 // Mobiles
 // --------------------
 @media #{$small-and-down} {
-    .main {
+    #main {
         display: block;
         width:   calc(100% - 40px);
     }
@@ -24,7 +24,7 @@
 // Tablets
 // --------------------
 @media #{$medium-only} {
-    .main {
+    #main {
         float: right;
         width: calc(100% - (#{$tablet-sidebar-width} + 40px));
     }
@@ -33,7 +33,7 @@
 // Desktops
 // --------------------
 @media #{$large-and-up} {
-    .main {
+    #main {
         float: right;
         width: calc(100% - (#{$desktop-sidebar-width} + 40px));
     }

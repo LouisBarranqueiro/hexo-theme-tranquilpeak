@@ -4,9 +4,13 @@
     <body>
         <%- partial('_partial/header') %>
         <%- partial('_partial/sidebar') %>
-        <div class="main">
-            <div class="main-content">
-                <%- body %>
+        <div id="main">
+            <div id="main-content">
+                <% if (page.layout == 'tags') { %>
+                <%- partial('_partial/tags') %>
+                <% } else { %>
+                    <%- body %>
+                <% } %>
                 <%- partial('_partial/footer') %>
             </div>
         </div>
