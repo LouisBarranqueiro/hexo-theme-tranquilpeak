@@ -1,0 +1,30 @@
+.archive {
+    .archive-search {
+        margin-bottom: 10px;
+    }
+    .archive-list {
+        .archive-list-title {
+            color:       #233152;
+            font-size:   15px;
+            margin-top:  0px;
+            font-weight: 700;
+        }
+        .archive-list-content {
+            list-style: none;
+
+            li {
+                font-size:     $font-size-large;
+                margin-bottom: 5px;
+                color:         #88909a;
+
+                a {
+                    margin-left: 10px;
+                }
+            }
+            li::before {
+                font-family: "FontAwesome";
+                content:     "\f0da";
+            }
+        }
+    }
+}

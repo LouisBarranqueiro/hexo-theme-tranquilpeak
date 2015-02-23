@@ -1,0 +1,13 @@
+.form-control {
+    width:   100%;
+    border:  none;
+    outline: none;
+    color:   #233152;
+}
+.form-control:hover,
+.form-control:focus {
+    outline: none;
+}
+.input--xlarge {
+    @include input-size(auto, 10px, 0px, 25px, 25px);
+}
