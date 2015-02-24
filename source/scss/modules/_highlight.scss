@@ -1,0 +1,130 @@
+// Highlight colors settings
+// --------------------
+$highlight-background:   #2d2d2d;
+$highlight-current-line: #393939;
+$highlight-selection:    #515151;
+$highlight-foreground:   #cccccc;
+$highlight-comment:      #999999;
+$highlight-red:          #f2777a;
+$highlight-orange:       #f99157;
+$highlight-yellow:       #ffcc66;
+$highlight-green:        #99cc99;
+$highlight-aqua:         #66cccc;
+$highlight-blue:         #6699cc;
+$highlight-purple:       #cc99cc;
+
+pre,
+.highlight {
+    background:    $highlight-background;
+    margin:        10px 0px;
+    padding:       15px 20px;
+    border:        1px solid #ddd;
+    border-radius: 3px;
+    overflow:      auto;
+    color:         #ccc;
+    font-size:     $font-size-large;
+    line-height:   17px;
+}
+.highlight .gutter pre,
+.line-numbers {
+    color: #666;
+}
+pre,
+code {
+    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+}
+code {
+    background:  #eee;
+    text-shadow: 0 1px #fff;
+    padding:     0 0.3em;
+}
+pre code {
+    background:  none;
+    text-shadow: none;
+    padding:     0;
+}
+.highlight pre {
+    border:  none;
+    margin:  0;
+    padding: 0;
+}
+.highlight table {
+    margin: 0;
+    width:  auto;
+}
+.highlight td {
+    border:  none;
+    padding: 0;
+}
+.highlight figcaption {
+    font-size:     0.85em;
+    color:         $highlight-comment;
+    line-height:   1em;
+    margin-bottom: 1em;
+}
+.highlight figcaption a {
+    float: right;
+}
+.highlight .gutter pre {
+    text-align:    right;
+    padding-right: 20px;
+}
+.highlight .line {
+    height: 17px;
+}
+pre .comment,
+pre .title {
+    color: #999;
+}
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+    color: $highlight-red;
+}
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+    color: $highlight-orange;
+}
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
+    color: $highlight-green;
+}
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+    color: $highlight-green;
+}
+pre .css .hexcolor {
+    color: $highlight-aqua;
+}
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+    color: $highlight-blue;
+}
+pre .keyword,
+pre .javascript .function {
+    color: $highlight-purple;
+}
