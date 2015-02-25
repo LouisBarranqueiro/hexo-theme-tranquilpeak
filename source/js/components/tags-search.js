@@ -11,7 +11,7 @@
 	};
 
 	/**
-	 * Init TagsSearch object
+	 * Init TagsSearch
 	 */
 	TagsSearch.prototype.init = function() {
 		var self = this;
@@ -22,7 +22,7 @@
 	}
 
 	/**
-	 * Search a tag and display results
+	 * Search a tag and display related posts
 	 */
 	TagsSearch.prototype.search = function() {
 		var self = this;
@@ -41,7 +41,7 @@
 	};
 
 	$(document).ready(function() {
-		var tagsSearch = new TagsSearch('form#tags-search > input#tag','#tags-list a','#posts-list div');
+		var tagsSearch = new TagsSearch('form#tag-search > input#tag','.a-tag','.a-posts');
 		tagsSearch.init();
 	})
 
