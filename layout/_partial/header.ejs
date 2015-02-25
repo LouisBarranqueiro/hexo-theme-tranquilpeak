@@ -1,8 +1,8 @@
 <header id="header">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
     <% if (theme.logo) { %>
-        <img class="header-logo" src="<%- config.root + theme.logo %>" />
+        <img class="header-logo" src="<%= config.root + theme.logo %>"/>
     <% } else if (config.title) { %>
-        <h1 class="header-title text-center text-large"><%- config.title %><h1>
+        <h1 class="header-title text-center text-large"><%= config.title %></h1>
     <% } %>
 </header>

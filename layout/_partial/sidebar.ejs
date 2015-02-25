@@ -1,64 +1,99 @@
 <nav id="sidebar">
     <ul class="sidebar-menu">
         <li>
-            <a href="<%- config.url %>"><i class="fa fa-lg fa-home"></i><span class="desc hide-m">Home</span></a>
+            <a href="<%= config.url %>">
+                <i class="fa fa-lg fa-home"></i>
+                <span class="desc hide-m">Home</span>
+            </a>
         </li>
         <li>
-            <a href="<%- config.url + config.root + 'tags' %>"><i class="fa fa-lg fa-tags"></i><span class="desc hide-m">Tags</span></a>
+            <a href="<%= config.url + config.root + 'tags' %>">
+                <i class="fa fa-lg fa-tags"></i>
+                <span class="desc hide-m">Tags</span>
+            </a>
         </li>
         <li>
-            <a href="<%- config.url + config.root + 'archives' %>"><i class="fa fa-lg fa-archive"></i><span class="desc hide-m">Archives</span></a>
+            <a href="<%= config.url + config.root + 'archives' %>">
+                <i class="fa fa-lg fa-archive"></i>
+                <span class="desc hide-m">Archives</span>
+            </a>
         </li>
         <li>
-            <a href="<%- config.url + config.root + 'search' %>"><i class="fa fa-lg fa-search"></i><span class="desc hide-m">Search</span></a>
+            <a href="<%= config.url + config.root + 'search' %>">
+                <i class="fa fa-lg fa-search"></i>
+                <span class="desc hide-m">Search</span>
+            </a>
         </li>
     </ul>
     <ul class="sidebar-profile">
         <li>
             <a href="#about">
                 <% if (theme.author.gravatar) { %>
-                    <img class="profile-picture" src="<%- gravatar(config.email, 30) %>" /><span class="desc hide-m"><%- config.author %></span>
+                    <img class="profile-picture" src="<%- gravatar(config.email, 30) %>" />
+                    <span class="desc hide-m"><%= config.author %></span>
                 <% } else if (theme.author.picture) { %>
-                    <img class="profile-picture" src="<%- theme.author.picture %>" /><span class="desc hide-m"><%- config.author %></span>
+                    <img class="profile-picture" src="<%= theme.author.picture %>" />
+                    <span class="desc hide-m"><%= config.author %></span>
                 <% } else { %>
-                    <img class="profile-picture" src="/images/default-figure.png" /><span class="desc hide-m"><%- config.author %></span>
+                    <img class="profile-picture" src="/images/default-figure.png" />
+                    <span class="desc hide-m"><%= config.author %></span>
                 <% } %>
-
             </a>
         </li>
         <% if (theme.author.github) { %>
             <li>
-                <a href="<%- theme.author.github %>"><i class="fa fa-lg fa-github"></i><span class="desc hide-m">GitHub</span></a>
+                <a href="<%= theme.author.github %>">
+                    <i class="fa fa-lg fa-github"></i>
+                    <span class="desc hide-m">GitHub</span>
+                </a>
             </li>
         <% } %>
         <% if (theme.author.stack_overflow) { %>
         <li>
-            <a href="<%- theme.author.stackover_flow %>"><i class="fa fa-lg fa-stack-overflow"></i><span class="desc hide-m">Stack Overflow</span></a>
+            <a href="<%= theme.author.stackover_flow %>">
+                <i class="fa fa-lg fa-stack-overflow"></i>
+                <span class="desc hide-m">Stack Overflow</span>
+            </a>
         </li>
         <% } %>
         <% if (theme.author.twitter) { %>
             <li>
-                <a href="<%- theme.author.twitter %>"><i class="fa fa-lg fa-twitter"></i><span class="desc hide-m">Twitter</span></a>
+                <a href="<%= theme.author.twitter %>">
+                    <i class="fa fa-lg fa-twitter"></i>
+                    <span class="desc hide-m">Twitter</span>
+                </a>
             </li>
         <% } %>
         <% if (theme.author.google_plus) { %>
             <li>
-                <a href="<%- theme.author.google_plus %>"><i class="fa fa-lg fa-google-plus"></i><span class="desc hide-m">Google Plus</span></a>
+                <a href="<%= theme.author.google_plus %>">
+                    <i class="fa fa-lg fa-google-plus"></i>
+                    <span class="desc hide-m">Google Plus</span>
+                </a>
             </li>
         <% } %>
         <% if (theme.author.facebook) { %>
             <li>
-                <a href="<%- theme.author.facebook %>"><i class="fa fa-lg fa-facebook"></i><span class="desc hide-m">Facebook</span></a>
+                <a href="<%= theme.author.facebook %>">
+                    <i class="fa fa-lg fa-facebook"></i>
+                    <span class="desc hide-m">Facebook</span>
+                </a>
             </li>
         <% } %>
         <% if (theme.author.linked_in) { %>
             <li>
-                <a href="<%- theme.author.linked_in %>"><i class="fa fa-lg fa-linkedin"></i><span class="desc hide-m">Linked In</span></a>
+                <a href="<%= theme.author.linked_in %>">
+                    <i class="fa fa-lg fa-linkedin"></i>
+                    <span class="desc hide-m">Linked In</span>
+                </a>
             </li>
         <% } %>
         <% if (config.email) { %>
             <li>
-                <a href="<%- config.email %>"><i class="fa fa-lg fa-envelope-o"></i><span class="desc hide-m">Mail</span></a>
+                <a href="<%= config.email %>">
+                    <i class="fa fa-lg fa-envelope-o"></i>
+                    <span class="desc hide-m">Mail</span>
+                </a>
             </li>
         <% } %>
     </ul>

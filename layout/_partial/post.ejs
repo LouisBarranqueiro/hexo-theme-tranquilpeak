@@ -1,15 +1,15 @@
 <section class="post">
     <div class="post-info">
-        <h1 class="post-title"><%- post.title %></h1>
+        <h1 class="post-title"><%= post.title %></h1>
         <div class="post-date text-xsmall">
-            <%- post.date.format(' MMM DD, YYYY').toUpperCase() %>
+            <%= post.date.format(' MMM DD, YYYY').toUpperCase() %>
             <% if (!post.updated) { %>
-            <%- ' - updated : ' + post.updated.format('MMM DD, YYYY') %>
+                <%= ' - updated : ' + post.updated.format('MMM DD, YYYY') %>
             <% } %>
         </div>
         <div class="post-readingtime text-xsmall">
             <% if (post.readingtime) { %>
-            <%- ' - ' + post.readingtime + ' min read - '.toUpperCase() %>
+                <%= ' - ' + post.readingtime + ' min read - '.toUpperCase() %>
             <% } %>
         </div>
         <div class="post-tags">

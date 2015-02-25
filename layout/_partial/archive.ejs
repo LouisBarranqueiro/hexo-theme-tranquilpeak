@@ -4,7 +4,7 @@
 %>
 <div class="archive">
     <form action="#" id="archives-search" class="archive-search">
-        <input id="date" name="date" type="text" class="form-control input--xlarge" value="" placeholder="Search a date... (YYYY/MM)" autofocus="autofocus">
+        <input id="date" name="date" type="text" class="form-control input--xlarge" value="" placeholder="Search a date... (YYYY/MM/DD)" autofocus="autofocus">
     </form>
     <section class="box-group">
     <% page.posts.each(function(post) { %>
@@ -17,7 +17,7 @@
             <% } %>
             <% lastYear = currentYear; %>
             <div class="a-posts-year box" data-date="<%= post.date.year() %>">
-            <h1 class="text-strong text-xlarge"><%= currentYear %></h1>
+                <h1 class="text-strong text-xlarge"><%= currentYear %></h1>
         <% } %>
         <% if (lastMonth != currentMonth) { %>
             <% if (lastMonth != null) { %>
@@ -28,7 +28,8 @@
             <% lastMonth = currentMonth; %>
         <% } %>
         <li class="a-posts-day" data-date="<%= post.date.format('YYYYMMDD') %>">
-            <a class="link text-base" href="<%= post.permalink %>"><%= post.title %></a><span><%- ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+            <a class="link text-base" href="<%= post.permalink %>"><%= post.title %></a>
+            <span><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
         </li>
     <% }) %>
     </section>

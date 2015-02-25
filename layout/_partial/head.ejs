@@ -1,31 +1,39 @@
 <%
-var title = config.title + ' - ';
+    var title = config.title + ' - ';
 
-if (is_archive()){
-    title += 'archives';
+    if (is_home()) {
+        title += 'home';
+    }
+    else if (is_archive()){
+        title += 'archives';
 
-    if (is_month()) {
-        title += ' : ' + page.year + '/' + page.month;
+        if (is_month()) {
+            title += ' : ' + page.year + '/' + page.month;
+        }
+        else if (is_year()) {
+            title += ' : ' + page.year;
+        }
     }
-    else if (is_year()) {
-        title += ' : ' + page.year;
+    else if (is_tag()) {
+        if (page.tag) {
+            title += 'tag : ' + page.tag;
+        }
+        else {
+            title += 'tags';
+        }
     }
-}
-else if (is_tag()) {
-    title += 'tag : ' + page.tag;
-}
-else {
-  title += page.title;
-}
+    else {
+      title += page.title;
+    }
 %>
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=932" >
     <meta name="MobileOptimized" content="932" >
-    <meta name="generator" content="<%- config.title %>">
+    <meta name="generator" content="<%= config.title %>">
     <title><%= title %></title>
-    <link rel="icon" href="<%- config.root + theme.images_dir + '/' + theme.favicon %>">
-    <link rel="stylesheet" type="text/css" href="<%- config.root %>vendor/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="<%- config.root %>css/style.min.css">
-    <link rel="alternative" type="application/atom+xml" title="RSS" href="<%- theme.rss %>">
+    <link rel="icon" href="<%= config.root + theme.image_dir + '/' + theme.favicon %>">
+    <link rel="stylesheet" type="text/css" href="<%= config.root + 'vendor/fontawesome/css/font-awesome.min.css' %>">
+    <link rel="stylesheet" type="text/css" href="<%= config.root + 'css/style.min.css' %>">
+    <link rel="alternative" type="application/atom+xml" title="RSS" href="<%= theme.rss %>">
 </head>
