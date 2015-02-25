@@ -21,7 +21,7 @@ author:
     facebook: https://facebook.com/
     google_plus: https://plus.google.com/
 
-# Post thumbnail image (enable: 1, disabled: 2)
+# Post thumbnail image (disable: 0, enable: 1)
 thumbnail_image: 0
 
 # Miscellaneous

@@ -3,7 +3,7 @@
 .post {
     padding: 10px;
 
-    .post-thumbimg {
+    .post-thumbnailimg {
         display: none;
 
         img {
@@ -17,17 +17,15 @@
 
         .post-title {
             color:         #233152;
-            font-size:     $font-size-h2;
+            font-size:     27px;
             margin-top:    0px;
             margin-bottom: 0px;
-            font-weight:   700;
+            font-weight:   300;
             text-overflow: ellipsis;
             word-break:    initial;
             overflow:      hidden;
 
-        }
-        .post-title:hover {
-            text-decoration: underline;
+
         }
         .post-date {
             color:      #b1bdcc;
@@ -38,10 +36,7 @@
             color:   #b1bdcc;
             display: inline-block;
         }
-        .post-snippet {
-            color:         #7f8994;
-            margin-bottom: 10px;
-        }
+        .post-snippet,
         .post-content {
             color:         #7f8994;
             margin-bottom: 10px;
@@ -74,8 +69,8 @@
 // Tablets & desktops
 // --------------------
 @media #{$medium-and-up} {
-    .post.post--thumbimg {
-        .post-thumbimg {
+    .post.post--thumbnailimg {
+        .post-thumbnailimg {
             display:       inline-block;
             padding:       5px;
             border:        1px solid #d0dbed;

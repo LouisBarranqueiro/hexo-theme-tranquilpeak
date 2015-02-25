@@ -2,20 +2,20 @@
     var thumbNailImgClass = '';
 
     if (theme.thumbnail_image) {
-        thumbNailImgClass = 'post--thumbimg';
+        thumbNailImgClass = 'post--thumbnailimg';
     }
 %>
 <div class="posts">
     <% page.posts.each(function(post) { %>
         <article class="post <%- thumbNailImgClass %>">
             <%
-                var thumbImg = null;
+                var thumbNailImg = null;
 
                 if ((post.photos.length) && (theme.thumbnail_image)) {
-                    thumbImg = post.permalink + post.photos[0];
+                    thumbNailImg = post.permalink + post.photos[0];
             %>
-                <div class="post-thumbimg">
-                    <img alt="" src="<%- thumbImg %>"/>
+                <div class="post-thumbnailimg">
+                    <img alt="" src="<%- thumbNailImg %>"/>
                 </div>
             <% } %>
             <div class="post-info">
