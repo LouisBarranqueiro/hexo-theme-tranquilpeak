@@ -33,18 +33,16 @@ $headings-color:       #233152;
 
 // background colors
 // --------------------
-$bg-color-base:  #fafafa;
-$bg-color-white: #ffffff;
-$bg-color-black: #000000;
-
+$bg-color-base:  #fff;
+$bg-color-white: #fff;
+$bg-color-black: #000;
 
 // Fonts color
 // --------------------
 $font-color-white: #fff;
 $font-color-black: #000;
-$font-color-base: #88909a;
+$font-color-base: #77818d;
 $font-color-link: #5a95e5;
-
 
 // Media Query Ranges
 // --------------------
@@ -88,3 +86,12 @@ $pagination-width: 380px;
 // Social share widget settings
 // --------------------
 $socialshare-width: 380px;
+
+// Markdown settings
+// --------------------
+$mk-font-size-h1: 27px;
+$mk-font-size-h2: 24px;
+$mk-font-size-h3: 21px;
+$mk-font-size-h4: 18px;
+$mk-font-size-h5: 15px;
+$mk-font-size-h6: 12px;
