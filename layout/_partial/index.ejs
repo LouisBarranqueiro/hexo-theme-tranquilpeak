@@ -1,17 +1,17 @@
 <%
-    var thumbImgClass = '';
+    var thumbNailImgClass = '';
 
-    if (theme.config.thumbimg) {
-        thumbImgClass = 'post--thumbimg';
+    if (theme.thumbnail_image) {
+        thumbNailImgClass = 'post--thumbimg';
     }
 %>
 <div class="posts">
     <% page.posts.each(function(post) { %>
-        <article class="post <%- thumbImgClass %>">
+        <article class="post <%- thumbNailImgClass %>">
             <%
                 var thumbImg = null;
 
-                if ((post.photos.length) && (theme.config.thumbimg)) {
+                if ((post.photos.length) && (theme.thumbnail_image)) {
                     thumbImg = post.permalink + post.photos[0];
             %>
                 <div class="post-thumbimg">
@@ -35,7 +35,7 @@
                     <%- partial('post/tag', {tags: post.tags})%>
                 </div>
                 <div class="post-snippet text-large">
-                    <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 230) + '...' %>
+                    <%- post.excerpt %>
                 </div>
             </div>
             <div class="post-separator"></div>

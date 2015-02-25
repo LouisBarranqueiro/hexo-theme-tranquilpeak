@@ -1,26 +1,28 @@
-# General
-general:
-    # logo (35px)
-    logo: images/demo/logo.jpg
-    rss:
+# Image directory (default: images)
+image_dir: images
 
-# Author informations
+
+# General
+logo: images/demo/logo.jpg # logo (35px)
+cover:
+favicon:
+rss:
+
+# Author
 author:
     gravatar: gravatar@gmail.com
-    figure:
-    cover:
+    picture:
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     locate: France
     github: https://github.com/
-    stackoverflow: http://stackoverflow.com/users/
-    linkedin: https://linkedin.com/
+    stack_overflow: http://stackoverflow.com/users/
+    linked_in: https://linkedin.com/
     twitter: https://twitter.com/
     facebook: https://facebook.com/
-    googleplus: https://plus.google.com/
+    google_plus: https://plus.google.com/
 
-# Configuration
-config:
-    # Post thumb image
-    ## 1: Enable
-    ## 0: Disable
-    thumbimg: 0
+# Post thumbnail image (enable: 1, disabled: 2)
+thumbnail_image: 0
+
+# Miscellaneous
+google_analytics:

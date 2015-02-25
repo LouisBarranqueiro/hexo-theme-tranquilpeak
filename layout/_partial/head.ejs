@@ -23,8 +23,9 @@ else {
     <meta name="viewport" content="width=932" >
     <meta name="MobileOptimized" content="932" >
     <meta name="generator" content="<%- config.title %>">
-    <title><%- title %></title>
+    <title><%= title %></title>
+    <link rel="icon" href="<%- config.root + theme.images_dir + '/' + theme.favicon %>">
     <link rel="stylesheet" type="text/css" href="<%- config.root %>vendor/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<%- config.root %>css/style.min.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="<%- theme.config.rss %>">
+    <link rel="alternative" type="application/atom+xml" title="RSS" href="<%- theme.rss %>">
 </head>
