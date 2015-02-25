@@ -29,7 +29,6 @@
 	ArchivesSearch.prototype.search = function() {
 		var self   = this;
 		var search = self.$inputSearch.val().replace(/\//g, '').toLowerCase();
-
 		var searchedYear  = search.slice(0, 4);
 		var searchedMonth = search.slice(4, 6);
 		var searchedDay   = search.slice(6, 8);
@@ -50,7 +49,7 @@
 	};
 
 	$(document).ready(function() {
-		var archivesSearch = new ArchivesSearch('form#archives-search > input#date','#posts-list .a-posts-year','#posts-list .a-posts-month','#posts-list .a-posts-day');
+		var archivesSearch = new ArchivesSearch('form#archives-search > input#date','.a-posts-year','.a-posts-month','.a-posts-day');
 		archivesSearch.init();
 	})
 
