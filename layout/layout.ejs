@@ -2,18 +2,21 @@
 <html>
     <%- partial('_partial/head') %>
     <body>
-        <%- partial('_partial/header') %>
-        <%- partial('_partial/sidebar') %>
-        <div id="main">
-            <div id="main-content">
-                <% if (page.layout == 'tags') { %>
-                    <%- partial('_partial/tags') %>
-                <% } else { %>
-                    <%- body %>
-                <% } %>
-                <%- partial('_partial/footer') %>
+        <div id="blog">
+            <%- partial('_partial/header') %>
+            <%- partial('_partial/sidebar') %>
+            <div id="main">
+                <div id="main-content">
+                    <% if (page.layout == 'tags') { %>
+                        <%- partial('_partial/tags') %>
+                    <% } else { %>
+                        <%- body %>
+                    <% } %>
+                    <%- partial('_partial/footer') %>
+                </div>
             </div>
         </div>
+        <div id="cover" style="background-image:url('<%= config.root + theme.image_dir + '/' + theme.cover  %>');"></div>
     </body>
     <%- partial('_partial/script') %>
 </html>
