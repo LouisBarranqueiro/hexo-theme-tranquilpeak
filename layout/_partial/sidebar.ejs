@@ -1,98 +1,24 @@
 <nav id="sidebar">
     <ul class="sidebar-profile">
         <li>
-            <img class="profile-picture" src="<%- gravatar(config.email, 90) || theme.author.picture %>" />
+            <img class="profile-picture" src="<%- gravatar(config.email, 90) || theme.author.picture %>"/>
             <span class="desc hide-m text-large"><%= config.author %></span>
         </li>
     </ul>
-    <ul class="sidebar-menu">
-        <li>
-            <a href="<%= config.url %>">
-                <i class="fa fa-lg fa-home"></i>
-                <span class="desc hide-m text-large">Home</span>
-            </a>
-        </li>
-        <li>
-            <a href="<%= config.url + config.root + 'tags' %>">
-                <i class="fa fa-lg fa-tags"></i>
-                <span class="desc hide-m text-large">Tags</span>
-            </a>
-        </li>
-        <li>
-            <a href="<%= config.url + config.root + 'archives' %>">
-                <i class="fa fa-lg fa-archive"></i>
-                <span class="desc hide-m text-large">Archives</span>
-            </a>
-        </li>
-        <li>
-            <a href="<%= config.url + config.root + 'search' %>">
-                <i class="fa fa-lg fa-search"></i>
-                <span class="desc hide-m text-large">Search</span>
-            </a>
-        </li>
-        <li>
-            <a href="<%= config.url + config.root + 'about' %>">
-                <i class="fa fa-lg fa-question"></i>
-                <span class="desc hide-m text-large">About me</span>
-            </a>
-        </li>
-    </ul>
-    <ul class="sidebar-external-links">
-        <% if (theme.author.github) { %>
-            <li>
-                <a href="<%= theme.author.github %>">
-                    <i class="fa fa-lg fa-github"></i>
-                    <span class="desc hide-m text-large">GitHub</span>
-                </a>
-            </li>
-        <% } %>
-        <% if (theme.author.stack_overflow) { %>
-        <li>
-            <a href="<%= theme.author.stackover_flow %>">
-                <i class="fa fa-lg fa-stack-overflow"></i>
-                <span class="desc hide-m text-large">Stack Overflow</span>
-            </a>
-        </li>
-        <% } %>
-        <% if (theme.author.twitter) { %>
-            <li>
-                <a href="<%= theme.author.twitter %>">
-                    <i class="fa fa-lg fa-twitter"></i>
-                    <span class="desc hide-m text-large">Twitter</span>
-                </a>
-            </li>
-        <% } %>
-        <% if (theme.author.google_plus) { %>
-            <li>
-                <a href="<%= theme.author.google_plus %>">
-                    <i class="fa fa-lg fa-google-plus"></i>
-                    <span class="desc hide-m text-large">Google Plus</span>
-                </a>
-            </li>
-        <% } %>
-        <% if (theme.author.facebook) { %>
-            <li>
-                <a href="<%= theme.author.facebook %>">
-                    <i class="fa fa-lg fa-facebook"></i>
-                    <span class="desc hide-m text-large">Facebook</span>
-                </a>
-            </li>
-        <% } %>
-        <% if (theme.author.linked_in) { %>
-            <li>
-                <a href="<%= theme.author.linked_in %>">
-                    <i class="fa fa-lg fa-linkedin"></i>
-                    <span class="desc hide-m text-large">Linked In</span>
-                </a>
-            </li>
-        <% } %>
-        <% if (config.email) { %>
-            <li>
-                <a href="<%= config.email %>">
-                    <i class="fa fa-lg fa-envelope-o"></i>
-                    <span class="desc hide-m text-large">Mail</span>
-                </a>
-            </li>
-        <% } %>
-    </ul>
+    <% for (var i in theme.sidebar) { %>
+        <ul>
+            <% for (var n in theme.sidebar[i]) { %>
+                <li>
+                    <% if (theme.sidebar[i][n].url.indexOf('://') >= 0) { %>
+                        <a href="<%= theme.sidebar[i][n].url %>">
+                    <% } else { %>
+                        <a href="<%= config.url + theme.sidebar[i][n].url %>">
+                    <% } %>
+                        <i class="fa fa-lg <%= 'fa-' + theme.sidebar[i][n].icon %>"></i>
+                        <span class="desc hide-m text-large"><%- theme.sidebar[i][n].title %></span>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+    <% } %>
 </nav>

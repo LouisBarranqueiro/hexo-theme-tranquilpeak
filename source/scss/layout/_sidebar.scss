@@ -11,7 +11,7 @@
         padding-left:  0px;
         padding-top:   0px;
         margin-top:    0px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
 
         li {
             display:     block;
@@ -48,6 +48,7 @@
         display:    none;
         width:      $sidebar-desktop-width;
         background: rgba(17, 26, 35, 1);
+
         ul {
             li {
                 text-align: left;

@@ -1,27 +1,84 @@
 # Image directory (default: images)
 image_dir: images
 
-# General
-cover: cover.png
-favicon:
-rss:
+# Sidebar Configuration
+#    You can add groups of links and links much as you want
+#    You just have to respect the indentation : 'groups of links' -> 'link' -> 'title, link, icon'
+#    Example :
+#    -------------
+#       sidebar:                   # Don't modify this variable name
+#            menu:                 # Name of your groups of links (changeable)
+#                home:             # Name of your link (changeable)
+#                   title: Home    # Title of your link displayed
+#                   url: /         # URL of the link. If the URL is internal, domain name is not necessary
+#                   icon: home     # Name of the font awesome icon class without the 'fa-'
+#                                  # Go to http://fontawesome.io/icons/ to find icon name class
+sidebar:
+    menu:
+        home:
+            title: Home
+            url: /
+            icon: home
+        tags:
+            title: Tags
+            url: /tags
+            icon: tags
+        archives:
+            title: Archives
+            url: /archives
+            icon: archive
+        about:
+            title: About
+            url: /about
+            icon: question
+    author_links:
+        # github:
+        #     title: GitHub
+        #     url:
+        #     icon: github
+        # stack_overflow:
+        #     title: Stack Overflow
+        #     url:
+        #     icon: stack-overflow
+        # twitter:
+        #     title: Twitter
+        #     url:
+        #     icon: twitter
+        # facebook:
+        #     title: Facebook
+        #     url:
+        #     icon: facebook
+        # google_plus:
+        #     title: Google +
+        #     url:
+        #     icon: google-plus
+        # linked_in:
+        #     title: Linked In
+        #     url:
+        #     icon: linked-in
+        # mail:
+        #     title: Mail
+        #     url:
+        #     icon: envelope-o
+    rss:
+        rss:
+            title: RSS
+            url: /atom.xml
+            icon: rss
 
 # Author
 author:
-    gravatar: gravatar@gmail.com
-    picture:
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    locate: France
-    github: https://github.com/
-    stack_overflow: http://stackoverflow.com/users/
-    linked_in: https://linkedin.com/
-    twitter: https://twitter.com/
-    facebook: https://facebook.com/
-    google_plus: https://plus.google.com/
+    gravatar:
+    picture: # Your profile picture located in folder 'source/images/'
+    bio:
+    locate:
 
 # Customization
-thumbnail_image: 0 # Post thumbnail image (disable: 0, enable: 1)
+thumbnail_image: 0                    # Post thumbnail image (disable: 0, enable: 1)
 excerpt_link: continue reading &rarr; # Message display after the <!-- more --> balise
+cover: cover.png                      # Your blog cover picture located in folder 'source/images/'
+favicon:                              # Your favicon located in folder 'source/images/'
 
 # Miscellaneous
 google_analytics:
+rss: /atom.xml
