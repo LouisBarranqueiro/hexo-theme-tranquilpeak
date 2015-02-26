@@ -1,0 +1,29 @@
+<div class="archive">
+    <form action="#" id="categorie-search" class="archive-search">
+        <input id="tag" type="text" class="form-control input--xlarge" value="" placeholder="Search a category" autofocus="autofocus">
+    </form>
+    <section>
+        <% site.categories.sort('name').each(function(item) { %>
+        <a class="a-tag tag tag--success" href="<%= '#posts-list-' + item.name %>" data-categorie="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+            <%= item.name %>
+        </a>
+        <% }); %>
+    </section>
+    <section class="box-group">
+        <% site.categories.sort('name').each(function(item) { %>
+        <div id="<%= 'posts-list-' + item.name %>" class="a-posts box" data-categorie="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+            <a href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>">
+                <h1 class="text-strong text-large"><%= item.name.toUpperCase() + ' (' + item.length + ')' %></h1>
+            </a>
+            <ul >
+                <% get_posts({'query':{'categories': item.name}}).each(function(post) { %>
+                <li>
+                    <a class="link text-base" href="<%= post.permalink %>"><%= post.title %></a>
+                    <span><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+        <% }); %>
+    </section>
+</div>
