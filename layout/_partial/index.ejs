@@ -34,7 +34,17 @@
                     <%- partial('post/tag', {tags: post.tags})%>
                 </div>
                 <div class="post-snippet text-large">
-                    <%- post.excerpt %>
+                    <% if (post.excerpt) { %>
+                        <%- post.excerpt %>
+                    <% } else { %>
+                        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 240) %>
+                        <p></p>
+                    <% } %>
+                    <% if (theme.excerpt_link) { %>
+                        <p>
+                            <a href="<%= post.permalink %>" class="link"><%- theme.excerpt_link %></a>
+                        </p>
+                    <% } %>
                 </div>
             </div>
             <div class="post-separator"></div>
