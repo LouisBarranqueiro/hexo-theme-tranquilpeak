@@ -32,8 +32,8 @@
     <meta name="MobileOptimized" content="932" >
     <meta name="generator" content="<%= config.title %>">
     <title><%= title %></title>
-    <link rel="icon" href="<%= config.root + theme.image_dir + '/' + theme.favicon %>">
-    <link rel="stylesheet" type="text/css" href="<%= config.root + 'vendor/fontawesome/css/font-awesome.min.css' %>">
-    <link rel="stylesheet" type="text/css" href="<%= config.root + 'css/style.min.css' %>">
+    <link rel="icon" href="<%- url_for(theme.image_dir + '/' + theme.favicon) %>">
+    <link rel="stylesheet" type="text/css" href="<%- url_for('vendor/fontawesome/css/font-awesome.min.css') %>">
+    <link rel="stylesheet" type="text/css" href="<%- url_for('css/style.min.css') %>">
     <link rel="alternative" type="application/atom+xml" title="RSS" href="<%= theme.rss %>">
 </head>

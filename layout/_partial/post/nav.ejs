@@ -2,7 +2,7 @@
     <nav class="post-nav box">
         <li>
             <% if (post.prev){ %>
-                <a class="link" href="<%= url_for(post.prev.path) %>">
+                <a class="link" href="<%- url_for(post.prev.path) %>">
                     <%= '← ' + post.prev.title %>
                 </a>
             <% } %>

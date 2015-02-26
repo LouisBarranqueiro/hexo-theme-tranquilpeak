@@ -12,7 +12,7 @@
                     <% if (theme.sidebar[i][n].url.indexOf('://') >= 0) { %>
                         <a href="<%= theme.sidebar[i][n].url %>">
                     <% } else { %>
-                        <a href="<%= config.url + theme.sidebar[i][n].url %>">
+                        <a href="<%- url_for(theme.sidebar[i][n].url) %>">
                     <% } %>
                         <i class="fa fa-lg <%= 'fa-' + theme.sidebar[i][n].icon %>"></i>
                         <span class="desc hide-m text-large"><%- theme.sidebar[i][n].title %></span>
