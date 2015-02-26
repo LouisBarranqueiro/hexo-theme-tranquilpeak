@@ -1,14 +1,17 @@
 // All
 // --------------------
 #main {
-    display:    block;
-    height:     auto;
-    padding:    20px;
+    display: block;
+    height:  auto;
+    padding: 20px;
 
     #main-content {
-        width:     100%;
-        max-width: $main-content-width;
-        margin:    0 auto;
+        width:         calc(100% - 40px);
+        max-width:     $main-content-width;
+        margin:        0 auto;
+        background:    rgba(255, 255, 255, 0.96);
+        padding :      20px;
+        border-radius: 3px;
     }
 }
 
@@ -26,7 +29,7 @@
 @media #{$medium-only} {
     #main {
         float: right;
-        width: calc(100% - (#{$tablet-sidebar-width} + 40px));
+        width: calc(100% - (#{$sidebar-tablet-width} + 40px));
     }
 }
 
@@ -35,6 +38,6 @@
 @media #{$large-and-up} {
     #main {
         float: right;
-        width: calc(100% - (#{$desktop-sidebar-width} + 40px));
+        width: calc(100% - (#{$sidebar-desktop-width} + 40px));
     }
 }

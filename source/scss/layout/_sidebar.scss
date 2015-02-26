@@ -1,17 +1,17 @@
 // All
 // --------------------
 #sidebar {
-    height:     100%;
-    position:   fixed;
-    top:        0px;
-    background: #111a23;
-    overflow:   scroll;
+    height:   100%;
+    position: fixed;
+    top:      0px;
+    overflow: scroll;
+    z-index:  9;
 
-    ul.sidebar-menu, ul.sidebar-profile {
+    ul {
         padding-left:  0px;
         padding-top:   0px;
         margin-top:    0px;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
 
         li {
             display:     block;
@@ -24,18 +24,18 @@
                 display: block;
                 height:  100%;
 
-                .fa, .profile-picture {
-                    display:        inline-block;
-                    text-align:     center;
-                    width:          30px;
-                    height:         30px;
-                    line-height:    30px;
-                    padding-top:    0px;
-                    vertical-align: middle;
-                }
             }
+        }
+    }
+    ul.sidebar-profile {
+        li {
+            color:      #88909a;
+            text-align: center;
+            padding-top: 18px;
+
             .profile-picture {
-                border-radius: 15px;
+                display: block;
+                margin:  0 auto;
             }
         }
     }
@@ -45,10 +45,10 @@
 // --------------------
 @media #{$small-and-down} {
     #sidebar {
-        display: none;
-        width:   $desktop-sidebar-width;
-
-        ul.sidebar-menu, ul.sidebar-profile {
+        display:    none;
+        width:      $sidebar-desktop-width;
+        background: rgba(17, 26, 35, 1);
+        ul {
             li {
                 text-align: left;
 
@@ -58,8 +58,15 @@
                     padding-left: 23px;
                     padding-top:  0px;
 
-                    .fa, .profile-picture {
-                        margin-right: 15px;
+                    .fa {
+                        display:        inline-block;
+                        text-align:     center;
+                        width:          30px;
+                        height:         30px;
+                        line-height:    30px;
+                        padding-top:    0px;
+                        vertical-align: middle;
+                        margin-right:   15px;
                     }
                     .desc {
                         display:        inline-block;
@@ -70,6 +77,21 @@
                         letter-spacing: 0.3px;
                         vertical-align: middle;
                     }
+                }
+            }
+        }
+        ul.sidebar-profile {
+            padding-top: 25px;
+
+            li {
+                height:         130px;
+                padding-top:    15px;
+                padding-bottom: 7.5px;
+
+                .profile-picture {
+                    width:         90px;
+                    height:        90px;
+                    border-radius: 90px;
                 }
             }
         }
@@ -80,16 +102,37 @@
 // --------------------
 @media #{$medium-only} {
     #sidebar {
-        width: $tablet-sidebar-width;
+        width:      $sidebar-tablet-width;
+        background: rgba(17, 26, 35, 0.83);
 
-        ul.sidebar-menu, ul.sidebar-profile {
+        ul {
             li {
                 text-align: center;
 
                 a {
                     text-align: center;
                     width:      100%;
+
+                    .fa {
+                        display:        inline-block;
+                        text-align:     center;
+                        width:          30px;
+                        height:         30px;
+                        line-height:    30px;
+                        padding-top:    0px;
+                        vertical-align: middle;
+                    }
                 }
+
+            }
+        }
+        ul.sidebar-profile {
+            .profile-picture {
+                width:          30px;
+                height:         30px;
+                line-height:    30px;
+                vertical-align: middle;
+                border-radius: 30px;
             }
         }
     }
@@ -99,10 +142,10 @@
 // --------------------
 @media #{$large-and-up} {
     #sidebar {
-        width: $desktop-sidebar-width;
+        width:      $sidebar-desktop-width;
+        background: rgba(17, 26, 35, 0.83);
 
-        ul.sidebar-menu, ul.sidebar-profile {
-
+        ul {
             li {
                 text-align: left;
 
@@ -112,7 +155,14 @@
                     padding-left: 23px;
                     padding-top:  0px;
 
-                    .fa, .profile-picture {
+                    .fa {
+                        display:        inline-block;
+                        text-align:     center;
+                        width:          30px;
+                        height:         30px;
+                        line-height:    30px;
+                        padding-top:    0px;
+                        vertical-align: middle;
                         margin-right: 15px;
                     }
                     .desc {
@@ -123,8 +173,22 @@
                         font-size:      13.3px;
                         letter-spacing: 0.3px;
                         vertical-align: middle;
-                        @include box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.075), inset)
                     }
+                }
+            }
+        }
+        ul.sidebar-profile {
+            padding-top: 25px;
+
+            li {
+                height:         130px;
+                padding-top:    15px;
+                padding-bottom: 7.5px;
+
+                .profile-picture {
+                    width:         90px;
+                    height:        90px;
+                    border-radius: 90px;
                 }
             }
         }

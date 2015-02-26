@@ -1,10 +1,8 @@
 # Image directory (default: images)
 image_dir: images
 
-
 # General
-logo: images/demo/logo.jpg # logo (35px)
-cover:
+cover: cover.png
 favicon:
 rss:
 

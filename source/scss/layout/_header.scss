@@ -1,11 +1,17 @@
 // Mobiles
 // --------------------
+#header {
+    z-index: 2;
+}
+
+// Mobiles
+// --------------------
 @media #{$small-and-down} {
     #header {
         display:    block;
         width:      100%;
         height:     55px;
-        background: #111a23;
+        background: rgba(17, 26, 35, 0.83);
         position:   relative;
 
         #btn-open-sidebar {
