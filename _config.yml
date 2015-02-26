@@ -19,6 +19,10 @@ sidebar:
             title: Home
             url: /
             icon: home
+        categories:
+            title: Categories
+            url: /categories
+            icon: bookmark
         tags:
             title: Tags
             url: /tags
