@@ -7,11 +7,7 @@
             <%- partial('_partial/sidebar') %>
             <div id="main">
                 <div id="main-content">
-                    <% if (page.layout == 'tags') { %>
-                        <%- partial('_partial/tags') %>
-                    <% } else { %>
-                        <%- body %>
-                    <% } %>
+                    <%- body %>
                     <%- partial('_partial/footer') %>
                 </div>
             </div>
