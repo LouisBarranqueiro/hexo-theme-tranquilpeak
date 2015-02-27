@@ -1,5 +1,5 @@
-a.tag,
-.tag {
+a.category,
+.category {
     display:        inline-block;
     width:          auto;
     height:         auto;
@@ -12,7 +12,6 @@ a.tag,
     font-size:      10px;
     letter-spacing: 0.3px;
     margin-right:   5px;
-    margin-bottom:   5px;
-    @include tag-variant($btn-bg-primary);
+    margin-bottom:  5px;
+    @include tag-variant(#ba68c8);
 }
-

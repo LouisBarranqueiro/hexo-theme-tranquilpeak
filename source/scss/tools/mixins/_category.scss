@@ -1,0 +1,11 @@
+@mixin category-variant($color) {
+    background:    $color;
+    border-bottom: 3px solid darken($color, 13);
+
+    &:hover {
+        color:         #fff;
+        background:    lighten($color, 5);
+        border-bottom: 3px solid darken($color, 8);
+        @include box-shadow(0px, 4px, 7px, rgba(0, 0, 0, 0.15));
+    }
+}
