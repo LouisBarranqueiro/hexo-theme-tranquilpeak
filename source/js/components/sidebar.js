@@ -1,12 +1,16 @@
 +function ($) {
     'use strict';
 
-    // Class Definition
-    var Sidebar = function (sidebar, btnOpen, btnClose) {
-        this.$element = sidebar;
+    /**
+     * Sidebar
+     * @param element
+     * @param openButton
+     * @constructor
+     */
+    var Sidebar = function (element, openButton) {
+        this.$element       = $(element);
         this.$element.width = this.$element.width();
-        this.$btnOpen = btnOpen;
-        this.$btnClose = btnClose;
+        this.$openButton    = $(openButton);
     };
 
     /***
@@ -16,14 +20,18 @@
         var self = this;
 
         // Detect the click on the open button
-        self.$btnOpen.click(function() {
-            self.open();
+        self.$openButton.click(function() {
+            if (!self.$element.hasClass('opened')) {
+                self.open();
+                slideBlogRight(self.$element.width);
+            }
         })
 
         // Detect the click out of the sidebar
-        self.$btnClose.click(function() {
+        $('#header, #main').click(function() {
             if (self.$element.hasClass('opened')) {
                 self.close();
+                slideBlogLeft(self.$element.width);
             }
         })
 
@@ -31,11 +39,13 @@
         $(window).resize(function() {
             if ($(window).width() > 600) {
                 self.$element.show();
-                self.$element.css({'left':0});
             }
             else {
                 self.$element.hide();
             }
+
+            self.initPosition();
+            initBlogPosition();
         })
     };
 
@@ -47,9 +57,10 @@
 
         self.$element.css({'left': '-' + self.$element.width + 'px'});
         self.$element.show();
+        
         self.$element.animate({
             left: '+=' + self.$element.width,
-        }, 300, function () {
+        }, 250, function () {
             self.$element.addClass('opened');
         });
     };
@@ -62,15 +73,57 @@
 
         self.$element.animate({
             left: '-=' + self.$element.width,
-        }, 300, function() {
+        }, 250, function() {
             self.$element.removeClass('opened');
             self.$element.hide();
         });
     }
 
+    /**
+     * Init sidebar position
+     */
+    Sidebar.prototype.initPosition = function() {
+        this.$element.css({'left': 0}).removeClass('opened');
+    }
+
+    /**
+     * Slide the blog to the right
+     * @param width
+     */
+    function slideBlogRight(width) {
+        if (!$('#main, #header').hasClass('is-slided')) {
+            $('#main, #header').animate({
+                'margin-left': '+=' + width + 'px',
+            }, 250, function () {
+                $('#main, #header').addClass('is-slided');
+            })
+        }
+    };
+
+    /**
+     * Slide blog to the left
+     * @param width
+     */
+    function slideBlogLeft(width) {
+        if ($('#main, #header').hasClass('is-slided')) {
+            $('#main, #header').animate({
+                'margin-left': '-=' + width,
+            }, 250, function () {
+                $('#main, #header').removeClass('is-slided');
+            });
+        }
+    };
+
+    /**
+     * Init blog position
+     * @constructor
+     */
+    function initBlogPosition() {
+        $('#main, #header').css({'margin-left': 0}).removeClass('is-slided');
+    }
 
     $(document).ready(function() {
-        var sidebar = new Sidebar($('#sidebar'), $('#btn-open-sidebar'), $('#header, #main'));
+        var sidebar = new Sidebar('#sidebar', '#btn-open-sidebar');
         sidebar.init();
     })
 }(jQuery);
