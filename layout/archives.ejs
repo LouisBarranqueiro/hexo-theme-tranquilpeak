@@ -2,12 +2,12 @@
     var lastYear;
     var lastMonth;
 %>
-<div class="archive">
-    <form action="#" id="archives-search" class="archive-search">
-        <input id="date" name="date" type="text" class="form-control input--xlarge" value="" placeholder="Search a date" autofocus="autofocus">
+<div id="archives" class="archive">
+    <form id="filter-form" action="#">
+        <input name="date" type="text" class="form-control input--xlarge" placeholder="Search a date" autofocus="autofocus">
     </form>
     <section class="box-group">
-        <% site.posts.each(function(post) { %>
+        <% site.posts.sort('date', '-1').each(function(post) { %>
             <% var currentYear = post.date.year(); %>
             <% var currentMonth = post.date.format('MM'); %>
             <% if (lastYear != currentYear) { %>
