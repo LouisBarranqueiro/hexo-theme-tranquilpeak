@@ -4,7 +4,7 @@ a.tag,
     width:          auto;
     height:         auto;
     background:     $font-color-link;
-    color:          $font-color-white;
+    color:          #fff;
     border-radius:  3px;
     text-transform: uppercase;
     padding:        2px 10px 0px 10px;
@@ -13,6 +13,6 @@ a.tag,
     letter-spacing: 0.3px;
     margin-right:   5px;
     margin-bottom:   5px;
-    @include tag-variant($btn-bg-primary);
+    @include tag-variant($color-primary);
 }
 

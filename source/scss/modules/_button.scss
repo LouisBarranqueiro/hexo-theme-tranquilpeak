@@ -12,13 +12,13 @@
     margin:         0px 0px 0px 0px;
 }
 .btn--success {
-    @include button-color-variant($btn-bg-success);
+    @include button-color-variant($color-success);
 }
 .btn--primary {
-    @include button-color-variant($btn-bg-primary);
+    @include button-color-variant($color-primary);
 }
 .btn--danger {
-    @include button-color-variant($btn-bg-danger);
+    @include button-color-variant($color-danger);
 }
 .btn--facebook {
     @include button-color-variant(#33508e);
