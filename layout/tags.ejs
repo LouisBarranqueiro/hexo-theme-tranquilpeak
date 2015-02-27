@@ -4,7 +4,7 @@
     </form>
     <section>
         <% site.tags.sort('name').each(function(item) { %>
-        <a class="a-tag tag tag--primary" href="<%= '#posts-list-' + item.name %>" data-tag="<%= item.name.replace('.','__') %>">
+        <a class="a-tag tag" href="<%= '#posts-list-' + item.name %>" data-tag="<%= item.name.replace('.','__') %>">
             <%= item.name %>
         </a>
         <% }); %>
