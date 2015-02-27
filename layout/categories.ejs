@@ -1,17 +1,17 @@
-<div class="archive">
-    <form action="#" id="categorie-search" class="archive-search">
-        <input id="tag" type="text" class="form-control input--xlarge" value="" placeholder="Search a category" autofocus="autofocus">
+<div id="categories-archives" class="archive">
+    <form id="filter-form" action="#">
+        <input name="category" type="text" class="form-control input--xlarge" value="" placeholder="Search a category" autofocus="autofocus">
     </form>
     <section>
         <% site.categories.sort('name').each(function(item) { %>
-        <a class="a-tag tag tag--success" href="<%= '#posts-list-' + item.name %>" data-categorie="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+        <a class="a-category tag tag--success" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
             <%= item.name %>
         </a>
         <% }); %>
     </section>
     <section class="box-group">
         <% site.categories.sort('name').each(function(item) { %>
-        <div id="<%= 'posts-list-' + item.name %>" class="a-posts box" data-categorie="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+        <div id="<%= 'posts-list-' + item.name %>" class="a-posts box" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
             <a href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>">
                 <h1 class="text-strong text-large"><%= item.name.toUpperCase() + ' (' + item.length + ')' %></h1>
             </a>
