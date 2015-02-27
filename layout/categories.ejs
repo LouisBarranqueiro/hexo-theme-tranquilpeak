@@ -4,7 +4,7 @@
     </form>
     <section>
         <% site.categories.sort('name').each(function(item) { %>
-        <a class="a-category tag tag--success" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+        <a class="a-category category" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
             <%= item.name %>
         </a>
         <% }); %>
