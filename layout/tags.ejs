@@ -1,6 +1,6 @@
-<div class="archive">
-    <form action="#" id="tag-search" class="archive-search">
-        <input id="tag" type="text" class="form-control input--xlarge" value="" placeholder="Search a tag" autofocus="autofocus">
+<div id="tags-archives" class="archive">
+    <form id="filter-form" action="#">
+        <input name="tag" type="text" class="form-control input--xlarge" placeholder="Search a tag" autofocus="autofocus">
     </form>
     <section>
         <% site.tags.sort('name').each(function(item) { %>
