@@ -1,15 +1,15 @@
 // All
 // --------------------
 #main {
-    display: block;
-    height:  auto;
-    padding: 20px;
+    display:    block;
+    height:     auto;
+    padding:    20px;
+    background: #fff;
 
     #main-content {
         width:         calc(100% - 40px);
         max-width:     $main-content-width;
         margin:        0 auto;
-        background:    rgba(255, 255, 255, 0.96);
         padding :      20px;
         border-radius: 3px;
     }
