@@ -67,13 +67,13 @@ a:visited {
     text-decoration: none;
 }
 kdb {
-    display:        inline-block;
-    border-radius:  3px;
-    border:         1px solid lighten(#d0dbed, 3);
-    @include        box-shadow(0, 2px, 0px, lighten(#d0dbed, 3));
-    background:     #fafbfc;
-    padding-left:   10px;
-    padding-right:  10px;
+    display:       inline-block;
+    border-radius: 3px;
+    border:        1px solid lighten(#d0dbed, 3);
+    @include       box-shadow(0, 2px, 0px, lighten(#d0dbed, 3));
+    background:    #fafbfc;
+    padding-left:  10px;
+    padding-right: 10px;
 }
 blockquote {
     border-left: 6px solid $color-success;
