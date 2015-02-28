@@ -23,8 +23,6 @@
             text-overflow: ellipsis;
             word-break:    initial;
             overflow:      hidden;
-
-
         }
         .post-date {
             color:      $font-color-light;
@@ -41,9 +39,30 @@
             margin-bottom: 10px;
             line-height:   1.5;
 
+            .video-container {
+                position:    relative;
+                padding-top: 56.25%; // 16:9 ratio
+                height:      0px;
+                overflow:    hidden;
+
+                iframe,
+                object,
+                embed {
+                    position:      absolute;
+                    top:           0px;
+                    left:          0px;
+                    width:         calc(100% - 12px);
+                    height:        calc(100% - 12px);
+                    margin-top:    0px;
+                    padding:       5px;
+                    border:        1px solid #d0dbed;
+                    border-radius: 3px;
+                }
+            }
             img {
+                display:       block;
                 width:         auto;
-                max-width:     100%;
+                max-width:     calc(100% - 10px);
                 padding:       5px;
                 border:        1px solid #d0dbed;
                 border-radius: 3px;
