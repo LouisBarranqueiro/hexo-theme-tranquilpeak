@@ -21,7 +21,7 @@
             color:    #88909a;
             cursor:   pointer;
         }
-        .header-logo {
+        .profile-picture {
             display:       block;
             width:         30px;
             height:        30px;
@@ -34,6 +34,10 @@
             line-height: 55px;
             margin:      0px 0px 0px 0px;
             color:       lighten($font-color-base, 10);
+        }
+        a:hover,
+        a:active {
+            color: lighten($font-color-base, 35);
         }
     }
 }

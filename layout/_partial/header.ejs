@@ -1,8 +1,10 @@
 <header id="header">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
-    <% if ((theme.author.gravatar) || (theme.author.picture)) { %>
-        <img class="header-logo" src="<%- gravatar(config.email, 90) || theme.author.picture %>"/>
+    <% if ((theme.gravatar == 1) && (config.email)) { %>
+        <img class="profile-picture" src="<%- gravatar(config.email, 90) %>"/>
+    <% } else if (theme.author.picture) { %>
+        <img class="profile-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
     <% } else if (config.title) { %>
-        <h1 class="header-title text-center text-large"><%= config.title %></h1>
+        <a href="<%= config.url %>"><h1 class="header-title text-center text-large"><%= config.title %></h1></a>
     <% } %>
 </header>
