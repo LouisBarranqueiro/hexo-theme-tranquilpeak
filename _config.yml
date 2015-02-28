@@ -77,7 +77,7 @@ author:
     locate:
 
 # Customization
-gravatar: 1                           # Gravatar image (disable: 0, enable: 1)
+gravatar_image: 1                     # Gravatar image (disable: 0, enable: 1). Use the email entered in blog configuration file
 thumbnail_image: 0                    # Post thumbnail image (disable: 0, enable: 1)
 excerpt_link: continue reading &rarr; # Message display after the <!-- more --> balise
 cover: cover.png                      # Your blog cover picture located in folder 'source/images/'
