@@ -16,9 +16,16 @@
                 </div>
             <% } %>
             <div class="post-info">
+                <% if (post.link) { %>
+                <a href="<%- url_for(post.link) %>" target="_blank" itemprop="url">
+                    <h1 class="post-title"><%= post.title %></h1>
+                </a>
+
+                <% } else { %>
                 <a href="<%= post.permalink %>">
                     <h1 class="post-title"><%= post.title %></h1>
                 </a>
+                <% } %>
                 <div class="post-date text-xsmall">
                     <%= post.date.format(' MMM DD, YYYY').toUpperCase() %>
                     <% if (!post.updated) { %>
@@ -37,13 +44,19 @@
                     <% if (post.excerpt) { %>
                         <%- post.excerpt %>
                     <% } else { %>
-                        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 240) %>
+                        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 300) %>
                         <p></p>
                     <% } %>
-                    <% if (theme.excerpt_link) { %>
+                    <% if (post.link) { %>
                         <p>
-                            <a href="<%= post.permalink %>" class="link"><%- theme.excerpt_link %></a>
+                            <a href="<%- url_for(post.link) %>" target="new" class="link"><%- theme.go_to_message %> </a>
                         </p>
+                    <% } else { %>
+                        <% if (theme.read_more_message) { %>
+                            <p>
+                                <a href="<%= post.permalink %>" class="link"><%- theme.read_more_message %></a>
+                            </p>
+                        <% } %>
                     <% } %>
                 </div>
             </div>

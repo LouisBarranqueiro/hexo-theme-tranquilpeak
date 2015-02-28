@@ -1,6 +1,12 @@
 <section class="post">
     <div class="post-info">
+        <% if (post.link){ %>
+        <h1 itemprop="name">
+            <a class="link" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
+        </h1>
+        <% } else { %>
         <h1 class="post-title"><%= post.title %></h1>
+        <% } %>
         <div class="post-date text-xsmall">
             <%= post.date.format(' MMM DD, YYYY').toUpperCase() %>
             <% if (!post.updated) { %>
