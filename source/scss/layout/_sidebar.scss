@@ -1,11 +1,12 @@
 // All
 // --------------------
 #sidebar {
-    height:   100%;
-    position: fixed;
-    top:      0px;
-    overflow: scroll;
-    z-index:  9;
+    height:     100%;
+    position:   fixed;
+    top:        0px;
+    background: $sidebar-bg-color;
+    overflow:   scroll;
+    z-index:    9;
 
     ul {
         padding-left:  0px;
@@ -20,7 +21,7 @@
             line-height: 45px;
 
             a {
-                color:   #88909a;
+                color:   lighten($font-color-base, 10);
                 display: block;
                 height:  100%;
 
@@ -29,7 +30,7 @@
     }
     ul.sidebar-profile {
         li {
-            color:      #88909a;
+            color:      lighten($font-color-base, 10);
             text-align: center;
             padding-top: 18px;
 
@@ -45,9 +46,8 @@
 // --------------------
 @media #{$small-and-down} {
     #sidebar {
-        display:    none;
-        width:      $sidebar-desktop-width;
-        background: rgba(17, 26, 35, 1);
+        display: none;
+        width:   $sidebar-desktop-width;
 
         ul {
             li {
@@ -103,8 +103,7 @@
 // --------------------
 @media #{$medium-only} {
     #sidebar {
-        width:      $sidebar-tablet-width;
-        background: rgba(17, 26, 35, 0.83);
+        width: $sidebar-tablet-width;
 
         ul {
             li {
@@ -143,8 +142,7 @@
 // --------------------
 @media #{$large-and-up} {
     #sidebar {
-        width:      $sidebar-desktop-width;
-        background: rgba(17, 26, 35, 0.83);
+        width: $sidebar-desktop-width;
 
         ul {
             li {

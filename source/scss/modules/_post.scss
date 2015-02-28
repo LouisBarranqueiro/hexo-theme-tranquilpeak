@@ -16,7 +16,6 @@
         vertical-align: top;
 
         .post-title {
-            color:         #233152;
             font-size:     29px;
             margin-top:    0px;
             margin-bottom: 0px;
@@ -28,17 +27,17 @@
 
         }
         .post-date {
-            color:      #b1bdcc;
+            color:      $font-color-light;
             display:    inline-block;
             margin-top: 5px;
         }
         .post-readingtime {
-            color:   #b1bdcc;
+            color:   $font-color-light;
             display: inline-block;
         }
         .post-snippet,
         .post-content {
-            color:         #7f8994;
+            color:         $font-color-base;
             margin-bottom: 10px;
             line-height:   1.5;
 

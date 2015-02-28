@@ -32,8 +32,10 @@ $bg-color-base:  #fff;
 
 // Fonts color
 // --------------------
-$font-color-base: #77818d;
+$font-color-base: #7f8994;
+$font-color-light: #b1bdcc;
 $font-color-link: #5a95e5;
+$font-color-input: #233152;
 
 // Media Query Ranges
 // --------------------
@@ -60,6 +62,7 @@ $color-orange:  #ff7043;
 
 // Sidebar settings
 // --------------------
+$sidebar-bg-color:      rgba(17, 26, 35, 0.83);
 $sidebar-tablet-width:  75px;
 $sidebar-desktop-width: 210px;
 
