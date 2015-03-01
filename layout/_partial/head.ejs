@@ -5,7 +5,7 @@
         title += 'home';
     }
     else if (is_archive()){
-        title += 'archives';
+        title += 'all archives';
 
         if (is_month()) {
             title += ' : ' + page.year + '/' + page.month;
@@ -19,7 +19,15 @@
             title += 'tag : ' + page.tag;
         }
         else {
-            title += 'tags';
+            title += 'all tags';
+        }
+    }
+    else if (is_category()) {
+        if (page.category) {
+            title += 'category : ' + page.category;
+        }
+        else {
+            title += 'all categories';
         }
     }
     else {
