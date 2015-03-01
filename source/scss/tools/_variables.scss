@@ -57,8 +57,8 @@ $medium-only:     "only screen and (min-width : #{$small-screen-up}) and (max-wi
 $color-success: #4dc657;
 $color-danger:  #f5311d;
 $color-primary: #5a95e5;
-$color-purple:  #ba68c8;
-$color-orange:  #ff7043;
+$color-purple:  #cf6ae0;
+$color-orange:  lighten(#fa7950, 6);
 
 // Sidebar settings
 // --------------------
