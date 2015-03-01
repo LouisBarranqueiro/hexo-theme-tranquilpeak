@@ -18,8 +18,27 @@
                 <%= ' - ' + post.readingtime + ' min read - '.toUpperCase() %>
             <% } %>
         </div>
-        <div class="post-tags">
-            <%- partial('post/tag', {tags: post.tags})%>
+        <div class="post-tags-categories text-xsmall">
+            <% if (post.categories.length) { %>
+                <span>
+                    <% if (post.categories.length > 1) { %>
+                        CATEGORIES :
+                    <% } else { %>
+                        CATEGORY :
+                    <% } %>
+                </span>
+                <%- partial('post/category', {categories: post.categories})%>
+            <% } %>
+            <% if (post.tags.length) { %>
+                <span>
+                    <% if (post.tags.length > 1) { %>
+                        - TAGS :
+                    <% } else { %>
+                        - TAG :
+                    <% } %>
+                </span>
+                <%- partial('post/tag', {tags: post.tags})%>
+            <% } %>
         </div>
         <div class="post-content text-large markdown">
             <%- post.content %>
