@@ -37,8 +37,17 @@
                         <%= ' - ' + post.readingtime + ' min read - '.toUpperCase() %>
                     <% } %>
                 </div>
-                <div class="post-tags">
-                    <%- partial('post/tag', {tags: post.tags})%>
+                <div class="post-tags-categories text-xsmall">
+                    <% if (post.categories.length) { %>
+                        <span>
+                            <% if (post.categories.length > 1) { %>
+                            CATEGORIES :
+                            <% } else { %>
+                            CATEGORY :
+                            <% } %>
+                        </span>
+                        <%- partial('post/category', {categories: post.categories})%>
+                    <% } %>
                 </div>
                 <div class="post-snippet text-large">
                     <% if (post.excerpt) { %>
