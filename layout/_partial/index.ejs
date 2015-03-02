@@ -8,13 +8,6 @@
 <div class="posts">
     <% page.posts.each(function(post) { %>
         <article class="post <%= thumbNailImgClass %>">
-            <% var thumbNailImg = null; %>
-            <% if ((post.photos.length) && (theme.thumbnail_image)) { %>
-                <% thumbNailImg = post.permalink + post.photos[0]; %>
-                <div class="post-thumbnailimg">
-                    <img alt="" src="<%= thumbNailImg %>"/>
-                </div>
-            <% } %>
             <div class="post-info">
                 <% if (post.link) { %>
                 <a href="<%- url_for(post.link) %>" target="_blank" itemprop="url">
@@ -53,7 +46,7 @@
                     <% if (post.excerpt) { %>
                         <%- post.excerpt %>
                     <% } else { %>
-                        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 300) %>
+                        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %>
                         <p></p>
                     <% } %>
                     <% if (post.link) { %>
@@ -69,6 +62,13 @@
                     <% } %>
                 </div>
             </div>
+            <% var thumbNailImg = null; %>
+            <% if ((post.photos.length) && (theme.thumbnail_image)) { %>
+            <% thumbNailImg = post.permalink + post.photos[0]; %>
+            <div class="post-thumbnailimg">
+                <img alt="" src="<%= thumbNailImg %>"/>
+            </div>
+            <% } %>
             <div class="post-separator"></div>
         </article>
     <% }) %>
