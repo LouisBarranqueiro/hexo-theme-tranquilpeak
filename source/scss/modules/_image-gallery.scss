@@ -1,0 +1,41 @@
+.image-gallery {
+    padding:       5px;
+    border-radius: 3px;
+    background:    #28292d;
+
+    .image-gallery-photos {
+        position: relative;
+
+        .fancybox-button {
+            position:      absolute;
+            top:           calc(50% - 30px);
+            left:          calc(50% - 30px);
+            display:       block;
+            background:    rgba(40, 41, 45, 0.80);
+            width:         60px;
+            height:        60px;
+            line-height:   67px;
+            color:         #fff;
+            overflow:      hidden;
+            cursor:        pointer;
+            border-radius: 3px;
+        }
+        .image-gallery-img {
+            display: none;
+
+            &:nth-child(2) {
+                display: block;
+            }
+            &.loaded {
+                position: absolute;
+                display:  block;
+            }
+            img {
+                display:       block;
+                max-width:     100%;
+                margin:        0 auto;
+                border-radius: 3px;
+            }
+        }
+    }
+}

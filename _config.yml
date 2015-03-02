@@ -83,6 +83,7 @@ read_more_message: continue reading &rarr;   # Message displayed after the <!-- 
 go_to_message: go to the website  &rarr;     # Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
 cover: cover.png                             # Your blog cover picture located in folder 'source/images/'
 favicon:                                     # Your favicon located in folder 'source/images/'
+image_gallery: 1                             # Display an image gallery at the end of a post with layout photos
 
 # Miscellaneous
 google_analytics:

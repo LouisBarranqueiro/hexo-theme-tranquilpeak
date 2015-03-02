@@ -43,6 +43,9 @@
         <div class="post-content text-large markdown">
             <%- post.content %>
         </div>
+        <% if (theme.image_gallery) { %>
+            <%- partial('post/gallery', {photos: post.photos})%>
+        <% } %>
     </div>
 </section>
 <section>
