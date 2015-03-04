@@ -1,43 +1,24 @@
-<section class="post">
-    <div class="post-info">
+<section class="post-wrap">
+    <div class="post">
         <% if (post.link){ %>
-        <h1 itemprop="name">
-            <a class="link" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
-        </h1>
+            <h1 itemprop="name">
+                <a class="link" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
+            </h1>
         <% } else { %>
-        <h1 class="post-title"><%= post.title %></h1>
+            <h1 class="post-title"><%= post.title %></h1>
         <% } %>
-        <div class="post-date text-xsmall">
-            <%= post.date.format(' MMM DD, YYYY').toUpperCase() %>
-            <% if (!post.updated) { %>
-                <%= ' - updated : ' + post.updated.format('MMM DD, YYYY') %>
+        <div class="post-info text-xsmall text-uppercase">
+            <% if (post.date.isAfter(moment().subtract(7, 'days'))) { %>
+                <%= post.date.fromNow() %>
+            <% } else { %>
+                <%= post.date.format('MMM DD, YYYY') %>
             <% } %>
-        </div>
-        <div class="post-readingtime text-xsmall">
             <% if (post.readingtime) { %>
-                <%= ' - ' + post.readingtime + ' min read - '.toUpperCase() %>
+                <%= ' - ' + post.readingtime + ' min read - ' %>
             <% } %>
-        </div>
-        <div class="post-tags-categories text-xsmall">
             <% if (post.categories.length) { %>
-                <span>
-                    <% if (post.categories.length > 1) { %>
-                        CATEGORIES :
-                    <% } else { %>
-                        CATEGORY :
-                    <% } %>
-                </span>
-                <%- partial('post/category', {categories: post.categories})%>
-            <% } %>
-            <% if (post.tags.length) { %>
-                <span>
-                    <% if (post.tags.length > 1) { %>
-                        - TAGS :
-                    <% } else { %>
-                        - TAG :
-                    <% } %>
-                </span>
-                <%- partial('post/tag', {tags: post.tags})%>
+                <span>IN </span>
+                <%- partial('post/category', {categories: post.categories, style: 'link'})%>
             <% } %>
         </div>
         <div class="post-content text-large markdown">

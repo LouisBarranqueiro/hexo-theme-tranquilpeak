@@ -1,6 +1,6 @@
 // All
 // --------------------
-.post {
+.post-wrap {
     padding: 10px;
 
     .post-thumbnailimg {
@@ -10,34 +10,37 @@
             display: none;
         }
     }
-    .post-info {
+    .post {
         width:          100%;
         display:        inline-block;
         vertical-align: top;
 
         .post-title {
-            font-size:     29px;
+            font-size:     26px;
             margin-top:    0px;
             margin-bottom: 0px;
-            font-weight:   300;
+            font-weight:   700;
             text-overflow: ellipsis;
             word-break:    initial;
             overflow:      hidden;
         }
-        .post-date {
+        .post-info {
             color:      $font-color-light;
             display:    inline-block;
             margin-top: 5px;
         }
         .post-readingtime {
-            color:   $font-color-light;
-            display: inline-block;
+            color: $font-color-light;
         }
-        .post-snippet,
+        .post-snippet {
+            color:       $font-color-base;
+            line-height: 1.5;
+            margin-top:  8px;
+        }
         .post-content {
-            color:         $font-color-base;
-            margin-bottom: 10px;
-            line-height:   1.5;
+            color:       $font-color-base;
+            line-height: 1.5;
+            margin-top:  25px;
 
             .video-container {
                 position:    relative;
@@ -48,24 +51,19 @@
                 iframe,
                 object,
                 embed {
-                    position:      absolute;
-                    top:           0px;
-                    left:          0px;
-                    width:         calc(100% - 12px);
-                    height:        calc(100% - 12px);
-                    margin-top:    0px;
-                    padding:       5px;
-                    border:        1px solid #d0dbed;
-                    border-radius: 3px;
+                    position:   absolute;
+                    top:        0px;
+                    left:       0px;
+                    width:      calc(100% - 12px);
+                    height:     calc(100% - 12px);
+                    margin-top: 0px;
                 }
             }
             img {
                 display:       block;
                 width:         auto;
                 max-width:     calc(100% - 10px);
-                padding:       5px;
-                border:        1px solid #d0dbed;
-                border-radius: 3px;
+                border-radius: 5px;
             }
         }
         .post-tags-categories {
@@ -87,23 +85,19 @@
 // Tablets & desktops
 // --------------------
 @media #{$medium-and-up} {
-    .post.post--thumbnailimg {
+    .post-wrap.post--thumbnailimg {
         .post-thumbnailimg {
-            display:       inline-block;
-            border-radius: 3px;
-            padding:       5px;
-            border:        1px solid #d0dbed;
-            margin-left:   15px;
-            margin-bottom: 20px;
+            display:     inline-block;
+            margin-left: 15px;
 
             img {
                 display:       block;
                 width:         $thumb-image-width;
                 height:        $thumb-image-width;
-                border-radius: 3px;
+                border-radius: 5px;
             }
         }
-        .post-info {
+        .post {
             display: inline-block;
             width:   calc(100% - #{$thumb-image-width} - 33px);
         }
