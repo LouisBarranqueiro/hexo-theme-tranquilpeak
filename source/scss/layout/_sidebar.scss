@@ -21,20 +21,20 @@
             line-height: 45px;
 
             a {
-                color:   lighten($font-color-base, 10);
+                color:   $sidebar-font-color;
                 display: block;
                 height:  100%;
 
             }
             a:hover,
             a:active {
-                color: lighten($font-color-base, 35);
+                color: lighten($sidebar-font-color, 35);
             }
         }
     }
     ul.sidebar-profile {
         li {
-            color:       lighten($font-color-base, 10);
+            color:       $sidebar-font-color;
             text-align:  center;
             padding-top: 18px;
 

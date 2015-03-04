@@ -33,11 +33,11 @@
         .header-title {
             line-height: 55px;
             margin:      0px 0px 0px 0px;
-            color:       lighten($font-color-base, 10);
+            color:       $sidebar-font-color;
         }
         a:hover,
         a:active {
-            color: lighten($font-color-base, 35);
+            color: lighten($sidebar-font-color, 35);
         }
     }
 }
