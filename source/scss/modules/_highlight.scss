@@ -1,29 +1,13 @@
-// Highlight colors settings
-// --------------------
-$highlight-background:   #28292d;
-$highlight-current-line: #393939;
-$highlight-selection:    #515151;
-$highlight-foreground:   #eeeeee;
-$highlight-comment:      #999999;
-$highlight-red:          #f2777a;
-$highlight-orange:       #f99157;
-$highlight-yellow:       #ffcc66;
-$highlight-green:        #99cc99;
-$highlight-aqua:         #66cccc;
-$highlight-blue:         #6699cc;
-$highlight-purple:       #cc99cc;
-
 pre,
 .highlight {
-    background:    $highlight-background;
-    margin:        10px 0px;
-    padding:       15px 20px;
-    border:        1px solid #ddd;
-    border-radius: 3px;
-    overflow:      auto;
-    color:         #fff;
-    font-size:     $font-size-large;
-    line-height:   20px;
+    background:     $highlight-background;
+    margin:         10px 0px;
+    padding:        15px 20px;
+    border-radius:  5px;
+    overflow:       auto;
+    color:          #fff;
+    font-size:      $font-size-base;
+    line-height:    20px;
     letter-spacing: 0px;
 }
 .highlight .gutter pre,
@@ -32,17 +16,8 @@ pre,
 }
 pre,
 code {
-    font-family: Menlo;
-}
-code {
-    background:  #eee;
-    text-shadow: 0 1px #fff;
-    padding:     0 0.3em;
-}
-pre code {
-    background:  none;
-    text-shadow: none;
-    padding:     0;
+    font-size:      $font-size-base;
+    font-family:    Consolas;
 }
 .highlight pre {
     border:  none;
@@ -58,7 +33,6 @@ pre code {
     padding: 0;
 }
 .highlight figcaption {
-    font-size:     0.85em;
     color:         $highlight-comment;
     line-height:   1em;
     margin-bottom: 1em;

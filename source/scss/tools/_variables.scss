@@ -6,9 +6,9 @@
 // --------------------
 $font-family-base: 'Roboto', sans-serif;
 
-$font-size-xlarge: 15px;
-$font-size-large:  14px;
-$font-size-base:   13px;
+$font-size-xlarge: 17px;
+$font-size-large:  15px;
+$font-size-base:   14px;
 $font-size-small:  12px;
 $font-size-xsmall: 11px;
 
@@ -20,22 +20,73 @@ $font-size-h5: $font-size-base;
 $font-size-h6: $font-size-small;
 
 $line-height-base:     1.4;
-$letter-spacing-base:  0.3px;
+$letter-spacing-base:  0.1px;
 $headings-font-family: inherit;
 $headings-font-weight: 400;
-$headings-line-height: 1.1;
+$headings-line-height: 1.2;
 $headings-color:       #233152;
 
-// background colors
+// Markdown
+$mk-font-size-h1: 27px;
+$mk-font-size-h2: 24px;
+$mk-font-size-h3: 21px;
+$mk-font-size-h4: 18px;
+$mk-font-size-h5: 15px;
+$mk-font-size-h6: 12px;
+
+// Colors settings
 // --------------------
 $bg-color-base:  #fff;
 
-// Fonts color
-// --------------------
-$font-color-base: #7f8994;
+$color-success: #4dc657;
+$color-danger:  #f5311d;
+$color-primary: #5a95e5;
+$color-purple:  #cf6ae0;
+$color-orange:  #e75c2f;
+
+$font-color-base:  #727c88;
 $font-color-light: #b1bdcc;
-$font-color-link: #5a95e5;
+$font-color-link:  #e75c2f;
 $font-color-input: #233152;
+
+$category-color: #e75c2f;
+$tag-color:      #5a95e5;
+
+// Highlight
+$highlight-background:   #28292d;
+$highlight-current-line: #393939;
+$highlight-selection:    #515151;
+$highlight-foreground:   #eeeeee;
+$highlight-comment:      #999999;
+$highlight-red:          #f2777a;
+$highlight-orange:       #f99157;
+$highlight-yellow:       #ffcc66;
+$highlight-green:        #99cc99;
+$highlight-aqua:         #66cccc;
+$highlight-blue:         #6699cc;
+$highlight-purple:       #cc99cc;
+
+// Sidebar settings
+// --------------------
+$sidebar-bg-color:      rgba(17, 26, 35, 0.83);
+$sidebar-tablet-width:  75px;
+$sidebar-desktop-width: 210px;
+
+// Main content setting
+// --------------------
+$main-content-width: 800px;
+
+// Posts setting
+// --------------------
+$thumb-image-width: 140px;
+
+// Pagination settings
+// --------------------
+$pagination-width: 380px;
+
+// Social share widget settings
+// --------------------
+$socialshare-width: 380px;
 
 // Media Query Ranges
 // --------------------
@@ -52,44 +103,3 @@ $small-and-down:  "only screen and (max-width : #{$small-screen})" !default;
 $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only:     "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 
-// Colors settings
-// --------------------
-$color-success: #4dc657;
-$color-danger:  #f5311d;
-$color-primary: #5a95e5;
-$color-purple:  #cf6ae0;
-$color-orange:  f96a3c;
-
-$category-color: #f96a3c;
-$tag-color: #5a95e5;
-
-// Sidebar settings
-// --------------------
-$sidebar-bg-color:      rgba(17, 26, 35, 0.83);
-$sidebar-tablet-width:  75px;
-$sidebar-desktop-width: 210px;
-
-// Main content setting
-// --------------------
-$main-content-width: 800px;
-
-// Posts setting
-// --------------------
-$thumb-image-width: 130px;
-
-// Pagination settings
-// --------------------
-$pagination-width: 380px;
-
-// Social share widget settings
-// --------------------
-$socialshare-width: 380px;
-
-// Markdown settings
-// --------------------
-$mk-font-size-h1: 27px;
-$mk-font-size-h2: 24px;
-$mk-font-size-h3: 21px;
-$mk-font-size-h4: 18px;
-$mk-font-size-h5: 15px;
-$mk-font-size-h6: 12px;
