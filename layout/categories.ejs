@@ -4,26 +4,26 @@
     </form>
     <section>
         <% site.categories.sort('name').each(function(item) { %>
-        <a class="a-category category" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
-            <%= item.name %>
-        </a>
+            <a class="a-category category category--block" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+                <%= item.name %>
+            </a>
         <% }); %>
     </section>
     <section class="box-group">
         <% site.categories.sort('name').each(function(item) { %>
-        <div id="<%= 'posts-list-' + item.name %>" class="a-posts box" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
-            <a href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>">
-                <h1 class="text-strong text-large"><%= item.name.toUpperCase() + ' (' + item.length + ')' %></h1>
-            </a>
-            <ul >
-                <% get_posts({'query':{'categories': item.name}}).each(function(post) { %>
-                <li>
-                    <a class="link text-base" href="<%= post.permalink %>"><%= post.title %></a>
-                    <span><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
-                </li>
-                <% }) %>
-            </ul>
-        </div>
+            <div id="<%= 'posts-list-' + item.name %>" class="a-posts box" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+                <a href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>">
+                    <h1 class="text-strong text-large"><%= item.name.toUpperCase() + ' (' + item.length + ')' %></h1>
+                </a>
+                <ul >
+                    <% get_posts({'query':{'categories': item.name}}).each(function(post) { %>
+                    <li>
+                        <a class="link text-base" href="<%= post.permalink %>"><%= post.title %></a>
+                        <span><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                    </li>
+                    <% }) %>
+                </ul>
+            </div>
         <% }); %>
     </section>
 </div>
