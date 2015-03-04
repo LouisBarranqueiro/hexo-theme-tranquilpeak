@@ -1,18 +1,29 @@
 a.tag,
 .tag {
-    display:        inline-block;
-    width:          auto;
-    height:         auto;
-    background:     $font-color-link;
-    color:          #fff;
-    border-radius:  3px;
-    text-transform: uppercase;
-    padding:        2px 10px 0px 10px;
-    text-align:     center;
-    font-size:      10px;
     letter-spacing: 0.3px;
-    margin-right:   5px;
-    margin-bottom:   5px;
-    @include tag-variant($color-primary);
+    color:          $tag-color;
+    text-transform: uppercase;
 }
+a.tag--link:hover,
+.tag--link:hover {
+    text-decoration: underline;
+}
+a.tag--block,
+.tag--block {
+    display:       inline-block;
+    width:         auto;
+    height:        auto;
+    background:    none;
+    border-radius: 3px;
+    padding:       2px 10px 0px 10px;
+    text-align:    center;
+    margin-right:  5px;
+    margin-bottom: 5px;
+    font-size:     10.5px;
+    border:        1px solid $tag-color;
 
+    &:hover {
+        color:  darken($tag-color, 10);
+        border: 1px solid darken($tag-color, 10);
+    }
+}

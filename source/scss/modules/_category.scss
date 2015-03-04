@@ -1,17 +1,29 @@
 a.category,
 .category {
-    display:        inline-block;
-    width:          auto;
-    height:         auto;
-    background:     $font-color-link;
-    color:          #fff;
-    border-radius:  3px;
-    text-transform: uppercase;
-    padding:        2px 10px 0px 10px;
-    text-align:     center;
-    font-size:      10px;
     letter-spacing: 0.3px;
-    margin-right:   5px;
-    margin-bottom:  5px;
-    @include tag-variant($color-orange);
+    color:          $category-color;
+    text-transform: uppercase;
+}
+a.category--link:hover,
+.category--link:hover {
+    text-decoration: underline;
+}
+a.category--block,
+.category--block {
+    display:       inline-block;
+    width:         auto;
+    height:        auto;
+    background:    none;
+    border-radius: 3px;
+    padding:       2px 10px 0px 10px;
+    text-align:    center;
+    margin-right:  5px;
+    margin-bottom: 5px;
+    font-size:     10.5px;
+    border:        1px solid $category-color;
+
+    &:hover {
+        color:  darken($category-color, 10);
+        border: 1px solid darken($category-color, 10);
+    }
 }
