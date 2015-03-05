@@ -3,15 +3,13 @@
 #main {
     display:    block;
     height:     auto;
-    padding:    20px;
     background: #fff;
 
     #main-content {
-        width:         calc(100% - 40px);
-        max-width:     $main-content-width;
-        margin:        0 auto;
-        padding:       20px;
-        border-radius: 3px;
+        width:     calc(100% - 40px);
+        max-width: $main-content-width;
+        margin:    0 auto;
+        padding:   20px;
     }
 }
 
@@ -20,7 +18,7 @@
 @media #{$small-and-down} {
     #main {
         display: block;
-        width:   calc(100% - 40px);
+        width:   calc(100%);
     }
 }
 
@@ -29,7 +27,7 @@
 @media #{$medium-only} {
     #main {
         float: right;
-        width: calc(100% - (#{$sidebar-tablet-width} + 40px));
+        width: calc(100% - #{$sidebar-tablet-width});
     }
 }
 
@@ -38,6 +36,6 @@
 @media #{$large-and-up} {
     #main {
         float: right;
-        width: calc(100% - (#{$sidebar-desktop-width} + 40px));
+        width: calc(100% - #{$sidebar-desktop-width});
     }
 }
