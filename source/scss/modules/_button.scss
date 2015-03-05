@@ -1,15 +1,16 @@
 .btn {
     font-size:      $font-size-base;
+    background:     #fff;
     width:          auto;
     height:         auto;
-    border-radius:  3px;
+    border-radius:  5px;
     letter-spacing: $letter-spacing-base;
     padding:        8px 15px;
-    color:          #fff;
-    border:         none;
-    box-shadow:     rgba(0, 0, 0, 0.14902) 0px 4px 9px 0px;
     cursor:         pointer;
-    margin:         0px 0px 0px 0px;
+    margin:         0px;
+}
+.btn--default {
+    @include button-color-variant($font-color-light);
 }
 .btn--success {
     @include button-color-variant($color-success);
@@ -20,18 +21,15 @@
 .btn--danger {
     @include button-color-variant($color-danger);
 }
-.btn--facebook {
-    @include button-color-variant(#33508e);
-}
-.btn--twitter {
-    @include button-color-variant(#53a0d9);
-}
-.btn--googleplus {
-    @include button-color-variant(#d84232);
-}
 .btn--xsmall {
     @include button-size-variant($font-size-xsmall, 5px, 8px);
 }
 .btn--small {
     @include button-size-variant($font-size-small, 8px, 10px);
+}
+.btn--disabled,
+.btn--disabled:hover {
+    color:  lighten($font-color-light, 10);
+    border: 1px solid lighten($font-color-light, 10);
+    cursor: not-allowed;
 }
