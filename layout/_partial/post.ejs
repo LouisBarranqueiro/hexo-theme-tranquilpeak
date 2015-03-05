@@ -28,9 +28,7 @@
             <%- partial('post/gallery', {photos: post.photos})%>
         <% } %>
     </div>
-</section>
-<section>
-    <%- partial('post/bottombar') %>
+    <%- partial('post/control') %>
     <% if (config.disqus_shortname) { %>
         <%- partial('post/disqus') %>
     <% } %>
