@@ -4,7 +4,7 @@
     clear:       both;
     margin:      20px 0px;
 
-    ol.post-control-panel{
+    ol.post-control-panel {
         padding-left: 0px;
 
         ul {
@@ -57,7 +57,7 @@
 // --------------------
 @media #{$small-and-down} {
     .post-control-wrap {
-        ol {
+        ol.post-control-panel {
             ul.post-control-share {
                 width: 100%;
 
