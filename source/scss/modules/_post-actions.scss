@@ -1,10 +1,12 @@
-.post-control-wrap {
+// All
+// --------------------
+.post-actions {
     height:      60px;
     line-height: 60px;
     clear:       both;
-    margin:      20px 0px;
 
-    ol.post-control-panel {
+    ol.post-actions-panel {
+        margin:       0px;
         padding-left: 0px;
 
         ul {
@@ -17,7 +19,7 @@
                 width:      auto;
                 text-align: center;
 
-                .post-control-btn {
+                .post-actions-btn {
                     span {
                         margin-left: 10px;
                         font-size:   $font-size-small;
@@ -25,19 +27,19 @@
                 }
             }
         }
-        ul.post-control-nav {
+        ul.post-actions-nav {
             width: 50%;
 
             li {
                 float: left;
             }
             li:nth-child(n + 2) {
-                .post-control-btn {
+                .post-actions-btn {
                     margin-left: 15px;
                 }
             }
         }
-        ul.post-control-share {
+        ul.post-actions-share {
             width: 50%;
 
             li {
@@ -45,20 +47,19 @@
 
             }
             li:nth-child(n + 2) {
-                .post-control-btn {
+                .post-actions-btn {
                     margin-right: 15px;
                 }
             }
         }
     }
 }
-
 // Mobiles
 // --------------------
 @media #{$small-and-down} {
-    .post-control-wrap {
-        ol.post-control-panel {
-            ul.post-control-share {
+    .post-actions {
+        ol.post-actions-panel {
+            ul.post-actions-share {
                 width: 100%;
 
                 li {
