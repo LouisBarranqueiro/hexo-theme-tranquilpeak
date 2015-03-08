@@ -20,11 +20,11 @@ $font-size-h5: $font-size-base;
 $font-size-h6: $font-size-small;
 
 $line-height-base:     1.4;
-$letter-spacing-base:  0.1px;
+$letter-spacing-base:  0.3px;
 $headings-font-family: inherit;
 $headings-font-weight: 400;
 $headings-line-height: 1.2;
-$headings-color:       #233152;
+$headings-color:       #101b28;
 
 // Markdown
 $mk-font-size-h1: 27px;
@@ -44,12 +44,12 @@ $color-primary: #5a95e5;
 $color-purple:  #cf6ae0;
 $color-orange:  #e75c2f;
 
-$font-color-base:  #233152;
+$font-color-base:  #6e7b8d;
 $font-color-light: #b1bdcc;
-$font-color-link:  #e75c2f;
+$font-color-link:  darken(#5A95E5, 10);
 $font-color-input: #233152;
 
-$category-color: #e75c2f;
+$category-color: darken(#5A95E5, 10);
 $tag-color:      #5a95e5;
 
 // Highlight

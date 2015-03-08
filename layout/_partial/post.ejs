@@ -7,21 +7,17 @@
         <% } else { %>
             <h1 class="post-title"><%= post.title %></h1>
         <% } %>
-        <div class="post-info text-xsmall text-uppercase">
+        <div class="post-info">
             <% if (post.date.isAfter(moment().subtract(7, 'days'))) { %>
                 <%= post.date.fromNow() %>
             <% } else { %>
                 <%= post.date.format('MMM DD, YYYY') %>
             <% } %>
             <% if (post.readingtime) { %>
-                <%= ' - ' + post.readingtime + ' min read - ' %>
-            <% } %>
-            <% if (post.categories.length) { %>
-                <span>IN </span>
-                <%- partial('post/category', {categories: post.categories, style: 'link'})%>
+                <%= ' - ' + post.readingtime + ' min read' %>
             <% } %>
         </div>
-        <div class="post-content text-large markdown">
+        <div class="post-content markdown">
             <%- post.content %>
         </div>
         <% if (theme.image_gallery) { %>

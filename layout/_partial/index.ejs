@@ -18,18 +18,14 @@
                         <h1 class="post-title"><%= post.title %></h1>
                     </a>
                 <% } %>
-                <div class="post-info text-xsmall text-uppercase">
+                <div class="post-info">
                     <% if (post.date.isAfter(moment().subtract(7, 'days'))) { %>
                         <%= post.date.fromNow() %>
                     <% } else { %>
                         <%= post.date.format('MMM DD, YYYY') %>
                     <% } %>
-                    <% if (post.categories.length) { %>
-                        <span>IN </span>
-                        <%- partial('post/category', {categories: post.categories, style: 'link'})%>
-                    <% } %>
                 </div>
-                <div class="post-snippet text-large">
+                <div class="post-snippet">
                     <% if (post.excerpt) { %>
                         <%- post.excerpt %>
                     <% } else { %>
@@ -38,13 +34,13 @@
                     <% } %>
                     <% if (post.link) { %>
                         <p>
-                            <a href="<%- url_for(post.link) %>" target="new" class="link text-uppercase text-xsmall"><%- theme.go_to_message %> </a>
+                            <a href="<%- url_for(post.link) %>" target="new" class="link text-base"><%- theme.go_to_message %> </a>
                         </p>
                     <% } else { %>
                         <% if (theme.read_more_message) { %>
                             <p>
-                                <a href="<%= post.permalink %>" class="link text-uppercase text-xsmall"><%- theme.read_more_message %></a>
-                                <span class="post-readingtime text-xsmall text-uppercase"><%= ' - ' + post.readingtime + ' min read' %></span>
+                                <a href="<%= post.permalink %>" class="link text-base"><%- theme.read_more_message %></a>
+                                <span class="post-readingtime text-base"><%= ' - ' + post.readingtime + ' min read' %></span>
                             </p>
                         <% } %>
                     <% } %>

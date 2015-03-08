@@ -16,10 +16,10 @@
         vertical-align: top;
 
         .post-title {
-            font-size:     26px;
+            font-size:     28px;
             margin-top:    0px;
             margin-bottom: 0px;
-            font-weight:   700;
+            font-weight:   400;
             text-overflow: ellipsis;
             word-break:    initial;
             overflow:      hidden;
@@ -28,19 +28,25 @@
             color:      $font-color-light;
             display:    inline-block;
             margin-top: 5px;
+            font-size: 13px;
         }
         .post-readingtime {
             color: $font-color-light;
+            font-size: 13px;
         }
         .post-snippet {
             color:       $font-color-base;
             line-height: 1.5;
             margin-top:  8px;
+            font-size:   15.5px;
+            letter-spacing: 0.1px;
         }
         .post-content {
             color:       $font-color-base;
             line-height: 1.5;
             margin-top:  25px;
+            font-size:   15.5px;
+            letter-spacing: 0.1px;
 
             .video-container {
                 position:    relative;
