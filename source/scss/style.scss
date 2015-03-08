@@ -9,7 +9,6 @@
 @import 'tools/mixins/transform.scss';
 @import 'tools/mixins/transition.scss';
 
-
 // Base
 @import 'base/base.scss';
 
@@ -26,16 +25,16 @@
 @import 'modules/button.scss';
 @import 'modules/category.scss';
 @import 'modules/disqus.scss';
+@import 'modules/form.scss';
+@import 'modules/hide.scss';
 @import 'modules/highlight.scss';
 @import 'modules/image-gallery.scss';
+@import 'modules/markdown.scss';
+@import 'modules/post.scss';
+@import 'modules/post-actions.scss';
 @import 'modules/form.scss';
 @import 'modules/hide.scss';
 @import 'modules/markdown.scss';
-@import 'modules/pagination.scss';
 @import 'modules/tag.scss';
 @import 'modules/tooltip.scss';
 @import 'modules/type.scss';
-@import 'modules/post.scss';
-@import 'modules/post-control.scss';
-@import 'modules/post-nav.scss';
-@import 'modules/social-share.scss';
