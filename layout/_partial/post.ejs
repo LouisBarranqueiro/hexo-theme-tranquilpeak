@@ -28,9 +28,14 @@
             <%- partial('post/gallery', {photos: post.photos})%>
         <% } %>
     </div>
-    <%- partial('post/control') %>
+    <div class="post-footer">
+        <%- partial('post/actions') %>
+    </div>
     <% if (config.disqus_shortname) { %>
         <%- partial('post/disqus') %>
     <% } %>
+    <div class="post-bottom-bar">
+        <%- partial('post/actions') %>
+    </div>
 </section>
 
