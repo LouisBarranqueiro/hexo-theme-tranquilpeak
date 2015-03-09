@@ -16,37 +16,38 @@
         vertical-align: top;
 
         .post-title {
-            font-size:     28px;
-            margin-top:    0px;
+            margin-top: 0px;
             margin-bottom: 0px;
-            font-weight:   400;
-            text-overflow: ellipsis;
-            word-break:    initial;
-            overflow:      hidden;
+            word-break: initial;
+            overflow: hidden;
         }
-        .post-info {
-            color:      $font-color-light;
-            display:    inline-block;
-            margin-top: 5px;
-            font-size: 13px;
+        .post-title:hover {
+            text-decoration: none;
         }
+        .post-info,
         .post-readingtime {
             color: $font-color-light;
-            font-size: 13px;
         }
-        .post-snippet {
+        .post-info,
+        .post-readingtime,
+        .post-excerpt_link {
+            font-family: 'Open Sans', sans-serif;
+            font-size:   $font-size-small;
+            font-weight: 400;
+        }
+        .post-excerpt_link {
+            margin-top:-15px;
+        }
+        .post-snippet,
+        .post-content {
+            font-family: 'Merriweather', serif;
             color:       $font-color-base;
-            line-height: 1.5;
-            margin-top:  8px;
-            font-size:   15.5px;
-            letter-spacing: 0.1px;
+            margin-top:  15px;
+            font-weight: 300;
+
         }
         .post-content {
-            color:       $font-color-base;
-            line-height: 1.5;
             margin-top:  25px;
-            font-size:   15.5px;
-            letter-spacing: 0.1px;
 
             .video-container {
                 position:    relative;
@@ -83,7 +84,7 @@
         width:         100%;
         height:        1px;
         border-bottom: 1px solid #eef2f8;
-        margin:        10px 0px 10px 0px;
+        margin:        0px 0px 10px 0px;
 
     }
     .post-footer {
@@ -99,7 +100,6 @@
 
     }
 }
-
 // Mobiles
 // --------------------
 @media #{$small-and-down} {
@@ -109,7 +109,6 @@
         padding: 0 10px;
     }
 }
-
 // Tablets
 // --------------------
 @media #{$medium-only} {
