@@ -13,8 +13,9 @@
             <% } else { %>
                 <%= post.date.format('MMM DD, YYYY') %>
             <% } %>
-            <% if (post.readingtime) { %>
-                <%= ' - ' + post.readingtime + ' min read' %>
+            <% if (post.categories.length > 0) { %>
+                <span>in </span>
+                <%- partial('post/category', {categories: post.categories, style: 'link'})%>
             <% } %>
         </div>
         <div class="post-content markdown">
