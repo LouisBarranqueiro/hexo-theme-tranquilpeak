@@ -1,20 +1,26 @@
 html {
     font-family:                 $font-family-base;
-    -webkit-text-size-adjust:    100%;
+    font-size:                   62.5%;
     -ms-text-size-adjust:        100%;
-    -webkit-tap-highlight-color: $bg-color-base;
+    -webkit-text-size-adjust:    100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body
 {
-    width:          100%;
-    height:         100%;
-    margin:         0px;
-    padding:        0px;
-    background:     $bg-color-base;
-    font-family:    $font-family-base;
-    font-size:      $font-size-base;
-    line-height:    $line-height-base;
-    letter-spacing: $letter-spacing-base;
+    width:                         100%;
+    height:                        100%;
+    margin:                        0px;
+    padding:                       0px;
+    background:                    $bg-color-base;
+    font-family:                   $font-family-base;
+    font-size:                     $font-size-base;
+    line-height:                   $line-height-base;
+    letter-spacing:                $letter-spacing-base;
+    -webkit-font-feature-settings: 'kern' 1;
+    -moz-font-feature-settings:    'kern' 1;
+    -o-font-feature-settings:      'kern' 1;
+    text-rendering:                geometricPrecision;
+    -webkit-font-smoothing:        subpixel-antialiased;
 }
 h1,
 h2,
@@ -22,20 +28,25 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $headings-font-family;
-    font-weight: $headings-font-weight;
-    line-height: $headings-line-height;
-    color:       $headings-color;
+    font-family:                   $headings-font-family;
+    font-weight:                   $headings-font-weight;
+    line-height:                   $headings-line-height;
+    color:                         $headings-color;
+    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -moz-font-feature-settings:    'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -o-font-feature-settings:      'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 }
 h1
 h2
 h3 {
-    margin-top:    20px;
-    margin-bottom: 10px;
+    letter-spacing: -0.04em;
+    margin-top:     20px;
+    margin-bottom:  10px;
 }
 h4
 h5
 h6 {
+    letter-spacing: 0.1em;
     margin-top:    10px;
     margin-bottom: 10px;
 }
@@ -57,14 +68,23 @@ h5 {
 h6 {
     font-size: $font-size-h6;
 }
-p {
-    margin: 0px 0px 10px 0px;
+p, ul, ol, dl {
+    -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    -moz-font-feature-settings:    'liga' 1, 'onum' 1, 'kern' 1;
+    -o-font-feature-settings:      'liga' 1, 'onum' 1, 'kern' 1;
+    margin:                        0 0 1.75em 0;
 }
 a,
 a:hover,
 a:active,
 a:visited {
+    cursor: pointer;
+    color:           $font-color-link;
     text-decoration: none;
+
+}
+a:hover {
+    text-decoration: underline;
 }
 kdb {
     display:       inline-block;
