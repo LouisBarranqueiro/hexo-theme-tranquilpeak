@@ -10,13 +10,13 @@
         <article class="post-wrap <%= thumbNailImgClass %>">
             <div class="post">
                 <% if (post.link) { %>
-                    <a href="<%- url_for(post.link) %>" target="_blank" itemprop="url">
-                        <h1 class="post-title"><%= post.title %></h1>
-                    </a>
+                    <h1 class="post-title ">
+                        <a class="link-unstyled" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
+                    </h1>
                 <% } else { %>
-                    <a href="<%= post.permalink %>">
-                        <h1 class="post-title"><%= post.title %></h1>
-                    </a>
+                <h1 class="post-title ">
+                    <a class="link-unstyled" href="<%- url_for(post.permalink) %>" target="_blank" itemprop="url"><%= post.title %></a>
+                </h1>
                 <% } %>
                 <div class="post-info">
                     <% if (post.date.isAfter(moment().subtract(7, 'days'))) { %>
@@ -24,25 +24,28 @@
                     <% } else { %>
                         <%= post.date.format('MMM DD, YYYY') %>
                     <% } %>
+                    <% if (post.categories.length > 0) { %>
+                        <span>in </span>
+                        <%- partial('post/category', {categories: post.categories, style: 'link'})%>
+                    <% } %>
                 </div>
                 <div class="post-snippet">
                     <% if (post.excerpt) { %>
                         <%- post.excerpt %>
                     <% } else { %>
-                        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %>
-                        <p></p>
-                    <% } %>
-                    <% if (post.link) { %>
                         <p>
-                            <a href="<%- url_for(post.link) %>" target="new" class="link text-base"><%- theme.go_to_message %> </a>
-                        </p>
+                            <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 250) %><br>
+                    <% } %>
+                    <% if ((post.link) && (theme.go_to_message)) { %>
+                            <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= theme.go_to_message %> </a>
                     <% } else { %>
                         <% if (theme.read_more_message) { %>
-                            <p>
-                                <a href="<%= post.permalink %>" class="link text-base"><%- theme.read_more_message %></a>
-                                <span class="post-readingtime text-base"><%= ' - ' + post.readingtime + ' min read' %></span>
-                            </p>
+                            <a href="<%= post.permalink %>" class="post-excerpt_link link "><%- theme.read_more_message %></a>
+                            <span class="post-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
                         <% } %>
+                    <% } %>
+                    <% if (!post.excerpt) { %>
+                        </p>
                     <% } %>
                 </div>
             </div>
