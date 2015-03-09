@@ -4,27 +4,29 @@
 
 // Typography settings
 // --------------------
-$font-family-base: 'Roboto', sans-serif;
+$font-family-base:     'Open Sans', sans-serif;
+$font-size-base:       1.5rem;
+$line-height-base:     1.8em;
+$letter-spacing-base:  0.01rem;
+$font-feature-base:    'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 
-$font-size-xlarge: 17px;
-$font-size-large:  15px;
-$font-size-base:   14px;
-$font-size-small:  12px;
-$font-size-xsmall: 11px;
+$font-size-h1: 2em;
+$font-size-h2: 1.8em;
+$font-size-h3: 1.6em;
+$font-size-h4: 1.3em;
+$font-size-h5: 1.2em;
+$font-size-h6: 1.1em;
 
-$font-size-h1: 36px;
-$font-size-h2: 30px;
-$font-size-h3: 24px;
-$font-size-h4: 18px;
-$font-size-h5: $font-size-base;
-$font-size-h6: $font-size-small;
+$font-size-xlarge: 1.2em;
+$font-size-large:  1.1em;
+$font-size-small:  0.8em;
+$font-size-xsmall: 0.5em;
 
-$line-height-base:     1.4;
-$letter-spacing-base:  0.3px;
-$headings-font-family: inherit;
-$headings-font-weight: 400;
-$headings-line-height: 1.2;
-$headings-color:       #101b28;
+
+$headings-font-family: 'Open Sans', sans-serif;
+$headings-font-weight: 700;
+$headings-line-height: 1.23em;
+$headings-color:       #4a4a4a;
 
 // Markdown
 $mk-font-size-h1: 27px;
@@ -44,13 +46,13 @@ $color-primary: #5a95e5;
 $color-purple:  #cf6ae0;
 $color-orange:  #e75c2f;
 
-$font-color-base:  #6e7b8d;
-$font-color-light: #b1bdcc;
-$font-color-link:  darken(#5A95E5, 10);
-$font-color-input: #233152;
+$font-color-base:  #5d686f;
+$font-color-light: #9eabb3;
+$font-color-link:  #64b5f6;
+$font-color-input: #5d686f;
 
-$category-color: darken(#5A95E5, 10);
-$tag-color:      #5a95e5;
+$category-color: #64b5f6;
+$tag-color:      #64b5f6;
 
 // Highlight
 $highlight-background:   #28292d;
