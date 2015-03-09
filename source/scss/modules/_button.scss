@@ -9,6 +9,7 @@
     cursor:         pointer;
     margin:         0px;
 }
+// Colors variant
 .btn--default {
     @include button-color-variant($font-color-light);
 }
@@ -21,12 +22,7 @@
 .btn--danger {
     @include button-color-variant($color-danger);
 }
-.btn--xsmall {
-    @include button-size-variant($font-size-xsmall, 5px, 8px);
-}
-.btn--small {
-    @include button-size-variant($font-size-small, 8px, 10px);
-}
+// States variant
 .btn--disabled,
 .btn--disabled:hover {
     color:  lighten($font-color-light, 10);
