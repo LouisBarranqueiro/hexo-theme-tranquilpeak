@@ -1,20 +1,36 @@
 .archive {
-    .ol,
-    ul {
-        list-style: none;
+    .a-list {
+        .a-list-title {
 
-        li {
-            font-size:     $font-size-large;
-            margin-bottom: 5px;
-            color:         $font-color-base;
-
-            a {
-                margin-left: 10px;
+            &:hover {
+                text-decoration: underline;
             }
         }
-        li::before {
-            font-family: "FontAwesome";
-            content:     "\f0da";
+        .ol,
+        ul {
+            list-style: none;
+
+            li {
+                font-size: 0.9em;
+                color:     $font-color-base;
+
+                .a-list-post {
+                    margin-left: 10px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                span {
+                    color: $font-color-light;
+                }
+            }
+            li::before {
+                font-family: "FontAwesome";
+                content:     "\f0da";
+                font-size:   $font-size-small;
+            }
         }
     }
+
 }
