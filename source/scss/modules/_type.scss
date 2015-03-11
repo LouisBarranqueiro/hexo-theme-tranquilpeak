@@ -62,13 +62,28 @@
 .text-underline {
     text-decoration: underline;
 }
-
-// Link
-a.link {
+.text-color-light {
+    color: $font-color-light;
+}
+.text-color-base {
+    color: $font-color-base;
+}
+.text-color-link {
     color: $font-color-link;
-    cursor: pointer;
+}
+.text-color-base {
+    color: $font-color-base;
+}
+// Link
+a.link-unstyled,
+a.link-unstyled:hover,
+a.link-unstyled:active {
+    cursor:          pointer;
+    color:           inherit;
+    text-decoration: none ;
 }
 a.link:hover,
 a.link:active {
     text-decoration: underline;
 }
+
