@@ -11,14 +11,14 @@
     </section>
     <section class="box-group">
         <% site.categories.sort('name').each(function(item) { %>
-            <div id="<%= 'posts-list-' + item.name %>" class="a-posts box" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
-                <a href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>">
-                    <h1 class="text-strong text-large"><%= item.name.toUpperCase() + ' (' + item.length + ')' %></h1>
-                </a>
+            <div id="<%= 'posts-list-' + item.name %>" class="a-list a-posts box" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+                <h4 class="a-list-title">
+                    <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>"><%= item.name + ' (' + item.length + ')' %></a>
+                </h4>
                 <ul >
                     <% get_posts({'query':{'categories': item.name}}).each(function(post) { %>
                     <li>
-                        <a class="link text-base" href="<%= post.permalink %>"><%= post.title %></a>
+                        <a class="link-unstyled a-list-post" href="<%= post.permalink %>"><%= post.title %></a>
                         <span><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
                     </li>
                     <% }) %>
