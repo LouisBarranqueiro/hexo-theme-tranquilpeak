@@ -42,9 +42,6 @@
     <meta name="author" content="<%= config.author %>">
     <meta name="description" content="<%= config.title %>">
     <link rel="icon" href="<%- url_for(theme.image_dir + '/' + theme.favicon) %>">
-    <link rel="stylesheet" type="text/css" href="<%- url_for('vendor/fontawesome/css/font-awesome.min.css') %>">
-    <link rel="stylesheet" type="text/css" href="<%- url_for('vendor/fancybox/source/jquery.fancybox.css') %>">
-    <link rel="stylesheet" type="text/css" href="<%- url_for('vendor/fancybox/source/helpers/jquery.fancybox-thumbs.css') %>">
-    <link rel="stylesheet" type="text/css" href="<%- url_for('css/style.min.css') %>">
+    <%- css('prod/css/style.min.css') %>
     <link rel="alternative" type="application/atom+xml" title="RSS" href="<%= theme.rss %>">
 </head>
