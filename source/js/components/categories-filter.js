@@ -9,8 +9,8 @@
 	 */
 	var CategoriesFilter = function (categoriesArchivesElem) {
 		this.$inputSearch = $(categoriesArchivesElem + ' #filter-form input[name=category]');
-		this.categories   = categoriesArchivesElem + ' .a-category';
-		this.posts        = categoriesArchivesElem + ' .a-posts';
+		this.categories   = categoriesArchivesElem + ' .category';
+		this.posts        = categoriesArchivesElem + ' .archive';
 		this.$categories  = $(this.categories);
 		this.$posts       = $(this.posts);
 	};
@@ -74,7 +74,11 @@
 	};
 	
 	$(document).ready(function() {
-		var categoriesFilter = new CategoriesFilter('#categories-archives');
-		categoriesFilter.init();
+		var categoriesFilter;
+
+		if ($('#categories-archives').is('visible')) {
+			categoriesFilter = new CategoriesFilter('#categories-archives');
+			categoriesFilter.init();
+		}
 	})
 }(jQuery);

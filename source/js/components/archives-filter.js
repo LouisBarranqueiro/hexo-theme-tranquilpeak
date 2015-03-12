@@ -8,9 +8,9 @@
 	 */
 	var ArchivesFilter = function (archivesElem) {
 		this.$inputSearch = $(archivesElem + ' #filter-form input[name=date]');
-		this.postsYear    = archivesElem + ' .a-posts-year';
-		this.postsMonth   = archivesElem + ' .a-posts-month';
-		this.postsDay     = archivesElem + ' .a-posts-day';
+		this.postsYear    = archivesElem + ' .archive-year';
+		this.postsMonth   = archivesElem + ' .archive-month';
+		this.postsDay     = archivesElem + ' .archive-day';
 		this.$postsYear   = $(this.postsYear);
 		this.$postsMonth  = $(this.postsMonth);
 		this.$postsDay    = $(this.postsDay);
@@ -86,8 +86,12 @@
 	};
 
 	$(document).ready(function() {
-		var archivesFilter = new ArchivesFilter('#archives');
-		archivesFilter.init();
+		var archivesFilter;
+
+		if ($('#archives').is('visible')) {
+			archivesFilter = new ArchivesFilter('#archives');
+			archivesFilter.init();
+		}
 	})
 
 }(jQuery);

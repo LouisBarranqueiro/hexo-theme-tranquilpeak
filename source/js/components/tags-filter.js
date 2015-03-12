@@ -9,8 +9,8 @@
 	 */
 	var TagsFilter = function (tagsArchivesElem) {
 		this.$inputSearch = $(tagsArchivesElem + ' #filter-form input[name=tag]');
-		this.tags         = tagsArchivesElem + ' .a-tag';
-		this.posts        = tagsArchivesElem + ' .a-posts';
+		this.tags         = tagsArchivesElem + ' .tag';
+		this.posts        = tagsArchivesElem + ' .archive';
 		this.$tags        = $(this.tags);
 		this.$posts       = $(this.posts);
 	};
@@ -74,7 +74,10 @@
 	};
 
 	$(document).ready(function() {
-		var tagsFilter = new TagsFilter('#tags-archives');
-		tagsFilter.init();
+		var tagsFilter;
+		if ($('#tags-archives').is('visible')) {
+			tagsFilter = new TagsFilter('#tags-archives');
+			tagsFilter.init();
+		}
 	})
 }(jQuery);
