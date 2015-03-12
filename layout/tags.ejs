@@ -1,25 +1,25 @@
-<div id="tags-archives" class="archive">
+<div id="tags-archives" class="archive-group">
     <form id="filter-form" action="#">
         <input name="tag" type="text" class="form-control input--xlarge" placeholder="Search a tag" autofocus="autofocus">
     </form>
     <section>
         <% site.tags.sort('name').each(function(item) { %>
-            <a class="a-tag tag tag--block" href="<%= '#' + item.name + '-list' %>" data-tag="<%= item.name.replace('.','__') %>">
+            <a class="tag tag--block" href="<%= '#' + item.name + '-list' %>" data-tag="<%= item.name.replace('.','__') %>">
                 <%= item.name %>
             </a>
         <% }); %>
     </section>
     <section class="box-group">
         <% site.tags.sort('name').each(function(item) { %>
-            <div id="<%= item.name + '-list' %>" class="a-list box" data-tag="<%= item.name.replace('.','__') %>">
-                <h5 class="a-list-title">
-                    <a class="link-unstyled" href="<%- url_for('tags/' + item.name )%>"><%= item.name + ' (' + item.length + ')' %></a>
+            <div id="<%= item.name + '-list' %>" class="archive" data-tag="<%= item.name.replace('.','__') %>">
+                <h5 class="archive-title">
+                    <a class="link-unstyled" href="<%- url_for('tags/' + item.name ) %>"><%= item.name + ' (' + item.length + ')' %></a>
                 </h5>
-                <ul >
+                <ul class="archive-post-group">
                     <% get_posts({'query':{'tags': item.name}}).each(function(post) { %>
-                    <li>
-                        <a class="link-unstyled a-list-post" href="<%= post.permalink %>"><%= post.title %></a>
-                        <span class=""><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                    <li class="archive-post">
+                        <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title %></a>
+                        <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
                     </li>
                     <% }) %>
                 </ul>
