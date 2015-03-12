@@ -9,7 +9,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "source/vendor/",
+    "source/bower_components/",
     "test",
     "tests"
   ],
