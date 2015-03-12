@@ -75,7 +75,7 @@
 
 	$(document).ready(function() {
 		var tagsFilter;
-		if ($('#tags-archives').is('visible')) {
+		if ($('#tags-archives').length) {
 			tagsFilter = new TagsFilter('#tags-archives');
 			tagsFilter.init();
 		}

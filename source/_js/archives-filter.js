@@ -88,7 +88,7 @@
 	$(document).ready(function() {
 		var archivesFilter;
 
-		if ($('#archives').is('visible')) {
+		if ($('#archives').length) {
 			archivesFilter = new ArchivesFilter('#archives');
 			archivesFilter.init();
 		}

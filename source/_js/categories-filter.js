@@ -25,6 +25,7 @@
 			self.filter(self.getSearch());
 		})
 	}
+
 	
 	/**
 	 * Get the search entered by user
@@ -76,7 +77,7 @@
 	$(document).ready(function() {
 		var categoriesFilter;
 
-		if ($('#categories-archives').is('visible')) {
+		if ($('#categories-archives').length) {
 			categoriesFilter = new CategoriesFilter('#categories-archives');
 			categoriesFilter.init();
 		}

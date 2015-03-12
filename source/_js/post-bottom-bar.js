@@ -2,7 +2,7 @@
      'use strict';
 
      $(document).ready(function() {
-         if ($('.post-bottom-bar').is('visible')) {
+         if ($('.post-bottom-bar').length) {
              var $postBootmBar = $('.post-bottom-bar');
              var $postFooterElem = $('.post-footer');
              var $window = $(window);
