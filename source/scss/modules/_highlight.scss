@@ -6,9 +6,10 @@ pre,
     border-radius:  5px;
     overflow:       auto;
     color:          #fff;
-    font-size:      $font-size-base;
-    line-height:    20px;
-    letter-spacing: 0px;
+    font-size:      0.93em;
+    font-family:    Menlo;
+    line-height:    1em;
+    letter-spacing: 0.2px;
 }
 .highlight .gutter pre,
 .line-numbers {
@@ -16,8 +17,6 @@ pre,
 }
 pre,
 code {
-    font-size:      $font-size-base;
-    font-family:    Consolas;
 }
 .highlight pre {
     border:  none;
@@ -34,6 +33,7 @@ code {
 }
 .highlight figcaption {
     color:         $highlight-comment;
+    font-size:      0.93em;
     line-height:   1em;
     margin-bottom: 1em;
 }
