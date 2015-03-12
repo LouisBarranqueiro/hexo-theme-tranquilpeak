@@ -4,12 +4,12 @@
             <ul class="post-actions-nav hide-sm">
                 <li>
                     <% if (post.prev) { %>
-                        <a class="post-actions-btn btn btn--default tooltip--top" href="<%- url_for(post.prev.path) %>"  data-tooltip="<%= post.prev.title %>"
+                        <a class="post-actions-btn btn btn--default tooltip--top" href="<%- url_for(post.prev.path) %>"  data-tooltip="<%= post.prev.title %>">
                     <% } else { %>
                         <a class="post-actions-btn btn btn--disabled">
                     <% } %>
                         <i class="fa fa-angle-left"></i>
-                        <span class="hide-sm">PREVIOUS</span>
+                        <span class="hide-sm text-small">PREVIOUS</span>
                     </a>
                 </li>
                 <li>
@@ -18,7 +18,7 @@
                     <% } else { %>
                         <a class="post-actions-btn btn btn--disabled">
                     <% } %>
-                        <span class="hide-sm">NEXT</span>
+                        <span class="hide-sm text-small">NEXT</span>
                         <i class="fa fa-angle-right"></i>
                     </a>
                 </li>
