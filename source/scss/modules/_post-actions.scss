@@ -18,13 +18,6 @@
             li {
                 width:      auto;
                 text-align: center;
-
-                .post-actions-btn {
-                    span {
-                        margin-left: 10px;
-                        font-size:   $font-size-small;
-                    }
-                }
             }
         }
         ul.post-actions-nav {
@@ -33,9 +26,20 @@
             li {
                 float: left;
             }
-            li:nth-child(n + 2) {
+            li:first-child {
+                 .post-actions-btn {
+                     span {
+                         margin-left: 10px;
+                     }
+                 }
+             }
+            li:last-child {
                 .post-actions-btn {
                     margin-left: 15px;
+
+                    span {
+                        margin-right: 10px;
+                    }
                 }
             }
         }
