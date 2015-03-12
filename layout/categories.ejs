@@ -1,25 +1,25 @@
-<div id="categories-archives" class="archive">
+<div id="categories-archives" class="archive-group">
     <form id="filter-form" action="#">
-        <input name="category" type="text" class="form-control input--xlarge" value="" placeholder="Search a category" autofocus="autofocus">
+        <input name="category" type="text" class="form-control input--xlarge" placeholder="Search a category" autofocus="autofocus">
     </form>
     <section>
         <% site.categories.sort('name').each(function(item) { %>
-            <a class="a-category category category--block" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+            <a class="category category--block" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
                 <%= item.name %>
             </a>
         <% }); %>
     </section>
     <section class="box-group">
         <% site.categories.sort('name').each(function(item) { %>
-            <div id="<%= 'posts-list-' + item.name %>" class="a-list a-posts box" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
-                <h4 class="a-list-title">
+            <div id="<%= 'posts-list-' + item.name %>" class="archive box" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+                <h4 class="archive-title">
                     <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>"><%= item.name + ' (' + item.length + ')' %></a>
                 </h4>
-                <ul >
+                <ul class="archive-post-group">
                     <% get_posts({'query':{'categories': item.name}}).each(function(post) { %>
-                    <li>
-                        <a class="link-unstyled a-list-post" href="<%= post.permalink %>"><%= post.title %></a>
-                        <span><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                    <li class="archive-post">
+                        <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title %></a>
+                        <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
                     </li>
                     <% }) %>
                 </ul>
