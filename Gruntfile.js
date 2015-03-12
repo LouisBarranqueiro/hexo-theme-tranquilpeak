@@ -32,7 +32,7 @@ module.exports = function(grunt){
 				},
 				files: [{
 					expand: true,
-					cwd: 'source/_styles',
+					cwd: 'source/_css',
 					src: ['style.scss'],
 					dest: 'source/.tmp/css/',
 					ext: '.css'
@@ -122,10 +122,10 @@ module.exports = function(grunt){
 		clean: {
 			prod: 'source/.tmp'
 		},
-		// Watch .scss and .js files in _styles and _js folder and launch task : Build
+		// Watch .scss and .js files in _css and _js folder and launch task : Build
 		watch: {
 			dev: {
-				files: ['source/_styles/**/*.scss', 'source/_js/**/*.js'],
+				files: ['source/_css/**/*.scss', 'source/_js/**/*.js'],
 				tasks: ['Build']
 			}
 		}
