@@ -1,34 +1,35 @@
-.archive {
-    .a-list {
-        .a-list-title {
+.archive-group {
+    .archive {
+        .archive-title {
+            color: $font-color-base;
 
             &:hover {
                 text-decoration: underline;
             }
         }
-        .ol,
-        ul {
+        ol.archive-post-group,
+        ul.archive-post-group {
             list-style: none;
 
-            li {
-                font-size: 0.9em;
-                color:     $font-color-base;
+            li.archive-post {
+                font-size: $font-size-medium;
 
-                .a-list-post {
+                .archive-post-title {
                     margin-left: 10px;
+                    color: $font-color-base;
 
                     &:hover {
                         text-decoration: underline;
                     }
                 }
-                span {
+                .archive-post-date {
                     color: $font-color-light;
                 }
-            }
-            li::before {
-                font-family: "FontAwesome";
-                content:     "\f0da";
-                font-size:   $font-size-small;
+                &::before {
+                    font-family: "FontAwesome";
+                    content:     "\f0da";
+                    font-size:   $font-size-small;
+                }
             }
         }
     }
