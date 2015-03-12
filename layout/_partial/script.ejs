@@ -1,7 +1,4 @@
-<%- js('vendor/jquery/dist/jquery.min.js') %>
-<%- js('vendor/fancybox/source/jquery.fancybox.js') %>
-<%- js('vendor/fancybox/source/helpers/jquery.fancybox-thumbs.js') %>
-<%- js('js/script.min.js') %>
+<%- js('prod/js/script.min.js') %>
 <% if ((config.disqus_shortname) && (is_post())) { %>
     <script type="text/javascript">
         var disqus_shortname = '<%= config.disqus_shortname %>';
