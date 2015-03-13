@@ -134,7 +134,7 @@
         }
         .post {
             display: inline-block;
-            width:   calc(100% - #{$thumb-image-width} - 33px);
+            width:   calc(100% - #{$thumb-image-width} - 20px);
         }
     }
 }
