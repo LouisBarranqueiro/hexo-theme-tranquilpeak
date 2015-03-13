@@ -12,6 +12,7 @@
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-sails-linker": "^0.10.1",
     "grunt-sync": "^0.2.3",
     "load-grunt-tasks": "~0.2.0"
   }
