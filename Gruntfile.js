@@ -86,6 +86,16 @@ module.exports = function(grunt){
 				}
 			}
 		},
+		sync: {
+			// Synchronize images
+			dev: {
+				files: [{
+					cwd: 'source/_images',
+					src: ['**/*'],
+					dest: 'source/assets/images'
+				}]
+			}
+		},
 		// Delete .tmp folder
 		clean: {
 			prod: 'source/.tmp'
