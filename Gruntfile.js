@@ -1,13 +1,12 @@
-
 module.exports = function(grunt){
 	grunt.initConfig({
+		// Copy all needed files by types
 		bower: {
-			// Copy all needed bower dependencies
 			dev: {
-				dest: 'source/.tmp',
-				js_dest: 'source/.tmp/js',
-				css_dest: 'source/.tmp/css',
-				fonts_dest: 'source/prod/fonts',
+				dest: 'source/assets',
+				js_dest: 'source/assets/js',
+				css_dest: 'source/assets/css',
+				fonts_dest: 'source/assets/fonts',
 				options: {
 					expand: false,
 					keepExpandedHierarchy: false,
