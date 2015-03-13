@@ -86,5 +86,5 @@ favicon:                                     # Your favicon located in folder 's
 image_gallery: 0                             # Display an image gallery at the end of a post with layout photos
 
 # Miscellaneous
-google_analytics:
-rss: /atom.xml
+google_analytics:   # Google analystics web property ID : UA-XXXXX-X
+rss: /atom.xml      # RSS URL
