@@ -159,9 +159,9 @@ module.exports = function(grunt){
 				}
 			},
 		},
-		// Delete .tmp folder
 		clean: {
-			prod: 'source/.tmp'
+			// Delete the 'assets' folder
+			build: ['source/assets']
 		},
 		watch: {
 			// Watch assets and launch 'SyncAssets' task
