@@ -14,7 +14,7 @@ var CssFilesToInject = [
 	'source/assets/css/tranquil-peak.css'
 ];
 
-module.exports = function(grunt){
+module.exports = function(grunt) {
 	grunt.initConfig({
 		// Copy all needed files by types
 		bower: {
@@ -163,6 +163,17 @@ module.exports = function(grunt){
 			// Delete the 'assets' folder
 			build: ['source/assets']
 		},
+		replace: {
+			// Replace 'EJS_ENDTAG' string to resolve a problem of ejs escaping with sails-linker
+			linker: {
+				overwrite: true,
+				src: ['layout/_partial/head.ejs', 'layout/_partial/script.ejs'],
+				replacements: [{
+					from: 'EJS_ENDTAG',
+					to: '%>'
+				}]
+			}
+		},
 		watch: {
 			// Watch assets and launch 'SyncAssets' task
 			assets: {
@@ -173,7 +184,6 @@ module.exports = function(grunt){
 	});
 
 	require('load-grunt-tasks')(grunt);
-	
 	grunt.registerTask('CompileAssets', ['sass:dev', 'concat:devJs', 'sync:dev']);
 	grunt.registerTask('Build', ['clean:build', 'bower:dev', 'CompileAssets', 'LinkAssets']);
 	grunt.registerTask('BuildProd', ['clean:build', 'bower:dev', 'CompileAssets', 'concat', 'cssmin', 'uglify', 'LinkAssetsProd']);
