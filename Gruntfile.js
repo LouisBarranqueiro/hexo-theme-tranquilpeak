@@ -23,17 +23,17 @@ module.exports = function(grunt){
 				}
 			}
 		},
-		// Compile style.scss file
 		sass: {
-			prod: {
+			// Compile tranquil-peak.scss file into tranquil-peak.css
+			dev: {
 				options: {
 					sourcemap: 'none'
 				},
 				files: [{
 					expand: true,
 					cwd: 'source/_css',
-					src: ['style.scss'],
-					dest: 'source/.tmp/css/',
+					src: ['tranquil-peak.scss'],
+					dest: 'source/assets/css/',
 					ext: '.css'
 				}]
 			}
