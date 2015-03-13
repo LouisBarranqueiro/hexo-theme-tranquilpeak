@@ -1,5 +1,5 @@
 # Image directory (default: images)
-image_dir: prod/images
+image_dir: assets/images
 
 # Sidebar Configuration
 #    You can add groups of links and links much as you want
