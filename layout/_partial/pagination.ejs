@@ -1,20 +1,22 @@
-<%
-    var single = '';
 
-    if (page.total == 1) {
-        single = 'single';
-    }
-%>
-<ul class="pagination">
-    <% if (page.prev) { %>
-        <li class="pagination-nav">
-            <a class="btn btn--success" href="<%- url_for(page.prev_link) %>">Newer posts</a>
-        </li>
-    <% } %>
-    <li class="pagination-number <%= 'pagination-number--' + single %>">Page <%= page.current + ' of ' + page.total %></li>
-    <% if (page.next) { %>
-        <li class="pagination-nav">
-            <a class="btn btn--success" href="<%- url_for(page.next_link) %>">Older posts</a>
-        </li>
-    <% } %>
-</ul>
+<div class="pagination-bar">
+    <ul class="pagination">
+        <% if (page.prev) { %>
+            <li class="pagination-prev">
+                <a class="btn btn--default btn--small" href="<%- url_for(page.prev_link) %>">
+                    <i class="fa fa-angle-left"></i>
+                    <span>NEWER POSTS</span>
+                </a>
+            </li>
+        <% } %>
+        <% if (page.next) { %>
+            <li class="pagination-next">
+                <a class="btn btn--default btn--small" href="<%- url_for(page.next_link) %>">
+                    <span>OLDER POSTS</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        <% } %>
+        <li class="pagination-number">Page <%= page.current + ' of ' + page.total %></li>
+    </ul>
+</div>
