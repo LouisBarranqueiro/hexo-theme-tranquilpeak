@@ -74,7 +74,7 @@ module.exports = function(grunt){
 			}
 		},
 		uglify: {
-			// Minify script.concat.js file into script.min.js
+			// Minify script.js file into script.min.js
 			prod: {
 				options: {
 					mangle: {
@@ -82,7 +82,7 @@ module.exports = function(grunt){
 					}
 				},
 				files: {
-					'source/.tmp/js/script.min.js': ['source/.tmp/js/script.concat.js']
+					'source/assets/js/script.min.js': ['source/assets/js/script.js']
 				}
 			}
 		},
