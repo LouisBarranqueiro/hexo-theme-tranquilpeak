@@ -3,87 +3,87 @@
 
 // Alignement
 .text-left {
-    text-align: left;
+    text-align: left !important;
 }
 .text-right {
-    text-align: right;
+    text-align: right !important;
 }
 .text-center {
-    text-align: center;
+    text-align: center !important;
 }
 .text-justify {
-    text-align: justify;
+    text-align: justify !important;
 }
 .text-nowrap {
-    white-space: nowrap;
+    white-space: nowrap !important;
 }
 
 // Transformation
 .text-lowercase {
-    text-transform: lowercase;
+    text-transform: lowercase !important;
 }
 .text-uppercase {
-    text-transform: uppercase;
+    text-transform: uppercase !important;
 }
 .text-capitalize {
-    text-transform: capitalize;
+    text-transform: capitalize !important;
 }
 
 // Size
 .text-xsmall {
-    font-size: $font-size-xsmall;
+    font-size: $font-size-xsmall !important;
 }
 .text-small {
-    font-size: $font-size-small;
+    font-size: $font-size-small !important;
 }
 .text-base {
-    font-size: $font-size-base;
+    font-size: $font-size-base !important;
 }
 .text-large {
-    font-size: $font-size-large;
+    font-size: $font-size-large !important;
 }
 .text-xlarge {
-    font-size: $font-size-xlarge;
+    font-size: $font-size-xlarge !important;
 }
 
 // Text style
 .text-strong {
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 .text-regular {
-    font-weight: 400;
+    font-weight: 400 !important;
 }
 .text-light {
-    font-weight: 300;
+    font-weight: 300 !important;
 }
 .text-italic {
-    font-style: italic;
+    font-style: italic !important;
 }
 .text-underline {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 .text-color-light {
-    color: $font-color-light;
+    color: $font-color-light !important;
 }
 .text-color-base {
-    color: $font-color-base;
+    color: $font-color-base !important;
 }
 .text-color-link {
-    color: $font-color-link;
+    color: $font-color-link !important;
 }
 .text-color-base {
-    color: $font-color-base;
+    color: $font-color-base !important;
 }
 // Link
 a.link-unstyled,
 a.link-unstyled:hover,
 a.link-unstyled:active {
-    cursor:          pointer;
-    color:           inherit;
-    text-decoration: none ;
+    cursor:          pointer !important;
+    color:           inherit !important;
+    text-decoration: none !important;
 }
 a.link:hover,
 a.link:active {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
