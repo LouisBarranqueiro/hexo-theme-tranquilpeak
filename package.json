@@ -14,6 +14,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-sails-linker": "^0.10.1",
     "grunt-sync": "^0.2.3",
+    "grunt-text-replace": "^0.4.0",
     "load-grunt-tasks": "~0.2.0"
   }
 }
