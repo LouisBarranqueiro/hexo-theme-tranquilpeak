@@ -173,9 +173,13 @@ module.exports = function(grunt){
 	});
 
 	require('load-grunt-tasks')(grunt);
-
-	grunt.registerTask('Compile assets', ['bower', 'sass', 'concat', 'cssmin', 'uglify', 'copy']);
-	grunt.registerTask('Build', ['Compile assets', 'clean']);
+	
+	grunt.registerTask('CompileAssets', ['sass:dev', 'concat:devJs', 'sync:dev']);
+	grunt.registerTask('Build', ['clean:build', 'bower:dev', 'CompileAssets', 'LinkAssets']);
+	grunt.registerTask('BuildProd', ['clean:build', 'bower:dev', 'CompileAssets', 'concat', 'cssmin', 'uglify', 'LinkAssetsProd']);
+	grunt.registerTask('LinkAssets', ['sails-linker:devJs', 'sails-linker:devCss', 'replace:linker']);
+	grunt.registerTask('LinkAssetsProd', ['sails-linker:prodJs', 'sails-linker:prodCss', 'replace:linker']);
+	grunt.registerTask('SyncAssets', ['CompileAssets']);
 	grunt.registerTask('Watch', ['watch']);
 
 };
