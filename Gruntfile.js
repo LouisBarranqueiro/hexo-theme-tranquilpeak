@@ -163,13 +163,13 @@ module.exports = function(grunt){
 		clean: {
 			prod: 'source/.tmp'
 		},
-		// Watch .scss and .js files in _css and _js folder and launch task : Build
 		watch: {
-			dev: {
-				files: ['source/_css/**/*.scss', 'source/_js/**/*.js'],
-				tasks: ['Build']
+			// Watch assets and launch 'SyncAssets' task
+			assets: {
+				files: ['source/_*/**/*'],
+				tasks: ['SyncAssets']
 			}
-		}
+		},
 	});
 
 	require('load-grunt-tasks')(grunt);
