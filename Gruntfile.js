@@ -1,3 +1,19 @@
+// Js files to inject in 'layout/_partial/script.ejs'
+var JsFilesToInject = [
+	'source/assets/js/jquery.js',
+	'source/assets/js/jquery.fancybox.js',
+	'source/assets/js/jquery.fancybox-thumbs.js',
+	'source/assets/js/tranquil-peak.js'
+];
+
+// Css files to inject in 'layout/_partial/head.ejs'
+var CssFilesToInject = [
+	'source/assets/css/font-awesome.css',
+	'source/assets/css/jquery.fancybox.css',
+	'source/assets/css/jquery.fancybox-thumbs.css',
+	'source/assets/css/tranquil-peak.css'
+];
+
 module.exports = function(grunt){
 	grunt.initConfig({
 		// Copy all needed files by types
@@ -95,6 +111,53 @@ module.exports = function(grunt){
 					dest: 'source/assets/images'
 				}]
 			}
+		},
+		// Link stylesheets and javascript files
+		'sails-linker': {
+			devJs: {
+				options: {
+					startTag: '<!--SCRIPTS-->',
+					endTag: '<!--SCRIPTS END-->',
+					fileTmpl: '<%- js(\'%s\') EJS_ENDTAG',
+					appRoot: 'source/'
+				},
+				files: {
+					'layout/_partial/script.ejs': JsFilesToInject
+				}
+			},
+			devCss: {
+				options: {
+					startTag: '<!--STYLES-->',
+					endTag: '<!--STYLES END-->',
+					fileTmpl: '<%- css(\'%s\') EJS_ENDTAG',
+					appRoot: 'source/'
+				},
+				files: {
+					'layout/_partial/head.ejs': CssFilesToInject
+				}
+			},
+			prodJs: {
+				options: {
+					startTag: '<!--SCRIPTS-->',
+					endTag: '<!--SCRIPTS END-->',
+					fileTmpl: '<%- js(\'%s\') EJS_ENDTAG',
+					appRoot: 'source/'
+				},
+				files: {
+					'layout/_partial/script.ejs': 'source/assets/js/script.min.js'
+				}
+			},
+			prodCss: {
+				options: {
+					startTag: '<!--STYLES-->',
+					endTag: '<!--STYLES END-->',
+					fileTmpl: '<%- css(\'%s\') EJS_ENDTAG',
+					appRoot: 'source/'
+				},
+				files: {
+					'layout/_partial/head.ejs': 'source/assets/css/style.min.css'
+				}
+			},
 		},
 		// Delete .tmp folder
 		clean: {
