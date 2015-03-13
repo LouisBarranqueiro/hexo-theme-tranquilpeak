@@ -62,16 +62,13 @@ module.exports = function(grunt){
 			}
 		},
 		cssmin: {
-			// Minify style.concat.css file into style.min.css
+			// Minify style.css file into style.min.css
 			prod: {
-				options: {
-					relativeTo: ''
-				},
 				files: [{
 					expand: true,
-					cwd: 'source/.tmp/css',
-					src: ['style.concat.css'],
-					dest: 'source/.tmp/css',
+					cwd: 'source/assets/css',
+					src: ['style.css'],
+					dest: 'source/assets/css',
 					ext: '.min.css'
 				}]
 			}
