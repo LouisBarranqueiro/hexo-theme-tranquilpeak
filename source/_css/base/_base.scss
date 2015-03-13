@@ -84,13 +84,13 @@ a:visited {
 
 }
 a:hover {
+    color:           darken($font-color-link, 15);
     text-decoration: underline;
 }
 kdb {
     display:       inline-block;
     border-radius: 3px;
     border:        1px solid lighten(#d0dbed, 3);
-    @include       box-shadow(0, 2px, 0px, lighten(#d0dbed, 3));
     background:    #fafbfc;
     padding-left:  10px;
     padding-right: 10px;
