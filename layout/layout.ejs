@@ -3,12 +3,12 @@
     <%- partial('_partial/head') %>
     <body>
         <div id="blog">
-            <%- partial('_partial/header') %>
-            <%- partial('_partial/sidebar') %>
+            <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+            <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
             <div id="main">
                 <div id="main-content">
                     <%- body %>
-                    <%- partial('_partial/footer') %>
+                    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
                 </div>
             </div>
         </div>
