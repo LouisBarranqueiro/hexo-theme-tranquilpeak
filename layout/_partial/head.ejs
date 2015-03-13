@@ -42,6 +42,8 @@
     <meta name="author" content="<%= config.author %>">
     <meta name="description" content="<%= config.title %>">
     <link rel="icon" href="<%- url_for(theme.image_dir + '/' + theme.favicon) %>">
-    <%- css('prod/css/style.min.css') %>
     <link rel="alternative" type="application/atom+xml" title="RSS" href="<%= theme.rss %>">
+    <!--STYLES-->
+    <%- css('assets/css/style.min.css') %>
+    <!--STYLES END-->
 </head>
