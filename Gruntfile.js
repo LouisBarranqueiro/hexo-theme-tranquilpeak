@@ -38,52 +38,24 @@ module.exports = function(grunt){
 				}]
 			}
 		},
-		copy: {
-			prod: {
-				files: [{
-					// Copy style.min.css file into prod folder
-					expand: true,
-					cwd: 'source/.tmp/css',
-					src: ['**/*.min.css'],
-					dest: 'source/prod/css/'
-				}, {
-					// Copy script.min.js file into prod folder
-					expand: true,
-					cwd: 'source/.tmp/js',
-					src: ['**/*.min.js'],
-					dest: 'source/prod/js/'
-				}, {
-					// Copy all images into prod folder
-					expand: true,
-					cwd: 'source/_images',
-					src: ['**/*'],
-					dest: 'source/prod/images/'
-				}, {
-					// Copy all fonts into prod folder
-					expand: true,
-					cwd: 'source/.tmp/fonts',
-					src: ['**/*'],
-					dest: 'source/prod/fonts/'
-				}]
-			},
-		},
 		concat: {
-			// Concat css file in style.concat.css
-			prodCss: {
-				src: ['source/.tmp/css/*.css'],
-				dest: 'source/.tmp/css/style.concat.css',
+			// Concat all .js file into tranquil-peak.js
+			devJs: {
+				src: ['source/_js/**/*.js'],
+				dest: 'source/assets/js/tranquil-peak.js',
+				options: {
+					separator: ';',
+				}
 			},
-			// Concat js file in script.concat.js
+			// Concat all .css file into style.css
+			prodCss: {
+				src: ['source/assets/css/*.css'],
+				dest: 'source/assets/css/style.css',
+			},
+			// Concat all .js file in script.js
 			prodJs: {
-				files: {
-					'source/.tmp/js/script.js': ['source/_js/**/*.js'],
-					'source/.tmp/js/script.concat.js': [
-						'source/.tmp/js/jquery.js',
-						'source/.tmp/js/jquery.fancybox.js',
-						'source/.tmp/js/jquery.fancybox-thumbs.js',
-						'source/.tmp/js/script.js'
-					]
-				},
+				src: JsFilesToInject,
+				dest: 'source/assets/js/script.js',
 				options: {
 					separator: ';',
 				}
