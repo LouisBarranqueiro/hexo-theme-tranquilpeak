@@ -6,7 +6,7 @@ pre,
     border-radius:  5px;
     overflow:       auto;
     color:          #fff;
-    font-size:      0.93em;
+    font-size:      $font-size-medium;
     font-family:    Menlo;
     line-height:    1em;
     letter-spacing: 0.2px;
@@ -33,7 +33,7 @@ code {
 }
 .highlight figcaption {
     color:         $highlight-comment;
-    font-size:      0.93em;
+    font-size:     $font-size-medium;
     line-height:   1em;
     margin-bottom: 1em;
 }
