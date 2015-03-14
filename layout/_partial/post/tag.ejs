@@ -1,5 +1,11 @@
-<% if ((typeof tags !== 'undefined') && (tags.length > 0) && (typeof style !== 'undefined')) { %>
-    <% tags.limit(15).each(function(item) { %>
-        <a class="tag <%= 'tag--' + style %>" href="<%- url_for(item.path) %>"><%= item.name %></a>
-    <% }); %>
+<% if ((typeof tags !== 'undefined') && (tags.length > 0)) { %>
+    <div class="post-tags">
+        <div>
+            <span class="text-small text-color-light">Tagged in</span>
+        </div>
+        <% tags.limit(15).each(function(item) { %>
+            <a class="tag" href="<%- url_for(item.path) %>"><%= item.name %></a>
+        <% }); %>
+        <p></p>
+    </div>
 <% } %>
