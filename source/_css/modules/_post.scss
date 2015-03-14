@@ -73,11 +73,10 @@
                 border-radius: 5px;
             }
         }
-        .post-tags-categories {
-            color:   $font-color-light;
-            display: inline-block;
-            margin:  8px 0px 20px 2px;
-        }
+    }
+    .post-tags {
+        border-bottom: 1px solid #eef2f8;
+        margin-bottom: 10px;
     }
     .post-separator {
         display:       block;
@@ -87,7 +86,7 @@
         margin:        0px 0px 10px 0px;
     }
     .post-footer {
-        margin: 20px 0px;
+        margin: 0px 0px;
     }
     .post-bottom-bar {
         position:   fixed;

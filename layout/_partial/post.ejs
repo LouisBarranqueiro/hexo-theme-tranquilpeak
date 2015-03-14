@@ -26,6 +26,7 @@
         <% } %>
     </div>
     <div class="post-footer">
+        <%- partial('post/tag', {tags: post.tags}) %>
         <%- partial('post/actions') %>
     </div>
     <% if (config.disqus_shortname) { %>
