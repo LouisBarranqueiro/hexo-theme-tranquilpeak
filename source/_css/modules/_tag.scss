@@ -1,29 +1,20 @@
 a.tag,
 .tag {
-    letter-spacing: 0.3px;
-    color:          $tag-color;
-}
-a.tag--link:hover,
-.tag--link:hover {
-    text-decoration: underline;
-}
-a.tag--block,
-.tag--block {
-    display:       inline-block;
-    width:         auto;
-    height:        auto;
-    background:    none;
-    border-radius: 3px;
-    padding:       0px 10px;
-    text-align:    center;
-    margin-right:  5px;
-    margin-bottom: 5px;
-    font-size:     $font-size-small;
-    border:        1px solid $tag-color;
+    font-size:      $font-size-small;
+    background:     #fff;
+    width:          auto;
+    height:         auto;
+    border-radius:  3px;
+    letter-spacing: $letter-spacing-base;
+    padding:        8px 15px;
+    cursor:         pointer;
+    margin:         0px;
+    color:          $font-color-light;
+    border:         1px solid $font-color-light;
 
     &:hover {
-        color:           darken($tag-color, 10);
-        border:          1px solid darken($tag-color, 10);
+        color:           $color-primary;
+        border:          1px solid $color-primary;
         text-decoration: none;
     }
 }
