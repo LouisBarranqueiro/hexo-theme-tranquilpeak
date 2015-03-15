@@ -2,19 +2,12 @@
      'use strict'
 
     /**
-     * Global variables
-     */
-    var $postFooterElem   = $('.post-footer');
-    var postFooterElemPos = $postFooterElem.offset().top + $postFooterElem.height(); // Position of the post footer element from the top page
-
-    /**
      *  PostBottomBar
-     *
      * @param postBottomBar
      * @constructor
      */
     var PostBottomBar = function(postBottomBar) {
-        this.$elem     = $('.post-bottom-bar');
+        this.$elem = $(postBottomBar);
     }
 
     /**
@@ -23,18 +16,17 @@
     PostBottomBar.prototype.init = function() {
         var self = this;
 
-        self.checkPosition();
-
+        self.checkVisibility();
         $(window).scroll(function () {
-            self.checkPosition();
+            self.checkVisibility();
         })
     };
 
     /**
      * Check if the post footer is visible by the user
      */
-    PostBottomBar.prototype.checkPosition = function() {
-        if (($(window).scrollTop() + $(window).height()) > postFooterElemPos) {
+    PostBottomBar.prototype.checkVisibility = function() {
+        if (checkPostFooterVisibility() == true) {
             this.slideUp();
         }
         else {
@@ -54,6 +46,23 @@
      */
     PostBottomBar.prototype.slideDown = function() {
         this.$elem.slideDown();
+    };
+
+    /**
+     * Check if the post footer element is visible by the user
+     * @returns {boolean}
+     */
+    function checkPostFooterVisibility() {
+        var $postFooterElem   = $('.post-footer');
+        var postFooterElemPos = $postFooterElem.offset().top + $postFooterElem.height();
+
+        if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
     };
 
     $(document).ready(function() {

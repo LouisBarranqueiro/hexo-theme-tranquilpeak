@@ -7,7 +7,7 @@
      * @param openButton
      * @constructor
      */
-    var Sidebar = function (element, openButton) {
+    var Sidebar = function(element, openButton) {
         this.$element       = $(element);
         this.$element.width = this.$element.width();
         this.$openButton    = $(openButton);
@@ -24,6 +24,7 @@
             if (!self.$element.hasClass('opened')) {
                 self.open();
                 slideBlogRight(self.$element.width);
+                slidePostBottomBarRight(self.$element.width);
             }
         })
 
@@ -32,6 +33,7 @@
             if (self.$element.hasClass('opened')) {
                 self.close();
                 slideBlogLeft(self.$element.width);
+                slidePostBottomBarLeft(self.$element.width);
             }
         })
 
@@ -110,6 +112,33 @@
                 'margin-left': '-=' + width,
             }, 250, function () {
                 $('#main, #header').removeClass('is-slided');
+            });
+        }
+    };
+
+    /**
+     * Slide post bottom bar to the right
+     * @param width
+     */
+    function slidePostBottomBarRight(width) {
+        if (!$('.post-bottom-bar').hasClass('is-slided')) {
+            $('.post-bottom-bar').animate({
+                'left': '+=' + width,
+            }, 250, function () {
+                $('.post-bottom-bar').addClass('is-slided');
+            });
+        }
+    };
+    /**
+     * Slide post bottom bar to the left
+     * @param width
+     */
+    function slidePostBottomBarLeft(width) {
+        if ($('.post-bottom-bar').hasClass('is-slided')) {
+            $('.post-bottom-bar').animate({
+                'left': '-=' + width,
+            }, 250, function () {
+                $('.post-bottom-bar').removeClass('is-slided');
             });
         }
     };
