@@ -1,0 +1,15 @@
+@mixin category-color-variant($color) {
+    color:  $color !important;
+    border: 1px solid $color;
+
+    &:hover {
+        color:           darken($color, 15) !important;
+        border:          1px solid darken($color, 15);
+        text-decoration: none;
+    }
+}
+
+@mixin category-size-variant($font-size, $padding-top-bottom, $padding-left-right) {
+    font-size: $font-size;
+    padding:   $padding-top-bottom $padding-left-right;
+}
