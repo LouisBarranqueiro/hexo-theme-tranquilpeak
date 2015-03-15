@@ -26,7 +26,7 @@
                     <% } %>
                     <% if (post.categories.length > 0) { %>
                         <span>in </span>
-                        <%- partial('post/category', {categories: post.categories, style: 'link'})%>
+                        <%- partial('post/category', {categories: post.categories})%>
                     <% } %>
                 </div>
                 <div class="post-snippet">

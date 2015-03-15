@@ -1,5 +1,5 @@
-<% if ((typeof categories !== 'undefined') && (categories.length > 0) && (typeof style !== 'undefined')) { %>
+<% if ((typeof categories !== 'undefined') && (categories.length > 0)) { %>
     <% categories.each(function(item) { %>
-        <a class="category <%= 'category--' + style %>" href="<%- url_for(item.path) %>"><%= item.name %></a>
+        <a class="link" href="<%- url_for(item.path) %>"><%= item.name %></a>
     <% }); %>
 <% } %>
