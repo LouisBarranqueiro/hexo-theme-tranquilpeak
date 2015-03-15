@@ -139,6 +139,7 @@
                 'left': '-=' + width,
             }, 250, function () {
                 $('.post-bottom-bar').removeClass('is-slided');
+                $('.post-bottom-bar').css('left', '');
             });
         }
     };
