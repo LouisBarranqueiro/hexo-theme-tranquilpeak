@@ -1,3 +1,5 @@
+// All
+// --------------------
 html {
     font-family:                 $font-family-base;
     font-size:                   62.5%;
@@ -47,8 +49,8 @@ h4
 h5
 h6 {
     letter-spacing: 0.1em;
-    margin-top:    10px;
-    margin-bottom: 10px;
+    margin-top:     10px;
+    margin-bottom:  10px;
 }
 h1 {
     font-size: $font-size-h1;
@@ -98,4 +100,51 @@ kdb {
 blockquote {
     border-left: 6px solid $color-success;
     padding:     10px 20px;
+}
+// Mobiles
+// --------------------
+@media #{$small-and-down} {
+    body {
+        font-size: 1.4rem;
+    }
+    h1 {
+        font-size: $font-size-h3;
+    }
+    h2 {
+        font-size: $font-size-h4;
+    }
+    h3 {
+        font-size: $font-size-h5;
+    }
+    h4 {
+        font-size: $font-size-h6;
+    }
+    h5 {
+        font-size: $font-size-xlarge;
+    }
+    h6 {
+        font-size: $font-size-large;
+    }
+}
+// Tablets
+// --------------------
+@media #{$medium-only} {
+    h1 {
+        font-size: $font-size-h2;
+    }
+    h2 {
+        font-size: $font-size-h3;
+    }
+    h3 {
+        font-size: $font-size-h4;
+    }
+    h4 {
+        font-size: $font-size-h5;
+    }
+    h5 {
+        font-size: $font-size-h6;
+    }
+    h6 {
+        font-size: $font-size-xlarge;
+    }
 }
