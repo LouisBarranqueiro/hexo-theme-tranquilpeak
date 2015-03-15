@@ -4,7 +4,7 @@
             <span class="text-small text-color-light">Tagged in</span>
         </div>
         <% tags.limit(15).each(function(item) { %>
-            <a class="tag" href="<%- url_for(item.path) %>"><%= item.name %></a>
+            <a class="tag tag--default tag--base" href="<%- url_for(item.path) %>"><%= item.name %></a>
         <% }); %>
         <p></p>
     </div>
