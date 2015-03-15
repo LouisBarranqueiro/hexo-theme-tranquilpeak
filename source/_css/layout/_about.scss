@@ -1,0 +1,85 @@
+#about {
+    display:     none;
+    position:    fixed;
+    top:         0px;
+    left:        0px;
+    width:       100%;
+    height:      100%;
+    background:  $sidebar-bg-color;
+    z-index:     100;
+    text-align:  center;
+    line-height: 100%;
+    overflow: scroll;
+
+    #about-author {
+        display:   block;
+        max-width: 800px;
+        padding:   0px 15px;
+        margin:    0 auto;
+
+        #about-author-picture {
+            margin-bottom: 15px;
+        }
+        #about-author-name {
+            margin-top: 0px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
+        }
+        #about-author-job,
+        #about-author-location {
+            text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
+            font-size: $font-size-xlarge;
+            line-height: $line-height-base;
+            font-weight: 400px;
+            margin: 0px;
+            color: #fff;
+
+            i {
+                margin-right: 15px;
+            }
+        }
+        #about-author-bio {
+            margin: 30px 0 0 0;
+            text-shadow: 0px 1px 0px rgba(0, 0, 0, 1);
+            font-size: $font-size-large;
+            line-height: $line-height-base;
+            color: #fff;
+        }
+    }
+
+}
+// Mobiles
+// --------------------
+@media #{$small-and-down} {
+    #about {
+        #about-author-picture {
+            width: 90px;
+            height: 90px;
+            border-radius: 45px;
+        }
+    }
+}
+// Tablets
+// --------------------
+@media #{$medium-only} {
+    #header {
+        display: none;
+    }
+}
+
+// Desktops
+// --------------------
+@media #{$medium-and-up} {
+    #about {
+        #about-author {
+            width: 80%;
+
+            #about-author-picture {
+                width: 130px;
+                height: 130px;
+                border-radius: 65px;
+            }
+        }
+    }
+}
