@@ -1,5 +1,6 @@
 <% if ((typeof categories !== 'undefined') && (categories.length > 0)) { %>
-    <% categories.each(function(item) { %>
-        <a class="link" href="<%- url_for(item.path) %>"><%= item.name %></a>
-    <% }); %>
+    <%- list_categories(categories, {
+        show_count: 0,
+        style: 'none'
+    }) %>
 <% } %>
