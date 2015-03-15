@@ -11,7 +11,7 @@
         display:    block;
         width:      100%;
         height:     55px;
-        background: $sidebar-bg-color;
+        background: $header-bg-color;
         position:   relative;
 
         #btn-open-sidebar {
@@ -33,11 +33,11 @@
         .header-title {
             line-height: 55px;
             margin:      0px 0px 0px 0px;
-            color:       $sidebar-font-color;
+            color:       $header-font-color;
         }
         a:hover,
         a:active {
-            color: lighten($sidebar-font-color, 35);
+            color: lighten($header-font-color, 35);
         }
     }
 }
