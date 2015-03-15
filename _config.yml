@@ -73,8 +73,9 @@ sidebar:
 # Author
 author:
     picture: # Your profile picture located in folder 'source/images/'
+    job:
     bio:
-    locate:
+    location:
 
 # Customization
 gravatar_image: 1                            # Gravatar image (disable: 0, enable: 1). Use the email entered in blog configuration file
