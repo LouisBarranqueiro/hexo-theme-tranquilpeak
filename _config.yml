@@ -31,11 +31,11 @@ sidebar:
             title: Archives
             url: /archives
             icon: archive
+    author_links:
         about:
             title: About
             url: /about
             icon: question
-    author_links:
         # github:
         #     title: GitHub
         #     url:
