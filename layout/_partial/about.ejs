@@ -1,9 +1,10 @@
 <div id="about">
     <div id="about-author">
-        <img id="about-author-picture" src="<%- gravatar(config.email, 130) || theme.author.picture %>" />
+        <div id="about-btn-close"><i class="fa fa-remove"></i></div>
+        <img id="about-author-picture" src="<%- gravatar(config.email, 110) || theme.author.picture %>" />
         <h5 id="about-author-name"><%= config.author %></h5>
-        <h6 id="about-author-job"><i class="fa fa-suitcase"></i><%= theme.author.job %></h6>
-        <h6 id="about-author-location"><i class="fa fa-map-marker"></i><%= theme.author.location %></h6>
+        <h6 id="about-author-job"><i class="fa fa-suitcase"></i><br/><%= theme.author.job %></h6>
+        <h6 id="about-author-location"><i class="fa fa-map-marker"></i><br/><%= theme.author.location %></h6>
         <p id="about-author-bio"><%= theme.author.bio %></p>
     </div>
 </div>
