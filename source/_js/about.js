@@ -1,78 +1,128 @@
 +function ($) {
     'use strict';
 
-    function showAbout() {
-        $.when(fadeOutBlog()).done(function() {
-            dropAboutAuthor();
-        });
-        fadeInAbout();
+    /**
+     * AnimAbout Feature
+     * @constructor
+     */
+    var AnimAbout = function() {
+        this.$openBtn        = $("#sidebar").find("a[href='/about']");
+        this.$closeBtn       = $('#about-btn-close');
+        this.$blog           = $('#blog');
+        this.$about          = $('#about');
+        this.$aboutCard      = $('#about-card');
     };
 
-    function hideAbout() {
-        $.when(upAboutAuthor()).done(function() {
-            fadeInBlog();
-            fadeOutAbout();
-        });
+    /**
+     * Init the feature
+     */
+    AnimAbout.prototype.init = function() {
+        var self = this;
+
+        self.$openBtn.click(function(e) {
+            e.preventDefault();
+            self.play();
+        })
+        self.$closeBtn.click(function(e) {
+            e.preventDefault();
+            self.playBack();
+        })
     };
 
-    function fadeOutBlog() {
-        var $blog = $('#blog');
+    /**
+     * Play the animation
+     */
+    AnimAbout.prototype.play = function() {
+        var self = this;
 
-        $blog.fadeOut(500);
+        self.fadeOutBlog();
+        self.fadeInAbout();
+        setTimeout(function() {
+            self.dropAboutCard();
+        }, 300);
     };
 
-    function fadeInBlog() {
-        var $blog = $('#blog');
+    /**
+     * Play back the animation
+     */
+    AnimAbout.prototype.playBack = function() {
+        var self = this;
 
-        $blog.fadeIn(500);
+        self.upAboutCard();
+        setTimeout(function() {
+            self.fadeInBlog()
+        }, 500);
+        setTimeout(function() {
+            self.fadeOutAbout()
+        }, 500);
     };
 
-    function fadeInAbout() {
-        var $about = $('#about');
-
-        $about.fadeIn(500);
+    /**
+     * Fade out the blog
+     */
+    AnimAbout.prototype.fadeOutBlog = function() {
+        this.$blog.fadeOut();
     };
 
-    function fadeOutAbout() {
-        var $about = $('#about');
-
-        $about.fadeOut(500);
+    /**
+     * Fade in the blog
+     */
+    AnimAbout.prototype.fadeInBlog = function() {
+        this.$blog.fadeIn();
     };
 
-    function dropAboutAuthor() {
-        var $aboutAuthor = $('#about-author');
-        var aboutAuthorHeight = $('#about-author').innerHeight();
+    /**
+     * Fade out the about mask
+     */
+    AnimAbout.prototype.fadeOutAbout = function() {
+        this.$about.fadeOut();
+    };
 
-        $aboutAuthor
+    /**
+     * Fade in the about mask
+     */
+    AnimAbout.prototype.fadeInAbout = function() {
+        this.$about.fadeIn();
+    };
+
+    /**
+     * Slide the card to the middle
+     */
+    AnimAbout.prototype.dropAboutCard = function() {
+        var self = this;
+        var aboutCardHeight = self.$aboutCard.innerHeight();
+
+        console.log(aboutCardHeight);
+
+        this.$aboutCard
             .css('top','0px')
-            .css('top','-' + aboutAuthorHeight + 'px')
-            .show()
-            .animate({
-                top: '+=' + (($(window).height() / 2) - aboutAuthorHeight - (aboutAuthorHeight/2)) + 'px'
-            });
-
+            .css('top','-' + aboutCardHeight + 'px')
+            .show(500, function () {
+                self.$aboutCard.animate({
+                    top: '+=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
+                });
+            })
     };
 
-    function upAboutAuthor() {
-        var $aboutAuthor = $('#about-author');
-        var aboutAuthorHeight = $('#about-author').innerHeight();
+    /**
+     * Slide the card to the top
+     */
+    AnimAbout.prototype.upAboutCard = function() {
+        var self = this;
+        var aboutCardHeight = self.$aboutCard.innerHeight();
 
-        $aboutAuthor
-            .animate({
-                top: '-=' + ((($(window).height() / 2) - (aboutAuthorHeight)) - (aboutAuthorHeight / 2)) + 'px'
-            })
-            .hide();
+        this.$aboutCard.animate({
+                top: '-=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
+            },
+            500, function() {
+                self.$aboutCard.hide();
+        });
+
     };
 
     $(document).ready(function() {
-        $('a[href=\'/about\']').click(function(e) {
-            e.preventDefault();
-            showAbout();
-        })
-        $('#about-btn-close').click(function(e) {
-            e.preventDefault();
-            hideAbout();
-        })
+        var animAbout = new AnimAbout();
+        animAbout.init();
     })
 
 }(jQuery);
