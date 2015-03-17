@@ -31,39 +31,39 @@ sidebar:
             title: Archives
             url: /archives
             icon: archive
-    author_links:
         about:
-            title: About
+            title: About me
             url: /about
             icon: question
+    author_links:
         # github:
         #     title: GitHub
-        #     url:
+        #     url: https://github.com/
         #     icon: github
         # stack_overflow:
         #     title: Stack Overflow
-        #     url:
+        #     url: http://stackoverflow.com/users/
         #     icon: stack-overflow
         # twitter:
         #     title: Twitter
-        #     url:
+        #     url: https://twitter.com/
         #     icon: twitter
         # facebook:
         #     title: Facebook
-        #     url:
+        #     url: https://www.facebook.com/
         #     icon: facebook
         # google_plus:
         #     title: Google +
-        #     url:
+        #     url: https://plus.google.com/
         #     icon: google-plus
         # linked_in:
-        #     title: Linked In
-        #     url:
-        #     icon: linked-in
+        #      title: Linked In
+        #      url: https://www.linkedin.com/profile/
+        #      icon: linkedin
         # mail:
-        #     title: Mail
-        #     url:
-        #     icon: envelope-o
+        #      title: Mail
+        #      url: mailto://
+        #      icon: envelope-o
     rss:
         rss:
             title: RSS
@@ -79,7 +79,7 @@ author:
 
 # Customization
 gravatar_image: 1                            # Gravatar image (disable: 0, enable: 1). Use the email entered in blog configuration file
-thumbnail_image: 1                           # Post thumbnail image (disable: 0, enable: 1). Display the first photo
+thumbnail_image: 0                           # Post thumbnail image (disable: 0, enable: 1). Display the first photo
 read_more_message: Continue reading          # Message displayed after the <!-- more --> balise
 go_to_message: Go to the website             # Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
 cover: cover.png                             # Your blog cover picture located in folder 'source/_images/'
