@@ -28,6 +28,10 @@
                         <span>in </span>
                         <%- partial('post/category', {categories: post.categories})%>
                     <% } %>
+                    <% if (post.tags.length > 0) { %>
+                        <span>, </span>
+                        <%- partial('post/tag', {tags: post.tags})%>
+                    <% } %>
                 </div>
                 <div class="post-snippet">
                     <% if (post.excerpt) { %>
