@@ -15,7 +15,11 @@
             <% } %>
             <% if (post.categories.length > 0) { %>
                 <span>in </span>
-                <%- partial('post/category', {categories: post.categories, style: 'link'})%>
+                <%- partial('post/category', {categories: post.categories})%>
+            <% } %>
+            <% if (post.tags.length > 0) { %>
+                <span>, </span>
+                <%- partial('post/tag', {tags: post.tags})%>
             <% } %>
         </div>
         <div class="post-content markdown">
@@ -26,7 +30,6 @@
         <% } %>
     </div>
     <div class="post-footer">
-        <%- partial('post/tag', {tags: post.tags}) %>
         <%- partial('post/actions') %>
     </div>
     <% if (config.disqus_shortname) { %>
