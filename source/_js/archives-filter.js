@@ -7,13 +7,13 @@
 	 * @constructor
 	 */
 	var ArchivesFilter = function (archivesElem) {
-		this.$inputSearch = $(archivesElem + ' #filter-form input[name=date]');
+		this.$searchInput = $('#filter-form input[name=date]');
 		this.postsYear    = archivesElem + ' .archive-year';
 		this.postsMonth   = archivesElem + ' .archive-month';
 		this.postsDay     = archivesElem + ' .archive-day';
-		this.$postsYear   = $(this.postsYear);
-		this.$postsMonth  = $(this.postsMonth);
-		this.$postsDay    = $(this.postsDay);
+		this.$postsYear   = $(archivesElem).find('.archive-year');
+		this.$postsMonth  = $(archivesElem).find('.archive-month');;
+		this.$postsDay    = $(archivesElem).find('.archive-day');;
 	};
 
 	/**
@@ -22,9 +22,9 @@
 	ArchivesFilter.prototype.init = function() {
 		var self = this;
 
-		self.$inputSearch.keyup(function () {
+		self.$searchInput.keyup(function () {
 			self.filter(self.sliceDate(self.getSearch()));
-		})
+		});
 	}
 
 	/**
@@ -32,7 +32,7 @@
 	 * @returns {string}
 	 */
 	ArchivesFilter.prototype.getSearch = function() {
-		return this.$inputSearch.val().replace(/\//g, '').toLowerCase();
+		return this.$searchInput.val().replace(/\//g, '').toLowerCase();
 	};
 
 	/**
@@ -93,5 +93,4 @@
 			archivesFilter.init();
 		}
 	})
-
 }(jQuery);
