@@ -6,6 +6,7 @@
     <form id="filter-form" action="#">
         <input name="date" type="text" class="form-control input--xlarge" placeholder="Search a date" autofocus="autofocus">
     </form>
+    <h5 class="archive-result text-color-base text-xlarge"></h5>
     <section class="box-group">
         <% site.posts.sort('date', '-1').each(function(post) { %>
             <% var currentYear = post.date.year(); %>

@@ -2,6 +2,7 @@
     <form id="filter-form" action="#">
         <input name="category" type="text" class="form-control input--xlarge" placeholder="Search a category" autofocus="autofocus">
     </form>
+    <h5 class="archive-result text-color-base text-xlarge"></h5>
     <section>
         <% site.categories.sort('name').each(function(item) { %>
             <a class="category category--small category--primary" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
