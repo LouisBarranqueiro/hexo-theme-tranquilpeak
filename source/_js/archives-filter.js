@@ -41,7 +41,7 @@
 	 * @param date
 	 */
 	ArchivesFilter.prototype.sliceDate = function(date) {
-		return [date.slice(0, 4), date.slice(4, 6), date.slice(6, 8) ];
+		return [date.slice(0, 4), date.slice(4, 6), date.slice(6) ];
 	};
 
 	/**
@@ -49,14 +49,19 @@
 	 * @param date
 	 */
 	ArchivesFilter.prototype.filter = function(date) {
+		var numberPosts = this.countPosts(date);
+
 		if (date[0] == '') {
 			this.showAll();
 			this.showResult(-1);
 		}
 		else {
 			this.hideAll();
-			this.showPosts(date);
-			this.showResult(this.countPosts(date));
+			this.showResult(numberPosts);
+
+			if (numberPosts > 0) {
+				this.showPosts(date);
+			}
 		}
 	};
 
@@ -83,8 +88,7 @@
 	 * @returns {Number}
 	 */
 	ArchivesFilter.prototype.countPosts = function(date) {
-		return $(this.postsDay + '[data-date*=' + date[0] + date[1] + date[2] + ']').length;
-		console.log($(this.postsDay + '[data-date*=' + date[0] + date[1] + date[2] + ']').length);
+		return $(this.postsDay + '[data-date^=' + date[0] + date[1] + date[2] + ']').length;
 	}
 
 	/**
@@ -92,9 +96,9 @@
 	 * @param date
 	 */
 	ArchivesFilter.prototype.showPosts = function(date) {
-		$(this.postsYear + '[data-date*=' + date[0] + ']').show();
-		$(this.postsMonth + '[data-date*=' + date[0] + date[1] + ']').show();
-		$(this.postsDay + '[data-date*=' + date[0] + date[1] + date[2] + ']').show();
+		$(this.postsYear + '[data-date^=' + date[0] + ']').show();
+		$(this.postsMonth + '[data-date^=' + date[0] + date[1] + ']').show();
+		$(this.postsDay + '[data-date^=' + date[0] + date[1] + date[2] + ']').show();
 	};
 
 	/**
