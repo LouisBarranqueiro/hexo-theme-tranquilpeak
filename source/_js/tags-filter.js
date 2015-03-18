@@ -8,11 +8,12 @@
 	 * @constructor
 	 */
 	var TagsFilter = function (tagsArchivesElem) {
-		this.$inputSearch = $(tagsArchivesElem + ' #filter-form input[name=tag]');
-		this.tags         = tagsArchivesElem + ' .tag';
-		this.posts        = tagsArchivesElem + ' .archive';
-		this.$tags        = $(this.tags);
-		this.$posts       = $(this.posts);
+		this.$inputSearch   = $(tagsArchivesElem + ' #filter-form input[name=tag]');
+		this.$archiveResult = $(tagsArchivesElem).find('.archive-result');
+		this.$tags          = $(tagsArchivesElem).find('.tag');
+		this.$posts         = $(tagsArchivesElem).find('.archive');
+		this.tags           = tagsArchivesElem + ' .tag';
+		this.posts          = tagsArchivesElem + ' .archive';
 	};
 
 	/**
@@ -39,26 +40,32 @@
 	 * @param tag
 	 */
 	TagsFilter.prototype.filter = function(tag) {
-		if (this.countPosts(tag) == 0){
-
-		}
-
 		if (tag == '') {
 			this.showAll();
+			this.showResult(-1);
 		}
 		else {
 			this.hideAll();
 			this.showPosts(tag);
+			this.showResult(this.countPosts(tag));
 		}
 	};
 
 	/**
-	 *
+	 * Display results
 	 * @param tag
 	 * @returns {Number}
 	 */
-	TagsFilter.prototype.showNoResultMsg = function() {
-
+	TagsFilter.prototype.showResult = function(number) {
+		if (number == 0) {
+			this.$archiveResult.html('No tags found').show();
+		}
+		else if (number == -1) {
+			this.$archiveResult.html('').hide();
+		}
+		else {
+			this.$archiveResult.html(number + ' tag' + ((number > 1) ? 's' : '') + ' found').show();
+		}
 	};
 
 	/**
