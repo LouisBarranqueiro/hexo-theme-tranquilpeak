@@ -2,6 +2,7 @@
     <form id="filter-form" action="#">
         <input name="tag" type="text" class="form-control input--xlarge" placeholder="Search a tag" autofocus="autofocus">
     </form>
+    <h5 class="archive-result text-color-base text-xlarge"></h5>
     <section>
         <% site.tags.sort('name').each(function(item) { %>
             <a class="tag tag--primary tag--small" href="<%= '#' + item.name + '-list' %>" data-tag="<%= item.name.replace('.','__') %>">
