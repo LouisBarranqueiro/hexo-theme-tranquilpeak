@@ -26,7 +26,7 @@
 		self.$searchInput.keyup(function () {
 			self.filter(self.sliceDate(self.getSearch()));
 		});
-	}
+	};
 
 	/**
 	 * Get Filter entered by user
@@ -41,7 +41,7 @@
 	 * @param date
 	 */
 	ArchivesFilter.prototype.sliceDate = function(date) {
-		return [date.slice(0, 4), date.slice(4, 6), date.slice(6) ];
+		return [date.slice(0, 4), date.slice(4, 6), date.slice(6)];
 	};
 
 	/**
@@ -49,13 +49,15 @@
 	 * @param date
 	 */
 	ArchivesFilter.prototype.filter = function(date) {
-		var numberPosts = this.countPosts(date);
+		var numberPosts;
 
 		if (date[0] == '') {
 			this.showAll();
 			this.showResult(-1);
 		}
 		else {
+			numberPosts = this.countPosts(date);
+
 			this.hideAll();
 			this.showResult(numberPosts);
 
