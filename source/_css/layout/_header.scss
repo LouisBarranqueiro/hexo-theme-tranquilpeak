@@ -21,14 +21,19 @@
             color:    #88909a;
             cursor:   pointer;
         }
-        .profile-picture {
+        .header-picture-link {
+            display:  block;
+            width:    30px;
+            height:   30px;
+            position: relative;
+            top:      12.5px;
+            margin:   0px auto;
+        }
+        .header-picture {
             display:       block;
             width:         30px;
             height:        30px;
-            position:      relative;
-            top:           12.5px;
             border-radius: 15px;
-            margin:        0px auto;
         }
         .header-title {
             line-height: 55px;

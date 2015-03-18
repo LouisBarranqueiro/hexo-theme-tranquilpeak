@@ -1,12 +1,16 @@
 <header id="header">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
-    <a href="<%= config.url %>">
-        <% if ((theme.gravatar_image) && (config.email)) { %>
-            <img class="profile-picture" src="<%- gravatar(config.email, 90) %>"/>
-        <% } else if (theme.author.picture) { %>
-            <img class="profile-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
-        <% } else if (config.title) { %>
-            <h1 class="header-title text-center text-large"><%= config.title %></h1>
-        <% } %>
-    </a>
+    <% if ((theme.gravatar_image) && (config.email)) { %>
+        <a class="header-picture-link" href="<%= config.url %>">
+            <img class="header-picture" src="<%- gravatar(config.email, 90) %>"/>
+        </a>
+    <% } else if (theme.author.picture) { %>
+        <a class="header-picture-link" href="<%= config.url %>">
+            <img class="header-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
+        </a>
+    <% } else if (config.title) { %>
+        <h1 class="header-title text-center text-large">
+            <a href="<%= config.url %>"><%= config.title %></a>
+        </h1>
+    <% } %>
 </header>
