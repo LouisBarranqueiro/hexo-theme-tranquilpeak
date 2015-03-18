@@ -61,27 +61,26 @@
             margin:         0px;
         }
     }
-
 }
 // Mobiles
 // --------------------
 @media #{$small-and-down} {
     #about {
-        #about-author {
+        #about-card {
             width: 90%;
 
-            #about-author-job,
-            #about-author-location {
+            #about-card-job,
+            #about-card-location {
                 display: block;
                 width:   calc(100% - 60px);
                 padding: 0px 30px;
             }
-            #about-author-picture {
+            #about-card-picture {
                 width:         90px;
                 height:        90px;
                 border-radius: 45px;
             }
-            #about-author-job {
+            #about-card-job {
                 margin-bottom: 15px;
             }
         }
