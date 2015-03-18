@@ -1,10 +1,8 @@
-+function ($) {
++function($) {
      'use strict'
 
     /**
      * Post bottom bar feature
-     * @param postBottomBar
-     * @param postFooter
      * @constructor
      */
     var PostBottomBar = function() {
@@ -19,9 +17,9 @@
         var self = this;
 
         self.animate();
-        $(window).scroll(function () {
+        $(window).scroll(function() {
             self.animate();
-        })
+        });
     };
 
     /**
@@ -41,7 +39,7 @@
      * @returns {boolean}
      */
     PostBottomBar.prototype.checkPostFooterVisibility = function() {
-        var postFooterElemPos = this.$postFooter.offset().top + this.$postFooter.height();
+        var postFooterElemPos = (this.$postFooter.offset().top + this.$postFooter.height());
 
         if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
             return true;
@@ -52,11 +50,9 @@
     };
 
     $(document).ready(function() {
-        var postBottomBar;
-
         if ($('.post-bottom-bar').length) {
-            postBottomBar = new PostBottomBar();
+            var postBottomBar = new PostBottomBar();
             postBottomBar.init();
         }
-    })
+    });
  }(jQuery);
