@@ -8,11 +8,12 @@
 	 * @constructor
 	 */
 	var CategoriesFilter = function (categoriesArchivesElem) {
-		this.$inputSearch = $(categoriesArchivesElem + ' #filter-form input[name=category]');
-		this.categories   = categoriesArchivesElem + ' .category';
-		this.posts        = categoriesArchivesElem + ' .archive';
-		this.$categories  = $(this.categories);
-		this.$posts       = $(this.posts);
+		this.$inputSearch   = $(categoriesArchivesElem).find('input[name=category]');
+		this.$archiveResult = $(categoriesArchivesElem).find('.archive-result');
+		this.$categories    = $(categoriesArchivesElem).find('.category');
+		this.$posts         = $(categoriesArchivesElem).find('.archive');
+		this.categories     = categoriesArchivesElem + ' .category';
+		this.posts          = categoriesArchivesElem + ' .archive';
 	};
 	
 	/**
@@ -42,15 +43,43 @@
 	CategoriesFilter.prototype.filter = function(category) {
 		if (category == '') {
 			this.showAll();
+			this.showResult(-1);
 		}
 		else {
 			this.hideAll();
 			this.showPosts(category);
+			this.showResult(this.countPosts(category));
 		}
 	};
 
 	/**
-	 * Show a category and his posts
+	 * Display results
+	 * @param number
+	 * @returns {Number}
+	 */
+	CategoriesFilter.prototype.showResult = function(number) {
+		if (number == 0) {
+			this.$archiveResult.html('No categories found').show();
+		}
+		else if (number == -1) {
+			this.$archiveResult.html('').hide();
+		}
+		else {
+			this.$archiveResult.html(number + ' categor' + ((number > 1) ? 'ies' : 'y') + ' found').show();
+		}
+	};
+
+	/**
+	 * Count number of categories
+	 * @param category
+	 * @returns {Number}
+	 */
+	CategoriesFilter.prototype.countPosts = function(category) {
+		return $(this.posts + '[data-category*=' + category + ']').length;
+	};
+
+	/**
+	 * Show all posts from a category
 	 * @param category
 	 */
 	CategoriesFilter.prototype.showPosts = function(category) {
@@ -59,7 +88,7 @@
 	};
 
 	/**
-	 * Show all categories and posts
+	 * Show all categories and related posts
 	 */
 	CategoriesFilter.prototype.showAll = function() {
 		this.$categories.show();
@@ -67,7 +96,7 @@
 	};
 
 	/**
-	 * Hide all categories and posts
+	 * Hide all categories and related posts
 	 */
 	CategoriesFilter.prototype.hideAll = function() {
 		this.$categories.hide();
