@@ -76,18 +76,18 @@ p, ul, ol, dl {
     -o-font-feature-settings:      'liga' 1, 'onum' 1, 'kern' 1;
     margin:                        0 0 1.75em 0;
 }
-a,
-a:hover,
-a:active,
-a:visited {
-    cursor:          pointer;
-    color:           $font-color-link;
-    text-decoration: none;
-
-}
-a:hover {
-    color:           darken($font-color-link, 15);
-    text-decoration: underline;
+a {
+    &:hover,
+    &:active,
+    &:visited {
+        cursor:          pointer;
+        color:           $font-color-link;
+        text-decoration: none;
+    }
+    &:hover {
+        color:           darken($font-color-link, 15);
+        text-decoration: underline;
+    }
 }
 kdb {
     display:       inline-block;
@@ -98,8 +98,16 @@ kdb {
     padding-right: 10px;
 }
 blockquote {
-    border-left: 6px solid $color-success;
+    border-left: 2px solid $font-color-light;
     padding:     10px 20px;
+
+    cite {
+        &:before {
+            content: ' — ';
+            padding: 0 0.3em;
+        }
+
+    }
 }
 // Mobiles
 // --------------------
