@@ -126,14 +126,14 @@
 
             img {
                 display:       block;
-                width:         $thumb-image-width;
-                height:        $thumb-image-width;
+                width:         $thumbnail-image-width;
+                height:        $thumbnail-image-width;
                 border-radius: 5px;
             }
         }
         .post {
             display: inline-block;
-            width:   calc(100% - #{$thumb-image-width} - 20px);
+            width:   calc(100% - #{$thumbnail-image-width} - 20px);
         }
     }
 }
