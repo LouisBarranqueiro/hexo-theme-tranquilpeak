@@ -7,9 +7,9 @@
      * @param postFooter
      * @constructor
      */
-    var PostBottomBar = function(postBottomBar, postFooter) {
-        this.$postBottomBar = $(postBottomBar);
-        this.$postFooter    = $(postFooter);
+    var PostBottomBar = function() {
+        this.$postBottomBar = $('.post-bottom-bar');
+        this.$postFooter    = $('.post-footer');
     }
 
     /**
@@ -55,7 +55,7 @@
         var postBottomBar;
 
         if ($('.post-bottom-bar').length) {
-            postBottomBar = new PostBottomBar('.post-bottom-bar', '.post-footer');
+            postBottomBar = new PostBottomBar();
             postBottomBar.init();
         }
     })
