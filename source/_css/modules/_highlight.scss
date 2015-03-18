@@ -1,23 +1,66 @@
-pre,
-.highlight {
+figure.highlight {
     background:     $highlight-background;
     margin:         10px 0px;
-    padding:        15px 20px;
-    border-radius:  5px;
+    border-radius:  3px;
     overflow:       auto;
-    color:          #fff;
-    font-size:      $font-size-medium;
+    color:          $font-color-base;
+    font-size:          $font-size-medium;
     font-family:    Menlo;
     line-height:    1em;
     letter-spacing: 0.2px;
+    border: 1px solid #ddd;
+
+    figcaption {
+        font-size: $font-size-medium;
+        padding: 10px;
+        margin:0;
+        background: #f7f7f7;
+        border-bottom: 1px solid #ddd;
+        color:#999;
+
+        a {
+            float: right;
+        }
+    }
+    .gutter {
+        padding:.3em;
+        margin: 0;
+        background: #fff;
+        border-right: 1px solid #ddd;
+
+        pre {
+            margin: 0;
+
+            .line {
+                font-size: 1.2em;
+                color: $font-color-light;
+                padding-bottom: 2px;
+            }
+        }
+    }
+    td.code {
+        border: none;
+        padding: 0 !important;
+        margin: 0 !important;
+
+        pre {
+            padding: 0 !important;
+            margin: 0 !important;
+
+            .line {
+                display:block;
+                top:0px;
+                padding-top:0px;
+                padding-left: 5px;
+                font-size:  $font-size-medium;
+                font-family:    Menlo;
+                letter-spacing: 0.2px;
+                color: $font-color-base;
+            }
+        }
+    }
 }
-.highlight .gutter pre,
-.line-numbers {
-    color: #666;
-}
-pre,
-code {
-}
+
 .highlight pre {
     border:  none;
     margin:  0;
@@ -30,19 +73,6 @@ code {
 .highlight td {
     border:  none;
     padding: 0;
-}
-.highlight figcaption {
-    color:         $highlight-comment;
-    font-size:     $font-size-medium;
-    line-height:   1em;
-    margin-bottom: 1em;
-}
-.highlight figcaption a {
-    float: right;
-}
-.highlight .gutter pre {
-    text-align:    right;
-    padding-right: 20px;
 }
 .highlight .line {
     height: 20px;
@@ -102,4 +132,26 @@ pre .coffeescript .title {
 pre .keyword,
 pre .javascript .function {
     color: $highlight-purple;
+}
+// Gist
+.gist {
+    pre,
+    .line {
+        font-size:      1em;
+        font-family:    Menlo;
+        line-height:    1em;
+        letter-spacing: 0.2px;
+        color: $font-color-base;
+    }
+    .line-number {
+        display: block;
+        height: 15px;
+        font-size:      1em;
+        font-family:    Menlo;
+        line-height:    1em;
+        letter-spacing: 0.2px;
+        color: $font-color-light;
+        padding-bottom: 5px;
+    }
+
 }
