@@ -1,4 +1,4 @@
-+function ($) {
++function($) {
     'use strict';
 
     /**
@@ -8,13 +8,13 @@
     var Sidebar = function() {
         this.$sidebar       = $('#sidebar');
         this.$sidebar.width = this.$sidebar.width();
-        this.$openBtn    = $('#btn-open-sidebar');
+        this.$openBtn       = $('#btn-open-sidebar');
         this.$closeBtn      = $('#header, #main');
         this.$postBottomBar = $('.post-bottom-bar');
     };
 
     /**
-     * Init the sidebar
+     * Init the sidebar feature
      */
     Sidebar.prototype.init = function() {
         var self = this;
@@ -28,7 +28,7 @@
             }
         })
 
-        // Detect the click out of the sidebar
+        // Detect the click on close button
         self.$closeBtn.click(function() {
             if (self.$sidebar.hasClass('opened')) {
                 self.closeSidebar();
@@ -80,8 +80,8 @@
             .show();
         
         self.$sidebar.animate({
-            left: '+=' + self.$sidebar.width,
-        }, 250, function () {
+            left: '+=' + self.$sidebar.width
+        }, 250, function() {
             self.$sidebar.addClass('opened');
         });
     };
@@ -164,5 +164,5 @@
     $(document).ready(function() {
         var sidebar = new Sidebar();
         sidebar.init();
-    })
+    });
 }(jQuery);
