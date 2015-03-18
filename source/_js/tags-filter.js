@@ -53,7 +53,7 @@
 
 	/**
 	 * Display results
-	 * @param tag
+	 * @param number
 	 * @returns {Number}
 	 */
 	TagsFilter.prototype.showResult = function(number) {
@@ -78,7 +78,7 @@
 	};
 
 	/**
-	 * Show all posts form a tag
+	 * Show all posts from a tag
 	 * @param tag
 	 */
 	TagsFilter.prototype.showPosts = function(tag) {
@@ -87,7 +87,7 @@
 	};
 
 	/**
-	 * Show all posts from all tags
+	 * Show all tags and related posts
 	 */
 	TagsFilter.prototype.showAll = function() {
 		this.$tags.show();
@@ -95,7 +95,7 @@
 	};
 
 	/**
-	 * Hide all posts from all tags
+	 * Hide all tags and related posts
 	 */
 	TagsFilter.prototype.hideAll = function() {
 		this.$tags.hide();
