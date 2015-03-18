@@ -2,8 +2,7 @@
 	'use strict';
 	
 	/**
-	 * CategoriesFilter
-	 *
+	 * CategoriesFilter feature
 	 * @param categoriesArchivesElem
 	 * @constructor
 	 */
@@ -17,7 +16,7 @@
 	};
 	
 	/**
-	 * Init categories filter
+	 * Init categories filter feature
 	 */
 	CategoriesFilter.prototype.init = function() {
 		var self = this;
@@ -36,8 +35,7 @@
 	};
 	
 	/**
-	 * Show related posts and hide others
-	 *
+	 * Show related posts form a category and hide the others
 	 * @param category
 	 */
 	CategoriesFilter.prototype.filter = function(category) {
@@ -53,19 +51,19 @@
 	};
 
 	/**
-	 * Display results
-	 * @param number
+	 * Display results of the search
+	 * @param categoriesNumb
 	 * @returns {Number}
 	 */
-	CategoriesFilter.prototype.showResult = function(number) {
-		if (number == 0) {
+	CategoriesFilter.prototype.showResult = function(categoriesNumb) {
+		if (categoriesNumb == 0) {
 			this.$archiveResult.html('No categories found').show();
 		}
-		else if (number == -1) {
+		else if (categoriesNumb == -1) {
 			this.$archiveResult.html('').hide();
 		}
 		else {
-			this.$archiveResult.html(number + ' categor' + ((number > 1) ? 'ies' : 'y') + ' found').show();
+			this.$archiveResult.html(categoriesNumb + ' categor' + ((categoriesNumb > 1) ? 'ies' : 'y') + ' found').show();
 		}
 	};
 
@@ -88,7 +86,7 @@
 	};
 
 	/**
-	 * Show all categories and related posts
+	 * Show all categories and all posts
 	 */
 	CategoriesFilter.prototype.showAll = function() {
 		this.$categories.show();
@@ -96,7 +94,7 @@
 	};
 
 	/**
-	 * Hide all categories and related posts
+	 * Hide all categories and all posts
 	 */
 	CategoriesFilter.prototype.hideAll = function() {
 		this.$categories.hide();
@@ -104,11 +102,9 @@
 	};
 	
 	$(document).ready(function() {
-		var categoriesFilter;
-
 		if ($('#categories-archives').length) {
-			categoriesFilter = new CategoriesFilter('#categories-archives');
+			var categoriesFilter = new CategoriesFilter('#categories-archives');
 			categoriesFilter.init();
 		}
-	})
+	});
 }(jQuery);
