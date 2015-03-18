@@ -19,7 +19,7 @@
                 <ul class="archive-post-group">
                     <% get_posts({'query':{'tags': item.name}}).each(function(post) { %>
                     <li class="archive-post">
-                        <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title %></a>
+                        <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
                         <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
                     </li>
                     <% }) %>
