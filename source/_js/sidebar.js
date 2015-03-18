@@ -2,158 +2,167 @@
     'use strict';
 
     /**
-     * Sidebar
-     * @param element
-     * @param openButton
+     * Sidebar feature
      * @constructor
      */
-    var Sidebar = function(element, openButton) {
-        this.$element       = $(element);
-        this.$element.width = this.$element.width();
-        this.$openButton    = $(openButton);
+    var Sidebar = function() {
+        this.$sidebar       = $('#sidebar');
+        this.$sidebar.width = this.$sidebar.width();
+        this.$openBtn    = $('#btn-open-sidebar');
+        this.$closeBtn      = $('#header, #main');
+        this.$postBottomBar = $('.post-bottom-bar');
     };
 
-    /***
+    /**
      * Init the sidebar
      */
     Sidebar.prototype.init = function() {
         var self = this;
 
         // Detect the click on the open button
-        self.$openButton.click(function() {
-            if (!self.$element.hasClass('opened')) {
-                self.open();
-                slideBlogRight(self.$element.width);
-                slidePostBottomBarRight(self.$element.width);
+        self.$openBtn.click(function() {
+            if (!self.$sidebar.hasClass('opened')) {
+                self.openSidebar();
+                self.slideBlogRight();
+                self.slidePostBottomBarRight();
             }
         })
 
         // Detect the click out of the sidebar
-        $('#header, #main').click(function() {
-            if (self.$element.hasClass('opened')) {
-                self.close();
-                slideBlogLeft(self.$element.width);
-                slidePostBottomBarLeft(self.$element.width);
+        self.$closeBtn.click(function() {
+            if (self.$sidebar.hasClass('opened')) {
+                self.closeSidebar();
+                self.slideBlogLeft();
+                self.slidePostBottomBarLeft();
             }
         })
 
         // Detect resize of the windows
         $(window).resize(function() {
             if ($(window).width() > 600) {
-                self.$element.show();
+                self.$sidebar.show();
             }
             else {
-                self.$element.hide();
+                self.$sidebar.hide();
             }
 
-            self.initPosition();
-            initBlogPosition();
+            self.initSidebarPosition();
+            self.initBlogPosition();
         })
+    };
+
+    /**
+     * Init sidebar position
+     */
+    Sidebar.prototype.initSidebarPosition = function() {
+        this.$sidebar
+            .css({'left': 0})
+            .removeClass('opened');
+    };
+
+    /**
+     * Init blog position
+     */
+    Sidebar.prototype.initBlogPosition = function() {
+        this.$closeBtn
+            .css({'margin-left': 0})
+            .removeClass('is-slided');
     };
 
     /**
      * Open the sidebar
      */
-    Sidebar.prototype.open = function() {
+    Sidebar.prototype.openSidebar = function() {
         var self = this;
 
-        self.$element.css({'left': '-' + self.$element.width + 'px'});
-        self.$element.show();
+        self.$sidebar
+            .css({'left': '-' + self.$sidebar.width + 'px'})
+            .show();
         
-        self.$element.animate({
-            left: '+=' + self.$element.width,
+        self.$sidebar.animate({
+            left: '+=' + self.$sidebar.width,
         }, 250, function () {
-            self.$element.addClass('opened');
+            self.$sidebar.addClass('opened');
         });
     };
 
     /**
      * Close the sidebar
      */
-    Sidebar.prototype.close = function() {
+    Sidebar.prototype.closeSidebar = function() {
         var self = this;
 
-        self.$element.animate({
-            left: '-=' + self.$element.width,
+        self.$sidebar.animate({
+            left: '-=' + self.$sidebar.width,
         }, 250, function() {
-            self.$element.removeClass('opened');
-            self.$element.hide();
+            self.$sidebar
+                .removeClass('opened')
+                .hide();
         });
-    }
-
-    /**
-     * Init sidebar position
-     */
-    Sidebar.prototype.initPosition = function() {
-        this.$element.css({'left': 0}).removeClass('opened');
-    }
+    };
 
     /**
      * Slide the blog to the right
-     * @param width
      */
-    function slideBlogRight(width) {
-        if (!$('#main, #header').hasClass('is-slided')) {
-            $('#main, #header').animate({
-                'margin-left': '+=' + width + 'px',
-            }, 250, function () {
-                $('#main, #header').addClass('is-slided');
+    Sidebar.prototype.slideBlogRight = function() {
+        var self = this;
+
+        if (!self.$closeBtn.hasClass('is-slided')) {
+            self.$closeBtn.animate({
+                'margin-left': '+=' + self.$sidebar.width + 'px',
+            }, 250, function() {
+                self.$closeBtn.addClass('is-slided');
             })
         }
     };
 
     /**
      * Slide blog to the left
-     * @param width
      */
-    function slideBlogLeft(width) {
-        if ($('#main, #header').hasClass('is-slided')) {
-            $('#main, #header').animate({
-                'margin-left': '-=' + width,
-            }, 250, function () {
-                $('#main, #header').removeClass('is-slided');
-            });
+    Sidebar.prototype.slideBlogLeft = function() {
+        var self = this;
+
+        if (self.$closeBtn.hasClass('is-slided')) {
+            self.$closeBtn.animate({
+                'margin-left': '-=' + self.$sidebar.width + 'px',
+            }, 250, function() {
+                self.$closeBtn.removeClass('is-slided');
+            })
         }
     };
 
     /**
      * Slide post bottom bar to the right
-     * @param width
      */
-    function slidePostBottomBarRight(width) {
-        if (!$('.post-bottom-bar').hasClass('is-slided')) {
-            $('.post-bottom-bar').animate({
-                'left': '+=' + width,
-            }, 250, function () {
-                $('.post-bottom-bar').addClass('is-slided');
+    Sidebar.prototype.slidePostBottomBarRight = function() {
+        var self = this;
+
+        if (!self.$postBottomBar.hasClass('is-slided')) {
+            self.$postBottomBar.animate({
+                'left': '+=' + self.$sidebar.width,
+            }, 250, function() {
+                self.$postBottomBar.addClass('is-slided');
             });
         }
     };
+    
     /**
      * Slide post bottom bar to the left
-     * @param width
      */
-    function slidePostBottomBarLeft(width) {
-        if ($('.post-bottom-bar').hasClass('is-slided')) {
-            $('.post-bottom-bar').animate({
-                'left': '-=' + width,
-            }, 250, function () {
-                $('.post-bottom-bar').removeClass('is-slided');
-                $('.post-bottom-bar').css('left', '');
+    Sidebar.prototype.slidePostBottomBarLeft = function() {
+        var self = this;
+
+        if (self.$postBottomBar.hasClass('is-slided')) {
+            self.$postBottomBar.animate({
+                'left': '+=' + self.$sidebar.width,
+            }, 250, function() {
+                self.$postBottomBar.removeClass('is-slided');
             });
         }
     };
 
-    /**
-     * Init blog position
-     * @constructor
-     */
-    function initBlogPosition() {
-        $('#main, #header').css({'margin-left': 0}).removeClass('is-slided');
-    }
-
     $(document).ready(function() {
-        var sidebar = new Sidebar('#sidebar', '#btn-open-sidebar');
+        var sidebar = new Sidebar();
         sidebar.init();
     })
 }(jQuery);
