@@ -26,10 +26,11 @@
                 display: block;
                 height:  100%;
 
-            }
-            a:hover,
-            a:active {
-                color: lighten($sidebar-font-color, 35);
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                    color: lighten($sidebar-font-color, 35);
+                }
             }
         }
     }
