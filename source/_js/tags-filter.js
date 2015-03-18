@@ -1,13 +1,12 @@
-+function ($) {
++function($) {
 	'use strict';
 
 	/**
 	 * TagsFilter feature
-	 *
 	 * @param tagsArchivesElem
 	 * @constructor
 	 */
-	var TagsFilter = function (tagsArchivesElem) {
+	var TagsFilter = function(tagsArchivesElem) {
 		this.$inputSearch   = $(tagsArchivesElem + ' #filter-form input[name=tag]');
 		this.$archiveResult = $(tagsArchivesElem).find('.archive-result');
 		this.$tags          = $(tagsArchivesElem).find('.tag');
@@ -17,12 +16,12 @@
 	};
 
 	/**
-	 * Init tags filter
+	 * Init TagsFilter Feature
 	 */
 	TagsFilter.prototype.init = function() {
 		var self = this;
 
-		self.$inputSearch.keyup(function () {
+		self.$inputSearch.keyup(function() {
 			self.filter(self.getSearch());
 		})
 	};
@@ -35,8 +34,7 @@
 	};
 
 	/**
-	 * Show related posts and hide others
-	 *
+	 * Show related posts form a tag and hide the others
 	 * @param tag
 	 */
 	TagsFilter.prototype.filter = function(tag) {
@@ -52,19 +50,19 @@
 	};
 
 	/**
-	 * Display results
-	 * @param number
+	 * Display results of the search
+	 * @param tagsNumb
 	 * @returns {Number}
 	 */
-	TagsFilter.prototype.showResult = function(number) {
-		if (number == 0) {
+	TagsFilter.prototype.showResult = function(tagsNumb) {
+		if (tagsNumb == 0) {
 			this.$archiveResult.html('No tags found').show();
 		}
-		else if (number == -1) {
+		else if (tagsNumb == -1) {
 			this.$archiveResult.html('').hide();
 		}
 		else {
-			this.$archiveResult.html(number + ' tag' + ((number > 1) ? 's' : '') + ' found').show();
+			this.$archiveResult.html(tagsNumb + ' tag' + ((tagsNumb > 1) ? 's' : '') + ' found').show();
 		}
 	};
 
@@ -87,7 +85,7 @@
 	};
 
 	/**
-	 * Show all tags and related posts
+	 * Show all tags and all posts
 	 */
 	TagsFilter.prototype.showAll = function() {
 		this.$tags.show();
@@ -95,7 +93,7 @@
 	};
 
 	/**
-	 * Hide all tags and related posts
+	 * Hide all tags and all posts
 	 */
 	TagsFilter.prototype.hideAll = function() {
 		this.$tags.hide();
@@ -103,10 +101,9 @@
 	};
 
 	$(document).ready(function() {
-		var tagsFilter;
 		if ($('#tags-archives').length) {
-			tagsFilter = new TagsFilter('#tags-archives');
+			var tagsFilter = new TagsFilter('#tags-archives');
 			tagsFilter.init();
 		}
-	})
+	});
 }(jQuery);
