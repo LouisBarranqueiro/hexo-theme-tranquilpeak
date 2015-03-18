@@ -2,7 +2,7 @@
 	'use strict';
 
 	/**
-	 * TagsFilter
+	 * TagsFilter feature
 	 *
 	 * @param tagsArchivesElem
 	 * @constructor
@@ -24,7 +24,7 @@
 		self.$inputSearch.keyup(function () {
 			self.filter(self.getSearch());
 		})
-	}
+	};
 
 	/**
 	 * Get the search entered by user
@@ -39,6 +39,10 @@
 	 * @param tag
 	 */
 	TagsFilter.prototype.filter = function(tag) {
+		if (this.countPosts(tag) == 0){
+
+		}
+
 		if (tag == '') {
 			this.showAll();
 		}
@@ -46,6 +50,24 @@
 			this.hideAll();
 			this.showPosts(tag);
 		}
+	};
+
+	/**
+	 *
+	 * @param tag
+	 * @returns {Number}
+	 */
+	TagsFilter.prototype.showNoResultMsg = function() {
+
+	};
+
+	/**
+	 * Count number of posts
+	 * @param tag
+	 * @returns {Number}
+	 */
+	TagsFilter.prototype.countPosts = function(tag) {
+		return $(this.posts + '[data-tag*=' + tag + ']').length;
 	};
 
 	/**
