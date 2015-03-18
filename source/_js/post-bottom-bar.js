@@ -2,59 +2,46 @@
      'use strict'
 
     /**
-     *  PostBottomBar
+     * Post bottom bar feature
      * @param postBottomBar
+     * @param postFooter
      * @constructor
      */
-    var PostBottomBar = function(postBottomBar) {
-        this.$elem = $(postBottomBar);
+    var PostBottomBar = function(postBottomBar, postFooter) {
+        this.$postBottomBar = $(postBottomBar);
+        this.$postFooter    = $(postFooter);
     }
 
     /**
-     * Init the post bottom bar
+     * Init the post bottom bar feature
      */
     PostBottomBar.prototype.init = function() {
         var self = this;
 
-        self.checkVisibility();
+        self.animate();
         $(window).scroll(function () {
-            self.checkVisibility();
+            self.animate();
         })
     };
 
     /**
-     * Check if the post footer is visible by the user
+     * Animate the post bottom bar
      */
-    PostBottomBar.prototype.checkVisibility = function() {
-        if (checkPostFooterVisibility() == true) {
-            this.slideUp();
+    PostBottomBar.prototype.animate = function() {
+        if (this.checkPostFooterVisibility() == true) {
+            this.$postBottomBar.slideUp();
         }
         else {
-            this.slideDown();
+            this.$postBottomBar.slideDown();
         }
-    };
-
-    /**
-     * Slide up the post bottom bar
-     */
-    PostBottomBar.prototype.slideUp = function() {
-        this.$elem.slideUp();
-    };
-
-    /**
-     * Slide down the post bottom bar
-     */
-    PostBottomBar.prototype.slideDown = function() {
-        this.$elem.slideDown();
     };
 
     /**
      * Check if the post footer element is visible by the user
      * @returns {boolean}
      */
-    function checkPostFooterVisibility() {
-        var $postFooterElem   = $('.post-footer');
-        var postFooterElemPos = $postFooterElem.offset().top + $postFooterElem.height();
+    PostBottomBar.prototype.checkPostFooterVisibility = function() {
+        var postFooterElemPos = this.$postFooter.offset().top + this.$postFooter.height();
 
         if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
             return true;
@@ -62,12 +49,13 @@
         else {
             return false;
         }
-
     };
 
     $(document).ready(function() {
+        var postBottomBar;
+
         if ($('.post-bottom-bar').length) {
-            var postBottomBar = new PostBottomBar('.post-bottom-bar');
+            postBottomBar = new PostBottomBar('.post-bottom-bar', '.post-footer');
             postBottomBar.init();
         }
     })
