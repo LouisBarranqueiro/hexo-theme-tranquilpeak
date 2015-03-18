@@ -1,10 +1,20 @@
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close"><i class="fa fa-remove"></i></div>
-        <img id="about-card-picture" src="<%- gravatar(config.email, 110) || theme.author.picture %>" />
-        <h5 id="about-card-name"><%= config.author %></h5>
-        <p id="about-card-bio"><%= theme.author.bio %></p>
-        <h6 id="about-card-job"><i class="fa fa-briefcase"></i><br/><%= theme.author.job %></h6>
-        <h6 id="about-card-location"><i class="fa fa-map-marker"></i><br/><%= theme.author.location %></h6>
+        <% if ((theme.gravatar_image) && (config.email)) { %>
+            <img id="about-card-picture" src="<%- gravatar(config.email, 110) %>" />
+        <% } else if (theme.author.picture) { %>
+            <img id="about-card-picture" src="<%- theme.author.picture %>" />
+        <% } %>
+            <h5 id="about-card-name"><%= config.author %></h5>
+        <% if (theme.author.bio) { %>
+            <p id="about-card-bio"><%= theme.author.bio %></p>
+        <% } %>
+        <% if (theme.author.job) { %>
+            <h6 id="about-card-job"><i class="fa fa-briefcase"></i><br/><%= theme.author.job %></h6>
+        <% } %>
+        <% if (theme.author.location) { %>
+            <h6 id="about-card-location"><i class="fa fa-map-marker"></i><br/><%= theme.author.location %></h6>
+        <% } %>
     </div>
 </div>
