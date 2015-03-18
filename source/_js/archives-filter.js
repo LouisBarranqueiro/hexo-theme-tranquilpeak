@@ -33,7 +33,7 @@
 	 * @returns {string}
 	 */
 	ArchivesFilter.prototype.getSearch = function() {
-		return this.$searchInput.val().replace(/\//g, '').toLowerCase();
+		return this.$searchInput.val().replace(/([\/|.|-])/g, '').toLowerCase();
 	};
 
 	/**
