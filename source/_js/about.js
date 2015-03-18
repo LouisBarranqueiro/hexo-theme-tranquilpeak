@@ -14,7 +14,7 @@
     };
 
     /**
-     * Init the feature
+     * Init about card feature
      */
     AboutCard.prototype.init = function() {
         var self = this;
@@ -71,7 +71,7 @@
                 self.$aboutCard.animate({
                     top: '+=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
                 });
-            })
+            });
     };
 
     /**
@@ -92,5 +92,5 @@
     $(document).ready(function() {
         var aboutCard = new AboutCard();
         aboutCard.init();
-    })
+    });
 }(jQuery);
