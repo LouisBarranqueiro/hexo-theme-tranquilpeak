@@ -7,13 +7,14 @@
 	 * @constructor
 	 */
 	var ArchivesFilter = function (archivesElem) {
-		this.$searchInput = $('#filter-form input[name=date]');
-		this.postsYear    = archivesElem + ' .archive-year';
-		this.postsMonth   = archivesElem + ' .archive-month';
-		this.postsDay     = archivesElem + ' .archive-day';
-		this.$postsYear   = $(archivesElem).find('.archive-year');
-		this.$postsMonth  = $(archivesElem).find('.archive-month');;
-		this.$postsDay    = $(archivesElem).find('.archive-day');;
+		this.$searchInput   = $(archivesElem).find('input[name=date]');
+		this.$archiveResult = $(archivesElem).find('.archive-result');
+		this.$postsYear     = $(archivesElem).find('.archive-year');
+		this.$postsMonth    = $(archivesElem).find('.archive-month');;
+		this.$postsDay      = $(archivesElem).find('.archive-day');;
+		this.postsYear      = archivesElem + ' .archive-year';
+		this.postsMonth     = archivesElem + ' .archive-month';
+		this.postsDay       = archivesElem + ' .archive-day';
 	};
 
 	/**
@@ -50,12 +51,41 @@
 	ArchivesFilter.prototype.filter = function(date) {
 		if (date[0] == '') {
 			this.showAll();
+			this.showResult(-1);
 		}
 		else {
 			this.hideAll();
 			this.showPosts(date);
+			this.showResult(this.countPosts(date));
 		}
 	};
+
+	/**
+	 * Display results
+	 * @param number
+	 * @returns {Number}
+	 */
+	ArchivesFilter.prototype.showResult = function(number) {
+		if (number == 0) {
+			this.$archiveResult.html('No posts found').show();
+		}
+		else if (number == -1) {
+			this.$archiveResult.html('').hide();
+		}
+		else {
+			this.$archiveResult.html(number + ' post' + ((number > 1) ? 's' : '') + ' found').show();
+		}
+	};
+
+	/**
+	 * Count number of posts
+	 * @param date
+	 * @returns {Number}
+	 */
+	ArchivesFilter.prototype.countPosts = function(date) {
+		return $(this.postsDay + '[data-date*=' + date[0] + date[1] + date[2] + ']').length;
+		console.log($(this.postsDay + '[data-date*=' + date[0] + date[1] + date[2] + ']').length);
+	}
 
 	/**
 	 * Show all posts from a date
