@@ -122,10 +122,8 @@
 	};
 
 	$(document).ready(function() {
-		var archivesFilter;
-
 		if ($('#archives').length) {
-			archivesFilter = new ArchivesFilter('#archives');
+			var archivesFilter = new ArchivesFilter('#archives');
 			archivesFilter.init();
 		}
 	})
