@@ -13,7 +13,11 @@
         <ul>
             <% for (var n in theme.sidebar[i]) { %>
                 <li>
-                    <a href="<%- url_for(theme.sidebar[i][n].url) %>">
+                    <a href="<%- url_for(theme.sidebar[i][n].url) %>"
+                        <% if (theme.sidebar[i][n].url.indexOf(config.url) >= 0) { %>
+                            target="new"
+                        <% }%>
+                    >
                         <i class="fa fa-lg <%= 'fa-' + theme.sidebar[i][n].icon %>"></i>
                         <span class="desc hide-m"><%- theme.sidebar[i][n].title %></span>
                     </a>
