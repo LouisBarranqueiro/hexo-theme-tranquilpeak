@@ -45,7 +45,9 @@
                     <% } else { %>
                         <% if (theme.read_more_message) { %>
                             <a href="<%= post.permalink %>" class="post-excerpt_link link "><%- theme.read_more_message %></a>
-                            <span class="post-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
+                            <% if (post.readingtime) { %>
+                                <span class="post-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
+                            <% } %>
                         <% } %>
                     <% } %>
                     <% if (!post.excerpt) { %>
