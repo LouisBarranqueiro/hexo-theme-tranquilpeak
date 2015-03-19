@@ -5,14 +5,14 @@
     <h5 class="archive-result text-color-base text-xlarge"></h5>
     <section>
         <% site.categories.sort('name').each(function(item) { %>
-            <a class="category category--small category--primary" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+            <a class="category category--small category--primary" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(' ', '-').toLowerCase() %>">
                 <%= item.name %>
             </a>
         <% }); %>
     </section>
     <section class="box-group">
         <% site.categories.sort('name').each(function(item) { %>
-            <div id="<%= 'posts-list-' + item.name %>" class="archive box" data-category="<%= item.name.replace('.', '__').replace(' ', '-') %>">
+            <div id="<%= 'posts-list-' + item.name %>" class="archive box" data-category="<%= item.name.replace('.', '__').replace(' ', '-').toLowerCase() %>">
                 <h4 class="archive-title">
                     <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>"><%= item.name + ' (' + item.length + ')' %></a>
                 </h4>
