@@ -13,7 +13,7 @@
             </div>
         </div>
         <%- partial('_partial/about', null, {cache: !config.relative_link}) %>
-        <div id="cover" style="background-image:url('<%= config.root + theme.image_dir + '/' + theme.cover  %>');"></div>
+        <%- partial('_partial/cover', null, {cache: !config.relative_link}) %>
     </body>
     <%- partial('_partial/script') %>
 </html>
