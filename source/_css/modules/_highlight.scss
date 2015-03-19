@@ -4,17 +4,17 @@ figure.highlight {
     margin:         10px 0;
     border-radius:  3px;
     overflow:       hidden;
-    font-size:      $font-size-medium;
+    font-size:      $font-size-small;
+    line-height:    1.1em;
     color:          #333;
     font-family:    Menlo;
-    line-height:    1em;
-    letter-spacing: 0.2px;
     border:         1px solid #ddd;
 
     table {
-        display:  block;
-        width:    100%;
-        overflow: scroll;
+        display:    block;
+        width:      100%;
+        overflow-y: hidden;
+        overflow-x: scroll;
     }
     pre {
         border:  none;
@@ -23,8 +23,7 @@ figure.highlight {
     }
     // Meta bar
     figcaption {
-        font-size:     0.95em;
-        padding:       10px;
+        padding:       10px 15px;
         margin:        0;
         background:    #f7f7f7;
         border-bottom: 1px solid #ddd;
@@ -34,7 +33,7 @@ figure.highlight {
             float: right;
         }
     }
-    // lines-numbers
+    // lines number
     .gutter {
         padding:      0.3em;
         margin:       0;
@@ -42,23 +41,21 @@ figure.highlight {
         border-right: 1px solid #ddd;
 
         .line {
-            height:         20px;
-            font-size:      1.2em;
-            color:          $font-color-light;
-            letter-spacing: 2px;
+            height:    20px;
+            font-size: 1.35em;
+            color:     $font-color-light;
         }
     }
-    // lines-codes
+    // lines of code
     .code {
         border:  none;
         padding: 0;
         margin:  0;
 
         .line {
-            height:         20px;
-            padding-left:   5px;
-            font-size:      1.2em;
-            letter-spacing: 2px;
+            height:       20px;
+            padding-left: 5px;
+            font-size:    1.3em;
 
         }
     }
