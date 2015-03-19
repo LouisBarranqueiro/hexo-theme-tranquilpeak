@@ -1,11 +1,29 @@
 .image-gallery {
     padding:       5px;
+    display:       block;
+    position:      relative;
+    width:         100%;
+    height:        auto;
+    overflow:      hidden;
     border-radius: 3px;
-    background:    #28292d;
+    border:        1px solid #ddd;
 
     .image-gallery-photos {
-        position: relative;
 
+        .photo-box {
+            float: left;
+            position:relative;
+
+            .photo-box-inner {
+                position: absolute;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    width: 100%;
+                }
+            }
+        }
         .fancybox-button {
             position:      absolute;
             top:           calc(50% - 30px);
@@ -20,22 +38,33 @@
             cursor:        pointer;
             border-radius: 3px;
         }
-        .image-gallery-img {
-            display: none;
+    }
+}
+// Mobiles
+// --------------------
+@media #{$small-and-down} {
+    .photo-box {
+        display:        block;
+        width:          50%;
+        padding-bottom: 50%;
 
-            &:nth-child(2) {
-                display: block;
-            }
-            &.loaded {
-                position: absolute;
-                display:  block;
-            }
-            img {
-                display:       block;
-                max-width:     100%;
-                margin:        0 auto;
-                border-radius: 3px;
-            }
+        &:nth-child(n + 3) {
+            display: none;
         }
     }
 }
+
+// Tablets & desktops
+// --------------------
+@media #{$medium-and-up} {
+    .photo-box {
+        display:        block;
+        width:          25%;
+        padding-bottom: 25%;
+
+        &:nth-child(n + 5) {
+            display: none;
+        }
+    }
+}
+

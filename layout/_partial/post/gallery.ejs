@@ -1,5 +1,6 @@
 <% if ((photos) && (photos.length)) { %>
     <div class="image-gallery">
+        <span class="text-center text-large fancybox-button"><i class="fa fa-2x fa-eye"></i></span>
         <div class="image-gallery-photos">
             <% photos.forEach(function(photo) { %>
                 <% var photoUrl; %>
@@ -8,10 +9,11 @@
                 <% } else { %>
                     <% photoUrl = url_for(post.permalink + photo); %>
                 <% } %>
-                <span class="text-center text-large fancybox-button"><i class="fa fa-2x fa-eye"></i></span>
-                <a class="image-gallery-img fancybox-thumb" rel="fancybox-thumb" data-fancybox-group="<%= 'gallery-' + post.id %>" title="<%= photo.replace('__', ' ').slice(0, photo.lastIndexOf('.')) %>" href="<%= photoUrl %>">
-                    <img src="<%= photoUrl %>">
-                </a>
+                <div class="photo-box">
+                        <a class="photo-box-inner fancybox-thumb" rel="fancybox-thumb" data-fancybox-group="<%= 'gallery-' + post.id %>" title="<%= photo.replace('__', ' ').slice(0, photo.lastIndexOf('.')) %>" href="<%= photoUrl %>">
+                            <img src="<%= photoUrl %>">
+                        </a>
+                </div>
             <% }) %>
         </div>
     </div>
