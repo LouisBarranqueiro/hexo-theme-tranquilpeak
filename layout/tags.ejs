@@ -5,14 +5,14 @@
     <h5 class="archive-result text-color-base text-xlarge"></h5>
     <section>
         <% site.tags.sort('name').each(function(item) { %>
-            <a class="tag tag--primary tag--small" href="<%= '#' + item.name + '-list' %>" data-tag="<%= item.name.replace('.','__') %>">
+            <a class="tag tag--primary tag--small" href="<%= '#' + item.name + '-list' %>" data-tag="<%= item.name.replace('.','__').toLowerCase() %>">
                 <%= item.name %>
             </a>
         <% }); %>
     </section>
     <section class="box-group">
         <% site.tags.sort('name').each(function(item) { %>
-            <div id="<%= item.name + '-list' %>" class="archive" data-tag="<%= item.name.replace('.','__') %>">
+            <div id="<%= item.name + '-list' %>" class="archive" data-tag="<%= item.name.replace('.','__').toLowerCase() %>">
                 <h5 class="archive-title">
                     <a class="link-unstyled" href="<%- url_for('tags/' + item.name ) %>"><%= item.name + ' (' + item.length + ')' %></a>
                 </h5>
