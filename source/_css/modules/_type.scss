@@ -62,6 +62,12 @@
 .text-underline {
     text-decoration: underline !important;
 }
+.text-underline-hover {
+    &:hover {
+        text-decoration: underline !important;
+
+    }
+}
 .text-color-light {
     color: $font-color-light !important;
 }
@@ -74,16 +80,20 @@
 .text-color-base {
     color: $font-color-base !important;
 }
+
 // Link
-a.link-unstyled,
-a.link-unstyled:hover,
-a.link-unstyled:active {
-    cursor:          pointer !important;
-    color:           inherit !important;
-    text-decoration: none !important;
-}
-a.link:hover,
-a.link:active {
-    text-decoration: underline !important;
+a.link-unstyled {
+    &:hover,
+    &:active {
+        cursor:          pointer !important;
+        color:           inherit !important;
+        text-decoration: none !important;
+    }
+    a.link {
+        &:hover,
+        &:active {
+            text-decoration: underline !important;
+        }
+    }
 }
 

@@ -6,14 +6,14 @@
     clear:       both;
 
     ol.post-actions-panel {
-        margin:       0px;
-        padding-left: 0px;
+        margin:       0;
+        padding-left: 0;
 
         ul {
             float:        left;
             list-style:   none;
-            padding-left: 0px;
-            margin-top:   0px;
+            padding-left: 0;
+            margin-top:   0;
 
             li {
                 width:      auto;
@@ -25,20 +25,21 @@
 
             li {
                 float: left;
-            }
-            li:first-child {
-                 .post-actions-btn {
-                     span {
-                         margin-left: 10px;
-                     }
-                 }
-             }
-            li:last-child {
-                .post-actions-btn {
-                    margin-left: 15px;
 
-                    span {
-                        margin-right: 10px;
+                &:first-child {
+                    .post-actions-btn {
+                        span {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                &:last-child {
+                    .post-actions-btn {
+                        margin-left: 15px;
+
+                        span {
+                            margin-right: 10px;
+                        }
                     }
                 }
             }
@@ -49,15 +50,16 @@
             li {
                 float: right;
 
-            }
-            li:nth-child(n + 2) {
-                .post-actions-btn {
-                    margin-right: 15px;
+                &:nth-child(n + 2) {
+                    .post-actions-btn {
+                        margin-right: 15px;
+                    }
                 }
             }
         }
     }
 }
+
 // Mobiles
 // --------------------
 @media #{$small-and-down} {

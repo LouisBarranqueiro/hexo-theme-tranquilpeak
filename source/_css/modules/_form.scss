@@ -1,14 +1,16 @@
 .form-control {
     background: transparent;
-    width:   100%;
-    border:  none;
-    outline: none;
-    color:   $font-color-input;
+    width:      100%;
+    border:     none;
+    outline:    none;
+    color:      $font-color-input;
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
 }
-.form-control:hover,
-.form-control:focus {
-    outline: none;
-}
+
 .input--xlarge {
-    @include input-size(auto, 10px, 0px, 25px, 25px);
+    @include input-size(auto, 10px, 0, 25px, 25px);
 }

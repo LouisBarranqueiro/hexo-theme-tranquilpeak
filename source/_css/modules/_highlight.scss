@@ -21,6 +21,7 @@ figure.highlight {
         padding: 0;
         margin:  0;
     }
+    // Meta bar
     figcaption {
         font-size:     0.95em;
         padding:       10px;
@@ -33,6 +34,7 @@ figure.highlight {
             float: right;
         }
     }
+    // lines-numbers
     .gutter {
         padding:      0.3em;
         margin:       0;
@@ -46,6 +48,7 @@ figure.highlight {
             letter-spacing: 2px;
         }
     }
+    // lines-codes
     .code {
         border:  none;
         padding: 0;
@@ -60,6 +63,7 @@ figure.highlight {
         }
     }
 }
+// Code customization
 pre {
     .comment,
     .title {
@@ -117,6 +121,9 @@ pre {
     .keyword,
     .javascript .function {
         color: $highlight-purple;
+    }
+    .tag {
+        cursor: text;
     }
 }
 // Gist

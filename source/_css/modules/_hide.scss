@@ -5,6 +5,7 @@
         display: none;
     }
 }
+
 // Tablets
 // --------------------
 @media #{$medium-only} {
@@ -12,6 +13,7 @@
         display: none;
     }
 }
+
 // Desktops
 // --------------------
 @media #{$large-and-up} {

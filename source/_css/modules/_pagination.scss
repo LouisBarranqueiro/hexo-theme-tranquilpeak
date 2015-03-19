@@ -18,20 +18,20 @@
         }
         .pagination-next {
             i {
-                font-size: $font-size-base;
+                font-size:   $font-size-base;
                 margin-left: 10px;
             }
         }
         .pagination-prev {
             i {
-                font-size: $font-size-base;
+                font-size:    $font-size-base;
                 margin-right: 10px;
             }
         }
         .pagination-number {
-            float: right;
+            float:     right;
             font-size: $font-size-medium;
-            color: $font-color-light;
+            color:     $font-color-light;
         }
     }
 }

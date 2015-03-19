@@ -7,10 +7,11 @@ a.tag,
     border-radius:  3px;
     letter-spacing: $letter-spacing-base;
     cursor:         pointer;
-    margin:         0px;
+    margin:         0;
     margin-right:   4px;
     margin-bottom:  7px;
 }
+
 // Colors variant
 a.tag--default,
 .tag-default {
@@ -28,6 +29,7 @@ a.tag--danger ,
 .tag-default {
     @include tag-color-variant($color-danger);
 }
+
 // Size variant
 a.tag--base,
 .tag--base {

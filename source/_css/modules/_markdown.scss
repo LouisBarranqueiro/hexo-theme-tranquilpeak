@@ -1,32 +1,99 @@
-.markdown {
-    h1,
-    h2,
-    h3 {
-        margin-top:    20px;
-        margin-bottom: 10px;
-    }
-    h4,
-    h5,
-    h6 {
-        margin-top:    10px;
-        margin-bottom: 10px;
+// Mobiles
+// --------------------
+@media #{$small-and-down} {
+    body {
+        font-size: 1.4rem;
     }
     h1 {
-        font-size: $mk-font-size-h1;
+        font-size: $font-size-h3;
     }
     h2 {
-        font-size: $mk-font-size-h2;
+        font-size: $font-size-h4;
     }
     h3 {
-        font-size: $mk-font-size-h3;
+        font-size: $font-size-h5;
     }
     h4 {
-        font-size: $mk-font-size-h4;
+        font-size: $font-size-h6;
     }
     h5 {
-        font-size: $mk-font-size-h5;
+        font-size: $font-size-xlarge;
     }
     h6 {
-        font-size: $mk-font-size-h6;
+        font-size: $font-size-large;
+    }
+}
+
+// Tablets
+// --------------------
+@media #{$medium-only} {
+    .markdown {
+        h1,
+        h2,
+        h3 {
+            margin-top:    20px;
+            margin-bottom: 10px;
+        }
+        h4,
+        h5,
+        h6 {
+            margin-top:    10px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: $md-font-size-h1;
+        }
+        h2 {
+            font-size: $md-font-size-h2;
+        }
+        h3 {
+            font-size: $md-font-size-h3;
+        }
+        h4 {
+            font-size: $md-font-size-h4;
+        }
+        h5 {
+            font-size: $md-font-size-h5;
+        }
+        h6 {
+            font-size: $md-font-size-h6;
+        }
+    }
+}
+
+// Desktops
+// --------------------
+@media #{$large-and-up} {
+    .markdown {
+        h1,
+        h2,
+        h3 {
+            margin-top:    20px;
+            margin-bottom: 10px;
+        }
+        h4,
+        h5,
+        h6 {
+            margin-top:    10px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: $md-font-size-h1;
+        }
+        h2 {
+            font-size: $md-font-size-h2;
+        }
+        h3 {
+            font-size: $md-font-size-h3;
+        }
+        h4 {
+            font-size: $md-font-size-h4;
+        }
+        h5 {
+            font-size: $md-font-size-h5;
+        }
+        h6 {
+            font-size: $md-font-size-h6;
+        }
     }
 }
