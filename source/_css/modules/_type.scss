@@ -83,6 +83,7 @@
 
 // Link
 a.link-unstyled {
+    &,
     &:hover,
     &:active {
         cursor:          pointer !important;
@@ -90,6 +91,7 @@ a.link-unstyled {
         text-decoration: none !important;
     }
     a.link {
+        &,
         &:hover,
         &:active {
             text-decoration: underline !important;
