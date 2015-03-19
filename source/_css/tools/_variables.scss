@@ -10,27 +10,27 @@ $line-height-base:     1.85em;
 $letter-spacing-base:  0.01em;
 $font-feature-base:    'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 
-// Headers size
-$font-size-h1: 2.5rem;
-$font-size-h2: 2.3rem;
-$font-size-h3: 2.1rem;
-$font-size-h4: 1.9rem;
-$font-size-h5: 1.8rem;
-$font-size-h6: 1.7rem;
-
 // Headers settings
 $headings-font-family: 'Open Sans', sans-serif;
 $headings-font-weight: 700;
-$headings-line-height: 1.63em;
+$headings-line-height: 1.45em;
 $headings-color:       #4a4a4a;
 
+// Headers size
+$font-size-h1: 2.8rem;
+$font-size-h2: 2.4rem;
+$font-size-h3: 2.0rem;
+$font-size-h4: 1.8rem;
+$font-size-h5: 1.7rem;
+$font-size-h6: 1.6rem;
+
 // Markdown headers size
-$md-font-size-h1: 2.05rem;
-$md-font-size-h2: 1.95rem;
-$md-font-size-h3: 1.85rem;
-$md-font-size-h4: 1.75rem;
-$md-font-size-h5: 1.65rem;
-$md-font-size-h6: 1.55rem;
+$md-font-size-h1: 2.15rem;
+$md-font-size-h2: 2rem;
+$md-font-size-h3: 1.8rem;
+$md-font-size-h4: 1.7rem;
+$md-font-size-h5: 1.6rem;
+$md-font-size-h6: 1.5rem;
 
 // Font size
 $font-size-xlarge: 1.7rem;
