@@ -10,11 +10,11 @@
         <article class="post-wrap <%= thumbNailImgClass %>">
             <div class="post">
                 <% if (post.link) { %>
-                    <h1 class="post-title">
+                    <h1 class="post-title ">
                         <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(no title)' %></a>
                     </h1>
                 <% } else { %>
-                <h1 class="post-title">
+                <h1 class="post-title ">
                     <a class="link-unstyled" href="<%- url_for(post.permalink) %>"><%= post.title || '(no title)' %></a>
                 </h1>
                 <% } %>
