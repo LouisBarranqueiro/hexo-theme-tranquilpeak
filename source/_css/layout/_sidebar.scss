@@ -3,16 +3,16 @@
 #sidebar {
     height:     100%;
     position:   fixed;
-    top:        0px;
+    top:        0;
     background: $sidebar-bg-color;
     overflow:   scroll;
     z-index:    9;
     font-family: 'Open Sans', sans-serif;
 
     ul {
-        padding-left:  0px;
-        padding-top:   0px;
-        margin-top:    0px;
+        padding-left:  0;
+        padding-top:   0;
+        margin-top:    0;
         margin-bottom: 20px;
 
         li {
@@ -63,7 +63,7 @@
                     text-align:   left;
                     width:        auto;
                     padding-left: 23px;
-                    padding-top:  0px;
+                    padding-top:  0;
 
                     .fa {
                         display:        inline-block;
@@ -71,7 +71,7 @@
                         width:          30px;
                         height:         30px;
                         line-height:    30px;
-                        padding-top:    0px;
+                        padding-top:    0;
                         vertical-align: middle;
                         margin-right:   15px;
                     }
@@ -125,7 +125,7 @@
                         width:          30px;
                         height:         30px;
                         line-height:    30px;
-                        padding-top:    0px;
+                        padding-top:    0;
                         vertical-align: middle;
                     }
                 }
@@ -138,7 +138,7 @@
                 height:         30px;
                 line-height:    30px;
                 vertical-align: middle;
-                border-radius: 30px;
+                border-radius:  30px;
             }
         }
     }
@@ -158,7 +158,7 @@
                     text-align:   left;
                     width:        auto;
                     padding-left: 23px;
-                    padding-top:  0px;
+                    padding-top:  0;
 
                     .fa {
                         display:        inline-block;
@@ -166,7 +166,7 @@
                         width:          30px;
                         height:         30px;
                         line-height:    30px;
-                        padding-top:    0px;
+                        padding-top:    0;
                         vertical-align: middle;
                         margin-right:   15px;
                     }

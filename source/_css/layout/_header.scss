@@ -1,4 +1,4 @@
-// Mobiles
+// All
 // --------------------
 #header {
     z-index: 2;
@@ -27,7 +27,7 @@
             height:   30px;
             position: relative;
             top:      12.5px;
-            margin:   0px auto;
+            margin:   0 auto;
         }
         .header-picture {
             display:       block;
@@ -37,7 +37,7 @@
         }
         .header-title {
             line-height: 55px;
-            margin:      0px 0px 0px 0px;
+            margin:      0;
             color:       $header-font-color;
         }
         a:hover,
