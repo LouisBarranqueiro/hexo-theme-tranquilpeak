@@ -6,36 +6,38 @@
 // --------------------
 $font-family-base:     'Open Sans', sans-serif;
 $font-size-base:       1.5rem;
-$line-height-base:     1.8em;
-$letter-spacing-base:  0.01rem;
+$line-height-base:     1.85em;
+$letter-spacing-base:  0.01em;
 $font-feature-base:    'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 
-$font-size-h1: 2em;
-$font-size-h2: 1.8em;
-$font-size-h3: 1.6em;
-$font-size-h4: 1.5em;
-$font-size-h5: 1.4em;
-$font-size-h6: 1.3em;
+// Headers size
+$font-size-h1: 2.5rem;
+$font-size-h2: 2.3rem;
+$font-size-h3: 2.1rem;
+$font-size-h4: 1.9rem;
+$font-size-h5: 1.8rem;
+$font-size-h6: 1.7rem;
 
-$font-size-xlarge: 1.2em;
-$font-size-large:  1.1em;
-$font-size-medium: 0.9em;
-$font-size-small:  0.8em;
-$font-size-xsmall: 0.5em;
-
-
+// Headers settings
 $headings-font-family: 'Open Sans', sans-serif;
 $headings-font-weight: 700;
-$headings-line-height: 1.23em;
+$headings-line-height: 1.63em;
 $headings-color:       #4a4a4a;
 
-// Markdown
-$mk-font-size-h1: 27px;
-$mk-font-size-h2: 24px;
-$mk-font-size-h3: 21px;
-$mk-font-size-h4: 18px;
-$mk-font-size-h5: 15px;
-$mk-font-size-h6: 12px;
+// Markdown headers size
+$md-font-size-h1: 2.05rem;
+$md-font-size-h2: 1.95rem;
+$md-font-size-h3: 1.85rem;
+$md-font-size-h4: 1.75rem;
+$md-font-size-h5: 1.65rem;
+$md-font-size-h6: 1.55rem;
+
+// Font size
+$font-size-xlarge: 1.7rem;
+$font-size-large:  1.6rem;
+$font-size-medium: 1.4rem;
+$font-size-small:  1.25rem;
+$font-size-xsmall: 1rem;
 
 // Colors settings
 // --------------------
@@ -68,8 +70,8 @@ $highlight-purple:       #795da3;
 
 // Header settings
 // --------------------
-$header-bg-color:      rgba(26, 45, 64, 1);
-$header-font-color:    #bdc3d3;
+$header-bg-color:   rgba(26, 45, 64, 1);
+$header-font-color: #bdc3d3;
 
 // Sidebar settings
 // --------------------

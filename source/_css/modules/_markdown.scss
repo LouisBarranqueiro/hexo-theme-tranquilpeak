@@ -1,26 +1,25 @@
 // Mobiles
 // --------------------
 @media #{$small-and-down} {
-    body {
-        font-size: 1.4rem;
-    }
-    h1 {
-        font-size: $font-size-h3;
-    }
-    h2 {
-        font-size: $font-size-h4;
-    }
-    h3 {
-        font-size: $font-size-h5;
-    }
-    h4 {
-        font-size: $font-size-h6;
-    }
-    h5 {
-        font-size: $font-size-xlarge;
-    }
-    h6 {
-        font-size: $font-size-large;
+    .markdown {
+        h1 {
+            font-size: $md-font-size-h1 - 0.2rem;
+        }
+        h2 {
+            font-size: $md-font-size-h2 - 0.2rem;
+        }
+        h3 {
+            font-size: $md-font-size-h3 - 0.2rem;
+        }
+        h4 {
+            font-size: $md-font-size-h4 - 0.2rem;
+        }
+        h5 {
+            font-size: $md-font-size-h5 - 0.2rem;
+        }
+        h6 {
+            font-size: $md-font-size-h6 - 0.2rem;
+        }
     }
 }
 
@@ -28,35 +27,23 @@
 // --------------------
 @media #{$medium-only} {
     .markdown {
-        h1,
-        h2,
-        h3 {
-            margin-top:    20px;
-            margin-bottom: 10px;
-        }
-        h4,
-        h5,
-        h6 {
-            margin-top:    10px;
-            margin-bottom: 10px;
-        }
         h1 {
-            font-size: $md-font-size-h1;
+            font-size: $md-font-size-h1 - 0.1rem;
         }
         h2 {
-            font-size: $md-font-size-h2;
+            font-size: $md-font-size-h2 - 0.1rem;
         }
         h3 {
-            font-size: $md-font-size-h3;
+            font-size: $md-font-size-h3 - 0.1rem;
         }
         h4 {
-            font-size: $md-font-size-h4;
+            font-size: $md-font-size-h4 - 0.1rem;
         }
         h5 {
-            font-size: $md-font-size-h5;
+            font-size: $md-font-size-h5 - 0.1rem;
         }
         h6 {
-            font-size: $md-font-size-h6;
+            font-size: $md-font-size-h6 - 0.1rem;
         }
     }
 }
@@ -65,18 +52,6 @@
 // --------------------
 @media #{$large-and-up} {
     .markdown {
-        h1,
-        h2,
-        h3 {
-            margin-top:    20px;
-            margin-bottom: 10px;
-        }
-        h4,
-        h5,
-        h6 {
-            margin-top:    10px;
-            margin-bottom: 10px;
-        }
         h1 {
             font-size: $md-font-size-h1;
         }
