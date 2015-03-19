@@ -11,8 +11,8 @@ body
 {
     width:                         100%;
     height:                        100%;
-    margin:                        0px;
-    padding:                       0px;
+    margin:                        0;
+    padding:                       0;
     background:                    $bg-color-base;
     font-family:                   $font-family-base;
     font-size:                     $font-size-base;
@@ -110,6 +110,7 @@ blockquote {
 
     }
 }
+
 // Mobiles
 // --------------------
 @media #{$small-and-down} {
@@ -135,6 +136,7 @@ blockquote {
         font-size: $font-size-large;
     }
 }
+
 // Tablets
 // --------------------
 @media #{$medium-only} {
