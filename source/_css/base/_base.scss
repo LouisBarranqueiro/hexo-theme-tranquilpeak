@@ -30,6 +30,7 @@ h3,
 h4,
 h5,
 h6 {
+    letter-spacing: -0.04em;
     font-family:                   $headings-font-family;
     font-weight:                   $headings-font-weight;
     line-height:                   $headings-line-height;
@@ -38,19 +39,17 @@ h6 {
     -moz-font-feature-settings:    'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -o-font-feature-settings:      'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 }
-h1
-h2
+h1,
+h2,
 h3 {
-    letter-spacing: -0.04em;
-    margin-top:     20px;
-    margin-bottom:  10px;
+    margin-top:     2em;
+    margin-bottom:  1em;
 }
-h4
-h5
+h4,
+h5,
 h6 {
-    letter-spacing: 0.1em;
-    margin-top:     10px;
-    margin-bottom:  10px;
+    margin-top:     1em;
+    margin-bottom:  0.5em;
 }
 h1 {
     font-size: $font-size-h1;
@@ -99,7 +98,6 @@ kdb {
     padding-right: 10px;
 }
 blockquote {
-    margin-left: 20px;
     border-left: 2px solid $font-color-light;
     padding:     10px 20px;
 
@@ -116,47 +114,51 @@ blockquote {
 // --------------------
 @media #{$small-and-down} {
     body {
-        font-size: 1.4rem;
+        font-size: $font-size-base - 0.1rem;
     }
     h1 {
-        font-size: $font-size-h3;
+        font-size: $font-size-h1 - 0.2rem;
     }
     h2 {
-        font-size: $font-size-h4;
+        font-size: $font-size-h2 - 0.2rem;
     }
     h3 {
-        font-size: $font-size-h5;
+        font-size: $font-size-h3 - 0.2rem;
     }
     h4 {
-        font-size: $font-size-h6;
+        font-size: $font-size-h4 - 0.2rem;
     }
     h5 {
-        font-size: $font-size-xlarge;
+        font-size: $font-size-h5 - 0.2rem;
     }
     h6 {
-        font-size: $font-size-large;
+        font-size: $font-size-h6 - 0.2rem;
     }
 }
 
 // Tablets
 // --------------------
 @media #{$medium-only} {
+    body {
+        font-size: $font-size-base - 0.05rem;
+    }
     h1 {
-        font-size: $font-size-h2;
+        font-size: $font-size-h1 - 0.15rem;
     }
     h2 {
-        font-size: $font-size-h3;
+        font-size: $font-size-h2 - 0.15rem;
     }
     h3 {
-        font-size: $font-size-h4;
+        font-size: $font-size-h3 - 0.15rem;
     }
     h4 {
-        font-size: $font-size-h5;
+        font-size: $font-size-h4 - 0.15rem;
     }
     h5 {
-        font-size: $font-size-h6;
+        font-size: $font-size-h5 - 0.15rem;
     }
     h6 {
-        font-size: $font-size-xlarge;
+        font-size: $font-size-h6 - 0.15rem;
     }
 }
+    
