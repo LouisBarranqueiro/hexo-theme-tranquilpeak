@@ -1,157 +1,130 @@
+// Codeblock tag plugin
 figure.highlight {
     background:     $highlight-background;
-    margin:         10px 0px;
+    margin:         10px 0;
     border-radius:  3px;
-    overflow:       auto;
-    color:          $font-color-base;
-    font-size:          $font-size-medium;
+    overflow:       hidden;
+    font-size:      $font-size-medium;
+    color:          #333;
     font-family:    Menlo;
     line-height:    1em;
     letter-spacing: 0.2px;
-    border: 1px solid #ddd;
+    border:         1px solid #ddd;
 
+    table {
+        display:  block;
+        width:    100%;
+        overflow: scroll;
+    }
+    pre {
+        border:  none;
+        padding: 0;
+        margin:  0;
+    }
     figcaption {
-        font-size: $font-size-medium;
-        padding: 10px;
-        margin:0;
-        background: #f7f7f7;
+        font-size:     0.95em;
+        padding:       10px;
+        margin:        0;
+        background:    #f7f7f7;
         border-bottom: 1px solid #ddd;
-        color:#999;
+        color:         #999;
 
         a {
             float: right;
         }
     }
     .gutter {
-        padding:.3em;
-        margin: 0;
-        background: #fff;
+        padding:      0.3em;
+        margin:       0;
+        background:   #fff;
         border-right: 1px solid #ddd;
 
-        pre {
-            margin: 0;
-
-            .line {
-                font-size: 1.2em;
-                color: $font-color-light;
-                padding-bottom: 2px;
-            }
+        .line {
+            height:         20px;
+            font-size:      1.2em;
+            color:          $font-color-light;
+            letter-spacing: 2px;
         }
     }
-    td.code {
-        border: none;
-        padding: 0 !important;
-        margin: 0 !important;
+    .code {
+        border:  none;
+        padding: 0;
+        margin:  0;
 
-        pre {
-            padding: 0 !important;
-            margin: 0 !important;
+        .line {
+            height:         20px;
+            padding-left:   5px;
+            font-size:      1.2em;
+            letter-spacing: 2px;
 
-            .line {
-                display:block;
-                top:0px;
-                padding-top:0px;
-                padding-left: 5px;
-                font-size:  $font-size-medium;
-                font-family:    Menlo;
-                letter-spacing: 0.2px;
-                color: $font-color-base;
-            }
         }
     }
 }
+pre {
+    .comment,
+    .title {
+        color: #999;
+    }
+    .variable,
+    .attribute,
+    .tag,
+    .regexp,
+    .ruby .constant,
+    .xml .tag .title,
+    .xml .pi,
+    .xml .doctype,
+    .html .doctype,
+    .css .id,
+    .css .class,
+    .css .pseudo {
+        color: $highlight-red;
+    }
 
-.highlight pre {
-    border:  none;
-    margin:  0;
-    padding: 0;
-}
-.highlight table {
-    margin: 0;
-    width:  auto;
-}
-.highlight td {
-    border:  none;
-    padding: 0;
-}
-.highlight .line {
-    height: 20px;
-}
-pre .comment,
-pre .title {
-    color: #999;
-}
-pre .variable,
-pre .attribute,
-pre .tag,
-pre .regexp,
-pre .ruby .constant,
-pre .xml .tag .title,
-pre .xml .pi,
-pre .xml .doctype,
-pre .html .doctype,
-pre .css .id,
-pre .css .class,
-pre .css .pseudo {
-    color: $highlight-red;
-}
-pre .number,
-pre .preprocessor,
-pre .built_in,
-pre .literal,
-pre .params,
-pre .constant {
-    color: $highlight-orange;
-}
-pre .class,
-pre .ruby .class .title,
-pre .css .rules .attribute {
-    color: $highlight-green;
-}
-pre .string,
-pre .value,
-pre .inheritance,
-pre .header,
-pre .ruby .symbol,
-pre .xml .cdata {
-    color: $highlight-green;
-}
-pre .css .hexcolor {
-    color: $highlight-aqua;
-}
-pre .function,
-pre .python .decorator,
-pre .python .title,
-pre .ruby .function .title,
-pre .ruby .title .keyword,
-pre .perl .sub,
-pre .javascript .title,
-pre .coffeescript .title {
-    color: $highlight-blue;
-}
-pre .keyword,
-pre .javascript .function {
-    color: $highlight-purple;
+    .number,
+    .preprocessor,
+    .built_in,
+    .literal,
+    .params,
+    .constant {
+        color: $highlight-orange;
+    }
+    .class,
+    .ruby .class .title,
+    .css .rules .attribute {
+        color: $highlight-green;
+    }
+    .string,
+    .value,
+    .inheritance,
+    .header,
+    .ruby .symbol,
+    .xml .cdata {
+        color: $highlight-green;
+    }
+    .css .hexcolor {
+        color: $highlight-aqua;
+    }
+    .function,
+    .python .decorator,
+    .python .title,
+    .ruby .function .title,
+    .ruby .title .keyword,
+    .perl .sub,
+    .javascript .title,
+    .coffeescript .title {
+        color: $highlight-blue;
+    }
+    .keyword,
+    .javascript .function {
+        color: $highlight-purple;
+    }
 }
 // Gist
 .gist {
-    pre,
-    .line {
-        font-size:      1em;
-        font-family:    Menlo;
-        line-height:    1em;
-        letter-spacing: 0.2px;
-        color: $font-color-base;
+    .line,
+    .line-number{
+        font-size:     1em;
+        font-family:   Menlo;
+        margin-bottom: 5px;
     }
-    .line-number {
-        display: block;
-        height: 15px;
-        font-size:      1em;
-        font-family:    Menlo;
-        line-height:    1em;
-        letter-spacing: 0.2px;
-        color: $font-color-light;
-        padding-bottom: 5px;
-    }
-
 }
