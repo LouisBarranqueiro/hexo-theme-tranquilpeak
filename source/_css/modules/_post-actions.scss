@@ -65,12 +65,11 @@
 @media #{$small-and-down} {
     .post-actions {
         ol.post-actions-panel {
+            ul.post-actions-nav {
+                width: 30%;
+            }
             ul.post-actions-share {
-                width: 100%;
-
-                li {
-                    width: calc(100% / 4);
-                }
+                width: 70%;
             }
         }
     }
