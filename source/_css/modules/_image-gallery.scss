@@ -6,7 +6,7 @@
     overflow:       hidden;
     border-radius:  3px;
     border:         1px solid #ddd;
-    padding-bottom: 5px;
+    padding-bottom: 2.5px;
     margin-bottom:  30px;
 
     .image-gallery-desc {
@@ -16,7 +16,7 @@
         border-bottom: 1px solid #ddd;
     }
     .image-gallery-photos {
-        padding: 5px 5px;
+        padding: 2.5px;
 
         .photo-box {
             float:    left;
@@ -34,7 +34,9 @@
                 overflow: hidden;
 
                 img {
-                    width: 100%;
+                    width:  100%;
+                    cursor: -webkit-zoom-in;
+                    cursor: -moz-zoom-in;
                 }
             }
         }
@@ -56,12 +58,13 @@
     .image-gallery-photos--thumbnail {
         .photo-box {
             display:        block;
-            width:          15%;
-            padding-bottom: 15%;
+            width:          calc(15% - 5px);
+            padding-bottom: calc(15% - 5px);
+            margin: 2.5px;
 
             &:first-child {
-                width:          85%;
-                padding-bottom: 45%;
+                width:          calc(85% - 5px);
+                padding-bottom: calc(45% - 5px);
             }
             &:nth-child(n + 5) {
                 display: none;
