@@ -1,37 +1,29 @@
 +function($) {
     $(document).ready(function() {
-        // Fancybox
         $(".fancybox").fancybox({
-            maxWidth	: 900,
-            maxHeight	: 800,
-            fitToView	: false,
-            width		: '70%',
-            height		: '70%',
-            autoSize	: true,
-            closeClick	: false,
-            openEffect	: 'none',
-            closeEffect	: 'none'
-        });
-
-        // Fancybox-thumb helper
-        $(".fancybox-thumb").fancybox({
-            prevEffect	: 'none',
-            nextEffect	: 'none',
-            helpers	: {
-                title	: {
-                    type: 'outside'
+            maxWidth:    900,
+            maxHeight:   800,
+            fitToView:   false,
+            width:       '50%',
+            height:      '50%',
+            autoSize:    true,
+            closeClick:  false,
+            openEffect:  'elastic',
+            closeEffect: 'elastic',
+            prevEffect:  'none',
+            nextEffect:  'none',
+            padding:     '0',
+            helpers: {
+                thumbs: {
+                    width:  70,
+                    height: 70
                 },
-                thumbs	: {
-                    width	: 70,
-                    height	: 70
+                overlay: {
+                    css: {
+                        'background': 'rgba(0, 0, 0, 0.85)'
+                    }
                 }
             }
-        });
-
-        // Fancybox button to launch a fancybox with an external button
-        $('.fancybox-button').click(function(e) {
-            e.preventDefault();
-            $('.fancybox-thumb:eq(0)').click();
         });
     });
 }(jQuery);

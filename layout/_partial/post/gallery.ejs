@@ -16,7 +16,7 @@
                     <% photoUrl = url_for(post.permalink + photo); %>
                 <% } %>
                 <div class="photo-box">
-                    <a class="photo-box-inner fancybox-thumb" rel="fancybox-thumb" data-fancybox-group="<%= 'gallery-' + post.id %>" title="<%= photo.replace('__', ' ').slice(0, photo.lastIndexOf('.')) %>" href="<%= photoUrl %>">
+                    <a class="photo-box-inner fancybox" rel="fancybox-thumb" data-fancybox-group="<%= 'gallery-' + post.id %>" title="<%= photo.replace('__', ' ').slice(0, photo.lastIndexOf('.')) %>" href="<%= photoUrl %>">
                         <img src="<%= photoUrl %>">
                     </a>
                 </div>
