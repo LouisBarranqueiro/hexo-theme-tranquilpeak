@@ -1,6 +1,14 @@
 // Mobiles
 // --------------------
-@media #{$small-and-down} {
+@media #{$xsmall-and-down} {
+    .hide-xs {
+        display: none;
+    }
+}
+
+// Mobiles
+// --------------------
+@media #{$small-only} {
     .hide-sm {
         display: none;
     }
