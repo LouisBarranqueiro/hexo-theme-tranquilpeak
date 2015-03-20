@@ -85,20 +85,56 @@ a {
         text-decoration: none;
     }
     &:hover {
-        color:           darken($font-color-link, 15);
+        color:           $font-color-link;
         text-decoration: underline;
     }
 }
+table {
+    width:           100%;
+    border-collapse: collapse;
+    border-spacing:  0;
+    text-align:      left;
+
+    th {
+        font-weight:    bold;
+        padding-bottom: 0.5em;
+        border-bottom:  2px solid lighten(#dce4f1, 2);
+    }
+    td {
+        border-bottom: 1px solid lighten(#dce4f1, 2);
+        padding:       10px 0;
+    }
+}
+hr {
+    border: 1px solid #eef2f8;
+}
+
+dl {
+    dt {
+        font-weight: bold;
+    }
+    dd {
+        margin-left: 0;
+    }
+
+}
+code,
 kdb {
+    font-family:   'Open Sans';
+    font-weight:   400;
     display:       inline-block;
     border-radius: 3px;
-    border:        1px solid lighten(#d0dbed, 3);
+    border:        1px solid #dce4f1;
     background:    #fafbfc;
     padding-left:  10px;
     padding-right: 10px;
 }
+acronym,
+abbr {
+    border-bottom: 1px dotted $font-color-base;
+}
 blockquote {
-    border-left: 2px solid $font-color-light;
+    border-left: 2px solid darken(#dce4f1, 3);
     padding:     10px 20px;
 
     cite {
