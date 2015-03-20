@@ -1,7 +1,13 @@
 <% if ((photos) && (photos.length)) { %>
+    <% var imageGalleryClass; %>
+    <% if (photos.length > 3) { %>
+        <% imageGalleryClass = 'image-gallery-photos--thumbnail' %>
+    <% } %>
     <div class="image-gallery">
-        <span class="text-center text-large fancybox-button"><i class="fa fa-2x fa-eye"></i></span>
-        <div class="image-gallery-photos">
+        <div class="image-gallery-desc">
+            <span><%=  'Gallery : ' + photos.length + ' images' %></span>
+        </div>
+        <div class="image-gallery-photos <%= imageGalleryClass %>">
             <% photos.forEach(function(photo) { %>
                 <% var photoUrl; %>
                 <% if ((photo.indexOf(config.url) < 0) && (photo.indexOf('://') >= 0)) { %>
@@ -10,9 +16,9 @@
                     <% photoUrl = url_for(post.permalink + photo); %>
                 <% } %>
                 <div class="photo-box">
-                        <a class="photo-box-inner fancybox-thumb" rel="fancybox-thumb" data-fancybox-group="<%= 'gallery-' + post.id %>" title="<%= photo.replace('__', ' ').slice(0, photo.lastIndexOf('.')) %>" href="<%= photoUrl %>">
-                            <img src="<%= photoUrl %>">
-                        </a>
+                    <a class="photo-box-inner fancybox-thumb" rel="fancybox-thumb" data-fancybox-group="<%= 'gallery-' + post.id %>" title="<%= photo.replace('__', ' ').slice(0, photo.lastIndexOf('.')) %>" href="<%= photoUrl %>">
+                        <img src="<%= photoUrl %>">
+                    </a>
                 </div>
             <% }) %>
         </div>
