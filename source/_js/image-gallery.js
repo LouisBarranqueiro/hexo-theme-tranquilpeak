@@ -30,7 +30,7 @@
 		var	photoBoxHeight;
 		var imageWidth;
 		var imageHeight;
-		var photoRatio;
+		var imageRatio;
 		var $image;
 
 		this.$images.each(function() {
@@ -41,13 +41,19 @@
 			imageHeight    = $image.height();
 			
 			if (imageHeight < photoBoxHeight) {
-				photoRatio  = (imageWidth / imageHeight);
+				imageRatio  = (imageWidth / imageHeight);
 				$image.css({
 					'height': photoBoxHeight,
-					'width': (photoBoxHeight * photoRatio)
+					'width': (photoBoxHeight * imageRatio)
 				});
 				$image.parent().css({
-					'left': '-' + (((photoBoxHeight * photoRatio) / 2) - (photoBoxWidth / 2)) + 'px'
+					'left': '-' + (((photoBoxHeight * imageRatio) / 2) - (photoBoxWidth / 2)) + 'px'
+				});
+			}
+			else if (imageHeight > photoBoxHeight) {
+				console.log('ok');
+				$image.parent().css({
+					'top': '-' + (((imageHeight) / 2) - (photoBoxHeight / 2)) + 'px'
 				});
 			}
 		});
@@ -57,6 +63,7 @@
 		if ($('.image-gallery').length) {
 			var imageGallery = new ImageGallery();
 
+			// Small timeout to wait the loading of all images.
 			setTimeout(function() {
 				imageGallery.init();
 			}, 500);
