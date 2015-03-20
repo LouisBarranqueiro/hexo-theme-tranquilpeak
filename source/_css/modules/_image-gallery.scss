@@ -1,25 +1,39 @@
 .image-gallery {
-    padding:       5px;
-    display:       block;
-    position:      relative;
-    width:         100%;
-    height:        auto;
-    overflow:      hidden;
-    border-radius: 3px;
-    border:        1px solid #ddd;
+    display:        block;
+    position:       relative;
+    width:          100%;
+    height:         auto;
+    overflow:       hidden;
+    border-radius:  3px;
+    border:         1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom:  30px;
 
+    .image-gallery-desc {
+        font-size:     $font-size-medium;
+        color:         $font-color-base;
+        padding:       5px 15px;
+        border-bottom: 1px solid #ddd;
+    }
     .image-gallery-photos {
+        padding: 5px 5px;
 
         .photo-box {
-            float: left;
-            position:relative;
+            float:    left;
+            position: relative;
+            overflow: hidden;
+            display:  none;
 
+            &:first-child {
+                display:        block;
+                width:          100%;
+                padding-bottom: 56.25%;
+            }
             .photo-box-inner {
                 position: absolute;
                 overflow: hidden;
 
                 img {
-                    width: 100%;
                     width: 100%;
                 }
             }
@@ -39,31 +53,19 @@
             border-radius: 3px;
         }
     }
-}
-// Mobiles
-// --------------------
-@media #{$small-and-down} {
-    .photo-box {
-        display:        block;
-        width:          50%;
-        padding-bottom: 50%;
+    .image-gallery-photos--thumbnail {
+        .photo-box {
+            display:        block;
+            width:          15%;
+            padding-bottom: 15%;
 
-        &:nth-child(n + 3) {
-            display: none;
-        }
-    }
-}
-
-// Tablets & desktops
-// --------------------
-@media #{$medium-and-up} {
-    .photo-box {
-        display:        block;
-        width:          25%;
-        padding-bottom: 25%;
-
-        &:nth-child(n + 5) {
-            display: none;
+            &:first-child {
+                width:          85%;
+                padding-bottom: 45%;
+            }
+            &:nth-child(n + 5) {
+                display: none;
+            }
         }
     }
 }
