@@ -21,7 +21,8 @@
             }
         }
         ul.post-actions-nav {
-            width: 50%;
+            width:   50%;
+            z-index: 10;
 
             li {
                 float: left;
@@ -45,7 +46,8 @@
             }
         }
         ul.post-actions-share {
-            width: 50%;
+            width:   50%;
+            z-index: 9;
 
             li {
                 float: right;
@@ -66,10 +68,10 @@
     .post-actions {
         ol.post-actions-panel {
             ul.post-actions-nav {
-                width: 30%;
+                width: 35%;
             }
             ul.post-actions-share {
-                width: 70%;
+                width: 65%;
             }
         }
     }
