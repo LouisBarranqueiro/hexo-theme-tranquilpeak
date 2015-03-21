@@ -154,7 +154,7 @@
 
         if (self.$postBottomBar.hasClass('is-slided')) {
             self.$postBottomBar.animate({
-                'left': '+=' + self.$sidebar.width,
+                'left': '-=' + self.$sidebar.width,
             }, 250, function() {
                 self.$postBottomBar.removeClass('is-slided');
             });
