@@ -39,7 +39,7 @@
      * @returns {boolean}
      */
     PostBottomBar.prototype.checkPostFooterVisibility = function() {
-        var postFooterElemPos = (this.$postFooter.offset().top + this.$postFooter.height());
+        var postFooterElemPos = (this.$postFooter.offset().top + this.$postBottomBar.height());
 
         if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
             return true;
