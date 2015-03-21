@@ -4,13 +4,7 @@
     display:    block;
     min-height: 100%;
     background: #fff;
-
-    #main-content {
-        width:     calc(100% - 40px);
-        max-width: $main-content-width;
-        margin:    0 auto;
-        padding:   20px;
-    }
+    padding-top: 15px;
 }
 
 // Mobiles
