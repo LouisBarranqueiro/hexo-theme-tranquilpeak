@@ -76,6 +76,7 @@
         background: #fff;
         margin:     0;
         border-top: 1px solid #eef2f8;
+        z-index:    10;
     }
 }
 
@@ -111,7 +112,7 @@
                 display:       block;
                 width:         $thumbnail-image-width;
                 height:        $thumbnail-image-width;
-                border-radius: 5px;
+                border-radius: 3px;
             }
         }
         .post {
