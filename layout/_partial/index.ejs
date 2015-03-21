@@ -58,9 +58,8 @@
                 <div class="post-thumbnailimg">
                     <img alt="" src="<%= thumbnailImageUrl %>"/>
                 </div>
-                    <% thumbnailImageUrl = null; %>
+                <% thumbnailImageUrl = null; %>
             <% } %>
-            <div class="post-separator"></div>
         </article>
     <% }) %>
     <%- partial('pagination', {type: 'page'}) %>
