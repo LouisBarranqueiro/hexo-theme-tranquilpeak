@@ -1,0 +1,19 @@
+<div class="post-meta">
+    <% if (post.date.isAfter(moment().subtract(7, 'days'))) { %>
+        <%= post.date.fromNow() %>
+    <% } else { %>
+        <%= post.date.format('MMM DD, YYYY') %>
+    <% } %>
+    <% if (post.categories.length > 0) { %>
+        <span>in </span>
+        <%- partial('category', {categories: post.categories})%>
+    <% } %>
+    <% if (post.tags.length > 0) { %>
+        <% if (post.categories.length == 0) { %>
+            <span>in </span>
+        <% } else { %>
+            <span>, </span>
+        <% } %>
+        <%- partial('tag', {tags: post.tags})%>
+    <% } %>
+</div>
