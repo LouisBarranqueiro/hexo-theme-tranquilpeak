@@ -11,9 +11,9 @@
         width:         100%;
         bottom:        0px;
         background:    rgba(0, 0, 0, 0.75);
-        font-size:     $font-size-medium;
+        font-size:     $font-size-small;
         color:         #fff;
-        padding:       5px 15px;
+        padding:       0.5em 1.5em;
         z-index: 10;
     }
     .image-gallery-photos {
@@ -58,14 +58,19 @@
     .image-gallery-photos--thumbnail {
         .photo-box {
             display:        block;
-            width:          30%;
-            padding-bottom: 17%;
+            width:          50%;
+            padding-bottom: 30%;
 
             &:first-child {
-                width:          70%;
-                padding-bottom: 51%;
+                width:          100%;
+                padding-bottom: 40%;
+                margin-bottom:  2px;
             }
-            &:nth-child(n + 5) {
+            &:nth-child(2) {
+                margin-right: 2px;
+                width:        calc(50% - 2px);
+            }
+            &:nth-child(n + 4) {
                 display: none;
             }
         }
