@@ -1,14 +1,13 @@
 .image-gallery {
     display:        block;
     position:       relative;
-    width:          100%;
     height:         auto;
     overflow:       hidden;
     margin-bottom:  30px;
 
     .image-gallery-desc {
         position:      absolute;
-        width:         100%;
+        width:         calc(100% - (#{$main-content-padding} * 4));
         bottom:        0px;
         background:    rgba(0, 0, 0, 0.75);
         font-size:     $font-size-small;
