@@ -9,7 +9,7 @@
         }
     }
 %>
-<section class="post">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     <% if (post.coverImage) { %>
         <div class="post-header-cover" style="background-image:url('<%= coverImageUrl %>');">
             <%- partial('post/header')%>
@@ -17,7 +17,7 @@
     <% } else { %>
         <%- partial('post/header')%>
     <% } %>
-    <div class="post-content markdown main-content-wrap">
+    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
         <%- post.content %>
     </div>
     <% if (theme.image_gallery) { %>
@@ -32,5 +32,5 @@
     <div class="post-bottom-bar">
         <%- partial('post/actions') %>
     </div>
-</section>
+</article>
 
