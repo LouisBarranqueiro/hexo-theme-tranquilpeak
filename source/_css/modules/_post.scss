@@ -1,5 +1,11 @@
 // All
 // --------------------
+.post-group {
+    .post {
+        margin-top:    15px;
+        border-bottom: 1px solid #eef2f8;
+    }
+}
 .post {
     position:       relative;
     width:          100%;
@@ -8,10 +14,9 @@
 
     .post-header {
         .post-title {
-            margin-top:    0;
-            margin-bottom: 0;
-            word-break:    initial;
-            overflow:      hidden;
+            margin: 0;
+            word-break: initial;
+            overflow:  hidden;
 
             &:hover {
                 text-decoration: none;
@@ -20,14 +25,13 @@
     }
     // Cover image displayed in single post view
     .post-header-cover {
-        position:relative;
-        top: -15px;
-        background-size: cover;
+        position:          relative;
+        top:               -15px;
+        background-size:   cover;
         background-repeat: no-repeat;
-        display: block;
-        width: 100%;
-        max-height: 450px;
-        overflow:hidden;
+        display:           block;
+        width:             100%;
+        max-height:        450px;
 
         .post-header {
             padding-top:    15%;
@@ -53,21 +57,23 @@
             }
         }
     }
+    .post-meta {
+        line-height: 1.5em;
+    }
     .post-meta,
-        .post-readingtime {
-            color: $font-color-light;
-        }
-        .post-excerpt_link {
-            margin-top:-15px;
-        }
-        .post-meta,
-        .post-readingtime,
-        .post-excerpt_link {
-            font-family: 'Open Sans', sans-serif;
-            font-size:   $font-size-small;
-            font-weight: 400;
-        }
-
+    .post-readingtime {
+        color: $font-color-light;
+    }
+    .post-excerpt_link {
+        margin-top: -15px;
+    }
+    .post-meta,
+    .post-readingtime,
+    .post-excerpt_link {
+        font-family: 'Open Sans', sans-serif;
+        font-size:   $font-size-small;
+        font-weight: 400;
+    }
     .post-excerpt,
     .post-content {
         font-family: 'Merriweather', serif;
@@ -96,12 +102,6 @@
     border-top: 1px solid #eef2f8;
     z-index:    10;
 }
-.post-group {
-    .post {
-        margin-top:    15px;
-        border-bottom: 1px solid #eef2f8;
-    }
-}
 // Mobiles
 // --------------------
 @media #{$small-and-down} {
@@ -110,13 +110,6 @@
 
         img {
             display: none;
-        }
-    }
-    .post-header-cover {
-        .post-header {
-            .post-title {
-                font-size: $font-size-h1 - 0.2rem;
-            }
         }
     }
     .post-bottom-bar {
@@ -132,7 +125,7 @@
     .post-header-cover {
         .post-header {
             .post-title {
-                font-size: $font-size-h1 - 0.1rem;
+                font-size: $font-size-h1 + 0.2rem;
             }
         }
     }
@@ -152,7 +145,6 @@
             display:        inline-block;
             margin:         15px 0 0 15px;
             vertical-align: top;
-
 
             img {
                 display:       block;
