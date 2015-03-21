@@ -6,17 +6,16 @@
     margin-bottom:  30px;
 
     .image-gallery-desc {
-        position:      absolute;
-        width:         calc(100% - (#{$main-content-padding} * 4));
-        bottom:        0px;
-        background:    rgba(0, 0, 0, 0.75);
-        font-size:     $font-size-small;
-        color:         #fff;
-        padding:       0.5em 1.5em;
-        z-index: 1;
+        position:   absolute;
+        width:      calc(100% - (#{$main-content-padding} * 4));
+        bottom:     0px;
+        background: rgba(0, 0, 0, 0.75);
+        font-size:  $font-size-small;
+        color:      #fff;
+        padding:    0.5em 1.5em;
+        z-index:    1;
     }
     .image-gallery-photos {
-
         .photo-box {
             float:    left;
             position: relative;
@@ -59,7 +58,7 @@
             display:        block;
             width:          50%;
             padding-bottom: 30%;
-
+            
             &:first-child {
                 width:          100%;
                 padding-bottom: 40%;
