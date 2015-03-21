@@ -1,40 +1,34 @@
-<section class="post-wrap">
-    <div class="post">
-        <% if (post.link){ %>
-            <h1>
-                <a class="link" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title || '(no title)' %></a>
-            </h1>
-        <% } else { %>
-            <h1 class="post-title"><%= post.title || '(no title)' %></h1>
-        <% } %>
-        <div class="post-info">
-            <% if (post.date.isAfter(moment().subtract(7, 'days'))) { %>
-                <%= post.date.fromNow() %>
-            <% } else { %>
-                <%= post.date.format('MMM DD, YYYY') %>
-            <% } %>
-            <% if (post.categories.length > 0) { %>
-                <span>in </span>
-                <%- partial('post/category', {categories: post.categories})%>
-            <% } %>
-            <% if (post.tags.length > 0) { %>
-                <span>, </span>
-                <%- partial('post/tag', {tags: post.tags})%>
-            <% } %>
+<%
+    var coverImageUrl;
+
+    if (post.coverImage) {
+        if ((post.coverImage.indexOf(config.url) < 0) && (post.coverImage.indexOf('://') >= 0)) {
+            coverImageUrl = post.coverImage;
+        } else {
+            coverImageUrl = url_for(post.permalink + post.coverImage);
+        }
+    }
+%>
+<section class="post">
+    <% if (post.coverImage) { %>
+        <div class="post-header-cover" style="background-image:url('<%= coverImageUrl %>');">
+            <%- partial('post/header')%>
         </div>
-        <div class="post-content markdown">
-            <%- post.content %>
-        </div>
-        <% if (theme.image_gallery) { %>
-            <%- partial('post/gallery', {photos: post.photos})%>
-        <% } %>
-    </div>
-    <div class="post-footer">
-        <%- partial('post/actions') %>
-    </div>
-    <% if (config.disqus_shortname) { %>
-        <%- partial('post/disqus') %>
+    <% } else { %>
+        <%- partial('post/header')%>
     <% } %>
+    <div class="post-content markdown main-content-wrap">
+        <%- post.content %>
+    </div>
+    <% if (theme.image_gallery) { %>
+        <%- partial('post/gallery', {photos: post.photos})%>
+    <% } %>
+    <div class="post-footer main-content-wrap">
+        <%- partial('post/actions') %>
+        <% if (config.disqus_shortname) { %>
+            <%- partial('post/disqus') %>
+        <% } %>
+    </div>
     <div class="post-bottom-bar">
         <%- partial('post/actions') %>
     </div>
