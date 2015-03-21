@@ -6,10 +6,8 @@
             <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
             <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
             <div id="main">
-                <div id="main-content">
-                    <%- body %>
-                    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
-                </div>
+                <%- body %>
+                <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
             </div>
         </div>
         <%- partial('_partial/about', null, {cache: !config.relative_link}) %>
