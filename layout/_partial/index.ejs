@@ -1,52 +1,67 @@
-<div class="post-group main-content-wrap">
+<% var thumbnailImageUrl = null; %>
+<section class="post-group main-content-wrap">
     <% page.posts.each(function(post) { %>
-        <% if ((theme.thumbnail_image) && (((post.photos) && (post.photos.length)) || ((post.coverImage) && (post.coverImage.length)))) { %>
+        <% if ((theme.thumbnail_image) && (post.photos) && (post.photos.length)) { %>
+            <% if ((post.photos.indexOf(config.url) < 0) && (post.photos.indexOf('://') >= 0)) { %>
+                <% thumbnailImageUrl = post.photos[0]; %>
+            <% } else { %>
+                <% thumbnailImageUrl = url_for(post.permalink + post.photos[0]); %>
+            <% } %>
+        <% } else if ((theme.thumbnail_image) && (post.coverImage) && (post.coverImage.length)) { %>
+            <% if ((post.coverImage.indexOf(config.url) < 0) && (post.coverImage.indexOf('://') >= 0)) { %>
+                <% thumbnailImageUrl = post.coverImage; %>
+            <% } else { %>
+                <% thumbnailImageUrl = url_for(post.permalink + post.coverImage); %>
+            <% } %>
+        <% } %>
+        <% if (thumbnailImageUrl != null) { %>
             <article class="post post--thumbnailimg">
         <% } else { %>
                 <article class="post">
         <% } %>
-            <div class="post-header">
-                <% if (post.link) { %>
+            <div class="post-wrap">
+                <div class="post-header">
+                    <% if (post.link) { %>
+                        <h1 class="post-title ">
+                            <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(no title)' %></a>
+                        </h1>
+                    <% } else { %>
                     <h1 class="post-title ">
-                        <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(no title)' %></a>
+                        <a class="link-unstyled" href="<%- url_for(post.permalink) %>"><%= post.title || '(no title)' %></a>
                     </h1>
-                <% } else { %>
-                <h1 class="post-title ">
-                    <a class="link-unstyled" href="<%- url_for(post.permalink) %>"><%= post.title || '(no title)' %></a>
-                </h1>
-                <% } %>
-                <%- partial('post/meta', {post: post}) %>
-            </div>
-            <div class="post-excerpt">
-                <% if (post.excerpt) { %>
-                    <%- post.excerpt %>
-                <% } else { %>
-                    <p>
-                        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 250) %><br>
-                <% } %>
-                <% if ((post.link) && (theme.go_to_message)) { %>
-                        <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= theme.go_to_message %> </a>
-                <% } else { %>
-                    <% if (theme.read_more_message) { %>
-                        <a href="<%= post.permalink %>" class="post-excerpt_link link "><%- theme.read_more_message %></a>
-                        <% if (post.readingtime) { %>
-                            <span class="post-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
+                    <% } %>
+                    <%- partial('post/meta', {post: post}) %>
+                </div>
+                <div class="post-excerpt">
+                    <% if (post.excerpt) { %>
+                        <%- post.excerpt %>
+                    <% } else { %>
+                        <p>
+                            <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 250) %><br>
+                    <% } %>
+                    <% if ((post.link) && (theme.go_to_message)) { %>
+                            <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= theme.go_to_message %> </a>
+                    <% } else { %>
+                        <% if (theme.read_more_message) { %>
+                            <a href="<%= post.permalink %>" class="post-excerpt_link link "><%- theme.read_more_message %></a>
+                            <% if (post.readingtime) { %>
+                                <span class="post-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
+                            <% } %>
                         <% } %>
                     <% } %>
-                <% } %>
-                <% if (!post.excerpt) { %>
-                    </p>
-                <% } %>
-            </div>
-            <% var thumbNailImg = null; %>
-            <% if ((post.photos.length) && (theme.thumbnail_image)) { %>
-                <% thumbNailImg = post.permalink + post.photos[0]; %>
-                <div class="post-thumbnailimg">
-                    <img alt="" src="<%= thumbNailImg %>"/>
+                    <% if (!post.excerpt) { %>
+                        </p>
+                    <% } %>
                 </div>
+            </div>
+            <% if (thumbnailImageUrl != null) { %>
+                <div class="post-thumbnailimg">
+                    <img alt="" src="<%= thumbnailImageUrl %>"/>
+                </div>
+                    <% thumbnailImageUrl = null; %>
             <% } %>
             <div class="post-separator"></div>
         </article>
     <% }) %>
     <%- partial('pagination', {type: 'page'}) %>
-</div>
+</section>
