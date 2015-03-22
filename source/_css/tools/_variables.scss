@@ -91,11 +91,12 @@ $thumbnail-image-width: 140px;
 
 // Media Query Ranges
 // --------------------
-$xsmall-screen-up: 343px !default;
+$xsmall-screen-up: 401px !default;
 $small-screen-up:  601px !default;
 $medium-screen-up: 993px !default;
 $large-screen-up:  1201px !default;
-$xsmall-screen:    342px !default;
+
+$xsmall-screen:    400px !default;
 $small-screen:     600px !default;
 $medium-screen:    992px !default;
 $large-screen:     1200px !default;
