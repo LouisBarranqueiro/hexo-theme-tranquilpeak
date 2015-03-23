@@ -55,18 +55,17 @@ $font-color-link:  #64b5f6;
 $font-color-input: #5d686f;
 
 // Highlight
-$highlight-background:   #fff;
-$highlight-current-line: #393939;
-$highlight-selection:    #515151;
-$highlight-foreground:   #eeeeee;
-$highlight-comment:      #999999;
-$highlight-red:          #bd2c00;
-$highlight-orange:       #df5000;
-$highlight-yellow:       #ffcc66;
-$highlight-green:        #63a35c;
-$highlight-aqua:         #0086b3;
-$highlight-blue:         #6699cc;
-$highlight-purple:       #795da3;
+$highlight-background:       #2d2e28;
+$highlight-white:            #ffffff;
+$highlight-cornflower-blue:  #6e81ef; // often attributes
+$highlight-wild-rice:        #e6db74; // often String
+$highlight-radical-red:      #f92672; // often keywords
+$highlight-maya-blue:        #4eb4f9; // often tag
+$highlight-light-slate-blue: #ae81ff; // often number
+$highlight-lavender-rose:    #ffa4ff;
+$highlight-flint:            #75715e; // often comment
+$highlight-las-palmas:       #A6e22e;
+
 
 // Header settings
 // --------------------
