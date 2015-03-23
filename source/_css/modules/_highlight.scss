@@ -76,11 +76,14 @@ figure.highlight {
 // --------------------
 
 // General
-.tag {
-    background: none;
-    border:     none;
-    cursor:     text !important;
+.highlight pre {
+    .tag {
+        background: none !important;
+        border:     none !important;
+        cursor:     text !important;
+    }
 }
+
 
 // Javascript
 .highlight.js pre {
@@ -108,12 +111,43 @@ figure.highlight {
         color: $highlight-light-slate-blue;
     }
     .tag {
-        background: none;
-        border:     none;
         color:      $highlight-white;
     }
     .built_in {
         color: $highlight-white;
+    }
+}
+// CSS
+.highlight.css pre {
+    .javadoc,
+    .javadoctag,
+    .comment {
+        color: $highlight-flint;
+    }
+    .string {
+        color: $highlight-wild-rice;
+    }
+    .params {
+        color:           $highlight-white;
+        text-decoration: underline;
+    }
+    .attribute {
+        color: $highlight-cornflower-blue;
+    }
+    .title,
+    .keyword,
+    .literal ,
+    .at_rule,
+    .value,
+    .tag,
+    .id,
+    .class,
+    .attr_selector,
+    .pseudo {
+        color: $highlight-radical-red;
+    }
+    .number {
+        color: $highlight-light-slate-blue;
     }
 }
 
