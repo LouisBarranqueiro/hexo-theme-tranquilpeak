@@ -5,7 +5,7 @@ figure.highlight {
     border-radius:  3px;
     overflow:       hidden;
     line-height:    1.1em;
-    color:          #333;
+    color:          $highlight-white;
     font-family:    Menlo;
     border:         1px solid #ddd;
 
@@ -60,70 +60,9 @@ figure.highlight {
         }
     }
 }
-// Code customization
-pre {
-    .comment,
-    .title {
-        color: #999;
-    }
-    .variable,
-    .attribute,
-    .tag,
-    .regexp,
-    .ruby .constant,
-    .xml .tag .title,
-    .xml .pi,
-    .xml .doctype,
-    .html .doctype,
-    .css .id,
-    .css .class,
-    .css .pseudo {
-        color: $highlight-red;
-    }
 
-    .number,
-    .preprocessor,
-    .built_in,
-    .literal,
-    .params,
-    .constant {
-        color: $highlight-orange;
-    }
-    .class,
-    .ruby .class .title,
-    .css .rules .attribute {
-        color: $highlight-green;
-    }
-    .string,
-    .value,
-    .inheritance,
-    .header,
-    .ruby .symbol,
-    .xml .cdata {
-        color: $highlight-green;
-    }
-    .css .hexcolor {
-        color: $highlight-aqua;
-    }
-    .function,
-    .python .decorator,
-    .python .title,
-    .ruby .function .title,
-    .ruby .title .keyword,
-    .perl .sub,
-    .javascript .title,
-    .coffeescript .title {
-        color: $highlight-blue;
-    }
-    .keyword,
-    .javascript .function {
-        color: $highlight-purple;
-    }
-    .tag {
-        cursor: text;
-    }
-}
 // Gist
+// --------------------
 .gist {
     .line,
     .line-number{
@@ -132,3 +71,49 @@ pre {
         margin-bottom: 5px;
     }
 }
+
+// Code colorations
+// --------------------
+
+// General
+.tag {
+    background: none;
+    border:     none;
+    cursor:     text !important;
+}
+
+// Javascript
+.highlight.js pre {
+    .javadoc,
+    .javadoctag,
+    .comment {
+        color: $highlight-flint;
+    }
+    .string {
+        color: $highlight-wild-rice;
+    }
+    .params {
+        color:           $highlight-white;
+        text-decoration: underline;
+    }
+    .title,
+    .keyword,
+    .literal {
+        color: $highlight-radical-red;
+    }
+    .regexp {
+        color: $highlight-maya-blue;
+    }
+    .number {
+        color: $highlight-light-slate-blue;
+    }
+    .tag {
+        background: none;
+        border:     none;
+        color:      $highlight-white;
+    }
+    .built_in {
+        color: $highlight-white;
+    }
+}
+
