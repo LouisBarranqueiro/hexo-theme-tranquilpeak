@@ -200,3 +200,51 @@ figure.highlight {
         }
     }
 }
+// SCSS
+.highlight.scss pre {
+    .hljs-comment {
+        color: $highlight-flint;
+    }
+    .hljs-string {
+        color: $highlight-wild-rice;
+    }
+    .hljs-params {
+        color:           $highlight-white;
+        text-decoration: underline;
+    }
+    .hljs-attribute {
+        color: $highlight-cornflower-blue;
+    }
+    .hljs-title,
+    .hljs-keyword,
+    .hljs-literal ,
+    .hljs-at_rule,
+    .hljs-value,
+    .hljs-id,
+    .hljs-tag,
+    .hljs-class,
+    .hljs-attr_selector,
+    .hljs-pseudo,
+    .hljs-hexcolor,
+    .hljs-function,
+    .hljs-important {
+        color: $highlight-radical-red;
+    }
+    .hljs-number {
+        color: $highlight-light-slate-blue;
+    }
+    .number {
+        color: $highlight-light-slate-blue;
+
+        .hljs-class {
+            color: $highlight-light-slate-blue;
+        }
+    }
+    .variable {
+        color: $highlight-maya-blue;
+
+        .hljs-tag {
+            color: $highlight-maya-blue;
+        }
+    }
+}
