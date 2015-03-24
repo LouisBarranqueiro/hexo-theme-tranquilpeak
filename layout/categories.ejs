@@ -17,7 +17,7 @@
                     <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>"><%= item.name + ' (' + item.length + ')' %></a>
                 </h4>
                 <ul class="archive-post-group">
-                    <% get_posts({'query':{'categories': item.name}}).each(function(post) { %>
+                    <% site.categories.findOne({'name': item.name}).posts.each(function(post) { %>
                     <li class="archive-post">
                         <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
                         <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
