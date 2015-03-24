@@ -72,9 +72,10 @@ sidebar:
 
 # Author
 author:
+    email:
     picture:    # Your profile picture located in folder 'source/_images/'
-    job:
     bio:
+    job:
     location:
 
 # Customization
