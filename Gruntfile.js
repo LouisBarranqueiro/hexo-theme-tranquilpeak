@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 								'source/helpers/jquery.fancybox-thumbs.css',
 								'source/helpers/jquery.fancybox-thumbs.js'
 							]
-						},
+						}
 					}
 				}
 			}
@@ -180,7 +180,7 @@ module.exports = function(grunt) {
 				files: ['source/_*/**/*'],
 				tasks: ['SyncAssets']
 			}
-		},
+		}
 	});
 
 	require('load-grunt-tasks')(grunt);
