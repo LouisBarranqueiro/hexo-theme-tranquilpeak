@@ -1,8 +1,8 @@
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close"><i class="fa fa-remove"></i></div>
-        <% if ((theme.gravatar_image) && (config.email)) { %>
-            <img id="about-card-picture" src="<%- gravatar(config.email, 110) %>" />
+        <% if ((theme.gravatar_image) && (theme.author.email)) { %>
+            <img id="about-card-picture" src="<%- gravatar(theme.author.email, 110) %>" />
         <% } else if (theme.author.picture) { %>
             <img id="about-card-picture" src="<%- theme.author.picture %>" />
         <% } %>
