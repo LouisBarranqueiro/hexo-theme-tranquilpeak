@@ -27,10 +27,10 @@ var lastMonth;
                     </ul>
                 <% } %>
                 <ul class="archive-post-group archive-month" data-date="<%= post.date.format('YYYYMM') %>">
-                <h5 class="archive-title">
-                    <a class="link-unstyled" href="<%- url_for('archives/' + post.date.format('YYYY/MM')) %>"><%= post.date.format('MMMM') %></a>
-                </h5>
-                <% lastMonth = currentMonth; %>
+                    <h5 class="archive-title">
+                        <a class="link-unstyled" href="<%- url_for('archives/' + post.date.format('YYYY/MM')) %>"><%= post.date.format('MMMM') %></a>
+                    </h5>
+                    <% lastMonth = currentMonth; %>
             <% } %>
             <li class="archive-post archive-day" data-date="<%= post.date.format('YYYYMMDD') %>">
                 <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
