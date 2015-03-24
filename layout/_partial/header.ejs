@@ -1,8 +1,8 @@
 <header id="header">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
-    <% if ((theme.gravatar_image) && (config.email)) { %>
+    <% if ((theme.gravatar_image) && (theme.author.email)) { %>
         <a class="header-picture-link" href="<%= config.url %>">
-            <img class="header-picture" src="<%- gravatar(config.email, 90) %>"/>
+            <img class="header-picture" src="<%- gravatar(theme.author.email, 90) %>"/>
         </a>
     <% } else if (theme.author.picture) { %>
         <a class="header-picture-link" href="<%= config.url %>">
