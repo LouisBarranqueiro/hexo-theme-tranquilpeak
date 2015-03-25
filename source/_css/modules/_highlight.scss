@@ -19,6 +19,8 @@ $hl-bondi-blue:  #0086b3;
 $hl-persimmon :  #df5000;
 $hl-asparagus:   #63a35c;
 $hl-pewter:      #969896; // comment
+$hl-cardinal:    #a71d5d;
+$hl-scampi:      #795da3;
 
 // Gist setting
 // --------------------
@@ -109,6 +111,29 @@ figure.highlight {
         }
         .tag {
             color: $hl-asparagus;
+        }
+    }
+    // bash
+    &.bash {
+        .shebang,
+        .comment {
+            color: $hl-pewter;
+        }
+        .string {
+            color: $hl-persimmon;
+        }
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .literal,
+        .built_in {
+            color: $hl-bondi-blue;
+        }
+        .variable {
+            color: $hl-night-rider;
+        }
+        .title {
+            color: $hl-scampi;
         }
     }
 }
