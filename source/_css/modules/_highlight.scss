@@ -1,13 +1,13 @@
 // Codeblock tag plugin
 figure.highlight {
-    background:     $highlight-background;
-    margin:         10px 0;
-    border-radius:  3px;
-    overflow:       hidden;
-    line-height:    1.1em;
-    color:          $highlight-white;
-    font-family:    Menlo;
-    border:         1px solid #ddd;
+    background:    $highlight-background;
+    margin:        10px 0;
+    border-radius: 3px;
+    overflow:      hidden;
+    line-height:   1.1em;
+    color:         $highlight-white;
+    font-family:   Menlo;
+    border:        1px solid #ddd;
 
     table {
         display:    block;
@@ -143,7 +143,8 @@ figure.highlight {
     .id,
     .class,
     .attr_selector,
-    .pseudo {
+    .pseudo,
+    .important {
         color: $highlight-radical-red;
     }
     .number {
@@ -152,99 +153,136 @@ figure.highlight {
 }
 // LESS
 .highlight.less pre {
-    .hljs-comment {
+    .comment {
         color: $highlight-flint;
     }
-    .hljs-string {
+    .string {
         color: $highlight-wild-rice;
     }
-    .hljs-params {
-        color:           $highlight-white;
-        text-decoration: underline;
-    }
-    .hljs-attribute {
-        color: $highlight-maya-blue;
-    }
-    .hljs-value {
+    .params,
+    .value {
         color: $highlight-white;
     }
-    .hljs-title,
-    .hljs-keyword,
-    .hljs-literal,
-    .hljs-at_rule,
-    .hljs-id,
-    .hljs-tag,
-    .hljs-class,
-    .hljs-attr_selector,
-    .hljs-pseudo,
-    .hljs-hexcolor,
-    .hljs-function,
-    .hljs-important {
-        color: $highlight-radical-red;
+    .attribute {
+
     }
-    .hljs-number {
-        color: $highlight-light-slate-blue;
+    .title,
+    .keyword,
+    .literal,
+    .at_rule,
+    .id,
+    .tag,
+    .class,
+    .attr_selector,
+    .pseudo,
+    .hexcolor,
+    .function,
+    .important {
+        color: $highlight-radical-red;
     }
     .number {
         color: $highlight-light-slate-blue;
 
-        .hljs-class {
+        .class {
             color: $highlight-light-slate-blue;
         }
     }
     .variable {
         color: $highlight-lavender-rose;
 
-        .hljs-tag {
+        .tag {
             color: $highlight-lavender-rose;
         }
     }
 }
 // SCSS
 .highlight.scss pre {
-    .hljs-comment {
+    .comment {
         color: $highlight-flint;
     }
-    .hljs-string {
+    .string {
         color: $highlight-wild-rice;
     }
-    .hljs-params {
-        color:           $highlight-white;
-        text-decoration: underline;
+    .params {
+        color: $highlight-white;
     }
-    .hljs-attribute {
+    .attribute {
         color: $highlight-cornflower-blue;
     }
-    .hljs-title,
-    .hljs-keyword,
-    .hljs-literal ,
-    .hljs-at_rule,
-    .hljs-value,
-    .hljs-id,
-    .hljs-tag,
-    .hljs-class,
-    .hljs-attr_selector,
-    .hljs-pseudo,
-    .hljs-hexcolor,
-    .hljs-function,
-    .hljs-important {
+    .title,
+    .keyword,
+    .literal ,
+    .at_rule,
+    .value,
+    .id,
+    .tag,
+    .class,
+    .attr_selector,
+    .pseudo,
+    .hexcolor,
+    .function,
+    .important {
         color: $highlight-radical-red;
-    }
-    .hljs-number {
-        color: $highlight-light-slate-blue;
     }
     .number {
         color: $highlight-light-slate-blue;
 
-        .hljs-class {
+        .class {
             color: $highlight-light-slate-blue;
         }
     }
     .variable {
         color: $highlight-maya-blue;
 
-        .hljs-tag {
+        .tag {
             color: $highlight-maya-blue;
+        }
+    }
+}
+// Stylus
+.highlight.styl pre {
+    .comment {
+        color: $highlight-flint;
+    }
+    .string {
+        color: $highlight-wild-rice;
+    }
+    .params {
+        color: $highlight-white;
+    }
+    .attribute {
+        color: $highlight-cornflower-blue;
+    }
+    .title,
+    .keyword,
+    .literal ,
+    .at_rule,
+    .value,
+    .id,
+    .tag,
+    .class,
+    .attr_selector,
+    .pseudo,
+    .hexcolor,
+    .function,
+    .important {
+        color: $highlight-radical-red;
+    }
+    .number {
+        color: $highlight-light-slate-blue;
+    }
+    .number {
+        color: $highlight-light-slate-blue;
+
+        .class {
+            color: $highlight-light-slate-blue;
+        }
+    }
+    .variable {
+        color: $highlight-lavender-rose;
+
+        .tag {
+            color: $highlight-lavender-rose;
         }
     }
 }
