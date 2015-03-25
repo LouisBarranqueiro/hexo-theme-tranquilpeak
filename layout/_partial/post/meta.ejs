@@ -6,11 +6,11 @@
             <%= post.date.format('MMM DD, YYYY') %>
         <% } %>
     </time>
-    <% if (post.categories.length > 0) { %>
+    <% if ((post.categories) && (post.categories.length > 0)) { %>
         <span>in </span>
         <%- partial('category', {categories: post.categories})%>
     <% } %>
-    <% if (post.tags.length > 0) { %>
+    <% if ((post.tags) && (post.tags.length > 0)) { %>
         <% if (post.categories.length == 0) { %>
             <span>in </span>
         <% } else { %>
