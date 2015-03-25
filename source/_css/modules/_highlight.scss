@@ -91,3 +91,24 @@ figure.highlight {
     }
 }
 
+// Highlight code coloration
+.highlight {
+    // apacheConf
+    &.apacheconf {
+        .comment {
+            color: $hl-pewter;
+        }
+        .common,
+        .cbracket,
+        .keyword {
+            color: $hl-bondi-blue;
+        }
+        .sqbracket,
+        .string {
+            color: $hl-persimmon;
+        }
+        .tag {
+            color: $hl-asparagus;
+        }
+    }
+}
