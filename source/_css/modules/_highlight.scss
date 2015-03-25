@@ -1,13 +1,39 @@
+// Highlight settings
+// --------------------
+$hl-font-family:  Menlo;
+$hl-line-height:  1.3em;
+$hl-border-color: #d9d9d9;
+
+// Figcaption
+$hl-figcaption-background: #ffffff;
+$hl-figcaption-color:      #999999;
+
+// Line numbers
+$hl-linenumbers-background: #ffffff;
+$hl-linenumbers-color:      #aaaaaa;
+
+// Code colorations
+$hl-white:       #ffffff; // background
+$hl-night-rider: #333333; // general color
+$hl-bondi-blue:  #0086b3;
+$hl-persimmon :  #df5000;
+$hl-asparagus:   #63a35c;
+$hl-pewter:      #969896; // comment
+
+// Gist setting
+// --------------------
+$gist-font-size: 1em;
+
 // Codeblock tag plugin
 figure.highlight {
-    background:    $highlight-background;
+    background:    $hl-white;
     margin:        10px 0;
     border-radius: 3px;
     overflow:      hidden;
-    line-height:   1.1em;
-    color:         $highlight-white;
-    font-family:   Menlo;
-    border:        1px solid #ddd;
+    line-height:   $hl-line-height;
+    color:         $hl-night-rider;
+    font-family:   $hl-font-family;
+    border:        1px solid $hl-border-color;
 
     table {
         display:    block;
@@ -15,274 +41,53 @@ figure.highlight {
         overflow-y: hidden;
         overflow-x: scroll;
     }
-    pre {
+    pre,
+    .gutter,
+    .code,
+    .tag {
         border:  none;
         padding: 0;
         margin:  0;
     }
     // Meta bar
     figcaption {
-        font-size: 12px;
+        font-size:     $font-size-medium;
         padding:       10px 15px;
         margin:        0;
-        background:    #f7f7f7;
-        border-bottom: 1px solid #ddd;
-        color:         #999;
+        background:    $hl-figcaption-background;
+        border-bottom: 1px solid $hl-border-color;
+        color:         $hl-figcaption-color;
 
         a {
             float: right;
         }
     }
-    // lines number
+   // lines number
     .gutter {
-        padding:      0.3em;
-        margin:       0;
-        background:   #fff;
-        border-right: 1px solid #ddd;
+        background: $hl-linenumbers-background;
+        border-right: 1px solid $hl-border-color;
+        padding: 0.3em;
 
         .line {
-            height:    20px;
-            font-size: 13.5px;
-            color:     $font-color-light;
+            color: $hl-linenumbers-color;
         }
     }
-    // lines of code
     .code {
-        border:  none;
-        padding: 0;
-        margin:  0;
-
-        .line {
-            height:       20px;
-            padding-left: 5px;
-            font-size:    13px;
-
-        }
+        padding: 0.3em 0.3em 0.3em 1em;
+    }
+    .line {
+        height:    $hl-line-height;
+        font-size: $font-size-medium;
     }
 }
 
 // Gist
-// --------------------
 .gist {
     .line,
     .line-number{
-        font-size:     1em;
-        font-family:   Menlo;
+        font-size:     $gist-font-size;
+        font-family:   $hl-font-family;
         margin-bottom: 5px;
     }
 }
 
-// Code colorations
-// --------------------
-
-// General
-.highlight pre {
-    .tag {
-        background: none !important;
-        border:     none !important;
-        cursor:     text !important;
-    }
-}
-
-
-// Javascript
-.highlight.js pre {
-    .javadoc,
-    .javadoctag,
-    .comment {
-        color: $highlight-flint;
-    }
-    .string {
-        color: $highlight-wild-rice;
-    }
-    .params {
-        color:           $highlight-white;
-        text-decoration: underline;
-    }
-    .title,
-    .keyword,
-    .literal {
-        color: $highlight-radical-red;
-    }
-    .regexp {
-        color: $highlight-maya-blue;
-    }
-    .number {
-        color: $highlight-light-slate-blue;
-    }
-    .tag {
-        color:      $highlight-white;
-    }
-    .built_in {
-        color: $highlight-white;
-    }
-}
-// CSS
-.highlight.css pre {
-    .javadoc,
-    .javadoctag,
-    .comment {
-        color: $highlight-flint;
-    }
-    .string {
-        color: $highlight-wild-rice;
-    }
-    .params {
-        color:           $highlight-white;
-        text-decoration: underline;
-    }
-    .attribute {
-        color: $highlight-cornflower-blue;
-    }
-    .title,
-    .keyword,
-    .literal ,
-    .at_rule,
-    .value,
-    .tag,
-    .id,
-    .class,
-    .attr_selector,
-    .pseudo,
-    .important {
-        color: $highlight-radical-red;
-    }
-    .number {
-        color: $highlight-light-slate-blue;
-    }
-}
-// LESS
-.highlight.less pre {
-    .comment {
-        color: $highlight-flint;
-    }
-    .string {
-        color: $highlight-wild-rice;
-    }
-    .params,
-    .value {
-        color: $highlight-white;
-    }
-    .attribute {
-
-    }
-    .title,
-    .keyword,
-    .literal,
-    .at_rule,
-    .id,
-    .tag,
-    .class,
-    .attr_selector,
-    .pseudo,
-    .hexcolor,
-    .function,
-    .important {
-        color: $highlight-radical-red;
-    }
-    .number {
-        color: $highlight-light-slate-blue;
-
-        .class {
-            color: $highlight-light-slate-blue;
-        }
-    }
-    .variable {
-        color: $highlight-lavender-rose;
-
-        .tag {
-            color: $highlight-lavender-rose;
-        }
-    }
-}
-// SCSS
-.highlight.scss pre {
-    .comment {
-        color: $highlight-flint;
-    }
-    .string {
-        color: $highlight-wild-rice;
-    }
-    .params {
-        color: $highlight-white;
-    }
-    .attribute {
-        color: $highlight-cornflower-blue;
-    }
-    .title,
-    .keyword,
-    .literal ,
-    .at_rule,
-    .value,
-    .id,
-    .tag,
-    .class,
-    .attr_selector,
-    .pseudo,
-    .hexcolor,
-    .function,
-    .important {
-        color: $highlight-radical-red;
-    }
-    .number {
-        color: $highlight-light-slate-blue;
-
-        .class {
-            color: $highlight-light-slate-blue;
-        }
-    }
-    .variable {
-        color: $highlight-maya-blue;
-
-        .tag {
-            color: $highlight-maya-blue;
-        }
-    }
-}
-// Stylus
-.highlight.styl pre {
-    .comment {
-        color: $highlight-flint;
-    }
-    .string {
-        color: $highlight-wild-rice;
-    }
-    .params {
-        color: $highlight-white;
-    }
-    .attribute {
-        color: $highlight-cornflower-blue;
-    }
-    .title,
-    .keyword,
-    .literal ,
-    .at_rule,
-    .value,
-    .id,
-    .tag,
-    .class,
-    .attr_selector,
-    .pseudo,
-    .hexcolor,
-    .function,
-    .important {
-        color: $highlight-radical-red;
-    }
-    .number {
-        color: $highlight-light-slate-blue;
-    }
-    .number {
-        color: $highlight-light-slate-blue;
-
-        .class {
-            color: $highlight-light-slate-blue;
-        }
-    }
-    .variable {
-        color: $highlight-lavender-rose;
-
-        .tag {
-            color: $highlight-lavender-rose;
-        }
-    }
-}
