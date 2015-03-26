@@ -21,6 +21,7 @@ $hl-asparagus:   #63a35c;
 $hl-pewter:      #969896; // comment
 $hl-cardinal:    #a71d5d;
 $hl-scampi:      #795da3;
+$hl-bahama-blue: #1d3e81;
 
 // Gist setting
 // --------------------
@@ -134,6 +135,32 @@ figure.highlight {
         }
         .title {
             color: $hl-scampi;
+        }
+    }
+    // coffescript
+    &.coffeescript {
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .title {
+            color: $hl-scampi;
+        }
+        .literal,
+        .built_in,
+        .number {
+            color: $hl-bondi-blue;
+        }
+        .reserved,
+        .attribute {
+            color: $hl-bahama-blue;
+        }
+        .subst,
+        .regexp,
+        .string {
+            color: $hl-persimmon;
+        }
+        .comment {
+            color: $hl-pewter;
         }
     }
 }
