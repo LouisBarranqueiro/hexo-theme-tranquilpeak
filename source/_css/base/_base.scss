@@ -1,28 +1,83 @@
-// All
-// --------------------
+// html
+$html: (
+    'font-size':   62.5%,
+    'text-adjust': 100%,
+);
+// Body
+$body: (
+    'width':     100%,
+    'height':    100%,
+    'margin':     0,
+    'padding':    0,
+    'background': #fff,
+);
+// Headings
+$headings: (
+    'font-family':          ''Open Sans', sans-serif',
+    'font-weight':          700,
+    'line-height':          1.45em,
+    'color':                #4a4a4a,
+    'letter-spacing':       -0.04em,
+    'high-headings-margin': 2em 0 1em 0,
+    'low-headings-margin':  1em 0 0.5em 0,
+);
+// Table
+$table: (
+    'width':             100%,
+    'border-spacing':    0,
+    'th-padding-bottom': 0.5em,
+    'th-border-bottom':  2px solid lighten(#dce4f1, 2),
+    'td-border-bottom':  1px solid lighten(#dce4f1, 2),
+    'td-padding':        10px 0,
+);
+// hr
+$hr-border: 1px solid #eef2f8;
+// Description
+$dl-dd-margin-left: 0;
+// Code
+$code: (
+    'font-family':   'Open Sans',
+    'font-weight':   400,
+    'border-radius': 3px,
+    'border':        1px solid #dce4f1,
+    'background':    #fafbfc,
+    'padding':       0 10px,
+);
+
+// Acronym & abbr
+$acronym-border-bottom: 1px dotted $font-color-base;
+
+// Blockquote
+$blockquote: (
+    'border-left':   2px solid darken(#dce4f1, 3),
+    'padding':       10px 20px,
+    'citie-content': ' — ',
+    'citie-padding': 0 0.3em,
+);
+// Paragraph, list and description
+$p-ul-ol-dl-margin: 0 0 1.75em 0;
+
 html {
     font-family:                 $font-family-base;
-    font-size:                   62.5%;
+    font-size:                   map-get($html, font-size);
+    @include                     prefix(text-size-adjust, map-get($html, text-adjust), 'ms' 'webkit');
     -ms-text-size-adjust:        100%;
     -webkit-text-size-adjust:    100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body
 {
-    width:                         100%;
-    height:                        100%;
-    margin:                        0;
-    padding:                       0;
-    background:                    $bg-color-base;
-    font-family:                   $font-family-base;
-    font-size:                     $font-size-base;
-    line-height:                   $line-height-base;
-    letter-spacing:                $letter-spacing-base;
-    -webkit-font-feature-settings: 'kern' 1;
-    -moz-font-feature-settings:    'kern' 1;
-    -o-font-feature-settings:      'kern' 1;
-    text-rendering:                geometricPrecision;
-    -webkit-font-smoothing:        subpixel-antialiased;
+    width:                  map-get($body, width);
+    height:                 map-get($body, height);
+    margin:                 map-get($body, margin);
+    padding:                map-get($body, padding);
+    background:             map-get($body, background);
+    font-family:            $font-family-base;
+    font-size:              $font-size-base;
+    line-height:            $line-height-base;
+    letter-spacing:         $letter-spacing-base;
+    text-rendering:         geometricPrecision;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 h1,
 h2,
@@ -30,50 +85,45 @@ h3,
 h4,
 h5,
 h6 {
-    letter-spacing: -0.04em;
-    font-family:                   $headings-font-family;
-    font-weight:                   $headings-font-weight;
-    line-height:                   $headings-line-height;
-    color:                         $headings-color;
-    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -moz-font-feature-settings:    'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -o-font-feature-settings:      'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    letter-spacing: map-get($headings, letter-spacing);
+    font-family:    map-get($headings, font-family);
+    font-weight:    map-get($headings, font-weight);
+    line-height:    map-get($headings, line-height);
+    color:          map-get($headings, color);
 }
 h1,
 h2,
 h3 {
-    margin-top:     2em;
-    margin-bottom:  1em;
+    margin: map-get($headings, high-headings-margin);
 }
 h4,
 h5,
 h6 {
-    margin-top:     1em;
-    margin-bottom:  0.5em;
+    margin: map-get($headings, low-headings-margin);
 }
 h1 {
-    font-size: $font-size-h1;
+    font-size: $h1-font-size;
 }
 h2 {
-    font-size: $font-size-h2;
+    font-size: $h2-font-size;
 }
 h3 {
-    font-size: $font-size-h3;
+    font-size: $h3-font-size;
 }
 h4 {
-    font-size: $font-size-h4;
+    font-size: $h4-font-size;
 }
 h5 {
-    font-size: $font-size-h5;
+    font-size: $h5-font-size;
 }
 h6 {
-    font-size: $font-size-h6;
+    font-size: $h6-font-size;
 }
-p, ul, ol, dl {
-    -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
-    -moz-font-feature-settings:    'liga' 1, 'onum' 1, 'kern' 1;
-    -o-font-feature-settings:      'liga' 1, 'onum' 1, 'kern' 1;
-    margin:                        0 0 1.75em 0;
+p,
+ul,
+ol,
+dl {
+    margin: $p-ul-ol-dl-margin;
 }
 a {
     &,
@@ -90,111 +140,104 @@ a {
     }
 }
 table {
-    width:           100%;
+    width:           map-get($table, width);
     border-collapse: collapse;
-    border-spacing:  0;
+    border-spacing:  map-get($table, border-spacing);
     text-align:      left;
 
     th {
         font-weight:    bold;
-        padding-bottom: 0.5em;
-        border-bottom:  2px solid lighten(#dce4f1, 2);
+        padding-bottom: map-get($table, th-padding-bottom);
+        border-bottom:  map-get($table, th-border);
     }
     td {
-        border-bottom: 1px solid lighten(#dce4f1, 2);
-        padding:       10px 0;
+        border-bottom: map-get($table, td-border-bottom);
+        padding:       map-get($table, td-padding);
     }
 }
 hr {
-    border: 1px solid #eef2f8;
+    border: $hr-border;
 }
-
 dl {
     dt {
         font-weight: bold;
     }
     dd {
-        margin-left: 0;
+        margin-left: $dl-dd-margin-left;
     }
 
 }
-code,
-kdb {
-    font-family:   'Open Sans';
-    font-weight:   400;
+code {
     display:       inline-block;
-    border-radius: 3px;
-    border:        1px solid #dce4f1;
-    background:    #fafbfc;
-    padding-left:  10px;
-    padding-right: 10px;
+    font-family:   map-get($code, font-family);
+    font-weight:   map-get($code, font-weight);
+    border-radius: map-get($code, border-radius);;
+    border:        map-get($code, border);
+    background:    map-get($code, background);
+    padding:       map-get($code, padding);
 }
 acronym,
 abbr {
-    border-bottom: 1px dotted $font-color-base;
+    border-bottom: $acronym-border-bottom;
 }
 blockquote {
-    border-left: 2px solid darken(#dce4f1, 3);
-    padding:     10px 20px;
+    border-left: map-get($blockquote, border-left);
+    padding:     map-get($blockquote, padding);
 
     cite {
         &:before {
-            content: ' — ';
-            padding: 0 0.3em;
+            content: map-get($blockquote, content);
+            padding: map-get($blockquote, padding);
         }
 
     }
 }
-
 // Mobiles
-// --------------------
 @media #{$small-and-down} {
     body {
         font-size: $font-size-base - 0.1rem;
     }
     h1 {
-        font-size: $font-size-h1 - 0.3rem;
+        font-size: $h1-font-size - 0.3rem;
     }
     h2 {
-        font-size: $font-size-h2 - 0.2rem;
+        font-size: $h2-font-size - 0.2rem;
     }
     h3 {
-        font-size: $font-size-h3 - 0.2rem;
+        font-size: $h3-font-size - 0.2rem;
     }
     h4 {
-        font-size: $font-size-h4 - 0.2rem;
+        font-size: $h4-font-size - 0.2rem;
     }
     h5 {
-        font-size: $font-size-h5 - 0.2rem;
+        font-size: $h5-font-size - 0.2rem;
     }
     h6 {
-        font-size: $font-size-h6 - 0.2rem;
+        font-size: $h6-font-size - 0.2rem;
     }
 }
-
 // Tablets
-// --------------------
 @media #{$medium-only} {
     body {
         font-size: $font-size-base - 0.05rem;
     }
     h1 {
-        font-size: $font-size-h1 - 0.15rem;
+        font-size: $h1-font-size - 0.15rem;
     }
     h2 {
-        font-size: $font-size-h2 - 0.15rem;
+        font-size: $h2-font-size - 0.15rem;
     }
     h3 {
-        font-size: $font-size-h3 - 0.15rem;
+        font-size: $h3-font-size - 0.15rem;
     }
     h4 {
-        font-size: $font-size-h4 - 0.15rem;
+        font-size: $h4-font-size - 0.15rem;
     }
     h5 {
-        font-size: $font-size-h5 - 0.15rem;
+        font-size: $h5-font-size - 0.15rem;
     }
     h6 {
-        font-size: $font-size-h6 - 0.15rem;
+        font-size: $h6-font-size - 0.15rem;
     }
 }
     
