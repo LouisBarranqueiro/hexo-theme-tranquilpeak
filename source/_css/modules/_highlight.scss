@@ -1,32 +1,32 @@
 // Highlight settings
 // --------------------
 $hl-font-family:  Menlo;
-$hl-line-height:  1.3em;
+$hl-line-height:  1.2em;
 $hl-border-color: #d9d9d9;
+$hl-font-size:    1.3rem;
 
 // Figcaption
-$hl-figcaption-background: #ffffff;
+$hl-figcaption-background: #f7f7f7;
 $hl-figcaption-color:      #999999;
 
 // Line numbers
 $hl-linenumbers-background: #ffffff;
 $hl-linenumbers-color:      #aaaaaa;
 
-// Code colorations
-$hl-white:           #ffffff; // background
-$hl-night-rider:     #333333; // general color
+// Colors
+$hl-white:           #ffffff; // Background
+$hl-night-rider:     #333333; // General color
 $hl-bondi-blue:      #0086b3;
 $hl-persimmon :      #df5000;
 $hl-asparagus:       #63a35c;
-$hl-pewter:          #969896; // comment
+$hl-pewter:          #969896; // Comment
 $hl-cardinal:        #a71d5d;
 $hl-scampi:          #795da3;
 $hl-bahama-blue:     #1d3e81;
-$hl-free-speech-red: #bd2c00; // deletion color for .diff file
-$hl-misty-rose:      #ffecec; // deletion background color for .diff file
-$hl-limeade:         #55a532; // addition color for .diff file
-$hl-honeydew:        #eaffea; // addition background color for .diff file
-
+$hl-free-speech-red: #bd2c00; // Deletion color for .diff file
+$hl-misty-rose:      #ffecec; // Deletion background color for .diff file
+$hl-limeade:         #55a532; // Addition color for .diff file
+$hl-honeydew:        #eaffea; // Addition background color for .diff file
 
 // Gist setting
 // --------------------
@@ -59,7 +59,7 @@ figure.highlight {
     }
     // Meta bar
     figcaption {
-        font-size:     $font-size-medium;
+        font-size:     $hl-font-size;
         padding:       10px 15px;
         margin:        0;
         background:    $hl-figcaption-background;
@@ -72,9 +72,9 @@ figure.highlight {
     }
    // lines number
     .gutter {
-        background: $hl-linenumbers-background;
+        background:   $hl-linenumbers-background;
         border-right: 1px solid $hl-border-color;
-        padding: 0.3em;
+        padding:      0.3em 0.5em;
 
         .line {
             color: $hl-linenumbers-color;
@@ -85,10 +85,9 @@ figure.highlight {
     }
     .line {
         height:    $hl-line-height;
-        font-size: $font-size-medium;
+        font-size: $hl-font-size;
     }
 }
-
 // Gist
 .gist {
     .line,
@@ -98,15 +97,17 @@ figure.highlight {
         margin-bottom: 5px;
     }
 }
-
 // Highlight code coloration
 .highlight {
-    // Comment
+    // General
     .comment {
         color: $hl-pewter;
     }
     .string {
         color: $hl-persimmon;
+    }
+    .keyword {
+        color: $hl-cardinal;
     }
     // ApacheConf
     &.apacheconf .code {
@@ -127,9 +128,6 @@ figure.highlight {
         .shebang {
             color: $hl-pewter;
         }
-        .keyword {
-            color: $hl-cardinal;
-        }
         .literal,
         .built_in {
             color: $hl-bondi-blue;
@@ -143,9 +141,6 @@ figure.highlight {
     }
     // coffescript
     &.coffeescript .code {
-        .keyword {
-            color: $hl-cardinal;
-        }
         .title {
             color: $hl-scampi;
         }
@@ -163,11 +158,9 @@ figure.highlight {
             color: $hl-persimmon;
         }
     }
-    // C++
-    &.cpp .code {
-        .keyword {
-            color: $hl-cardinal;
-        }
+    // C/C++
+    &.cpp .code,
+    &.c .code {
         .preprocessor {
             color: $hl-persimmon;
         }
@@ -185,9 +178,6 @@ figure.highlight {
         .preprocessor .keyword {
             color: $hl-night-rider;
         }
-        .keyword {
-            color: $hl-cardinal;
-        }
         .title {
             color: $hl-scampi;
         }
@@ -202,7 +192,6 @@ figure.highlight {
     // CSS
     &.css .code {
         .at_rule,
-        .keyword,
         .important {
             color: $hl-cardinal;
         }
@@ -271,8 +260,7 @@ figure.highlight {
         .javadoc {
             color: $hl-pewter;
         }
-        .javadoctag,
-        .keyword {
+        .javadoctag {
             color: $hl-cardinal;
         }
         .number {
@@ -291,8 +279,7 @@ figure.highlight {
             color: $hl-pewter;
         }
         .tag,
-        .javadoctag,
-        .keyword {
+        .javadoctag {
             color: $hl-cardinal;
         }
         .tag .title {
@@ -376,9 +363,6 @@ figure.highlight {
         .title {
             color: $hl-scampi;
         }
-        .keyword {
-            color: $hl-cardinal;
-        }
         .literal,
         .number,
         .built_in {
@@ -387,9 +371,6 @@ figure.highlight {
     }
     // Perl
     &.perl .code {
-        .keyword {
-            color: $hl-cardinal;
-        }
         .sub {
             color: $hl-scampi;
         }
@@ -399,8 +380,7 @@ figure.highlight {
     }
     // PHP
     &.php .code {
-        .phpdoc,
-        .keyword {
+        .phpdoc {
             color: $hl-cardinal;
         }
         .regexp {
@@ -423,9 +403,6 @@ figure.highlight {
         .number {
             color: $hl-bondi-blue;
         }
-        .keyword {
-            color: $hl-cardinal;
-        }
     }
     // Ruby
     &.ruby .code {
@@ -440,13 +417,9 @@ figure.highlight {
         .symbol {
             color: $hl-bondi-blue;
         }
-        .keyword {
-            color: $hl-cardinal;
-        }
     }
     // SQL
     &.sql {
-        .keyword,
         .built_in{
             color: $hl-cardinal;
         }
@@ -476,9 +449,6 @@ figure.highlight {
         }
         .function {
             color: $hl-bondi-blue;
-        }
-        .keyword {
-            color : $hl-cardinal;
         }
     }
     // LESS
@@ -532,8 +502,7 @@ figure.highlight {
     }
     // Stylus
     &.stylus {
-        .at_rule,
-        .keyword {
+        .at_rule {
             color: $hl-cardinal;
         }
         .tag {
@@ -554,8 +523,7 @@ figure.highlight {
     }
     // Go
     &.go {
-        .typename,
-        .keyword {
+        .typename {
             color: $hl-cardinal;
         }
         .built_in,
@@ -565,8 +533,7 @@ figure.highlight {
     }
     // Swift
     &.swift {
-        .preprocessor,
-        .keyword {
+        .preprocessor {
             color: $hl-cardinal;
         }
         .title {
@@ -577,5 +544,4 @@ figure.highlight {
             color: $hl-bondi-blue;
         }
     }
-
 }
