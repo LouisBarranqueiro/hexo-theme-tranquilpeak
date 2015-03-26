@@ -101,11 +101,12 @@ figure.highlight {
 
 // Highlight code coloration
 .highlight {
+    // Comment
+    .comment {
+        color: $hl-pewter;
+    }
     // ApacheConf
-    &.apacheconf {
-        .comment {
-            color: $hl-pewter;
-        }
+    &.apacheconf .code {
         .common,
         .cbracket,
         .keyword {
@@ -120,9 +121,8 @@ figure.highlight {
         }
     }
     // Bash
-    &.bash {
-        .shebang,
-        .comment {
+    &.bash .code {
+        .shebang {
             color: $hl-pewter;
         }
         .string {
@@ -143,7 +143,7 @@ figure.highlight {
         }
     }
     // coffescript
-    &.coffeescript {
+    &.coffeescript .code {
         .keyword {
             color: $hl-cardinal;
         }
@@ -164,15 +164,9 @@ figure.highlight {
         .string {
             color: $hl-persimmon;
         }
-        .comment {
-            color: $hl-pewter;
-        }
     }
     // C++
-    &.cpp {
-        .comment {
-            color: $hl-pewter;
-        }
+    &.cpp .code {
         .keyword {
             color: $hl-cardinal;
         }
@@ -191,10 +185,7 @@ figure.highlight {
         }
     }
     // C#
-    &.cs {
-        .comment {
-            color: $hl-pewter;
-        }
+    &.cs .code {
         .preprocessor,
         .preprocessor .keyword {
             color: $hl-night-rider;
@@ -217,7 +208,7 @@ figure.highlight {
         }
     }
     // CSS
-    &.css {
+    &.css .code {
         .at_rule,
         .keyword,
         .important {
@@ -225,9 +216,6 @@ figure.highlight {
         }
         .string {
             color: $hl-persimmon;
-        }
-        .comment {
-            color: $hl-pewter;
         }
         .attribute,
         .hexcolor,
@@ -249,7 +237,7 @@ figure.highlight {
         }
     }
     // Diff
-    &.diff {
+    &.diff .code {
         .chunk {
             color: $hl-scampi;
             font-weight: bold;
@@ -264,10 +252,7 @@ figure.highlight {
         }
     }
     // HTTP
-    &.http {
-        .comment {
-            color: $hl-pewter;
-        }
+    &.http .code {
         .literal,
         .attribute {
             color: $hl-bondi-blue;
@@ -280,7 +265,7 @@ figure.highlight {
         }
     }
     // INI
-    &.ini {
+    &.ini .code {
         .title {
             color: $hl-scampi;
         }
@@ -294,17 +279,13 @@ figure.highlight {
         .keyword {
             color: $hl-night-rider;
         }
-        .comment {
-            color: $hl-pewter;
-        }
     }
     // JAVA
-    &.java {
+    &.java .code {
         .title {
             color: $hl-scampi;
         }
-        .javadoc,
-        .comment {
+        .javadoc {
             color: $hl-pewter;
         }
         .javadoctag,
@@ -322,12 +303,11 @@ figure.highlight {
         }
     }
     // JavaScript
-    &.js {
+    &.js .code {
         .title {
             color: $hl-scampi;
         }
-        .javadoc,
-        .comment {
+        .javadoc {
             color: $hl-pewter;
         }
         .tag,
@@ -349,13 +329,62 @@ figure.highlight {
         }
     }
     // JSON
-    &.json {
+    &.json .code {
         .attribute,
         .string {
             color: $hl-persimmon;
         }
         .number {
             color: $hl-bondi-blue;
+        }
+    }
+    // Makefile
+    &.mak .code {
+        .constant {
+            color: $hl-night-rider;
+        }
+        .variable {
+            color: $hl-persimmon;
+        }
+        .title {
+            color: $hl-scampi;
+        }
+        .keyword {
+            color: $hl-bondi-blue;
+        }
+    }
+    // Markdown
+    &.md .code {
+        .value,
+        .link_label,
+        .strong,
+        .emphasis,
+        .blockquote {
+            color: $hl-persimmon;
+        }
+        .link_reference,
+        .code {
+            color: $hl-bondi-blue;
+        }
+        .link_url {
+            text-decoration: underline;
+        }
+    }
+    // Nginx
+    &.nginx {
+        .title {
+            color: $hl-cardinal;
+        }
+        .built_in {
+            color: $hl-bondi-blue;
+        }
+        .regexp,
+        .number,
+        .string {
+            color: $hl-persimmon;
+        }
+        .variable {
+            color: $hl-night-rider;
         }
     }
 }
