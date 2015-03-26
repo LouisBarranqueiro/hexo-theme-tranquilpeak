@@ -387,4 +387,74 @@ figure.highlight {
             color: $hl-night-rider;
         }
     }
+    // Objective-C
+    &.objectivec {
+        .preprocessor {
+            color: $hl-cardinal;
+            .title {
+                color: $hl-persimmon;
+            }
+        }
+        .title {
+            color: $hl-scampi;
+        }
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .string {
+            color: $hl-persimmon;
+        }
+        .literal,
+        .number,
+        .built_in {
+            color: $hl-bondi-blue;
+        }
+    }
+    // Perl
+    &.perl {
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .sub {
+            color: $hl-scampi;
+        }
+        .regexp,
+        .string {
+            color: $hl-persimmon;
+        }
+    }
+    // PHP
+    &.php {
+        .phpdoc,
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .regexp,
+        .string {
+            color: $hl-persimmon;
+        }
+        .literal,
+        .number {
+            color: $hl-bondi-blue;
+        }
+        .title {
+            color: $hl-scampi;
+        }
+    }
+    // Python
+    &.python {
+        .decorator,
+        .title {
+            color: $hl-scampi;
+        }
+        .string {
+            color: $hl-persimmon;
+        }
+        .number {
+            color: $hl-bondi-blue;
+        }
+        .keyword {
+            color: $hl-cardinal;
+        }
+    }
 }
