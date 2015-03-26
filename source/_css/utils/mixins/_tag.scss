@@ -1,3 +1,7 @@
+/**
+ * Helper for 'components/tag' to stylize a tag  with a specified color
+ * @param {Color} $color - Color CSS value
+ */
 @mixin tag-color-variant($color) {
     color: $color !important;
     border: 1px solid $color;
@@ -9,7 +13,12 @@
     }
 }
 
-@mixin tag-size-variant($font-size, $padding-top-bottom, $padding-left-right) {
+/**
+ * Helper for 'components/tag' to stylize a tag with a specified size and padding
+ * @param {String} $font-size - Font-size CSS value
+ * @param {List} $padding - List of padding CSS value
+ */
+@mixin tag-size-variant($font-size, $padding) {
     font-size: $font-size;
-    padding:   $padding-top-bottom $padding-left-right;
+    padding:   $padding;
 }

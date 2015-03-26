@@ -1,3 +1,7 @@
+/**
+ * Helper for 'components/category' to stylize a category with a specified color
+ * @param {Color} $color - Color CSS value
+ */
 @mixin category-color-variant($color) {
     color:  $color !important;
     border: 1px solid $color;
@@ -9,7 +13,12 @@
     }
 }
 
-@mixin category-size-variant($font-size, $padding-top-bottom, $padding-left-right) {
+/**
+ * Helper for 'components/category' to stylize a category with a specified size and padding
+ * @param {Number} $font-size - Font-size CSS value
+ * @param {List} $padding - Padding CSS value
+ */
+@mixin category-size-variant($font-size, $padding) {
     font-size: $font-size;
-    padding:   $padding-top-bottom $padding-left-right;
+    padding:   $padding;
 }
