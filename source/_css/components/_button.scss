@@ -42,10 +42,10 @@ $btn-cursor:        pointer;
 
 // Size variant
 .btn--medium {
-    @include button-size-variant($font-size-medium, 8px, 15px);
+    @include button-size-variant($font-size-medium, 8px 15px);
 }
 .btn--small {
-    @include button-size-variant($font-size-small, 8px, 15px);
+    @include button-size-variant($font-size-small, 8px 15px);
 }
 
 // States variant

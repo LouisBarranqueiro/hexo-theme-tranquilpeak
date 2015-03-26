@@ -33,9 +33,9 @@ a.tag--danger ,
 // Size variant
 a.tag--base,
 .tag--base {
-    @include tag-size-variant($font-size-small, 4.5px, 15px);
+    @include tag-size-variant($font-size-small, 4.5px 15px);
 }
 a.tag--small,
 .tag--small {
-    @include tag-size-variant($font-size-small, 2px, 10px);
+    @include tag-size-variant($font-size-small, 2px 10px);
 }

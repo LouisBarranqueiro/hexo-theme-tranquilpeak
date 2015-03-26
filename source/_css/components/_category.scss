@@ -33,9 +33,9 @@ a.category--danger ,
 // Size variant
 a.category--base,
 .category--base {
-    @include category-size-variant($font-size-small, 4.5px, 15px);
+    @include category-size-variant($font-size-small, 4.5px 15px);
 }
 a.category--small,
 .category--small {
-    @include category-size-variant($font-size-small, 2px, 10px);
+    @include category-size-variant($font-size-small, 2px 10px);
 }
