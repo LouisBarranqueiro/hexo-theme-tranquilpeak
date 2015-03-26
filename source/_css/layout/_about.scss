@@ -24,7 +24,7 @@
         border-radius: 3px;
         padding:       30px 0;
         z-index:       99;
-        @include box-shadow(0, 0, 5px, rgba(0, 0, 0, 1));
+        @include prefix(box-shadow, 0 0 5px rgba(0, 0, 0, 1), 'webkit' 'moz');
 
         #about-btn-close {
             position: absolute;

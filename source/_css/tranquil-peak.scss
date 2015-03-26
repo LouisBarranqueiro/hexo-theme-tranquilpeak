@@ -1,46 +1,42 @@
-// Variables
-@import 'tools/variables';
+@import
+    'utils/fonts',
+    'utils/variables';
 
-// Mixins
-@import 'tools/mixins/box-shadow';
-@import 'tools/mixins/button';
-@import 'tools/mixins/category';
-@import 'tools/mixins/form';
-@import 'tools/mixins/opacity';
-@import 'tools/mixins/tag';
-@import 'tools/mixins/transform';
-@import 'tools/mixins/transition';
+@import
+    'utils/mixins/button',
+    'utils/mixins/category',
+    'utils/mixins/form',
+    'utils/mixins/opacity',
+    'utils/mixins/prefix',
+    'utils/mixins/tag';
 
-// Base
-@import 'base/base';
+@import
+    'layout/about',
+    'layout/blog',
+    'layout/cover',
+    'layout/footer',
+    'layout/header',
+    'layout/main',
+    'layout/sidebar';
 
-// Layout
-@import 'layout/about';
-@import 'layout/blog';
-@import 'layout/cover';
-@import 'layout/footer';
-@import 'layout/header';
-@import 'layout/main';
-@import 'layout/sidebar';
-
-// Modules
-@import 'modules/archive';
-@import 'modules/box';
-@import 'modules/button';
-@import 'modules/category';
-@import 'modules/form';
-@import 'modules/hide';
-@import 'modules/highlight';
-@import 'modules/image-gallery';
-@import 'modules/main-content';
-@import 'modules/markdown';
-@import 'modules/pagination';
-@import 'modules/post';
-@import 'modules/post-actions';
-@import 'modules/form';
-@import 'modules/hide';
-@import 'modules/markdown';
-@import 'modules/tag';
-@import 'modules/tooltip';
-@import 'modules/type';
-@import 'modules/video';
+@import
+    'components/archive',
+    'components/box',
+    'components/button',
+    'components/category',
+    'components/form',
+    'components/hide',
+    'components/highlight',
+    'components/image-gallery',
+    'components/main-content',
+    'components/markdown',
+    'components/pagination',
+    'components/post',
+    'components/post-actions',
+    'components/form',
+    'components/hide',
+    'components/markdown',
+    'components/tag',
+    'components/tooltip',
+    'components/type',
+    'components/video';

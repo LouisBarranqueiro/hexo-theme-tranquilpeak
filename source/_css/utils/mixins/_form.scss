@@ -1,8 +1,8 @@
 @mixin input-size($input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height) {
     & {
-        height: $input-height;
-        padding: $padding-vertical $padding-horizontal;
-        font-size: $font-size;
+        height:      $input-height;
+        padding:     $padding-vertical $padding-horizontal;
+        font-size:   $font-size;
         line-height: $line-height;
     }
 

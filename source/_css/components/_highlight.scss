@@ -1,17 +1,29 @@
-// Highlight settings
-// --------------------
-$hl-font-family:  Menlo;
-$hl-line-height:  1.2em;
-$hl-border-color: #d9d9d9;
-$hl-font-size:    1.3rem;
+// Highlight general
+$hl-font-family:   Menlo;
+$hl-line-height:   1.2em;
+$hl-border-radius: 3px;
+$hl-border-color:  #d9d9d9;
+$hl-border:        1px solid #{$hl-border-color};
+$hl-font-size:     1.3rem;
+$hl-margin:        10px 0;
 
 // Figcaption
 $hl-figcaption-background: #f7f7f7;
 $hl-figcaption-color:      #999999;
+$hl-figcaption-padding:    10px 15px;
+$hl-figcaption-margin:     0;
 
 // Line numbers
-$hl-linenumbers-background: #ffffff;
-$hl-linenumbers-color:      #aaaaaa;
+$hl-gutter-background: #ffffff;
+$hl-gutter-color:      #aaaaaa;
+$hl-gutter-padding:    0.3em 0.5em;
+
+// Code
+$hl-code-padding: 0.3em 0.3em 0.3em 1em;
+
+// Gist
+$gist-font-size: 1em;
+$gist-line-margin: 0 0 5px 0;
 
 // Colors
 $hl-white:           #ffffff; // Background
@@ -29,19 +41,17 @@ $hl-limeade:         #55a532; // Addition color for .diff file
 $hl-honeydew:        #eaffea; // Addition background color for .diff file
 
 // Gist setting
-// --------------------
-$gist-font-size: 1em;
 
 // Codeblock tag plugin
 figure.highlight {
     background:    $hl-white;
-    margin:        10px 0;
-    border-radius: 3px;
+    margin:        $hl-margin;
+    border-radius: $hl-border-radius;
     overflow:      hidden;
     line-height:   $hl-line-height;
     color:         $hl-night-rider;
     font-family:   $hl-font-family;
-    border:        1px solid $hl-border-color;
+    border:        $hl-border;
 
     table {
         display:    block;
@@ -60,29 +70,31 @@ figure.highlight {
     // Meta bar
     figcaption {
         font-size:     $hl-font-size;
-        padding:       10px 15px;
-        margin:        0;
+        padding:       $hl-figcaption-padding;
+        margin:        $hl-figcaption-margin;
         background:    $hl-figcaption-background;
-        border-bottom: 1px solid $hl-border-color;
+        border-bottom: $hl-border;
         color:         $hl-figcaption-color;
 
         a {
             float: right;
         }
     }
-   // lines number
+   // Gutter
     .gutter {
-        background:   $hl-linenumbers-background;
-        border-right: 1px solid $hl-border-color;
-        padding:      0.3em 0.5em;
+        background:   $hl-gutter-background;
+        border-right: $hl-border;
+        padding:      $hl-gutter-padding;
 
         .line {
-            color: $hl-linenumbers-color;
+            color: $hl-gutter-color;
         }
     }
+    // Code
     .code {
-        padding: 0.3em 0.3em 0.3em 1em;
+        padding: $hl-code-padding;
     }
+    // Line
     .line {
         height:    $hl-line-height;
         font-size: $hl-font-size;
@@ -91,10 +103,10 @@ figure.highlight {
 // Gist
 .gist {
     .line,
-    .line-number{
+    .line-number {
         font-size:     $gist-font-size;
         font-family:   $hl-font-family;
-        margin-bottom: 5px;
+        margin-bottom: $gist-line-margin;
     }
 }
 // Highlight code coloration

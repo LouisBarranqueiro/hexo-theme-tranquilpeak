@@ -34,11 +34,9 @@
         transition:         transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
         pointer-events:     none;
         @include opacity(0);
-        @include transition(
-                opacity 0.2s ease-in-out,
-                visibility 0.2s ease-in-out,
-                translate3d(0, 0, 0)
-        );
+        @include prefix(transition, opacity 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
+        @include prefix(transition, visibility 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
+        @include prefix(transition, translate3d(0, 0, 0), 'webkit' 'moz' 'ms' 'o');
     }
     &:hover:before,
     &:hover:after,
@@ -46,7 +44,7 @@
     &:focus:after {
         visibility: visible;
         @include opacity(1);
-        @include transform(translateY(-12px));
+        @include prefix(transform, translateY(-12px), 'webkit' 'moz' 'ms' 'o');
     }
 }
 [data-tooltip] {
@@ -74,7 +72,7 @@
     &:hover:after,
     &:focus:before,
     &:focus:after {
-        @include transform(translateY(-12px));
+        @include prefix(transform, translateY(-12px), 'webkit' 'moz' 'ms' 'o');
     }
 }
 // Left
@@ -100,7 +98,7 @@
     &:hover:after,
     &:focus:before,
     &:focus:after {
-        @include transform(translateY(-12px));
+        @include prefix(transform, translateY(-12px), 'webkit' 'moz' 'ms' 'o');
     }
 }
 // Bottom
@@ -122,7 +120,7 @@
     &:hover:after,
     &:focus:before,
     &:focus:after {
-        @include transform(translateY(12px));
+        @include prefix(transform, translateY(12px), 'webkit' 'moz' 'ms' 'o');
     }
 }
 // Right
@@ -146,12 +144,12 @@
     &:hover:after,
     &:focus:before,
     &:focus:after {
-        @include transform(translateY(12px));
+        @include prefix(transform, translateY(12px), 'webkit' 'moz' 'ms' 'o');
     }
     &:hover:before,
     &:hover:after,
     &:focus:before,
     &:focus:after {
-        @include transform(translateY(12px));
+        @include prefix(transform, translateY(12px), 'webkit' 'moz' 'ms' 'o');
     }
 }
