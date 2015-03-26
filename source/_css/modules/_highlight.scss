@@ -105,6 +105,9 @@ figure.highlight {
     .comment {
         color: $hl-pewter;
     }
+    .string {
+        color: $hl-persimmon;
+    }
     // ApacheConf
     &.apacheconf .code {
         .common,
@@ -112,8 +115,7 @@ figure.highlight {
         .keyword {
             color: $hl-bondi-blue;
         }
-        .sqbracket,
-        .string {
+        .sqbracket{
             color: $hl-persimmon;
         }
         .tag {
@@ -124,9 +126,6 @@ figure.highlight {
     &.bash .code {
         .shebang {
             color: $hl-pewter;
-        }
-        .string {
-            color: $hl-persimmon;
         }
         .keyword {
             color: $hl-cardinal;
@@ -160,8 +159,7 @@ figure.highlight {
             color: $hl-bahama-blue;
         }
         .subst,
-        .regexp,
-        .string {
+        .regexp {
             color: $hl-persimmon;
         }
     }
@@ -175,9 +173,6 @@ figure.highlight {
         }
         .title {
             color: $hl-scampi;
-        }
-        .string {
-            color: $hl-persimmon;
         }
         .number,
         .built_in{
@@ -196,9 +191,6 @@ figure.highlight {
         .title {
             color: $hl-scampi;
         }
-        .string {
-            color: $hl-persimmon;
-        }
         .number,
         .built_in{
             color: $hl-bondi-blue;
@@ -213,9 +205,6 @@ figure.highlight {
         .keyword,
         .important {
             color: $hl-cardinal;
-        }
-        .string {
-            color: $hl-persimmon;
         }
         .attribute,
         .hexcolor,
@@ -257,9 +246,6 @@ figure.highlight {
         .attribute {
             color: $hl-bondi-blue;
         }
-        .string {
-            color: $hl-persimmon;
-        }
         .request {
             color: $hl-cardinal;
         }
@@ -271,9 +257,6 @@ figure.highlight {
         }
         .setting {
             color: $hl-cardinal;
-        }
-        .string {
-            color: $hl-persimmon;
         }
         .value,
         .keyword {
@@ -291,9 +274,6 @@ figure.highlight {
         .javadoctag,
         .keyword {
             color: $hl-cardinal;
-        }
-        .string {
-            color: $hl-persimmon;
         }
         .number {
             color: $hl-bondi-blue;
@@ -318,8 +298,7 @@ figure.highlight {
         .tag .title {
             color: $hl-night-rider;
         }
-        .regexp,
-        .string {
+        .regexp {
             color: $hl-persimmon;
         }
         .built_in,
@@ -330,8 +309,7 @@ figure.highlight {
     }
     // JSON
     &.json .code {
-        .attribute,
-        .string {
+        .attribute {
             color: $hl-persimmon;
         }
         .number {
@@ -371,7 +349,7 @@ figure.highlight {
         }
     }
     // Nginx
-    &.nginx {
+    &.nginx .code {
         .title {
             color: $hl-cardinal;
         }
@@ -379,8 +357,7 @@ figure.highlight {
             color: $hl-bondi-blue;
         }
         .regexp,
-        .number,
-        .string {
+        .number {
             color: $hl-persimmon;
         }
         .variable {
@@ -388,9 +365,10 @@ figure.highlight {
         }
     }
     // Objective-C
-    &.objectivec {
+    &.objectivec .code {
         .preprocessor {
             color: $hl-cardinal;
+
             .title {
                 color: $hl-persimmon;
             }
@@ -401,9 +379,6 @@ figure.highlight {
         .keyword {
             color: $hl-cardinal;
         }
-        .string {
-            color: $hl-persimmon;
-        }
         .literal,
         .number,
         .built_in {
@@ -411,26 +386,24 @@ figure.highlight {
         }
     }
     // Perl
-    &.perl {
+    &.perl .code {
         .keyword {
             color: $hl-cardinal;
         }
         .sub {
             color: $hl-scampi;
         }
-        .regexp,
-        .string {
+        .regexp {
             color: $hl-persimmon;
         }
     }
     // PHP
-    &.php {
+    &.php .code {
         .phpdoc,
         .keyword {
             color: $hl-cardinal;
         }
-        .regexp,
-        .string {
+        .regexp {
             color: $hl-persimmon;
         }
         .literal,
@@ -442,13 +415,10 @@ figure.highlight {
         }
     }
     // Python
-    &.python {
+    &.python .code {
         .decorator,
         .title {
             color: $hl-scampi;
-        }
-        .string {
-            color: $hl-persimmon;
         }
         .number {
             color: $hl-bondi-blue;
@@ -456,5 +426,85 @@ figure.highlight {
         .keyword {
             color: $hl-cardinal;
         }
+    }
+    // Ruby
+    &.ruby .code {
+        .parent,
+        .title {
+            color: $hl-scampi;
+        }
+        .prompt,
+        .constant,
+        .number,
+        .subst .keyword,
+        .symbol {
+            color: $hl-bondi-blue;
+        }
+        .keyword {
+            color: $hl-cardinal;
+        }
+    }
+    // SQL
+    &.sql {
+        .keyword,
+        .built_in{
+            color: $hl-cardinal;
+        }
+        .number {
+            color: $hl-bondi-blue;
+        }
+    }
+    // XML, HTML
+    &.xml {
+        .tag {
+            color: $hl-night-rider;
+        }
+        .value {
+            color: $hl-persimmon;
+        }
+        .attribute {
+            color: $hl-scampi;
+        }
+        .title {
+            color: $hl-asparagus;
+        }
+    }
+    // Puppet
+    &.puppet {
+        .title {
+            color: $hl-scampi;
+        }
+        .function {
+            color: $hl-bondi-blue;
+        }
+        .keyword {
+            color : $hl-cardinal;
+        }
+    }
+    // LESS
+    &.less {
+        .tag,
+        .at_rule {
+            color: $hl-cardinal;
+        }
+        .number,
+        .hexcolor,
+        .function,
+        .attribute {
+            color: $hl-bondi-blue;
+
+        }
+        .built_in {
+            color: $hl-persimmon;
+        }
+        .id,
+        .pseudo,
+        .class {
+            color: $hl-scampi;
+        }
+    }
+    // SCSS
+    &.scss {
+
     }
 }
