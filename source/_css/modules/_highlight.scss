@@ -505,6 +505,77 @@ figure.highlight {
     }
     // SCSS
     &.scss {
+        .tag,
+        .at_rule,
+        .important {
+            color: $hl-cardinal;
+        }
+        .preprocessor,
+        .number,
+        .hexcolor,
+        .function,
+        .attribute {
+            color: $hl-bondi-blue;
 
+        }
+        .variable {
+            color: $hl-night-rider;
+        }
+        .built_in {
+            color: $hl-persimmon;
+        }
+        .id,
+        .pseudo,
+        .class {
+            color: $hl-scampi;
+        }
     }
+    // Stylus
+    &.stylus {
+        .at_rule,
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .tag {
+            color: $hl-asparagus;
+        }
+        .number,
+        .hexcolor,
+        .attribute,
+        .params {
+            color :$hl-bondi-blue;
+        }
+        .class,
+        .id,
+        .pseudo,
+        .title {
+            color: $hl-scampi;
+        }
+    }
+    // Go
+    &.go {
+        .typename,
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .built_in,
+        .constant {
+            color :$hl-bondi-blue;
+        }
+    }
+    // Swift
+    &.swift {
+        .preprocessor,
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .title {
+            color: $hl-scampi;
+        }
+        .built_in,
+        .number {
+            color: $hl-bondi-blue;
+        }
+    }
+
 }
