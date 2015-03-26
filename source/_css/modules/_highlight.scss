@@ -96,7 +96,7 @@ figure.highlight {
 
 // Highlight code coloration
 .highlight {
-    // apacheConf
+    // ApacheConf
     &.apacheconf {
         .comment {
             color: $hl-pewter;
@@ -114,7 +114,7 @@ figure.highlight {
             color: $hl-asparagus;
         }
     }
-    // bash
+    // Bash
     &.bash {
         .shebang,
         .comment {
@@ -161,6 +161,86 @@ figure.highlight {
         }
         .comment {
             color: $hl-pewter;
+        }
+    }
+    // C++
+    &.cpp {
+        .comment {
+            color: $hl-pewter;
+        }
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .preprocessor {
+            color: $hl-persimmon;
+        }
+        .title {
+            color: $hl-scampi;
+        }
+        .string {
+            color: $hl-persimmon;
+        }
+        .number,
+        .built_in{
+            color: $hl-bondi-blue;
+        }
+    }
+    // C#
+    &.cs {
+        .comment {
+            color: $hl-pewter;
+        }
+        .preprocessor,
+        .preprocessor .keyword {
+            color: $hl-night-rider;
+        }
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .title {
+            color: $hl-scampi;
+        }
+        .string {
+            color: $hl-persimmon;
+        }
+        .number,
+        .built_in{
+            color: $hl-bondi-blue;
+        }
+        .xmlDocTag {
+            color: $hl-asparagus;
+        }
+    }
+    // CSS
+    &.css {
+        .at_rule,
+        .keyword,
+        .important {
+            color: $hl-cardinal;
+        }
+        .string {
+            color: $hl-persimmon;
+        }
+        .comment {
+            color: $hl-pewter;
+        }
+        .attribute,
+        .hexcolor,
+        .number,
+        .function {
+            color: $hl-bondi-blue;
+        }
+        .attr_selector,
+        .value {
+            color: $hl-night-rider;
+        }
+        .id,
+        .class,
+        .pseudo {
+            color: $hl-scampi;
+        }
+        .tag {
+            color: $hl-asparagus;
         }
     }
 }
