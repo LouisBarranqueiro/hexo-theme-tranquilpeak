@@ -1,13 +1,23 @@
+// Button settings
+// --------------------
+$btn-background:    #fff;
+$btn-border-radius: 3px;
+$btn-padding:       8px 15px;
+$btn-margin:        0;
+$btn-width:         auto;
+$btn-height:        auto;
+$btn-cursor:        pointer;
+
 .btn {
     font-size:      $font-size-base;
-    background:     #fff;
-    width:          auto;
-    height:         auto;
-    border-radius:  3px;
+    background:     $btn-background;
+    width:          $btn-width;
+    height:         $btn-height;
+    border-radius:  $btn-border-radius;
     letter-spacing: $letter-spacing-base;
-    padding:        8px 15px;
-    cursor:         pointer;
-    margin:         0;
+    padding:        $btn-padding;
+    margin:         $btn-margin;
+    cursor:         $btn-cursor;
 
     &:hover,
     &:focus,
@@ -16,7 +26,7 @@
     }
 }
 
-// Colors variant
+// Color variant
 .btn--default {
     @include button-color-variant($font-color-light);
 }
