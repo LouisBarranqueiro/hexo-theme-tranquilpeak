@@ -13,15 +13,20 @@ $hl-linenumbers-background: #ffffff;
 $hl-linenumbers-color:      #aaaaaa;
 
 // Code colorations
-$hl-white:       #ffffff; // background
-$hl-night-rider: #333333; // general color
-$hl-bondi-blue:  #0086b3;
-$hl-persimmon :  #df5000;
-$hl-asparagus:   #63a35c;
-$hl-pewter:      #969896; // comment
-$hl-cardinal:    #a71d5d;
-$hl-scampi:      #795da3;
-$hl-bahama-blue: #1d3e81;
+$hl-white:           #ffffff; // background
+$hl-night-rider:     #333333; // general color
+$hl-bondi-blue:      #0086b3;
+$hl-persimmon :      #df5000;
+$hl-asparagus:       #63a35c;
+$hl-pewter:          #969896; // comment
+$hl-cardinal:        #a71d5d;
+$hl-scampi:          #795da3;
+$hl-bahama-blue:     #1d3e81;
+$hl-free-speech-red: #bd2c00; // deletion color for .diff file
+$hl-misty-rose:      #ffecec; // deletion background color for .diff file
+$hl-limeade:         #55a532; // addition color for .diff file
+$hl-honeydew:        #eaffea; // addition background color for .diff file
+
 
 // Gist setting
 // --------------------
@@ -241,6 +246,116 @@ figure.highlight {
         }
         .tag {
             color: $hl-asparagus;
+        }
+    }
+    // Diff
+    &.diff {
+        .chunk {
+            color: $hl-scampi;
+            font-weight: bold;
+        }
+        .addition {
+            color:            $hl-limeade;
+            background-color: $hl-honeydew;
+        }
+        .deletion {
+            color:            $hl-free-speech-red;
+            background-color: $hl-misty-rose;
+        }
+    }
+    // HTTP
+    &.http {
+        .comment {
+            color: $hl-pewter;
+        }
+        .literal,
+        .attribute {
+            color: $hl-bondi-blue;
+        }
+        .string {
+            color: $hl-persimmon;
+        }
+        .request {
+            color: $hl-cardinal;
+        }
+    }
+    // INI
+    &.ini {
+        .title {
+            color: $hl-scampi;
+        }
+        .setting {
+            color: $hl-cardinal;
+        }
+        .string {
+            color: $hl-persimmon;
+        }
+        .value,
+        .keyword {
+            color: $hl-night-rider;
+        }
+        .comment {
+            color: $hl-pewter;
+        }
+    }
+    // JAVA
+    &.java {
+        .title {
+            color: $hl-scampi;
+        }
+        .javadoc,
+        .comment {
+            color: $hl-pewter;
+        }
+        .javadoctag,
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .string {
+            color: $hl-persimmon;
+        }
+        .number {
+            color: $hl-bondi-blue;
+        }
+        .params {
+            color: $hl-bahama-blue;
+        }
+    }
+    // JavaScript
+    &.js {
+        .title {
+            color: $hl-scampi;
+        }
+        .javadoc,
+        .comment {
+            color: $hl-pewter;
+        }
+        .tag,
+        .javadoctag,
+        .keyword {
+            color: $hl-cardinal;
+        }
+        .tag .title {
+            color: $hl-night-rider;
+        }
+        .regexp,
+        .string {
+            color: $hl-persimmon;
+        }
+        .built_in,
+        .literal,
+        .number {
+            color: $hl-bondi-blue;
+        }
+    }
+    // JSON
+    &.json {
+        .attribute,
+        .string {
+            color: $hl-persimmon;
+        }
+        .number {
+            color: $hl-bondi-blue;
         }
     }
 }
