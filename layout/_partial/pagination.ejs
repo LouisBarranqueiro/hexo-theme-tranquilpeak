@@ -4,7 +4,7 @@
         <% if (page.prev) { %>
             <li class="pagination-prev">
                 <a class="btn btn--default btn--small" href="<%- url_for(page.prev_link) %>">
-                    <i class="fa fa-angle-left"></i>
+                    <i class="fa fa-angle-left text-base"></i>
                     <span>NEWER POSTS</span>
                 </a>
             </li>
@@ -13,7 +13,7 @@
             <li class="pagination-next">
                 <a class="btn btn--default btn--small" href="<%- url_for(page.next_link) %>">
                     <span>OLDER POSTS</span>
-                    <i class="fa fa-angle-right"></i>
+                    <i class="fa fa-angle-right text-base"></i>
                 </a>
             </li>
         <% } %>
