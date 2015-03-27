@@ -1,19 +1,20 @@
 .image-gallery {
-    display:        block;
-    position:       relative;
-    height:         auto;
-    overflow:       hidden;
-    margin-bottom:  30px;
+    display:       block;
+    position:      relative;
+    height:        auto;
+    overflow:      hidden;
+    margin-bottom: 30px;
 
-    .image-gallery-desc {
+    .image-gallery-metabar {
         position:   absolute;
-        width:      calc(100% - (#{$main-content-padding} * 4));
-        bottom:     0px;
+        bottom:     0;
+        // width: (full with) - (padding of `#main-content` div * 4) to be responsive on all screen
+        width:      calc(100% - (#{map-get($main-content, padding)} * 4));
         background: rgba(0, 0, 0, 0.75);
-        font-size:  $font-size-small;
-        color:      #fff;
+        font-size:  map-get($font-size, small);
+        color:      white;
         padding:    0.5em 1.5em;
-        z-index:    1;
+        z-index:    1; // Use to go over all images of the gallery
     }
     .image-gallery-photos {
         .photo-box {
@@ -25,7 +26,7 @@
             &:first-child {
                 display:        block;
                 width:          100%;
-                padding-bottom: 56.25%;
+                padding-bottom: 56.25%; // 16:9 ratio, consider as height value
             }
             .photo-box-inner {
                 position: absolute;
@@ -38,36 +39,31 @@
                 }
             }
         }
-        .fancybox-button {
-            position:      absolute;
-            top:           calc(50% - 30px);
-            left:          calc(50% - 30px);
-            display:       block;
-            background:    rgba(40, 41, 45, 0.8);
-            width:         60px;
-            height:        60px;
-            line-height:   67px;
-            color:         #fff;
-            overflow:      hidden;
-            cursor:        pointer;
-            border-radius: 3px;
-        }
     }
+    // Thumbnail image of gallery
+    // Used when image gallery contains more than 2 images
+    // You can change the style of image gallery by changing the following value
+    // Currently, it display one large image above 2 smaller images
+    // First image of the gallery
     .image-gallery-photos--thumbnail {
         .photo-box {
             display:        block;
-            width:          50%;
-            padding-bottom: 30%;
+            width:          100%;
+            padding-bottom: 40%; // Consider as height value
 
+            // First image
             &:first-child {
                 width:          100%;
-                padding-bottom: 40%;
-                margin-bottom:  2px;
+                padding-bottom: 40%; // Consider as height value
+                margin-bottom:  $image-gallery-photos-margin;
             }
+            // Second image
             &:nth-child(2) {
-                margin-right: 2px;
-                width:        calc(50% - 2px);
+                margin-right: $image-gallery-photos-margin;
+                // width: 50% minus the space between 2 images
+                width: calc(50% - #{$image-gallery-photos-margin}); // Consider as height value
             }
+            // Other images
             &:nth-child(n + 4) {
                 display: none;
             }
