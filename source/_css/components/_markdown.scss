@@ -1,74 +1,30 @@
-// Mobiles
-// --------------------
-@media #{$small-and-down} {
-    .markdown {
-        h1 {
-            font-size: $md-font-size-h1 - 0.35rem;
-        }
-        h2 {
-            font-size: $md-font-size-h2 - 0.35rem;
-        }
-        h3 {
-            font-size: $md-font-size-h3 - 0.35rem;
-        }
-        h4 {
-            font-size: $md-font-size-h4 - 0.35rem;
-        }
-        h5 {
-            font-size: $md-font-size-h5 - 0.35rem;
-        }
-        h6 {
-            font-size: $md-font-size-h6 - 0.35rem;
-        }
-    }
-}
-
-// Tablets
-// --------------------
-@media #{$medium-only} {
-    .markdown {
-        h1 {
-            font-size: $md-font-size-h1 - 0.2rem;
-        }
-        h2 {
-            font-size: $md-font-size-h2 - 0.2rem;
-        }
-        h3 {
-            font-size: $md-font-size-h3 - 0.2rem;
-        }
-        h4 {
-            font-size: $md-font-size-h4 - 0.2rem;
-        }
-        h5 {
-            font-size: $md-font-size-h5 - 0.2rem;
-        }
-        h6 {
-            font-size: $md-font-size-h6 - 0.2rem;
-        }
-    }
-}
-
-// Desktops
-// --------------------
+// Set markdown headings font size on large screen and up
 @media #{$large-and-up} {
     .markdown {
-        h1 {
-            font-size: $md-font-size-h1;
+        @each $key, $value in $markdown-headings-font-size {
+            .#{$key} {
+                font-size: $value;
+            }
         }
-        h2 {
-            font-size: $md-font-size-h2;
+    }
+}
+// Reduce global font-size base and headings font size on small screen and down
+@media #{$small-and-down} {
+    .markdown {
+        @each $key, $value in $markdown-headings-font-size {
+            .#{$key} {
+                font-size: $value - $markdown-headings-font-size-sm-screen-reduction;
+            }
         }
-        h3 {
-            font-size: $md-font-size-h3;
-        }
-        h4 {
-            font-size: $md-font-size-h4;
-        }
-        h5 {
-            font-size: $md-font-size-h5;
-        }
-        h6 {
-            font-size: $md-font-size-h6;
+    }
+}
+// Reduce global font-size base and headings font size on medium screen only
+@media #{$medium-only} {
+    .markdown {
+        @each $key, $value in $markdown-headings-font-size {
+            .#{$key} {
+                font-size: $value - $markdown-headings-font-size-md-screen-reduction;
+            }
         }
     }
 }
