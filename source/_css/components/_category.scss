@@ -1,41 +1,39 @@
 a.category,
 .category {
     display:        inline-block;
-    background:     #fff;
+    background:     white;
     width:          auto;
     height:         auto;
     border-radius:  3px;
     letter-spacing: $letter-spacing-base;
     cursor:         pointer;
-    margin:         0;
-    margin-right:   4px;
-    margin-bottom:  7px;
+    margin:         0 4px 7px 0;
 }
 
 // Colors variant
 a.category--default,
 .category-default {
-    @include category-color-variant($font-color-light);
+    @include category-color-variant(map-get($colors, light));
 }
 a.category--success,
 .category--success {
-    @include category-color-variant($color-success);
+    @include category-color-variant(map-get($colors, success));
 }
 a.category--primary,
 .category--primary {
-    @include category-color-variant($color-primary);
+    @include category-color-variant(map-get($colors, primary));
 }
 a.category--danger ,
 .category--danger {
-    @include category-color-variant($color-danger);
+    @include category-color-variant(map-get($colors, danger));
 }
 
 // Size variant
 a.category--base,
 .category--base {
-    @include category-size-variant($font-size-small, 4.5px 15px);
+    @include category-size-variant(map-get($font-size, small), 4.5px 15px);
 }
 a.category--small,
 .category--small {
-    @include category-size-variant($font-size-small, 2px 10px);
+    @include category-size-variant(map-get($font-size, small), 2px 10px);
 }
