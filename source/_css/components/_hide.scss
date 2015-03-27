@@ -1,29 +1,22 @@
-// Mobiles
-// --------------------
+// Hide element on very small screen and down
 @media #{$xsmall-and-down} {
     .hide-xs {
         display: none;
     }
 }
-
-// Mobiles
-// --------------------
+// Hide element on small screen only
 @media #{$small-only} {
     .hide-sm {
         display: none;
     }
 }
-
-// Tablets
-// --------------------
+// Hide element on medium screen only
 @media #{$medium-only} {
-    .hide-m {
+    .hide-md {
         display: none;
     }
 }
-
-// Desktops
-// --------------------
+// Hide element on large screen and up
 @media #{$large-and-up} {
     .hide-lg {
         display: none;
