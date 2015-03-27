@@ -3,7 +3,7 @@
     width:      100%;
     border:     none;
     outline:    none;
-    color:      $font-color-input;
+    color:      map-get($colors, base);
 
     &:hover,
     &:focus {
@@ -11,6 +11,7 @@
     }
 }
 
+// Input size variant
 .input--xlarge {
     @include input-size-variant(auto, 10px 0, 25px, 25px);
 }
