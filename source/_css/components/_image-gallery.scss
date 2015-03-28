@@ -9,7 +9,7 @@
         position:   absolute;
         bottom:     0;
         // width: (full with) - (padding of `#main-content` div * 4) to be responsive on all screen
-        width:      calc(100% - (#{map-get($main-content, padding)} * 4));
+        width:      calc(100% - (#{map-get($main-content, padding-right-left)} * 4));
         background: rgba(0, 0, 0, 0.75);
         font-size:  map-get($font-size, small);
         color:      white;
