@@ -1,10 +1,13 @@
-.box {
-    border-bottom: 1px solid #eef2f8;
-}
+// Group of `.box`
+// Add margin when `.box` are in `.box-group`
 .box-group {
     margin-top: 20px;
 
     .box:nth-child(n + 2) {
         margin-top: 20px;
     }
+}
+// Box
+.box {
+    border-bottom: 1px solid #eef2f8;
 }
