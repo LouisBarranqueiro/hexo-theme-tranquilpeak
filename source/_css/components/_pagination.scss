@@ -1,11 +1,11 @@
 .pagination-bar {
     height: auto;
     width:  100%;
-    height: 60px;
+    height: $pagination-height;
 
     .pagination {
-        height:      60px;
-        line-height: 60px;
+        height:      $pagination-height;
+        line-height: $pagination-height;
         display:     block;
         list-style:  none;
         padding:     0 10px;
@@ -15,23 +15,22 @@
         .pagination-next {
             float:        left;
             margin-right: 10px;
+
         }
         .pagination-next {
             i {
-                font-size:   $font-size-base;
                 margin-left: 10px;
             }
         }
         .pagination-prev {
             i {
-                font-size:    $font-size-base;
                 margin-right: 10px;
             }
         }
         .pagination-number {
             float:     right;
-            font-size: $font-size-medium;
-            color:     $font-color-light;
+            font-size: map-get($font-size, medium);
+            color:     map-get($colors, light);
         }
     }
 }
