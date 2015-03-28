@@ -10,12 +10,12 @@
                 text-decoration: underline;
             }
         }
-        ol.archive-post-group,
-        ul.archive-post-group {
+        .archive-post-group,
+        .archive-post-group {
             list-style: none;
 
-            li.archive-post {
-                font-size: $font-size-medium;
+            .archive-post {
+                font-size: map-get($font-size, medium);
 
                 .archive-post-title {
                     margin-left: 10px;
@@ -26,12 +26,13 @@
                     }
                 }
                 .archive-post-date {
-                    color: $font-color-light;
+                    color: map-get($colors, light);
                 }
+                // Change styl of the list by adding font-awesome icon
                 &::before {
-                    font-family: "FontAwesome";
-                    content:     "\f0da";
-                    font-size:   $font-size-small;
+                    font-family: 'FontAwesome';
+                    content:     '\f0da';
+                    font-size:   map-get($font-size, small);
                 }
             }
         }
