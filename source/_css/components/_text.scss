@@ -1,6 +1,3 @@
-// Typography
-// -------------------------
-
 // Text alignement
 .text-left {
     text-align: left !important;
@@ -17,7 +14,6 @@
 .text-nowrap {
     white-space: nowrap !important;
 }
-
 // Text transformation
 .text-lowercase {
     text-transform: lowercase !important;
@@ -28,24 +24,22 @@
 .text-capitalize {
     text-transform: capitalize !important;
 }
-
 // Text size
 .text-xsmall {
-    font-size: $font-size-xsmall !important;
+    font-size: map-get($font-size, xsmall) !important;
 }
 .text-small {
-    font-size: $font-size-small !important;
+    font-size: map-get($font-size, small) !important;
 }
 .text-base {
     font-size: $font-size-base !important;
 }
 .text-large {
-    font-size: $font-size-large !important;
+    font-size: map-get($font-size, large) !important;
 }
 .text-xlarge {
-    font-size: $font-size-xlarge !important;
+    font-size: map-get($font-size, xlarge) !important;
 }
-
 // Text style
 .text-strong {
     font-weight: 700 !important;
@@ -68,50 +62,13 @@
 
     }
 }
-
 // Text coloration
-.text-color-light {
-    color: $font-color-light !important;
-}
 .text-color-base {
-    color: $font-color-base !important;
+    color: map-get($colors, base) !important;
+}
+.text-color-light {
+    color: map-get($colors, light) !important;
 }
 .text-color-link {
-    color: $font-color-link !important;
-}
-.text-color-base {
-    color: $font-color-base !important;
-}
-
-// Link
-a.link-unstyled {
-    &,
-    &:hover,
-    &:active {
-        cursor:          pointer !important;
-        color:           inherit !important;
-        text-decoration: none !important;
-    }
-    a.link {
-        &,
-        &:hover,
-        &:active {
-            text-decoration: underline !important;
-        }
-    }
-}
-
-// Pullquote
-.pullquote {
-    width: 45%;
-    text-align: left;
-
-    &.left {
-        float: left;
-        margin: 10px 10px 10px 20px;
-    }
-    &.right {
-        float: right;
-        margin: 10px 20px 10px 10px;
-    }
+    color: map-get($colors, link) !important;
 }
