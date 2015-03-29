@@ -1,11 +1,13 @@
-// All
-// --------------------
+// Group of `.post`
+// Add margin and border bottom when `.post` are in `.post-group`
 .post-group {
     .post {
-        margin-top:    15px;
+        margin-top:    15px; // Space between 2 post
         border-bottom: 1px solid #eef2f8;
     }
 }
+
+// Post
 .post {
     position:       relative;
     width:          100%;
@@ -24,9 +26,10 @@
         }
     }
     // Cover image displayed in single post view
+    // When post's `coverImage` variable is defined
     .post-header-cover {
         position:          relative;
-        top:               -15px;
+        top:               -15px; // Fix the cover image to the top of the page. `#main-content` have a top padding of 15px
         background-size:   cover;
         background-repeat: no-repeat;
         display:           block;
@@ -34,12 +37,12 @@
         max-height:        450px;
 
         .post-header {
-            padding-top:    15%;
-            padding-bottom: 15%;
+            padding-top:    15%; // Use to center the content of .post-header
+            padding-bottom: 15%; // Use to center the content of .post-header
 
             .post-title {
                 margin:      0;
-                color:       #fff;
+                color:       white;
                 text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
 
                 &:hover {
@@ -48,11 +51,11 @@
             }
             .post-meta {
                 font-size:   $font-size-base;
-                color:       #fff !important;
+                color:       white !important;
                 text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
 
                 a {
-                    color: #fff;
+                    color: white;
                 }
             }
         }
@@ -62,7 +65,7 @@
     }
     .post-meta,
     .post-readingtime {
-        color: $font-color-light;
+        color: map-get($colors, link);
     }
     .post-excerpt_link {
         margin-top: -15px;
@@ -71,13 +74,13 @@
     .post-readingtime,
     .post-excerpt_link {
         font-family: 'Open Sans', sans-serif;
-        font-size:   $font-size-small;
+        font-size:   map-get($font-size, small);
         font-weight: 400;
     }
     .post-excerpt,
     .post-content {
         font-family: 'Merriweather', serif;
-        color:       $font-color-base;
+        color:       map-get($colors, base);
         margin-top:  15px;
         font-weight: 300;
 
@@ -93,18 +96,19 @@
         }
     }
 }
+// Post's bottom bar which contains navigation and share options
 .post-bottom-bar {
     position:   fixed;
     bottom:     0;
     height:     60px;
-    background: #fff;
+    background: white;
     margin:     0;
     border-top: 1px solid #eef2f8;
     z-index:    10;
 }
-// Mobiles
-// --------------------
+// Response to small screen and down
 @media #{$small-and-down} {
+    // Hide the post's thumbnail image
     .post-thumbnailimg {
         display: none;
 
@@ -112,34 +116,33 @@
             display: none;
         }
     }
+    // Resize the post's bottom bar
     .post-bottom-bar {
         width:   calc(100% - 20px);
         left:    0;
         padding: 0 10px;
     }
 }
-
-// Tablets
-// --------------------
+// Response to medium screen only
 @media #{$medium-only} {
+    // Increase the font size of the post's title
     .post-header-cover {
         .post-header {
             .post-title {
-                font-size: $font-size-h1 + 0.2rem;
+                font-size: map-get($headings-font-size, h1) + 0.2rem;
             }
         }
     }
+    // Resize the post-bottom bar
     .post-bottom-bar {
-        width:   calc(100% - #{$sidebar-tablet-width} - 30px);
-        left:    $sidebar-tablet-width;
+        width:   calc(100% - #{map-get($sidebar, md-screen-width)} - 30px);
+        left:    map-get($sidebar, md-screen-width);
         padding: 0 15px;
     }
 }
-
-// Tablets & desktops
-// --------------------
+// Response to medium screen and up
 @media #{$medium-and-up} {
-    // Thumbnail image displayed in index view
+    // Display the post's thumbnail image
     .post.post--thumbnailimg {
         .post-thumbnailimg {
             display:        inline-block;
@@ -148,31 +151,31 @@
 
             img {
                 display:       block;
-                width:         $thumbnail-image-width;
-                height:        $thumbnail-image-width;
+                width:         $post-thumbnail-image-width;
+                height:        $post-thumbnail-image-width;
                 border-radius: 3px;
             }
         }
         .post-wrap {
             display: inline-block;
-            width:   calc(100% - #{$thumbnail-image-width} - 20px);
+            width:   calc(100% - #{$post-thumbnail-image-width} - 20px);
         }
     }
 }
-
-// Desktops
-// --------------------
+// Response to large screen and up
 @media #{$large-and-up} {
+    // Increase the font size of the post's title
     .post-header-cover {
         .post-header {
             .post-title {
-                font-size: $font-size-h1 + 0.6rem;
+                font-size: map-get($headings-font-size, h1) + 0.6rem;
             }
         }
     }
+    // Resize the post-bottom bar
     .post-bottom-bar {
-        width:   calc(100% - #{$sidebar-desktop-width} - 30px);
-        left:    $sidebar-desktop-width;
+        width:   calc(100% - #{map-get($sidebar, lg-screen-width)} - 30px);
+        left:    map-get($sidebar, lg-screen-width);
         padding: 0 15px;
     }
 }

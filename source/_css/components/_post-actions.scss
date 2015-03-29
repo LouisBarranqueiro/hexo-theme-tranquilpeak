@@ -1,5 +1,4 @@
-// All
-// --------------------
+
 .post-actions {
     height:      60px;
     line-height: 60px;
@@ -20,9 +19,10 @@
                 text-align: center;
             }
         }
+        // Post's navigation options
         ul.post-actions-nav {
             width:   50%;
-            z-index: 10;
+            z-index: 10; // On very small screen `.post-actions-nav` will be above `.post-actions-share`
 
             li {
                 float: left;
@@ -45,9 +45,10 @@
                 }
             }
         }
+        // Post's share options
         ul.post-actions-share {
             width:   50%;
-            z-index: 9;
+            z-index: 9; // On very small screen `.post-actions-nav` will be above `.post-actions-share`
 
             li {
                 float: right;
@@ -61,17 +62,15 @@
         }
     }
 }
-
-// Mobiles
-// --------------------
+// Respond to small screen and down
 @media #{$small-and-down} {
     .post-actions {
         ol.post-actions-panel {
             ul.post-actions-nav {
-                width: 35%;
+                width: 35%; // Best width for responsive post's navigation panel on small screen
             }
             ul.post-actions-share {
-                width: 65%;
+                width: 65%; // Best width for responsive post's share panel on small screen
             }
         }
     }
