@@ -1,13 +1,11 @@
-// All
-// --------------------
 #sidebar {
-    height:     100%;
-    position:   fixed;
-    top:        0;
-    background: $sidebar-bg-color;
-    overflow:   scroll;
-    z-index:    9;
     font-family: 'Open Sans', sans-serif;
+    height:      100%;
+    position:    fixed;
+    top:         0;
+    background:  map-get($sidebar, background);
+    overflow:    scroll;
+    z-index:     map-get($z-indexes, l-sidebar);
 
     ul {
         padding-left:  0;
@@ -22,21 +20,21 @@
             line-height: 45px;
 
             a {
-                color:   $sidebar-font-color;
+                color:   map-get($header, color);
                 display: block;
                 height:  100%;
 
                 &:hover,
                 &:active {
                     text-decoration: none;
-                    color: lighten($sidebar-font-color, 35);
+                    color: lighten(map-get($header, color), 35);
                 }
             }
         }
     }
     ul.sidebar-profile {
         li {
-            color:       $sidebar-font-color;
+            color:       map-get($header, color);
             text-align:  center;
             padding-top: 18px;
 
@@ -48,12 +46,12 @@
     }
 }
 
-// Mobiles
-// --------------------
+// Hide by default the sidebar on small screen
+// Javascript animate the sidebar
 @media #{$small-and-down} {
     #sidebar {
         display: none;
-        width:   $sidebar-desktop-width;
+        width:   map-get($sidebar, lg-screen-width); //
 
         ul {
             li {
@@ -109,7 +107,7 @@
 // --------------------
 @media #{$medium-only} {
     #sidebar {
-        width: $sidebar-tablet-width;
+        width: map-get($sidebar, md-screen-width);
 
         ul {
             li {
@@ -148,7 +146,7 @@
 // --------------------
 @media #{$large-and-up} {
     #sidebar {
-        width: $sidebar-desktop-width;
+        width: map-get($sidebar, lg-screen-width);
 
         ul {
             li {

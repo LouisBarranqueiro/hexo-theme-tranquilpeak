@@ -1,35 +1,27 @@
-// All
-// --------------------
 #main {
-    display:    block;
-    min-height: 100%;
-    background: #fff;
+    display:     block;
+    min-height:  100%;
+    background:  #fff;
     padding-top: 15px;
 }
-
-// Mobiles
-// --------------------
+// Change width of `#main` to full size on small screen and down
 @media #{$small-and-down} {
     #main {
         display: block;
-        width:   calc(100%);
+        width:   100%;
     }
 }
-
-// Tablets
-// --------------------
+// Change width of `#main` to full size minus `$sidebar-md-width` on medium screen only
 @media #{$medium-only} {
     #main {
         float: right;
-        width: calc(100% - #{$sidebar-tablet-width});
+        width: calc(100% - #{map-get($sidebar, md-screen-width)});
     }
 }
-
-// Desktops
-// --------------------
+// Change width of `#main` to full size minus `$sidebar-lg-width` on large screen and up
 @media #{$large-and-up} {
     #main {
         float: right;
-        width: calc(100% - #{$sidebar-desktop-width});
+        width: calc(100% - #{map-get($sidebar, lg-screen-width)});
     }
 }
