@@ -9,10 +9,9 @@ a.category,
     cursor:         pointer;
     margin:         0 4px 7px 0;
 }
-
 // Colors variant
 a.category--default,
-.category-default {
+.category--default {
     @include category-color-variant(map-get($colors, light));
 }
 a.category--success,
@@ -27,10 +26,9 @@ a.category--danger ,
 .category--danger {
     @include category-color-variant(map-get($colors, danger));
 }
-
 // Size variant
-a.category--base,
-.category--base {
+a.category--default,
+.category--default {
     @include category-size-variant(map-get($font-size, small), 4.5px 15px);
 }
 a.category--small,

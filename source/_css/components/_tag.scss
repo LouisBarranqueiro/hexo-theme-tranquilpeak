@@ -11,31 +11,29 @@ a.tag,
     margin-right:   4px;
     margin-bottom:  7px;
 }
-
 // Colors variant
 a.tag--default,
-.tag-default {
-    @include tag-color-variant($font-color-light);
+.tag--default {
+    @include tag-color-variant(map-get($colors, light));
 }
 a.tag--success,
-.tag-default {
-    @include tag-color-variant($color-success);
+.tag--default {
+    @include tag-color-variant(map-get($colors, success));
 }
 a.tag--primary,
-.tag-default {
-    @include tag-color-variant($color-primary);
+.tag--default {
+    @include tag-color-variant(map-get($colors, primary));
 }
 a.tag--danger ,
-.tag-default {
-    @include tag-color-variant($color-danger);
+.tag--default {
+    @include tag-color-variant(map-get($colors, danger));
 }
-
 // Size variant
-a.tag--base,
-.tag--base {
-    @include tag-size-variant($font-size-small, 4.5px 15px);
+a.tag--default,
+.tag--default {
+    @include tag-size-variant(map-get($font-size, small), 4.5px 15px);
 }
 a.tag--small,
 .tag--small {
-    @include tag-size-variant($font-size-small, 2px 10px);
+    @include tag-size-variant(map-get($font-size, small), 2px 10px);
 }
