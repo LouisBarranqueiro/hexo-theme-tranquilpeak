@@ -11,6 +11,9 @@
     'utils/mixins/tag';
 
 @import
+    'base/base';
+
+@import
     'layout/about',
     'layout/blog',
     'layout/cover',
@@ -28,15 +31,14 @@
     'components/hide',
     'components/highlight',
     'components/image-gallery',
+    'components/link',
     'components/main-content',
     'components/markdown',
     'components/pagination',
     'components/post',
     'components/post-actions',
-    'components/form',
-    'components/hide',
-    'components/markdown',
+    'components/pullquote',
     'components/tag',
+    'components/text',
     'components/tooltip',
-    'components/type',
     'components/video';
