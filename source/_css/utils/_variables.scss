@@ -1,93 +1,163 @@
+// Global settings
+// --------------------------------------------
 
-// Typography settings
-// --------------------
-$font-family-base:     'Open Sans', sans-serif;
-$font-size-base:       1.5rem;
-$line-height-base:     1.85em;
-$letter-spacing-base:  0.01em;
-$font-feature-base:    'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+// Typography
+$font-family-base:    'Open Sans', sans-serif;
+$font-size-base:      1.5rem; // equal to 15px
+$font-color-base:     #5d686f;
+$line-height-base:    1.85em;
+$letter-spacing-base: 0.01em;
 
-// Headers settings
-$headings-font-family: 'Open Sans', sans-serif;
-$headings-font-weight: 700;
-$headings-line-height: 1.45em;
-$headings-color:       #4a4a4a;
-
-// Headers size
-$font-size-h1: 2.8rem;
-$font-size-h2: 2.4rem;
-$font-size-h3: 2.0rem;
-$font-size-h4: 1.8rem;
-$font-size-h5: 1.7rem;
-$font-size-h6: 1.6rem;
-
-// Markdown headers size
-$md-font-size-h1: 2.15rem;
-$md-font-size-h2: 2rem;
-$md-font-size-h3: 1.8rem;
-$md-font-size-h4: 1.7rem;
-$md-font-size-h5: 1.6rem;
-$md-font-size-h6: 1.5rem;
+$font-size-base-sm-screen-reduction-factor: 0.1rem; // Reduction of font size base on small screen and down
+$font-size-base-md-screen-reduction-factor: 0.05rem; // Reduction of font size base on medium screen only
 
 // Font size
-$font-size-xlarge: 1.7rem;
-$font-size-large:  1.6rem;
-$font-size-medium: 1.4rem;
-$font-size-small:  1.25rem;
-$font-size-xsmall: 1rem;
+$font-size: (
+    'xlarge': 1.7rem, // equal to 17px
+    'large':  1.6rem, // equal to 16px
+    'base':   $font-size-base, // equal to 15px
+    'medium': 1.4rem, // equal to 14px
+    'small':  1.25rem, // equal to 12.5px
+    'xsmall': 1rem // equal to 10px
+);
 
-// Colors settings
-// --------------------
-$bg-color-base:  #fff;
+// Colors
+$colors: (
+    'success': #4dc657,
+    'danger':  #f5311d,
+    'primary': #64b5f6,
+    'purple':  #cf6ae0,
+    'base':    $font-color-base,
+    'orange':  #e75c2f,
+    'light':   #9eabb3,
+    'link':    #64b5f6  // use for tag `a`
+);
 
-$color-success: #4dc657;
-$color-danger:  #f5311d;
-$color-primary: #64b5f6;
-$color-purple:  #cf6ae0;
-$color-orange:  #e75c2f;
-
-$font-color-base:  #5d686f;
-$font-color-light: #9eabb3;
-$font-color-link:  #64b5f6;
-$font-color-input: #5d686f;
-
-// Header settings
-// --------------------
-$header-bg-color:   rgba(26, 45, 64, 1);
-$header-font-color: #bdc3d3;
-
-// Sidebar settings
-// --------------------
-$sidebar-bg-color:      rgba(17, 26, 35, 0.7);
-$sidebar-tablet-width:  75px;
-$sidebar-desktop-width: 250px;
-$sidebar-font-color:    #bdc3d3;
-
-// Main content setting
-// --------------------
-$main-content-width:   750px;
-$main-content-padding: 20px;
-
-// Posts setting
-// --------------------
-$thumbnail-image-width: 140px;
+// Z-indexes
+// `l-` prefix for layout
+// `c-` prefix for components
+$z-indexes: (
+    'l-cover':   -1,  // position the cover below the whole blog
+    'l-main':    10,
+    'l-header':  20,
+    'l-sidebar': 20,
+    'c-tooltip': 1000
+);
 
 // Media Query Ranges
-// --------------------
-$xsmall-screen-up: 401px !default;
-$small-screen-up:  601px !default;
-$medium-screen-up: 993px !default;
-$large-screen-up:  1201px !default;
+$screen-min: (
+    'xs-min': 320px,
+    'sm-min': 768px,
+    'md-min': 992px,
+    'lg-min': 1200px
+);
+$screen-max: (
+    'xs-max': map-get($screen-min, sm-min) - 1,
+    'sm-max': map-get($screen-min, md-min) - 1,
+    'md-max': map-get($screen-min, lg-min) - 1
+);
+$screen: map-merge($screen-min, $screen-max); // Merged screen-* Maps
 
-$xsmall-screen:    400px !default;
-$small-screen:     600px !default;
-$medium-screen:    992px !default;
-$large-screen:     1200px !default;
+$xsmall-and-down: "only screen and (max-width : #{map-get($screen, xs-max)})" !default;
+$small-only:      "only screen and (min-width : #{map-get($screen, sm-min)}) and (max-width : #{map-get($screen, sm-max)})" !default;
+$small-and-down:  "only screen and (max-width : #{map-get($screen, sm-max)})" !default;
+$medium-and-down: "only screen and (max-width : #{map-get($screen, md-max)})" !default;
+$medium-only:     "only screen and (min-width : #{map-get($screen, md-min)}) and (max-width : #{map-get($screen, md-max)})" !default;
+$medium-and-up:   "only screen and (min-width : #{map-get($screen, md-min)})" !default;
+$large-and-up:    "only screen and (min-width : #{map-get($screen, lg-min)})" !default;
 
-$xsmall-and-down: "only screen and (max-width : #{$xsmall-screen})" !default;
-$small-only:      "only screen and (min-width : #{$xsmall-screen-up}) and (max-width : #{$small-screen})" !default;
-$small-and-down:  "only screen and (max-width : #{$small-screen})" !default;
-$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
-$medium-only:     "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
-$medium-and-up:   "only screen and (min-width : #{$small-screen-up})" !default;
-$large-and-up:    "only screen and (min-width : #{$medium-screen-up})" !default;
+// Base settings
+// Files are located in `base` folder
+// --------------------------------------------
+
+// Headings font-size
+$headings-font-size: (
+    'h1': 2.8rem, // equal to 28px
+    'h2': 2.4rem, // equal to 24px
+    'h3': 2.0rem, // equal to 20px
+    'h4': 1.8rem, // equal to 18px
+    'h5': 1.7rem, // equal to 17px
+    'h6': 1.6rem  // equal to 16px
+);
+// Reduction of headings font size on small screen and down
+$headings-font-size-sm-screen-reduction-factor: 0.2rem;
+// Reduction of headings font size on medium screen only
+$headings-font-size-md-screen-reduction-factor: 0.15rem;
+
+// Layout settings
+// Files are located in `components` folder
+// --------------------------------------------
+
+// Header
+$header:(
+    'background': rgba(26, 45, 64, 1),
+        'color':         #bdc3d3
+);
+
+// Sidebar
+$sidebar: (
+    'md-screen-width': 75px,
+    'lg-screen-width': 250px,
+    'background':         rgba(17, 26, 35, 0.7),
+    'color':              #bdc3d3
+);
+
+// Main content
+$main-content: (
+    'max-width':   750px,
+    'padding-right-left': 20px
+);
+
+// Components settings
+// Files are located in `components` folder
+// --------------------------------------------
+
+// Highlight
+$highlight: (
+    'font-family': Menlo,
+    'font-size':   1.3rem,
+    'border':      1px solid #d9d9d9,
+    'line-height': 1.2em
+);
+// Highlight colors
+$highlight-colors: (
+    'white':           #fff, // Background
+    'night-rider':     #333, // General color
+    'bondi-blue':      #0086b3,
+    'persimmon':       #df5000,
+    'asparagus':       #63a35c,
+    'pewter':          #969896, // Comment
+    'cardinal':        #a71d5d,
+    'scampi':          #795da3,
+    'bahama-blue':     #1d3e81,
+    'free-speech-red': #bd2c00, // Deletion color for .diff file
+    'misty-rose':      #ffecec, // Deletion background color for .diff file
+    'limeade':         #55a532, // Addition color for .diff file
+    'honeydew':        #eaffea // Addition background color for .diff file
+);
+
+// Image gallery photos
+$image-gallery-photos-margin: 2px; // Space bettween 2 images
+
+// Mardown
+// These variables are use to have headings smaller than general headings title
+// and use correctly headings in a post instead of use only header below h2
+// because they are larger than the post title or something like that
+$markdown-headings-font-size: (
+    'h1': 2.15rem, // equal to 21.5px
+    'h2': 2rem, // equal to 20px
+    'h3': 1.8rem, // equal to 18px
+    'h4': 1.7rem, // equal to 17px
+    'h5': 1.6rem, // equal to 16px
+    'h6': 1.5rem // equal to 15px
+);
+// Reduction of markdwon headings on small screen and down
+$markdown-headings-font-size-sm-screen-reduction-factor: 0.35rem;
+// Reduction of markdwon headings on medium screen only
+$markdown-headings-font-size-md-screen-reduction-factor: 0.2rem;
+
+// Pagination
+$pagination-height: 60px;
+
+// Post thumbnail image
+$post-thumbnail-image-width: 140px; // Width and height of post's thumbnail image
