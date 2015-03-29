@@ -3,7 +3,7 @@
     cursor:   pointer;
 
     &:before {
-        z-index:          1001;
+        z-index:          map-get($z-indexes, c-tooltip);
         border:           6px solid transparent;
         background:       transparent;
         content:          "";
@@ -33,10 +33,10 @@
         -moz-transition:    -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
         transition:         transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
         pointer-events:     none;
-        @include opacity(0);
-        @include prefix(transition, opacity 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
-        @include prefix(transition, visibility 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
-        @include prefix(transition, translate3d(0, 0, 0), 'webkit' 'moz' 'ms' 'o');
+        @include            opacity(0);
+        @include            prefix(transition, opacity 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
+        @include            prefix(transition, visibility 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
+        @include            prefix(transition, translate3d(0, 0, 0), 'webkit' 'moz' 'ms' 'o');
     }
     &:hover:before,
     &:hover:after,
@@ -51,8 +51,6 @@
     @extend .tooltip;
 }
 // Directions
-// --------------------
-
 // Top
 .tooltip--top {
     &:before {
