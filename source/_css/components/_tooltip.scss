@@ -1,49 +1,47 @@
+// The default position of a tooltip is at the top of the focused element
 .tooltip {
     position: relative;
     cursor:   pointer;
+
+    @extend .tooltip--top; // Add default behavior from `tooltip--top`
 
     &:before {
         z-index:          map-get($z-indexes, c-tooltip);
         border:           6px solid transparent;
         background:       transparent;
         content:          "";
-        margin-left:      -6px;
-        margin-bottom:    -12px;
-        border-top-color: rgba(0, 0, 20, 0.93);
     }
     &:after {
-        z-index:          1000;
+        z-index:          map-get($z-indexes, c-tooltip);
         padding:          8px;
-        min-width:        180px;
-        background-color: rgba(0, 0, 20, 0.93);
+        min-width:        map-get($tooltip, min-width); // Fixed width of the tooltip
+        background-color: map-get($tooltip, background);
         color:            #fff;
         content:          attr(data-tooltip);
         font-size:        0.93em;
         line-height:      $line-height-base;
         border-radius:    5px;
-        margin-left:      -80px;
+
     }
     &:before,
     &:after {
-        bottom:             100%;
-        left:               50%;
         position:           absolute;
         visibility:         hidden;
-        -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-        -moz-transition:    -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-        transition:         transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-        pointer-events:     none;
-        @include            opacity(0);
-        @include            prefix(transition, opacity 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
-        @include            prefix(transition, visibility 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
-        @include            prefix(transition, translate3d(0, 0, 0), 'webkit' 'moz' 'ms' 'o');
+        // Animate the tooltip
+        -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        @include prefix(transform, translate3d(0, 0, 0), 'webkit' 'moz' 'ms');
+        pointer-events: none;
     }
+
     &:hover:before,
     &:hover:after,
     &:focus:before,
     &:focus:after {
         visibility: visible;
         @include opacity(1);
+        // Animate the tooltip
         @include prefix(transform, translateY(-12px), 'webkit' 'moz' 'ms' 'o');
     }
 }
@@ -51,29 +49,29 @@
     @extend .tooltip;
 }
 // Directions
-// Top
+// Position the tooltip at the top of the focused element
 .tooltip--top {
     &:before {
-        margin-left:      -6px;
+        margin-left:      0;
         margin-bottom:    -12px;
-        border-top-color: rgba(0, 0, 20, 0.93);
+        border-top-color: map-get($tooltip, background);
     }
     &:after {
-        margin-left: -80px;
+        margin-left: -#{map-get($tooltip, min-width) / 2}; // Center the tooltip with his arrow
     }
     &:before,
     &:after {
-        bottom: 100%;
-        left:   50%;
+        bottom: 100%; // Position the tooltip at the right of the focused element
+        left:   50%; // Center the tooltip relative to the focused element
     }
     &:hover:before,
     &:hover:after,
     &:focus:before,
     &:focus:after {
-        @include prefix(transform, translateY(-12px), 'webkit' 'moz' 'ms' 'o');
+        @include prefix(transform, translateY(-12px), 'webkit' 'moz' 'ms' 'o'); // Translate tooltip to the top
     }
 }
-// Left
+// Position the tooltip at the left of the focused element
 .tooltip--left {
     &:after {
         margin-left:   0;
@@ -84,44 +82,44 @@
         margin-right:      -12px;
         margin-bottom:     0;
         border-top-color:  transparent;
-        border-left-color: rgba(0, 0, 20, 0.93);
+        border-left-color: map-get($tooltip, background);
     }
     &:before,
     &:after {
-        right:  100%;
-        bottom: 50%;
+        right:  100%; // Position the arrow at the left of the focused element
+        bottom: 50%; // Center the tooltip relative to the focused element
         left:   auto;
     }
     &:hover:before,
     &:hover:after,
     &:focus:before,
     &:focus:after {
-        @include prefix(transform, translateY(-12px), 'webkit' 'moz' 'ms' 'o');
+        @include prefix(transform, translateX(-12px), 'webkit' 'moz' 'ms' 'o'); // Translate tooltip to the left
     }
 }
-// Bottom
+// Position the tooltip at the bottom of the focused element
 .tooltip--bottom {
     &:before {
         top:                 3px;
         margin-top:          -12px;
         margin-bottom:       0;
         border-top-color:    transparent;
-        border-bottom-color: rgba(0, 0, 20, 0.93);
+        border-bottom-color: map-get($tooltip, background);
     }
     &:before,
     &:after {
-        top:    100%;
+        top:    100%; // Position the arrow at the bottom of the focused element
         bottom: auto;
-        left:   50%;
+        left:   50%; // Center the tooltip relative to the focused element
     }
     &:hover:before,
     &:hover:after,
     &:focus:before,
     &:focus:after {
-        @include prefix(transform, translateY(12px), 'webkit' 'moz' 'ms' 'o');
+        @include prefix(transform, translateY(12px), 'webkit' 'moz' 'ms' 'o'); // Translate tooltip to the bottom
     }
 }
-// Right
+// Position the tooltip at the right of the focused element
 .tooltip--right {
     &:after {
         margin-bottom: -16px;
@@ -130,24 +128,18 @@
         margin-bottom:      0;
         margin-left:        -12px;
         border-top-color:   transparent;
-        border-right-color: rgba(0, 0, 20, 0.93);
+        border-right-color: map-get($tooltip, background);
         top:                3px;
     }
     &:before,
     &:after {
-        bottom: 50%;
-        left:   100%;
+        bottom: 50%; // Center the tooltip relative to the focused element
+        left:   100%; // Position the arrow at the right of the focused element
     }
     &:hover:before,
     &:hover:after,
     &:focus:before,
     &:focus:after {
-        @include prefix(transform, translateY(12px), 'webkit' 'moz' 'ms' 'o');
-    }
-    &:hover:before,
-    &:hover:after,
-    &:focus:before,
-    &:focus:after {
-        @include prefix(transform, translateY(12px), 'webkit' 'moz' 'ms' 'o');
+        @include prefix(transform, translateX(12px), 'webkit' 'moz' 'ms' 'o'); // Translate tooltip to the right
     }
 }

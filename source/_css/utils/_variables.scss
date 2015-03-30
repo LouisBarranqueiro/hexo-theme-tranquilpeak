@@ -37,14 +37,16 @@ $colors: (
 // `l-` prefix for layout
 // `c-` prefix for components
 $z-indexes: (
-    'l-cover':   -1,  // position the cover below the whole blog
-    'l-main':    10,
-    'l-header':  20,
-    'l-sidebar': 20,
-    'c-tooltip': 1000
+    'l-cover':           -1,  // position the cover below the whole blog
+    'l-main':            10,
+    'l-header':          20,
+    'l-sidebar':         20,
+    'c-tooltip':         1000,
+    'c-post-bottom-bar': 11
 );
 
 // Media Query Ranges
+// If you want to change ranges screen size, you can do it easily by changing only `$screen-min` values
 $screen-min: (
     'xs-min': 320px,
     'sm-min': 480px,
@@ -56,8 +58,8 @@ $screen-max: (
     'sm-max': map-get($screen-min, md-min) - 1,
     'md-max': map-get($screen-min, lg-min) - 1
 );
-$screen: map-merge($screen-min, $screen-max); // Merged screen-* Maps
-
+$screen: map-merge($screen-min, $screen-max); // Merged screen-* Maps into a single one
+// Shortcuts for medias
 $xsmall-and-down:  "only screen and (max-width : #{map-get($screen, xs-max)})" !default;
 $small-only:       "only screen and (min-width : #{map-get($screen, sm-min)}) and (max-width : #{map-get($screen, sm-max)})" !default;
 $small-and-down:   "only screen and (max-width : #{map-get($screen, sm-max)})" !default;
@@ -86,26 +88,26 @@ $headings-font-size-sm-screen-reduction-factor: 0.2rem;
 $headings-font-size-md-screen-reduction-factor: 0.15rem;
 
 // Layout settings
-// Files are located in `components` folder
+// Files are located in `layout` folder
 // --------------------------------------------
 
 // Header
 $header:(
     'background': rgba(26, 45, 64, 1),
-        'color':         #bdc3d3
+    'color':      #bdc3d3
 );
 
 // Sidebar
 $sidebar: (
     'md-screen-width': 75px,
     'lg-screen-width': 250px,
-    'background':         rgba(17, 26, 35, 0.7),
-    'color':              #bdc3d3
+    'background':      rgba(17, 26, 35, 0.7),
+    'color':           #bdc3d3
 );
 
 // Main content
 $main-content: (
-    'max-width':   750px,
+    'max-width':          750px,
     'padding-right-left': 20px
 );
 
@@ -162,3 +164,9 @@ $pagination-height: 60px;
 
 // Post thumbnail image
 $post-thumbnail-image-width: 140px; // Width and height of post's thumbnail image
+
+// Tooltip
+$tooltip: (
+    'min-width':  180px,  // Consider as width
+    'background': rgba(0, 0, 20, 0.93)
+);
