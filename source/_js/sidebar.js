@@ -7,7 +7,6 @@
      */
     var Sidebar = function() {
         this.$sidebar       = $('#sidebar');
-        this.$sidebar.width = this.$sidebar.width();
         this.$openBtn       = $('#btn-open-sidebar');
         this.$closeBtn      = $('#header, #main');
         this.$postBottomBar = $('.post-bottom-bar');
@@ -47,26 +46,37 @@
                 self.$sidebar.hide();
             }
 
-            self.initSidebarPosition();
-            self.initBlogPosition();
+            // Reset position of all objects
+            self.resetSidebarPosition();
+            self.resetBlogPosition();
+            self.resetPostBottomBarPosition();
         })
     };
 
     /**
-     * Init sidebar position
+     * Reset sidebar position
      */
-    Sidebar.prototype.initSidebarPosition = function() {
+    Sidebar.prototype.resetSidebarPosition = function() {
         this.$sidebar
-            .css({'left': 0})
+            .css({'left': ''})
             .removeClass('opened');
     };
 
     /**
-     * Init blog position
+     * Reset blog position
      */
-    Sidebar.prototype.initBlogPosition = function() {
+    Sidebar.prototype.resetBlogPosition = function() {
         this.$closeBtn
-            .css({'margin-left': 0})
+            .css({'margin-left': ''})
+            .removeClass('is-slided');
+    };
+
+    /**
+     * Reset post's bottom bar position
+     */
+    Sidebar.prototype.resetPostBottomBarPosition = function() {
+        this.$postBottomBar
+            .css({'left':''})
             .removeClass('is-slided');
     };
 
@@ -77,11 +87,11 @@
         var self = this;
 
         self.$sidebar
-            .css({'left': '-' + self.$sidebar.width + 'px'})
+            .css({'left': '-' + self.$sidebar.width() + 'px'})
             .show();
         
         self.$sidebar.animate({
-            left: '+=' + self.$sidebar.width
+            left: '+=' + self.$sidebar.width()
         }, 250, function() {
             self.$sidebar.addClass('opened');
         });
@@ -94,7 +104,7 @@
         var self = this;
 
         self.$sidebar.animate({
-            left: '-=' + self.$sidebar.width,
+            left: '-=' + self.$sidebar.width(),
         }, 250, function() {
             self.$sidebar
                 .removeClass('opened')
@@ -110,7 +120,7 @@
 
         if (!self.$closeBtn.hasClass('is-slided')) {
             self.$closeBtn.animate({
-                'margin-left': '+=' + self.$sidebar.width + 'px',
+                'margin-left': '+=' + self.$sidebar.width() + 'px',
             }, 250, function() {
                 self.$closeBtn.addClass('is-slided');
             })
@@ -125,7 +135,7 @@
 
         if (self.$closeBtn.hasClass('is-slided')) {
             self.$closeBtn.animate({
-                'margin-left': '-=' + self.$sidebar.width + 'px',
+                'margin-left': '-=' + self.$sidebar.width() + 'px',
             }, 250, function() {
                 self.$closeBtn.removeClass('is-slided');
             })
@@ -140,7 +150,7 @@
 
         if (!self.$postBottomBar.hasClass('is-slided')) {
             self.$postBottomBar.animate({
-                'left': '+=' + self.$sidebar.width,
+                'left': '+=' + self.$sidebar.width(),
             }, 250, function() {
                 self.$postBottomBar.addClass('is-slided');
             });
@@ -155,7 +165,7 @@
 
         if (self.$postBottomBar.hasClass('is-slided')) {
             self.$postBottomBar.animate({
-                'left': '-=' + self.$sidebar.width,
+                'left': '-=' + self.$sidebar.width(),
             }, 250, function() {
                 self.$postBottomBar.removeClass('is-slided');
             });
