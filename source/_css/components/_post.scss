@@ -6,7 +6,6 @@
         border-bottom: 1px solid #eef2f8;
     }
 }
-
 // Post
 .post {
     position:       relative;
@@ -37,8 +36,8 @@
         max-height:        450px;
 
         .post-header {
-            padding-top:    15%; // Use to center the content of .post-header
-            padding-bottom: 15%; // Use to center the content of .post-header
+            padding-top:    15%; // Use to center the content of `.post-header`
+            padding-bottom: 15%; // Use to center the content of `.post-header`
 
             .post-title {
                 margin:      0;
@@ -49,6 +48,7 @@
                     text-decoration: none;
                 }
             }
+            // Post meta contains post's date, post's categories and tags
             .post-meta {
                 font-size:   $font-size-base;
                 color:       white !important;
@@ -60,6 +60,7 @@
             }
         }
     }
+    // Post meta contains post's date, post's categories and tags
     .post-meta {
         line-height: 1.5em;
     }
@@ -68,7 +69,7 @@
         color: map-get($colors, link);
     }
     .post-excerpt_link {
-        margin-top: -15px;
+        margin-top: -15px; // Bring the post's link nearest of the excerpt
     }
     .post-meta,
     .post-readingtime,
@@ -104,9 +105,9 @@
     background: white;
     margin:     0;
     border-top: 1px solid #eef2f8;
-    z-index:    10;
+    z-index:    map-get($z-indexes, c-post-bottom-bar);
 }
-// Response to small screen and down
+// Respond to small screen and down
 @media #{$small-and-down} {
     // Hide the post's thumbnail image
     .post-thumbnailimg {
@@ -123,7 +124,7 @@
         padding: 0 10px;
     }
 }
-// Response to medium screen only
+// Respond to medium screen only
 @media #{$medium-only} {
     // Increase the font size of the post's title
     .post-header-cover {
@@ -140,7 +141,7 @@
         padding: 0 15px;
     }
 }
-// Response to medium screen and up
+// Respond to medium screen and up
 @media #{$medium-and-up} {
     // Display the post's thumbnail image
     .post.post--thumbnailimg {
@@ -162,7 +163,7 @@
         }
     }
 }
-// Response to large screen and up
+// Respond to large screen and up
 @media #{$large-and-up} {
     // Increase the font size of the post's title
     .post-header-cover {
