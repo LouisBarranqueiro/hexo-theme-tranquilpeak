@@ -11,6 +11,7 @@
         this.$openBtn       = $('#btn-open-sidebar');
         this.$closeBtn      = $('#header, #main');
         this.$postBottomBar = $('.post-bottom-bar');
+        this.windowMdScreen = 768;
     };
 
     /**
@@ -39,7 +40,7 @@
 
         // Detect resize of the windows
         $(window).resize(function() {
-            if ($(window).width() > 600) {
+            if ($(window).width() > self.windowMdScreen) {
                 self.$sidebar.show();
             }
             else {

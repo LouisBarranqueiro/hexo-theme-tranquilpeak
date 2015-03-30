@@ -6,7 +6,7 @@
             <% } else if (theme.author.picture) { %>
                 <img class="profile-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
             <% } %>
-            <span class="hide-md"><%= config.author %></span>
+            <span class="hide-sm hide-md"><%= config.author %></span>
         </li>
     </ul>
     <% for (var i in theme.sidebar) { %>
@@ -19,7 +19,7 @@
                         <% } %>
                     >
                         <i class="fa fa-lg <%= 'fa-' + theme.sidebar[i][n].icon %>"></i>
-                        <span class="desc hide-md"><%- theme.sidebar[i][n].title %></span>
+                        <span class="desc hide-sm hide-md"><%- theme.sidebar[i][n].title %></span>
                     </a>
                 </li>
             <% } %>

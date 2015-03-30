@@ -47,9 +47,9 @@ $z-indexes: (
 // Media Query Ranges
 $screen-min: (
     'xs-min': 320px,
-    'sm-min': 768px,
-    'md-min': 992px,
-    'lg-min': 1200px
+    'sm-min': 480px,
+    'md-min': 768px,
+    'lg-min': 1024px
 );
 $screen-max: (
     'xs-max': map-get($screen-min, sm-min) - 1,
@@ -58,13 +58,14 @@ $screen-max: (
 );
 $screen: map-merge($screen-min, $screen-max); // Merged screen-* Maps
 
-$xsmall-and-down: "only screen and (max-width : #{map-get($screen, xs-max)})" !default;
-$small-only:      "only screen and (min-width : #{map-get($screen, sm-min)}) and (max-width : #{map-get($screen, sm-max)})" !default;
-$small-and-down:  "only screen and (max-width : #{map-get($screen, sm-max)})" !default;
-$medium-and-down: "only screen and (max-width : #{map-get($screen, md-max)})" !default;
-$medium-only:     "only screen and (min-width : #{map-get($screen, md-min)}) and (max-width : #{map-get($screen, md-max)})" !default;
-$medium-and-up:   "only screen and (min-width : #{map-get($screen, md-min)})" !default;
-$large-and-up:    "only screen and (min-width : #{map-get($screen, lg-min)})" !default;
+$xsmall-and-down:  "only screen and (max-width : #{map-get($screen, xs-max)})" !default;
+$small-only:       "only screen and (min-width : #{map-get($screen, sm-min)}) and (max-width : #{map-get($screen, sm-max)})" !default;
+$small-and-down:   "only screen and (max-width : #{map-get($screen, sm-max)})" !default;
+$small-and-medium: "only screen and (min-width : #{map-get($screen, sm-min)}) and (max-width : #{map-get($screen, md-max)})" !default;
+$medium-and-down:  "only screen and (max-width : #{map-get($screen, md-max)})" !default;
+$medium-only:      "only screen and (min-width : #{map-get($screen, md-min)}) and (max-width : #{map-get($screen, md-max)})" !default;
+$medium-and-up:    "only screen and (min-width : #{map-get($screen, md-min)})" !default;
+$large-and-up:     "only screen and (min-width : #{map-get($screen, lg-min)})" !default;
 
 // Base settings
 // Files are located in `base` folder
