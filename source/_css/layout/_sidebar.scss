@@ -1,3 +1,4 @@
+// Global CSS rules for all screen size
 #sidebar {
     font-family: 'Open Sans', sans-serif;
     height:      100%;
@@ -7,19 +8,21 @@
     overflow:    scroll;
     z-index:     map-get($z-indexes, l-sidebar);
 
-    ul {
+    .sidebar-profile-wrap,
+    .sidebar-button-group {
         padding-left:  0;
         padding-top:   0;
         margin-top:    0;
         margin-bottom: 20px;
 
-        li {
+        .sidebar-profile,
+        .sidebar-button {
             display:     block;
             width:       100%;
-            height:      45px;
+            height:      45px; // Height of a link in the menu
             line-height: 45px;
 
-            a {
+            .sidebar-button-link {
                 color:   map-get($header, color);
                 display: block;
                 height:  100%;
@@ -32,38 +35,44 @@
             }
         }
     }
-    ul.sidebar-profile {
-        li {
+    // Author information
+    .sidebar-profile-wrap {
+        .sidebar-profile {
             color:       map-get($header, color);
             text-align:  center;
             padding-top: 18px;
 
-            .profile-picture {
+            .sidebar-profile-picture {
                 display: block;
                 margin:  0 auto;
             }
         }
     }
 }
-
-// Hide by default the sidebar on small screen
-// Javascript animate the sidebar
+// On `$small-and-down` (small screen): It hide by default the sidebar
+// and with javascript located in `source/_js/_sidebar.js`, it will animate the swipe of the sidebar
 @media #{$small-and-down} {
     #sidebar {
         display: none;
-        width:   map-get($sidebar, lg-screen-width); //
+    }
+}
+// The sidebar on small and large screen is the same but it will be hided by default on small screen
+@media #{$large-and-up}, #{$small-and-down} {
+    #sidebar {
+        width: map-get($sidebar, lg-screen-width);
 
-        ul {
-            li {
+        .sidebar-button-group {
+            .sidebar-button {
                 text-align: left;
 
-                a {
+                .sidebar-button-link {
                     text-align:   left;
                     width:        auto;
                     padding-left: 23px;
                     padding-top:  0;
 
-                    .fa {
+                    // Font-awesome icon
+                    .sidebar-button-icon {
                         display:        inline-block;
                         text-align:     center;
                         width:          30px;
@@ -73,7 +82,8 @@
                         vertical-align: middle;
                         margin-right:   15px;
                     }
-                    .desc {
+                    // Description (name) of a link
+                    .sidebar-button-desc {
                         display:        inline-block;
                         width:          auto;
                         height:         35px;
@@ -85,15 +95,16 @@
                 }
             }
         }
-        ul.sidebar-profile {
+        // Author information
+        .sidebar-profile-wrap {
             padding-top: 25px;
 
-            li {
+            .sidebar-profile {
                 height:         130px;
                 padding-top:    15px;
                 padding-bottom: 7.5px;
 
-                .profile-picture {
+                .sidebar-profile-picture {
                     width:         90px;
                     height:        90px;
                     border-radius: 90px;
@@ -102,21 +113,21 @@
         }
     }
 }
-// Tablets
-// --------------------
+// Display the sidebar in medium mode on medium scren
 @media #{$medium-only} {
     #sidebar {
         width: map-get($sidebar, md-screen-width);
 
-        ul {
-            li {
+        .sidebar-button-group {
+            .sidebar-button {
                 text-align: center;
 
-                a {
+                .sidebar-button-link {
                     text-align: center;
                     width:      100%;
 
-                    .fa {
+                    // Font-awesome icon
+                    .sidebar-button-icon {
                         display:        inline-block;
                         text-align:     center;
                         width:          30px;
@@ -129,69 +140,14 @@
 
             }
         }
-        ul.sidebar-profile {
-            .profile-picture {
+        // Author information
+        .sidebar-profile-wrap {
+            .sidebar-profile-picture {
                 width:          30px;
                 height:         30px;
                 line-height:    30px;
                 vertical-align: middle;
                 border-radius:  30px;
-            }
-        }
-    }
-}
-
-// Desktops
-// --------------------
-@media #{$large-and-up} {
-    #sidebar {
-        width: map-get($sidebar, lg-screen-width);
-
-        ul {
-            li {
-                text-align: left;
-
-                a {
-                    text-align:   left;
-                    width:        auto;
-                    padding-left: 23px;
-                    padding-top:  0;
-
-                    .fa {
-                        display:        inline-block;
-                        text-align:     center;
-                        width:          30px;
-                        height:         30px;
-                        line-height:    30px;
-                        padding-top:    0;
-                        vertical-align: middle;
-                        margin-right:   15px;
-                    }
-                    .desc {
-                        display:        inline-block;
-                        width:          auto;
-                        height:         35px;
-                        line-height:    35px;
-                        font-size:      13.3px;
-                        letter-spacing: 0.3px;
-                        vertical-align: middle;
-                    }
-                }
-            }
-        }
-        ul.sidebar-profile {
-            padding-top: 25px;
-
-            li {
-                height:         130px;
-                padding-top:    15px;
-                padding-bottom: 7.5px;
-
-                .profile-picture {
-                    width:         90px;
-                    height:        90px;
-                    border-radius: 90px;
-                }
             }
         }
     }
