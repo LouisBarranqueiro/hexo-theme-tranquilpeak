@@ -8,15 +8,24 @@
     overflow:    scroll;
     z-index:     map-get($z-indexes, l-sidebar);
 
-    .sidebar-profile-wrap,
-    .sidebar-button-group {
-        padding-left:  0;
-        padding-top:   0;
-        margin-top:    0;
+    // Author information
+    .sidebar-profile {
+        color:       map-get($header, color);
+        text-align:  center;
+        padding-top: 18px;
         margin-bottom: 20px;
 
-        .sidebar-profile,
-        .sidebar-button {
+        .sidebar-profile-picture {
+            display: block;
+            margin:  0 auto;
+        }
+    }
+    // Sidebar's buttons
+    ul.sidebar-buttons {
+        padding : 0;
+        margin: 0 0 20px 0;
+
+        li.sidebar-button {
             display:     block;
             width:       100%;
             height:      45px; // Height of a link in the menu
@@ -35,19 +44,6 @@
             }
         }
     }
-    // Author information
-    .sidebar-profile-wrap {
-        .sidebar-profile {
-            color:       map-get($header, color);
-            text-align:  center;
-            padding-top: 18px;
-
-            .sidebar-profile-picture {
-                display: block;
-                margin:  0 auto;
-            }
-        }
-    }
 }
 // On `$small-and-down` (small screen): It hide by default the sidebar
 // and with javascript located in `source/_js/_sidebar.js`, it will animate the swipe of the sidebar
@@ -61,8 +57,22 @@
     #sidebar {
         width: map-get($sidebar, lg-screen-width);
 
-        .sidebar-button-group {
-            .sidebar-button {
+        // Author information
+        .sidebar-profile {
+            height:         130px;
+            padding-top:    40px;
+            padding-bottom: 7.5px;
+
+            .sidebar-profile-picture {
+                width:         90px;
+                height:        90px;
+                border-radius: 90px;
+                margin-bottom: 5px;
+            }
+        }
+        // Buttons
+        ul.sidebar-buttons {
+            li.sidebar-button {
                 text-align: left;
 
                 .sidebar-button-link {
@@ -95,22 +105,6 @@
                 }
             }
         }
-        // Author information
-        .sidebar-profile-wrap {
-            padding-top: 25px;
-
-            .sidebar-profile {
-                height:         130px;
-                padding-top:    15px;
-                padding-bottom: 7.5px;
-
-                .sidebar-profile-picture {
-                    width:         90px;
-                    height:        90px;
-                    border-radius: 90px;
-                }
-            }
-        }
     }
 }
 // Display the sidebar in medium mode on medium scren
@@ -118,15 +112,25 @@
     #sidebar {
         width: map-get($sidebar, md-screen-width);
 
-        .sidebar-button-group {
-            .sidebar-button {
+        // Author information
+        .sidebar-profile {
+            .sidebar-profile-picture {
+                width:          30px;
+                height:         30px;
+                line-height:    30px;
+                vertical-align: middle;
+                border-radius:  30px;
+            }
+        }
+        // Buttons
+        ul.sidebar-buttons {
+            li.sidebar-button {
                 text-align: center;
 
                 .sidebar-button-link {
                     text-align: center;
                     width:      100%;
 
-                    // Font-awesome icon
                     .sidebar-button-icon {
                         display:        inline-block;
                         text-align:     center;
@@ -137,17 +141,6 @@
                         vertical-align: middle;
                     }
                 }
-
-            }
-        }
-        // Author information
-        .sidebar-profile-wrap {
-            .sidebar-profile-picture {
-                width:          30px;
-                height:         30px;
-                line-height:    30px;
-                vertical-align: middle;
-                border-radius:  30px;
             }
         }
     }
