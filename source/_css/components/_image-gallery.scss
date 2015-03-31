@@ -32,7 +32,7 @@
                 position: absolute;
                 overflow: hidden;
 
-                img {
+                .photo {
                     width:  100%;
                     cursor: -webkit-zoom-in;
                     cursor: -moz-zoom-in;
@@ -46,24 +46,25 @@
     // Currently, it display one large image above 2 smaller images
     // First image of the gallery
     .image-gallery-photos--thumbnail {
+        // Display all images
         .photo-box {
             display:        block;
-            width:          100%;
-            padding-bottom: 40%; // Consider as height value
+            width:          50%;
+            padding-bottom: 30%; // Consider as height value
 
-            // First image
+            // Display First image in large
             &:first-child {
                 width:          100%;
                 padding-bottom: 40%; // Consider as height value
                 margin-bottom:  $image-gallery-photos-margin;
             }
-            // Second image
+            // Resize seconde image minus space between 2 images
             &:nth-child(2) {
                 margin-right: $image-gallery-photos-margin;
                 // width: 50% minus the space between 2 images
                 width: calc(50% - #{$image-gallery-photos-margin}); // Consider as height value
             }
-            // Other images
+            // Hide all other images after the 3 first
             &:nth-child(n + 4) {
                 display: none;
             }
