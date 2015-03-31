@@ -3,7 +3,7 @@ image_dir: assets/images
 
 # Sidebar Configuration
 #    You can add groups of links and links much as you want
-#    You just have to respect the indentation : 'groups of links' -> 'link' -> 'title, link, icon'
+#    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
 #    Example :
 #    -------------
 #       sidebar:                   # Don't modify this variable name
@@ -11,7 +11,7 @@ image_dir: assets/images
 #                home:             # Name of your link (changeable)
 #                   title: Home    # Title of your link displayed
 #                   url: /         # URL of the link. If the URL is internal, domain name is not necessary
-#                   icon: home     # Name of the font awesome icon class without the 'fa-'
+#                   icon: home     # Name of the font awesome icon class without the `fa-`
 #                                  # Go to http://fontawesome.io/icons/ to find icon name class
 sidebar:
     menu:
@@ -73,20 +73,20 @@ sidebar:
 # Author
 author:
     email:
-    picture:    # Your profile picture located in folder 'source/_images/'
+    picture:    # Your profile picture located in folder `source/_images/`
     bio:
     job:
     location:
 
 # Customization
-gravatar_image: 1                            # Gravatar image (disable: 0, enable: 1). Use the email entered in blog configuration file
-thumbnail_image: 0                           # Post thumbnail image (disable: 0, enable: 1). Display the first photo
-read_more_message: Continue reading          # Message displayed after the <!-- more --> balise
-go_to_message: Go to the website             # Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
-cover: cover.png                             # Your blog cover picture located in folder 'source/_images/'
-favicon:                                     # Your favicon located in folder 'source/images/'
-image_gallery: 1                             # Display an image gallery at the end of a post with layout photos
+gravatar_image: 1                      # Gravatar image (disable: 0, enable: 1). Use the email entered in blog configuration file
+thumbnail_image: 0                     # Post thumbnail image (disable: 0, enable: 1). Display the first photo
+read_more_message: Continue reading    # Message displayed after the <!-- more --> balise
+go_to_message: Go to the website       # Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
+cover: cover.png                       # Your blog cover picture located in folder `source/_images/`
+favicon:                               # Your favicon located in folder `source/images/`
+image_gallery: 1                       # Display an image gallery at the end of a post with layout photos
 
 # Miscellaneous
-google_analytics:   # Google analystics web property ID : UA-XXXXX-X
-rss: /atom.xml      # RSS URL
+google_analytics:    # Google analystics web property ID : UA-XXXXX-X
+rss: /atom.xml       # RSS URL
