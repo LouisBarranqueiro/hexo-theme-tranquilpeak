@@ -2,7 +2,7 @@
     <form id="filter-form" action="#">
         <input name="tag" type="text" class="form-control input--xlarge" placeholder="Search a tag" autofocus="autofocus">
     </form>
-    <h5 class="archive-result text-color-base text-xlarge"></h5>
+    <h4 class="archive-result text-color-base text-xlarge"></h4>
     <section>
         <% site.tags.sort('name').each(function(item) { %>
             <a class="tag tag--primary tag--small" href="<%= '#' + item.name + '-list' %>" data-tag="<%= item.name.replace('.','__').toLowerCase() %>">
@@ -12,10 +12,10 @@
     </section>
     <section class="box-group">
         <% site.tags.sort('name').each(function(item) { %>
-            <div id="<%= item.name + '-list' %>" class="archive" data-tag="<%= item.name.replace('.','__').toLowerCase() %>">
-                <h5 class="archive-title">
+            <div id="<%= item.name + '-list' %>" class="archive box" data-tag="<%= item.name.replace('.','__').toLowerCase() %>">
+                <h4 class="archive-title">
                     <a class="link-unstyled" href="<%- url_for('tags/' + item.name ) %>"><%= item.name + ' (' + item.length + ')' %></a>
-                </h5>
+                </h4>
                 <ul class="archive-post-group">
                     <% site.tags.findOne({'name': item.name}).posts.each(function(post) { %>
                     <li class="archive-post">
