@@ -50,7 +50,7 @@ $z-indexes: (
 $screen-min: (
     'xs-min': 320px,
     'sm-min': 480px,
-    'md-min': 768px,
+    'md-min': 768px, // If you change value of `md-min`, you have to change value of `mediumScreenWidth` too in `source/_js/sidebar.js`
     'lg-min': 1024px
 );
 $screen-max: (
@@ -58,7 +58,7 @@ $screen-max: (
     'sm-max': map-get($screen-min, md-min) - 1,
     'md-max': map-get($screen-min, lg-min) - 1
 );
-$screen: map-merge($screen-min, $screen-max); // Merged screen-* Maps into a single one
+$screen: map-merge($screen-min, $screen-max); // Merged screen-* Maps
 // Shortcuts for medias
 $xsmall-and-down:  "only screen and (max-width : #{map-get($screen, xs-max)})" !default;
 $small-only:       "only screen and (min-width : #{map-get($screen, sm-min)}) and (max-width : #{map-get($screen, sm-max)})" !default;

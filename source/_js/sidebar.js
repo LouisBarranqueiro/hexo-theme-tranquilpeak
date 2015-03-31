@@ -6,11 +6,11 @@
      * @constructor
      */
     var Sidebar = function() {
-        this.$sidebar       = $('#sidebar');
-        this.$openBtn       = $('#btn-open-sidebar');
-        this.$closeBtn      = $('#header, #main');
-        this.$postBottomBar = $('.post-bottom-bar');
-        this.windowMdScreen = 768;
+        this.$sidebar          = $('#sidebar');
+        this.$openBtn          = $('#btn-open-sidebar');
+        this.$closeBtn         = $('#header, #main');
+        this.$postBottomBar    = $('.post-bottom-bar');
+        this.mediumScreenWidth = 768; // If you change value of `mediumScreenWidth`, you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
     };
 
     /**
@@ -19,8 +19,7 @@
     Sidebar.prototype.init = function() {
         var self = this;
 
-        // Detect the click on the open button
-        self.$openBtn.click(function() {
+        self.$openBtn.click(function() { // Detect the click on the open button
             if (!self.$sidebar.hasClass('opened')) {
                 self.openSidebar();
                 self.slideBlogRight();
@@ -28,8 +27,7 @@
             }
         })
 
-        // Detect the click on close button
-        self.$closeBtn.click(function() {
+        self.$closeBtn.click(function() { // Detect the click on close button
             if (self.$sidebar.hasClass('opened')) {
                 self.closeSidebar();
                 self.slideBlogLeft();
@@ -37,9 +35,8 @@
             }
         })
 
-        // Detect resize of the windows
-        $(window).resize(function() {
-            if ($(window).width() > self.windowMdScreen) {
+        $(window).resize(function() { // Detect resize of the windows
+            if ($(window).width() > self.mediumScreenWidth) {
                 self.$sidebar.show();
             }
             else {
