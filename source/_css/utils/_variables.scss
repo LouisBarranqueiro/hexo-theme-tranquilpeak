@@ -167,6 +167,8 @@ $post-thumbnail-image-width: 140px; // Width and height of post's thumbnail imag
 
 // Tooltip
 $tooltip: (
-    'min-width':  180px,  // Consider as width
-    'background': rgba(0, 0, 20, 0.93)
+    'min-width':    180px,  // Consider as width
+    'background':   rgba(0, 0, 20, 0.93),
+    'arrow-width':  15px, // Don't change this value, used to horizontally center the tooltip content
+    'arrow-height': 12px // Don't change this value, used to vertically center the tooltip content
 );
