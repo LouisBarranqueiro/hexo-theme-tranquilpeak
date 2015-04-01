@@ -2,11 +2,11 @@
     display:     block;
     min-height:  100%;
     background:  #fff;
-    padding-top: 15px;
 }
 // Change width of `#main` to full size on small screen and down
 @media #{$small-and-down} {
     #main {
+        padding-top: map-get($header, height) + map-get($main, padding-top);
         display: block;
         width:   100%;
     }
@@ -14,6 +14,7 @@
 // Change width of `#main` to full size minus `$sidebar-md-width` on medium screen only
 @media #{$medium-only} {
     #main {
+        padding-top: map-get($main, padding-top);
         float: right;
         width: calc(100% - #{map-get($sidebar, md-screen-width)});
     }
@@ -21,6 +22,7 @@
 // Change width of `#main` to full size minus `$sidebar-lg-width` on large screen and up
 @media #{$large-and-up} {
     #main {
+        padding-top: map-get($main, padding-top);
         float: right;
         width: calc(100% - #{map-get($sidebar, lg-screen-width)});
     }
