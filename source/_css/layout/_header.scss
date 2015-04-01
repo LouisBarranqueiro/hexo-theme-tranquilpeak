@@ -3,9 +3,10 @@
     #header {
         display:    block;
         width:      100%;
-        height:     55px;
+        height:     map-get($header, height);
         background: map-get($header, background);
-        position:   relative;
+        position:   fixed;
+        transition: top 0.2s ease-in-out;
         z-index:    map-get($z-indexes, l-header);
 
         #btn-open-sidebar {
@@ -37,6 +38,11 @@
         a:hover,
         a:active {
             color: lighten(map-get($header, color), 35);
+        }
+        // Class used to animate the header on small screen
+        // when the user scroll down
+        &.header-up {
+            top: -#{map-get($header, height)};
         }
     }
 }

@@ -93,6 +93,7 @@ $headings-font-size-md-screen-reduction-factor: 0.15rem;
 
 // Header
 $header:(
+    'height':     55px,
     'background': rgba(26, 45, 64, 1),
     'color':      #bdc3d3
 );
@@ -108,7 +109,8 @@ $sidebar: (
 // Main content
 $main-content: (
     'max-width':          750px,
-    'padding-right-left': 20px
+    'padding-right-left': 20px,
+    'padding-top':        15px
 );
 
 // Components settings
