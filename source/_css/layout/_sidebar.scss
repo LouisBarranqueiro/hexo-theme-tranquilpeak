@@ -98,7 +98,7 @@
                         width:          auto;
                         height:         35px;
                         line-height:    35px;
-                        font-size:      13.3px;
+                        font-size:      map-get($font-size, medium);
                         letter-spacing: 0.3px;
                         vertical-align: middle;
                     }
