@@ -106,11 +106,15 @@ $sidebar: (
     'color':           #bdc3d3
 );
 
+// Main
+$main: (
+    'padding-top': 15px
+);
+
 // Main content
 $main-content: (
     'max-width':          750px,
     'padding-right-left': 20px,
-    'padding-top':        15px
 );
 
 // Components settings
