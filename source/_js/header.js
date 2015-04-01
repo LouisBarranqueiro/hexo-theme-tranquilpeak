@@ -1,5 +1,6 @@
 +function($) {
 	'use strict';
+	// Hide the header when the user scrolls down, and show it when he scrolls up
 
 	/**
 	 * Header feature
@@ -8,9 +9,7 @@
 	var Header = function() {
 		this.$header       = $('#header');
 		this.headerHeight  = this.$header.height();
-		// if you change this value, you have to change
-		// the CSS class located in `source/_css/layout/_header.scss`
-		this.headerUpCSSClass = 'header-up';
+		this.headerUpCSSClass = 'header-up'; // Reference to the CSS class located in `source/_css/layout/_header.scss`
 		this.delta         = 5;
 		this.lastScrollTop = 0;
 	};
@@ -48,12 +47,12 @@
 
 		// Checks if the user has scrolled enough down and  has past the navbar
 		if ((scrollTop > this.lastScrollTop) && (scrollTop > this.headerHeight)) {
-			this.$header.addClass(headerUpCSSClass);
+			this.$header.addClass(this.headerUpCSSClass);
 		}
 		else {
 			// Check if the user has scrolled to the top of the page
 			if (scrollTop + $(window).height() < $(document).height()) {
-				this.$header.removeClass(headerUpCSSClass);
+				this.$header.removeClass(this.headerUpCSSClass);
 			}
 		}
 
