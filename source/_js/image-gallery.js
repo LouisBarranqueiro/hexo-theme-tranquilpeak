@@ -1,12 +1,13 @@
 +function($) {
 	'use strict'
-	
+	// Resize all images of an image-gallery
+
 	/**
 	 * ImageGallery Feature
 	 * @constructor
 	 */
 	var ImageGallery = function() {
-		this.photosBox = '.photo-box';
+		this.photosBox = '.photo-box'; // Reference to the CSS class located in `source/_css/components/_image-gallery.scss`
 		this.$images   = $(this.photosBox + ' img');
 	};
 
@@ -16,16 +17,19 @@
 	ImageGallery.prototype.init = function() {
 		var self = this;
 
-		self.resizeImage();
+		// Resize all images at the loading of the page
+		self.resizeImages();
+
+		// Resize all images when the user is resizing the page
 		$(window).smartresize(function() {
-			self.resizeImage();
+			self.resizeImages();
 		});
 	};
 
 	/**
-	 * Resize image
+	 * Resize all images of an image gallery
 	 */
-	ImageGallery.prototype.resizeImage = function() {
+	ImageGallery.prototype.resizeImages = function() {
 		var photoBoxWidth;
 		var	photoBoxHeight;
 		var imageWidth;
@@ -39,19 +43,23 @@
 			photoBoxHeight = $image.parent().parent().innerHeight();
 			imageWidth     = $image.width();
 			imageHeight    = $image.height();
-			
+
+			// Checks if image height is smaller than his box
 			if (imageHeight < photoBoxHeight) {
 				imageRatio  = (imageWidth / imageHeight);
+				// Resize image with the box height
 				$image.css({
 					'height': photoBoxHeight,
 					'width': (photoBoxHeight * imageRatio)
 				});
+				// Center image in his box
 				$image.parent().css({
 					'left': '-' + (((photoBoxHeight * imageRatio) / 2) - (photoBoxWidth / 2)) + 'px'
 				});
 			}
+			// Checks if image height is larger than his box
 			else if (imageHeight > photoBoxHeight) {
-				console.log('ok');
+				// Center image in his box
 				$image.parent().css({
 					'top': '-' + (((imageHeight) / 2) - (photoBoxHeight / 2)) + 'px'
 				});
