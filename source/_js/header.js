@@ -12,6 +12,7 @@
 		this.headerUpCSSClass = 'header-up'; // Reference to the CSS class located in `source/_css/layout/_header.scss`
 		this.delta         = 5;
 		this.lastScrollTop = 0;
+		this.scrollTop;
 	};
 
 	/**
@@ -38,25 +39,25 @@
 	 * Animate the header
 	 */
 	Header.prototype.animate = function() {
-		var scrollTop = $(window).scrollTop();
+		this.scrollTop = $(window).scrollTop();
 
 		// Check if the user scrolled more than delta
-		if (Math.abs(this.lastScrollTop - scrollTop) <= this.delta) {
+		if (Math.abs(this.lastScrollTop - this.scrollTop) <= this.delta) {
 			return;
 		}
 
 		// Checks if the user has scrolled enough down and  has past the navbar
-		if ((scrollTop > this.lastScrollTop) && (scrollTop > this.headerHeight)) {
+		if ((this.scrollTop > this.lastScrollTop) && (this.scrollTop > this.headerHeight)) {
 			this.$header.addClass(this.headerUpCSSClass);
 		}
 		else {
 			// Check if the user has scrolled to the top of the page
-			if (scrollTop + $(window).height() < $(document).height()) {
+			if (this.scrollTop + $(window).height() < $(document).height()) {
 				this.$header.removeClass(this.headerUpCSSClass);
 			}
 		}
 
-		this.lastScrollTop = scrollTop;
+		this.lastScrollTop = this.scrollTop;
 	};
 
 	$(document).ready(function() {
