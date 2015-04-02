@@ -6,15 +6,15 @@
         <% } else if (theme.author.picture) { %>
             <img id="about-card-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>" />
         <% } %>
-            <h5 id="about-card-name"><%= config.author %></h5>
+            <h4 id="about-card-name"><%= config.author %></h4>
         <% if (theme.author.bio) { %>
-            <p id="about-card-bio"><%= theme.author.bio %></p>
+            <h5 id="about-card-bio"><%= theme.author.bio %></h5>
         <% } %>
         <% if (theme.author.job) { %>
-            <h6 id="about-card-job"><i class="fa fa-briefcase"></i><br/><%= theme.author.job %></h6>
+            <h5 id="about-card-job"><i class="fa fa-briefcase"></i><br/><%= theme.author.job %></h5>
         <% } %>
         <% if (theme.author.location) { %>
-            <h6 id="about-card-location"><i class="fa fa-map-marker"></i><br/><%= theme.author.location %></h6>
+            <h5 id="about-card-location"><i class="fa fa-map-marker"></i><br/><%= theme.author.location %></h5>
         <% } %>
     </div>
 </div>

@@ -44,19 +44,19 @@
         #about-card-bio {
             padding:     0 30px;
             margin:      0 0 30px 0;
-            font-size:   $font-size-base;
-            line-height: $line-height-base;
-            font-weight: 400;
-            color:       map-get($colors, base);
         }
         #about-card-job,
         #about-card-location {
             display:        inline-block;
             vertical-align: top;
-            font-size:      $font-size-base;
-            line-height:    $line-height-base;
-            font-weight:    400;
-            margin:         0;
+        }
+        #about-card-job,
+        #about-card-location,
+        #about-card-bio {
+            font-size:   $font-size-base;
+            line-height: $line-height-base;
+            font-weight: 400;
+            color:       map-get($colors, base);
         }
     }
 }
