@@ -15,11 +15,19 @@
      */
     PostBottomBar.prototype.init = function() {
         var self = this;
+        var didScroll;
 
-        self.animate();
+        // Detects if the user is scrolling
         $(window).scroll(function() {
-            self.animate();
+            self.didScroll = true;
         });
+
+        setInterval(function() {
+            if (self.didScroll) {
+                self.animate();
+                self.didScroll = false;
+            }
+        }, 250);
     };
 
     /**
