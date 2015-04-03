@@ -6,7 +6,9 @@
         height:     map-get($header, height);
         background: map-get($header, background);
         position:   fixed;
-        transition: top 0.2s ease-in-out;
+        top:        0;
+        // used to animate the header on small screen with javascript
+        @include    prefix(transition, top 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
         z-index:    map-get($z-indexes, l-header);
 
         #btn-open-sidebar {
@@ -48,8 +50,7 @@
                 }
             }
         }
-        // Class used to animate the header on small screen
-        // when the user scroll down
+        // Class used to swipe to the top the header on small screen when the user scroll down
         &.header-up {
             top: -#{map-get($header, height)};
         }
