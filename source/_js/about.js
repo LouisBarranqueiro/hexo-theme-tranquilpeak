@@ -1,8 +1,10 @@
 +function($) {
     'use strict';
 
+    // Fade out the blog and let drop the about card of the author and vice versa
+
     /**
-     * AboutCard Feature
+     * AboutCard
      * @constructor
      */
     var AboutCard = function() {
@@ -14,9 +16,9 @@
     };
 
     /**
-     * Init about card feature
+     * Run AboutCard feature
      */
-    AboutCard.prototype.init = function() {
+    AboutCard.prototype.run = function() {
         var self = this;
 
         self.$openBtn.click(function(e) {
@@ -48,7 +50,7 @@
     AboutCard.prototype.playBack = function() {
         var self = this;
 
-        self.upAboutCard();
+        self.liftAboutCard();
         setTimeout(function() {
             self.$blog.fadeIn();
         }, 500);
@@ -77,7 +79,7 @@
     /**
      * Slide the card to the top
      */
-    AboutCard.prototype.upAboutCard = function() {
+    AboutCard.prototype.liftAboutCard = function() {
         var self = this;
         var aboutCardHeight = self.$aboutCard.innerHeight();
 
@@ -91,6 +93,6 @@
 
     $(document).ready(function() {
         var aboutCard = new AboutCard();
-        aboutCard.init();
+        aboutCard.run();
     });
 }(jQuery);
