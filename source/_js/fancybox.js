@@ -16,8 +16,8 @@
             prevEffect:  'none',
             nextEffect:  'none',
             padding:     '0',
-            helpers: {
-                thumbs: {
+            helpers:     {
+                thumbs:  {
                     width:  70,
                     height: 70
                 },

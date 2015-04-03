@@ -1,5 +1,5 @@
 +function($) {
-     'use strict'
+    'use strict'
 
     // Hide the post bottom bar when the post footer is visible by the user,
     // and show it when the post footer isn't visible by the user
@@ -54,4 +54,4 @@
             postBottomBar.run();
         }
     });
- }(jQuery);
+}(jQuery);

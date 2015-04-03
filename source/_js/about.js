@@ -63,13 +63,13 @@
      * Slide the card to the middle
      */
     AboutCard.prototype.dropAboutCard = function() {
-        var self = this;
+        var self            = this;
         var aboutCardHeight = self.$aboutCard.innerHeight();
 
         self.$aboutCard
-            .css('top','0px')
-            .css('top','-' + aboutCardHeight + 'px')
-            .show(500, function () {
+            .css('top', '0px')
+            .css('top', '-' + aboutCardHeight + 'px')
+            .show(500, function() {
                 self.$aboutCard.animate({
                     top: '+=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
                 });
@@ -80,7 +80,7 @@
      * Slide the card to the top
      */
     AboutCard.prototype.liftAboutCard = function() {
-        var self = this;
+        var self            = this;
         var aboutCardHeight = self.$aboutCard.innerHeight();
 
         self.$aboutCard.animate({

@@ -8,10 +8,10 @@
      * @constructor
      */
     var Sidebar = function() {
-        this.$sidebar          = $('#sidebar');
-        this.$openBtn          = $('#btn-open-sidebar');
-        this.$closeBtn         = $('#header, #main'); // Elements where the user can click to close the sidebar
-        this.$blog             = $('#header, #main, .post-bottom-bar');
+        this.$sidebar  = $('#sidebar');
+        this.$openBtn  = $('#btn-open-sidebar');
+        this.$closeBtn = $('#header, #main'); // Elements where the user can click to close the sidebar
+        this.$blog = $('#header, #main, .post-bottom-bar');
         // If you change value of `mediumScreenWidth`,
         // you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
         this.mediumScreenWidth = 768;
@@ -65,7 +65,7 @@
         this.$sidebar
             .css({
                 display: '',
-                left: ''
+                left:    ''
             })
             .removeClass('swiped');
     };
@@ -76,9 +76,9 @@
     Sidebar.prototype.resetBlogPosition = function() {
         this.$blog
             .css({
-                display: '',
+                display:       '',
                 'margin-left': '',
-                position: ''
+                position:      ''
             })
             .removeClass('swiped');
     };
@@ -113,7 +113,7 @@
      */
     Sidebar.prototype.swipeSidebarToLeft = function() {
         var self = this;
-            // Check if the sidebar is swiped and prevent multiple click on the close button with `.processing` class
+        // Check if the sidebar is swiped and prevent multiple click on the close button with `.processing` class
         if (self.$sidebar.hasClass('swiped') && !this.$sidebar.hasClass('processing')) {
             // Swipe the sidebar to the left
             self.$sidebar
