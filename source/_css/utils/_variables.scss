@@ -8,8 +8,10 @@ $font-color-base:     #5d686f;
 $line-height-base:    1.85em;
 $letter-spacing-base: 0.01em;
 
-$font-size-base-sm-screen-reduction-factor: 0.1rem; // Reduction of font size base on small screen and down
-$font-size-base-md-screen-reduction-factor: 0.05rem; // Reduction of font size base on medium screen only
+// Reduction of font size base on small screen and down
+$font-size-base-sm-screen-reduction-factor: 0.1rem;
+// Reduction of font size base on medium screen only
+$font-size-base-md-screen-reduction-factor: 0.05rem;
 
 // Font size
 $font-size: (

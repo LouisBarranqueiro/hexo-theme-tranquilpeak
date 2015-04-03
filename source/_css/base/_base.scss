@@ -2,13 +2,13 @@ html {
     font-family: $font-family-base;
     font-size:   62.5%; // equal to 10px, useful to use em and rem
     // Gives you better control of the font size when the first selected font is not available.
-    @include     prefix(text-size-adjust, 100%, 'ms' 'webkit');
+    @include prefix(text-size-adjust, 100%, 'ms' 'webkit');
     // Overrides the highlight color shown when the user taps
     //a link or a JavaScript clickable element in Safari on iPhone
-    @include     prefix(tap-highlight-color, rgba(0, 0, 0, 0), 'webkit');
+    @include prefix(tap-highlight-color, rgba(0, 0, 0, 0), 'webkit');
 }
-body
-{
+
+body {
     width:          100%;
     height:         100%;
     margin:         0;
@@ -19,8 +19,9 @@ body
     line-height:    $line-height-base;
     letter-spacing: $letter-spacing-base;
     // Improve smoothing of the font by adding subpixel in Safari
-    @include        prefix(font-smoothing, subpixel-antialiased, 'webkit');
+    @include prefix(font-smoothing, subpixel-antialiased, 'webkit');
 }
+
 h1,
 h2,
 h3,
@@ -33,28 +34,33 @@ h6 {
     line-height:    1.45em;
     color:          #4a4a4a;
 }
+
 h1,
 h2,
 h3 {
     margin: 2em 0 1em 0;
 }
+
 h4,
 h5,
 h6 {
     margin: 1em 0 0.5em 0;
 }
+
 // List each header with his font size
 @each $key, $value in $headings-font-size {
     #{$key} {
         font-size: $value;
     }
 }
+
 p,
 ul,
 ol,
 dl {
     margin: 0 0 1.75em 0;
 }
+
 a {
     &,
     &:hover,
@@ -69,6 +75,7 @@ a {
         text-decoration: underline;
     }
 }
+
 table {
     width:           100%;
     background:      transparent;
@@ -86,9 +93,11 @@ table {
         padding:       1rem 0;
     }
 }
+
 hr {
     border: 1px solid #eef2f8;
 }
+
 dl {
     dt {
         font-weight: bold;
@@ -97,6 +106,7 @@ dl {
         margin-left: 0;
     }
 }
+
 code {
     display:       inline-block;
     font-family:   'Open Sans';
@@ -106,10 +116,12 @@ code {
     background:    #fafbfc;
     padding:       0 10px;
 }
+
 acronym,
 abbr {
     border-bottom: 1px dotted $font-color-base;
 }
+
 blockquote {
     border-left: 2px solid darken(#dce4f1, 3);
     padding:     10px 20px;
@@ -122,6 +134,7 @@ blockquote {
 
     }
 }
+
 // Reduce global font-size base and headings font size on small screen and down
 @media #{$small-and-down} {
     body {
@@ -134,6 +147,7 @@ blockquote {
         }
     }
 }
+
 // Reduce global font-size base and headings font size on medium screen only
 @media #{$medium-only} {
     body {

@@ -8,7 +8,7 @@
         position:   fixed;
         top:        0;
         // used to animate the header on small screen with javascript
-        @include    prefix(transition, top 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
+        @include prefix(transition, top 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
         z-index:    map-get($z-indexes, l-header);
 
         #btn-open-sidebar {
@@ -40,12 +40,12 @@
             margin:      0;
 
             .header-title-link {
-                color: map-get($header, color);
+                color:       map-get($header, color);
                 font-weight: normal;
 
                 &:hover,
                 &:active {
-                    color: lighten(map-get($header, color), 35);
+                    color:           lighten(map-get($header, color), 35);
                     text-decoration: none;
                 }
             }
@@ -56,12 +56,14 @@
         }
     }
 }
+
 // Hide `#header` on medium screen only
 @media #{$medium-only} {
     #header {
         display: none;
     }
 }
+
 // Hide `#header` on large screen and up
 @media #{$large-and-up} {
     #header {

@@ -3,48 +3,49 @@
     line-height: 60px;
     clear:       both;
 
-        ul.post-actions {
-            float:        left;
-            padding-left: 0;
-            margin-top:   0;
-            list-style:   none;
+    ul.post-actions {
+        float:        left;
+        padding-left: 0;
+        margin-top:   0;
+        list-style:   none;
 
-            li.post-action {
-                width:      auto;
-                text-align: center;
-            }
+        li.post-action {
+            width:      auto;
+            text-align: center;
         }
-        // Post's navigation options
-        ul.post-action-nav {
-            width:   45%; // Best width for responsive post's navigation panel on small screen and up
-            z-index: map-get($z-indexes, c-post-bottom-bar) + 2; // On very small screen `.post-actions-nav` will be above `.post-actions-share`
+    }
+    // Post's navigation options
+    ul.post-action-nav {
+        width:   45%; // Best width for responsive post's navigation panel on small screen and up
+        z-index: map-get($z-indexes, c-post-bottom-bar) + 2; // On very small screen `.post-actions-nav` will be above `.post-actions-share`
 
-            li.post-action {
-                float: left;
+        li.post-action {
+            float: left;
 
-                &:last-child {
-                    .post-action-btn {
-                        margin-left: 15px;
-                    }
+            &:last-child {
+                .post-action-btn {
+                    margin-left: 15px;
                 }
             }
         }
-        // Post's share options
-        ul.post-action-share {
-            width:   55%; // 100% minus width of `.post-action-nav`, Best width for responsive post's share panel on small screen and up
-            z-index: map-get($z-indexes, c-post-bottom-bar) + 1; // On very small screen `.post-actions-nav` will be above `.post-actions-share`
+    }
+    // Post's share options
+    ul.post-action-share {
+        width:   55%; // 100% minus width of `.post-action-nav`, Best width for responsive post's share panel on small screen and up
+        z-index: map-get($z-indexes, c-post-bottom-bar) + 1; // On very small screen `.post-actions-nav` will be above `.post-actions-share`
 
-            li.post-action {
-                float: right;
+        li.post-action {
+            float: right;
 
-                &:nth-child(n + 2) {
-                    .post-action-btn {
-                        margin-right: 15px;
-                    }
+            &:nth-child(n + 2) {
+                .post-action-btn {
+                    margin-right: 15px;
                 }
             }
         }
+    }
 }
+
 // Increase width of `.post-actions-share` on very small screen
 @media #{$xsmall-and-down} {
     .post-actions {

@@ -51,7 +51,6 @@
             display:        block;
             width:          50%;
             padding-bottom: 30%; // Consider as height value
-
             // Display First image in large
             &:first-child {
                 width:          100%;
@@ -62,7 +61,7 @@
             &:nth-child(2) {
                 margin-right: $image-gallery-photos-margin;
                 // width: 50% minus the space between 2 images
-                width: calc(50% - #{$image-gallery-photos-margin}); // Consider as height value
+                width:        calc(50% - #{$image-gallery-photos-margin}); // Consider as height value
             }
             // Hide all other images after the 3 first
             &:nth-child(n + 4) {

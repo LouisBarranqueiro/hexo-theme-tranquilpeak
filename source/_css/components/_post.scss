@@ -6,6 +6,7 @@
         border-bottom: 1px solid #eef2f8;
     }
 }
+
 // Post
 .post {
     position:       relative;
@@ -84,7 +85,6 @@
         color:       map-get($colors, base);
         margin-top:  15px;
         font-weight: 300;
-
     }
     .post-content {
         margin-top: 25px;
@@ -97,6 +97,7 @@
         }
     }
 }
+
 // Post's bottom bar which contains navigation and share options
 .post-bottom-bar {
     position:   fixed;
@@ -107,6 +108,7 @@
     border-top: 1px solid #eef2f8;
     z-index:    map-get($z-indexes, c-post-bottom-bar);
 }
+
 // Respond to small screen and down
 @media #{$small-and-down} {
     // Hide the post's thumbnail image
@@ -124,6 +126,7 @@
         padding: 0 10px;
     }
 }
+
 // Respond to medium screen only
 @media #{$medium-only} {
     // Increase the font size of the post's title
@@ -141,6 +144,7 @@
         padding: 0 15px;
     }
 }
+
 // Respond to medium screen and up
 @media #{$medium-and-up} {
     // Display the post's thumbnail image
@@ -163,6 +167,7 @@
         }
     }
 }
+
 // Respond to large screen and up
 @media #{$large-and-up} {
     // Increase the font size of the post's title

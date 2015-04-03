@@ -15,6 +15,7 @@
         text-decoration: none;
     }
 }
+
 // Disabled button
 .btn--disabled,
 .btn--disabled:hover {
@@ -23,23 +24,29 @@
     cursor:          not-allowed;
     text-decoration: none;
 }
+
 // Color variant
 .btn--default {
     @include button-color-variant(map-get($colors, light));
 }
+
 .btn--success {
     @include button-color-variant(map-get($colors, success));
 }
+
 .btn--primary {
     @include button-color-variant(map-get($colors, primary));
 }
+
 .btn--danger {
     @include button-color-variant(map-get($colors, danger));
 }
+
 // Size variant
 .btn--medium {
     @include button-size-variant(map-get($font-size, medium), 8px 15px);
 }
+
 .btn--small {
     @include button-size-variant(map-get($font-size, medium), 8px 15px);
 }

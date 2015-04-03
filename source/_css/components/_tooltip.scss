@@ -2,7 +2,6 @@
 .tooltip {
     position: relative;
     cursor:   pointer;
-
     @extend .tooltip--top; // Add default behavior from `tooltip--top`
 
     &:before {
@@ -21,18 +20,17 @@
         font-size:        0.93em;
         line-height:      $line-height-base;
         border-radius:    5px;
-
     }
     &:before,
     &:after {
         position:           absolute;
         visibility:         hidden;
-        @include            opacity(0);
+        @include opacity(0);
         // Animate tooltip
         -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
         -moz-transition:    opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
         transition:         opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-        @include            prefix(transform, translate3d(0, 0, 0), 'webkit' 'moz' 'ms');
+        @include prefix(transform, translate3d(0, 0, 0), 'webkit' 'moz' 'ms');
         pointer-events:     none;
     }
 
@@ -46,9 +44,11 @@
         @include prefix(transform, translateY(-12px), 'webkit' 'moz' 'ms' 'o');
     }
 }
+
 [data-tooltip] {
     @extend .tooltip;
 }
+
 // Directions
 // Position tooltip at the top of the focused element
 .tooltip--top {
@@ -71,6 +71,7 @@
         @include prefix(transform, translateY(-12px), 'webkit' 'moz' 'ms' 'o'); // Translate tooltip to the top
     }
 }
+
 // Position tooltip at the left of the focused element
 .tooltip--left {
     &:before {
@@ -97,6 +98,7 @@
         @include prefix(transform, translateX(-12px), 'webkit' 'moz' 'ms' 'o'); // Translate tooltip to the left
     }
 }
+
 // Position tooltip at the bottom of the focused element
 .tooltip--bottom {
     &:before {
@@ -118,6 +120,7 @@
         @include prefix(transform, translateY(12px), 'webkit' 'moz' 'ms' 'o'); // Translate tooltip to the bottom
     }
 }
+
 // Position tooltip at the right of the focused element
 .tooltip--right {
     &:before {
@@ -127,7 +130,7 @@
         border-right-color: map-get($tooltip, background);
     }
     &:after {
-        margin-left: 0;
+        margin-left:   0;
         margin-bottom: -#{map-get($tooltip, arrow-width)}; // Vertically center tooltip content
     }
     &:before,

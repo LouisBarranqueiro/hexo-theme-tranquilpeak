@@ -10,9 +10,9 @@
 
     // Author information
     .sidebar-profile {
-        color:       map-get($header, color);
-        text-align:  center;
-        padding-top: 18px;
+        color:         map-get($header, color);
+        text-align:    center;
+        padding-top:   18px;
         margin-bottom: 20px;
 
         .sidebar-profile-picture {
@@ -22,8 +22,8 @@
     }
     // Sidebar's buttons
     ul.sidebar-buttons {
-        padding : 0;
-        margin: 0 0 20px 0;
+        padding: 0;
+        margin:  0 0 20px 0;
 
         li.sidebar-button {
             display:     block;
@@ -39,12 +39,13 @@
                 &:hover,
                 &:active {
                     text-decoration: none;
-                    color: lighten(map-get($header, color), 35);
+                    color:           lighten(map-get($header, color), 35);
                 }
             }
         }
     }
 }
+
 // On `$small-and-down` (small screen): It hide by default the sidebar
 // and with javascript located in `source/_js/_sidebar.js`, it will animate the swipe of the sidebar
 @media #{$small-and-down} {
@@ -52,6 +53,7 @@
         display: none;
     }
 }
+
 // The sidebar on small and large screen is the same but it will be hided by default on small screen
 @media #{$large-and-up}, #{$small-and-down} {
     #sidebar {
@@ -107,6 +109,7 @@
         }
     }
 }
+
 // Display the sidebar in medium mode on medium scren
 @media #{$medium-only} {
     #sidebar {

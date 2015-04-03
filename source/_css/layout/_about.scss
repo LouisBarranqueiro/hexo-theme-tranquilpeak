@@ -21,7 +21,7 @@
         margin:        0 auto;
         border-radius: 3px;
         padding:       30px 0;
-        @include       prefix(box-shadow, 0 0 5px rgba(0, 0, 0, 1), 'webkit' 'moz');
+        @include prefix(box-shadow, 0 0 5px rgba(0, 0, 0, 1), 'webkit' 'moz');
 
         #about-btn-close {
             position: absolute;
@@ -42,8 +42,8 @@
             margin-bottom: 20px;
         }
         #about-card-bio {
-            padding:     0 30px;
-            margin:      0 0 30px 0;
+            padding: 0 30px;
+            margin:  0 0 30px 0;
         }
         #about-card-job,
         #about-card-location {
@@ -60,6 +60,7 @@
         }
     }
 }
+
 // Improve responsiveness of about card on small screen and down
 @media #{$small-and-down} {
     #about {
@@ -83,6 +84,7 @@
         }
     }
 }
+
 // Improve responsiveness of about card on medium screen and up
 @media #{$medium-and-up} {
     #about {

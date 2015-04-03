@@ -8,6 +8,7 @@
         }
     }
 }
+
 // Reduce global font-size base and headings font size on small screen and down
 @media #{$small-and-down} {
     .markdown {
@@ -18,6 +19,7 @@
         }
     }
 }
+
 // Reduce global font-size base and headings font size on medium screen only
 @media #{$medium-only} {
     .markdown {

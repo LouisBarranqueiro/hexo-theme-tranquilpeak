@@ -4,18 +4,21 @@
         display: none;
     }
 }
+
 // Hide element on small screen only
 @media #{$small-only} {
     .hide-sm {
         display: none;
     }
 }
+
 // Hide element on medium screen only
 @media #{$medium-only} {
     .hide-md {
         display: none;
     }
 }
+
 // Hide element on large screen and up
 @media #{$large-and-up} {
     .hide-lg {

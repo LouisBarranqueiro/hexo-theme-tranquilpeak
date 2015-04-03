@@ -37,7 +37,7 @@ figure.highlight {
             float: right;
         }
     }
-   // Gutter which contains line numbers
+    // Gutter which contains line numbers
     .gutter {
         background:   white;
         border-right: map-get($highlight, border);
@@ -57,6 +57,7 @@ figure.highlight {
         font-size: map-get($highlight, font-size);
     }
 }
+
 // Gist
 .gist {
     .line,
@@ -66,6 +67,7 @@ figure.highlight {
         margin:      0 0 5px 0;
     }
 }
+
 // Highlight code coloration
 .highlight {
     // General
@@ -85,7 +87,7 @@ figure.highlight {
         .keyword {
             color: map-get($highlight-colors, bondi-blue);;
         }
-        .sqbracket{
+        .sqbracket {
             color: map-get($highlight-colors, persimmon);;
         }
         .tag {
@@ -137,7 +139,7 @@ figure.highlight {
             color: map-get($highlight-colors, scampi);;
         }
         .number,
-        .built_in{
+        .built_in {
             color: map-get($highlight-colors, bondi-blue);;
         }
     }
@@ -151,7 +153,7 @@ figure.highlight {
             color: map-get($highlight-colors, scampi);;
         }
         .number,
-        .built_in{
+        .built_in {
             color: map-get($highlight-colors, bondi-blue);;
         }
         .xmlDocTag {
@@ -186,7 +188,7 @@ figure.highlight {
     // Diff
     &.diff .code {
         .chunk {
-            color: map-get($highlight-colors, scampi);;
+            color:       map-get($highlight-colors, scampi);;
             font-weight: bold;
         }
         .addition {
@@ -389,7 +391,7 @@ figure.highlight {
     }
     // SQL
     &.sql {
-        .built_in{
+        .built_in {
             color: map-get($highlight-colors, cardinal);;
         }
         .number {
@@ -431,7 +433,6 @@ figure.highlight {
         .function,
         .attribute {
             color: map-get($highlight-colors, bondi-blue);;
-
         }
         .built_in {
             color: map-get($highlight-colors, persimmon);;
@@ -455,7 +456,6 @@ figure.highlight {
         .function,
         .attribute {
             color: map-get($highlight-colors, bondi-blue);;
-
         }
         .variable {
             color: map-get($highlight-colors, night-rider);;
@@ -481,7 +481,7 @@ figure.highlight {
         .hexcolor,
         .attribute,
         .params {
-            color :map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);;
         }
         .class,
         .id,
@@ -497,7 +497,7 @@ figure.highlight {
         }
         .built_in,
         .constant {
-            color :map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);;
         }
     }
     // Swift
