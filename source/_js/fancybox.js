@@ -1,4 +1,7 @@
 +function($) {
+
+    // Run fancybox feature
+
     $(document).ready(function() {
         $(".fancybox").fancybox({
             maxWidth:    900,

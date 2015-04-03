@@ -1,8 +1,10 @@
 +function($) {
 	'use strict';
 
+	// Filter posts by using their categories on categories page : `/categories`
+
 	/**
-	 * TagsFilter feature
+	 * TagsFilter
 	 * @param tagsArchivesElem
 	 * @constructor
 	 */
@@ -16,9 +18,9 @@
 	};
 
 	/**
-	 * Init TagsFilter Feature
+	 * Run TagsFilter feature
 	 */
-	TagsFilter.prototype.init = function() {
+	TagsFilter.prototype.run = function() {
 		var self = this;
 
 		self.$inputSearch.keyup(function() {
@@ -51,18 +53,24 @@
 
 	/**
 	 * Display results of the search
-	 * @param tagsNumb
+	 * @param numbTags
 	 * @returns {Number}
 	 */
-	TagsFilter.prototype.showResult = function(tagsNumb) {
-		if (tagsNumb == 0) {
-			this.$archiveResult.html('No tags found').show();
+	TagsFilter.prototype.showResult = function(numbTags) {
+		if (numbTags == 0) {
+			this.$archiveResult
+				.html('No tags found')
+				.show();
 		}
-		else if (tagsNumb == -1) {
-			this.$archiveResult.html('').hide();
+		else if (numbTags == -1) {
+			this.$archiveResult
+				.html('')
+				.hide();
 		}
 		else {
-			this.$archiveResult.html(tagsNumb + ' tag' + ((tagsNumb > 1) ? 's' : '') + ' found').show();
+			this.$archiveResult
+				.html(numbTags + ' tag' + ((numbTags > 1) ? 's' : '') + ' found')
+				.show();
 		}
 	};
 
@@ -103,7 +111,7 @@
 	$(document).ready(function() {
 		if ($('#tags-archives').length) {
 			var tagsFilter = new TagsFilter('#tags-archives');
-			tagsFilter.init();
+			tagsFilter.run();
 		}
 	});
 }(jQuery);

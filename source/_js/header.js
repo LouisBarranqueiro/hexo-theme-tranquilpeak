@@ -1,9 +1,10 @@
 +function($) {
 	'use strict';
+
 	// Hide the header when the user scrolls down, and show it when he scrolls up
 
 	/**
-	 * Header feature
+	 * Header
 	 * @constructor
 	 */
 	var Header = function() {
@@ -16,9 +17,9 @@
 	};
 
 	/**
-	 * Play the header feature
+	 * Run Header feature
 	 */
-	Header.prototype.init = function() {
+	Header.prototype.run = function() {
 		var self = this;
 		var didScroll;
 
@@ -41,12 +42,12 @@
 	Header.prototype.animate = function() {
 		this.scrollTop = $(window).scrollTop();
 
-		// Check if the user scrolled more than delta
+		// Check if the user scrolled more than `delta`
 		if (Math.abs(this.lastScrollTop - this.scrollTop) <= this.delta) {
 			return;
 		}
 
-		// Checks if the user has scrolled enough down and  has past the navbar
+		// Checks if the user has scrolled enough down and has past the navbar
 		if ((this.scrollTop > this.lastScrollTop) && (this.scrollTop > this.headerHeight)) {
 			this.$header.addClass(this.headerUpCSSClass);
 		}
@@ -62,6 +63,6 @@
 
 	$(document).ready(function() {
 		var header = new Header();
-		header.init();
+		header.run();
 	});
 }(jQuery);

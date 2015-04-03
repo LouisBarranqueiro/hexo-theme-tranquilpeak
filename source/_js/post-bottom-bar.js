@@ -1,8 +1,11 @@
 +function($) {
      'use strict'
 
+    // Hide the post bottom bar when the post footer is visible by the user,
+    // and show it when the post footer isn't visible by the user
+
     /**
-     * Post bottom bar feature
+     * PostBottomBar
      * @constructor
      */
     var PostBottomBar = function() {
@@ -11,9 +14,9 @@
     }
 
     /**
-     * Init the post bottom bar feature
+     * Run PostBottomBar feature
      */
-    PostBottomBar.prototype.init = function() {
+    PostBottomBar.prototype.run = function() {
         var self = this;
         var didScroll;
 
@@ -24,7 +27,7 @@
 
         setInterval(function() {
             if (self.didScroll) {
-                self.animate();
+                self.swipePostBottomBar();
                 self.didScroll = false;
             }
         }, 250);
@@ -33,8 +36,11 @@
     /**
      * Animate the post bottom bar
      */
-    PostBottomBar.prototype.animate = function() {
-        if (this.checkPostFooterVisibility() == true) {
+    PostBottomBar.prototype.swipePostBottomBar = function() {
+        var postFooterElemPos = (this.$postFooter.offset().top + this.$postBottomBar.height());
+
+        //Check if the post footer element is visible by the user
+        if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
             this.$postBottomBar.slideUp();
         }
         else {
@@ -42,25 +48,10 @@
         }
     };
 
-    /**
-     * Check if the post footer element is visible by the user
-     * @returns {boolean}
-     */
-    PostBottomBar.prototype.checkPostFooterVisibility = function() {
-        var postFooterElemPos = (this.$postFooter.offset().top + this.$postBottomBar.height());
-
-        if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    };
-
     $(document).ready(function() {
         if ($('.post-bottom-bar').length) {
             var postBottomBar = new PostBottomBar();
-            postBottomBar.init();
+            postBottomBar.run();
         }
     });
  }(jQuery);

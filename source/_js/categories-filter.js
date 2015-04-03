@@ -1,8 +1,10 @@
 +function($) {
 	'use strict';
-	
+
+	// Filter posts by using their categories on categories page : `/categories`
+
 	/**
-	 * CategoriesFilter feature
+	 * CategoriesFilter
 	 * @param categoriesArchivesElem
 	 * @constructor
 	 */
@@ -16,9 +18,9 @@
 	};
 	
 	/**
-	 * Init categories filter feature
+	 * Run CategoriesFilter feature
 	 */
-	CategoriesFilter.prototype.init = function() {
+	CategoriesFilter.prototype.run = function() {
 		var self = this;
 		
 		self.$inputSearch.keyup(function () {
@@ -26,7 +28,6 @@
 		})
 	}
 
-	
 	/**
 	 * Get the search entered by user
 	 */
@@ -52,18 +53,24 @@
 
 	/**
 	 * Display results of the search
-	 * @param categoriesNumb
+	 * @param numbCategories
 	 * @returns {Number}
 	 */
-	CategoriesFilter.prototype.showResult = function(categoriesNumb) {
-		if (categoriesNumb == 0) {
-			this.$archiveResult.html('No categories found').show();
+	CategoriesFilter.prototype.showResult = function(numbCategories) {
+		if (numbCategories == 0) {
+			this.$archiveResult
+				.html('No categories found')
+				.show();
 		}
-		else if (categoriesNumb == -1) {
-			this.$archiveResult.html('').hide();
+		else if (numbCategories == -1) {
+			this.$archiveResult
+				.html('')
+				.hide();
 		}
 		else {
-			this.$archiveResult.html(categoriesNumb + ' categor' + ((categoriesNumb > 1) ? 'ies' : 'y') + ' found').show();
+			this.$archiveResult
+				.html(numbCategories + ' categor' + ((numbCategories > 1) ? 'ies' : 'y') + ' found')
+				.show();
 		}
 	};
 
@@ -104,7 +111,7 @@
 	$(document).ready(function() {
 		if ($('#categories-archives').length) {
 			var categoriesFilter = new CategoriesFilter('#categories-archives');
-			categoriesFilter.init();
+			categoriesFilter.run();
 		}
 	});
 }(jQuery);

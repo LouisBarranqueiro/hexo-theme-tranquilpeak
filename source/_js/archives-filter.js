@@ -1,6 +1,8 @@
 +function($) {
 	'use strict';
 
+	// Filter posts by using their date on archives page : `/archives`
+
 	/**
 	 * ArchivesFilter
 	 * @param archivesElem
@@ -18,9 +20,9 @@
 	};
 
 	/**
-	 * Init archives filter
+	 * Run ArchivesFilter feature
 	 */
-	ArchivesFilter.prototype.init = function() {
+	ArchivesFilter.prototype.run = function() {
 		var self = this;
 
 		self.$searchInput.keyup(function () {
@@ -51,6 +53,7 @@
 	ArchivesFilter.prototype.filter = function(date) {
 		var numberPosts;
 
+		// Check if the search is empty
 		if (date[0] == '') {
 			this.showAll();
 			this.showResult(-1);
@@ -69,18 +72,18 @@
 
 	/**
 	 * Display results
-	 * @param number
+	 * @param numbPosts
 	 * @returns {Number}
 	 */
-	ArchivesFilter.prototype.showResult = function(number) {
-		if (number == 0) {
+	ArchivesFilter.prototype.showResult = function(numbPosts) {
+		if (numbPosts == 0) {
 			this.$archiveResult.html('No posts found').show();
 		}
-		else if (number == -1) {
+		else if (numbPosts == -1) {
 			this.$archiveResult.html('').hide();
 		}
 		else {
-			this.$archiveResult.html(number + ' post' + ((number > 1) ? 's' : '') + ' found').show();
+			this.$archiveResult.html(numbPosts + ' post' + ((numbPosts > 1) ? 's' : '') + ' found').show();
 		}
 	};
 
@@ -124,7 +127,7 @@
 	$(document).ready(function() {
 		if ($('#archives').length) {
 			var archivesFilter = new ArchivesFilter('#archives');
-			archivesFilter.init();
+			archivesFilter.run();
 		}
 	})
 }(jQuery);

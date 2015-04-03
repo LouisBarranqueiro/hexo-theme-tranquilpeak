@@ -1,9 +1,10 @@
 +function($) {
 	'use strict'
+
 	// Resize all images of an image-gallery
 
 	/**
-	 * ImageGallery Feature
+	 * ImageGallery
 	 * @constructor
 	 */
 	var ImageGallery = function() {
@@ -12,9 +13,9 @@
 	};
 
 	/**
-	 * Init ImageGallery feature
+	 * Run ImageGallery feature
 	 */
-	ImageGallery.prototype.init = function() {
+	ImageGallery.prototype.run = function() {
 		var self = this;
 
 		// Resize all images at the loading of the page
@@ -44,8 +45,7 @@
 			imageWidth     = $image.width();
 			imageHeight    = $image.height();
 
-			// Checks if image height is smaller than his box
-			if (imageHeight < photoBoxHeight) {
+			if (imageHeight < photoBoxHeight) { // Checks if image height is smaller than his box
 				imageRatio  = (imageWidth / imageHeight);
 				// Resize image with the box height
 				$image.css({
@@ -57,8 +57,7 @@
 					'left': '-' + (((photoBoxHeight * imageRatio) / 2) - (photoBoxWidth / 2)) + 'px'
 				});
 			}
-			// Checks if image height is larger than his box
-			else if (imageHeight > photoBoxHeight) {
+			else if (imageHeight > photoBoxHeight) { // Checks if image height is larger than his box
 				// Center image in his box
 				$image.parent().css({
 					'top': '-' + (((imageHeight) / 2) - (photoBoxHeight / 2)) + 'px'
@@ -73,7 +72,7 @@
 
 			// Small timeout to wait the loading of all images.
 			setTimeout(function() {
-				imageGallery.init();
+				imageGallery.run();
 			}, 500);
 		}
 	});
