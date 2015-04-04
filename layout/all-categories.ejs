@@ -43,10 +43,10 @@
                                             </h5>
                                             <ul class="archive-posts">
                                                 <% site.categories.findOne({'name': childChildItem.name}).posts.each(function(post) { %>
-                                                <li class="archive-post">
-                                                    <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
-                                                    <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
-                                                </li>
+                                                    <li class="archive-post">
+                                                        <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
+                                                        <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                                                    </li>
                                                 <% }) %>
                                             </ul>
                                         </div>

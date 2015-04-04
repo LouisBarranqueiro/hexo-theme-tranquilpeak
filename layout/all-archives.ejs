@@ -7,8 +7,8 @@
         <input name="date" type="text" class="form-control input--xlarge" placeholder="Search a date" autofocus="autofocus">
     </form>
     <h5 class="archive-result text-color-base text-xlarge"></h5>
-    <section class="box-group">
-        <% site.posts.sort('date', '-1').each(function(post) { %>
+    <section class="boxes">
+        <% site.posts.sort('date', 'desc').each(function(post) { %>
             <% var currentYear = post.date.year(); %>
             <% var currentMonth = post.date.format('MM'); %>
             <% if (lastYear != currentYear) { %>
@@ -26,7 +26,7 @@
                 <% if (lastMonth != null) { %>
                     </ul>
                 <% } %>
-                <ul class="archive-post-group archive-month" data-date="<%= post.date.format('YYYYMM') %>">
+                <ul class="archive-posts archive-month" data-date="<%= post.date.format('YYYYMM') %>">
                     <h5 class="archive-title">
                         <a class="link-unstyled" href="<%- url_for('archives/' + post.date.format('YYYY/MM')) %>"><%= post.date.format('MMMM') %></a>
                     </h5>
