@@ -120,7 +120,7 @@
     CategoriesFilter.prototype.showAll = function() {
         this.$categories.show();
         this.$posts.show();
-        $(this.posts +' > .archive-posts > .archive-post').show();
+        $(this.posts + ' > .archive-posts > .archive-post').show();
     };
 
     /**

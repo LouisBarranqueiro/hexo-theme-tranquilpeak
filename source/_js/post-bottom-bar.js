@@ -25,6 +25,7 @@
             self.didScroll = true;
         });
 
+        // Check if the user scrolled every 250 milliseconds
         setInterval(function() {
             if (self.didScroll) {
                 self.swipePostBottomBar();
@@ -39,7 +40,7 @@
     PostBottomBar.prototype.swipePostBottomBar = function() {
         var postFooterElemPos = (this.$postFooter.offset().top + this.$postBottomBar.height());
 
-        //Check if the post footer element is visible by the user
+        // Check if the post footer element is visible by the user
         if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
             this.$postBottomBar.slideUp();
         }

@@ -8,8 +8,9 @@
      * @constructor
      */
     var ImageGallery = function() {
-        this.photosBox = '.photo-box'; // Reference to the CSS class located in `source/_css/components/_image-gallery.scss`
-        this.$images = $(this.photosBox + ' img');
+        // CSS class located in `source/_css/components/_image-gallery.scss`
+        this.photosBox = '.photo-box';
+        this.$images   = $(this.photosBox + ' img');
     };
 
     /**
@@ -45,7 +46,8 @@
             imageWidth     = $image.width();
             imageHeight    = $image.height();
 
-            if (imageHeight < photoBoxHeight) { // Checks if image height is smaller than his box
+            // Checks if image height is smaller than his box
+            if (imageHeight < photoBoxHeight) {
                 imageRatio = (imageWidth / imageHeight);
                 // Resize image with the box height
                 $image.css({
@@ -57,7 +59,8 @@
                     'left': '-' + (((photoBoxHeight * imageRatio) / 2) - (photoBoxWidth / 2)) + 'px'
                 });
             }
-            else if (imageHeight > photoBoxHeight) { // Checks if image height is larger than his box
+            // Checks if image height is larger than his box
+            else if (imageHeight > photoBoxHeight) {
                 // Center image in his box
                 $image.parent().css({
                     'top': '-' + (((imageHeight) / 2) - (photoBoxHeight / 2)) + 'px'

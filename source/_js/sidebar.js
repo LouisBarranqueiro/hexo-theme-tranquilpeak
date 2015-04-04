@@ -8,10 +8,11 @@
      * @constructor
      */
     var Sidebar = function() {
-        this.$sidebar  = $('#sidebar');
-        this.$openBtn  = $('#btn-open-sidebar');
-        this.$closeBtn = $('#header, #main'); // Elements where the user can click to close the sidebar
-        this.$blog = $('#header, #main, .post-bottom-bar');
+        this.$sidebar = $('#sidebar');
+        this.$openBtn = $('#btn-open-sidebar');
+        // Elements where the user can click to close the sidebar
+        this.$closeBtn = $('#header, #main');
+        this.$blog     = $('#header, #main, .post-bottom-bar');
         // If you change value of `mediumScreenWidth`,
         // you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
         this.mediumScreenWidth = 768;
@@ -23,16 +24,20 @@
     Sidebar.prototype.run = function() {
         var self = this;
 
-        self.$openBtn.click(function() { // Detect the click on the open button
+        // Detect the click on the open button
+        self.$openBtn.click(function() {
             self.openSidebar();
         })
 
-        self.$closeBtn.click(function() { // Detect the click on close button
+        // Detect the click on close button
+        self.$closeBtn.click(function() {
             self.closeSidebar();
         })
 
-        $(window).resize(function() { // Detect resize of the windows
-            if ($(window).width() > self.mediumScreenWidth) { // Check if the window is larger than the minimal medium screen value
+        // Detect resize of the windows
+        $(window).resize(function() {
+            // Check if the window is larger than the minimal medium screen value
+            if ($(window).width() > self.mediumScreenWidth) {
                 self.resetSidebarPosition();
                 self.resetBlogPosition();
             }

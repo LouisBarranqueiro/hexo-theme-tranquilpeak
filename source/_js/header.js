@@ -8,11 +8,12 @@
      * @constructor
      */
     var Header = function() {
-        this.$header          = $('#header');
-        this.headerHeight     = this.$header.height();
-        this.headerUpCSSClass = 'header-up'; // Reference to the CSS class located in `source/_css/layout/_header.scss`
-        this.delta         = 5;
-        this.lastScrollTop = 0;
+        this.$header      = $('#header');
+        this.headerHeight = this.$header.height();
+        // CSS class located in `source/_css/layout/_header.scss`
+        this.headerUpCSSClass = 'header-up';
+        this.delta            = 5;
+        this.lastScrollTop    = 0;
         this.scrollTop;
     };
 
@@ -23,11 +24,12 @@
         var self = this;
         var didScroll;
 
-        // Detects if the user is scrolling
+        // Detect if the user is scrolling
         $(window).scroll(function() {
             self.didScroll = true;
         });
 
+        // Check if the user scrolled every 250 milliseconds
         setInterval(function() {
             if (self.didScroll) {
                 self.animate();
