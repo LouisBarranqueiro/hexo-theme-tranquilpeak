@@ -1,5 +1,5 @@
 <div id="categories-archives" class="main-content-wrap">
-    <form id="filter-form" action="#">
+    <form id="filter-form" action="##">
         <input name="category" type="text" class="form-control input--xlarge" placeholder="Search a category" autofocus="autofocus">
     </form>
     <h4 class="archive-result text-color-base text-xlarge"></h4>
@@ -10,21 +10,53 @@
             </a>
         <% }); %>
     </section>
-    <section class="box-group">
+    <section class="boxes">
         <% site.categories.sort('name').each(function(item) { %>
-            <div id="<%= 'posts-list-' + item.name %>" class="archive box" data-category="<%= item.name.replace('.', '__').replace(' ', '-').toLowerCase() %>">
-                <h4 class="archive-title">
-                    <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>"><%= item.name + ' (' + item.length + ')' %></a>
-                </h4>
-                <ul class="archive-post-group">
-                    <% site.categories.findOne({'name': item.name}).posts.each(function(post) { %>
-                        <li class="archive-post">
-                            <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
-                            <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
-                        </li>
-                    <% }) %>
-                </ul>
-            </div>
+            <% if (!item.parent) { %>
+                <div id="<%= 'posts-list-' + item.name %>" class="archive box" data-category="<%= item.name.replace('.', '__').replace(' ', '-').toLowerCase() %>">
+                    <h4 class="archive-title">
+                        <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(' ', '-') )%>"><%= item.name + ' (' + item.length + ')' %></a>
+                    </h4>
+                    <ul class="archive-posts">
+                        <% site.categories.findOne({'name': item.name}).posts.each(function(post) { %>
+                            <li class="archive-post">
+                                <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
+                                <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                            </li>
+                        <% }) %>
+                        <% site.categories.find({'parent': item._id}).forEach(function(childItem) { %>
+                            <div id="<%= 'posts-list-' + childItem.name %>" class="archive" data-category="<%= childItem.name.replace('.', '__').replace(' ', '-').toLowerCase() %>" data-parent-categories="<%= item.name.replace('.', '__').replace(' ', '-').toLowerCase() %>">
+                                <h5 class="archive-title">
+                                    <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(' ', '-') + '/' + childItem.name.replace(' ', '-'))%>"><%= childItem.name + ' (' + childItem.length + ')' %></a>
+                                </h5>
+                                <ul class="archive-posts">
+                                    <% site.categories.findOne({'name': childItem.name}).posts.each(function(post) { %>
+                                        <li class="archive-post">
+                                            <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
+                                            <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                                        </li>
+                                    <% }) %>
+                                    <% site.categories.find({'parent': childItem._id}).forEach(function(childChildItem) { %>
+                                        <div id="<%= 'posts-list-' + childChildItem.name %>" class="archive" data-category="<%= childChildItem.name.replace('.', '__').replace(' ', '-').toLowerCase() %>" data-parent-categories="<%= item.name.replace('.', '__').replace(' ', '-').toLowerCase() + ',' + childItem.name.replace('.', '__').replace(' ', '-').toLowerCase() %>">
+                                            <h5 class="archive-title">
+                                                <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(' ', '-') + '/' + childItem.name.replace(' ', '-') + '/' + childChildItem.name.replace(' ', '-'))%>"><%= childChildItem.name + ' (' + childChildItem.length + ')' %></a>
+                                            </h5>
+                                            <ul class="archive-posts">
+                                                <% site.categories.findOne({'name': childChildItem.name}).posts.each(function(post) { %>
+                                                <li class="archive-post">
+                                                    <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
+                                                    <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                                                </li>
+                                                <% }) %>
+                                            </ul>
+                                        </div>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% } %>
         <% }); %>
     </section>
 </div>
