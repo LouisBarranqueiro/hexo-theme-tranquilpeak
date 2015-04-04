@@ -80,7 +80,7 @@ author:
 
 # Customization
 gravatar_image: 1                      # Gravatar image (disable: 0, enable: 1). Use the email entered in blog configuration file
-thumbnail_image: 0                     # Post thumbnail image (disable: 0, enable: 1). Display the first photo
+thumbnail_image: 1                     # Post thumbnail image (disable: 0, enable: 1). Display the first photo
 read_more_message: Continue reading    # Message displayed after the <!-- more --> balise
 go_to_message: Go to the website       # Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
 cover: cover.png                       # Your blog cover picture located in folder `source/_images/`
