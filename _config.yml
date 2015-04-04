@@ -21,15 +21,15 @@ sidebar:
             icon: home
         categories:
             title: Categories
-            url: /categories
+            url: /all-categories
             icon: bookmark
         tags:
             title: Tags
-            url: /tags
+            url: /all-tags
             icon: tags
         archives:
             title: Archives
-            url: /archives
+            url: /all-archives
             icon: archive
         about:
             title: About me
