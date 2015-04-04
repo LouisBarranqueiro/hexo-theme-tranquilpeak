@@ -1,6 +1,6 @@
 // Group of `.box`
 // Add margin when `.box` are in `.box-group`
-.box-group {
+.boxes {
     margin-top: 20px;
 
     .box:nth-child(n + 2) {
