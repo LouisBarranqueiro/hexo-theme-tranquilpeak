@@ -1,14 +1,14 @@
 <%
-var lastYear;
-var lastMonth;
+    var lastYear;
+    var lastMonth;
 %>
 <div id="archives" class="main-content-wrap">
     <form id="filter-form" action="#">
         <input name="date" type="text" class="form-control input--xlarge" placeholder="Search a date" autofocus="autofocus">
     </form>
     <h5 class="archive-result text-color-base text-xlarge"></h5>
-    <section class="box-group">
-        <% page.posts.sort('date', '-1').each(function(post) { %>
+    <section class="boxes">
+        <% page.posts.sort('date', 'desc').each(function(post) { %>
             <% var currentYear = post.date.year(); %>
             <% var currentMonth = post.date.format('MM'); %>
             <% if (lastYear != currentYear) { %>
@@ -26,16 +26,16 @@ var lastMonth;
                 <% if (lastMonth != null) { %>
                     </ul>
                 <% } %>
-                <ul class="archive-post-group archive-month" data-date="<%= post.date.format('YYYYMM') %>">
+                <ul class="archive-posts archive-month" data-date="<%= post.date.format('YYYYMM') %>">
                     <h5 class="archive-title">
                         <a class="link-unstyled" href="<%- url_for('archives/' + post.date.format('YYYY/MM')) %>"><%= post.date.format('MMMM') %></a>
                     </h5>
-                    <% lastMonth = currentMonth; %>
+                <% lastMonth = currentMonth; %>
             <% } %>
-            <li class="archive-post archive-day" data-date="<%= post.date.format('YYYYMMDD') %>">
-                <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
-                <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
-            </li>
+                <li class="archive-post archive-day" data-date="<%= post.date.format('YYYYMMDD') %>">
+                    <a class="archive-post-title" href="<%= post.permalink %>"><%= post.title || '(no title)' %></a>
+                    <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                </li>
         <% }) %>
     </section>
 </div>
