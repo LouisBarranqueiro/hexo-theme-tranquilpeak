@@ -16,19 +16,9 @@
             float:        left;
             margin-right: 10px;
         }
-        .pagination-next {
-            i {
-                margin-left: 10px;
-            }
-        }
-        .pagination-prev {
-            i {
-                margin-right: 10px;
-            }
-        }
         .pagination-number {
             float:     right;
-            font-size: map-get($font-size, medium);
+            font-size: map-get($font-size, small);
             color:     map-get($colors, light);
         }
     }
