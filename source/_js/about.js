@@ -21,10 +21,13 @@
     AboutCard.prototype.run = function() {
         var self = this;
 
+        // Detect click on open button
         self.$openBtn.click(function(e) {
             e.preventDefault();
             self.play();
         })
+
+        // Detect click on close button
         self.$closeBtn.click(function(e) {
             e.preventDefault();
             self.playBack();
@@ -36,9 +39,12 @@
      */
     AboutCard.prototype.play = function() {
         var self = this;
-
+        // Fade out the blog
         self.$blog.fadeOut();
+        // Fade in the about card
         self.$about.fadeIn();
+        // Small timeout to drop the about card after that
+        // the about card fade in and the blog fade out
         setTimeout(function() {
             self.dropAboutCard();
         }, 300);
@@ -50,10 +56,13 @@
     AboutCard.prototype.playBack = function() {
         var self = this;
 
+        // Lift the about card
         self.liftAboutCard();
+        // Fade in the blog after that the about card lifted up
         setTimeout(function() {
             self.$blog.fadeIn();
         }, 500);
+        // Fade out the about card after that the about card lifted up
         setTimeout(function() {
             self.$about.fadeOut();
         }, 500);
