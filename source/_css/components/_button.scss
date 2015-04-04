@@ -48,5 +48,5 @@
 }
 
 .btn--small {
-    @include button-size-variant(map-get($font-size, medium), 8px 15px);
+    @include button-size-variant(map-get($font-size, small), 8px 15px);
 }
