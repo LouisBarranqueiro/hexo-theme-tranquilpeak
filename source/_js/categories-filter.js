@@ -9,17 +9,17 @@
      * @constructor
      */
     var CategoriesFilter = function(categoriesArchivesElem) {
-        this.categories = categoriesArchivesElem + ' .category';
-        this.posts      = categoriesArchivesElem + ' .archive';
-        // Html data attribute without `data-` of `.archive` element
-        this.dataCategory = 'category';
-        // Html ata attribute without `data-` of `.archive` element
-        this.dataParentCategories = 'parent-categories';
-        this.$inputSearch         = $(categoriesArchivesElem).find('input[name=category]');
+        this.$inputSearch = $(categoriesArchivesElem).find('input[name=category]');
         // Element where result of the filter are displayed
         this.$archiveResult = $(categoriesArchivesElem).find('.archive-result');
-        this.$categories    = $(this.categories);
-        this.$posts         = $(this.posts);
+        this.$categories    = $(categoriesArchivesElem).find('.category');
+        this.$posts         = $(categoriesArchivesElem).find('.archive');
+        this.categories     = categoriesArchivesElem + ' .category';
+        this.posts          = categoriesArchivesElem + ' .archive';
+        // Html data attribute without `data-` of `.archive` element which contains the name of category
+        this.dataCategory = 'category';
+        // Html ata attribute without `data-` of `.archive` element which contains the name of parent's categories
+        this.dataParentCategories = 'parent-categories';
     };
 
     /**
@@ -120,6 +120,7 @@
     CategoriesFilter.prototype.showAll = function() {
         this.$categories.show();
         this.$posts.show();
+        $(this.posts +' > .archive-posts > .archive-post').show();
     };
 
     /**

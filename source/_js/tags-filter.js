@@ -15,6 +15,8 @@
         this.$posts         = $(tagsArchivesElem).find('.archive');
         this.tags           = tagsArchivesElem + ' .tag';
         this.posts          = tagsArchivesElem + ' .archive';
+        // Html data attribute without `data-` of `.archive` element which contains the name of tag
+        this.dataTag = 'tag';
     };
 
     /**
@@ -23,6 +25,7 @@
     TagsFilter.prototype.run = function() {
         var self = this;
 
+        // Detect keystroke of the user
         self.$inputSearch.keyup(function() {
             self.filter(self.getSearch());
         })
@@ -47,7 +50,7 @@
         else {
             this.hideAll();
             this.showPosts(tag);
-            this.showResult(this.countPosts(tag));
+            this.showResult(this.countTags(tag));
         }
     };
 
@@ -75,12 +78,12 @@
     };
 
     /**
-     * Count number of posts
+     * Count number of tags
      * @param tag
      * @returns {Number}
      */
-    TagsFilter.prototype.countPosts = function(tag) {
-        return $(this.posts + '[data-tag*=' + tag + ']').length;
+    TagsFilter.prototype.countTags = function(tag) {
+        return $(this.posts + '[data-' + this.dataTag + '*=' + tag + ']').length;
     };
 
     /**
@@ -88,8 +91,8 @@
      * @param tag
      */
     TagsFilter.prototype.showPosts = function(tag) {
-        $(this.tags + '[data-tag*=' + tag + ']').show();
-        $(this.posts + '[data-tag*=' + tag + ']').show();
+        $(this.tags + '[data-' + this.dataTag + '*=' + tag + ']').show();
+        $(this.posts + '[data-' + this.dataTag + '*=' + tag + ']').show();
     };
 
     /**
