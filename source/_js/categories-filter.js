@@ -9,12 +9,17 @@
      * @constructor
      */
     var CategoriesFilter = function(categoriesArchivesElem) {
-        this.$inputSearch   = $(categoriesArchivesElem).find('input[name=category]');
+        this.categories = categoriesArchivesElem + ' .category';
+        this.posts      = categoriesArchivesElem + ' .archive';
+        // Html data attribute without `data-` of `.archive` element
+        this.dataCategory = 'category';
+        // Html ata attribute without `data-` of `.archive` element
+        this.dataParentCategories = 'parent-categories';
+        this.$inputSearch         = $(categoriesArchivesElem).find('input[name=category]');
+        // Element where result of the filter are displayed
         this.$archiveResult = $(categoriesArchivesElem).find('.archive-result');
-        this.$categories    = $(categoriesArchivesElem).find('.category');
-        this.$posts         = $(categoriesArchivesElem).find('.archive');
-        this.categories     = categoriesArchivesElem + ' .category';
-        this.posts          = categoriesArchivesElem + ' .archive';
+        this.$categories    = $(this.categories);
+        this.$posts         = $(this.posts);
     };
 
     /**
@@ -47,7 +52,7 @@
         else {
             this.hideAll();
             this.showPosts(category);
-            this.showResult(this.countPosts(category));
+            this.showResult(this.countCategories(category));
         }
     };
 
@@ -79,8 +84,8 @@
      * @param category
      * @returns {Number}
      */
-    CategoriesFilter.prototype.countPosts = function(category) {
-        return $(this.posts + '[data-category*=' + category + ']').length;
+    CategoriesFilter.prototype.countCategories = function(category) {
+        return $(this.posts + '[data-' + this.dataCategory + '*=' + category + ']').length;
     };
 
     /**
@@ -88,8 +93,25 @@
      * @param category
      */
     CategoriesFilter.prototype.showPosts = function(category) {
-        $(this.categories + '[data-category*=' + category + ']').show();
-        $(this.posts + '[data-category*=' + category + ']').show();
+        var self = this;
+        var parents;
+
+        if (self.countCategories(category) > 0) {
+            // Check if selected categories have parents
+            if ($(self.posts + '[data-' + this.dataCategory + '*=' + category + '][data-' + self.dataParentCategories + ']').length) {
+                parents = $(self.posts + '[data-' + self.dataCategory + '*=' + category + ']').attr('data-' + self.dataParentCategories).split(',');
+
+                // Show only the title of the parents's categories and hide their posts
+                parents.forEach(function(parent) {
+                    $(self.posts + '[data-' + self.dataCategory + '=' + parent + ']').show();
+                    $(self.posts + '[data-' + self.dataCategory + '=' + parent + '] > .archive-posts > .archive-post').hide();
+                });
+            }
+        }
+        // Show categories and related posts found
+        $(self.categories + '[data-' + self.dataCategory + '*=' + category + ']').show();
+        $(self.posts + '[data-' + self.dataCategory + '*=' + category + ']').show();
+        $(self.posts + '[data-' + self.dataCategory + '*=' + category + '] > .archive-posts > .archive-post').show();
     };
 
     /**
