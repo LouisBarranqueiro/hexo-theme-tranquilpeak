@@ -64,10 +64,14 @@
     // Post meta contains post's date, post's categories and tags
     .post-meta {
         line-height: 1.5em;
+
+        a {
+            color: map-get($colors, light);
+        }
     }
     .post-meta,
     .post-readingtime {
-        color: map-get($colors, link);
+        color: map-get($colors, light);
     }
     .post-excerpt_link {
         margin-top: -15px; // Bring the post's link nearest of the excerpt
