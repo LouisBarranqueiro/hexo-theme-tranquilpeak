@@ -22,7 +22,8 @@ figure.highlight {
         border:  none;
         padding: 0;
         margin:  0;
-        cursor:  text; // To override cursor attribute of `.tag` components
+        // To override cursor attribute of `.tag` components
+        cursor:  text;
     }
     // Meta bar which contains name of the file and his link
     figcaption {

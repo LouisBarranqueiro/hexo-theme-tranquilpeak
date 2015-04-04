@@ -14,7 +14,8 @@
         font-size:  map-get($font-size, small);
         color:      white;
         padding:    0.5em 1.5em;
-        z-index:    1; // Use to go over all images of the gallery
+        // Use to go over all images of the gallery
+        z-index:    1;
     }
     .image-gallery-photos {
         .photo-box {
@@ -26,7 +27,8 @@
             &:first-child {
                 display:        block;
                 width:          100%;
-                padding-bottom: 56.25%; // 16:9 ratio, consider as height value
+                // 16:9 ratio, consider as height value
+                padding-bottom: 56.25%;
             }
             .photo-box-inner {
                 position: absolute;
@@ -50,11 +52,13 @@
         .photo-box {
             display:        block;
             width:          50%;
-            padding-bottom: 30%; // Consider as height value
+            // Consider as height value
+            padding-bottom: 30%;
             // Display First image in large
             &:first-child {
                 width:          100%;
-                padding-bottom: 40%; // Consider as height value
+                // Consider as height value
+                padding-bottom: 40%;
                 margin-bottom:  $image-gallery-photos-margin;
             }
             // Resize seconde image minus space between 2 images

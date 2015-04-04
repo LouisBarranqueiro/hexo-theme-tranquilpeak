@@ -2,7 +2,8 @@
 // Add margin and border bottom when `.post` are in `.post-group`
 .post-group {
     .post {
-        margin-top:    15px; // Space between 2 post
+        // Space between 2 post
+        margin-top:    15px;
         border-bottom: 1px solid #eef2f8;
     }
 }
@@ -29,7 +30,8 @@
     // When post's `coverImage` variable is defined
     .post-header-cover {
         position:          relative;
-        top:               -15px; // Fix the cover image to the top of the page. `#main-content` have a top padding of 15px
+        // Fix the cover image to the top of the page. `#main-content` have a top padding of 15p
+        top:               -15px;
         background-size:   cover;
         background-repeat: no-repeat;
         display:           block;
@@ -37,8 +39,10 @@
         max-height:        450px;
 
         .post-header {
-            padding-top:    15%; // Use to center the content of `.post-header`
-            padding-bottom: 15%; // Use to center the content of `.post-header`
+            // Use to center the content of `.post-header`
+            padding-top:    15%;
+            // Use to center the content of `.post-header`
+            padding-bottom: 15%;
 
             .post-title {
                 margin:      0;
@@ -74,7 +78,8 @@
         color: map-get($colors, light);
     }
     .post-excerpt_link {
-        margin-top: -15px; // Bring the post's link nearest of the excerpt
+        // Bring the post's link nearest of the excerpt
+        margin-top: -15px;
     }
     .post-meta,
     .post-readingtime,

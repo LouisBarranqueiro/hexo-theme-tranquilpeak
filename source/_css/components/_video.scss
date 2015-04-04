@@ -3,7 +3,8 @@
     position:       relative;
     height:         0;
     overflow:       hidden;
-    padding-bottom: 56.25%; // 16:9 ratio, consider as height value
+    // 16:9 ratio, consider as height value
+    padding-bottom: 56.25%;
     margin:         0 0 1.75em 0;
 
     iframe,

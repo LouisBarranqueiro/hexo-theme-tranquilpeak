@@ -13,7 +13,8 @@
 
     #about-card {
         position:      relative;
-        top:           -1000px; // Position the card out the page to improve the javascript drop effect
+        // Position the card out the page to improve the javascript drop effect
+        top:           -1000px;
         display:       block;
         background:    white;
         max-width:     400px;
@@ -98,7 +99,8 @@
             #about-card-job,
             #about-card-location {
                 display: inline-block;
-                width:   calc((100% / 2) - 48px); // 48px =  padding right of `#about-card-job` + `#about-card-location`
+                // 48px =  padding right of `#about-card-job` + `#about-card-location`
+                width:   calc((100% / 2) - 48px);
             }
             #about-card-job {
                 padding: 0 15px 0 30px;

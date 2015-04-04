@@ -3,7 +3,8 @@
 
 // Typography
 $font-family-base:    'Open Sans', sans-serif;
-$font-size-base:      1.5rem; // equal to 15px
+// equal to 15px
+$font-size-base:      1.5rem;
 $font-color-base:     #5d686f;
 $line-height-base:    1.85em;
 $letter-spacing-base: 0.01em;
@@ -13,14 +14,14 @@ $font-size-base-sm-screen-reduction-factor: 0.1rem;
 // Reduction of font size base on medium screen only
 $font-size-base-md-screen-reduction-factor: 0.05rem;
 
-// Font size
+// Font size : (X.Xrem = XXpx, 1.0rem = 10px)
 $font-size: (
-    'xlarge': 1.7rem, // equal to 17px
-    'large':  1.6rem, // equal to 16px
-    'base':   $font-size-base, // equal to 15px
-    'medium': 1.4rem, // equal to 14px
-    'small':  1.25rem, // equal to 12.5px
-    'xsmall': 1rem // equal to 10px
+    'xlarge': 1.7rem,
+    'large':  1.6rem,
+    'base':   $font-size-base,
+    'medium': 1.4rem,
+    'small':  1.25rem,
+    'xsmall': 1rem
 );
 
 // Colors
@@ -32,14 +33,16 @@ $colors: (
     'base':    $font-color-base,
     'orange':  #e75c2f,
     'light':   #9eabb3,
-    'link':    #64b5f6  // use for tag `a`
+     // use for tag `a`
+    'link':    #64b5f6
 );
 
 // Z-indexes
 // `l-` prefix for layout
 // `c-` prefix for components
 $z-indexes: (
-    'l-cover':           -1,  // position the cover below the whole blog
+    // position the cover below the whole blog
+    'l-cover':           -1,
     'l-main':            10,
     'l-header':          20,
     'l-sidebar':         20,
@@ -52,7 +55,9 @@ $z-indexes: (
 $screen-min: (
     'xs-min': 320px,
     'sm-min': 480px,
-    'md-min': 768px, // If you change value of `md-min`, you have to change value of `mediumScreenWidth` too in `source/_js/sidebar.js`
+     // If you change value of `md-min`,
+     // you have to change value of `mediumScreenWidth` too in `source/_js/sidebar.js`
+    'md-min': 768px,
     'lg-min': 1024px
 );
 $screen-max: (
@@ -60,7 +65,8 @@ $screen-max: (
     'sm-max': map-get($screen-min, md-min) - 1,
     'md-max': map-get($screen-min, lg-min) - 1
 );
-$screen: map-merge($screen-min, $screen-max); // Merged screen-* Maps
+// Merged screen-* Maps
+$screen: map-merge($screen-min, $screen-max);
 // Shortcuts for medias
 $xsmall-and-down:  "only screen and (max-width : #{map-get($screen, xs-max)})" !default;
 $small-only:       "only screen and (min-width : #{map-get($screen, sm-min)}) and (max-width : #{map-get($screen, sm-max)})" !default;
@@ -75,14 +81,14 @@ $large-and-up:     "only screen and (min-width : #{map-get($screen, lg-min)})" !
 // Files are located in `base` folder
 // --------------------------------------------
 
-// Headings font-size
+// Headings font-size : (X.Xrem = XXpx, 1.0rem = 10px)
 $headings-font-size: (
-    'h1': 2.8rem, // equal to 28px
-    'h2': 2.4rem, // equal to 24px
-    'h3': 2.0rem, // equal to 20px
-    'h4': 1.8rem, // equal to 18px
-    'h5': 1.7rem, // equal to 17px
-    'h6': 1.6rem  // equal to 16px
+    'h1': 2.8rem,
+    'h2': 2.4rem,
+    'h3': 2.0rem,
+    'h4': 1.8rem,
+    'h5': 1.7rem,
+    'h6': 1.6rem
 );
 // Reduction of headings font size on small screen and down
 $headings-font-size-sm-screen-reduction-factor: 0.2rem;
@@ -132,35 +138,44 @@ $highlight: (
 );
 // Highlight colors
 $highlight-colors: (
-    'white':           #fff, // Background
-    'night-rider':     #333, // General color
+    // Background
+    'white':           #fff,
+    // General color
+    'night-rider':     #333,
     'bondi-blue':      #0086b3,
     'persimmon':       #df5000,
     'asparagus':       #63a35c,
-    'pewter':          #969896, // Comment
+    // Comment
+    'pewter':          #969896,
     'cardinal':        #a71d5d,
     'scampi':          #795da3,
     'bahama-blue':     #1d3e81,
-    'free-speech-red': #bd2c00, // Deletion color for .diff file
-    'misty-rose':      #ffecec, // Deletion background color for .diff file
-    'limeade':         #55a532, // Addition color for .diff file
-    'honeydew':        #eaffea // Addition background color for .diff file
+    // Deletion color for .diff file
+    'free-speech-red': #bd2c00,
+    // Deletion background color for .diff file
+    'misty-rose':      #ffecec,
+    // Addition color for .diff file
+    'limeade':         #55a532,
+    // Addition background color for .diff file
+    'honeydew':        #eaffea
 );
 
 // Image gallery photos
-$image-gallery-photos-margin: 2px; // Space bettween 2 images
+// Space between 2 photos
+$image-gallery-photos-margin: 2px;
 
 // Mardown
 // These variables are use to have headings smaller than general headings title
 // and use correctly headings in a post instead of use only header below h2
 // because they are larger than the post title or something like that
+// font-size : (X.Xrem = XXpx, 1.0rem = 10px)
 $markdown-headings-font-size: (
-    'h1': 2.15rem, // equal to 21.5px
-    'h2': 2rem, // equal to 20px
-    'h3': 1.8rem, // equal to 18px
-    'h4': 1.7rem, // equal to 17px
-    'h5': 1.6rem, // equal to 16px
-    'h6': 1.5rem // equal to 15px
+    'h1': 2.15rem,
+    'h2': 2rem,
+    'h3': 1.8rem,
+    'h4': 1.7rem,
+    'h5': 1.6rem,
+    'h6': 1.5rem
 );
 // Reduction of markdwon headings on small screen and down
 $markdown-headings-font-size-sm-screen-reduction-factor: 0.35rem;
@@ -171,12 +186,15 @@ $markdown-headings-font-size-md-screen-reduction-factor: 0.2rem;
 $pagination-height: 60px;
 
 // Post thumbnail image
-$post-thumbnail-image-width: 140px; // Width and height of post's thumbnail image
+// Width and height of post's thumbnail image
+$post-thumbnail-image-width: 140px;
 
 // Tooltip
 $tooltip: (
-    'min-width':    180px,  // Consider as width
+    'min-width':    180px,
     'background':   rgba(0, 0, 20, 0.93),
-    'arrow-width':  15px, // Don't change this value, used to horizontally center the tooltip content
-    'arrow-height': 12px // Don't change this value, used to vertically center the tooltip content
+    // Don't change this value, used to horizontally center the tooltip content
+    'arrow-width':  15px,
+    // Don't change this value, used to vertically center the tooltip content
+    'arrow-height': 12px
 );

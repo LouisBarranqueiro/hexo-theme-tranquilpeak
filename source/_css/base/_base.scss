@@ -1,6 +1,7 @@
 html {
     font-family: $font-family-base;
-    font-size:   62.5%; // equal to 10px, useful to use em and rem
+    // equal to 10px, useful to use em and rem
+    font-size:   62.5%;
     // Gives you better control of the font size when the first selected font is not available.
     @include prefix(text-size-adjust, 100%, 'ms' 'webkit');
     // Overrides the highlight color shown when the user taps

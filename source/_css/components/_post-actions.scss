@@ -16,8 +16,10 @@
     }
     // Post's navigation options
     ul.post-action-nav {
-        width:   45%; // Best width for responsive post's navigation panel on small screen and up
-        z-index: map-get($z-indexes, c-post-bottom-bar) + 2; // On very small screen `.post-actions-nav` will be above `.post-actions-share`
+        // Best width for responsive post's navigation panel on small screen and up
+        width:   45%;
+        // On very small screen `.post-actions-nav` will be above `.post-actions-share`
+        z-index: map-get($z-indexes, c-post-bottom-bar) + 2;
 
         li.post-action {
             float: left;
@@ -31,8 +33,11 @@
     }
     // Post's share options
     ul.post-action-share {
-        width:   55%; // 100% minus width of `.post-action-nav`, Best width for responsive post's share panel on small screen and up
-        z-index: map-get($z-indexes, c-post-bottom-bar) + 1; // On very small screen `.post-actions-nav` will be above `.post-actions-share`
+        // 100% minus width of `.post-action-nav`,
+        // best width for responsive post's share panel on small screen and up
+        width:   55%;
+        // On very small screen `.post-actions-nav` will be above `.post-actions-share`
+        z-index: map-get($z-indexes, c-post-bottom-bar) + 1;
 
         li.post-action {
             float: right;
@@ -51,10 +56,12 @@
     .post-actions {
         ol.post-actions-panel {
             ul.post-actions-nav {
-                width: 35%; // Best width for responsive post's navigation panel on very small screen
+                // Best width for responsive post's navigation panel on very small screen
+                width: 35%;
             }
             ul.post-actions-share {
-                width: 65%; // Best width for responsive post's share panel on very small screen
+                // Best width for responsive post's share panel on very small screen
+                width: 65%;
             }
         }
     }
