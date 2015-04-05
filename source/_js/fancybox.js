@@ -6,7 +6,7 @@
         $(".fancybox").fancybox({
             maxWidth:    900,
             maxHeight:   800,
-            fitToView:   false,
+            fitToView:   true,
             width:       '50%',
             height:      '50%',
             autoSize:    true,
