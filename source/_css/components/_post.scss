@@ -154,8 +154,8 @@
     }
 }
 
-// Respond to medium screen and up
-@media #{$medium-and-up} {
+// Respond to small screen and up
+@media #{$small-and-up} {
     // Display the post's thumbnail image
     .post.post--thumbnailimg {
         .post-thumbnailimg {
