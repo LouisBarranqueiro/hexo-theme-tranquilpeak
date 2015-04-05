@@ -37,7 +37,7 @@
                         <%- post.excerpt %>
                     <% } else { %>
                         <p>
-                            <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 250) %><br>
+                            <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %><br>
                     <% } %>
                     <% if ((post.link) && (theme.go_to_message)) { %>
                             <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= theme.go_to_message %> </a>
