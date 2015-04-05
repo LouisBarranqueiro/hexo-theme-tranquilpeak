@@ -59,8 +59,27 @@
                     'left': '-' + (((photoBoxHeight * imageRatio) / 2) - (photoBoxWidth / 2)) + 'px'
                 });
             }
+
+            // Update new values of height and width
+            imageWidth  = $image.width();
+            imageHeight = $image.height();
+
+            // Checks if image width is smaller than his box
+            if (imageWidth < photoBoxWidth) {
+                imageRatio = (imageHeight / photoBoxWidth);
+
+                $image.css({
+                    'width':  photoBoxWidth,
+                    'height': (photoBoxWidth * imageRatio)
+                });
+                // Center image in his box
+                $image.parent().css({
+                    'top': '-' + (((imageHeight) / 2) - (photoBoxHeight / 2)) + 'px'
+                });
+            }
+
             // Checks if image height is larger than his box
-            else if (imageHeight > photoBoxHeight) {
+            if (imageHeight > photoBoxHeight) {
                 // Center image in his box
                 $image.parent().css({
                     'top': '-' + (((imageHeight) / 2) - (photoBoxHeight / 2)) + 'px'
