@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         // Copy all needed files by types
         bower:          {
             dev: {
-                dest:       'source/assets',
+                dest:       'source/assets/images',
                 js_dest:    'source/assets/js',
                 css_dest:   'source/assets/css',
                 fonts_dest: 'source/assets/fonts',
@@ -29,6 +29,12 @@ module.exports = function(grunt) {
                     packageSpecific:       {
                         'fancybox': {
                             files: [
+                                'source/blank.gif',
+                                'source/fancybox_loading.gif',
+                                'source/fancybox_loading@2x.gif',
+                                'source/fancybox_overlay.png',
+                                'source/fancybox_sprite.png',
+                                'source/fancybox_sprite@2x.png',
                                 'source/jquery.fancybox.js',
                                 'source/jquery.fancybox.css',
                                 'source/helpers/jquery.fancybox-thumbs.css',
