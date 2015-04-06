@@ -7,7 +7,7 @@
      * AboutCard
      * @constructor
      */
-    var AboutCard = function() {
+    var AboutCard       = function() {
         this.$openBtn   = $("#sidebar, #header").find("a[href='/about']");
         this.$closeBtn  = $('#about-btn-close');
         this.$blog      = $('#blog');
@@ -15,89 +15,91 @@
         this.$aboutCard = $('#about-card');
     };
 
-    /**
-     * Run AboutCard feature
-     */
-    AboutCard.prototype.run = function() {
-        var self = this;
+    AboutCard.prototype = {
 
-        // Detect click on open button
-        self.$openBtn.click(function(e) {
-            e.preventDefault();
-            self.play();
-        })
+        /**
+         * Run AboutCard feature
+         */
+        run: function() {
+            var self = this;
 
-        // Detect click on close button
-        self.$closeBtn.click(function(e) {
-            e.preventDefault();
-            self.playBack();
-        })
-    };
+            // Detect click on open button
+            self.$openBtn.click(function(e) {
+                e.preventDefault();
+                self.play();
+            })
 
-    /**
-     * Play the animation
-     */
-    AboutCard.prototype.play = function() {
-        var self = this;
-        // Fade out the blog
-        self.$blog.fadeOut();
-        // Fade in the about card
-        self.$about.fadeIn();
-        // Small timeout to drop the about card after that
-        // the about card fade in and the blog fade out
-        setTimeout(function() {
-            self.dropAboutCard();
-        }, 300);
-    };
+            // Detect click on close button
+            self.$closeBtn.click(function(e) {
+                e.preventDefault();
+                self.playBack();
+            })
+        },
 
-    /**
-     * Play back the animation
-     */
-    AboutCard.prototype.playBack = function() {
-        var self = this;
+        /**
+         * Play the animation
+         */
+        play: function() {
+            var self = this;
+            // Fade out the blog
+            self.$blog.fadeOut();
+            // Fade in the about card
+            self.$about.fadeIn();
+            // Small timeout to drop the about card after that
+            // the about card fade in and the blog fade out
+            setTimeout(function() {
+                self.dropAboutCard();
+            }, 300);
+        },
 
-        // Lift the about card
-        self.liftAboutCard();
-        // Fade in the blog after that the about card lifted up
-        setTimeout(function() {
-            self.$blog.fadeIn();
-        }, 500);
-        // Fade out the about card after that the about card lifted up
-        setTimeout(function() {
-            self.$about.fadeOut();
-        }, 500);
-    };
+        /**
+         * Play back the animation
+         */
+        playBack: function() {
+            var self = this;
 
-    /**
-     * Slide the card to the middle
-     */
-    AboutCard.prototype.dropAboutCard = function() {
-        var self            = this;
-        var aboutCardHeight = self.$aboutCard.innerHeight();
+            // Lift the about card
+            self.liftAboutCard();
+            // Fade in the blog after that the about card lifted up
+            setTimeout(function() {
+                self.$blog.fadeIn();
+            }, 500);
+            // Fade out the about card after that the about card lifted up
+            setTimeout(function() {
+                self.$about.fadeOut();
+            }, 500);
+        },
 
-        self.$aboutCard
-            .css('top', '0px')
-            .css('top', '-' + aboutCardHeight + 'px')
-            .show(500, function() {
-                self.$aboutCard.animate({
-                    top: '+=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
+        /**
+         * Slide the card to the middle
+         */
+        dropAboutCard: function() {
+            var self            = this;
+            var aboutCardHeight = self.$aboutCard.innerHeight();
+
+            self.$aboutCard
+                .css('top', '0px')
+                .css('top', '-' + aboutCardHeight + 'px')
+                .show(500, function() {
+                    self.$aboutCard.animate({
+                        top: '+=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
+                    });
                 });
+        },
+
+        /**
+         * Slide the card to the top
+         */
+        liftAboutCard: function() {
+            var self            = this;
+            var aboutCardHeight = self.$aboutCard.innerHeight();
+
+            self.$aboutCard.animate({
+                top: '-=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
+            }, 500, function() {
+                self.$aboutCard.hide();
             });
-    };
-
-    /**
-     * Slide the card to the top
-     */
-    AboutCard.prototype.liftAboutCard = function() {
-        var self            = this;
-        var aboutCardHeight = self.$aboutCard.innerHeight();
-
-        self.$aboutCard.animate({
-            top: '-=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
-        }, 500, function() {
-            self.$aboutCard.hide();
-        });
-
+        }
     };
 
     $(document).ready(function() {
