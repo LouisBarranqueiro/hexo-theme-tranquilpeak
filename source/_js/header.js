@@ -17,50 +17,53 @@
         this.scrollTop;
     };
 
-    /**
-     * Run Header feature
-     */
-    Header.prototype.run = function() {
-        var self = this;
-        var didScroll;
+    Header.prototype = {
 
-        // Detect if the user is scrolling
-        $(window).scroll(function() {
-            self.didScroll = true;
-        });
+        /**
+         * Run Header feature
+         */
+        run: function() {
+            var self = this;
+            var didScroll;
 
-        // Check if the user scrolled every 250 milliseconds
-        setInterval(function() {
-            if (self.didScroll) {
-                self.animate();
-                self.didScroll = false;
+            // Detect if the user is scrolling
+            $(window).scroll(function() {
+                self.didScroll = true;
+            });
+
+            // Check if the user scrolled every 250 milliseconds
+            setInterval(function() {
+                if (self.didScroll) {
+                    self.animate();
+                    self.didScroll = false;
+                }
+            }, 250);
+        },
+
+        /**
+         * Animate the header
+         */
+        animate: function() {
+            this.scrollTop = $(window).scrollTop();
+
+            // Check if the user scrolled more than `delta`
+            if (Math.abs(this.lastScrollTop - this.scrollTop) <= this.delta) {
+                return;
             }
-        }, 250);
-    };
 
-    /**
-     * Animate the header
-     */
-    Header.prototype.animate = function() {
-        this.scrollTop = $(window).scrollTop();
-
-        // Check if the user scrolled more than `delta`
-        if (Math.abs(this.lastScrollTop - this.scrollTop) <= this.delta) {
-            return;
-        }
-
-        // Checks if the user has scrolled enough down and has past the navbar
-        if ((this.scrollTop > this.lastScrollTop) && (this.scrollTop > this.headerHeight)) {
-            this.$header.addClass(this.headerUpCSSClass);
-        }
-        else {
-            // Check if the user has scrolled to the top of the page
-            if (this.scrollTop + $(window).height() < $(document).height()) {
-                this.$header.removeClass(this.headerUpCSSClass);
+            // Checks if the user has scrolled enough down and has past the navbar
+            if ((this.scrollTop > this.lastScrollTop) && (this.scrollTop > this.headerHeight)) {
+                this.$header.addClass(this.headerUpCSSClass);
             }
-        }
+            else {
+                // Check if the user has scrolled to the top of the page
+                if (this.scrollTop + $(window).height() < $(document).height()) {
+                    this.$header.removeClass(this.headerUpCSSClass);
+                }
+            }
 
-        this.lastScrollTop = this.scrollTop;
+            this.lastScrollTop = this.scrollTop;
+        }
     };
 
     $(document).ready(function() {

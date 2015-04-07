@@ -18,161 +18,164 @@
         this.mediumScreenWidth = 768;
     };
 
-    /**
-     * Run Sidebar feature
-     */
-    Sidebar.prototype.run = function() {
-        var self = this;
+    Sidebar.prototype = {
 
-        // Detect the click on the open button
-        self.$openBtn.click(function() {
-            self.openSidebar();
-        })
+        /**
+         * Run Sidebar feature
+         */
+        run: function() {
+            var self = this;
 
-        // Detect the click on close button
-        self.$closeBtn.click(function() {
-            self.closeSidebar();
-        })
+            // Detect the click on the open button
+            self.$openBtn.click(function() {
+                self.openSidebar();
+            })
 
-        // Detect resize of the windows
-        $(window).resize(function() {
-            // Check if the window is larger than the minimal medium screen value
-            if ($(window).width() > self.mediumScreenWidth) {
-                self.resetSidebarPosition();
-                self.resetBlogPosition();
-            }
-            else {
+            // Detect the click on close button
+            self.$closeBtn.click(function() {
                 self.closeSidebar();
-            }
-        })
-    };
-
-    /**
-     * Open the sidebar by swiping to the right the sidebar and the blog
-     */
-    Sidebar.prototype.openSidebar = function() {
-        this.swipeSidebarToRight();
-        this.swipeBlogToRight();
-    };
-
-    /**
-     * Close the sidebar by swiping to the left the sidebar and the blog
-     */
-    Sidebar.prototype.closeSidebar = function() {
-        this.swipeSidebarToLeft();
-        this.swipeBlogToLeft();
-    };
-
-    /**
-     * Reset sidebar position
-     */
-    Sidebar.prototype.resetSidebarPosition = function() {
-        this.$sidebar
-            .css({
-                display: '',
-                left:    ''
             })
-            .removeClass('swiped');
-    };
 
-    /**
-     * Reset blog position
-     */
-    Sidebar.prototype.resetBlogPosition = function() {
-        this.$blog
-            .css({
-                display:       '',
-                'margin-left': '',
-                position:      ''
+            // Detect resize of the windows
+            $(window).resize(function() {
+                // Check if the window is larger than the minimal medium screen value
+                if ($(window).width() > self.mediumScreenWidth) {
+                    self.resetSidebarPosition();
+                    self.resetBlogPosition();
+                }
+                else {
+                    self.closeSidebar();
+                }
             })
-            .removeClass('swiped');
-    };
+        },
 
-    /**
-     * Swipe the sidebar to the right
-     */
-    Sidebar.prototype.swipeSidebarToRight = function() {
-        var self = this;
+        /**
+         * Open the sidebar by swiping to the right the sidebar and the blog
+         */
+        openSidebar: function() {
+            this.swipeSidebarToRight();
+            this.swipeBlogToRight();
+        },
 
-        // Check if the sidebar isn't swiped and prevent multiple click on the open button with `.processing` class
-        if (!self.$sidebar.hasClass('swiped') && !this.$sidebar.hasClass('processing')) {
-            // Position the sidebar at the right of the window
-            self.$sidebar
-                .addClass('processing')
-                .css({'left': '-' + self.$sidebar.width() + 'px'})
-                .show();
+        /**
+         * Close the sidebar by swiping to the left the sidebar and the blog
+         */
+        closeSidebar: function() {
+            this.swipeSidebarToLeft();
+            this.swipeBlogToLeft();
+        },
 
-            // Swipe the sidebar to the right
-            self.$sidebar.animate({
-                left: '+=' + self.$sidebar.width()
-            }, 250, function() {
+        /**
+         * Reset sidebar position
+         */
+        resetSidebarPosition: function() {
+            this.$sidebar
+                .css({
+                    display: '',
+                    left:    ''
+                })
+                .removeClass('swiped');
+        },
+
+        /**
+         * Reset blog position
+         */
+        resetBlogPosition: function() {
+            this.$blog
+                .css({
+                    display:       '',
+                    'margin-left': '',
+                    position:      ''
+                })
+                .removeClass('swiped');
+        },
+
+        /**
+         * Swipe the sidebar to the right
+         */
+        swipeSidebarToRight: function() {
+            var self = this;
+
+            // Check if the sidebar isn't swiped and prevent multiple click on the open button with `.processing` class
+            if (!self.$sidebar.hasClass('swiped') && !this.$sidebar.hasClass('processing')) {
+                // Position the sidebar at the right of the window
                 self.$sidebar
-                    .addClass('swiped')
-                    .removeClass('processing');
-            });
-        }
-    };
+                    .addClass('processing')
+                    .css({'left': '-' + self.$sidebar.width() + 'px'})
+                    .show();
 
-    /**
-     * Swipe the sidebar to the left
-     */
-    Sidebar.prototype.swipeSidebarToLeft = function() {
-        var self = this;
-        // Check if the sidebar is swiped and prevent multiple click on the close button with `.processing` class
-        if (self.$sidebar.hasClass('swiped') && !this.$sidebar.hasClass('processing')) {
-            // Swipe the sidebar to the left
-            self.$sidebar
-                .addClass('processing')
-                .animate({
-                    left: '-=' + self.$sidebar.width(),
+                // Swipe the sidebar to the right
+                self.$sidebar.animate({
+                    left: '+=' + self.$sidebar.width()
                 }, 250, function() {
                     self.$sidebar
-                        .removeClass('swiped')
-                        .hide()
-                        .removeClass('processing');
-                });
-        }
-    };
-
-    /**
-     * Swipe the blog to the right
-     */
-    Sidebar.prototype.swipeBlogToRight = function() {
-        var self = this;
-
-        // Check if the blog isn't swiped and prevent multiple click on the open button with `.processing` class
-        if (!self.$blog.hasClass('swiped') && !this.$blog.hasClass('processing')) {
-            // Swipe the blog to the right
-            self.$blog
-                .addClass('processing')
-                .animate({
-                    'margin-left': '+=' + self.$sidebar.width() + 'px'
-                }, 250, function() {
-                    self.$blog
                         .addClass('swiped')
                         .removeClass('processing');
-                })
-        }
-    };
+                });
+            }
+        },
 
-    /**
-     * Swipe the blog to the left
-     */
-    Sidebar.prototype.swipeBlogToLeft = function() {
-        var self = this;
+        /**
+         * Swipe the sidebar to the left
+         */
+        swipeSidebarToLeft: function() {
+            var self = this;
+            // Check if the sidebar is swiped and prevent multiple click on the close button with `.processing` class
+            if (self.$sidebar.hasClass('swiped') && !this.$sidebar.hasClass('processing')) {
+                // Swipe the sidebar to the left
+                self.$sidebar
+                    .addClass('processing')
+                    .animate({
+                        left: '-=' + self.$sidebar.width(),
+                    }, 250, function() {
+                        self.$sidebar
+                            .removeClass('swiped')
+                            .hide()
+                            .removeClass('processing');
+                    });
+            }
+        },
 
-        // Check if the blog is swiped and prevent multiple click on the close button with `.processing` class
-        if (self.$blog.hasClass('swiped') && !this.$blog.hasClass('processing')) {
-            // Swipe the blog to the left
-            self.$blog
-                .addClass('processing')
-                .animate({
-                    'margin-left': '-=' + self.$sidebar.width() + 'px',
-                }, 250, function() {
-                    self.$blog
-                        .removeClass('swiped')
-                        .removeClass('processing');
-                })
+        /**
+         * Swipe the blog to the right
+         */
+        swipeBlogToRight: function() {
+            var self = this;
+
+            // Check if the blog isn't swiped and prevent multiple click on the open button with `.processing` class
+            if (!self.$blog.hasClass('swiped') && !this.$blog.hasClass('processing')) {
+                // Swipe the blog to the right
+                self.$blog
+                    .addClass('processing')
+                    .animate({
+                        'margin-left': '+=' + self.$sidebar.width() + 'px'
+                    }, 250, function() {
+                        self.$blog
+                            .addClass('swiped')
+                            .removeClass('processing');
+                    })
+            }
+        },
+
+        /**
+         * Swipe the blog to the left
+         */
+        swipeBlogToLeft: function() {
+            var self = this;
+
+            // Check if the blog is swiped and prevent multiple click on the close button with `.processing` class
+            if (self.$blog.hasClass('swiped') && !this.$blog.hasClass('processing')) {
+                // Swipe the blog to the left
+                self.$blog
+                    .addClass('processing')
+                    .animate({
+                        'margin-left': '-=' + self.$sidebar.width() + 'px',
+                    }, 250, function() {
+                        self.$blog
+                            .removeClass('swiped')
+                            .removeClass('processing');
+                    })
+            }
         }
     };
 

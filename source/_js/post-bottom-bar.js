@@ -13,42 +13,44 @@
         this.$postFooter    = $('.post-footer');
     }
 
-    /**
-     * Run PostBottomBar feature
-     */
-    PostBottomBar.prototype.run = function() {
-        var self = this;
-        var didScroll;
+    PostBottomBar.prototype = {
 
-        // Detects if the user is scrolling
-        $(window).scroll(function() {
-            self.didScroll = true;
-        });
+        /**
+         * Run PostBottomBar feature
+         */
+        run: function() {
+            var self = this;
+            var didScroll;
 
-        // Check if the user scrolled every 250 milliseconds
-        setInterval(function() {
-            if (self.didScroll) {
-                self.swipePostBottomBar();
-                self.didScroll = false;
+            // Detects if the user is scrolling
+            $(window).scroll(function() {
+                self.didScroll = true;
+            });
+
+            // Check if the user scrolled every 250 milliseconds
+            setInterval(function() {
+                if (self.didScroll) {
+                    self.swipePostBottomBar();
+                    self.didScroll = false;
+                }
+            }, 250);
+        },
+
+        /**
+         * Animate the post bottom bar
+         */
+        swipePostBottomBar: function() {
+            var postFooterElemPos = (this.$postFooter.offset().top + this.$postBottomBar.height());
+
+            // Check if the post footer element is visible by the user
+            if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
+                this.$postBottomBar.slideUp();
             }
-        }, 250);
-    };
-
-    /**
-     * Animate the post bottom bar
-     */
-    PostBottomBar.prototype.swipePostBottomBar = function() {
-        var postFooterElemPos = (this.$postFooter.offset().top + this.$postBottomBar.height());
-
-        // Check if the post footer element is visible by the user
-        if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
-            this.$postBottomBar.slideUp();
-        }
-        else {
-            this.$postBottomBar.slideDown();
+            else {
+                this.$postBottomBar.slideDown();
+            }
         }
     };
-
     $(document).ready(function() {
         if ($('.post-bottom-bar').length) {
             var postBottomBar = new PostBottomBar();

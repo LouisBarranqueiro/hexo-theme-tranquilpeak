@@ -7,7 +7,7 @@
      * AboutCard
      * @constructor
      */
-    var AboutCard       = function() {
+    var AboutCard = function() {
         this.$openBtn   = $("#sidebar, #header").find("a[href='/about']");
         this.$closeBtn  = $('#about-btn-close');
         this.$blog      = $('#blog');
