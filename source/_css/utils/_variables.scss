@@ -99,6 +99,11 @@ $headings-font-size-md-screen-reduction-factor: 0.15rem;
 // Files are located in `layout` folder
 // --------------------------------------------
 
+// Main
+$about: (
+    'background': transparent,
+);
+
 // Header
 $header:(
     'height':     55px,
@@ -117,12 +122,6 @@ $sidebar: (
 // Main
 $main: (
     'padding-top': 15px
-);
-
-// Main content
-$main-content: (
-    'max-width':          750px,
-    'padding-right-left': 20px,
 );
 
 // Components settings
@@ -163,6 +162,12 @@ $highlight-colors: (
 // Image gallery photos
 // Space between 2 photos
 $image-gallery-photos-margin: 2px;
+
+// Main content
+$main-content: (
+    'max-width':          750px,
+    'padding-right-left': 20px,
+);
 
 // Mardown
 // These variables are use to have headings smaller than general headings title
