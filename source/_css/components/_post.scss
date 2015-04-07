@@ -94,6 +94,7 @@
         color:       map-get($colors, base);
         margin-top:  15px;
         font-weight: 300;
+        overflow:    hidden;
     }
     .post-content {
         margin-top: 25px;
