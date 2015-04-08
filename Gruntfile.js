@@ -180,7 +180,7 @@ module.exports = function(grunt) {
         },
         replace:        {
             // Replace `EJS_ENDTAG` string to resolve a problem of ejs escaping with sails-linker
-            linker: {
+            linker:      {
                 overwrite:    true,
                 src:          [
                     'layout/_partial/head.ejs',
@@ -190,6 +190,21 @@ module.exports = function(grunt) {
                     {
                         from: 'EJS_ENDTAG',
                         to:   '%>'
+                    }
+                ]
+            },
+            // Modify url of images in fancybox.css to resolve images path
+            // Impossible to use an other plugin to do that because in the bower fancybox packages,
+            // css files and images are in the same folder.
+            cssFancybox: {
+                overwrite:    true,
+                src:          [
+                    'source/assets/css/jquery.fancybox.css'
+                ],
+                replacements: [
+                    {
+                        from: 'url(\'',
+                        to:   'url(\'../images/'
                     }
                 ]
             }
@@ -217,7 +232,8 @@ module.exports = function(grunt) {
         'clean:build',
         'bower:dev',
         'CompileAssets',
-        'LinkAssets'
+        'LinkAssets',
+        'replace:cssFancybox'
     ]);
 
     // Build (environment : production)
@@ -228,7 +244,8 @@ module.exports = function(grunt) {
         'concat',
         'cssmin',
         'uglify',
-        'LinkAssetsProd'
+        'LinkAssetsProd',
+        'replace:cssFancybox'
     ]);
 
     // Link all assets (environment : development)
