@@ -10,7 +10,7 @@
 
     // Author information
     .sidebar-profile {
-        color:         map-get($header, color);
+        color:         map-get($sidebar, color);
         text-align:    center;
         padding-top:   18px;
         margin-bottom: 20px;
@@ -33,14 +33,14 @@
             line-height: 45px;
 
             .sidebar-button-link {
-                color:   map-get($header, color);
+                color:   map-get($sidebar, color);
                 display: block;
                 height:  100%;
 
                 &:hover,
                 &:active {
                     text-decoration: none;
-                    color:           lighten(map-get($header, color), 35);
+                    color:           lighten(map-get($sidebar, color), 35);
                 }
             }
         }
