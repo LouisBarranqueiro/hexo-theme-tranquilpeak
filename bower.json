@@ -1,11 +1,11 @@
 {
-    "name": "tranquil-peak-hexo-theme",
-    "version": "0.1",
-    "authors": [
+    "name":         "tranquil-peak-hexo-theme",
+    "version":      "0.1",
+    "authors":      [
         "Louis Barranqueiro"
     ],
-    "license": "MIT",
-    "ignore": [
+    "license":      "MIT",
+    "ignore":       [
         "**/.*",
         "node_modules",
         "source/_bower_components/",
@@ -14,7 +14,7 @@
     ],
     "dependencies": {
         "fontawesome": "~4.3.0",
-        "jquery": "~2.1.3",
-        "fancybox": "~2.1.5"
+        "jquery":      "~2.1.3",
+        "fancybox":    "~2.1.5"
     }
 }

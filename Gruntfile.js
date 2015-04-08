@@ -193,9 +193,10 @@ module.exports = function(grunt) {
                     }
                 ]
             },
-            // Modify url of images in fancybox.css to resolve images path
-            // Impossible to use an other plugin to do that because in the bower fancybox packages,
-            // css files and images are in the same folder.
+            // Modify url of images in fancybox.css to resolve images path.
+            // Impossible to use an other plugin to do that
+            // because in the bower fancybox packages, css files and images are in the same folder
+            // and that not the case in assets folder.
             cssFancybox: {
                 overwrite:    true,
                 src:          [
