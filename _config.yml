@@ -1,3 +1,7 @@
+# For users, if you only use this theme, put your images directly in `source/assets/images` folder
+# For developpers, if you modify this theme, put your images in `source/_images` folder and
+# use grunt task `build` to synchronize assets
+
 # Image directory (default: images)
 image_dir: assets/images
 
@@ -6,7 +10,7 @@ image_dir: assets/images
 #    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
 #    Example :
 #    -------------
-#       sidebar:                   # Don't modify this variable name
+#       sidebar:                   # DON'T modify this variable name
 #            menu:                 # Name of your groups of links (changeable)
 #                home:             # Name of your link (changeable)
 #                   title: Home    # Title of your link displayed
@@ -73,7 +77,7 @@ sidebar:
 # Author
 author:
     email:
-    picture:    # Your profile picture located in folder `source/_images/`
+    picture:    # Your profile picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
     bio:
     job:
     location:
@@ -83,8 +87,8 @@ gravatar_image: 1                      # Gravatar image (disable: 0, enable: 1).
 thumbnail_image: 1                     # Post thumbnail image (disable: 0, enable: 1). Display the first photo
 read_more_message: Continue reading    # Message displayed after the <!-- more --> balise
 go_to_message: Go to the website       # Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
-cover: cover.png                       # Your blog cover picture located in folder `source/_images/`
-favicon:                               # Your favicon located in folder `source/images/`
+cover: cover.png                       # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
+favicon:                               # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 image_gallery: 1                       # Display an image gallery at the end of a post with layout photos
 
 # Miscellaneous
