@@ -33,7 +33,7 @@ Development environment:
 1. Use:  ```grunt build``` to sync bower dependencies and compile assets and link it to views
 2. Use ```grunt watch``` to automatically re-build the project after change on assets
 
-Production environment (before deploy your blog) :
+Production environment (before deploy your blog):
 
 1. Use: ```grunt buildProd``` to build the project with some optimization (concat and minify)
 
