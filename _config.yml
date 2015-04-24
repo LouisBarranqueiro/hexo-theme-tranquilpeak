@@ -76,7 +76,7 @@ sidebar:
 
 # Author
 author:
-    email:
+    email: louis.barranqueiro@gmail.com
     picture:    # Your profile picture located in folder `source/_images/` (development)
                 # or in `source/assets/images/` (production)
                 # Overwritten by your gravatar image if `gravatar_image` is enabled
@@ -89,7 +89,7 @@ gravatar_image: 1                      # Gravatar image (disable: 0, enable: 1).
 thumbnail_image: 1                     # Post thumbnail image (disable: 0, enable: 1). Display the first photo
 read_more_message: Continue reading    # Message displayed after the <!-- more --> balise
 go_to_message: Go to the website       # Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
-cover: cover.png                       # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
+cover: cover.jpg                       # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 favicon:                               # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 image_gallery: 1                       # Display an image gallery at the end of a post with layout photos
 
