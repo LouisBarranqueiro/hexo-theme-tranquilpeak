@@ -1,8 +1,8 @@
 # Tranquil-peak Hexo theme
 
-Author: Louis Barranqueiro
-Version: 0.1
-Compatibility : Hexo v3.0 or later
+Author: Louis Barranqueiro  
+Version: 1.0.0  
+Compatibility : Hexo v3.0.0 or later  
 
 ## Utilisation (only)
 
