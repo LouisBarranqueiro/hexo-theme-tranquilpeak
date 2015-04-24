@@ -19,5 +19,5 @@ module.exports.tranquilPeakCssFilesToInject = tranquilPeakCssFilesToInject.map(f
 });
 
 module.exports.tranquilPeakJsFilesToInject = tranquilPeakJsFilesToInject.map(function(path) {
-    return 'source/assets/js' + path;
+    return 'source/assets/js/' + path;
 });
