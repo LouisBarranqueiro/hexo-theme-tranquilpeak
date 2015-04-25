@@ -13,7 +13,7 @@
         color:         map-get($sidebar, color);
         text-align:    center;
         padding-top:   18px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
 
         .sidebar-profile-picture {
             display: block;
@@ -43,6 +43,9 @@
                     color:           lighten(map-get($sidebar, color), 35);
                 }
             }
+        }
+        &:first-child {
+            margin-top: 5px;
         }
     }
 }
