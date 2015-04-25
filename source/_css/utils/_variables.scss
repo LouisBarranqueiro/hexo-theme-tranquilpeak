@@ -101,7 +101,7 @@ $headings-font-size-md-screen-reduction-factor: 0.15rem;
 
 // Main
 $about: (
-    'background': rgba(17, 26, 35, 0.4),
+    'background': rgba(17, 26, 35, 0.2),
 );
 
 // Header
@@ -115,8 +115,8 @@ $header:(
 $sidebar: (
     'md-screen-width': 75px,
     'lg-screen-width': 250px,
-    'background':      rgba(17, 26, 35, 0.4),
-    'color':           #bdc3d3
+    'background':      rgba(17, 26, 35, 0.2),
+    'color': #ebebeb
 );
 
 // Main

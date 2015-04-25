@@ -61,13 +61,13 @@ sidebar:
         #     url: https://plus.google.com/
         #     icon: google-plus
         # linked_in:
-        #      title: Linked In
-        #      url: https://www.linkedin.com/profile/
-        #      icon: linkedin
+        #     title: Linked In
+        #     url: https://www.linkedin.com/profile/
+        #     icon: linkedin
         # mail:
-        #      title: Mail
-        #      url: mailto://
-        #      icon: envelope-o
+        #     title: Mail
+        #     url: mailto://
+        #     icon: envelope-o
     rss:
         rss:
             title: RSS
@@ -76,20 +76,20 @@ sidebar:
 
 # Author
 author:
-    email: louis.barranqueiro@gmail.com
-    picture:    # Your profile picture located in folder `source/_images/` (development)
-                # or in `source/assets/images/` (production)
-                # Overwritten by your gravatar image if `gravatar_image` is enabled
+    email:
     bio:
     job:
     location:
+    picture:    # Your profile picture located in folder `source/_images/` (development)
+                # or in `source/assets/images/` (production)
+                # Overwritten by your gravatar image if `gravatar_image` is enabled
 
 # Customization
 gravatar_image: 1                      # Gravatar image (disable: 0, enable: 1). Overwrite `author.picture` everywhere in the blog
 thumbnail_image: 1                     # Post thumbnail image (disable: 0, enable: 1). Display the first photo
 read_more_message: Continue reading    # Message displayed after the <!-- more --> balise
 go_to_message: Go to the website       # Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
-cover: cover.jpg                       # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
+cover: cover.png                       # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 favicon:                               # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 image_gallery: 1                       # Display an image gallery at the end of a post with layout photos
 
