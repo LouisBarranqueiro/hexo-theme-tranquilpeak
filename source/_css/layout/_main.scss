@@ -1,7 +1,16 @@
 #main {
-    display:    block;
-    min-height: 100%;
-    background: #fff;
+    display:            block;
+    min-height:         100%;
+    background:         #fff;
+    // Sidebar animation
+    // Transition style (push)
+    transition:         transform .25s ease-in-out;
+    -webkit-transition: -webkit-transform .25s ease-in-out;
+
+    // Used to animate the blog (pushed effect)
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
 }
 
 // Change width of `#main` to full size on small screen and down

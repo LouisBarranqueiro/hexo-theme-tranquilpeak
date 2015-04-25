@@ -12,7 +12,7 @@
         this.$openBtn = $('#btn-open-sidebar');
         // Elements where the user can click to close the sidebar
         this.$closeBtn = $('#header, #main');
-        this.$blog     = $('#header, #main, .post-bottom-bar');
+        this.$blog     = $('#header, #main');
         // If you change value of `mediumScreenWidth`,
         // you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
         this.mediumScreenWidth = 768;
@@ -28,12 +28,16 @@
 
             // Detect the click on the open button
             self.$openBtn.click(function() {
-                self.openSidebar();
+                if (!self.$sidebar.hasClass('pushed')) {
+                    self.openSidebar();
+                }
             })
 
             // Detect the click on close button
             self.$closeBtn.click(function() {
-                self.closeSidebar();
+                if (self.$sidebar.hasClass('pushed')) {
+                    self.closeSidebar();
+                }
             })
 
             // Detect resize of the windows
@@ -69,25 +73,14 @@
          * Reset sidebar position
          */
         resetSidebarPosition: function() {
-            this.$sidebar
-                .css({
-                    display: '',
-                    left:    ''
-                })
-                .removeClass('swiped');
+            this.$sidebar.removeClass('pushed')
         },
 
         /**
          * Reset blog position
          */
         resetBlogPosition: function() {
-            this.$blog
-                .css({
-                    display:       '',
-                    'margin-left': '',
-                    position:      ''
-                })
-                .removeClass('swiped');
+            this.$blog.removeClass('pushed')
         },
 
         /**
@@ -97,7 +90,7 @@
             var self = this;
 
             // Check if the sidebar isn't swiped and prevent multiple click on the open button with `.processing` class
-            if (!self.$sidebar.hasClass('swiped') && !this.$sidebar.hasClass('processing')) {
+            if (!self.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
                 // Position the sidebar at the right of the window
                 self.$sidebar
                     .addClass('processing')
@@ -105,13 +98,12 @@
                     .show();
 
                 // Swipe the sidebar to the right
-                self.$sidebar.animate({
-                    left: '+=' + self.$sidebar.width()
-                }, 250, function() {
+                self.$sidebar.addClass('pushed');
+
+                setTimeout(function() {
                     self.$sidebar
-                        .addClass('swiped')
                         .removeClass('processing');
-                });
+                }, 250);
             }
         },
 
@@ -120,19 +112,13 @@
          */
         swipeSidebarToLeft: function() {
             var self = this;
+
             // Check if the sidebar is swiped and prevent multiple click on the close button with `.processing` class
-            if (self.$sidebar.hasClass('swiped') && !this.$sidebar.hasClass('processing')) {
+            if (self.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
                 // Swipe the sidebar to the left
                 self.$sidebar
                     .addClass('processing')
-                    .animate({
-                        left: '-=' + self.$sidebar.width(),
-                    }, 250, function() {
-                        self.$sidebar
-                            .removeClass('swiped')
-                            .hide()
-                            .removeClass('processing');
-                    });
+                    .removeClass('pushed processing');
             }
         },
 
@@ -143,17 +129,13 @@
             var self = this;
 
             // Check if the blog isn't swiped and prevent multiple click on the open button with `.processing` class
-            if (!self.$blog.hasClass('swiped') && !this.$blog.hasClass('processing')) {
+            if (!self.$blog.hasClass('pushed') && !this.$blog.hasClass('processing')) {
                 // Swipe the blog to the right
-                self.$blog
-                    .addClass('processing')
-                    .animate({
-                        'margin-left': '+=' + self.$sidebar.width() + 'px'
-                    }, 250, function() {
-                        self.$blog
-                            .addClass('swiped')
-                            .removeClass('processing');
-                    })
+                self.$blog.addClass('processing pushed')
+
+                setTimeout(function() {
+                    self.$blog.removeClass('processing');
+                }, 250);
             }
         },
 
@@ -164,17 +146,15 @@
             var self = this;
 
             // Check if the blog is swiped and prevent multiple click on the close button with `.processing` class
-            if (self.$blog.hasClass('swiped') && !this.$blog.hasClass('processing')) {
+            if (self.$blog.hasClass('pushed') && !this.$blog.hasClass('processing')) {
                 // Swipe the blog to the left
                 self.$blog
                     .addClass('processing')
-                    .animate({
-                        'margin-left': '-=' + self.$sidebar.width() + 'px',
-                    }, 250, function() {
-                        self.$blog
-                            .removeClass('swiped')
-                            .removeClass('processing');
-                    })
+                    .removeClass('pushed');
+
+                setTimeout(function() {
+                    self.$blog.removeClass('processing');
+                }, 250);
             }
         }
     };

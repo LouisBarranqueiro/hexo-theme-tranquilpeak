@@ -22,6 +22,9 @@
             var self = this;
             var didScroll;
 
+            // Run animation for first time
+            self.swipePostBottomBar();
+
             // Detects if the user is scrolling
             $(window).scroll(function() {
                 self.didScroll = true;

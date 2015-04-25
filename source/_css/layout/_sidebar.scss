@@ -1,12 +1,19 @@
 // Global CSS rules for all screen size
 #sidebar {
-    font-family: 'Open Sans', sans-serif;
-    height:      100%;
-    position:    fixed;
-    top:         0;
-    background:  map-get($sidebar, background);
-    overflow:    scroll;
-    z-index:     map-get($z-indexes, l-sidebar);
+    font-family:                 'Open Sans', sans-serif;
+    height:                      100%;
+    position:                    fixed;
+    top:                         0;
+    background:                  map-get($sidebar, background);
+    overflow:                    scroll;
+    z-index:                     map-get($z-indexes, l-sidebar);
+    // Sidebar animation
+    // Transition style (push)
+    transition:                  transform .25s ease-in-out;
+    -webkit-transition:          -webkit-transform .25s ease-in-out;
+    // Eliminate any flickering of elements while they are in a state of being animated
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective:         1000;
 
     // Author information
     .sidebar-profile {
@@ -47,6 +54,10 @@
         &:first-child {
             margin-top: 5px;
         }
+    }
+    // Used to animate the sidebar (pushed effect)
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
     }
 }
 

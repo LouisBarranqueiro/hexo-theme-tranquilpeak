@@ -1,15 +1,22 @@
 // Display `#header` on small screen and down
 @media #{$small-and-down} {
     #header {
-        display:    block;
-        width:      100%;
-        height:     map-get($header, height);
-        background: map-get($header, background);
-        position:   fixed;
-        top:        0;
+        display:                     block;
+        width:                       100%;
+        height:                      map-get($header, height);
+        background:                  map-get($header, background);
+        position:                    fixed;
+        top:                         0;
         // used to animate the header on small screen with javascript
         @include prefix(transition, top 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
-        z-index:    map-get($z-indexes, l-header);
+        z-index:                     map-get($z-indexes, l-header);
+        // Sidebar animation
+        // Transition style (push)
+        transition:                  transform .25s ease-in-out;
+        -webkit-transition:          -webkit-transform .25s ease-in-out;
+        // Eliminate any flickering of elements while they are in a state of being animated
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective:         1000;
 
         #btn-open-sidebar {
             position: absolute;
@@ -55,6 +62,10 @@
         // Class used to swipe to the top the header on small screen when the user scroll down
         &.header-up {
             top: -#{map-get($header, height)};
+        }
+        // Used to animate the header (pushed effect)
+        &.pushed {
+            @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
         }
     }
 }
