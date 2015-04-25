@@ -1,14 +1,17 @@
 # Tranquil-peak Hexo theme
 
-Author: Louis Barranqueiro  
 Version: 1.0.0  
 Compatibility : Hexo v3.0.0 or later  
+
+# Demo 
+
+Check this beautiful theme in live : [hexo-tranquil-peak-demo.herokuapp.com](http://hexo-tranquil-peak-demo.herokuapp.com)
 
 ## Utilisation (only)
 
 ### Installation
 
-1. In your hexo blog folder, execute the command: ```git clone https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme.git theme/tranquil-peak```
+1. Download the latest version ready for production here : [tranquil-peak-hexo-theme-v1.0.0-production](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-v1.0.0-production.zip)
 2. Modify the theme in ```_config.yml``` by changing ```theme``` variable  to ```tranquil-peak```
 3. Complete ```theme/tranquil-peak/_config.yml``` with your informations by following directives in comments
 4. Run ```hexo server``` and enjoy!
@@ -27,7 +30,8 @@ Compatibility : Hexo v3.0.0 or later
 4. Install bower dependencies ```bower install```
 
 
-### Build the Theme
+### Build
+
 Development environment:
 
 1. Use:  ```grunt build``` to sync bower dependencies and compile assets and link it to views
@@ -40,3 +44,5 @@ Production environment (before deploy your blog):
 Look into the code for more details about grunt tasks
 
 # Licence
+
+tranquil-peak-hexo-theme is released under the terms of the MIT license.
