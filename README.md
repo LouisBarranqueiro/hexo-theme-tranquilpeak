@@ -3,7 +3,7 @@
 Version: 1.0.0  
 Compatibility : Hexo v3.0.0 or later  
 
-[Tranquil Peak](https://hexo-tranquil-peak-demo.herokuapp.com/2013/12/25/gallery-post/tranquil-peak.png)
+![Tranquil Peak](https://hexo-tranquil-peak-demo.herokuapp.com/2013/12/25/gallery-post/tranquil-peak.png)
 
 ## Demo 
 
