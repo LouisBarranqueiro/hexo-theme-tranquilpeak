@@ -55,16 +55,14 @@
 
 // Increase width of `.post-actions-share` on very small screen
 @media #{$xsmall-and-down} {
-    .post-actions {
-        ol.post-actions-panel {
-            ul.post-actions-nav {
-                // Best width for responsive post's navigation panel on very small screen
-                width: 35%;
-            }
-            ul.post-actions-share {
-                // Best width for responsive post's share panel on very small screen
-                width: 65%;
-            }
+    .post-actions-wrap {
+        ul.post-action-nav {
+            // Best width for responsive post's navigation panel on very small screen
+            width: 35%;
+        }
+        ul.post-action-share {
+            // Best width for responsive post's share panel on very small screen
+            width: 65%;
         }
     }
 }
