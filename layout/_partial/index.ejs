@@ -1,8 +1,14 @@
 <% var thumbnailImageUrl = null; %>
 <section class="post-group main-content-wrap">
     <% page.posts.each(function(post) { %>
-        <% if ((theme.thumbnail_image) && (post.photos) && (post.photos.length)) { %>
-            <% if ((post.photos.indexOf(config.url) < 0) && (post.photos.indexOf('://') >= 0)) { %>
+        <% if ((theme.thumbnail_image) && (post.thumbnailImage) && ((post.thumbnailImage.length))) { %>
+            <% if ((post.thumbnailImage.indexOf(config.url) < 0) && (post.thumbnailImage.indexOf('://') >= 0)) { %>
+                <% thumbnailImageUrl = post.thumbnailImage; %>
+            <% } else { %>
+                <% thumbnailImageUrl = url_for(post.permalink + post.thumbnailImage); %>
+            <% } %>
+        <% } else if ((theme.thumbnail_image) && (post.photos) && (post.photos.length)) { %>
+            <% if ((post.photos[0].indexOf(config.url) < 0) && (post.photos[0].indexOf('://') >= 0)) { %>
                 <% thumbnailImageUrl = post.photos[0]; %>
             <% } else { %>
                 <% thumbnailImageUrl = url_for(post.permalink + post.photos[0]); %>
