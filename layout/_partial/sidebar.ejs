@@ -1,14 +1,16 @@
 <nav id="sidebar">
-    <div class="sidebar-profile">
-        <a href="<%- url_for('/about') %>">
-            <% if ((theme.gravatar_image) && (theme.author.email)) { %>
-                <img class="sidebar-profile-picture" src="<%- gravatar(theme.author.email, 90) %>"/>
-            <% } else if (theme.author.picture) { %>
-                <img class="sidebar-profile-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
-            <% } %>
-        </a>
-        <span class="sidebar-profile-name hide-md"><%= config.author %></span>
-    </div>
+    <% if (((theme.gravatar_image) && (theme.author.email)) || (theme.author.picture)) { %>
+        <div class="sidebar-profile">
+            <a href="<%- url_for('/about') %>">
+                <% if ((theme.gravatar_image) && (theme.author.email)) { %>
+                    <img class="sidebar-profile-picture" src="<%- gravatar(theme.author.email, 90) %>"/>
+                <% } else if (theme.author.picture) { %>
+                    <img class="sidebar-profile-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
+                <% } %>
+            </a>
+            <span class="sidebar-profile-name hide-md"><%= config.author %></span>
+        </div>
+    <% } %>
     <% for (var i in theme.sidebar) { %>
         <ul class="sidebar-buttons">
             <% for (var n in theme.sidebar[i]) { %>
