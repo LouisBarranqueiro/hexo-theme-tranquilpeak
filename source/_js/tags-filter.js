@@ -31,12 +31,12 @@
             // Detect keystroke of the user
             self.$inputSearch.keyup(function() {
                 self.filter(self.getSearch());
-            })
+            });
 
             // Block submit action
             self.$form.submit(function(e) {
                 e.preventDefault();
-            })
+            });
         },
 
         /**

@@ -35,7 +35,7 @@
             // Block submit action
             self.$form.submit(function(e) {
                 e.preventDefault();
-            })
+            });
         },
 
         /**
