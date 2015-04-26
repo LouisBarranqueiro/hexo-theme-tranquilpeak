@@ -24,6 +24,12 @@
         <%- partial('post/gallery', {photos: post.photos})%>
     <% } %>
     <div class="post-footer main-content-wrap">
+        <% if ((post.tags) && (post.tags.length > 0)) { %>
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                <%- partial('post/tag', {tags: post.tags})%>
+            </div>
+        <% } %>
         <%- partial('post/actions') %>
         <% if (config.disqus_shortname) { %>
             <%- partial('post/disqus') %>

@@ -106,17 +106,24 @@
             border-radius: 3px;
         }
     }
+    .post-footer {
+        &-tags {
+            padding-bottom: 10px;
+            margin-bottom:  10px;
+            border-bottom:  1px solid #eef2f8;
+        }
+    }
 }
 
 // Post's bottom bar which contains navigation and share options
 .post-bottom-bar {
-    position:                    fixed;
-    bottom:                      0;
-    height:                      60px;
-    background:                  white;
-    margin:                      0;
-    border-top:                  1px solid #eef2f8;
-    z-index:                     map-get($z-indexes, c-post-bottom-bar);
+    position:   fixed;
+    bottom:     0;
+    height:     60px;
+    background: white;
+    margin:     0;
+    border-top: 1px solid #eef2f8;
+    z-index:    map-get($z-indexes, c-post-bottom-bar);
 }
 
 // Respond to small screen and down

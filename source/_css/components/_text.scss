@@ -41,6 +41,10 @@
     font-size: map-get($font-size, small) !important;
 }
 
+.text-medium {
+    font-size: map-get($font-size, medium) !important;
+}
+
 .text-base {
     font-size: $font-size-base !important;
 }

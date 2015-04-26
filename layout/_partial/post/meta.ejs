@@ -10,12 +10,4 @@
         <span>in </span>
         <%- partial('category', {categories: post.categories})%>
     <% } %>
-    <% if ((post.tags) && (post.tags.length > 0)) { %>
-        <% if (post.categories.length == 0) { %>
-            <span>in </span>
-        <% } else { %>
-            <span>, </span>
-        <% } %>
-        <%- partial('tag', {tags: post.tags})%>
-    <% } %>
 </div>

@@ -1,6 +1,8 @@
 <% if ((tags) && (tags.length > 0)) { %>
     <%- list_tags(tags, {
         show_count: 0,
-        style: 'none'
+        style: 'none',
+        class: 'tag tag--primary tag--small t',
+        separator: ' '
     }) %>
 <% } %>
