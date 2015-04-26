@@ -8,7 +8,7 @@
         position:                    fixed;
         top:                         0;
         // used to animate the header on small screen with javascript
-        @include prefix(transition, top 0.2s ease-in-out, 'webkit' 'moz' 'ms' 'o');
+        //@include prefix(transition, top 0.25s ease-in-out, 'webkit' 'moz' 'ms' 'o');
         z-index:                     map-get($z-indexes, l-header);
         // Sidebar animation
         // Transition style (push)
@@ -61,7 +61,7 @@
         }
         // Class used to swipe to the top the header on small screen when the user scroll down
         &.header-up {
-            top: -#{map-get($header, height)};
+            @include prefix(transform, translate3d(0, -#{map-get($header, height)}, 0), 'webkit' 'moz');
         }
         // Used to animate the header (pushed effect)
         &.pushed {
