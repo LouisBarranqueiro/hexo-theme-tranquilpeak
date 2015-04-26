@@ -45,6 +45,6 @@ Production environment (before deploy your blog):
 
 Look into the code for more details about grunt tasks
 
-# Licence
+# License
 
-tranquil-peak-hexo-theme is released under the terms of the MIT license.
+tranquil-peak-hexo-theme is released under the terms of the [GNU General Public License v3.0](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/blob/master/LICENSE)
