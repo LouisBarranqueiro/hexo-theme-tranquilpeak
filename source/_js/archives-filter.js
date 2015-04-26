@@ -9,6 +9,7 @@
      * @constructor
      */
     var ArchivesFilter = function(archivesElem) {
+        this.$form          = $(archivesElem).find('#filter-form');
         this.$searchInput   = $(archivesElem).find('input[name=date]');
         this.$archiveResult = $(archivesElem).find('.archive-result');
         this.$postsYear     = $(archivesElem).find('.archive-year');
@@ -30,6 +31,11 @@
             self.$searchInput.keyup(function() {
                 self.filter(self.sliceDate(self.getSearch()));
             });
+
+            // Block submit action
+            self.$form.submit(function(e) {
+                e.preventDefault();
+            })
         },
 
         /**

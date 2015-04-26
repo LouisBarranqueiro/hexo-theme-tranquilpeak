@@ -9,6 +9,7 @@
      * @constructor
      */
     var TagsFilter = function(tagsArchivesElem) {
+        this.$form          = $(tagsArchivesElem).find('#filter-form');
         this.$inputSearch   = $(tagsArchivesElem + ' #filter-form input[name=tag]');
         this.$archiveResult = $(tagsArchivesElem).find('.archive-result');
         this.$tags          = $(tagsArchivesElem).find('.tag');
@@ -30,6 +31,11 @@
             // Detect keystroke of the user
             self.$inputSearch.keyup(function() {
                 self.filter(self.getSearch());
+            })
+
+            // Block submit action
+            self.$form.submit(function(e) {
+                e.preventDefault();
             })
         },
 

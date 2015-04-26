@@ -9,6 +9,7 @@
      * @constructor
      */
     var CategoriesFilter = function(categoriesArchivesElem) {
+        this.$form        = $(categoriesArchivesElem).find('#filter-form');
         this.$inputSearch = $(categoriesArchivesElem).find('input[name=category]');
         // Element where result of the filter are displayed
         this.$archiveResult = $(categoriesArchivesElem).find('.archive-result');
@@ -32,6 +33,11 @@
 
             self.$inputSearch.keyup(function() {
                 self.filter(self.getSearch());
+            })
+
+            // Block submit action
+            self.$form.submit(function(e) {
+                e.preventDefault();
             })
         },
 
