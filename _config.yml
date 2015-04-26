@@ -95,4 +95,3 @@ image_gallery: 1                       # Display an image gallery at the end of 
 
 # Miscellaneous
 google_analytics:    # Google analystics web property ID : UA-XXXXX-X
-rss: /atom.xml       # RSS URL
