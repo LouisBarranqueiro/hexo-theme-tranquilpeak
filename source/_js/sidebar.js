@@ -57,8 +57,8 @@
          * Open the sidebar by swiping to the right the sidebar and the blog
          */
         openSidebar: function() {
-            this.swipeSidebarToRight();
             this.swipeBlogToRight();
+            this.swipeSidebarToRight();
         },
 
         /**
@@ -91,18 +91,11 @@
 
             // Check if the sidebar isn't swiped and prevent multiple click on the open button with `.processing` class
             if (!self.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
-                // Position the sidebar at the right of the window
-                self.$sidebar
-                    .addClass('processing')
-                    .css({'left': '-' + self.$sidebar.width() + 'px'})
-                    .show();
-
                 // Swipe the sidebar to the right
-                self.$sidebar.addClass('pushed');
+                self.$sidebar.addClass('processing pushed');
 
                 setTimeout(function() {
-                    self.$sidebar
-                        .removeClass('processing');
+                    self.$sidebar.removeClass('processing');
                 }, 250);
             }
         },
