@@ -55,9 +55,7 @@ feed:
 
 If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
-
 ## Tranquil Peak configuration ##
-
 
 #### Sidebar configuration ####
 
@@ -184,7 +182,6 @@ Tranquil Peak provides you 3 pages to display all posts by tags, categories and 
 follow this guide.
 
 Page:  
-- **about**
 - **all-categories**
 - **all-tags**
 - **all-archives**
