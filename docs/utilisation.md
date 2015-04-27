@@ -2,6 +2,23 @@
 
 This documentation will help you to install tranquil-peak-hexo-theme and configure it to use all features which it provides
 
+## Summary ##
+
+- [Installation](#Installation)
+- [Hexo configuration](#Installation)
+    * [Archives configuration](#Installation)
+    * [Enable RSS feed](#enable-rss-feed)
+- [Tranquil Peak configuration](#tranquil-peak-configuration)
+    * [Sidebar](#sidebar)
+    * [Author](#author)
+    * [Customization](#customization)
+    * [Miscellaneous](#miscellaneous)
+    * [Enable all-categories page](#enable-all-categories-page)
+    * [Enable all-tags page](#enable-all-tags-page)
+    * [Enable all-archives page](#enable-all-archives-page)
+    * [Enable about page](#enable-about-page)
+- [Running](#running)  
+    
 ## Installation ##
 
 1.1 Download the latest version ready for production utilisation here : [tranquil-peak-hexo-theme-v1.0.0-production]
@@ -57,7 +74,7 @@ If you want more informations on this plugin : [hexo-generator-feed](https://git
 
 ## Tranquil Peak configuration ##
 
-#### Sidebar configuration ####
+#### Sidebar ####
 
 The sidebar is powerful and easily configurable.
 DON'T modify variables name ```sidebar```, ```title```, ```url``` and ```icon```.  
@@ -128,7 +145,7 @@ sidebar:
 - **url** : URL of the link. If the URL is internal, domain name is not necessary
 - **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
 
-#### Author configuration ####
+#### Author ####
 
 ```
 # Author
@@ -176,7 +193,7 @@ google_analytics:
 
 - **google_analytics** : Your Google analystics web property ID : UA-XXXXX-X
 
-#### Enable all-categories, all-tags, all-archives page ####
+#### Enable all-categories page ####
 
 Tranquil Peak provides you 3 pages to display all posts by tags, categories and date. To enable one of this pages, 
 follow this guide.
@@ -186,8 +203,36 @@ Page:
 - **all-tags**
 - **all-archives**
 
-For example, to enable ```all-archives``` page :  
-1. Run ```hexo new page "all-archives"```. A new folder named ```all-archives``` will be created in ```source/```  
+For example, to enable ```all-categoies``` page :  
+1. Run ```hexo new page "all-archives"```. A new folder named ```all-categories``` will be created in ```source/```  
+2. Replace ```source/all-categories/index.md``` content with :
+ 
+```
+title: "all-categories"
+layout: "all-categories"
+date: 2015-04-27 11:51:00
+---
+```
+
+New pages will be reach at : ```/all-categories```
+
+#### Enable all-tags page ####
+
+Same procedure as the previous step. Just replace ```all-categories``` by ```all-tags``` :
+1. Run ```hexo new page "all-tags"```. A new folder named ```all-tags``` will be created in ```source/```  
+2. Replace ```source/all-tags/index.md``` content with :
+ 
+```
+title: "all-tags"
+layout: "all-tags"
+date: 2015-04-27 11:51:00
+---
+```
+
+#### Enable all-archives page ####
+
+Same procedure as the previous step. Just replace ```all-tags``` by ```all-archives``` :
+1. Run ```hexo new page "about"```. A new folder named ```all-archives``` will be created in ```source/```  
 2. Replace ```source/all-archives/index.md``` content with :
  
 ```
@@ -196,10 +241,6 @@ layout: "all-archives"
 date: 2015-04-27 11:51:00
 ---
 ```
-
-You can enable other page by doing the same procedure and by replacing ```all-archives``` with ```all-tags``` and ```all-categories```
-
-New pages will be reach at : ```/all-archives```, ```/all-tags```, ```/all-categories```.
 
 #### Enable about page ####
 
