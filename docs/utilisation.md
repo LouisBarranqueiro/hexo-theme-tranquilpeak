@@ -184,6 +184,7 @@ Tranquil Peak provides you 3 pages to display all posts by tags, categories and 
 follow this guide.
 
 Page:  
+- **about**
 - **all-categories**
 - **all-tags**
 - **all-archives**
@@ -195,7 +196,7 @@ For example, to enable ```all-archives``` page :
 ```
 title: "all-archives"
 layout: "all-archives"
-date: 2015-04-07 11:51:00
+date: 2015-04-27 11:51:00
 ---
 ```
 
@@ -203,6 +204,19 @@ You can enable other page by doing the same procedure and by replacing ```all-ar
 ```all-categories```.
 
 New pages will be reach at : ```/all-archives```, ```/all-tags```, ```/all-categories```.
+
+#### Enable about page ####
+
+Same procedure as the previous step. Just replace ```all-archives``` by ```about``` :
+1. Run ```hexo new page "about"```. A new folder named ```about``` will be created in ```source/```  
+2. Modify ```source/about/index.md``` with
+ 
+```
+title: "about"
+layout: "about"
+date: 2015-04-27 11:51:00
+---
+```
 
 ## Running ##
 
