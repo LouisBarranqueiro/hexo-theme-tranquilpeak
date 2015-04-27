@@ -26,9 +26,7 @@ If you want to report a bug or ask a question, create an issue.
 ## Installation ##
 
 1.1 Download the latest version ready for production utilisation here : [tranquil-peak-hexo-theme-v1.0.0-production]
-(https://github
-.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-v1.0.0-production.zip) or choose an other version here : [all releases](https://github
-.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases)
+(https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-v1.0.0-production.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases)
 2. Rename the folder in ```tranquil-peak``` and place it in ```themes``` folder of your Hexo blog
 
 ## Hexo configuration ##
