@@ -282,4 +282,4 @@ If your images are located in ```source/_posts/{YOUR_POST_TITLE}/```, you just h
 
 ## Running ##
 
-3. Run ```hexo server``` and enjoy!
+Run ```hexo server``` and enjoy!
