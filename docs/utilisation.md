@@ -188,7 +188,7 @@ Page:
 
 For example, to enable ```all-archives``` page :  
 1. Run ```hexo new page "all-archives"```. A new folder named ```all-archives``` will be created in ```source/```  
-2. Modify ```source/all-archives/index.md``` with
+2. Replace ```source/all-archives/index.md``` content with :
  
 ```
 title: "all-archives"
@@ -197,8 +197,7 @@ date: 2015-04-27 11:51:00
 ---
 ```
 
-You can enable other page by doing the same procedure and by replacing ```all-archives``` with ```all-tags``` and 
-```all-categories```.
+You can enable other page by doing the same procedure and by replacing ```all-archives``` with ```all-tags``` and ```all-categories```
 
 New pages will be reach at : ```/all-archives```, ```/all-tags```, ```/all-categories```.
 
@@ -206,7 +205,7 @@ New pages will be reach at : ```/all-archives```, ```/all-tags```, ```/all-categ
 
 Same procedure as the previous step. Just replace ```all-archives``` by ```about``` :
 1. Run ```hexo new page "about"```. A new folder named ```about``` will be created in ```source/```  
-2. Modify ```source/about/index.md``` with
+2. Replace ```source/about/index.md``` content with :
  
 ```
 title: "about"
