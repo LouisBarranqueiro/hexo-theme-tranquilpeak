@@ -4,7 +4,8 @@ This documentation will help you to install tranquil-peak-hexo-theme and configu
 
 ## Installation ##
 
-1. Download the latest version ready for production utilisation here : [tranquil-peak-hexo-theme-v1.0.0-production](https://github
+1.1 Download the latest version ready for production utilisation here : [tranquil-peak-hexo-theme-v1.0.0-production]
+(https://github
 .com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-v1.0.0-production.zip) or choose an other version here : [all releases](https://github
 .com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases)
 2. Rename the folder in ```tranquil-peak``` and place it in ```themes``` folder of your Hexo blog
@@ -35,7 +36,7 @@ A category page look like this with ```category: 1``` :
 ![archives 1](https://hexo-tranquil-peak-demo.herokuapp.com/2013/12/25/gallery-post/archives-1.png)  
 
 The same page with ```category: 0```:  
-![archives 0](https://hexo-tranquil-peak-demo.herokuapp.com/2013/12/25/gallery-post/archive-0.png)  
+![archives 0](https://hexo-tranquil-peak-demo.herokuapp.com/2013/12/25/gallery-post/archives-0.png)  
 
 #### Enable RSS feed ####
 
@@ -57,10 +58,10 @@ If you want more informations on this plugin : [hexo-generator-feed](https://git
 
 ## Tranquil Peak configuration ##
 
+
 #### Sidebar configuration ####
 
 The sidebar is powerful and easily configurable.
-
 DON'T modify variables name ```sidebar```, ```title```, ```url``` and ```icon```.  
 Others variables name which refer to the name of a menu or a link can be edited. Example : ```menu```, ```home```, ```categories```, etc...  
 You can add groups of links and links much as you want  
@@ -131,9 +132,77 @@ sidebar:
 
 #### Author configuration ####
 
+```
+# Author
+author:
+    email:
+    bio:
+    job:
+    location:
+    picture:
+```
+
+- **email** : Your mail address. This address will be used if you activate gravatar option
+- **bio** : A short biography. Display on your about card
+- **job** : Your job
+- **location** : Your location
+- **picture** : Your profile picture. Overwritten by your gravatar image if gravatar option is enabled
+
 #### Customization ####
 
+```
+# Customization
+gravatar_image: 1                
+thumbnail_image: 1               
+read_more_message: Continue readiing
+go_to_message: Go to the website 
+cover: cover.png                 
+favicon:                         
+image_gallery: 1                 
+```
+
+- **gravatar_image** : Enable gravatar image. Using mail address of ```author.email```. (disable: 0, enable: 1). Overwrite `author.picture` everywhere in the blog
+- **thumbnail_image** : Post thumbnail image (disable: 0, enable: 1). Display the first photo
+- **read_more_message** : Message displayed after the <!-- more --> tag or after 300 characters
+- **go_to_message** : Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
+- **cover** : Your blog cover picture located in folder `source/assets/images/`
+- **favicon** : Your favicon located in folder `source/assets/images/`
+- **image_gallery** : Display an image gallery at the end of a post have ```photos``` variables
+
 #### Miscellaneous ####
+
+```
+# Miscellaneous
+google_analytics:
+```
+
+- **google_analytics** : Your Google analystics web property ID : UA-XXXXX-X
+
+#### Enable all-categories, all-tags, all-archives page ####
+
+Tranquil Peak provides you 3 pages to display all posts by tags, categories and date. To enable one of this pages, 
+follow this guide.
+
+Page:  
+- **all-categories**
+- **all-tags**
+- **all-archives**
+
+For example, to enable ```all-archives``` page :  
+1. Run ```hexo new page "all-archives"```. A new folder named ```all-archives``` will be created in ```source/```  
+2. Modify ```source/all-archives/index.md``` with
+ 
+```
+title: "all-archives"
+layout: "all-archives"
+date: 2015-04-07 11:51:00
+---
+```
+
+You can enable other page by doing the same procedure and by replacing ```all-archives``` with ```all-tags``` and 
+```all-categories```.
+
+New pages will be reach at : ```/all-archives```, ```/all-tags```, ```/all-categories```.
 
 ## Running ##
 
