@@ -7,8 +7,13 @@ If you want to report a bug or ask a question, create an issue.
 ## Summary ##
 
 - [Requirements](#requirements)
+- [Installation](#installation)
 - [Code structure](#code-structure)
-
+- [Build](#build)
+    * [NPM dependencies](#npm-dependencies)
+    * [Bower dependencies](#bower-dependencies)
+    * [Grunt tasks](#grunt-tasks)
+- [Running](#running)
  
 ## Requirements ##
 
