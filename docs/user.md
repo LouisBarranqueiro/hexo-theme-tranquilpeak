@@ -1,4 +1,4 @@
-# Utilisation #
+# User documentation #
 
 This documentation will help you to install tranquil-peak-hexo-theme and configure it to use all features which it provides
 
