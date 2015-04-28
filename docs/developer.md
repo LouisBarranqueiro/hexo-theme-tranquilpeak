@@ -13,6 +13,10 @@ If you want to report a bug or ask a question, create an issue.
     * [NPM dependencies](#npm-dependencies)
     * [Bower dependencies](#bower-dependencies)
     * [Grunt tasks](#grunt-tasks)
+        * [Tasks structure](#tasks-structure)
+        * [Pipeline](#pipeline)
+        * [Config tasks](#config-tasks)
+        * [Register tasks](#register-tasks)
 - [Running](#running)
  
 ## Requirements ##
@@ -199,7 +203,7 @@ Tranquil-peak-hexo-theme bower dependencies :
 
 ### Grunt tasks ###
 
-##### Grunt tasks structure ##### 
+##### Tasks structure ##### 
   
 ```
 ├── tasks
@@ -228,6 +232,7 @@ Tranquil-peak-hexo-theme bower dependencies :
 - **config** : default tasks
 - **register** : alias tasks which call mutliple default tasks
 - **pipeline.js** : Files which contains a list of javascript and stylesheets files linked to the blog
+
 ##### Pipeline ######
 
 ``` javascript
@@ -274,7 +279,7 @@ On production environment, these javascript and stylesheets files are concatenat
 - **uglify** : Minify ```source/assets/js/script.js``` file in ```source/assets/js/script.min.js```  
 - **watch** : Watch assets from ```source/_*/**/*``` folder to detect changes and launch ```SyncAssets``` task  
 
-##### Register tasks (Alias tasks) #####
+##### Register tasks #####
 
 - **build** : Sync bower dependencies, compile assets (css and js) and link it to views  
 - **buildProd** : Sync bower dependencies, compile assets (css and js) with some optimization (concat and minify) and link it to views  
