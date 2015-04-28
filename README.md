@@ -16,12 +16,12 @@ Compatibility : Hexo v3.0.0 or later
 
 ## Quick start ##
 
-**For users :** 
+**For users** :  
 1. Download the latest version ready for production utilisation here : [tranquil-peak-hexo-theme-v1.0.0-production]
 (https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-v1.0.0-production.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases)  
 2. Follow [user documentation](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/blob/master/docs/user.md) to install and configure the theme  
 
-**For developers :** Run ```git clone https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme.git```
+**For developers** : Run ```git clone https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme.git```
 
 ## Demo  ##
 
