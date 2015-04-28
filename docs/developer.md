@@ -167,39 +167,43 @@ tranquil-peak-hexo-theme
 ## Build ##
 
 To build the theme, you have to install :  
-2. Grunt : ```npm install grunt -g```. Install Grunt globally
-3. Bower : ```npm install bower -g```. Install Bower globally
+1. Grunt : ```npm install grunt -g```. Install Grunt globally
+2. Bower : ```npm install bower -g```. Install Bower globally
 
 ### NPM dependencies ###
 
 To install npm dependencies, run ```npm install```  
   
-Tranquil-peak-hexo-theme npm dependencies :  
- - **bower** : ^1.3.12
- - **grunt** : ^0.4.5
- - **grunt-bower** : ^0.18.0
- - **grunt-contrib-clean** : ~0.5.0
- - **grunt-contrib-concat** : ^0.5.0
- - **grunt-contrib-copy** : ~0.4.1
- - **grunt-contrib-cssmin** : ^0.12.0
- - **grunt-contrib-sass** : ^0.8.1
- - **grunt-contrib-uglify** : ^0.7.0
- - **grunt-contrib-watch** : ^0.6.1
- - **grunt-sails-linker** : ^0.10.1
- - **grunt-sync** : ^0.2.3
- - **grunt-text-replace** : ^0.4.0
- - **include-all** : ^0.1.6
- - **load-grunt-tasks** : ~0.2.0
+NPM dependencies :  
+``` json
+"bower" : "^1.3.12"
+"grunt" : "^0.4.5"
+"grunt-bower" : "^0.18.0"
+"grunt-contrib-clean" : "~0.5.0"
+"grunt-contrib-concat" : "^0.5.0"
+"grunt-contrib-copy" : "~0.4.1"
+"grunt-contrib-cssmin" : "^0.12.0"
+"grunt-contrib-sass" : "^0.8.1"
+"grunt-contrib-uglify" : "^0.7.0"
+"grunt-contrib-watch" : "^0.6.1"
+"grunt-sails-linker" : "^0.10.1"
+"grunt-sync" : "^0.2.3"
+"grunt-text-replace" : "^0.4.0"
+"include-all" : "^0.1.6"
+"load-grunt-tasks" : "~0.2.0"
+```
  
 ### Bower dependencies ###
 
 To install bower dependencies, run ```bower install```  
 Bower dependencies are located in ```source/_bower_components```
 
-Tranquil-peak-hexo-theme bower dependencies :  
-- **Font-awesome** : ~4.3.0
-- **jQuery** : ~2.1.3
-- **Fancybox** : ~2.1.5
+Bower dependencies :  
+``` json
+"Font-awesome" : "~4.3.0"
+"jQuery" : "~2.1.3"
+"Fancybox" : "~2.1.5"
+```
 
 ### Grunt tasks ###
 
@@ -233,7 +237,7 @@ Tranquil-peak-hexo-theme bower dependencies :
 - **register** : alias tasks which call mutliple default tasks
 - **pipeline.js** : Files which contains a list of javascript and stylesheets files linked to the blog
 
-##### Pipeline ######
+#### Pipeline #####
 
 ``` javascript
 // Js files to inject in `layout/_partial/script.ejs`
@@ -257,7 +261,7 @@ var tranquilPeakCssFilesToInject = [
 
 On production environment, these javascript and stylesheets files are concatenate and minify in 1 javascript file and 1 stylesheet file and linked to their respective views
 
-##### Config tasks #####
+#### Config tasks ####
 
 - **bower** : Copy all needed files by types from bower dependencies  
 - **clean** : Delete ```source/assets``` folder  
@@ -279,7 +283,7 @@ On production environment, these javascript and stylesheets files are concatenat
 - **uglify** : Minify ```source/assets/js/script.js``` file in ```source/assets/js/script.min.js```  
 - **watch** : Watch assets from ```source/_*/**/*``` folder to detect changes and launch ```SyncAssets``` task  
 
-##### Register tasks #####
+#### Register tasks ####
 
 - **build** : Sync bower dependencies, compile assets (css and js) and link it to views  
 - **buildProd** : Sync bower dependencies, compile assets (css and js) with some optimization (concat and minify) and link it to views  
