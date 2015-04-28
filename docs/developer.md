@@ -199,7 +199,7 @@ Tranquil-peak-hexo-theme bower dependencies :
 
 ### Grunt tasks ###
 
-Grunt tasks :  
+##### Grunt tasks structure ##### 
   
 ```
 ├── tasks
@@ -224,8 +224,36 @@ Grunt tasks :
     │   └── watch.js
     └── pipeline.js
 ```  
-  
-Config tasks :  
+
+- **config** : default tasks
+- **register** : alias tasks which call mutliple default tasks
+- **pipeline.js** : Files which contains a list of javascript and stylesheets files linked to the blog
+##### Pipeline ######
+
+``` javascript
+// Js files to inject in `layout/_partial/script.ejs`
+var tranquilPeakJsFilesToInject = [
+    'jquery.js',
+    'jquery.fancybox.js',
+    'jquery.fancybox-thumbs.js',
+    'tranquil-peak.js'
+];
+// Css files to inject in `layout/_partial/head.ejs`
+var tranquilPeakCssFilesToInject = [
+    'font-awesome.css',
+    'jquery.fancybox.css',
+    'jquery.fancybox-thumbs.css',
+    'tranquil-peak.css'
+];
+```
+
+- **tranquilPeakJsFilesToInject** :  files injected in ```layout/_partial/script.ejs``` (developement environment)
+- **tranquilPeakCssFilesToInject** :  files injected in```layout/_partial/head.ejs``` (developement environment)
+
+On production environment, these javascript and stylesheets files are concatenate and minify in 1 javascript file and 1 stylesheet file and linked to their respective views
+
+##### Config tasks #####
+
 - **bower** : Copy all needed files by types from bower dependencies  
 - **clean** : Delete ```source/assets``` folder  
 - **concat** : 
@@ -246,22 +274,23 @@ Config tasks :
 - **uglify** : Minify ```source/assets/js/script.js``` file in ```source/assets/js/script.min.js```  
 - **watch** : Watch assets from ```source/_*/**/*``` folder to detect changes and launch ```SyncAssets``` task  
 
-Register tasks :  
+##### Register tasks (Alias tasks) #####
+
 - **build** : Sync bower dependencies, compile assets (css and js) and link it to views  
 - **buildProd** : Sync bower dependencies, compile assets (css and js) with some optimization (concat and minify) and link it to views  
 - **compileAssets** : Compile scss files, concat js files and syncrhonize images  
 - **linkAssets** : Link all javascript and stylesheets files to views  
-- **linkAssetsProd** : Link one javascript file and one stylesheet file (concated and minified) to views  
+- **linkAssetsProd** : Link one javascript file and one stylesheet file (concatenated and minified) to views  
 - **syncAssets** : Sync assets  
 - **watch** : Build the project after change on assets  
 
 When you run ```build``` or ```buildProd``` tasks, a ```source/assets``` folder will be created with all files generated into. When you will start your hexo server, only this folder will be copied in ```public``` folder
 
-Development environment:  
+**Development environment**:    
 - Use for the first time : ```grunt build``` to sync bower dependencies and compile assets and link it to views 
 - after, run : ```grunt watch``` to automatically re-build the project after change on assets
 
-Production environment (before deploy your blog):  Use: ```grunt buildProd``` to build the project with some optimization (concat and minify).  
+**Production environment (before deploying your blog)**:  Use: ```grunt buildProd``` to build the project with some optimization (concat and minify).  
 Your blog will have only 1 file for javascript and 1 file for stylesheets to reduce HTTP requests and improve performance.
 
 ## Running ##
