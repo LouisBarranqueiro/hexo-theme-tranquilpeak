@@ -73,221 +73,221 @@ figure.highlight {
 .highlight {
     // General
     .comment {
-        color: map-get($highlight-colors, pewter);;
+        color: map-get($highlight-colors, pewter);
     }
     .string {
-        color: map-get($highlight-colors, persimmon);;
+        color: map-get($highlight-colors, persimmon);
     }
     .keyword {
-        color: map-get($highlight-colors, cardinal);;
+        color: map-get($highlight-colors, cardinal);
     }
     // ApacheConf
     &.apacheconf .code {
         .common,
         .cbracket,
         .keyword {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .sqbracket {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .tag {
-            color: map-get($highlight-colors, asparagus);;
+            color: map-get($highlight-colors, asparagus);
         }
     }
     // Bash
     &.bash .code {
         .shebang {
-            color: map-get($highlight-colors, pewter);;
+            color: map-get($highlight-colors, pewter);
         }
         .literal,
         .built_in {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .variable {
-            color: map-get($highlight-colors, night-rider);;
+            color: map-get($highlight-colors, night-rider);
         }
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
     }
     // coffescript
     &.coffeescript .code {
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .literal,
         .built_in,
         .number {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .reserved,
         .attribute {
-            color: map-get($highlight-colors, bahama-blue);;
+            color: map-get($highlight-colors, bahama-blue);
         }
         .subst,
         .regexp {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
     }
     // C/C++
     &.cpp .code,
     &.c .code {
         .preprocessor {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .number,
         .built_in {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // C#
     &.cs .code {
         .preprocessor,
         .preprocessor .keyword {
-            color: map-get($highlight-colors, night-rider);;
+            color: map-get($highlight-colors, night-rider);
         }
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .number,
         .built_in {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .xmlDocTag {
-            color: map-get($highlight-colors, asparagus);;
+            color: map-get($highlight-colors, asparagus);
         }
     }
     // CSS
     &.css .code {
         .at_rule,
         .important {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .attribute,
         .hexcolor,
         .number,
         .function {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .attr_selector,
         .value {
-            color: map-get($highlight-colors, night-rider);;
+            color: map-get($highlight-colors, night-rider);
         }
         .id,
         .class,
         .pseudo {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .tag {
-            color: map-get($highlight-colors, asparagus);;
+            color: map-get($highlight-colors, asparagus);
         }
     }
     // Diff
     &.diff .code {
         .chunk {
-            color:       map-get($highlight-colors, scampi);;
+            color:       map-get($highlight-colors, scampi);
             font-weight: bold;
         }
         .addition {
-            color:            map-get($highlight-colors, limeade);;
-            background-color: map-get($highlight-colors, honeydew);;
+            color:            map-get($highlight-colors, limeade);
+            background-color: map-get($highlight-colors, honeydew);
         }
         .deletion {
-            color:            map-get($highlight-colors, free-speech-red);;
-            background-color: map-get($highlight-colors, misty-rose);;
+            color:            map-get($highlight-colors, free-speech-red);
+            background-color: map-get($highlight-colors, misty-rose);
         }
     }
     // HTTP
     &.http .code {
         .literal,
         .attribute {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .request {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
     }
     // INI
     &.ini .code {
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .setting {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .value,
         .keyword {
-            color: map-get($highlight-colors, night-rider);;
+            color: map-get($highlight-colors, night-rider);
         }
     }
     // JAVA
     &.java .code {
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .javadoc {
-            color: map-get($highlight-colors, pewter);;
+            color: map-get($highlight-colors, pewter);
         }
         .javadoctag {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .number {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .params {
-            color: map-get($highlight-colors, bahama-blue);;
+            color: map-get($highlight-colors, bahama-blue);
         }
     }
     // JavaScript
     &.js .code {
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .javadoc {
-            color: map-get($highlight-colors, pewter);;
+            color: map-get($highlight-colors, pewter);
         }
         .tag,
         .javadoctag {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .tag .title {
-            color: map-get($highlight-colors, night-rider);;
+            color: map-get($highlight-colors, night-rider);
         }
         .regexp {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .built_in,
         .literal,
         .number {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // JSON
     &.json .code {
         .attribute {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .number {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // Makefile
     &.mak .code {
         .constant {
-            color: map-get($highlight-colors, night-rider);;
+            color: map-get($highlight-colors, night-rider);
         }
         .variable {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .keyword {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // Markdown
@@ -297,11 +297,11 @@ figure.highlight {
         .strong,
         .emphasis,
         .blockquote {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .link_reference,
         .code {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .link_url {
             text-decoration: underline;
@@ -310,138 +310,138 @@ figure.highlight {
     // Nginx
     &.nginx .code {
         .title {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .built_in {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .regexp,
         .number {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .variable {
-            color: map-get($highlight-colors, night-rider);;
+            color: map-get($highlight-colors, night-rider);
         }
     }
     // Objective-C
     &.objectivec .code {
         .preprocessor {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
 
             .title {
-                color: map-get($highlight-colors, persimmon);;
+                color: map-get($highlight-colors, persimmon);
             }
         }
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .literal,
         .number,
         .built_in {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // Perl
     &.perl .code {
         .sub {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .regexp {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
     }
     // PHP
     &.php .code {
         .phpdoc {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .regexp {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .literal,
         .number {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
     }
     // Python
     &.python .code {
         .decorator,
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .number {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // Ruby
     &.ruby .code {
         .parent,
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .prompt,
         .constant,
         .number,
         .subst .keyword,
         .symbol {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // SQL
     &.sql {
         .built_in {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .number {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // XML, HTML
     &.xml {
         .tag {
-            color: map-get($highlight-colors, night-rider);;
+            color: map-get($highlight-colors, night-rider);
         }
         .value {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .attribute {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .title {
-            color: map-get($highlight-colors, asparagus);;
+            color: map-get($highlight-colors, asparagus);
         }
     }
     // Puppet
     &.puppet {
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .function {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // LESS
     &.less {
         .tag,
         .at_rule {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .number,
         .hexcolor,
         .function,
         .attribute {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .built_in {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .id,
         .pseudo,
         .class {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
     }
     // SCSS
@@ -449,69 +449,69 @@ figure.highlight {
         .tag,
         .at_rule,
         .important {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .preprocessor,
         .number,
         .hexcolor,
         .function,
         .attribute {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .variable {
-            color: map-get($highlight-colors, night-rider);;
+            color: map-get($highlight-colors, night-rider);
         }
         .built_in {
-            color: map-get($highlight-colors, persimmon);;
+            color: map-get($highlight-colors, persimmon);
         }
         .id,
         .pseudo,
         .class {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
     }
     // Stylus
     &.stylus {
         .at_rule {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .tag {
-            color: map-get($highlight-colors, asparagus);;
+            color: map-get($highlight-colors, asparagus);
         }
         .number,
         .hexcolor,
         .attribute,
         .params {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
         .class,
         .id,
         .pseudo,
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
     }
     // Go
     &.go {
         .typename {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .built_in,
         .constant {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // Swift
     &.swift {
         .preprocessor {
-            color: map-get($highlight-colors, cardinal);;
+            color: map-get($highlight-colors, cardinal);
         }
         .title {
-            color: map-get($highlight-colors, scampi);;
+            color: map-get($highlight-colors, scampi);
         }
         .built_in,
         .number {
-            color: map-get($highlight-colors, bondi-blue);;
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
 }
