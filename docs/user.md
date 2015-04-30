@@ -202,8 +202,8 @@ follow this guide.
 
 #### Enable all-categories page ####
 
-To enable ```all-categoies``` page :  
-1. Run ```hexo new page "all-archives"```. A new folder named ```all-categories``` will be created in ```source/```  
+To enable ```all-categories``` page :  
+1. Run ```hexo new page "all-categories"```. A new folder named ```all-categories``` will be created in ```source/```  
 2. Replace ```source/all-categories/index.md``` content with :
  
 ``` markdown
@@ -278,7 +278,8 @@ photos:
 - **coverImage** : Image displayed in large at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image.
 - **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image.
 
-If your images are located in ```source/_posts/{YOUR_POST_TITLE}/```, you just have to enter the name of the image without domain name and path like written just above.
+The relative path of images entered is : ```source/_posts/{YOUR_POST_TITLE}/```, you just have to enter the name of the image without domain name and path like written just above.  
+Of course, you can set external url.
 
 ## Running ##
 
