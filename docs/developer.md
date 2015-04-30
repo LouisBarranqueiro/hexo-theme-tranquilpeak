@@ -2,18 +2,18 @@
 
 This documentation will help you to understand tranquil-peak-hexo-theme code.  
 
-If you want to report a bug or ask a question, create an issue.
+If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/issues/new).
 
 ## Summary ##
 
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Code structure](#code-structure)
-   * [Views](#views)
-   * [Assets](#assets)
-        * [Stylesheets](#stylesheets)
-        * [Images](#images)
-        * [Javascript](#javascript)
+    * [Views](#views)
+    * [Assets](#assets)
+         * [Stylesheets](#stylesheets)
+         * [Images](#images)
+         * [Javascript](#javascript)
 - [Build](#build)
     * [NPM dependencies](#npm-dependencies)
     * [Bower dependencies](#bower-dependencies)
@@ -27,6 +27,7 @@ If you want to report a bug or ask a question, create an issue.
 ## Requirements ##
 
 - [node](https://nodejs.org) v0.10.35 or later
+- [Hexo-cli](https://github.com/hexojs/hexo-cli) v0.1.4. Run ```npm install hexo-cli -g```
 
 ## Installation ##
 
@@ -443,4 +444,4 @@ Your blog will have only 1 file for javascript and 1 file for stylesheets to red
 
 ## Running ##
 
-Run ```hexo server``` and start coding!
+Run ```hexo server``` and start coding! :)
