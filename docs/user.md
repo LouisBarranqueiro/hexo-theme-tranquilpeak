@@ -1,16 +1,19 @@
 # User documentation #
 
+Tranquil-peak theme is comptabile with Hexo v3.0.0 or higher
+
 This documentation will help you to install tranquil-peak-hexo-theme and configure it to use all features which it provides.  
 
-If you want to report a bug or ask a question, create an issue.
+If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/issues/new).
 
 ## Summary ##
 
-- [Installation](#Installation)
-- [Hexo configuration](#Installation)
-    * [Archives configuration](#Installation)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Hexo configuration](#hexo-configuration)
+    * [Archives configuration](#archives-configuration)
     * [Enable RSS feed](#enable-rss-feed)
-- [Tranquil Peak configuration](#tranquil-peak-configuration)
+- [Tranquil-peak configuration](#tranquil-peak-configuration)
     * [Sidebar](#sidebar)
     * [Author](#author)
     * [Customization](#customization)
@@ -22,7 +25,12 @@ If you want to report a bug or ask a question, create an issue.
         * [Enable about page](#enable-about-page)
 - [Front-matter settings](#front-matter-settings)
 - [Running](#running)  
-    
+
+## Requirements ##
+
+- [node](https://nodejs.org) v0.10.35 or higher
+- [Hexo-cli](https://github.com/hexojs/hexo-cli) v0.1.4. Run ```npm install hexo-cli -g```
+
 ## Installation ##
 
 1.1 Download the latest version ready for production utilisation here : [tranquil-peak-hexo-theme-v1.0.0-production]
@@ -74,7 +82,7 @@ feed:
 
 If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
-## Tranquil Peak configuration ##
+## Tranquil-peak configuration ##
 
 ### Sidebar ###
 
@@ -263,7 +271,7 @@ The click on a link with ```href="/about"```  will be blocked and handled by a j
 
 ### Front-matter settings ###
 
-Tranquil Peak introduce 2 new variables to configure precisly the style of your post : ```thumbnailImage``` and ```coverImage```.  
+Tranquil-peak introduces 2 new variables to configure precisly the style of your post : ```thumbnailImage``` and ```coverImage```.  
   
 Example :  
 ``` markdown
@@ -283,4 +291,4 @@ Of course, you can set external url.
 
 ## Running ##
 
-Run ```hexo server``` and enjoy!
+Run ```hexo server``` and start writting! :)
