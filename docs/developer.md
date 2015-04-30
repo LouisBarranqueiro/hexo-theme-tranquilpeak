@@ -164,10 +164,10 @@ tranquil-peak-hexo-theme
 └── package.json
 ```
 
-- **docs** : contains user and developer documentation
-- **layout** : contains all views
-- **source** : contains all assets (css, js and images)
-- **tasks** : contains all grunt tasks
+- **docs** : Contains user and developer documentation
+- **layout** : Contains all views
+- **source** : Contains all assets (css, js and images)
+- **tasks** : Contains all grunt tasks
 
 ### Views ###
 
@@ -270,7 +270,7 @@ If you want more informations and to understand better this code, consult [sass 
     └── cover.png
 ```
 
-- **cover.png** : default background cover of the blog
+- **cover.png** : Default background cover of the blog
   
 Contains all images of the theme.  
 
@@ -298,7 +298,7 @@ Contains all images of the theme.
 - **image-gallery.js** : Resize all images of an image-gallery
 - **post-bottom-bar.js** : Hide the post bottom bar when the post footer is visible by the user, and vice versa
 - **sidebar.js** : Open and close the sidebar by swiping the sidebar and the blog and vice versa
-- **smartresize.js** : debouncing function from [John Hann](https://github.com/unscriptable)
+- **smartresize.js** : Debouncing function from [John Hann](https://github.com/unscriptable)
 - **tags-filter.scss** : Filter posts by using their tags on archives page : `/tags`  
   
 Each files correspond to a feature.  
@@ -372,8 +372,8 @@ Bower dependencies :
     └── pipeline.js
 ```  
 
-- **config** : default tasks
-- **register** : alias tasks which call mutliple default tasks
+- **config** : Default tasks
+- **register** : Alias tasks which call mutliple default tasks
 - **pipeline.js** : Files which contains a list of javascript and stylesheets files linked to the blog
 
 #### Pipeline #####
@@ -395,8 +395,8 @@ var tranquilPeakCssFilesToInject = [
 ];
 ```
 
-- **tranquilPeakJsFilesToInject** :  files injected in ```layout/_partial/script.ejs``` (developement environment)
-- **tranquilPeakCssFilesToInject** :  files injected in```layout/_partial/head.ejs``` (developement environment)
+- **tranquilPeakJsFilesToInject** :  Files injected in ```layout/_partial/script.ejs``` (developement environment)
+- **tranquilPeakCssFilesToInject** :  Files injected in```layout/_partial/head.ejs``` (developement environment)
 
 On production environment, these javascript and stylesheets files are concatenate and minify in 1 javascript file and 1 stylesheet file and linked to their respective views
 
