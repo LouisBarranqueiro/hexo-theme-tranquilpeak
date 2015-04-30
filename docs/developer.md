@@ -9,6 +9,11 @@ If you want to report a bug or ask a question, create an issue.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Code structure](#code-structure)
+   * [Views](#views)
+   * [Assets](#assets)
+        * [Stylesheets](#stylesheets)
+        * [Images](#images)
+        * [Javascript](#javascript)
 - [Build](#build)
     * [NPM dependencies](#npm-dependencies)
     * [Bower dependencies](#bower-dependencies)
@@ -48,7 +53,7 @@ tranquil-peak-hexo-theme
 │   │   │   ├── gallery.ejs
 │   │   │   ├── header.ejs
 │   │   │   ├── meta.ejs
-│   │   │   └──  tag.ejs
+│   │   │   └── tag.ejs
 │   │   ├── about.ejs
 │   │   ├── archive-post.ejs
 │   │   ├── archive.ejs
@@ -61,11 +66,11 @@ tranquil-peak-hexo-theme
 │   │   ├── pagination.ejs
 │   │   ├── post.ejs
 │   │   ├── script.ejs
-│   │   └──  sidebar.ejs
+│   │   └── sidebar.ejs
 │   ├── all-archives.ejs
 │   ├── all-categories.ejs
 │   ├── all-tags.ejs
-│   ├──archives.ejs
+│   ├── archives.ejs
 │   ├── category.ejs
 │   ├── index.ejs
 │   ├── layout.ejs
@@ -164,6 +169,140 @@ tranquil-peak-hexo-theme
 - **source** : contains all assets (css, js and images)
 - **tasks** : contains all grunt tasks
 
+### Views ###
+
+```
+├── layout
+    ├── _partial
+    │   ├── post
+    │   │   ├── actions.ejs
+    │   │   ├── category.ejs
+    │   │   ├── disqus.ejs
+    │   │   ├── gallery.ejs
+    │   │   ├── header.ejs
+    │   │   ├── meta.ejs
+    │   │   └── tag.ejs
+    │   ├── about.ejs
+    │   ├── archive-post.ejs
+    │   ├── archive.ejs
+    │   ├── cover.ejs
+    │   ├── footer.ejs
+    │   ├── google-analytics.ejs
+    │   ├── head.ejs
+    │   ├── header.ejs
+    │   ├── index.ejs
+    │   ├── pagination.ejs
+    │   ├── post.ejs
+    │   ├── script.ejs
+    │   └── sidebar.ejs
+    ├── all-archives.ejs
+    ├── all-categories.ejs
+    ├── all-tags.ejs
+    ├── archives.ejs
+    ├── category.ejs
+    ├── index.ejs
+    ├── layout.ejs
+    ├── page.ejs
+    ├── post.ejs
+    └── tag.ejs
+``
+- **layout** : contails all mains views
+- **layout/partial** : contains all partial views included in main views
+- **layout/partial/post** : contains all partial views to build post
+
+### Assets ###
+
+#### Stylesheets ####
+    
+```
+├── _css
+    ├── base
+    │   ├── _base.scss
+    ├── components
+    │   ├── archives.scss
+    │   ├── _box.scss
+    │   ├── _button.scss
+    │   ├── _category.scss
+    │   ├── _form.scss
+    │   ├── _hide.scss
+    │   ├── _highlight.scss
+    │   ├── _icon.scss
+    │   ├── _image-gallery.scss
+    │   ├── _link.scss
+    │   ├── _main-content.scss
+    │   ├── _markdown.scss
+    │   ├── _pagination.scss
+    │   ├── _post-actions.scss
+    │   ├── _post.scss
+    │   ├── _pullquote.scss
+    │   ├── _tag.scss
+    │   ├── _text.scss
+    │   ├── _tooltip.scss
+    │   └── _video.scss
+    ├── layout
+    │   ├── _about.scss
+    │   ├── _blog.scss
+    │   ├── _cover.scss
+    │   ├── _footer.scss
+    │   ├── _header.scss
+    │   ├── _main.scss
+    │   └── _sidebar.scss
+    ├── utils
+    │   ├── mixins
+    │   │   ├── _button.scss
+    │   │   ├── _category.scss
+    │   │   ├── _form.scss
+    │   │   ├── _opacity.scss
+    │   │   ├── _prefix.scss
+    │   │   └── _tag.scss
+    │   ├── _font.scss
+    │   └── _variables.scss
+    └── tranquil-peak.scss
+```  
+  
+SCSS structure follow 7-1 pattern of [sass guidelines](http://sass-guidelin.es/#the-7-1-pattern)  
+If you want more informations and to understand better this code, consult [sass guidelines](http://sass-guidelin.es/)  
+
+#### Images #####
+
+```
+├── _images
+    └── cover.png
+```
+
+- **cover.png** : default background cover of the blog
+  
+Contains all images of the theme.  
+
+#### Javascript #####
+
+```
+├── _js
+    ├── about.js
+    ├── archives-filter.js
+    ├── categories-filter.js
+    ├── fancybox.js.js
+    ├── header.js
+    ├── image-gallery.js
+    ├── post-bottom-bar.js
+    ├── sidebar.js
+    ├── smartresize.js
+    └── tags-filter.scss
+```
+
+- **about.js** : Fade out the blog and let drop the about card of the author and vice versa
+- **archives-filter.js** : Filter posts by using their date on archives page : `/archives`
+- **categories-filter.js** : Filter posts by using their categories on archives page : `/categories`
+- **fancybox.js.js** : Run Fancybox plugin
+- **header.js** : Hide the header when the user scrolls down, and show it when he scrolls up
+- **image-gallery.js** : Resize all images of an image-gallery
+- **post-bottom-bar.js** : Hide the post bottom bar when the post footer is visible by the user, and vice versa
+- **sidebar.js** : Open and close the sidebar by swiping the sidebar and the blog and vice versa
+- **smartresize.js** : debouncing function from [John Hann](https://github.com/unscriptable)
+- **tags-filter.scss** : Filter posts by using their tags on archives page : `/tags`  
+  
+Each files correspond to a feature.  
+  
 ## Build ##
 
 To build the theme, you have to install :  
@@ -285,13 +424,13 @@ On production environment, these javascript and stylesheets files are concatenat
 
 #### Register tasks ####
 
-- **build** : Sync bower dependencies, compile assets (css and js) and link it to views  
-- **buildProd** : Sync bower dependencies, compile assets (css and js) with some optimization (concat and minify) and link it to views  
+- **build** : Synchronize bower dependencies, compile assets (css and js) and link it to views  
+- **buildProd** : Synchronize bower dependencies, compile assets (css and js) with some optimization (concat and minify) and link it to views  
 - **compileAssets** : Compile scss files, concat js files and syncrhonize images  
 - **linkAssets** : Link all javascript and stylesheets files to views  
 - **linkAssetsProd** : Link one javascript file and one stylesheet file (concatenated and minified) to views  
-- **syncAssets** : Sync assets  
-- **watch** : Build the project after change on assets  
+- **syncAssets** : Synchronize assets (css, js and images)
+- **watch** : Synchronize assets (css, js and images) after changes 
 
 When you run ```build``` or ```buildProd``` tasks, a ```source/assets``` folder will be created with all files generated into. When you will start your hexo server, only this folder will be copied in ```public``` folder
 
