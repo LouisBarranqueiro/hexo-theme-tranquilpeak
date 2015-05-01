@@ -22,7 +22,6 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Enable all-categories page](#enable-all-categories-page)
         * [Enable all-tags page](#enable-all-tags-page)
         * [Enable all-archives page](#enable-all-archives-page)
-        * [Enable about page](#enable-about-page)
 - [Front-matter settings](#front-matter-settings)
 - [Running](#running)  
 
@@ -251,21 +250,6 @@ date: 2015-04-27 11:51:00
 ---
 ```
 New page will be reach at : ```/all-archives```
-
-#### Enable about page ####
-
-To enable ```about``` page :    
-1. Run ```hexo new page "about"```. A new folder named ```about``` will be created in ```source/```  
-2. Replace ```source/about/index.md``` content with :
- 
-``` markdown
-title: "about"
-layout: "about"
-date: 2015-04-27 11:51:00
----
-```
-
-The click on a link with ```href="/about"```  will be blocked and handled by a javascript function to animate and display a card with your informations 
 
 ## Writing posts ##
 
