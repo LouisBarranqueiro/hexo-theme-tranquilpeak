@@ -28,8 +28,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Requirements ##
 
-- [node](https://nodejs.org) v0.10.35 or higher
-- [Hexo-cli](https://github.com/hexojs/hexo-cli) v0.1.4. Run ```npm install hexo-cli -g```
+1. **Node** : v0.10.35 or higher
+2. **Hexo CLI** : v0.1.4 or higher. Run ```npm install hexo-cli -g```
 
 ## Installation ##
 
