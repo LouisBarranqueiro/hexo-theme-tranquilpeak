@@ -1,10 +1,10 @@
 {
     "name":         "tranquil-peak-hexo-theme",
-    "version":      "0.1",
+    "version":      "1.0",
     "authors":      [
         "Louis Barranqueiro"
     ],
-    "license":      "MIT",
+    "license":      "GNU General Public License v3.0",
     "ignore":       [
         "**/.*",
         "node_modules",
