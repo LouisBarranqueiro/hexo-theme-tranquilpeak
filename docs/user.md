@@ -119,7 +119,7 @@ sidebar:
             icon: archive
         about:
             title: About me
-            url: /about
+            url: /#about
             icon: question
     author_links:
         # github:
