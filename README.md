@@ -24,7 +24,7 @@ A gorgeous theme for Hexo blog
 
 ## Features ##
 
-**Features :**  
+**General features :**  
 - Fully responsive  
 - Optimized for tablets & mobiles  
 - Configurable menu of the sidebar  
@@ -39,7 +39,7 @@ A gorgeous theme for Hexo blog
 - Responsive videos & images  
 - Sharing options  
 - Navigation menu  
-- Special GitHub Gist theme for code highlighting  
+- GitHub theme for code highlighting  
 - Image gallery  
   
   
