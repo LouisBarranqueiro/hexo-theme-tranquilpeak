@@ -1,6 +1,6 @@
 # Tranquil-peak Hexo theme
 
-A gorgeous theme for Hexo blog 
+A gorgeous responsive theme for Hexo blog framework 
 
 ![Tranquil Peak](https://hexo-tranquil-peak-demo.herokuapp.com/2013/12/25/gallery-post/tranquil-peak.png)
 

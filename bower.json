@@ -1,6 +1,7 @@
 {
     "name":         "tranquil-peak-hexo-theme",
     "version":      "1.0",
+    "description":  "A gorgeous responsive theme for Hexo blog framework",
     "authors":      [
         "Louis Barranqueiro"
     ],

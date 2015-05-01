@@ -1,7 +1,7 @@
 {
     "name":            "tranquil-peak-hexo-theme",
     "version":         "1.0.0",
-    "description":     "A gorgeous theme for Hexo static blog",
+    "description":     "A gorgeous responsive theme for Hexo blog framework ",
     "main":            "Gruntfile.js",
     "scripts":         {
         "test": "echo \"Error: no test specified\" && exit 1"
