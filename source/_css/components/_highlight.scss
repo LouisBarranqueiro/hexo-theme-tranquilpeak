@@ -194,7 +194,7 @@ figure.highlight {
         }
         .addition {
             color:            map-get($highlight-colors, limeade);
-            background-color: map-get($highlight-colors, honeydew);
+            background-color: map-get($highlight-colors, 'honeydew');
         }
         .deletion {
             color:            map-get($highlight-colors, free-speech-red);
