@@ -11,6 +11,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Hexo configuration](#hexo-configuration)
+    * [Enable post assets folder](#enable-post-assets-folder)
     * [Archives configuration](#archives-configuration)
     * [Enable RSS feed](#enable-rss-feed)
 - [Tranquil-peak configuration](#tranquil-peak-configuration)
@@ -32,7 +33,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1.1 Download the latest version ready for production utilisation here : [tranquil-peak-hexo-theme-v1.0.0-production]
+1. Download the latest version built and ready for production here : [tranquil-peak-hexo-theme-v1.0.0-production]
 (https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-v1.0.0-production.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases)
 2. Rename the folder in ```tranquil-peak``` and place it in ```themes``` folder of your Hexo blog
 
@@ -40,6 +41,12 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 1. Modify the theme in ```_config.yml``` by changing ```theme``` variable  to ```tranquil-peak```
 2. Complete ```theme/tranquil-peak/_config.yml``` with your informations by following directives in comments
+  
+If it's your first time using Hexo, please check [Hexo official documentation](https://hexo.io/docs/)
+
+### Enable post assets folder ###
+
+If you want to take advantage of cover image, thumbnail image, and image gallery features, you hate to enable post assets folderby setting ```post_asset_folder``` to  ```true```in ```_config.yml```.
 
 ### Archives configuration ###
 
@@ -49,9 +56,9 @@ You can choose the style of listing for archives, category and tag pages by addi
 # Archives
 ## 1: Enable pagination
 ## 0: Disable pagination
-archive: 2
-category: 2
-tag: 2
+archive: 1
+category: 1
+tag: 1
 ```
 
 - **0** : Disable pagination  
@@ -166,7 +173,7 @@ author:
     picture:
 ```
 
-- **email** : Your mail address. This address will be used if you activate gravatar option
+- **email** : Your mail address. This address will be used to get your gravatar image if you activate gravatar option
 - **bio** : A short biography. Display on your about card
 - **job** : Your job
 - **location** : Your location
@@ -185,9 +192,9 @@ favicon:
 image_gallery: 1                 
 ```
 
-- **gravatar_image** : Enable gravatar image. Using mail address of ```author.email```. (disable: 0, enable: 1). Overwrite `author.picture` everywhere in the blog
-- **thumbnail_image** : Post thumbnail image (disable: 0, enable: 1). Display the first photo
-- **read_more_message** : Message displayed after the <!-- more --> tag or after 300 characters
+- **gravatar_image** : Enable gravatar image. Using ```author.email``` value. (disable: 0, enable: 1). Overwrite `author.picture` everywhere in the blog
+- **thumbnail_image** : Display thumbnail image of posts on index pages (disable: 0, enable: 1)
+- **read_more_message** : Message displayed after the <!-- more --> tag or after 300 characters in post
 - **go_to_message** : Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
 - **cover** : Your blog cover picture located in folder `source/assets/images/`
 - **favicon** : Your favicon located in folder `source/assets/images/`
@@ -204,7 +211,7 @@ google_analytics:
 
 ### Enable pages ###
 
-Tranquil Peak provides you 3 pages to display all posts by tags, by categories, by date and an about page. To enable one of this pages, 
+Tranquil Peak provides you 3 pages to display all posts title and date by tags, by categories, by date and an about page. To enable one of this pages, 
 follow this guide.
 
 #### Enable all-categories page ####
@@ -216,11 +223,10 @@ To enable ```all-categories``` page :
 ``` markdown
 title: "all-categories"
 layout: "all-categories"
-date: 2015-04-27 11:51:00
 ---
 ```
 
-New page will be reach at : ```/all-categories```
+New page will be reach at : ```/all-categories```. On this page, users will be able to search and filter categories.
 
 #### Enable all-tags page ####
 
@@ -231,25 +237,26 @@ To enable ```all-tags``` page :
 ``` markdown
 title: "all-tags"
 layout: "all-tags"
-date: 2015-04-27 11:51:00
 ---
 ```
 
-New page will be reach at : ```/all-tags```
+New page will be reach at : ```/all-tags```. On this page, users will be able to search and filter tags.
 
 #### Enable all-archives page ####
 
 To enable ```all-archives``` page :  
-1. Run ```hexo new page "about"```. A new folder named ```all-archives``` will be created in ```source/```  
+1. Run ```hexo new page "all-archives"```. A new folder named ```all-archives``` will be created in ```source/```  
 2. Replace ```source/all-archives/index.md``` content with :
  
 ``` markdown
 title: "all-archives"
 layout: "all-archives"
-date: 2015-04-27 11:51:00
 ---
-```
-New page will be reach at : ```/all-archives```
+```  
+
+New page will be reach at : ```/all-archives```.  
+On this page, users will be able to search and filter posts.  
+**Search pattern** : YYYY/MMM/DD
 
 ## Writing posts ##
 
@@ -275,4 +282,4 @@ Of course, you can set external url.
 
 ## Running ##
 
-Run ```hexo server``` and start writting! :)
+Run ```hexo server``` and start writing! :)
