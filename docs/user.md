@@ -28,7 +28,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Requirements ##
 
-1. **Node** : v0.10.35 or higher
+1. **Node** : v0.10.35 or higher. Download [Node](https://nodejs.org/download/)
 2. **Hexo CLI** : v0.1.4 or higher. Run ```npm install hexo-cli -g```
 
 ## Installation ##
@@ -211,8 +211,8 @@ google_analytics:
 
 ### Enable pages ###
 
-Tranquil Peak provides you 3 pages to display all posts title and date by tags, by categories, by date and an about page. To enable one of this pages, 
-follow this guide.
+Tranquil-peak provides you 3 pages to display all posts title and date by tags, by categories, by date and an about page. To enable one of this pages, 
+read following step.
 
 #### Enable all-categories page ####
 

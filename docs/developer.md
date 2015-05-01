@@ -26,7 +26,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
  
 ## Requirements ##
 
-1. **Node** : v0.10.35 or higher
+1. **Node** : v0.10.35 or higher. Download [Node](https://nodejs.org/download/)
 2. **Hexo CLI** : v0.1.4 or higher. Run ```npm install hexo-cli -g```
 3. **Grunt CLI** : v0.1.13 or higher. Run ```npm install grunt-cli -g```
 4. **Bower** : v1.4.1 or higher. Run ```npm install bower -g```
@@ -208,10 +208,11 @@ tranquil-peak-hexo-theme
     ├── page.ejs
     ├── post.ejs
     └── tag.ejs
-``
-- **layout** : contails all mains views
-- **layout/partial** : contains all partial views included in main views
-- **layout/partial/post** : contains all partial views to build post
+```
+
+- **layout** : Contails all mains views
+- **layout/partial** : Contains all partial views included in main views
+- **layout/partial/post** : Contains all partial views to build post
 
 ### Assets ###
 
@@ -304,7 +305,7 @@ Contains all images of the theme.
 - **smartresize.js** : Debouncing function from [John Hann](https://github.com/unscriptable)
 - **tags-filter.scss** : Filter posts by using their tags on archives page : `/tags`  
   
-Each files correspond to a feature.  
+Each file correspond to a feature.  
   
 ## Build ##
 
@@ -313,6 +314,7 @@ Each files correspond to a feature.
 To install npm dependencies, run ```npm install```  
   
 NPM dependencies :  
+
 ``` json
 "bower" : "^1.3.12"
 "grunt" : "^0.4.5"
@@ -337,6 +339,7 @@ To install bower dependencies, run ```bower install```
 Bower dependencies are located in ```source/_bower_components```
 
 Bower dependencies :  
+
 ``` json
 "Font-awesome" : "~4.3.0"
 "jQuery" : "~2.1.3"
@@ -431,14 +434,14 @@ On production environment, these javascript and stylesheets files are concatenat
 - **syncAssets** : Synchronize assets (css, js and images)
 - **watch** : Synchronize assets (css, js and images) after changes 
 
-When you run ```build``` or ```buildProd``` tasks, a ```source/assets``` folder will be created with all files generated into. When you will start your hexo server, only this folder will be copied in ```public``` folder
+When you run ```build``` or ```buildProd``` tasks, a ```source/assets``` folder will be created with all files generated in. When you will start your hexo server, only this folder will be copied in ```public``` folder
 
 **Development environment**:    
-- Use for the first time : ```grunt build``` to sync bower dependencies and compile assets and link it to views 
-- after, run : ```grunt watch``` to automatically re-build the project after change on assets
+1. For the first time, run ```grunt build``` to sync bower dependencies, compile assets and link it to views 
+2. After, run ```grunt watch``` to automatically re-build the project after change on assets
 
-**Production environment (before deploying your blog)**:  Use: ```grunt buildProd``` to build the project with some optimization (concat and minify).  
-Your blog will have only 1 file for javascript and 1 file for stylesheets to reduce HTTP requests and improve performance.
+**Production environment (before deploying your blog)** :  Run ```grunt buildProd``` to build the project with some optimization (concat and minify).  
+Your blog will have only 1 file for javascript and 1 file for stylesheets to reduce number of HTTP requests and improve performance.
 
 ## Running ##
 
