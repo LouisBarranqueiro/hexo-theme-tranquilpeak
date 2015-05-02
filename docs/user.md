@@ -66,10 +66,10 @@ tag: 1
 
 Example :  
 A category page look like this with ```category: 1``` :  
-![archives 1](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme-demo/2013/12/25/Check-official-user-documentation/archives-1.png)  
+![archives 1](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme-demo/2015/05/02/Check-official-user-documentation/archives-1.png)  
 
 The same page with ```category: 0```:  
-![archives 0](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme-demo/2013/12/25/Check-official-user-documentation/archives-0.png)  
+![archives 0](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme-demo/2015/05/02/Check-official-user-documentation/archives-0.png)  
 
 ### Enable RSS feed ###
 
@@ -84,7 +84,7 @@ feed:
 ```
 - **type** : Feed type
 - **path** : Feed path (Default: atom.xml/rss2.xml)
-- **limit** : Maximum number of posts in the feed (Use `0` or `false` to show all posts)
+- **limit** : Maximum number of posts in the feed (Use ```0``` or ```false``` to show all posts)
 
 If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
@@ -96,7 +96,7 @@ The sidebar is powerful and easily configurable.
 DON'T modify variables name ```sidebar```, ```title```, ```url``` and ```icon```.  
 Others variables name which refer to the name of a menu or a link can be edited. Example : ```menu```, ```home```, ```categories```, etc...  
 You can add groups of links and links much as you want  
-You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`  
+You just have to respect the indentation : ```groups of links``` -> ```link``` -> ```title```, ```link```, ```icon``` 
 
 ``` yaml
 sidebar:
@@ -159,7 +159,7 @@ sidebar:
 
 - **title** : Title of your link displayed
 - **url** : URL of the link. If the URL is internal, domain name is not necessary
-- **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
+- **icon** : Name of the font awesome icon class without the ```fa-``` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
 
 ### Author ###
 
@@ -192,12 +192,12 @@ favicon:
 image_gallery: 1                 
 ```
 
-- **gravatar_image** : Enable gravatar image. Using ```author.email``` value. (disable: 0, enable: 1). Overwrite `author.picture` everywhere in the blog
+- **gravatar_image** : Enable gravatar image. Using ```author.email``` value. (disable: 0, enable: 1). Overwrite ```author.picture``` everywhere in the blog
 - **thumbnail_image** : Display thumbnail image of posts on index pages (disable: 0, enable: 1)
 - **read_more_message** : Message displayed after the <!-- more --> tag or after 300 characters in post
 - **go_to_message** : Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
-- **cover** : Your blog cover picture located in folder `source/assets/images/`
-- **favicon** : Your favicon located in folder `source/assets/images/`
+- **cover** : Your blog cover picture located in folder ```source/assets/images/```
+- **favicon** : Your favicon located in folder ```source/assets/images/```
 - **image_gallery** : Display an image gallery at the end of a post have ```photos``` variables
 
 ### Miscellaneous ###
