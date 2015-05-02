@@ -194,8 +194,8 @@ image_gallery: 1
 
 - **gravatar_image** : Enable gravatar image. Using ```author.email``` value. (disable: 0, enable: 1). Overwrite ```author.picture``` everywhere in the blog
 - **thumbnail_image** : Display thumbnail image of posts on index pages (disable: 0, enable: 1)
-- **read_more_message** : Message displayed after the <!-- more --> tag or after 300 characters in post
-- **go_to_message** : Message displayed after the <!-- more --> balise or after 300 characters for post with link layout
+- **read_more_message** : Message displayed after the ```<!-- more -->``` tag or after 300 characters in post
+- **go_to_message** : Message displayed after the ```<!-- more -->``` balise or after 300 characters for post with link layout
 - **cover** : Your blog cover picture located in folder ```source/assets/images/```
 - **favicon** : Your favicon located in folder ```source/assets/images/```
 - **image_gallery** : Display an image gallery at the end of a post have ```photos``` variables
