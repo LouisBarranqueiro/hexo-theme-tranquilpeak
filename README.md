@@ -60,7 +60,7 @@ A gorgeous responsive theme for Hexo blog framework
 
 ## Demo  ##
 
-Check Tranquil-peak theme in live  : [tranquil-peak-hexo-theme demo](http://hexo-tranquil-peak-demo.herokuapp.com)
+Check Tranquil-peak theme in live  : [tranquil-peak-hexo-theme demo](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme)
 
 ## Showcase ##
 
