@@ -2,7 +2,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquil Peak](https://hexo-tranquil-peak-demo.herokuapp.com/2013/12/25/gallery-post/tranquil-peak.png)
+![Tranquil Peak](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme-demo/2015/05/02/hello-world/tranquil-peak.png)
 
 ## Summary ##
 

@@ -66,10 +66,10 @@ tag: 1
 
 Example :  
 A category page look like this with ```category: 1``` :  
-![archives 1](https://hexo-tranquil-peak-demo.herokuapp.com/2013/12/25/gallery-post/archives-1.png)  
+![archives 1](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme-demo/2013/12/25/Check-official-user-documentation/archives-1.png)  
 
 The same page with ```category: 0```:  
-![archives 0](https://hexo-tranquil-peak-demo.herokuapp.com/2013/12/25/gallery-post/archives-0.png)  
+![archives 0](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme-demo/2013/12/25/Check-official-user-documentation/archives-0.png)  
 
 ### Enable RSS feed ###
 
