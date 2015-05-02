@@ -27,15 +27,13 @@
         <% } %>
             <div class="post-wrap">
                 <div class="post-header">
-                    <% if (post.link) { %>
-                        <h1 class="post-title" itemprop="headline">
-                            <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(no title)' %></a>
-                        </h1>
-                    <% } else { %>
-                        <h1 class="post-title" itemprop="headline">
-                            <a class="link-unstyled" href="<%- url_for(post.permalink) %>"><%= post.title || '(no title)' %></a>
-                        </h1>
-                    <% } %>
+                    <h1 class="post-title" itemprop="headline">
+                        <% if (post.link) { %>
+                                <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(no title)' %></a>
+                        <% } else { %>
+                                <a class="link-unstyled" href="<%- url_for(post.permalink) %>"><%= post.title || '(no title)' %></a>
+                        <% } %>
+                    </h1>
                     <%- partial('post/meta', {post: post}) %>
                 </div>
                 <div class="post-excerpt" itemprop="articleBody">

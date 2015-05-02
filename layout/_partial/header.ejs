@@ -4,11 +4,11 @@
         <a class="header-title-link" href="<%= config.url %>"><%= config.title %></a>
     </h1>
     <% if ((theme.gravatar_image) && (theme.author.email)) { %>
-        <a class="header-picture-link" href="<%- url_for('/about') %>">
+        <a class="header-picture-link" href="<%- url_for('/#about') %>">
             <img class="header-picture" src="<%- gravatar(theme.author.email, 90) %>"/>
         </a>
     <% } else if (theme.author.picture) { %>
-        <a class="header-picture-link" href="<%- url_for('/about') %>">
+        <a class="header-picture-link" href="<%- url_for('/#about') %>">
             <img class="header-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
         </a>
     <% } %>
