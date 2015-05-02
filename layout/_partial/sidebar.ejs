@@ -15,11 +15,11 @@
         <ul class="sidebar-buttons">
             <% for (var n in theme.sidebar[i]) { %>
                 <li class="sidebar-button">
-                    <a  class="sidebar-button-link" href="<%- url_for(config.url + theme.sidebar[i][n].url) %>"
-                        <% if ((url_for(theme.sidebar[i][n].url).indexOf(config.url) < 0) && (url_for(theme.sidebar[i][n].url).indexOf('://') >= 0)) { %>
-                            target="_blank"
-                        <% } %>
-                    >
+                    <% if ((url_for(theme.sidebar[i][n].url).indexOf(config.url) < 0) && (url_for(theme.sidebar[i][n].url).indexOf('://') >= 0)) { %>
+                        <a  class="sidebar-button-link" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank">
+                    <% } else { %>
+                        <a  class="sidebar-button-link" href="<%- url_for(config.url + theme.sidebar[i][n].url) %>">
+                    <% } %>
                         <i class="sidebar-button-icon fa fa-lg <%= 'fa-' + theme.sidebar[i][n].icon %>"></i>
                         <span class="sidebar-button-desc hide-md"><%= theme.sidebar[i][n].title %></span>
                     </a>
