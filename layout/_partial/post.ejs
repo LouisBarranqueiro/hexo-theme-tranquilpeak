@@ -19,10 +19,10 @@
     <% } %>
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">
         <%- post.content %>
+        <% if (theme.image_gallery) { %>
+            <%- partial('post/gallery', {photos: post.photos})%>
+        <% } %>
     </div>
-    <% if (theme.image_gallery) { %>
-        <%- partial('post/gallery', {photos: post.photos})%>
-    <% } %>
     <div class="post-footer main-content-wrap">
         <% if ((post.tags) && (post.tags.length > 0)) { %>
             <div class="post-footer-tags">
