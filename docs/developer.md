@@ -1,8 +1,8 @@
 # Developer documentation #
 
-This documentation will help you to understand tranquil-peak-hexo-theme code.  
+This documentation will help you to understand tranquilpeak-hexo-theme code.  
 
-If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/issues/new).
+If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues/new).
 
 ## Summary ##
 
@@ -33,17 +33,17 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Run ```git clone https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme.git```
-2. Rename the folder in ```tranquil-peak``` and place it in ```themes``` folder of your Hexo blog
-3. Modify the theme in ```_config.yml``` by changing ```theme``` variable  to ```tranquil-peak```
-4. Complete ```theme/tranquil-peak/_config.yml``` with your informations by following directives in comments
+1. Run ```git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git```
+2. Rename the folder in ```tranquilpeak``` and place it in ```themes``` folder of your Hexo blog
+3. Modify the theme in ```_config.yml``` by changing ```theme``` variable  to ```tranquilpeak```
+4. Complete ```theme/tranquilpeak/_config.yml``` with your informations by following directives in comments
 
-If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/blob/master/docs/user.md)  
+If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md)  
   
 ## Code structure ##
 
 ```
-tranquil-peak-hexo-theme
+tranquilpeak-hexo-theme
 ├── docs
 │   ├── developer.md
 │   └── user.md
@@ -123,7 +123,7 @@ tranquil-peak-hexo-theme
 │   │   │   │   └── _tag.scss
 │   │   │   ├── _font.scss
 │   │   │   └── _variables.scss
-│   │   └── tranquil-peak.scss
+│   │   └── tranquilpeak.scss
 │   ├── _images
 │   │   └── cover.png
 │   └── _js
@@ -261,7 +261,7 @@ tranquil-peak-hexo-theme
     │   │   └── _tag.scss
     │   ├── _font.scss
     │   └── _variables.scss
-    └── tranquil-peak.scss
+    └── tranquilpeak.scss
 ```  
   
 SCSS structure follow 7-1 pattern of [sass guidelines](http://sass-guidelin.es/#the-7-1-pattern)  
@@ -382,18 +382,18 @@ Bower dependencies :
 
 ``` javascript
 // Js files to inject in `layout/_partial/script.ejs`
-var tranquilPeakJsFilesToInject = [
+var tranquilpeakJsFilesToInject = [
     'jquery.js',
     'jquery.fancybox.js',
     'jquery.fancybox-thumbs.js',
-    'tranquil-peak.js'
+    'tranquilpeak.js'
 ];
 // Css files to inject in `layout/_partial/head.ejs`
-var tranquilPeakCssFilesToInject = [
+var tranquilpeakCssFilesToInject = [
     'font-awesome.css',
     'jquery.fancybox.css',
     'jquery.fancybox-thumbs.css',
-    'tranquil-peak.css'
+    'tranquilpeak.css'
 ];
 ```
 
@@ -407,7 +407,7 @@ On production environment, these javascript and stylesheets files are concatenat
 - **bower** : Copy all needed files by types from bower dependencies  
 - **clean** : Delete ```source/assets``` folder  
 - **concat** : 
-    * devJs : Concat all javascript files located in ```source/_js/``` into 1 file : ```source/assets/js/tranquil-peak.js```  
+    * devJs : Concat all javascript files located in ```source/_js/``` into 1 file : ```source/assets/js/tranquilpeak.js```  
     * prodCss : Concat all stylesheets files located in ```source/assets/css/``` into 1 file : ```source/assets/css/style.css```  
     * prodJs : Concat all javascript listed in ```tasks/pipeline.js``` in 1 file : ```source/assets/js/script.js```  
 - **cssmin** : Minify ```source/assets/cssstyle.css``` file in : ```source/assets/cssstyle.min.css```   
@@ -419,7 +419,7 @@ On production environment, these javascript and stylesheets files are concatenat
     * devCss : Link all stylesheets files listed in ```tasks/pipeline.js```  to ```layout/_partial/head.ejs```  
     * prodJs : Link ```source/assets/js/script.min.js``` file in ```layout/_partial/script.ejs```  
     * prodCss : Link ```source/assets/js/style.min.css``` file in ```layout/_partial/head.ejs```  
-- **sass** : Compile `source/_css/tranquil-peak.scss` file in `source/assets/css/tranquil-peak.css`  
+- **sass** : Compile `source/_css/tranquilpeak.scss` file in `source/assets/css/tranquilpeak.css`  
 - **sync** : Synchronize images from ```source/_images``` to ```source/assets/images```  
 - **uglify** : Minify ```source/assets/js/script.js``` file in ```source/assets/js/script.min.js```  
 - **watch** : Watch assets from ```source/_*/**/*``` folder to detect changes and launch ```SyncAssets``` task  

@@ -1,5 +1,5 @@
 {
-    "name":            "tranquil-peak-hexo-theme",
+    "name":            "tranquilpeak-hexo-theme",
     "version":         "1.0.0",
     "description":     "A gorgeous responsive theme for Hexo blog framework ",
     "main":            "Gruntfile.js",
@@ -8,12 +8,11 @@
     },
     "repository":      {
         "type": "git",
-        "url":  "https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme.git"
+        "url":  "https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git"
     },
     "keywords":        [
         "hexo",
         "blog",
-        "tranquil-peak",
         "tranquilpeak",
         "tranquil",
         "peak"
@@ -21,9 +20,9 @@
     "author":          "Louis Barranqueiro",
     "license":         "GNU General Public License v3.0",
     "bugs":            {
-        "url": "https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/issues"
+        "url": "https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues"
     },
-    "homepage":        "https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme",
+    "homepage":        "https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme",
     "devDependencies": {
         "bower":                "^1.3.12",
         "grunt":                "^0.4.5",

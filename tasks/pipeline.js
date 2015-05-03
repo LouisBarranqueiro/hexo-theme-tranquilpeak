@@ -1,23 +1,23 @@
 // Js files to inject in `layout/_partial/script.ejs`
-var tranquilPeakJsFilesToInject = [
+var tranquilpeakJsFilesToInject = [
     'jquery.js',
     'jquery.fancybox.js',
     'jquery.fancybox-thumbs.js',
-    'tranquil-peak.js'
+    'tranquilpeak.js'
 ];
 
 // Css files to inject in `layout/_partial/head.ejs`
-var tranquilPeakCssFilesToInject = [
+var tranquilpeakCssFilesToInject = [
     'font-awesome.css',
     'jquery.fancybox.css',
     'jquery.fancybox-thumbs.css',
-    'tranquil-peak.css'
+    'tranquilpeak.css'
 ];
 
-module.exports.tranquilPeakCssFilesToInject = tranquilPeakCssFilesToInject.map(function(path) {
+module.exports.tranquilpeakCssFilesToInject = tranquilpeakCssFilesToInject.map(function(path) {
     return 'source/assets/css/' + path;
 });
 
-module.exports.tranquilPeakJsFilesToInject = tranquilPeakJsFilesToInject.map(function(path) {
+module.exports.tranquilpeakJsFilesToInject = tranquilpeakJsFilesToInject.map(function(path) {
     return 'source/assets/js/' + path;
 });

@@ -2,7 +2,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquil Peak](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme/2015/05/02/hello-world/tranquil-peak.png)
+![Tranquil Peak](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/hello-world/tranquilpeak.png)
 
 ## Summary ##
 
@@ -52,19 +52,19 @@ A gorgeous responsive theme for Hexo blog framework
 ## Quick start ##
 
 **For users** :  
-1. Download the latest version ready for production utilisation here : [tranquil-peak-hexo-theme-built-for-production-1.0.0]
-(https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-built-for-production-1.0.0.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases)  
-2. Follow [user documentation](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/blob/master/docs/user.md) to install and configure the theme  
+1. Download the latest version ready for production utilisation here : [tranquilpeak-hexo-theme-built-for-production-1.0.0]
+(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.0.0/tranquilpeak-hexo-theme-built-for-production-1.0.0.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)  
+2. Follow [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md) to install and configure the theme  
 
-**For developers** : Run ```git clone https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme.git```
+**For developers** : Run ```git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git```
 
 ## Demo  ##
 
-Check Tranquil-peak theme in live  : [tranquil-peak-hexo-theme demo](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme)
+Check Tranquilpeak theme in live  : [Tranquilpeak-hexo-theme demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme)
 
 ## Showcase ##
 
-I would like to create a showcase with all blogs which use Tranquil-peak theme. Please, [Add yours :)](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/issues/new?title=Add%20my%20blog%20into%20showcase&body=Hey,%20the%20URL%20of%20my%20blog%20is:%20)
+I would like to create a showcase with all blogs which use Tranquilpeak theme. Please, [Add yours :)](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues/new?title=Add%20my%20blog%20into%20showcase&body=Hey,%20the%20URL%20of%20my%20blog%20is:%20)
 
 ## Documentation ##
 
@@ -72,11 +72,11 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 
 ### For users ###
 
-To install and configure the theme, consult the following documentation : [user documentation](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/blob/master/docs/user.md)
+To install and configure the theme, consult the following documentation : [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md)
 
 ### For developers ###
 
-To understand better the code and modify the theme, consult the following documentation : [developer documentation](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/blob/master/docs/developer.md)
+To understand better the code and modify the theme, consult the following documentation : [developer documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/developer.md)
 
 ## Contributing ##
 
@@ -84,4 +84,4 @@ All kinds of contributions (enhancements, new features, documentation & code imp
 
 ## License ##
 
-tranquil-peak-hexo-theme is released under the terms of the [GNU General Public License v3.0](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/blob/master/LICENSE)
+tranquilpeak-hexo-theme is released under the terms of the [GNU General Public License v3.0](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/LICENSE)

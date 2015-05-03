@@ -1,10 +1,10 @@
 # User documentation #
 
-Tranquil-peak theme is comptabile with Hexo v3.0.0 or higher
+Tranquilpeak theme is comptabile with Hexo v3.0.0 or higher
 
-This documentation will help you to install tranquil-peak-hexo-theme and configure it to use all features which it provides.  
+This documentation will help you to install tranquilpeak-hexo-theme and configure it to use all features which it provides.  
 
-If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/issues/new).
+If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues/new).
 
 ## Summary ##
 
@@ -14,7 +14,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Enable post assets folder](#enable-post-assets-folder)
     * [Archives configuration](#archives-configuration)
     * [Enable RSS feed](#enable-rss-feed)
-- [Tranquil-peak configuration](#tranquil-peak-configuration)
+- [Tranquilpeak configuration](#tranquilpeak-configuration)
     * [Sidebar](#sidebar)
     * [Author](#author)
     * [Customization](#customization)
@@ -33,14 +33,14 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [tranquil-peak-hexo-theme-built-for-production-1.0.0]
-(https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-built-for-production-1.0.0.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases)
-2. Rename the folder in ```tranquil-peak``` and place it in ```themes``` folder of your Hexo blog
+1. Download the latest version built and ready for production here : [tranquilpeak-hexo-theme-built-for-production-1.0.0]
+(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.0.0/tranquilpeak-hexo-theme-built-for-production-1.0.0.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)
+2. Rename the folder in ```tranquilpeak``` and place it in ```themes``` folder of your Hexo blog
 
 ## Hexo configuration ##
 
-1. Modify the theme in ```_config.yml``` by changing ```theme``` variable  to ```tranquil-peak```
-2. Complete ```theme/tranquil-peak/_config.yml``` with your informations by following directives in comments
+1. Modify the theme in ```_config.yml``` by changing ```theme``` variable  to ```tranquilpeak```
+2. Complete ```theme/tranquilpeak/_config.yml``` with your informations by following directives in comments
   
 If it's your first time using Hexo, please check [Hexo official documentation](https://hexo.io/docs/)
 
@@ -66,10 +66,10 @@ tag: 1
 
 Example :  
 A category page look like this with ```category: 1``` :  
-![archives 1](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-1.png)  
+![archives 1](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-1.png)  
 
 The same page with ```category: 0```:  
-![archives 0](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-0.png)  
+![archives 0](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-0.png)  
 
 ### Enable RSS feed ###
 
@@ -88,7 +88,7 @@ feed:
 
 If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
-## Tranquil-peak configuration ##
+## Tranquilpeak configuration ##
 
 ### Sidebar ###
 
@@ -211,7 +211,7 @@ google_analytics:
 
 ### Enable pages ###
 
-Tranquil-peak provides you 3 pages to display all posts title and date by tags, by categories, by date and an about page. To enable one of this pages, 
+Tranquilpeak provides you 3 pages to display all posts title and date by tags, by categories, by date and an about page. To enable one of this pages, 
 read following step.
 
 #### Enable all-categories page ####
@@ -262,7 +262,7 @@ On this page, users will be able to search and filter posts.
 
 ### Front-matter settings ###
 
-Tranquil-peak introduces 2 new variables to configure precisly the style of your post : ```thumbnailImage``` and ```coverImage```.  
+Tranquilpeak introduces 2 new variables to configure precisly the style of your post : ```thumbnailImage``` and ```coverImage```.  
   
 Example :  
 ``` markdown

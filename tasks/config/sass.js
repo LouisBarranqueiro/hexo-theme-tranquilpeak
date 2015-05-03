@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
     grunt.config.set('sass', {
-        // Compile `tranquil-peak.scss` file into `tranquil-peak.css`
+        // Compile `tranquilpeak.scss` file into `tranquilpeak.css`
         dev: {
             options: {
                 sourcemap: 'none'
@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 {
                     expand: true,
                     cwd:    'source/_css',
-                    src:    ['tranquil-peak.scss'],
+                    src:    ['tranquilpeak.scss'],
                     dest:   'source/assets/css/',
                     ext:    '.css'
                 }
