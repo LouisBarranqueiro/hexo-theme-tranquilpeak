@@ -39,8 +39,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Hexo configuration ##
 
-1. Modify the theme in ```_config.yml``` by changing ```theme``` variable  to ```tranquilpeak```
-2. Complete ```theme/tranquilpeak/_config.yml``` with your informations by following directives in comments
+Modify the theme in ```_config.yml``` by changing ```theme``` variable  to ```tranquilpeak```
   
 If it's your first time using Hexo, please check [Hexo official documentation](https://hexo.io/docs/)
 
@@ -89,6 +88,8 @@ feed:
 If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
 ## Tranquilpeak configuration ##
+
+Complete ```theme/tranquilpeak/_config.yml``` with your informations.
 
 ### Sidebar ###
 
