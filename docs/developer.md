@@ -397,8 +397,8 @@ var tranquilpeakCssFilesToInject = [
 ];
 ```
 
-- **tranquilPeakJsFilesToInject** :  Files injected in ```layout/_partial/script.ejs``` (developement environment)
-- **tranquilPeakCssFilesToInject** :  Files injected in```layout/_partial/head.ejs``` (developement environment)
+- **tranquilpeakJsFilesToInject** :  Files injected in ```layout/_partial/script.ejs``` (developement environment)
+- **tranquilpeakCssFilesToInject** :  Files injected in```layout/_partial/head.ejs``` (developement environment)
 
 On production environment, these javascript and stylesheets files are concatenate and minify in 1 javascript file and 1 stylesheet file and linked to their respective views
 
