@@ -33,8 +33,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [tranquil-peak-hexo-theme-v1.0.0-production]
-(https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-v1.0.0-production.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases)
+1. Download the latest version built and ready for production here : [tranquil-peak-hexo-theme-built-for-production-1.0.0]
+(https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases/download/v1.0.0/tranquil-peak-hexo-theme-built-for-production-1.0.0.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquil-peak-hexo-theme/releases)
 2. Rename the folder in ```tranquil-peak``` and place it in ```themes``` folder of your Hexo blog
 
 ## Hexo configuration ##
@@ -66,10 +66,10 @@ tag: 1
 
 Example :  
 A category page look like this with ```category: 1``` :  
-![archives 1](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme-demo/2015/05/02/Check-official-user-documentation/archives-1.png)  
+![archives 1](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-1.png)  
 
 The same page with ```category: 0```:  
-![archives 0](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme-demo/2015/05/02/Check-official-user-documentation/archives-0.png)  
+![archives 0](http://louisbarranqueiro.github.io/tranquil-peak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-0.png)  
 
 ### Enable RSS feed ###
 
