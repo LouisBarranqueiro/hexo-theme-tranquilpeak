@@ -1,10 +1,6 @@
 <div class="post-meta">
     <time  itemprop="datePublished" content="<%= post.date %>">
-        <% if (post.date.isAfter(moment().subtract(7, 'days'))) { %>
-            <%= post.date.fromNow() %>
-        <% } else { %>
-            <%= post.date.format('MMM DD, YYYY') %>
-        <% } %>
+        <%= post.date.format('MMM DD, YYYY') %>
     </time>
     <% if ((post.categories) && (post.categories.length > 0)) { %>
         <span>in </span>
