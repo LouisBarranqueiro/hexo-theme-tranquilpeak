@@ -1,8 +1,8 @@
-# Tranquil-peak Hexo theme
+# Tranquilpeak Hexo theme
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquil Peak](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/hello-world/tranquilpeak.png)
+![Tranquilpeak](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/hello-world/tranquilpeak.png)
 
 ## Summary ##
 
