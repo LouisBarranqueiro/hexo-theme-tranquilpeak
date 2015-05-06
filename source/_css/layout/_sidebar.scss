@@ -1,6 +1,5 @@
 // Global CSS rules for all screen size
 #sidebar {
-    font-family:        'Open Sans', sans-serif;
     height:             100%;
     position:           fixed;
     top:                0;
@@ -15,13 +14,12 @@
     // Author information
     .sidebar-profile {
         color:         map-get($sidebar, color);
-        text-align:    center;
         padding-top:   18px;
         margin-bottom: 15px;
 
         .sidebar-profile-picture {
             display: block;
-            margin:  0 auto;
+            margin-left: 23px;
         }
     }
     // Sidebar's buttons
@@ -33,8 +31,8 @@
             display:     block;
             width:       100%;
             // Height of a link in the menu
-            height:      45px;
-            line-height: 45px;
+            height:      35px;
+            line-height: 35px;
 
             .sidebar-button-link {
                 color:   map-get($sidebar, color);
@@ -73,14 +71,28 @@
 
         // Author information
         .sidebar-profile {
-            height:         130px;
             padding-top:    40px;
             padding-bottom: 7.5px;
 
+            .sidebar-profile-name {
+                font-size: 3rem;
+                margin-top: 20px;
+                display: block;
+                padding-left: 23px;
+            }
+
+            .sidebar-profile-subtitle {
+                display: block;
+                font-size: 2rem;
+                color: #666;  
+                padding-top: 5px;
+                padding-left: 23px;
+            }
+
             .sidebar-profile-picture {
-                width:         90px;
-                height:        90px;
-                border-radius: 90px;
+                width:         160px;
+                height:        160px;
+                border-radius: 160px;
                 margin-bottom: 5px;
             }
         }
@@ -118,6 +130,12 @@
                     }
                 }
             }
+        }
+        div.sidebar-description{
+            font-size: 1.4rem;
+            color: #666;
+            line-height: 30px;
+            padding: 0 23px;
         }
     }
 }

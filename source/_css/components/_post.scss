@@ -69,34 +69,45 @@
     }
     // Post meta contains post's date, post's categories and tags
     .post-meta {
-        line-height: 1.5em;
-
-        a {
-            color: map-get($colors, light);
+        position: relative;
+        float: right;
+        top: -35px;
+        color: map-get($colors, text);
+        text-align: right;
+        width: auto;
+        font-size:   map-get($font-size, small);
+        .fa{
+            margin-right: 5px;
         }
-    }
-    .post-meta,
-    .post-readingtime {
-        color: map-get($colors, light);
-    }
+        a{
+            color: map-get($colors, light);
+            &:hover,
+            &:active{
+                text-decoration: none;
+                color: map-get($colors, link);
+            }
+        }
+    }   
     .post-excerpt_link {
         // Bring the post's link nearest of the excerpt
         margin-top: -15px;
     }
-    .post-meta,
+    .post-excerpt_link > i{
+        font-size: 18px;
+        margin-right: 6px;
+    }
     .post-readingtime,
     .post-excerpt_link {
-        font-family: 'Open Sans', sans-serif;
-        font-size:   map-get($font-size, small);
-        font-weight: 400;
+        font-size:   map-get($font-size, medium);
+        font-weight: 300;
+        margin-bottom: 15px;
+        display: inline-block
     }
     .post-excerpt,
     .post-content {
-        font-family: 'Merriweather', serif;
         color:       map-get($colors, base);
         margin-top:  15px;
         font-weight: 300;
-        overflow:    hidden;
     }
     .post-content {
         margin-top: 25px;

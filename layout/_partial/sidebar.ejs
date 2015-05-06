@@ -9,6 +9,7 @@
                 <% } %>
             </a>
             <span class="sidebar-profile-name hide-md"><%= config.author %></span>
+            <span class="sidebar-profile-subtitle hide-md"><%= config.subtitle %></span>
         </div>
     <% } %>
     <% for (var i in theme.sidebar) { %>
@@ -20,11 +21,13 @@
                     <% } else { %>
                         <a  class="sidebar-button-link" href="<%- url_for(config.url + theme.sidebar[i][n].url) %>">
                     <% } %>
-                        <i class="sidebar-button-icon fa fa-lg <%= 'fa-' + theme.sidebar[i][n].icon %>"></i>
                         <span class="sidebar-button-desc hide-md"><%= theme.sidebar[i][n].title %></span>
                     </a>
                 </li>
             <% } %>
         </ul>
+    <% } %>
+    <% if(config.description){ %>
+        <div class="sidebar-description"><%=config.description %></div>
     <% } %>
 </nav>

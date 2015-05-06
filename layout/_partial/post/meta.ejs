@@ -1,9 +1,22 @@
+<% if(is_home()){ %>
 <div class="post-meta">
-    <time  itemprop="datePublished" content="<%= post.date %>">
-        <%= post.date.format('MMM DD, YYYY') %>
-    </time>
-    <% if ((post.categories) && (post.categories.length > 0)) { %>
-        <span>in </span>
-        <%- partial('category', {categories: post.categories})%>
-    <% } %>
+    <div class="date">
+    	<i class="fa fa-calendar"></i>
+	    <time  itemprop="datePublished" content="<%= post.date %>">
+	        <%= post.date.format('MMM DD, YYYY') %>
+	    </time>
+    </div>
+    <div class="tags">
+    	<i class="fa fa-tags"></i>
+	    <% if ((post.categories) && (post.categories.length > 0)) { %>
+	        <%- partial('category', {categories: post.categories})%>
+	    <% } %>
+    </div>
+    <div class="comment">
+    	<% if (post.path) { %>
+    		<i class="fa fa-comment"></i>
+        	<a class="link" href="<%- url_for(post.path) %>#disqus_thread" itemprop="url">Comments</a>
+    	<% } %>
+    </div>
 </div>
+<% } %>

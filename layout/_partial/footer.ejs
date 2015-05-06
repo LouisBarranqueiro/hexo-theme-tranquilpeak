@@ -1,5 +1,6 @@
 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
         Copyrights &copy; <%= date(new Date(), 'YYYY') + ' ' + config.author || config.title %>. All Rights Reserved.
+        <% if(theme.beian){ %> <a href="http://www.miibeian.gov.cn/" target="_blank" class="beian" rel="nofollow"><%=theme.beian %></a> <% } %>
     </span>
 </footer>
