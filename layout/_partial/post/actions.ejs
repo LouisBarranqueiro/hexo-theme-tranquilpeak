@@ -23,6 +23,7 @@
             </li>
         </ul>
     </nav>
+    <% if (theme.enableShare) { %>
     <ul class="post-actions post-action-share">
         <li class="post-action">
             <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://plus.google.com/share?url=' + post.permalink %>">
@@ -45,5 +46,6 @@
             </a>
         </li>
     </ul>
+    <% } %>
 </div>
 

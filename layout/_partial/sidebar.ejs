@@ -12,22 +12,33 @@
             <span class="sidebar-profile-subtitle hide-md"><%= config.subtitle %></span>
         </div>
     <% } %>
-    <% for (var i in theme.sidebar) { %>
-        <ul class="sidebar-buttons">
-            <% for (var n in theme.sidebar[i]) { %>
-                <li class="sidebar-button">
-                    <% if ((url_for(theme.sidebar[i][n].url).indexOf(config.url) < 0) && (url_for(theme.sidebar[i][n].url).indexOf('://') >= 0)) { %>
-                        <a  class="sidebar-button-link" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank">
-                    <% } else { %>
-                        <a  class="sidebar-button-link" href="<%- url_for(config.url + theme.sidebar[i][n].url) %>">
-                    <% } %>
-                        <span class="sidebar-button-desc hide-md"><%= theme.sidebar[i][n].title %></span>
-                    </a>
-                </li>
-            <% } %>
-        </ul>
-    <% } %>
+    <ul class="sidebar-buttons">
+        <% for (var i in theme.sidebar.menu) { %>
+            <li class="sidebar-button">
+                <% if ((url_for(theme.sidebar.menu[i].url).indexOf(config.url) < 0) && (url_for(theme.sidebar.menu[i].url).indexOf('://') >= 0)) { %>
+                    <a  class="sidebar-button-link" href="<%- url_for(theme.sidebar.menu[i].url) %>" target="_blank">
+                <% } else { %>
+                    <a  class="sidebar-button-link" href="<%- url_for(config.url + theme.sidebar.menu[i].url) %>">
+                <% } %>
+                    <span class="sidebar-button-desc hide-md"><%= theme.sidebar.menu[i].title %></span>
+                </a>
+            </li>
+        <% } %>
+    </ul>
     <% if(config.description){ %>
         <div class="sidebar-description"><%=config.description %></div>
     <% } %>
+
+    <ul class="sidebar-icons">
+        <% for (var i in theme.sidebar.author_links) { %>
+            <li class="sidebar-icon">
+                <% if ((url_for(theme.sidebar.author_links[i].url).indexOf(config.url) < 0) && (url_for(theme.sidebar.author_links[i].url).indexOf('://') >= 0)) { %>
+                    <a  class="fa fa-<%= theme.sidebar.author_links[i].icon %>" href="<%- url_for(theme.sidebar.author_links[i].url) %>" target="_blank">
+                <% } else { %>
+                    <a  class="fa fa-<%= theme.sidebar.author_links[i].icon %>" href="<%- url_for(config.url + theme.sidebar.author_links[i].url) %>">
+                <% } %>
+                </a>
+            </li>
+        <% } %>
+    </ul>
 </nav>

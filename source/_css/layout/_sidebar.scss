@@ -15,24 +15,23 @@
     .sidebar-profile {
         color:         map-get($sidebar, color);
         padding-top:   18px;
-        margin-bottom: 15px;
 
         .sidebar-profile-picture {
             display: block;
-            margin-left: 23px;
+            margin-left: 30px;
         }
     }
     // Sidebar's buttons
     ul.sidebar-buttons {
         padding: 0;
-        margin:  0 0 20px 0;
+        margin:  0 0 10px 0;
 
         li.sidebar-button {
             display:     block;
             width:       100%;
             // Height of a link in the menu
-            height:      35px;
-            line-height: 35px;
+            height:      30px;
+            line-height: 30px;
 
             .sidebar-button-link {
                 color:   map-get($sidebar, color);
@@ -78,7 +77,7 @@
                 font-size: 3rem;
                 margin-top: 20px;
                 display: block;
-                padding-left: 23px;
+                padding-left: 30px;
             }
 
             .sidebar-profile-subtitle {
@@ -86,7 +85,7 @@
                 font-size: 2rem;
                 color: #666;  
                 padding-top: 5px;
-                padding-left: 23px;
+                padding-left: 30px;
             }
 
             .sidebar-profile-picture {
@@ -104,7 +103,7 @@
                 .sidebar-button-link {
                     text-align:   left;
                     width:        auto;
-                    padding-left: 23px;
+                    padding-left: 30px;
                     padding-top:  0;
 
                     // Font-awesome icon
@@ -124,9 +123,39 @@
                         width:          auto;
                         height:         35px;
                         line-height:    35px;
-                        font-size:      map-get($font-size, medium);
+                        font-size:      map-get($font-size, small);
                         letter-spacing: 0.3px;
                         vertical-align: middle;
+                    }
+                }
+            }
+        }
+
+        //Icons 
+        ul.sidebar-icons{
+            overflow: hidden;
+            padding: 30px 0 0 30px;
+            li.sidebar-icon{
+                float: left;
+                list-style: none;
+                >a{
+                    width: 40px;
+                    height: 40px;
+                    background-color: #666;
+                    display: inline-block;
+                    text-align: center;
+                    font-size: 20px;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    margin-right: 15px;
+                    color: #EFEFEF;
+                    text-shadow: 0 1px #333;
+                    text-decoration: none;
+                    &:hover{
+                        color: #4183c4;
+                    }
+                    &.fa-envelope-o{
+                        font-size: 18px;
                     }
                 }
             }
@@ -135,7 +164,7 @@
             font-size: 1.4rem;
             color: #666;
             line-height: 30px;
-            padding: 0 23px;
+            padding: 0 30px;
         }
     }
 }
@@ -144,6 +173,7 @@
 @media #{$medium-only} {
     #sidebar {
         width: map-get($sidebar, md-screen-width);
+        position: absolute;
 
         // Author information
         .sidebar-profile {

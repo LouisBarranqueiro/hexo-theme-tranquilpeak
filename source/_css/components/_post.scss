@@ -3,7 +3,6 @@
 .post-group {
     .post {
         // Space between 2 post
-        margin-top:    15px;
         border-bottom: 1px solid #eef2f8;
     }
 }
@@ -14,6 +13,7 @@
     width:          100%;
     display:        inline-block;
     vertical-align: top;
+    margin-top:    15px;    
 
     .post-header {
         .post-title {
@@ -109,9 +109,8 @@
         margin-top:  15px;
         font-weight: 300;
     }
+    .post-excerpt,
     .post-content {
-        margin-top: 25px;
-
         img {
             display:       block;
             width:         auto;
@@ -155,6 +154,21 @@
         width:   calc(100% - 20px);
         left:    0;
         padding: 0 10px;
+    }
+
+    .post-meta {
+        float: initial !important;
+        top: 0 !important;
+        overflow: hidden;
+        margin-top: 10px;
+
+        >div{
+            float: left;
+            margin-left: 15px;
+            &:first-child{
+                margin-left: 0;
+            }
+        }
     }
 }
 

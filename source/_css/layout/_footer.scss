@@ -3,7 +3,7 @@
     font-size:  map-get($font-size, small);
     text-align: center;
     margin-top: 70px;
-    height:     45px;
+    margin-bottom: 10px;
 
     .beian{
     	color: map-get($colors, text);

@@ -92,6 +92,8 @@ go_to_message: Go to the website       # Message displayed after the <!-- more -
 cover: cover.png                       # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 favicon:                               # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 image_gallery: 1                       # Display an image gallery at the end of a post which have photos variables
+enableShare: 0                         # Display share button list
 
 # Miscellaneous
 google_analytics:    # Google analystics web property ID : UA-XXXXX-X
+beian:               # For Chinese
