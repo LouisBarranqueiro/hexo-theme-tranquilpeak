@@ -35,13 +35,13 @@
 
             .sidebar-button-link {
                 color:   map-get($sidebar, color);
-                display: block;
+                display: inline-block;
                 height:  100%;
 
                 &:hover,
                 &:active {
                     text-decoration: none;
-                    color:           lighten(map-get($sidebar, color), 35);
+                    color: map-get($colors, link);
                 }
             }
         }
@@ -49,6 +49,28 @@
             margin-top: 5px;
         }
     }
+    
+    div.links{
+        padding-left: 30px;
+        color: #fff;
+        font-size:      map-get($font-size, small);
+        .list{
+            margin: 0;
+            padding: 0;
+            >li{
+                list-style: none;
+                >a{
+                    color: #666;
+                    &:hover,
+                    &:active {
+                        text-decoration: none;
+                        color: map-get($colors, link);
+                    }
+                }
+            }
+        }
+    }
+
     // Used to animate the sidebar (pushed effect)
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
@@ -108,7 +130,7 @@
 
                     // Font-awesome icon
                     .sidebar-button-icon {
-                        display:        inline-block;
+                        display:        none;
                         text-align:     center;
                         width:          30px;
                         height:         30px;
@@ -134,7 +156,8 @@
         //Icons 
         ul.sidebar-icons{
             overflow: hidden;
-            padding: 30px 0 0 30px;
+            padding: 20px 30px;
+            margin: 0;
             li.sidebar-icon{
                 float: left;
                 list-style: none;
@@ -163,17 +186,41 @@
         div.sidebar-description{
             font-size: 1.4rem;
             color: #666;
-            line-height: 30px;
+            line-height: 28px;
             padding: 0 30px;
         }
     }
 }
 
-// Display the sidebar in medium mode on medium scren
+@media #{$small-and-down} {
+    #sidebar {
+
+        // Author information
+        .sidebar-profile {
+
+            .sidebar-profile-picture {
+                width:         100px;
+                height:        100px;
+                border-radius: 100px;
+                margin: 0 auto;
+            }
+
+            .sidebar-profile-name{
+                font-size: 2rem;
+                text-align: center;
+                padding: 0;
+            }
+            .sidebar-profile-subtitle{
+                display: none;
+            }
+        }
+    }
+}
+
+//Display the sidebar in medium mode on medium scren
 @media #{$medium-only} {
     #sidebar {
         width: map-get($sidebar, md-screen-width);
-        position: absolute;
 
         // Author information
         .sidebar-profile {
@@ -183,12 +230,15 @@
                 line-height:    30px;
                 vertical-align: middle;
                 border-radius:  30px;
+                margin: 0 auto;
             }
         }
         // Buttons
         ul.sidebar-buttons {
+            margin: 20px 0;
             li.sidebar-button {
                 text-align: center;
+                margin: 20px 0;
 
                 .sidebar-button-link {
                     text-align: center;
@@ -203,8 +253,42 @@
                         padding-top:    0;
                         vertical-align: middle;
                     }
+                    .sidebar-button-desc{
+                        display: none;
+                    }
+                    .sidebar-button-icon{
+                        display: block;
+                        margin: 0 auto;
+                    }
                 }
             }
+        }
+        ul.sidebar-icons{
+            padding: 0;
+            margin: 40px 0;
+            .sidebar-icon{
+                text-align: center;
+                list-style: none;
+                margin: 15px 0;
+                >a{
+                    text-align: center;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    padding-top: 0;
+                    vertical-align: middle;
+                    color: #fff;
+                    font-size: 1.333em;
+                    text-decoration: none;
+                    &:hover{
+                        color: #4183c4;
+                    }
+                }
+            }
+        }
+        div.sidebar-description,
+        div.links{
+            display: none;
         }
     }
 }

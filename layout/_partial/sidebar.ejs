@@ -20,6 +20,7 @@
                 <% } else { %>
                     <a  class="sidebar-button-link" href="<%- url_for(config.url + theme.sidebar.menu[i].url) %>">
                 <% } %>
+                    <i class="sidebar-button-icon fa fa-lg fa-<%= theme.sidebar.menu[i].icon %>"></i>
                     <span class="sidebar-button-desc hide-md"><%= theme.sidebar.menu[i].title %></span>
                 </a>
             </li>
@@ -41,4 +42,21 @@
             </li>
         <% } %>
     </ul>
+
+    <div class="links">
+        <span>Links</span>
+        <ul class="list">
+            <% for (var i in theme.sidebar.links) { %>
+                <li>
+                    <% if ((url_for(theme.sidebar.links[i].url).indexOf(config.url) < 0) && (url_for(theme.sidebar.links[i].url).indexOf('://') >= 0)) { %>
+                        <a href="<%- url_for(theme.sidebar.links[i].url) %>" target="_blank">
+                    <% } else { %>
+                        <a href="<%- url_for(config.url + theme.sidebar.links[i].url) %>">
+                    <% } %>
+                        <span class="sidebar-button-desc hide-md"><%= theme.sidebar.links[i].title %></span>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
 </nav>

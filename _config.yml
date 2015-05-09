@@ -68,6 +68,11 @@ sidebar:
         #     title: Mail
         #     url: mailto://
         #     icon: envelope-o
+
+    links:
+        hexo:
+            title: Hexo
+            url: http://hexo.io
     rss:
         rss:
             title: RSS
