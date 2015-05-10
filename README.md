@@ -19,7 +19,7 @@ A gorgeous responsive theme for Hexo blog framework
 
 ## General ##
 
-- **Latest version** : 1.0.0  
+- **Latest version** : 1.1.0  
 - **Compatibility** : Hexo v3.0.0 or higher  
 
 ## Features ##
@@ -52,15 +52,15 @@ A gorgeous responsive theme for Hexo blog framework
 ## Quick start ##
 
 **For users** :  
-1. Download the latest version ready for production utilisation here : [tranquilpeak-hexo-theme-built-for-production-1.0.0]
-(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.0.0/tranquilpeak-hexo-theme-built-for-production-1.0.0.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)  
-2. Follow [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md) to install and configure the theme  
+1. Download the latest version ready for production utilisation here : [tranquilpeak-hexo-theme-built-for-production-1.1.0]
+(https://github.com/BelinChung/tranquilpeak-hexo-theme/releases/download/v1.1.0/tranquilpeak-hexo-theme-built-for-production-1.1.0.zip) or choose an other version here : [all releases](https://github.com/BelinChung/tranquilpeak-hexo-theme/releases)  
+2. Follow [user documentation](https://github.com/BelinChung/tranquilpeak-hexo-theme/blob/master/docs/user.md) to install and configure the theme  
 
-**For developers** : Run ```git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git```
+**For developers** : Run ```git clone https://github.com/BelinChung/tranquilpeak-hexo-theme.git```
 
 ## Demo  ##
 
-Check Tranquilpeak theme in live  : [Tranquilpeak-hexo-theme demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme)
+Check Tranquilpeak theme in live  : [Personal Blog](https://dearb.me/)
 
 ## Showcase ##
 
@@ -72,11 +72,11 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 
 ### For users ###
 
-To install and configure the theme, consult the following documentation : [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md)
+To install and configure the theme, consult the following documentation : [user documentation](https://github.com/BelinChung/tranquilpeak-hexo-theme/blob/master/docs/user.md)
 
 ### For developers ###
 
-To understand better the code and modify the theme, consult the following documentation : [developer documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/developer.md)
+To understand better the code and modify the theme, consult the following documentation : [developer documentation](https://github.com/BelinChung/tranquilpeak-hexo-theme/blob/master/docs/developer.md)
 
 ## Contributing ##
 
