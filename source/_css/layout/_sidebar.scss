@@ -5,7 +5,7 @@
     position:           fixed;
     top:                0;
     background:         map-get($sidebar, background);
-    overflow:           scroll;
+    overflow:           auto;
     z-index:            map-get($z-indexes, l-sidebar);
     // Sidebar animation
     // Transition style (push)
