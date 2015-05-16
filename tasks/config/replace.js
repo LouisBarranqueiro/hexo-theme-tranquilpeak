@@ -29,6 +29,31 @@ module.exports = function(grunt) {
                     to:   'url(\'../images/'
                 }
             ]
+        },
+        // Modify url of images and fonts in tranquilpeak.css to resolve images and fonts path.
+        cssTranquilpeak: {
+            overwrite:    true,
+            src:          [
+                'source/assets/css/tranquilpeak.css'
+            ],
+            replacements: [
+                {
+                    from: /url\(\"[.\/]+_images\//,
+                    to:   'url\(\"..\/images\/'
+                },
+                {
+                    from: /url\(\'[.\/]+_images\//,
+                    to:   'url\(\'..\/images\/'
+                },
+                {
+                    from: /url\(\"[.\/]+_fonts\//,
+                    to:   'url\(\"..\/fonts\/'
+                },
+                {
+                    from: /url\(\'[.\/]+_fonts\//,
+                    to:   'url\(\'..\/fonts\/'
+                }
+            ]
         }
     });
 
