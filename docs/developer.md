@@ -413,7 +413,8 @@ On production environment, these javascript and stylesheets files are concatenat
 - **cssmin** : Minify ```source/assets/cssstyle.css``` file in : ```source/assets/cssstyle.min.css```   
 - **replace** : 
     * linker : Replace ```EJS_ENDTAG``` string to resolve a problem of ejs escaping with sails-linker tasks  
-    * cssFancybox : Modify url of images in fancybox.css to resolve images path. Impossible to use an other plugin to do that because in the bower fancybox packages, css files and images are in the same folder and that not the case in assets folder.
+    * cssFancybox : Resolve path of images in fancybox.css. Impossible to use an other plugin to do that because in the bower fancybox packages, css files and images are in the same folder and that not the case in assets folder.
+    * cssTranquilpeak : Resolve path of images and fonts in tranquilpeak.css.
 - **sails-linker** : 
     * devJs : Link all javascript files listed in ```tasks/pipeline.js```  to ```layout/_partial/script.ejs```  
     * devCss : Link all stylesheets files listed in ```tasks/pipeline.js```  to ```layout/_partial/head.ejs```  
@@ -428,13 +429,13 @@ On production environment, these javascript and stylesheets files are concatenat
 
 - **build** : Synchronize bower dependencies, compile assets (css and js) and link it to views  
 - **buildProd** : Synchronize bower dependencies, compile assets (css and js) with some optimization (concat and minify) and link it to views  
-- **compileAssets** : Compile scss files, concat js files and syncrhonize images  
+- **compileAssets** : Compile scss files, concat js files
 - **linkAssets** : Link all javascript and stylesheets files to views  
 - **linkAssetsProd** : Link one javascript file and one stylesheet file (concatenated and minified) to views  
-- **syncAssets** : Synchronize assets (css, js and images)
-- **watch** : Synchronize assets (css, js and images) after changes 
+- **syncAssets** : Synchronize assets (css, js, fonts and images)
+- **watch** : Compile and synchronize assets (css, js, fonts and images) after changes 
 
-When you run ```build``` or ```buildProd``` tasks, a ```source/assets``` folder will be created with all files generated in. When you will start your hexo server, only this folder will be copied in ```public``` folder
+When you run ```grunt Build``` or ```grunt BuildProd``` tasks, a ```source/assets``` folder will be created with all files generated in. When you will start your hexo server, only this folder will be copied in ```public``` folder
 
 **Development environment**:    
 1. For the first time, run ```grunt build``` to sync bower dependencies, compile assets and link it to views 
