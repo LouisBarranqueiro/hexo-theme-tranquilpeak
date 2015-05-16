@@ -5,15 +5,13 @@ module.exports = function(grunt) {
             options: {
                 sourcemap: 'none'
             },
-            files:   [
-                {
-                    expand: true,
-                    cwd:    'source/_css',
-                    src:    ['tranquilpeak.scss'],
-                    dest:   'source/assets/css/',
-                    ext:    '.css'
-                }
-            ]
+            files:   [{
+                expand: true,
+                cwd:    'source/_css',
+                src:    ['tranquilpeak.scss'],
+                dest:   'source/assets/css/',
+                ext:    '.css'
+            }]
         }
     });
 
