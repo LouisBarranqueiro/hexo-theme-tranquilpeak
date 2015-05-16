@@ -3,11 +3,12 @@ module.exports = function(grunt) {
     grunt.registerTask('BuildProd', [
         'clean:build',
         'bower:dev',
-        'CompileAssets',
+        'SyncAssets',
+        'replace:cssFancybox',
+        'replace:cssTranquilpeak',
         'concat',
         'cssmin',
         'uglify',
-        'LinkAssetsProd',
-        'replace:cssFancybox'
+        'LinkAssetsProd'
     ]);
 };

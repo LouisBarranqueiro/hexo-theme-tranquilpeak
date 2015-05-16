@@ -7,6 +7,11 @@ module.exports = function(grunt) {
                     cwd:  'source/_images',
                     src:  ['**/*'],
                     dest: 'source/assets/images'
+                },
+                {
+                    cwd:  'source/_fonts',
+                    src:  ['**/*'],
+                    dest: 'source/assets/fonts'
                 }
             ]
         }
