@@ -3,8 +3,9 @@ module.exports = function(grunt) {
     grunt.registerTask('Build', [
         'clean:build',
         'bower:dev',
-        'CompileAssets',
+        'SyncAssets',
         'LinkAssets',
-        'replace:cssFancybox'
+        'replace:cssFancybox',
+        'replace:cssTranquilpeak'
     ]);
 };

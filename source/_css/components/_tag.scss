@@ -19,17 +19,17 @@ a.tag--default,
 }
 
 a.tag--success,
-.tag--default {
+.tag--success {
     @include tag-color-variant(map-get($colors, success));
 }
 
 a.tag--primary,
-.tag--default {
+.tag--primary {
     @include tag-color-variant(map-get($colors, primary));
 }
 
 a.tag--danger,
-.tag--default {
+.tag--danger {
     @include tag-color-variant(map-get($colors, danger));
 }
 

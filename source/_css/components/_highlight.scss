@@ -12,7 +12,7 @@ figure.highlight {
         display:    block;
         width:      100%;
         overflow-y: hidden;
-        overflow-x: scroll;
+        overflow-x: auto;
     }
     // Reset for tag `pre` and  for class `.gutter`, `.code`, `.tag`
     pre,

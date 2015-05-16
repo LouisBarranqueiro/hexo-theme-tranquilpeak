@@ -2,15 +2,13 @@ module.exports = function(grunt) {
     grunt.config.set('cssmin', {
         // Minify `style.css` file into `style.min.css`
         prod: {
-            files: [
-                {
-                    expand: true,
-                    cwd:    'source/assets/css',
-                    src:    ['style.css'],
-                    dest:   'source/assets/css',
-                    ext:    '.min.css'
-                }
-            ]
+            files: [{
+                expand: true,
+                cwd:    'source/assets/css',
+                src:    ['style.css'],
+                dest:   'source/assets/css',
+                ext:    '.min.css'
+            }]
         }
     });
 
