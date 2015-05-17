@@ -3,17 +3,13 @@ module.exports = function(grunt) {
         // Compile `tranquilpeak.scss` file into `tranquilpeak.css`
         dev: {
             options: {
-                sourcemap: 'none'
+                sourceMap: false
             },
-            files:   [{
-                expand: true,
-                cwd:    'source/_css',
-                src:    ['tranquilpeak.scss'],
-                dest:   'source/assets/css/',
-                ext:    '.css'
-            }]
+            files:   {
+                'source/assets/css/tranquilpeak.css': 'source/_css/tranquilpeak.scss'
+            }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
 };

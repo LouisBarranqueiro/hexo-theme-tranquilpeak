@@ -1,10 +1,10 @@
 module.exports = function(grunt) {
     // Build (environment : development)
-    grunt.registerTask('Build', [
+    grunt.registerTask('build', [
         'clean:build',
         'bower:dev',
-        'SyncAssets',
-        'LinkAssets',
+        'syncAssets',
+        'linkAssets',
         'replace:cssFancybox',
         'replace:cssTranquilpeak'
     ]);
