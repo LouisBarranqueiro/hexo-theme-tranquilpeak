@@ -6,16 +6,16 @@ A gorgeous responsive theme for Hexo blog framework
 
 ## Summary ##
 
-- [General](#General)
-- [Features](#Features)
-- [Quick start](#Quick-start)
-- [Demo](#Demo)
-- [Showcase](#Showcase)
-- [Documentation](#Documentation)
-    * [For users](#For-users)
-    * [For developers](#For-developers)
-- [Contributing](#Contributing)
-- [License](#License)
+- [General](#general)
+- [Features](#features)
+- [Quick start](#quick-start)
+- [Demo](#demo)
+- [Showcase](#showcase)
+- [Documentation](#documentation)
+    * [For users](#for-users)
+    * [For developers](#for-developers)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## General ##
 
