@@ -56,7 +56,7 @@ A gorgeous responsive theme for Hexo blog framework
 (https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.0.1/tranquilpeak-hexo-theme-built-for-production-1.0.1.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)  
 2. Follow [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md) to install and configure the theme  
 
-**For developers** : Run ```git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git```
+**For developers** : Run `git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git`
 
 ## Demo  ##
 

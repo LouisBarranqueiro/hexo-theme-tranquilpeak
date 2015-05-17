@@ -27,14 +27,14 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## Requirements ##
 
 1. **Node** : v0.10.35 or higher. Download [Node](https://nodejs.org/download/)
-2. **Hexo CLI** : v0.1.4 or higher. Run ```npm install hexo-cli -g```
-3. **Grunt CLI** : v0.1.13 or higher. Run ```npm install grunt-cli -g```
-4. **Bower** : v1.4.1 or higher. Run ```npm install bower -g```
+2. **Hexo CLI** : v0.1.4 or higher. Run `npm install hexo-cli -g`
+3. **Grunt CLI** : v0.1.13 or higher. Run `npm install grunt-cli -g`
+4. **Bower** : v1.4.1 or higher. Run `npm install bower -g`
 
 ## Installation ##
 
-1. Run ```git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git```
-2. Rename the folder in ```tranquilpeak` and place it in `themes` folder of your Hexo blog
+1. Run `git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git`
+2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 3. Modify the theme in `_config.yml` by changing `theme` variable  to `tranquilpeak`
 4. Complete `theme/tranquilpeak/_config.yml` with your informations by following directives in comments
 
