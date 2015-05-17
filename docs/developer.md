@@ -6,23 +6,23 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Summary ##
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Code structure](#code-structure)
-    * [Views](#views)
-    * [Assets](#assets)
-         * [Stylesheets](#stylesheets)
-         * [Images](#images)
-         * [Javascript](#javascript)
-- [Build](#build)
-    * [NPM dependencies](#npm-dependencies)
-    * [Bower dependencies](#bower-dependencies)
-    * [Grunt tasks](#grunt-tasks)
-        * [Tasks structure](#tasks-structure)
-        * [Pipeline](#pipeline)
-        * [Config tasks](#config-tasks)
-        * [Register tasks](#register-tasks)
-- [Running](#running)
+- [Requirements](#Requirements)
+- [Installation](#Installation)
+- [Code structure](#Code-structure)
+    * [Views](#Views)
+    * [Assets](#Assets)
+         * [Stylesheets](#Stylesheets)
+         * [Images](#Images)
+         * [Javascript](#Javascript)
+- [Build](#Build)
+    * [NPM dependencies](#NPM-dependencies)
+    * [Bower dependencies](#Bower-dependencies)
+    * [Grunt tasks](#Grunt-tasks)
+        * [Tasks structure](#Tasks-structure)
+        * [Pipeline](#Pipeline)
+        * [Config tasks](#Config-tasks)
+        * [Register tasks](#Register-tasks)
+- [Running](#Running)
  
 ## Requirements ##
 
@@ -34,9 +34,9 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## Installation ##
 
 1. Run ```git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git```
-2. Rename the folder in ```tranquilpeak``` and place it in ```themes``` folder of your Hexo blog
-3. Modify the theme in ```_config.yml``` by changing ```theme``` variable  to ```tranquilpeak```
-4. Complete ```theme/tranquilpeak/_config.yml``` with your informations by following directives in comments
+2. Rename the folder in ```tranquilpeak` and place it in `themes` folder of your Hexo blog
+3. Modify the theme in `_config.yml` by changing `theme` variable  to `tranquilpeak`
+4. Complete `theme/tranquilpeak/_config.yml` with your informations by following directives in comments
 
 If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md)  
   
@@ -124,6 +124,8 @@ tranquilpeak-hexo-theme
 │   │   │   ├── _font.scss
 │   │   │   └── _variables.scss
 │   │   └── tranquilpeak.scss
+│   ├── _fonts 
+│   │   └── .gitkeep
 │   ├── _images
 │   │   └── cover.png
 │   └── _js
@@ -148,7 +150,7 @@ tranquilpeak-hexo-theme
 │   │   ├── sass.js
 │   │   ├── sync.js
 │   │   ├── uglify.js
-│   │   └── watch.js
+│   │   └── default.js
 │   ├── register
 │   │   ├── build.js
 │   │   ├── buildProd.js
@@ -156,7 +158,7 @@ tranquilpeak-hexo-theme
 │   │   ├── linkAssets.js
 │   │   ├── linkAssetsProd.js
 │   │   ├── syncAssets.js
-│   │   └── watch.js
+│   │   └── default.js
 │   └── pipeline.js
 ├── .bowerrc
 ├── Gruntfile.js
@@ -267,6 +269,16 @@ tranquilpeak-hexo-theme
 SCSS structure follow 7-1 pattern of [sass guidelines](http://sass-guidelin.es/#the-7-1-pattern)  
 If you want more informations and to understand better this code, consult [sass guidelines](http://sass-guidelin.es/)  
 
+#### Fonts #####
+
+```
+├── _fonts
+    └── .gitkeep
+```
+- **.gitkeep** : Ignore this file. It only exists because git refuses to push empty directories to a remote server. .gitkeep is an unofficial convention that has emerged as a workaround for people who don't discriminate against empty directories.  
+
+If you have local fonts, place them in this folder and import them in `source/_css/utils/_fonts.scss`.
+
 #### Images #####
 
 ```
@@ -311,7 +323,7 @@ Each file correspond to a feature.
 
 ### NPM dependencies ###
 
-To install npm dependencies, run ```npm install```  
+To install npm dependencies, run `npm install`  
   
 NPM dependencies :  
 
@@ -323,10 +335,10 @@ NPM dependencies :
 "grunt-contrib-concat" : "^0.5.0"
 "grunt-contrib-copy" : "~0.4.1"
 "grunt-contrib-cssmin" : "^0.12.0"
-"grunt-contrib-sass" : "^0.8.1"
 "grunt-contrib-uglify" : "^0.7.0"
 "grunt-contrib-watch" : "^0.6.1"
 "grunt-sails-linker" : "^0.10.1"
+"grunt-sass" : "1.0.0",
 "grunt-sync" : "^0.2.3"
 "grunt-text-replace" : "^0.4.0"
 "include-all" : "^0.1.6"
@@ -335,8 +347,8 @@ NPM dependencies :
  
 ### Bower dependencies ###
 
-To install bower dependencies, run ```bower install```  
-Bower dependencies are located in ```source/_bower_components```
+To install bower dependencies, run `bower install`  
+Bower dependencies are located in `source/_bower_components`
 
 Bower dependencies :  
 
@@ -362,15 +374,15 @@ Bower dependencies :
     │   ├── sass.js
     │   ├── sync.js
     │   ├── uglify.js
-    │   └── watch.js
+    │   └── default.js
     ├── register
     │   ├── build.js
     │   ├── buildProd.js
     │   ├── compileAssets.js
+    │   ├── default.js
     │   ├── linkAssets.js
     │   ├── linkAssetsProd.js
-    │   ├── syncAssets.js
-    │   └── watch.js
+    │   └──syncAssets.js
     └── pipeline.js
 ```  
 
@@ -397,53 +409,52 @@ var tranquilpeakCssFilesToInject = [
 ];
 ```
 
-- **tranquilpeakJsFilesToInject** :  Files injected in ```layout/_partial/script.ejs``` (developement environment)
-- **tranquilpeakCssFilesToInject** :  Files injected in```layout/_partial/head.ejs``` (developement environment)
+- **tranquilpeakJsFilesToInject** :  Files injected in `layout/_partial/script.ejs` (developement environment)
+- **tranquilpeakCssFilesToInject** :  Files injected in`layout/_partial/head.ejs` (developement environment)
 
 On production environment, these javascript and stylesheets files are concatenate and minify in 1 javascript file and 1 stylesheet file and linked to their respective views
 
 #### Config tasks ####
 
 - **bower** : Copy all needed files by types from bower dependencies  
-- **clean** : Delete ```source/assets``` folder  
+- **clean** : Delete `source/assets` folder  
 - **concat** : 
-    * devJs : Concat all javascript files located in ```source/_js/``` into 1 file : ```source/assets/js/tranquilpeak.js```  
-    * prodCss : Concat all stylesheets files located in ```source/assets/css/``` into 1 file : ```source/assets/css/style.css```  
-    * prodJs : Concat all javascript listed in ```tasks/pipeline.js``` in 1 file : ```source/assets/js/script.js```  
-- **cssmin** : Minify ```source/assets/cssstyle.css``` file in : ```source/assets/cssstyle.min.css```   
+    * devJs : Concat all javascript files located in `source/_js/` into 1 file : `source/assets/js/tranquilpeak.js`  
+    * prodCss : Concat all stylesheets files located in `source/assets/css/` into 1 file : `source/assets/css/style.css`  
+    * prodJs : Concat all javascript listed in `tasks/pipeline.js` in 1 file : `source/assets/js/script.js`  
+- **cssmin** : Minify `source/assets/cssstyle.css` file in : `source/assets/cssstyle.min.css`   
 - **replace** : 
-    * linker : Replace ```EJS_ENDTAG``` string to resolve a problem of ejs escaping with sails-linker tasks  
+    * linker : Replace `EJS_ENDTAG` string to resolve a problem of ejs escaping with sails-linker tasks  
     * cssFancybox : Resolve path of images in fancybox.css. Impossible to use an other plugin to do that because in the bower fancybox packages, css files and images are in the same folder and that not the case in assets folder.
     * cssTranquilpeak : Resolve path of images and fonts in tranquilpeak.css.
 - **sails-linker** : 
-    * devJs : Link all javascript files listed in ```tasks/pipeline.js```  to ```layout/_partial/script.ejs```  
-    * devCss : Link all stylesheets files listed in ```tasks/pipeline.js```  to ```layout/_partial/head.ejs```  
-    * prodJs : Link ```source/assets/js/script.min.js``` file in ```layout/_partial/script.ejs```  
-    * prodCss : Link ```source/assets/js/style.min.css``` file in ```layout/_partial/head.ejs```  
+    * devJs : Link all javascript files listed in `tasks/pipeline.js`  to `layout/_partial/script.ejs`  
+    * devCss : Link all stylesheets files listed in `tasks/pipeline.js`  to `layout/_partial/head.ejs`  
+    * prodJs : Link `source/assets/js/script.min.js` file in `layout/_partial/script.ejs`  
+    * prodCss : Link `source/assets/js/style.min.css` file in `layout/_partial/head.ejs`  
 - **sass** : Compile `source/_css/tranquilpeak.scss` file in `source/assets/css/tranquilpeak.css`  
-- **sync** : Synchronize images from ```source/_images``` to ```source/assets/images```  
-- **uglify** : Minify ```source/assets/js/script.js``` file in ```source/assets/js/script.min.js```  
-- **watch** : Watch assets from ```source/_*/**/*``` folder to detect changes and launch ```SyncAssets``` task  
+- **sync** : Synchronize images from `source/_images` to `source/assets/images` and fonts from `source/_fonts` to `source/assets/fonts`
+- **uglify** : Minify `source/assets/js/script.js` file in `source/assets/js/script.min.js`  
+- **watch** : Watch assets from `source/_*/**/*` folder to detect changes and launch `syncAssets` task  
 
 #### Register tasks ####
 
-- **build** : Synchronize bower dependencies, compile assets (css and js) and link it to views  
-- **buildProd** : Synchronize bower dependencies, compile assets (css and js) with some optimization (concat and minify) and link it to views  
-- **compileAssets** : Compile scss files, concat js files
+- **build** : Synchronize bower dependencies, images, fonts, compile assets (css and js) and link it to views  
+- **buildProd** : Synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views  
+- **default** : Build the theme once and rebuild after each change
+- **compileAssets** : Compile scss files and concat js files
 - **linkAssets** : Link all javascript and stylesheets files to views  
 - **linkAssetsProd** : Link one javascript file and one stylesheet file (concatenated and minified) to views  
 - **syncAssets** : Synchronize assets (css, js, fonts and images)
-- **watch** : Compile and synchronize assets (css, js, fonts and images) after changes 
 
-When you run ```grunt Build``` or ```grunt BuildProd``` tasks, a ```source/assets``` folder will be created with all files generated in. When you will start your hexo server, only this folder will be copied in ```public``` folder
+When you run `grunt build` or `grunt buildProd` tasks, a `source/assets` folder will be created with all files generated in. When you will start your hexo server, only this folder will be copied in `public` folder
 
 **Development environment**:    
-1. For the first time, run ```grunt build``` to sync bower dependencies, compile assets and link it to views 
-2. After, run ```grunt watch``` to automatically re-build the project after change on assets
+1. Run `grunt default` and start coding :)
 
-**Production environment (before deploying your blog)** :  Run ```grunt buildProd``` to build the project with some optimization (concat and minify).  
+**Production environment (before deploying your blog)** :  Run `grunt buildProd` to build the project with some optimization (concat and minify).  
 Your blog will have only 1 file for javascript and 1 file for stylesheets to reduce number of HTTP requests and improve performance.
 
 ## Running ##
 
-Run ```hexo server``` and start coding! :)
+Run `hexo server` and start coding! :)
