@@ -274,11 +274,13 @@ coverImage: image-2.png
 photos:
     - image-3.jpg
     - image-4.png
+comments: false
 ```
 
-- **thumbnailImage** : Image displayed in index view
+- **thumbnailImage** : Image displayed in index view.
 - **coverImage** : Image displayed in large at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image.
 - **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image.
+- **comments** : Disable the comment of the post.
 
 The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
 Of course, you can set external url.
