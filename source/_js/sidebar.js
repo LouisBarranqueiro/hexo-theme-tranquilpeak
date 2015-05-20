@@ -12,6 +12,7 @@
         this.$openBtn = $('#btn-open-sidebar');
         // Elements where the user can click to close the sidebar
         this.$closeBtn = $('#header, #main');
+        // Elements affected by the swipe of the sidebar
         this.$blog     = $('#header, #main');
         // If you change value of `mediumScreenWidth`,
         // you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
