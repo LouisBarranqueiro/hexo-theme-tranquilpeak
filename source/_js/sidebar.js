@@ -31,14 +31,14 @@
                 if (!self.$sidebar.hasClass('pushed')) {
                     self.openSidebar();
                 }
-            })
+            });
 
             // Detect the click on close button
             self.$closeBtn.click(function() {
                 if (self.$sidebar.hasClass('pushed')) {
                     self.closeSidebar();
                 }
-            })
+            });
 
             // Detect resize of the windows
             $(window).resize(function() {
@@ -50,7 +50,7 @@
                 else {
                     self.closeSidebar();
                 }
-            })
+            });
         },
 
         /**
@@ -73,14 +73,14 @@
          * Reset sidebar position
          */
         resetSidebarPosition: function() {
-            this.$sidebar.removeClass('pushed')
+            this.$sidebar.removeClass('pushed');
         },
 
         /**
          * Reset blog position
          */
         resetBlogPosition: function() {
-            this.$blog.removeClass('pushed')
+            this.$blog.removeClass('pushed');
         },
 
         /**
@@ -124,7 +124,7 @@
             // Check if the blog isn't swiped and prevent multiple click on the open button with `.processing` class
             if (!self.$blog.hasClass('pushed') && !this.$blog.hasClass('processing')) {
                 // Swipe the blog to the right
-                self.$blog.addClass('processing pushed')
+                self.$blog.addClass('processing pushed');
 
                 setTimeout(function() {
                     self.$blog.removeClass('processing');
