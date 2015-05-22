@@ -1,5 +1,7 @@
 # Tranquilpeak Hexo theme
 
+[![Join the chat at https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A gorgeous responsive theme for Hexo blog framework 
 
 ![Tranquilpeak](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/hello-world/tranquilpeak.png)
