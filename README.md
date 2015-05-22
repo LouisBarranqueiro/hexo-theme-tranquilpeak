@@ -18,6 +18,7 @@ A gorgeous responsive theme for Hexo blog framework
 - [License](#license)
 
 ## General ##
+
 - **Author** : Louis Barranqueiro
 - **Latest version** : 1.0.2  
 - **Compatibility** : Hexo v3.0.0 or higher  
@@ -85,6 +86,8 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 **For developers :** To understand better the code and edit  the theme, consult the following documentation : [developer documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/developer.md)
 
 ## Contributing ##
+
+[![Join the chat at https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
 
