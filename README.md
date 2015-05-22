@@ -64,8 +64,8 @@ Check Tranquilpeak theme in live  : [Tranquilpeak-hexo-theme demo](http://louisb
 
 ## Showcase ##
 
-I would like to create a showcase with all blogs with customized version of tranquilpeak theme. 
-Please, add yours by creating an [issue](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues/new?title=Add%20my%20blog%20into%20showcase&body=Hey,%20the%20URL%20of%20my%20blog%20is:%20)  
+I would like to create a showcase with all blogs having a customized version of tranquilpeak theme. 
+If you have customized the original version, please, add yours by creating an [issue](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues/new?title=Add%20my%20blog%20into%20showcase&body=Hey,%20the%20URL%20of%20my%20blog%20is:%20)  
 or by following these steps :  
 1. Fork the project  
 2. On the dev branch, add your blog URL, a short description of your changes and your github name into `SHOWCASE.md` file
