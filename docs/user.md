@@ -33,8 +33,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [tranquilpeak-hexo-theme-built-for-production-1.0.2]
-(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.0.2/tranquilpeak-hexo-theme-built-for-production-1.0.2.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)
+1. Download the latest version built and ready for production here : [tranquilpeak-hexo-theme-built-for-production-1.0.3]
+(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.0.3/tranquilpeak-hexo-theme-built-for-production-1.0.3.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 
 ## Hexo configuration ##
