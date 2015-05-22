@@ -18,5 +18,5 @@
         <%- partial('_partial/about', null, {cache: !config.relative_link}) %>
         <%- partial('_partial/cover', null, {cache: !config.relative_link}) %>
     </body>
-    <%- partial('_partial/script') %>
+    <%- partial('_partial/script', {post: page}) %>
 </html>
