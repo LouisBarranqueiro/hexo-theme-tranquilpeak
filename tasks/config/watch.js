@@ -3,7 +3,7 @@ module.exports = function(grunt) {
         // Watch assets to detect changes and launch `SyncAssets` task
         assets: {
             files: ['source/_*/**/*'],
-            tasks: ['SyncAssets']
+            tasks: ['syncAssets']
         }
     });
 

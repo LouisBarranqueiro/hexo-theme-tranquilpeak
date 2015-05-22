@@ -12,7 +12,10 @@
         this.$openBtn = $('#btn-open-sidebar');
         // Elements where the user can click to close the sidebar
         this.$closeBtn = $('#header, #main');
-        this.$blog     = $('#header, #main');
+        // Elements affected by the swipe of the sidebar
+        // The `pushed` class is added to each elements
+        // Each element has a different behvior when the sidebar is opened
+        this.$blog     = $('body, .post-bottom-bar, #header, #main');
         // If you change value of `mediumScreenWidth`,
         // you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
         this.mediumScreenWidth = 768;
@@ -31,14 +34,14 @@
                 if (!self.$sidebar.hasClass('pushed')) {
                     self.openSidebar();
                 }
-            })
+            });
 
             // Detect the click on close button
             self.$closeBtn.click(function() {
                 if (self.$sidebar.hasClass('pushed')) {
                     self.closeSidebar();
                 }
-            })
+            });
 
             // Detect resize of the windows
             $(window).resize(function() {
@@ -50,7 +53,7 @@
                 else {
                     self.closeSidebar();
                 }
-            })
+            });
         },
 
         /**
@@ -73,14 +76,14 @@
          * Reset sidebar position
          */
         resetSidebarPosition: function() {
-            this.$sidebar.removeClass('pushed')
+            this.$sidebar.removeClass('pushed');
         },
 
         /**
          * Reset blog position
          */
         resetBlogPosition: function() {
-            this.$blog.removeClass('pushed')
+            this.$blog.removeClass('pushed');
         },
 
         /**
@@ -124,7 +127,7 @@
             // Check if the blog isn't swiped and prevent multiple click on the open button with `.processing` class
             if (!self.$blog.hasClass('pushed') && !this.$blog.hasClass('processing')) {
                 // Swipe the blog to the right
-                self.$blog.addClass('processing pushed')
+                self.$blog.addClass('processing pushed');
 
                 setTimeout(function() {
                     self.$blog.removeClass('processing');

@@ -1,11 +1,11 @@
 <%
-    var title = config.title + ' - ';
+    var title = '';
 
     if (is_home()) {
-        title = config.title;
+        title += config.title;
     }
     else if (is_archive()){
-        title += 'all archives';
+        title += 'All archives';
 
         if (is_month()) {
             title += ' : ' + page.year + '/' + page.month;
@@ -13,25 +13,31 @@
         else if (is_year()) {
             title += ' : ' + page.year;
         }
+
+        title += ' - ' + config.title;
     }
     else if (is_tag()) {
         if (page.tag) {
-            title += 'tag : ' + page.tag;
+            title += 'Tag : ' + page.tag;
         }
         else {
-            title += 'all tags';
+            title += 'All tags';
         }
+
+        title += ' - ' + config.title;
     }
     else if (is_category()) {
         if (page.category) {
-            title += 'category : ' + page.category;
+            title += 'Category : ' + page.category;
         }
         else {
-            title += 'all categories';
+            title += 'All categories';
         }
+
+        title += ' - ' + config.title;
     }
     else {
-      title += page.title;
+      title += page.title + ' - ' + config.title;
     }
 %>
 <head>

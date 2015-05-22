@@ -31,12 +31,9 @@
             </div>
         <% } %>
         <%- partial('post/actions') %>
-        <% if (config.disqus_shortname) { %>
+        <% if (post.comments && config.disqus_shortname) { %>
             <%- partial('post/disqus') %>
         <% } %>
-    </div>
-    <div class="post-bottom-bar">
-        <%- partial('post/actions') %>
     </div>
 </article>
 

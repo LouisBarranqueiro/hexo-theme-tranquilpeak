@@ -18,6 +18,7 @@ A gorgeous responsive theme for Hexo blog framework
 - [License](#license)
 
 ## General ##
+
 - **Author** : Louis Barranqueiro
 - **Latest version** : 1.0.2  
 - **Compatibility** : Hexo v3.0.0 or higher  
@@ -51,37 +52,50 @@ A gorgeous responsive theme for Hexo blog framework
   
 ## Quick start ##
 
-**For users** :  
+##### For people who want to use the original version of Tranquilpeak (users) 
 1. Download the latest version ready for production utilisation here : [tranquilpeak-hexo-theme-built-for-production-1.0.2]
 (https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.0.2/tranquilpeak-hexo-theme-built-for-production-1.0.2.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)  
 2. Follow [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md) to install and configure the theme  
 
-**For developers** : Run `git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git`
+##### For people who want to create their own version of tranquilpeak (developers)
+1. Run `git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git`  
+2. Follow [developer documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/developer.md) to edit and build the theme  
 
 ## Demo  ##
 
-Check Tranquilpeak theme in live  : [Tranquilpeak-hexo-theme demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme)
+Check out Tranquilpeak theme in live  : [Tranquilpeak-hexo-theme demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme)
 
 ## Showcase ##
 
-I would like to create a showcase with all blogs which use Tranquilpeak theme. Please, [Add yours :)](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues/new?title=Add%20my%20blog%20into%20showcase&body=Hey,%20the%20URL%20of%20my%20blog%20is:%20)
+I would like to create a showcase with all blogs having a customized version of tranquilpeak theme.
+If you have customized the original version, please, add your blog into.
+
+##### Via an issue
+1. Create an issue with your blog url and a short description of your changes by clicking [here](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues/new?title=Add%20my%20blog%20into%20showcase&body=Hey,%20check%20out%20my%20custom%20version%20of%20Tranquilpeak%20:%0D%0A*%20URL%20:%20%0D%0A*%20Changes%20(short%20description)%20:%20)  
+
+##### Via a pull request
+1. Fork the project  
+2. On the master branch, add your blog URL, a short description of your changes and your github name into `SHOWCASE.md` file  
+3. Respect the format : `[url_of_your_blog](url_of_your_blog) - short_description_of_your_changes - [github_name](url_of_your_github_page)`  
+4. Create a pull request on the master branch   
+
+I will judge if the theme is enough customized to be added into showcase.
 
 ## Documentation ##
 
 If it's your first time using Hexo, please check [Hexo official documentation](https://hexo.io/docs/)
 
-### For users ###
-
-To install and configure the theme, consult the following documentation : [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md)
-
-### For developers ###
-
-To understand better the code and modify the theme, consult the following documentation : [developer documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/developer.md)
+##### For users 
+To install and configure the theme, consult the following documentation : [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md)  
+##### For developers
+To understand better the code and edit  the theme, consult the following documentation : [developer documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/developer.md)
 
 ## Contributing ##
+
+[![Join the chat at https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
 
 ## License ##
 
-tranquilpeak-hexo-theme is released under the terms of the [GNU General Public License v3.0](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/LICENSE)
+Tranquilpeak-hexo-theme is released under the terms of the [GNU General Public License v3.0](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/LICENSE)

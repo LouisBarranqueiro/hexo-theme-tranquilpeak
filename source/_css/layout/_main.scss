@@ -2,12 +2,10 @@
     display:            block;
     min-height:         100%;
     background:         #fff;
-    // Sidebar animation
-    // Transition style (push)
     transition:         transform .25s ease-in-out;
     -webkit-transition: -webkit-transform .25s ease-in-out;
 
-    // Used to animate the blog (pushed effect)
+    // Swipe the `main` div when the sidebar is opened
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
     }
