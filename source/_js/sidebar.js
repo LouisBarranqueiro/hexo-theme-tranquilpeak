@@ -13,7 +13,9 @@
         // Elements where the user can click to close the sidebar
         this.$closeBtn = $('#header, #main');
         // Elements affected by the swipe of the sidebar
-        this.$blog     = $('#header, #main');
+        // The `pushed` class is added to each elements
+        // Each element has a different behvior when the sidebar is opened
+        this.$blog     = $('body, .post-bottom-bar, #header, #main');
         // If you change value of `mediumScreenWidth`,
         // you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
         this.mediumScreenWidth = 768;

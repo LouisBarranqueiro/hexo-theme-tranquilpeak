@@ -109,7 +109,7 @@
         }
     }
     .post-footer {
-        margin-top :20px;
+        margin-top: 20px;
         &-tags {
             padding-bottom: 10px;
             margin-bottom:  10px;
@@ -120,13 +120,20 @@
 
 // Post's bottom bar which contains navigation and share options
 .post-bottom-bar {
-    position:   fixed;
-    bottom:     0;
-    height:     60px;
-    background: white;
-    margin:     0;
-    border-top: 1px solid #eef2f8;
-    z-index:    map-get($z-indexes, c-post-bottom-bar);
+    position:           fixed;
+    bottom:             0;
+    height:             60px;
+    background:         white;
+    margin:             0;
+    border-top:         1px solid #eef2f8;
+    z-index:            map-get($z-indexes, c-post-bottom-bar);
+    transition:         transform .25s ease-in-out;
+    -webkit-transition: -webkit-transform .25s ease-in-out;
+
+    // Swipe the post-bottom-bar when the sidebar is opened (pushed effect)
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
 }
 
 // Respond to small screen and down

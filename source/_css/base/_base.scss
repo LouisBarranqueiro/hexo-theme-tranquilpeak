@@ -21,6 +21,11 @@ body {
     letter-spacing: $letter-spacing-base;
     // Improve smoothing of the font by adding subpixel in Safari
     @include prefix(font-smoothing, subpixel-antialiased, 'webkit');
+
+    // Hide overflow-x when the sidebar is swiped
+    &.pushed {
+        overflow-x: hidden;
+    }
 }
 
 h1,
