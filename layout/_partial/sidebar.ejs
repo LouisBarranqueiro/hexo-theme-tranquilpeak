@@ -1,7 +1,7 @@
 <nav id="sidebar">
     <% if (((theme.gravatar_image) && (theme.author.email)) || (theme.author.picture)) { %>
         <div class="sidebar-profile">
-            <a href="<%- url_for('/about') %>">
+            <a href="<%- url_for('/#about') %>">
                 <% if ((theme.gravatar_image) && (theme.author.email)) { %>
                     <img class="sidebar-profile-picture" src="<%- gravatar(theme.author.email, 90) %>"/>
                 <% } else if (theme.author.picture) { %>
