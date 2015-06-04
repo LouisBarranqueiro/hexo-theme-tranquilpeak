@@ -96,6 +96,8 @@ To understand better the code and edit  the theme, consult the following documen
 
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
 
+All pull requests must be done on the `dev` branch.
+
 ## License ##
 
 Tranquilpeak-hexo-theme is released under the terms of the [GNU General Public License v3.0](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/LICENSE)
