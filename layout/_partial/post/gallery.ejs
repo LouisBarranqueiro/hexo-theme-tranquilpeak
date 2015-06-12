@@ -13,7 +13,7 @@
                 <% if ((photo.indexOf(config.url) < 0) && (photo.indexOf('://') >= 0)) { %>
                     <%  photoUrl = photo; %>
                 <% } else { %>
-                    <% photoUrl = url_for(post.permalink + photo); %>
+                    <% photoUrl = url_for(post.path + photo); %>
                 <% } %>
                 <div class="photo-box">
                     <a class="photo-box-inner fancybox" rel="fancybox-thumb" data-fancybox-group="<%= 'gallery-' + post.id %>" title="<%= photo.replace('__', ' ').slice(0, photo.lastIndexOf('.')) %>" href="<%= photoUrl %>">
