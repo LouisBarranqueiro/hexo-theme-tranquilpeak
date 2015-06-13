@@ -80,18 +80,35 @@ author:
     bio:
     job:
     location:
-    picture:    # Your profile picture located in folder `source/_images/` (development)
-                # or in `source/assets/images/` (production)
-                # Overwritten by your gravatar image if `gravatar_image` is enabled
+    # Your profile picture located in folder `source/_images/` (development)
+    # or in `source/assets/images/` (production).
+    # Overwritten by your gravatar image if `gravatar_image` is enabled
+    picture:
 
 # Customization
-gravatar_image: 1                      # Enable gravatar image. Using `author.email` value. (disable: 0, enable: 1). Overwrite `author.picture` everywhere in the blog
-thumbnail_image: 1                     # Display thumbnail image of each post on index pages (disable: 0, enable: 1)
-read_more_message: Continue reading    # Message displayed after the <!-- more --> tag
-go_to_message: Go to the website       # Message displayed after the <!-- more --> tag or after 300 characters for post with link layout
-cover: cover.png                       # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
-favicon:                               # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
-image_gallery: 1                       # Display an image gallery at the end of a post which have photos variables
+# Define the behavior of the header and sidebar
+# 1: display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
+# and large sidebar is swiped (default)
+# 2: display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
+# 3: display header bar on all screens and large sidebar is swiped
+# 4: display header bar on all screens and medium sidebar is swiped
+sidebar_behavior: 1
+# Display thumbnail image of each post on index pages (disable: 0, enable: 1)
+thumbnail_image: 1
+# Message displayed after the <!-- more --> tag
+read_more_message: Continue reading
+# Message displayed after the <!-- more --> tag or after 300 characters for post with link layout
+go_to_message: Go to the website
+# Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
+cover: cover.png
+# Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
+favicon:
+# Display an image gallery at the end of a post which have photos variables
+image_gallery: 1
 
-# Miscellaneous
-google_analytics:    # Google analystics web property ID : UA-XXXXX-X
+# Integrated services
+# Your Google analystics web property ID : UA-XXXXX-X
+google_analytics_id:
+# Your Gravatar email. Overwrite `author.picture` everywhere in the blog
+gravatar_email:
+
