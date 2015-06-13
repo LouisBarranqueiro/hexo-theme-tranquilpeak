@@ -18,7 +18,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Sidebar](#sidebar)
     * [Author](#author)
     * [Customization](#customization)
-    * [Miscellaneous](#miscellaneous)
+    * [Integrated services](#integrated-services)
     * [Enable pages](#enable-pages)
         * [Enable all-categories page](#enable-all-categories-page)
         * [Enable all-tags page](#enable-all-tags-page)
@@ -175,8 +175,8 @@ author:
 ```
 
 - **email** : Your mail address. This address will be used to get your gravatar image if you activate gravatar option
-- **bio** : A short biography. Display on your about card
-- **job** : Your job
+- **bio** : A short biography. Display on your about card (Markdown and HTML allowed)
+- **job** : Your job (Markdown and HTML allowed)
 - **location** : Your location
 - **picture** : Your profile picture. Overwritten by your gravatar image if gravatar option is enabled
 
@@ -186,7 +186,7 @@ author:
   
 ``` yaml
 # Customization
-gravatar_image: 1                
+sidebar_behavior: 1                
 thumbnail_image: 1               
 read_more_message: Continue readiing
 go_to_message: Go to the website 
@@ -195,7 +195,9 @@ favicon:
 image_gallery: 1                 
 ```
 
-- **gravatar_image** : Enable gravatar image. Using `author.email` value. (disable: 0, enable: 1). Overwrite `author.picture` everywhere in the blog
+- **sidebar_behavior** : Define the behavior of the header and sidebar (1: display large sidebar on large screen, medium sidebar on medium screen and header bar on small screenand large 
+sidebar is swiped (default), 2: display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped, 3: display header bar on all screens and large 
+sidebar is swiped, 4: display header bar on all screens and medium sidebar is swiped)
 - **thumbnail_image** : Display thumbnail image of each post on index pages (disable: 0, enable: 1)
 - **read_more_message** : Message displayed after the `<!-- more -->` tag or after 300 characters in post
 - **go_to_message** : Message displayed after the `<!-- more -->` balise or after 300 characters for post with link layout
@@ -203,14 +205,16 @@ image_gallery: 1
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables
 
-### Miscellaneous ###
+### Integrated services ###
 
 ``` yaml
-# Miscellaneous
-google_analytics:
+# Integrated services
+google_analytics_id:
+gravatar_email: 
 ```
 
-- **google_analytics** : Your Google analystics web property ID : UA-XXXXX-X
+- **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
+- **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog
 
 ### Enable pages ###
 
