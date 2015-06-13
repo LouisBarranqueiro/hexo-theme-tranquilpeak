@@ -1,0 +1,30 @@
+/// Mixin helper to stylized bottom bar in small size
+@mixin bottom-bar-sm {
+    width:   calc(100% - #{map-get($sidebar, lg-screen-width)} - 30px);
+    left:    map-get($sidebar, lg-screen-width);
+    padding: 0 15px;
+}
+/// Mixin helper to stylized bottom bar in medium size
+@mixin bottom-bar-md {
+    width:   calc(100% - #{map-get($sidebar, md-screen-width)} - 30px);
+    left:    map-get($sidebar, md-screen-width);
+    padding: 0 15px;
+}
+/// Mixin helper to stylized bottom bar in large size
+@mixin bottom-bar-lg {
+    width:   calc(100% - 20px);
+    left:    0;
+    padding: 0 10px;
+}
+/// Mixin helper to pushed bottom bar from medium sidebar size
+@mixin bottom-bar-pushed-md {
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, md-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
+}
+/// Mixin helper to pushed bottom bar from large sidebar size
+@mixin bottom-bar-pushed-lg {
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
+}

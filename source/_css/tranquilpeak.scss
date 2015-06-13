@@ -3,6 +3,7 @@
     'utils/variables';
 
 @import
+    'utils/mixins/bottom-bar',
     'utils/mixins/button',
     'utils/mixins/category',
     'utils/mixins/form',
@@ -16,6 +17,7 @@
 @import
     'layout/about',
     'layout/blog',
+    'layout/bottom-bar',
     'layout/cover',
     'layout/footer',
     'layout/header',

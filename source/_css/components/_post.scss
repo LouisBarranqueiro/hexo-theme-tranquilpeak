@@ -117,25 +117,6 @@
         }
     }
 }
-
-// Post's bottom bar which contains navigation and share options
-.post-bottom-bar {
-    position:           fixed;
-    bottom:             0;
-    height:             60px;
-    background:         white;
-    margin:             0;
-    border-top:         1px solid #eef2f8;
-    z-index:            map-get($z-indexes, c-post-bottom-bar);
-    transition:         transform .25s ease-in-out;
-    -webkit-transition: -webkit-transform .25s ease-in-out;
-
-    // Swipe the post-bottom-bar when the sidebar is opened (pushed effect)
-    &.pushed {
-        @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
-    }
-}
-
 // Respond to small screen and down
 @media #{$small-and-down} {
     // Hide the post's thumbnail image
@@ -145,12 +126,6 @@
         img {
             display: none;
         }
-    }
-    // Resize the post's bottom bar
-    .post-bottom-bar {
-        width:   calc(100% - 20px);
-        left:    0;
-        padding: 0 10px;
     }
 }
 
@@ -163,12 +138,6 @@
                 font-size: map-get($headings-font-size, h1) + 0.2rem;
             }
         }
-    }
-    // Resize the post-bottom bar
-    .post-bottom-bar {
-        width:   calc(100% - #{map-get($sidebar, md-screen-width)} - 30px);
-        left:    map-get($sidebar, md-screen-width);
-        padding: 0 15px;
     }
 }
 
@@ -204,11 +173,5 @@
                 font-size: map-get($headings-font-size, h1) + 0.6rem;
             }
         }
-    }
-    // Resize the post-bottom bar
-    .post-bottom-bar {
-        width:   calc(100% - #{map-get($sidebar, lg-screen-width)} - 30px);
-        left:    map-get($sidebar, lg-screen-width);
-        padding: 0 15px;
     }
 }
