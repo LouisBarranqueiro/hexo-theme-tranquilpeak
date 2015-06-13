@@ -3,9 +3,9 @@
     <h1 class="header-title">
         <a class="header-title-link" href="<%= config.url %>"><%= config.title %></a>
     </h1>
-    <% if ((theme.gravatar_image) && (theme.author.email)) { %>
+    <% if (theme.gravatar_email) { %>
         <a class="header-picture-link" href="<%- url_for('/#about') %>">
-            <img class="header-picture" src="<%- gravatar(theme.author.email, 90) %>"/>
+            <img class="header-picture" src="<%- gravatar(theme.gravatar_email, 90) %>"/>
         </a>
     <% } else if (theme.author.picture) { %>
         <a class="header-picture-link" href="<%- url_for('/#about') %>">

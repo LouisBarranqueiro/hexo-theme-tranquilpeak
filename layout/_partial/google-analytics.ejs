@@ -1,7 +1,7 @@
-<% if (theme.google_analytics) { %>
+<% if (theme.google_analytics_id) { %>
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '<%= theme.google_analytics %>']);
+        _gaq.push(['_setAccount', '<%= theme.google_analytics_id %>']);
         _gaq.push(['_trackPageview']);
         (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
