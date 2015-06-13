@@ -1,0 +1,13 @@
+/// Mixin helper to push header from medium sidebar size
+@mixin header-pushed-md {
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, md-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
+}
+
+/// Mixin helper to push header from large sidebar size
+@mixin header-pushed-lg {
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
+}
