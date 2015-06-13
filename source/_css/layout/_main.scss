@@ -1,0 +1,65 @@
+#main {
+    display:            block;
+    min-height:         100%;
+    background:         #ffffff;
+    transition:         transform .25s ease-in-out;
+    -webkit-transition: -webkit-transform .25s ease-in-out;
+}
+
+@media #{$small-and-down} {
+    #main {
+        // Display `main` div in large size
+        @include main-lg;
+
+        // Push `main` div from the size of the large sidebar
+        &[data-behavior="1"], &[data-behavior="3"] {
+            @include main-pushed-lg;
+        }
+        // Push `main` div from the size of the medium sidebar
+        &[data-behavior="2"], &[data-behavior="4"] {
+            @include main-pushed-md;
+        }
+    }
+}
+
+@media #{$medium-only} {
+    #main {
+        // Display `main` div in medium size
+        &[data-behavior="1"], &[data-behavior="2"] {
+            @include main-md;
+        }
+        // Display `main` div in large size and push it from the size of the large sidebar
+        &[data-behavior="3"] {
+            @include main-lg;
+            @include main-pushed-lg;
+        }
+        // Display `main` div in large size and push it from the size of the medium sidebar
+        &[data-behavior="4"] {
+            @include main-lg;
+            @include main-pushed-md;
+        }
+    }
+}
+
+@media #{$large-and-up} {
+    #main {
+        // Display `main` div in small size
+        &[data-behavior="1"] {
+            @include main-sm;
+        }
+        // Display `main` div in medium size
+        &[data-behavior="2"] {
+            @include main-md;
+        }
+        // Display `main` div in large size and push it from the size of the large sidebar
+        &[data-behavior="3"] {
+            @include main-lg;
+            @include main-pushed-lg;
+        }
+        // Display `main` div in large size and push it from the size of the medium sidebar
+        &[data-behavior="4"] {
+            @include main-lg;
+            @include main-pushed-md;
+        }
+    }
+}
