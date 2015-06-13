@@ -1,0 +1,107 @@
+// Global CSS rules for all screen size
+#sidebar {
+    font-family:        'Open Sans', sans-serif;
+    height:             100%;
+    position:           fixed;
+    top:                0;
+    background:         map-get($sidebar, background);
+    overflow:           auto;
+    z-index:            map-get($z-indexes, l-sidebar);
+    // Sidebar animation
+    // Transition style (push)
+    transition:         transform .25s ease-in-out;
+    -webkit-transition: -webkit-transform .25s ease-in-out;
+
+    // Author information
+    .sidebar-profile {
+        color:         map-get($sidebar, color);
+        text-align:    center;
+        padding-top:   18px;
+        margin-bottom: 15px;
+
+        .sidebar-profile-picture {
+            display: block;
+            margin:  0 auto;
+        }
+    }
+    // Sidebar's buttons
+    ul.sidebar-buttons {
+        padding: 0;
+        margin:  0 0 20px 0;
+
+        li.sidebar-button {
+            display:     block;
+            width:       100%;
+            // Height of a link in the menu
+            height:      45px;
+            line-height: 45px;
+
+            .sidebar-button-link {
+                color:   map-get($sidebar, color);
+                display: block;
+                height:  100%;
+
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                    color:           lighten(map-get($sidebar, color), 35);
+                }
+            }
+        }
+        &:first-child {
+            margin-top: 5px;
+        }
+    }
+}
+
+// Define sidebar behavior configured in `_config.yml` for small screen
+// On `$small-and-down` (small screen): It hide by default the sidebar
+// and with javascript located in `source/_js/_sidebar.js`, it will animate the swipe of the sidebar
+@media #{$small-and-down} {
+    #sidebar {
+        &[data-behavior="1"], &[data-behavior="3"] {
+            left: -#{map-get($sidebar, lg-screen-width)};
+            @include sidebar-lg;
+        }
+        &[data-behavior="2"], &[data-behavior="4"] {
+            left: -#{map-get($sidebar, md-screen-width)};
+            @include sidebar-md;
+        }
+    }
+}
+// Define sidebar behavior configured in `_config.yml` for medium screen
+@media #{$medium-only} {
+    #sidebar {
+        &[data-behavior="1"],
+        &[data-behavior="2"] {
+            @include sidebar-md;
+        }
+        &[data-behavior="3"] {
+            left: -#{map-get($sidebar, lg-screen-width)};
+            @include sidebar-lg;
+        }
+        &[data-behavior="4"] {
+            left: -#{map-get($sidebar, md-screen-width)};
+            @include sidebar-md;
+        }
+    }
+}
+// Define sidebar behavior configured in `_config.yml` for large screen
+@media #{$large-and-up} {
+    #sidebar {
+        &[data-behavior="1"] {
+            @include sidebar-lg;
+        }
+        &[data-behavior="2"] {
+            @include sidebar-md;
+        }
+        &[data-behavior="3"] {
+            left: -#{map-get($sidebar, lg-screen-width)};
+            @include sidebar-lg;
+        }
+        &[data-behavior="4"] {
+            left: -#{map-get($sidebar, md-screen-width)};
+            @include sidebar-md;
+        }
+    }
+}
