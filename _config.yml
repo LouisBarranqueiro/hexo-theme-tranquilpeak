@@ -107,8 +107,10 @@ favicon:
 image_gallery: 1
 
 # Integrated services
-# Your Google analystics web property ID : UA-XXXXX-X
-google_analytics_id:
+# Your Disqus shortname
+disqus_shortname:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
 gravatar_email:
+# Your Google analystics web property ID : UA-XXXXX-X
+google_analytics_id:
 
