@@ -114,9 +114,9 @@ image_gallery: 1
 # Pagination behavior of archive, category and tag pages
 ## 0: Disable pagination
 ## 1: Enable pagination
-archive_pagination: 0
-category_pagination: 0
-tag_pagination: 0
+archive_pagination: 1
+category_pagination: 1
+tag_pagination: 1
 
 # Integrated services
 # Your Disqus shortname
