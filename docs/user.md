@@ -245,12 +245,13 @@ sidebar is swiped
 
 ``` yaml
 # Integrated services
-google_analytics_id:
+disqus_shortname:
 gravatar_email: 
+google_analytics_id:
 ```
-
-- **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
+- **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.
 - **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog
+- **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
 
 ### Enable pages ###
 
