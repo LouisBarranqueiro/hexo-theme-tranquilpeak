@@ -38,9 +38,9 @@ sidebar:
         search:
             title: Search
             url: /#search
-            # `search` class is used to display font-awesome icon.
+            icon: search
             # `st-search-show-outputs st-ui-search-tab` classes are used to open swiftype search window
-            icon: search st-search-show-outputs st-ui-search-tab
+            class: t-search-show-outputs st-ui-search-tab
         about:
             title: About me
             url: /#about
@@ -126,5 +126,5 @@ google_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
 gravatar_email:
 # Your swiftype engine id
-swiftype_engine_id: tnz7swcER177qHyq7WYp
+swiftype_engine_id:
 
