@@ -6,6 +6,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Summary ##
 
+- [General](#general)
+- [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Code structure](#code-structure)
@@ -23,7 +25,39 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Config tasks](#config-tasks)
         * [Register tasks](#register-tasks)
 - [Running](#running)
- 
+
+## General ##
+
+- **Author** : Louis Barranqueiro
+- **Latest version** : 1.0.5  
+- **Compatibility** : Hexo v3.0.0 or higher  
+
+## Features ##
+
+**General features :**  
+- Fully responsive  
+- Optimized for tablets & mobiles  
+- Configurable menu of the sidebar  
+- Pages to filter tags, categories and archives  
+- Background cover image  
+- Beautiful about page  
+  
+  
+**Posts features :**  
+- Thumbnail image  
+- Cover image  
+- Responsive videos & images  
+- Sharing options  
+- Navigation menu  
+- GitHub theme for code highlighting  
+- Image gallery  
+  
+  
+**Integrated services :**  
+- Disqus  
+- Google analytics  
+- Gravatar  
+
 ## Requirements ##
 
 1. **Node** : v0.10.35 or higher. Download [Node](https://nodejs.org/download/)
