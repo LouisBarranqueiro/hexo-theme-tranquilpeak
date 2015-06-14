@@ -92,7 +92,7 @@ author:
     picture:
 
 # Customization
-# Define the behavior of the header and sidebar
+# Define the behavior of sidebar
 # 1: display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
 # and large sidebar is swiped (default)
 # 2: display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
@@ -106,7 +106,7 @@ read_more_message: Continue reading
 # Message displayed after the <!-- more --> tag or after 300 characters for post with link layout
 go_to_message: Go to the website
 # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
-cover_image: cover.png
+cover_image: cover.jpg
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 favicon:
 # Display an image gallery at the end of a post which have photos variables
