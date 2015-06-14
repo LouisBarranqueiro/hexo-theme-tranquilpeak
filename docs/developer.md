@@ -57,7 +57,9 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Disqus  
 - Google analytics  
 - Gravatar  
-
+- Swiftype  
+  
+  
 ## Requirements ##
 
 1. **Node** : v0.10.35 or higher. Download [Node](https://nodejs.org/download/)

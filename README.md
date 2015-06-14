@@ -46,8 +46,9 @@ A gorgeous responsive theme for Hexo blog framework
   
 **Integrated services :**  
 - Disqus  
-- Gravatar  
 - Google analytics  
+- Gravatar  
+- Swiftype  
   
   
 ## Quick start ##

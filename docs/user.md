@@ -56,8 +56,9 @@ If you want to report a bug or ask a question, [create an issue](https://github.
   
 **Integrated services :**  
 - Disqus  
-- Gravatar  
 - Google analytics  
+- Gravatar  
+- Swiftype  
 
 ## Requirements ##
 
@@ -78,7 +79,7 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 
 ### Enable post assets folder ###
 
-If you want to take advantage of cover image, thumbnail image, and image gallery features, you hate to enable post assets folderby setting `post_asset_folder` to  `true`in `_config.yml`.
+If you want to take advantage of cover image, thumbnail image, and image gallery features, you have to enable post assets folderby setting `post_asset_folder` to  `true`in `_config.yml`.
 
 ### Enable RSS feed ###
 
@@ -237,11 +238,13 @@ The same page with `category_pagination: 0`:
 # Integrated services
 disqus_shortname:
 gravatar_email: 
-google_analytics_id:
+google_analytics_id:  
+swiftype_engine_id:
 ```
 - **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.
 - **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog
 - **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
+- **swiftype_engine_id** : Your Swiftype engine id founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype engine id is : `fsdkiG43fkfder32dgsR`.
 
 ### Enable pages ###
 

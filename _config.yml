@@ -35,6 +35,12 @@ sidebar:
             title: Archives
             url: /all-archives
             icon: archive
+        search:
+            title: Search
+            url: /#search
+            # `search` class is used to display font-awesome icon.
+            # `st-search-show-outputs st-ui-search-tab` classes are used to open swiftype search window
+            icon: search st-search-show-outputs st-ui-search-tab
         about:
             title: About me
             url: /#about
@@ -115,8 +121,10 @@ tag_pagination: 0
 # Integrated services
 # Your Disqus shortname
 disqus_shortname:
-# Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-gravatar_email:
 # Your Google analystics web property ID : UA-XXXXX-X
 google_analytics_id:
+# Your Gravatar email. Overwrite `author.picture` everywhere in the blog
+gravatar_email:
+# Your swiftype engine id
+swiftype_engine_id: tnz7swcER177qHyq7WYp
 
