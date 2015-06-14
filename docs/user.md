@@ -159,7 +159,7 @@ sidebar:
         #     icon: linkedin
         # mail:
         #     title: Mail
-        #     url: mailto://
+        #     url: mailto:
         #     icon: envelope-o
     rss:
         rss:
@@ -196,7 +196,7 @@ author:
 # Customization
 sidebar_behavior: 1                
 thumbnail_image: 1               
-read_more_message: Continue readiing
+read_more_message: Continue reading
 go_to_message: Go to the website 
 cover_image: cover.png                 
 favicon:                         
@@ -215,7 +215,7 @@ sidebar is swiped
    * 4: Display header bar on all screens and medium sidebar is swiped)
 - **thumbnail_image** : Display thumbnail image of each post on index pages (disable: 0, enable: 1)
 - **read_more_message** : Message displayed after the `<!-- more -->` tag or after 300 characters in post
-- **go_to_message** : Message displayed after the `<!-- more -->` balise or after 300 characters for post with link layout
+- **go_to_message** : Message displayed after the `<!-- more -->` tag or after 300 characters for post with link layout
 - **cover** : Your blog cover picture located in folder `source/assets/images/`. **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables
