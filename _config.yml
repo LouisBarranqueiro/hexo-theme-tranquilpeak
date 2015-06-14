@@ -105,6 +105,12 @@ cover: cover.png
 favicon:
 # Display an image gallery at the end of a post which have photos variables
 image_gallery: 1
+# Pagination behavior of archive, category and tag pages
+## 0: Disable pagination
+## 1: Enable pagination
+archive_pagination: 0
+category_pagination: 0
+tag_pagination: 0
 
 # Integrated services
 # Your Disqus shortname
