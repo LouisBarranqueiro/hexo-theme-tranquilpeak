@@ -8,6 +8,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Summary ##
 
+- [General](#general)
+- [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Hexo configuration](#hexo-configuration)
@@ -25,6 +27,38 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Enable all-archives page](#enable-all-archives-page)
 - [Front-matter settings](#front-matter-settings)
 - [Running](#running)  
+
+## General ##
+
+- **Author** : Louis Barranqueiro
+- **Latest version** : 1.0.5  
+- **Compatibility** : Hexo v3.0.0 or higher  
+
+## Features ##
+
+**General features :**  
+- Fully responsive  
+- Optimized for tablets & mobiles  
+- Configurable menu of the sidebar  
+- Pages to filter tags, categories and archives  
+- Background cover image  
+- Beautiful about page  
+  
+  
+**Posts features :**  
+- Thumbnail image  
+- Cover image  
+- Responsive videos & images  
+- Sharing options  
+- Navigation menu  
+- GitHub theme for code highlighting  
+- Image gallery  
+  
+  
+**Integrated services :**  
+- Disqus  
+- Google analytics  
+- Gravatar  
 
 ## Requirements ##
 
@@ -182,8 +216,6 @@ author:
 
 ### Customization ###
 
-**Change the default cover image to have an unique blog :)**  
-  
 ``` yaml
 # Customization
 sidebar_behavior: 1                
@@ -195,13 +227,17 @@ favicon:
 image_gallery: 1                 
 ```
 
-- **sidebar_behavior** : Define the behavior of the header and sidebar (1: display large sidebar on large screen, medium sidebar on medium screen and header bar on small screenand large 
-sidebar is swiped (default), 2: display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped, 3: display header bar on all screens and large 
-sidebar is swiped, 4: display header bar on all screens and medium sidebar is swiped)
+- **sidebar_behavior** : Define the behavior of the header and sidebar :
+   * 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen and large 
+sidebar is swiped (default)
+   * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
+   * 3: Display header bar on all screens and large 
+sidebar is swiped 
+   * 4: Display header bar on all screens and medium sidebar is swiped)
 - **thumbnail_image** : Display thumbnail image of each post on index pages (disable: 0, enable: 1)
 - **read_more_message** : Message displayed after the `<!-- more -->` tag or after 300 characters in post
 - **go_to_message** : Message displayed after the `<!-- more -->` balise or after 300 characters for post with link layout
-- **cover** : Your blog cover picture located in folder `source/assets/images/`. Change the default cover image to have an unique blog
+- **cover** : Your blog cover picture located in folder `source/assets/images/`. **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables
 
