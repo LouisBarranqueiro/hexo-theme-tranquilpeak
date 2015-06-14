@@ -198,7 +198,7 @@ sidebar_behavior: 1
 thumbnail_image: 1               
 read_more_message: Continue readiing
 go_to_message: Go to the website 
-cover: cover.png                 
+cover_image: cover.png                 
 favicon:                         
 image_gallery: 1
 archive_pagination: 1
