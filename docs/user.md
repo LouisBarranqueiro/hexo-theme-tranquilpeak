@@ -14,7 +14,6 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [Installation](#installation)
 - [Hexo configuration](#hexo-configuration)
     * [Enable post assets folder](#enable-post-assets-folder)
-    * [Archives configuration](#archives-configuration)
     * [Enable RSS feed](#enable-rss-feed)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
     * [Sidebar](#sidebar)
@@ -57,8 +56,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
   
 **Integrated services :**  
 - Disqus  
-- Google analytics  
 - Gravatar  
+- Google analytics  
 
 ## Requirements ##
 
@@ -80,29 +79,6 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 ### Enable post assets folder ###
 
 If you want to take advantage of cover image, thumbnail image, and image gallery features, you hate to enable post assets folderby setting `post_asset_folder` to  `true`in `_config.yml`.
-
-### Archives configuration ###
-
-You can choose the style of listing for archives, category and tag pages by adding this lines in `_config.yml`  
-
-``` yaml
-# Archives
-## 1: Enable pagination
-## 0: Disable pagination
-archive: 1
-category: 1
-tag: 1
-```
-
-- **0** : Disable pagination  
-- **1** : Enable pagination  
-
-Example :  
-A category page look like this with `category: 1` :  
-![archives 1](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-1.png)  
-
-The same page with `category: 0`:  
-![archives 0](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-0.png)  
 
 ### Enable RSS feed ###
 
@@ -224,7 +200,10 @@ read_more_message: Continue readiing
 go_to_message: Go to the website 
 cover: cover.png                 
 favicon:                         
-image_gallery: 1                 
+image_gallery: 1
+archive_pagination: 1
+category_pagination: 1
+tag_pagination: 1
 ```
 
 - **sidebar_behavior** : Define the behavior of the header and sidebar :
@@ -240,6 +219,17 @@ sidebar is swiped
 - **cover** : Your blog cover picture located in folder `source/assets/images/`. **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables
+- **archive_pagination** : Displaying style of archive pages. 0: Disable pagination, 1: Enable pagination 
+- **category_pagination** :  Displaying style of category pages. 0: Disable pagination, 1: Enable pagination 
+- **tag_pagination** :  Displaying style of tag pages. 0: Disable pagination, 1: Enable pagination 
+
+Example :  
+A category page look like this with `category_pagination: 1` :  
+![archives 1](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-1.png)  
+
+The same page with `category_pagination: 0`:  
+![archives 0](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-0.png)  
+
 
 ### Integrated services ###
 
