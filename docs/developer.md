@@ -29,7 +29,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Latest version** : 1.0.5  
+- **Version** : 1.0.5  
 - **Compatibility** : Hexo v3.0.0 or higher  
 
 ## Features ##
