@@ -14,6 +14,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [Installation](#installation)
 - [Hexo configuration](#hexo-configuration)
     * [Enable post assets folder](#enable-post-assets-folder)
+    * [Enable relative links](#enable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
     * [Sidebar](#sidebar)
@@ -79,7 +80,11 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 
 ### Enable post assets folder ###
 
-If you want to take advantage of cover image, thumbnail image, and image gallery features, you have to enable post assets folderby setting `post_asset_folder` to  `true`in `_config.yml`.
+If you want to take advantage of cover image, thumbnail image, and image gallery features, you have to enable post assets folder by setting `post_asset_folder` to  `true`in `_config.yml`.
+
+### Enable relative links ###
+
+You have to set `relative_link` to `true` otherwise features like navigation bar will not work correctly.
 
 ### Enable RSS feed ###
 
