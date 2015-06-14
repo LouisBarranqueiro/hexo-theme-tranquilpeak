@@ -18,6 +18,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Enable RSS feed](#enable-rss-feed)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
     * [Sidebar](#sidebar)
+    * [Header](#header)
     * [Author](#author)
     * [Customization](#customization)
     * [Integrated services](#integrated-services)
@@ -174,9 +175,21 @@ sidebar:
             icon: rss
 ```
 
-- **title** : Title of your link displayed
+### Header ###
+
+The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
+
+``` yaml
+header:
+    right_link:
+        url: /#search
+        icon: search
+        class: st-search-show-outputs
+```
+
 - **url** : URL of the link. If the URL is internal, domain name is not necessary
 - **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
+- **class** : CSS Class added to the link
 
 ### Author ###
 

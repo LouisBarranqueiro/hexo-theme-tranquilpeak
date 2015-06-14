@@ -80,6 +80,16 @@ sidebar:
             url: /atom.xml
             icon: rss
 
+# Header configuration
+# The link at the right of the header is customizable
+# You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
+# DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
+header:
+    right_link:
+        # url: /#search
+        # icon: search
+        # class: st-search-show-outputs
+
 # Author
 author:
     email:
@@ -92,12 +102,12 @@ author:
     picture:
 
 # Customization
-# Define the behavior of sidebar
-# 1: display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
+# Define the behavior of the sidebar
+# 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
 # and large sidebar is swiped (default)
-# 2: display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
-# 3: display header bar on all screens and large sidebar is swiped
-# 4: display header bar on all screens and medium sidebar is swiped
+# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
+# 3: Display header bar on all screens and large sidebar is swiped
+# 4: Display header bar on all screens and medium sidebar is swiped
 sidebar_behavior: 1
 # Display thumbnail image of each post on index pages (disable: 0, enable: 1)
 thumbnail_image: 1
