@@ -31,7 +31,7 @@
                         <% if (post.link) { %>
                                 <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(no title)' %></a>
                         <% } else { %>
-                                <a class="link-unstyled" href="<%- url_for(post.permalink) %>"><%= post.title || '(no title)' %></a>
+                                <a class="link-unstyled" href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
                         <% } %>
                     </h1>
                     <%- partial('post/meta', {post: post}) %>
@@ -47,7 +47,7 @@
                             <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= theme.go_to_message %> </a>
                     <% } else { %>
                         <% if (theme.read_more_message) { %>
-                            <a href="<%= post.permalink %>" class="post-excerpt_link link "><%- theme.read_more_message %></a>
+                            <a href="<%- url_for(post.path) %>" class="post-excerpt_link link "><%- theme.read_more_message %></a>
                             <% if (post.readingtime) { %>
                                 <span class="post-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
                             <% } %>

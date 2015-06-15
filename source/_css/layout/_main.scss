@@ -1,39 +1,65 @@
 #main {
     display:            block;
     min-height:         100%;
-    background:         #fff;
+    background:         #ffffff;
     transition:         transform .25s ease-in-out;
     -webkit-transition: -webkit-transform .25s ease-in-out;
-
-    // Swipe the `main` div when the sidebar is opened
-    &.pushed {
-        @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
-    }
 }
 
-// Change width of `#main` to full size on small screen and down
 @media #{$small-and-down} {
     #main {
-        padding-top: map-get($header, height) + map-get($main, padding-top);
-        display:     block;
-        width:       100%;
+        // Display `main` div in large size
+        @include main-lg;
+
+        // Push `main` div from the size of the large sidebar
+        &[data-behavior="1"], &[data-behavior="3"] {
+            @include main-pushed-lg;
+        }
+        // Push `main` div from the size of the medium sidebar
+        &[data-behavior="2"], &[data-behavior="4"] {
+            @include main-pushed-md;
+        }
     }
 }
 
-// Change width of `#main` to full size minus `$sidebar-md-width` on medium screen only
 @media #{$medium-only} {
     #main {
-        padding-top: map-get($main, padding-top);
-        float:       right;
-        width:       calc(100% - #{map-get($sidebar, md-screen-width)});
+        // Display `main` div in medium size
+        &[data-behavior="1"], &[data-behavior="2"] {
+            @include main-md;
+        }
+        // Display `main` div in large size and push it from the size of the large sidebar
+        &[data-behavior="3"] {
+            @include main-lg;
+            @include main-pushed-lg;
+        }
+        // Display `main` div in large size and push it from the size of the medium sidebar
+        &[data-behavior="4"] {
+            @include main-lg;
+            @include main-pushed-md;
+        }
     }
 }
 
-// Change width of `#main` to full size minus `$sidebar-lg-width` on large screen and up
 @media #{$large-and-up} {
     #main {
-        padding-top: map-get($main, padding-top);
-        float:       right;
-        width:       calc(100% - #{map-get($sidebar, lg-screen-width)});
+        // Display `main` div in small size
+        &[data-behavior="1"] {
+            @include main-sm;
+        }
+        // Display `main` div in medium size
+        &[data-behavior="2"] {
+            @include main-md;
+        }
+        // Display `main` div in large size and push it from the size of the large sidebar
+        &[data-behavior="3"] {
+            @include main-lg;
+            @include main-pushed-lg;
+        }
+        // Display `main` div in large size and push it from the size of the medium sidebar
+        &[data-behavior="4"] {
+            @include main-lg;
+            @include main-pushed-md;
+        }
     }
 }

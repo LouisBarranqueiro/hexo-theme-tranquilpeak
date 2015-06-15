@@ -8,23 +8,59 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Summary ##
 
+- [General](#general)
+- [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Hexo configuration](#hexo-configuration)
     * [Enable post assets folder](#enable-post-assets-folder)
-    * [Archives configuration](#archives-configuration)
+    * [Enable relative links](#enable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
     * [Sidebar](#sidebar)
+    * [Header](#header)
     * [Author](#author)
     * [Customization](#customization)
-    * [Miscellaneous](#miscellaneous)
+    * [Integrated services](#integrated-services)
     * [Enable pages](#enable-pages)
         * [Enable all-categories page](#enable-all-categories-page)
         * [Enable all-tags page](#enable-all-tags-page)
         * [Enable all-archives page](#enable-all-archives-page)
 - [Front-matter settings](#front-matter-settings)
 - [Running](#running)  
+
+## General ##
+
+- **Author** : Louis Barranqueiro
+- **Version** : 1.0.5  
+- **Compatibility** : Hexo v3.0.0 or higher  
+
+## Features ##
+
+**General features :**  
+- Fully responsive  
+- Optimized for tablets & mobiles  
+- Configurable menu of the sidebar  
+- Pages to filter tags, categories and archives  
+- Background cover image  
+- Beautiful about page  
+  
+  
+**Posts features :**  
+- Thumbnail image  
+- Cover image  
+- Responsive videos & images  
+- Sharing options  
+- Navigation menu  
+- GitHub theme for code highlighting  
+- Image gallery  
+  
+  
+**Integrated services :**  
+- Disqus  
+- Google analytics  
+- Gravatar  
+- Swiftype  
 
 ## Requirements ##
 
@@ -45,30 +81,11 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 
 ### Enable post assets folder ###
 
-If you want to take advantage of cover image, thumbnail image, and image gallery features, you hate to enable post assets folderby setting `post_asset_folder` to  `true`in `_config.yml`.
+If you want to take advantage of cover image, thumbnail image, and image gallery features, you have to enable post assets folder by setting `post_asset_folder` to  `true`in `_config.yml`.
 
-### Archives configuration ###
+### Enable relative links ###
 
-You can choose the style of listing for archives, category and tag pages by adding this lines in `_config.yml`  
-
-``` yaml
-# Archives
-## 1: Enable pagination
-## 0: Disable pagination
-archive: 1
-category: 1
-tag: 1
-```
-
-- **0** : Disable pagination  
-- **1** : Enable pagination  
-
-Example :  
-A category page look like this with `category: 1` :  
-![archives 1](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-1.png)  
-
-The same page with `category: 0`:  
-![archives 0](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-0.png)  
+You have to set `relative_link` to `true` otherwise features like navigation bar will not work correctly.
 
 ### Enable RSS feed ###
 
@@ -118,6 +135,12 @@ sidebar:
             title: Archives
             url: /all-archives
             icon: archive
+        search:
+            title: Search
+            url: /#search
+            icon: search
+            # `st-search-show-outputs st-ui-search-tab` classes are used to open swiftype search window
+            class: t-search-show-outputs st-ui-search-tab
         about:
             title: About me
             url: /#about
@@ -149,7 +172,7 @@ sidebar:
         #     icon: linkedin
         # mail:
         #     title: Mail
-        #     url: mailto://
+        #     url: mailto:
         #     icon: envelope-o
     rss:
         rss:
@@ -158,9 +181,27 @@ sidebar:
             icon: rss
 ```
 
-- **title** : Title of your link displayed
+- **title** : Title of the link
 - **url** : URL of the link. If the URL is internal, domain name is not necessary
 - **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
+- **class** (optional) : CSS Class added to the `a` link tag
+
+
+### Header ###
+
+The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
+
+``` yaml
+header:
+    right_link:
+        url: /#search
+        icon: search
+        class: st-search-show-outputs
+```
+
+- **url** : URL of the link. If the URL is internal, domain name is not necessary
+- **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
+- **class** : CSS Class added to the link
 
 ### Author ###
 
@@ -175,42 +216,63 @@ author:
 ```
 
 - **email** : Your mail address. This address will be used to get your gravatar image if you activate gravatar option
-- **bio** : A short biography. Display on your about card
-- **job** : Your job
+- **bio** : A short biography. Display on your about card (Markdown and HTML supported)
+- **job** : Your job (Markdown and HTML supported)
 - **location** : Your location
 - **picture** : Your profile picture. Overwritten by your gravatar image if gravatar option is enabled
 
 ### Customization ###
 
-**Change the default cover image to have an unique blog :)**  
-  
 ``` yaml
 # Customization
-gravatar_image: 1                
+sidebar_behavior: 1                
 thumbnail_image: 1               
-read_more_message: Continue readiing
+read_more_message: Continue reading
 go_to_message: Go to the website 
-cover: cover.png                 
+cover_image: cover.png                 
 favicon:                         
-image_gallery: 1                 
+image_gallery: 1
+archive_pagination: 1
+category_pagination: 1
+tag_pagination: 1
 ```
 
-- **gravatar_image** : Enable gravatar image. Using `author.email` value. (disable: 0, enable: 1). Overwrite `author.picture` everywhere in the blog
+- **sidebar_behavior** : Define the behavior of the header and sidebar :
+   * 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen and large sidebar is swiped when open button is clicked (default)
+   * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked
+   * 3: Display header bar on all screens and large sidebar is swiped when open button is clicked  
+   * 4: Display header bar on all screens and medium sidebar is swiped when open button is clicked)
 - **thumbnail_image** : Display thumbnail image of each post on index pages (disable: 0, enable: 1)
 - **read_more_message** : Message displayed after the `<!-- more -->` tag or after 300 characters in post
-- **go_to_message** : Message displayed after the `<!-- more -->` balise or after 300 characters for post with link layout
-- **cover** : Your blog cover picture located in folder `source/assets/images/`. Change the default cover image to have an unique blog
+- **go_to_message** : Message displayed after the `<!-- more -->` tag or after 300 characters for post with link layout
+- **cover** : Your blog cover picture located in folder `source/assets/images/`. **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables
+- **archive_pagination** : Displaying style of archive pages. 0: Disable pagination, 1: Enable pagination 
+- **category_pagination** :  Displaying style of category pages. 0: Disable pagination, 1: Enable pagination 
+- **tag_pagination** :  Displaying style of tag pages. 0: Disable pagination, 1: Enable pagination 
 
-### Miscellaneous ###
+Example :  
+A category page look like this with `category_pagination: 1` :  
+![archives 1](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-1.png)  
+
+The same page with `category_pagination: 0`:  
+![archives 0](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-0.png)  
+
+
+### Integrated services ###
 
 ``` yaml
-# Miscellaneous
-google_analytics:
+# Integrated services
+disqus_shortname:
+gravatar_email: 
+google_analytics_id:  
+swiftype_engine_id:
 ```
-
-- **google_analytics** : Your Google analystics web property ID : UA-XXXXX-X
+- **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.
+- **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog
+- **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
+- **swiftype_engine_id** : Your Swiftype engine id founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype engine id is : `fsdkiG43fkfder32dgsR`.
 
 ### Enable pages ###
 

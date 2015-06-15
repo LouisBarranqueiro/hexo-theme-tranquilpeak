@@ -3,11 +3,15 @@
     'utils/variables';
 
 @import
+    'utils/mixins/bottom-bar',
     'utils/mixins/button',
     'utils/mixins/category',
     'utils/mixins/form',
+    'utils/mixins/header',
+    'utils/mixins/main',
     'utils/mixins/opacity',
     'utils/mixins/prefix',
+    'utils/mixins/sidebar',
     'utils/mixins/tag';
 
 @import
@@ -16,6 +20,7 @@
 @import
     'layout/about',
     'layout/blog',
+    'layout/bottom-bar',
     'layout/cover',
     'layout/footer',
     'layout/header',

@@ -1,0 +1,30 @@
+/// Mixin helper to stylized `main` div in small size
+@mixin main-sm {
+    padding-top: map-get($main, padding-top);
+    float:       right;
+    width:       calc(100% - #{map-get($sidebar, lg-screen-width)});
+}
+/// Mixin helper to stylized `main` div in medium size
+@mixin main-md {
+    padding-top: map-get($main, padding-top);
+    float:       right;
+    width:       calc(100% - #{map-get($sidebar, md-screen-width)});
+}
+/// Mixin helper to stylized `main` div in large size
+@mixin main-lg {
+    padding-top: map-get($header, height) + map-get($main, padding-top);
+    display:     block;
+    width:       100%;
+}
+/// Mixin helper to push `main` div from medium sidebar size
+@mixin main-pushed-md {
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, md-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
+}
+/// Mixin helper to push `main` div from large sidebar size
+@mixin main-pushed-lg {
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
+}

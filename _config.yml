@@ -35,6 +35,12 @@ sidebar:
             title: Archives
             url: /all-archives
             icon: archive
+        search:
+            title: Search
+            url: /#search
+            icon: search
+            # `st-search-show-outputs st-ui-search-tab` classes are used to open swiftype search window
+            class: t-search-show-outputs st-ui-search-tab
         about:
             title: About me
             url: /#about
@@ -66,7 +72,7 @@ sidebar:
         #     icon: linkedin
         # mail:
         #     title: Mail
-        #     url: mailto://
+        #     url: mailto:
         #     icon: envelope-o
     rss:
         rss:
@@ -74,24 +80,61 @@ sidebar:
             url: /atom.xml
             icon: rss
 
+# Header configuration
+# The link at the right of the header is customizable
+# You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
+# DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
+header:
+    right_link:
+        # url: /#search
+        # icon: search
+        # class: st-search-show-outputs
+
 # Author
 author:
     email:
     bio:
     job:
     location:
-    picture:    # Your profile picture located in folder `source/_images/` (development)
-                # or in `source/assets/images/` (production)
-                # Overwritten by your gravatar image if `gravatar_image` is enabled
+    # Your profile picture located in folder `source/_images/` (development)
+    # or in `source/assets/images/` (production).
+    # Overwritten by your gravatar image if `gravatar_image` is enabled
+    picture:
 
 # Customization
-gravatar_image: 1                      # Enable gravatar image. Using `author.email` value. (disable: 0, enable: 1). Overwrite `author.picture` everywhere in the blog
-thumbnail_image: 1                     # Display thumbnail image of each post on index pages (disable: 0, enable: 1)
-read_more_message: Continue reading    # Message displayed after the <!-- more --> tag
-go_to_message: Go to the website       # Message displayed after the <!-- more --> tag or after 300 characters for post with link layout
-cover: cover.png                       # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
-favicon:                               # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
-image_gallery: 1                       # Display an image gallery at the end of a post which have photos variables
+# Define the behavior of the sidebar
+# 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
+# and large sidebar is swiped (default)
+# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
+# 3: Display header bar on all screens and large sidebar is swiped
+# 4: Display header bar on all screens and medium sidebar is swiped
+sidebar_behavior: 1
+# Display thumbnail image of each post on index pages (disable: 0, enable: 1)
+thumbnail_image: 1
+# Message displayed after the <!-- more --> tag
+read_more_message: Continue reading
+# Message displayed after the <!-- more --> tag or after 300 characters for post with link layout
+go_to_message: Go to the website
+# Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
+cover_image: cover.jpg
+# Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
+favicon:
+# Display an image gallery at the end of a post which have photos variables
+image_gallery: 1
+# Pagination behavior of archive, category and tag pages
+## 0: Disable pagination
+## 1: Enable pagination
+archive_pagination: 1
+category_pagination: 1
+tag_pagination: 1
 
-# Miscellaneous
-google_analytics:    # Google analystics web property ID : UA-XXXXX-X
+# Integrated services
+# Your Disqus shortname
+disqus_shortname:
+# Your Google analystics web property ID : UA-XXXXX-X
+google_analytics_id:
+# Your Gravatar email. Overwrite `author.picture` everywhere in the blog
+gravatar_email:
+# Your swiftype engine id
+swiftype_engine_id:
+

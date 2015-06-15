@@ -2,7 +2,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquilpeak](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/hello-world/tranquilpeak.png)
+![Tranquilpeak](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/tranquilpeak.png)
 
 ## Summary ##
 
@@ -46,8 +46,9 @@ A gorgeous responsive theme for Hexo blog framework
   
 **Integrated services :**  
 - Disqus  
-- Gravatar  
 - Google analytics  
+- Gravatar  
+- Swiftype  
   
   
 ## Quick start ##
@@ -95,6 +96,8 @@ To understand better the code and edit  the theme, consult the following documen
 [![Join the chat at https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
+
+All pull requests must be done on the `dev` branch.
 
 ## License ##
 

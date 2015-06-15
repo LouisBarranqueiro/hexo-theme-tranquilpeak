@@ -3,20 +3,20 @@
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
-        <% if ((theme.gravatar_image) && (theme.author.email)) { %>
-            <img id="about-card-picture" src="<%- gravatar(theme.author.email, 110) %>"/>
+        <% if (theme.gravatar_email) { %>
+            <img id="about-card-picture" src="<%- gravatar(theme.gravatar_email, 110) %>"/>
         <% } else if (theme.author.picture) { %>
             <img id="about-card-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
         <% } %>
             <h4 id="about-card-name"><%= config.author %></h4>
         <% if (theme.author.bio) { %>
-            <h5 id="about-card-bio"><%= theme.author.bio %></h5>
+            <h5 id="about-card-bio"><%- markdown(theme.author.bio) %></h5>
         <% } %>
         <% if (theme.author.job) { %>
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <%= theme.author.job %>
+                <%- markdown(theme.author.job) %>
             </h5>
         <% } %>
         <% if (theme.author.location) { %>

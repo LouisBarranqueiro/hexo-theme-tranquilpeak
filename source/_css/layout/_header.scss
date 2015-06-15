@@ -1,85 +1,92 @@
-// Display `#header` on small screen and down
-@media #{$small-and-down} {
-    #header {
-        display:                     block;
-        width:                       100%;
-        height:                      map-get($header, height);
-        background:                  map-get($header, background);
-        position:                    fixed;
-        top:                         0;
-        // used to animate the header on small screen with javascript
-        //@include prefix(transition, top 0.25s ease-in-out, 'webkit' 'moz' 'ms' 'o');
-        z-index:                     map-get($z-indexes, l-header);
-        // Sidebar animation
-        // Transition style (push)
-        transition:                  transform .25s ease-in-out;
-        -webkit-transition:          -webkit-transform .25s ease-in-out;
-        // Eliminate any flickering of elements while they are in a state of being animated
-        -webkit-backface-visibility: hidden;
-        -webkit-perspective:         1000;
+#header {
+    display:                     block;
+    width:                       100%;
+    height:                      map-get($header, height);
+    background:                  map-get($header, background);
+    position:                    fixed;
+    top:                         0;
+    border:                      map-get($header, border);
+    color:                       map-get($header, color);
+    // used to animate the header on small screen with javascript
+    //@include prefix(transition, top 0.25s ease-in-out, 'webkit' 'moz' 'ms' 'o');
+    z-index:                     map-get($z-indexes, l-header);
+    // Sidebar animation
+    // Transition style (push)
+    transition:                  transform .25s ease-in-out;
+    -webkit-transition:          -webkit-transform .25s ease-in-out;
+    // Eliminate any flickering of elements while they are in a state of being animated
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective:         1000;
 
-        #btn-open-sidebar {
-            position: absolute;
-            // vertical center
-            top:      20px;
-            left:     20px;
-            color:    #88909a;
-            cursor:   pointer;
+    #btn-open-sidebar {
+        position: absolute;
+        // vertical center
+        top:      20px;
+        left:     20px;
+        cursor:   pointer;
+    }
+    .header-right-picture {
+        position: absolute;
+        // vertical center
+        top:      12.5px;
+        right:    20px;
+        display:  block;
+        width:    30px;
+        height:   30px;
+        color:    map-get($header, color);
+
+        .header-picture {
+            display:       block;
+            width:         30px;
+            height:        30px;
+            border-radius: 15px;
         }
-        .header-picture-link {
-            position: absolute;
-            // vertical center
-            top:      12.5px;
-            right:    20px;
-            display:  block;
-            width:    30px;
-            height:   30px;
+    }
+    .header-right-icon {
+        position: absolute;
+        // vertical center
+        top:      12.5px;
+        right:    20px;
+        color:    map-get($header, color);
+    }
+    .header-title {
+        text-align:  center;
+        font-size:   $font-size-base;
+        line-height: 55px;
+        margin:      0;
 
-            .header-picture {
-                display:       block;
-                width:         30px;
-                height:        30px;
-                border-radius: 15px;
+        .header-title-link {
+            color:       map-get($header, color);
+            font-weight: normal;
+
+            &:hover,
+            &:active {
+                color:           darken(map-get($header, color), 10);
+                text-decoration: none;
             }
         }
-        .header-title {
-            text-align:  center;
-            font-size:   $font-size-base;
-            line-height: 55px;
-            margin:      0;
-
-            .header-title-link {
-                color:       map-get($header, color);
-                font-weight: normal;
-
-                &:hover,
-                &:active {
-                    color:           lighten(map-get($header, color), 35);
-                    text-decoration: none;
-                }
-            }
-        }
-        // Class used to swipe to the top the header on small screen when the user scroll down
-        &.header-up {
-            @include prefix(transform, translate3d(0, -#{map-get($header, height)}, 0), 'webkit' 'moz');
-        }
-        // Used to animate the header (pushed effect)
-        &.pushed {
-            @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
-        }
+    }
+    // Class used to swipe to the top the header on small screen when the user scroll down
+    &.header-up {
+        @include prefix(transform, translate3d(0, -#{map-get($header, height)}, 0), 'webkit' 'moz');
+    }
+    // Push the header from the size of the large sidebar
+    &[data-behavior="1"],
+    &[data-behavior="3"] {
+        @include header-pushed-lg;
+    }
+    // Push the header from the size of the medium sidebar
+    &[data-behavior="2"],
+    &[data-behavior="4"] {
+        @include header-pushed-md;
     }
 }
 
-// Hide `#header` on medium screen only
-@media #{$medium-only} {
+@media #{$medium-and-up} {
     #header {
-        display: none;
-    }
-}
-
-// Hide `#header` on large screen and up
-@media #{$large-and-up} {
-    #header {
-        display: none;
+        // Hide header
+        &[data-behavior="1"], &[data-behavior="2"] {
+            display: none;
+        }
     }
 }
