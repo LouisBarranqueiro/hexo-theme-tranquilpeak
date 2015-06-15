@@ -254,10 +254,10 @@ tag_pagination: 1
 
 Example :  
 A category page look like this with `category_pagination: 1` :  
-![archives 1](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-1.png)  
+![archives 1](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-1.png)  
 
 The same page with `category_pagination: 0`:  
-![archives 0](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/02/Check-official-user-documentation/archives-0.png)  
+![archives 0](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-0.png)  
 
 
 ### Integrated services ###
