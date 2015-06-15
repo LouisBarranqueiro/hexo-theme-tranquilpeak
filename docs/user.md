@@ -135,6 +135,12 @@ sidebar:
             title: Archives
             url: /all-archives
             icon: archive
+        search:
+            title: Search
+            url: /#search
+            icon: search
+            # `st-search-show-outputs st-ui-search-tab` classes are used to open swiftype search window
+            class: t-search-show-outputs st-ui-search-tab
         about:
             title: About me
             url: /#about
@@ -174,6 +180,12 @@ sidebar:
             url: /atom.xml
             icon: rss
 ```
+
+- **title** : Title of the link
+- **url** : URL of the link. If the URL is internal, domain name is not necessary
+- **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
+- **class** (optional) : CSS Class added to the `a` link tag
+
 
 ### Header ###
 
