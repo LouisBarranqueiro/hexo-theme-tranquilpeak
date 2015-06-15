@@ -1,5 +1,5 @@
 <header id="header" data-behavior="<%= theme.sidebar_behavior %>">
-    <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="<%= config.url %>"><%= config.title %></a>
     </h1>
@@ -12,11 +12,11 @@
                 <i class="fa fa-lg fa-<%= theme.header.right_link.icon %>"></i>
             </a>
     <% } else if (theme.gravatar_email) { %>
-        <a class="header-right-icon" href="<%- url_for('/#about') %>">
+        <a class="header-right-picture" href="<%- url_for('/#about') %>">
             <img class="header-picture" src="<%- gravatar(theme.gravatar_email, 90) %>"/>
         </a>
     <% } else if (theme.author.picture) { %>
-        <a class="header-right-icon" href="<%- url_for('/#about') %>">
+        <a class="header-right-picture" href="<%- url_for('/#about') %>">
             <img class="header-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
         </a>
     <% } %>
