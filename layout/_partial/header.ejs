@@ -7,7 +7,7 @@
         <% if (url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
             <a  class="header-right-icon <% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>" href="<%- url_for(theme.header.right_link.url) %>" target="_blank">
         <% } else { %>
-            <a  class="header-right-icon <% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>" href="<%- url_for(config.url + theme.header.right_link.url) %>">
+            <a  class="header-right-icon <% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>" href="<%- url_for(config.root.substr(0, config.root.lastIndexOf('/')) + theme.header.right_link.url) %>">
         <% } %>
                 <i class="fa fa-lg fa-<%= theme.header.right_link.icon %>"></i>
             </a>
