@@ -139,8 +139,8 @@ sidebar:
             title: Search
             url: /#search
             icon: search
-            # `st-search-show-outputs st-ui-search-tab` classes are used to open swiftype search window
-            class: t-search-show-outputs st-ui-search-tab
+            # `st-search-show-outputs` classes are used to open swiftype search window
+            class: t-search-show-outputs
         about:
             title: About me
             url: /#about
@@ -267,12 +267,12 @@ The same page with `category_pagination: 0`:
 disqus_shortname:
 gravatar_email: 
 google_analytics_id:  
-swiftype_engine_id:
+swiftype_install_key:
 ```
 - **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.
 - **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog
 - **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
-- **swiftype_engine_id** : Your Swiftype engine id founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype engine id is : `fsdkiG43fkfder32dgsR`.
+- **swiftype_install_key** : Your Swiftype install key founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype install key is : `fsdkiG43fkfder32dgsR`.
 
 ### Enable pages ###
 

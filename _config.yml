@@ -39,8 +39,8 @@ sidebar:
             title: Search
             url: /#search
             icon: search
-            # `st-search-show-outputs st-ui-search-tab` classes are used to open swiftype search window
-            class: t-search-show-outputs st-ui-search-tab
+            # `st-search-show-outputs` classes are used to open swiftype search window
+            class: st-search-show-outputs
         about:
             title: About me
             url: /#about
@@ -92,7 +92,7 @@ header:
 
 # Author
 author:
-    email:
+    email: 
     bio:
     job:
     location:
@@ -135,6 +135,6 @@ disqus_shortname:
 google_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
 gravatar_email:
-# Your swiftype engine id
-swiftype_engine_id:
+# Your swiftype install key
+swiftype_install_key:
 
