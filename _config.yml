@@ -137,4 +137,6 @@ google_analytics_id:
 gravatar_email:
 # Your swiftype install key
 swiftype_install_key:
+# Your twitter handle for twitter card (with out the @)
+twitter_handle:
 
