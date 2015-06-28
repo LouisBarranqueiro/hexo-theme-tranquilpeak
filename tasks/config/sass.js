@@ -6,7 +6,8 @@ module.exports = function(grunt) {
                 sourceMap: false
             },
             files:   {
-                'source/assets/css/tranquilpeak.css': 'source/_css/tranquilpeak.scss'
+                'source/assets/css/tranquilpeak.css': 'source/_css/tranquilpeak.scss',
+                'source/assets/css/blog.css': 'source/_css/blog.scss'
             }
         }
     });
