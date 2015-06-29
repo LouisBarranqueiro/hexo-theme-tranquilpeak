@@ -267,11 +267,13 @@ The same page with `category_pagination: 0`:
 disqus_shortname:
 gravatar_email: 
 google_analytics_id:  
+google_analytics_exclude_self:  
 swiftype_install_key:
 ```
 - **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.
 - **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog
 - **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
+- **google_analytics_exclude_self** : Set to `true` if you want to avoid tracking your own visits to the site when developing locally. Can also make use of "analytics=on" or "analytics=off" query parameters to set localStorage (fallback to cookies) and determine whether to track visits in production too.
 - **swiftype_install_key** : Your Swiftype install key founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype install key is : `fsdkiG43fkfder32dgsR`.
 
 ### Enable pages ###

@@ -1,4 +1,69 @@
 <% if (theme.google_analytics_id) { %>
+  <% if (theme.google_analytics_exclude_self) { %>
+    <script>
+        if (!(window.location.hostname === 'localhost' || window.location.hostname === '0.0.0.0')) {
+
+        <%- partial('localStoragePolyfill') %>
+
+          var addGA = (function() {
+            var executed = false;
+            return function() {
+              if (!executed) {
+                executed = true;
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', '<%= theme.google_analytics_id %>']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+              }
+            };
+          })();
+
+          // parse query params for 'analytics' key
+          var useAnalytics;
+          var analyticsQueryParamValues = (function() {
+            return { on: 'on', off: 'off' };
+          })();
+          try {
+              // Parse 'analytics=off|on' and set useAnalytics appropriately.
+              var parameters = window.location.search.split('&');
+              if (parameters[0]) {
+                  parameters[0] = parameters[0].replace('?', '');
+              }
+              for (var i = 0; i < parameters.length; i++) {
+                  var values = parameters[i].split('=');
+                  if (values[0] == 'analytics' && values[1] == analyticsQueryParamValues.off) {
+                      useAnalytics = analyticsQueryParamValues.off;
+                  }
+                  if (values[0] == 'analytics' && values[1] == analyticsQueryParamValues.on) {
+                      useAnalytics = analyticsQueryParamValues.on;
+                  }
+              }
+          } catch(e) {
+              useAnalytics = undefined;
+          }
+
+          // If query parameter 'analytics' exists with 'on' or 'off',
+          // set value in localStorage and add GA appropriately.
+          // Otherwise, no query parameter so check localStorage and
+          // add GA appropriately with the default being to add GA if
+          // localStorage does not contain 'useAnalytics'.
+          if (useAnalytics === analyticsQueryParamValues.on) {
+            localStorage.setItem('useAnalytics', useAnalytics);
+            addGA();
+          } else if (useAnalytics === analyticsQueryParamValues.off) {
+            localStorage.setItem('useAnalytics', useAnalytics);
+          } else {
+            var ua = localStorage.getItem('useAnalytics');
+            if (ua === analyticsQueryParamValues.on || ua !== analyticsQueryParamValues.off) addGA();
+          }
+
+        }
+    </script>
+  <% } else { %>
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', '<%= theme.google_analytics_id %>']);
@@ -9,4 +74,5 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
+  <% } %>
 <% } %>
