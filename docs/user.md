@@ -26,6 +26,9 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Enable all-categories page](#enable-all-categories-page)
         * [Enable all-tags page](#enable-all-tags-page)
         * [Enable all-archives page](#enable-all-archives-page)
+- [Integrated services configuration](#integrated-services-configuration)
+    * [Google Analytics](#google-analytics)
+        * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
 - [Front-matter settings](#front-matter-settings)
 - [Running](#running)  
 
@@ -322,6 +325,25 @@ layout: "all-archives"
 New page will be reach at : `/all-archives`.  
 On this page, users will be able to search and filter posts.  
 **Search pattern** : YYYY/MMM/DD
+
+## Integrated services configuration ##
+
+### Google Analytics ###
+
+#### Exclude hostname (localhost) while writing articles ####
+
+While you are writing articles, you need to check the result a lot of times before deploying your site.
+If you have enable Google analytics service, Google will include all requests done, even when hostname is localhost and this can greatly skew the results.
+To overcome this, you have to add a filter on Google Analytics website.
+   
+Follow these steps, to add new filter :   
+1. Sign in to your Google Analytics account 
+2. Select the **Admin** tab and navigate to the **property** in which you want to create the filter **(Account > Property > View)**  
+3. In **View** column, click on **Filters** button  
+4. Click on **+ NEW FILTER** button  
+6. Enter a name for the filter  
+7. Select **Custom filter**, **Filter Field** : `Hostname`, **Filter Pattern** :  `(.*?localhost.*?)`  
+8. Click on **Save** button   
 
 ## Writing posts ##
 
