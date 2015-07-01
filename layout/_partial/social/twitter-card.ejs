@@ -1,0 +1,25 @@
+<% 
+var coverImageUrl = config.url + '/' + page.path + page.thumbnailImage;
+
+var pageExcerpt = '';
+    
+if (page.excerpt) {
+    pageExcerpt = page.excerpt;
+} else if(page.content){
+    pageExcerpt = page.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200);
+} else { 
+    pageExcerpt = 'Read More on ' + config.title;
+}
+%>
+
+<% if (theme.twitter_handle) { %>
+
+<!-- twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="<%= '@' + theme.twitter_handle%>">
+<meta name="twitter:title" content="<%= title %>">
+<meta name="twitter:description" content="<%= pageExcerpt %>">
+<meta name="twitter:image" content="<%= coverImageUrl %>">
+<!-- twitter card-->
+
+<% } %>
