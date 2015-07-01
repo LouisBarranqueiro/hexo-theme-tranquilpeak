@@ -92,7 +92,7 @@ header:
 
 # Author
 author:
-    email: 
+    email:
     bio:
     job:
     location:
@@ -117,6 +117,8 @@ read_more_message: Continue reading
 go_to_message: Go to the website
 # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 cover_image: cover.jpg
+# Your blog og image, and it will display on share story of facebook.
+og_image:
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 favicon:
 # Display an image gallery at the end of a post which have photos variables
@@ -137,4 +139,3 @@ google_analytics_id:
 gravatar_email:
 # Your swiftype install key
 swiftype_install_key:
-
