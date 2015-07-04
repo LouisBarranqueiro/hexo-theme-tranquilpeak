@@ -46,10 +46,10 @@ sidebar:
             url: /#about
             icon: question
     author_links:
-        # github:
-        #     title: GitHub
-        #     url: https://github.com/
-        #     icon: github
+        github:
+            title: GitHub
+            url: https://github.com/justincalleja
+            icon: github
         # stack_overflow:
         #     title: Stack Overflow
         #     url: http://stackoverflow.com/users/
@@ -132,7 +132,8 @@ tag_pagination: 1
 # Your Disqus shortname
 disqus_shortname:
 # Your Google analystics web property ID : UA-XXXXX-X
-google_analytics_id:
+google_analytics_id: UA-57452463-1
+google_analytics_exclude_self: true
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
 gravatar_email:
 # Your swiftype install key

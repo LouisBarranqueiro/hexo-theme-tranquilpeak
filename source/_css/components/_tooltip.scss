@@ -49,6 +49,10 @@
 
 [data-tooltip] {
     @extend .tooltip;
+    // &:focus:before,
+    // &:focus:after {
+    //   visibility: hidden;
+    // }
 }
 
 // Directions
