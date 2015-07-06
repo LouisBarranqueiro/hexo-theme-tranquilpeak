@@ -14,7 +14,7 @@
         <% site.tags.sort('name').each(function(item) { %>
             <div id="<%= item.name + '-list' %>" class="archive box" data-tag="<%= item.name.replace('.','__').toLowerCase() %>">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="<%- url_for('tags/' + item.name ) %>"><%= item.name + ' (' + item.length + ')' %></a>
+                    <a class="link-unstyled" href="<%- url_for('tags/' + item.name.replace(' ', '-') ) %>"><%= item.name + ' (' + item.length + ')' %></a>
                 </h4>
                 <ul class="archive-posts">
                     <% site.tags.findOne({'name': item.name}).posts.each(function(post) { %>
