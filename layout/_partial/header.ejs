@@ -1,7 +1,7 @@
 <header id="header" data-behavior="<%= theme.sidebar_behavior %>">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="<%- url_for("") %>"><%= config.title %></a>
+        <a class="header-title-link" href="<%- url_for(' ') %>"><%= config.title %></a>
     </h1>
     <% if (theme.header && theme.header.right_link && theme.header.right_link.url && theme.header.right_link.icon) { %>
         <% if (url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
