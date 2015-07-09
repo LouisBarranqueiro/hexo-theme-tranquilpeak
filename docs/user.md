@@ -348,9 +348,13 @@ Follow these steps, to add new filter :
 
 ## Writing posts ##
 
+To write articles, you have to user Markdown langague. [Here](https://guides.github.com/features/mastering-markdown/#examples) you can find the main basics of Markdown syntax.   
+Please note, there are many different versions of Markdown and some of them are not supported by Hexo.  
+To use tags plugins to highlight code or add Fancybox image, please read [Hexo docs](https://hexo.io/docs/tag-plugins.html)
+
 ### Front-matter settings ###
 
-Tranquilpeak introduces 2 new variables to configure precisly the style of your post : `thumbnailImage` and `coverImage`.  
+Tranquilpeak introduces 2 new variables to configure precisely the style of your post : `thumbnailImage` and `coverImage`.  
   
 Example :  
 ``` markdown
