@@ -1,20 +1,24 @@
 <div class="pagination-bar">
     <ul class="pagination">
         <% if (page.prev) { %>
-            <li class="pagination-prev">
+        <li class="pagination-prev">
+            <% if (page.prev === 1) { %>
+                <a class="btn btn--default btn--small" href="<%- url_for(' ') %>">
+            <% } else { %>
                 <a class="btn btn--default btn--small" href="<%- url_for(page.prev_link) %>">
-                    <i class="fa fa-angle-left text-base icon-mr"></i>
-                    <span>NEWER POSTS</span>
-                </a>
-            </li>
+            <% } %>
+                <i class="fa fa-angle-left text-base icon-mr"></i>
+                <span>NEWER POSTS</span>
+            </a>
+        </li>
         <% } %>
         <% if (page.next) { %>
-            <li class="pagination-next">
-                <a class="btn btn--default btn--small" href="<%- url_for(page.next_link) %>">
-                    <span>OLDER POSTS</span>
-                    <i class="fa fa-angle-right text-base icon-ml"></i>
-                </a>
-            </li>
+        <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="<%- url_for(page.next_link) %>">
+                <span>OLDER POSTS</span>
+                <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+        </li>
         <% } %>
         <li class="pagination-number">Page <%= page.current + ' of ' + page.total %></li>
     </ul>
