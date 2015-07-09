@@ -88,7 +88,8 @@ If you want to take advantage of cover image, thumbnail image, and image gallery
 
 ### Enable relative links ###
 
-You have to set `relative_link` to `true` otherwise features like navigation bar will not work correctly.
+You have to set `relative_link` to `false` otherwise if you enter your blog url without the end `/`, like this `http://yourdomain.com/blog`, all assets will not be loaded.
+There is currently an issue on Hexo repository to fix this problem.
 
 ### Enable RSS feed ###
 
