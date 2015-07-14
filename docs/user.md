@@ -363,12 +363,15 @@ coverImage: image-2.png
 photos:
     - image-3.jpg
     - image-4.png
+    - http://i.imgur.com/o9r19kD.jpg
+    - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no#.jpg
 comments: false
 ```
 
 - **thumbnailImage** : Image displayed in index view.
 - **coverImage** : Image displayed in large at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image.
-- **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image.
+- **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. 
+**If your image is external and the URL doesn't have an image extension like this : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no`, you have to add at the end `#.jpg` what ever the real image extension otherwise the Fancybox plugin will not detect your image and image gallery wont work correctly**
 - **comments** : Disable the comment of the post.
 
 The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
