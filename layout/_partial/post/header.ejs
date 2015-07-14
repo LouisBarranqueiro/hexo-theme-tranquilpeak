@@ -3,19 +3,19 @@
         <% if ((post.thumbnailImage.indexOf(config.url) < 0) && (post.thumbnailImage.indexOf('://') >= 0)) { %>
             <% thumbnailImageUrl = post.thumbnailImage; %>
         <% } else { %>
-            <% thumbnailImageUrl = url_for(post.permalink + post.thumbnailImage); %>
+            <% thumbnailImageUrl = url_for(post.path.replace('.html', '/') + post.thumbnailImage); %>
         <% } %>
     <% } else if ((theme.thumbnail_image) && (post.photos) && (post.photos.length)) { %>
         <% if ((post.photos[0].indexOf(config.url) < 0) && (post.photos[0].indexOf('://') >= 0)) { %>
             <% thumbnailImageUrl = post.photos[0]; %>
         <% } else { %>
-            <% thumbnailImageUrl = url_for(post.permalink + post.photos[0]); %>
+            <% thumbnailImageUrl = url_for(post.path.replace('.html', '/') + post.photos[0]); %>
         <% } %>
     <% } else if ((theme.thumbnail_image) && (post.coverImage) && (post.coverImage.length)) { %>
         <% if ((post.coverImage.indexOf(config.url) < 0) && (post.coverImage.indexOf('://') >= 0)) { %>
             <% thumbnailImageUrl = post.coverImage; %>
         <% } else { %>
-            <% thumbnailImageUrl = url_for(post.permalink + post.coverImage); %>
+            <% thumbnailImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage); %>
         <% } %>
     <% } %>
     <% if (thumbnailImageUrl != null) { %>

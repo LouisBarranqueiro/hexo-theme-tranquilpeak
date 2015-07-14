@@ -5,7 +5,7 @@
         if ((post.coverImage.indexOf(config.url) < 0) && (post.coverImage.indexOf('://') >= 0)) {
             coverImageUrl = post.coverImage;
         } else {
-            coverImageUrl = url_for(post.path + post.coverImage);
+            coverImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage);
         }
     }
 %>
