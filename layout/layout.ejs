@@ -13,6 +13,7 @@
                 <div id="bottom-bar" class="post-bottom-bar" data-behavior="<%= theme.sidebar_behavior %>">
                     <%- partial('_partial/post/actions', {post: page}) %>
                 </div>
+                <%- partial('_partial/post/share-options', {post: page}) %>
             <% } %>
         </div>
         <%- partial('_partial/about', null, {cache: !config.relative_link}) %>

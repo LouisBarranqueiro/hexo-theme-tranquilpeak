@@ -6,6 +6,7 @@
     background:         white;
     margin:             0;
     border-top:         1px solid #eef2f8;
+    padding:            0;
     z-index:            map-get($z-indexes, c-post-bottom-bar);
     transition:         transform .25s ease-in-out;
     -webkit-transition: -webkit-transform .25s ease-in-out;

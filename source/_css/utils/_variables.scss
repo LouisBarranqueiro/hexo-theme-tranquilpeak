@@ -42,13 +42,15 @@ $colors: (
 // `c-` prefix for components
 $z-indexes: (
     // position the cover below the whole blog
-    'l-cover':           -1,
-    'l-main':            10,
-    'l-header':          20,
-    'l-sidebar':         20,
-    'l-about':           21,
-    'c-tooltip':         1000,
-    'c-post-bottom-bar': 11
+    'l-cover':             -1,
+    'l-main':              10,
+    'l-header':            20,
+    'l-sidebar':           20,
+    'l-about':             30,
+    'c-mask':              30,
+    'c-post-bottom-bar':   40,
+    'c-share-options-bar': 50,
+    'c-tooltip':           1000
 );
 
 // Media Query Ranges
