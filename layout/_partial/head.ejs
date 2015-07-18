@@ -65,15 +65,18 @@
     <% } else if (theme.author.picture) { %>
         <meta property="og:image" content="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
     <% } %>
-    <% if (page.coverImage && page.coverImage.length) { %>
-        <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + page.coverImage) %>"/>
-    <% } %>
     <% if (page.thumbnailImage && page.thumbnailImage.length) { %>
         <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + page.thumbnailImage) %>"/>
+        <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + page.thumbnailImage) %>" />
+    <% } %>
+    <% if (page.coverImage && page.coverImage.length) { %>
+        <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + page.coverImage) %>"/>
+        <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + page.coverImage) %>" />
     <% } %>
     <% if (page.photos && page.photos.length) { %>
         <% page.photos.forEach(function(photo) { %>
             <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + photo) %>" />
+            <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + photo) %>" />
         <% }) %>
     <% } %>
     <!--STYLES-->
