@@ -12,6 +12,9 @@
                 <% var photoUrl; %>
                 <% if ((photo.indexOf(config.url) < 0) && (photo.indexOf('://') >= 0)) { %>
                     <%  photoUrl = photo; %>
+                    <% if (!/.+\.[a-zA-Z0-9]{3,4}$/.test(photo)) { %>
+                        <%  photoUrl = photoUrl + "#.jpg"; %>
+                    <% } %>
                 <% } else { %>
                     <% photoUrl = url_for(post.path.replace('.html', '/') + photo); %>
                 <% } %>
