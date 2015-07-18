@@ -18,7 +18,20 @@
         <%- partial('post/header')%>
     <% } %>
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <%- post.content %>
+        <% if (post.excerpt) { %>
+            <%- post.excerpt %>
+            <% if ((theme.toc && post.toc) || post.toc) { %>
+                <% if (theme.toc_title) { %>
+                    <h1 id="table-of-contents"><%= theme.toc_title %></h1>
+                <% } else { %>
+                <span id="table-of-contents"></span>
+            <% } %>
+                <%- toc(post.more, {list_number: false}) %>
+            <% } %>
+            <%- post.more %>
+        <% } else { %>
+            <%- post.content %>
+        <% } %>
         <% if (theme.image_gallery) { %>
             <%- partial('post/gallery', {photos: post.photos})%>
         <% } %>
