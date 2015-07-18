@@ -107,10 +107,10 @@ author:
     google_plus:
     # Your Facebook user ids used to connect your blog with your facebook user accounts. separate ids with comma (e.g : 9830047,1003342)
     # Visit https://developers.facebook.com/docs/platforminsights/domains for more information
-    fb_admin_ids: 123123,124421
+    fb_admin_ids:
     # Your Facebook app id used to connect your blog with your facebook app account (e.g : 9841307)
     # Visit https://developers.facebook.com/docs/platforminsights/domains for more information
-    fb_app_id: 123124142
+    fb_app_id: 
 
 
 # Customization
