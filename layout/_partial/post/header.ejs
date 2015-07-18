@@ -1,28 +1,29 @@
 <div class="post-header main-content-wrap">
+    <% thumbnailImageUrl = {} %>
     <% if ((theme.thumbnail_image) && (post.thumbnailImage) && ((post.thumbnailImage.length))) { %>
         <% if ((post.thumbnailImage.indexOf(config.url) < 0) && (post.thumbnailImage.indexOf('://') >= 0)) { %>
-            <% thumbnailImageUrl = post.thumbnailImage; %>
+            <% thumbnailImageUrl.value = post.thumbnailImage; %>
         <% } else { %>
-            <% thumbnailImageUrl = url_for(post.path.replace('.html', '/') + post.thumbnailImage); %>
+            <% thumbnailImageUrl.value = url_for(post.path.replace('.html', '/') + post.thumbnailImage); %>
         <% } %>
     <% } else if ((theme.thumbnail_image) && (post.photos) && (post.photos.length)) { %>
         <% if ((post.photos[0].indexOf(config.url) < 0) && (post.photos[0].indexOf('://') >= 0)) { %>
-            <% thumbnailImageUrl = post.photos[0]; %>
+            <% thumbnailImageUrl.value = post.photos[0]; %>
         <% } else { %>
-            <% thumbnailImageUrl = url_for(post.path.replace('.html', '/') + post.photos[0]); %>
+            <% thumbnailImageUrl.value = url_for(post.path.replace('.html', '/') + post.photos[0]); %>
         <% } %>
     <% } else if ((theme.thumbnail_image) && (post.coverImage) && (post.coverImage.length)) { %>
         <% if ((post.coverImage.indexOf(config.url) < 0) && (post.coverImage.indexOf('://') >= 0)) { %>
-            <% thumbnailImageUrl = post.coverImage; %>
+            <% thumbnailImageUrl.value = post.coverImage; %>
         <% } else { %>
-            <% thumbnailImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage); %>
+            <% thumbnailImageUrl.value = url_for(post.path.replace('.html', '/') + post.coverImage); %>
         <% } %>
     <% } %>
-    <% if (thumbnailImageUrl != null) { %>
+    <% if (thumbnailImageUrl.value != null) { %>
         <div class="hide">
-            <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+            <img alt="" itemprop="image" src="<%= thumbnailImageUrl.value %>"/>
         </div>
-        <% thumbnailImageUrl = null; %>
+        <% thumbnailImageUrl.value = null; %>
     <% } %>
     <% if (post.link) { %>
         <h1 itemprop="headline">
