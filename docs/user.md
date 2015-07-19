@@ -220,6 +220,8 @@ author:
     job:
     location:
     picture:
+    twitter:
+    google_plus:
 ```
 
 - **email** : Your mail address. This address will be used to get your gravatar image if you activate gravatar option
@@ -227,6 +229,8 @@ author:
 - **job** : Your job (Markdown and HTML supported)
 - **location** : Your location
 - **picture** : Your profile picture. Overwritten by your gravatar image if gravatar option is enabled
+- **twitter** : Your Twitter username without the @. E.g : `tranquilpeak`
+- **google_plus** : Your google plus profile id. E.g : `+TranquilPeak` or `123812884128439`
 
 ### Customization ###
 
@@ -279,11 +283,15 @@ disqus_shortname:
 gravatar_email: 
 google_analytics_id:  
 swiftype_install_key:
+fb_admin_ids:
+fb_app_id:
 ```
 - **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.
 - **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog
 - **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
 - **swiftype_install_key** : Your Swiftype install key founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype install key is : `fsdkiG43fkfder32dgsR`.
+- **fb_admin_ids** : Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. E.g : `9830047,1003342`
+- **fb_app_id** : Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : `9841307`
 
 ### Enable pages ###
 
