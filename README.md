@@ -32,6 +32,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Pages to filter tags, categories and archives  
 - Background cover image  
 - Beautiful about page  
+- support Open Graph protocol  
   
   
 **Posts features :**  
@@ -42,6 +43,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Navigation menu  
 - GitHub theme for code highlighting  
 - Image gallery  
+- Table of contents  
   
   
 **Integrated services :**  
@@ -49,6 +51,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Google analytics  
 - Gravatar  
 - Swiftype  
+- Facebook Insights  
   
   
 ## Quick start ##

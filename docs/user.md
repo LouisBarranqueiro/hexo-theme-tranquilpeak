@@ -47,7 +47,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Pages to filter tags, categories and archives  
 - Background cover image  
 - Beautiful about page  
-- support Open Gyraph protocol
+- support Open Graph protocol  
   
   
 **Posts features :**  
@@ -58,7 +58,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Navigation menu  
 - GitHub theme for code highlighting  
 - Image gallery  
-- Table of contents
+- Table of contents  
   
   
 **Integrated services :**  
@@ -66,6 +66,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Google analytics  
 - Gravatar  
 - Swiftype  
+- Facebook Insights  
 
 ## Requirements ##
 
