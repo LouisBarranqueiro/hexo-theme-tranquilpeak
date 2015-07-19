@@ -32,7 +32,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Pages to filter tags, categories and archives  
 - Background cover image  
 - Beautiful about page  
-- support Open Graph protocol  
+- Support Open Graph protocol  
   
   
 **Posts features :**  
