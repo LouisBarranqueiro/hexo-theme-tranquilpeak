@@ -8,7 +8,7 @@ image_dir: assets/images
 # Sidebar Configuration
 #    You can add groups of links and links much as you want
 #    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
-#    Example :
+#    E.g :
 #    -------------
 #       sidebar:                   # DON'T modify this variable name
 #            menu:                 # Name of your groups of links (changeable)
@@ -103,14 +103,8 @@ author:
     picture:
     # Your Twitter username without the @ (e.g : tranquilpeak)
     twitter:
-    # Your google plus profile link (e.g : https://plus.google.com/+GoPro)
+    # Your google plus profile id (e.g : `+TranquilPeak` or `123812884128439`)
     google_plus:
-    # Your Facebook user ids used to connect your blog with your facebook user accounts. separate ids with comma (e.g : 9830047,1003342)
-    # Visit https://developers.facebook.com/docs/platforminsights/domains for more information
-    fb_admin_ids:
-    # Your Facebook app id used to connect your blog with your facebook app account (e.g : 9841307)
-    # Visit https://developers.facebook.com/docs/platforminsights/domains for more information
-    fb_app_id: 
 
 
 # Customization
@@ -154,4 +148,9 @@ google_analytics_id:
 gravatar_email:
 # Your swiftype install key
 swiftype_install_key:
-
+# Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
+# Visit https://developers.facebook.com/docs/platforminsights/domains for more information
+fb_admin_ids:
+# Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). e.g : 9841307
+# Visit https://developers.facebook.com/docs/platforminsights/domains for more information
+fb_app_id:

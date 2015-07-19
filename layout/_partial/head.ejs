@@ -1,4 +1,9 @@
 <%
+    // Separate fb admin ids
+    if (theme.fb_admin_ids) {
+        fb_admin_ids = String(theme.fb_admin_ids).split(',');
+    }
+    // Create title of the page
     var title = '';
 
     if (is_home()) {
@@ -56,10 +61,16 @@
     <%- open_graph({
         type: 'blog',
         twitter_id: theme.author.twitter,
-        google_plus: theme.author.google_plus,
-        fb_admins: theme.author.fb_admin_ids,
         fb_app_id: theme.fb_app_id
     }) %>
+    <% if (theme.author.google_plus) { %>
+        <meta rel="publisher" content="https://plus.google.com/<%= theme.author.google_plus %>"/>
+    <% } %>
+    <% if (typeof fb_admin_ids !== 'undefined') { %>
+        <% fb_admin_ids.forEach(function(fb_admin_id) { %>
+            <meta property="fb:admins" content="<%= fb_admin_id %>" />
+        <% }) %>
+    <% } %>
     <% if (theme.gravatar_email) { %>
         <meta property="og:image" content="<%- gravatar(theme.gravatar_email, 640) %>"/>
     <% } else if (theme.author.picture) { %>
