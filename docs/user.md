@@ -1,6 +1,6 @@
 # User documentation #
 
-Tranquilpeak theme is compatible with Hexo v3.0.x
+Tranquilpeak theme is compatible with Hexo v3.0.x. The theme is compatible with higher versions of Hexo but these versions have some bugs with generation of relative urls so I recommend to use Hexo 3.0.x for the moment.
 
 This documentation will help you to install tranquilpeak-hexo-theme and configure it to use all features which it provides.  
 
@@ -239,17 +239,16 @@ author:
 ``` yaml
 # Customization
 sidebar_behavior: 1
-toc: true
 toc_title: Table of contents
-thumbnail_image: 1
+thumbnail_image: true
 read_more_message: Continue reading
 go_to_message: Go to the website 
 cover_image: cover.png
 favicon:
-image_gallery: 1
-archive_pagination: 1
-category_pagination: 1
-tag_pagination: 1
+image_gallery: true
+archive_pagination: true
+category_pagination: true
+tag_pagination: true
 ```
 
 - **sidebar_behavior** : Define the behavior of the header and sidebar :
@@ -257,23 +256,23 @@ tag_pagination: 1
    * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked
    * 3: Display header bar on all screens and large sidebar is swiped when open button is clicked  
    * 4: Display header bar on all screens and medium sidebar is swiped when open button is clicked)
-- **toc_title** : Head title displayed at the top of the table of contents. Before `<!-- toc -->` comment
-- **thumbnail_image** : Display thumbnail image of each post on index pages (disable: 0, enable: 1)
+- **toc_title** : Head title displayed at the top of the table of contents.
+- **thumbnail_image** : Display thumbnail image of each post on index pages 
 - **read_more_message** : Message displayed after the `<!-- more -->` comment or after 300 characters in post
 - **go_to_message** : Message displayed after the `<!-- more -->` comment or after 300 characters for post with link layout
 - **cover** : Your blog cover picture located in folder `source/assets/images/`. **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
-- **image_gallery** : Display an image gallery at the end of a post which have `photos` variables
-- **archive_pagination** : Displaying style of archive pages. 0: Disable pagination, 1: Enable pagination 
-- **category_pagination** :  Displaying style of category pages. 0: Disable pagination, 1: Enable pagination 
-- **tag_pagination** :  Displaying style of tag pages. 0: Disable pagination, 1: Enable pagination 
+- **image_gallery** : Display an image gallery at the end of a post which have `photos` variables. (false: disabled, true: enabled)
+- **archive_pagination** : Displaying style of archive pages. (false: pagination disabled, true: pagination enabled)
+- **category_pagination** :  Displaying style of category pages. (false: pagination disabled, true: pagination enabled)
+- **tag_pagination** :  Displaying style of tag pages. (false: pagination disabled, true: pagination enabled)
 
 Example :  
-A category page look like this with `category_pagination: 1` :  
-![archives 1](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-1.png)  
+A category page look like this with `category_pagination: true` :  
+![archives false](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-1.png)  
 
-The same page with `category_pagination: 0`:  
-![archives 0](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-0.png)  
+The same page with `category_pagination: false`:  
+![archives false](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-0.png)  
 
 
 ### Integrated services ###
@@ -382,7 +381,6 @@ photos:
     - http://i.imgur.com/o9r19kD.jpg
     - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no
 comments: false
-toc: false
 ```
 
 - **thumbnailImage** : Image displayed in index view.
