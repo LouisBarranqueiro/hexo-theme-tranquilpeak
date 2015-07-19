@@ -117,21 +117,19 @@ author:
 sidebar_behavior: 1
 # Head title displayed at the top of the table of contents.
 toc_title: Table of contents
-# Display thumbnail image of each post on index pages (disable: 0, enable: 1)
+# Display thumbnail image of each post on index pages (false: disabled, true: enabled)
 thumbnail_image: true
-# Message displayed after the <!-- more --> tag
+# Message displayed after the <!-- more --> comment
 read_more_message: Continue reading
-# Message displayed after the <!-- more --> tag or after 300 characters for post with link layout
+# Message displayed after the <!-- more --> comment or after 300 characters for post with link layout
 go_to_message: Go to the website
 # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 cover_image: cover.jpg
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 favicon:
-# Display an image gallery at the end of a post which have photos variables
+# Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
 image_gallery: true
-# Pagination behavior of archive, category and tag pages
-## 0: Disable pagination
-## 1: Enable pagination
+# Pagination behavior of archive, category and tag pages (false: pagination disabled, true: pagination enabled)
 archive_pagination: true
 category_pagination: true
 tag_pagination: true
