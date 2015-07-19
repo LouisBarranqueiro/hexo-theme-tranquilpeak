@@ -1,4 +1,16 @@
 <%
+    // Generate table of contents
+    var tableOfContents = null;
+    if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(post.content)) {
+        if (theme.toc_title) {
+            tableOfContents = '<h1 id=\"table-of-contents\">' + theme.toc_title + '</h1>';
+        } else {
+            tableOfContents = '<span id="table-of-contents"></span>';
+        }
+        tableOfContents += toc(post.content, {list_number: false})
+    }
+
+    // Generate cover image url
     var coverImageUrl;
 
     if (post.coverImage) {
@@ -18,17 +30,8 @@
         <%- partial('post/header')%>
     <% } %>
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <% if (post.excerpt) { %>
-            <%- post.excerpt %>
-            <% if ((theme.toc && post.toc) || post.toc) { %>
-                <% if (theme.toc_title) { %>
-                    <h1 id="table-of-contents"><%= theme.toc_title %></h1>
-                <% } else { %>
-                <span id="table-of-contents"></span>
-            <% } %>
-                <%- toc(post.more, {list_number: false}) %>
-            <% } %>
-            <%- post.more %>
+        <% if (tableOfContents) { %>
+            <%- post.content.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents) %>
         <% } else { %>
             <%- post.content %>
         <% } %>

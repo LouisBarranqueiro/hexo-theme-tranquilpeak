@@ -29,7 +29,9 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [Integrated services configuration](#integrated-services-configuration)
     * [Google Analytics](#google-analytics)
         * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
-- [Front-matter settings](#front-matter-settings)
+- [Writing posts](#writing-posts)
+    * [Front-matter settings](#front-matter-settings)
+    * [Display table of contents](#display-table-of-contents)
 - [Running](#running)  
 
 ## General ##
@@ -255,11 +257,10 @@ tag_pagination: 1
    * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked
    * 3: Display header bar on all screens and large sidebar is swiped when open button is clicked  
    * 4: Display header bar on all screens and medium sidebar is swiped when open button is clicked)
-- **toc** : Display a table of contents after `<!-- more -->` is inserted in a post (false: disable, true: enable). This is a default behavior and it can be customizable for each post in front-matter
-- **toc_title** : Head title displayed at the top of the table of contents
+- **toc_title** : Head title displayed at the top of the table of contents. Before `<!-- toc -->` comment
 - **thumbnail_image** : Display thumbnail image of each post on index pages (disable: 0, enable: 1)
-- **read_more_message** : Message displayed after the `<!-- more -->` tag or after 300 characters in post
-- **go_to_message** : Message displayed after the `<!-- more -->` tag or after 300 characters for post with link layout
+- **read_more_message** : Message displayed after the `<!-- more -->` comment or after 300 characters in post
+- **go_to_message** : Message displayed after the `<!-- more -->` comment or after 300 characters for post with link layout
 - **cover** : Your blog cover picture located in folder `source/assets/images/`. **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables
@@ -388,11 +389,14 @@ toc: false
 - **coverImage** : Image displayed in large at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image.
 - **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. 
 - **comments** : Disable the comment of the post.
-- **toc** : Display a table of contents after `<!-- more -->` is inserted in a post (false: disable, true: enable)
 
 The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
 Of course, you can set external url.
 
+### Display table of contents ###
+
+As post excerpt feature enable with `<!-- more -->` comment, you can display the table of contents of a post with  `<!-- toc -->`.  Place this comment where you want to display the table of content. You can also edit the title displayed at the top of the table of contents in the `_config.yml` file
+ 
 ## Running ##
 
 Run `hexo server` and start writing! :)
