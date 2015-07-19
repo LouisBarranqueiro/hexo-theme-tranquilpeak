@@ -93,7 +93,7 @@ header:
 # Author
 author:
     email:
-    # Your biography (support HTML and Markdown syntax)
+    # Your biography (Markdown and HTML supported)
     bio:
     job:
     location:
@@ -101,9 +101,9 @@ author:
     # or in `source/assets/images/` (production).
     # Overwritten by your gravatar image if `gravatar_image` is enabled
     picture:
-    # Your Twitter username without the @ (e.g : tranquilpeak)
+    # Your Twitter username without the @. E.g : `tranquilpeak`
     twitter:
-    # Your google plus profile id (e.g : `+TranquilPeak` or `123812884128439`)
+    # Your google plus profile id. E.g : `+Tranquilpeak` or `123812884128439`
     google_plus:
 
 
@@ -151,6 +151,6 @@ swiftype_install_key:
 # Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
 # Visit https://developers.facebook.com/docs/platforminsights/domains for more information
 fb_admin_ids:
-# Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). e.g : 9841307
+# Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
 # Visit https://developers.facebook.com/docs/platforminsights/domains for more information
 fb_app_id:
