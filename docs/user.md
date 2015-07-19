@@ -47,6 +47,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Pages to filter tags, categories and archives  
 - Background cover image  
 - Beautiful about page  
+- support Open Gyraph protocol
   
   
 **Posts features :**  
@@ -57,6 +58,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Navigation menu  
 - GitHub theme for code highlighting  
 - Image gallery  
+- Table of contents
   
   
 **Integrated services :**  
@@ -368,7 +370,7 @@ photos:
     - image-3.jpg
     - image-4.png
     - http://i.imgur.com/o9r19kD.jpg
-    - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no#.jpg
+    - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no
 comments: false
 toc: false
 ```
@@ -376,7 +378,6 @@ toc: false
 - **thumbnailImage** : Image displayed in index view.
 - **coverImage** : Image displayed in large at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image.
 - **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. 
-**If your image is external and the URL doesn't have an image extension like this : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no`, you have to add at the end `#.jpg` what ever the real image extension otherwise the Fancybox plugin will not detect your image and image gallery wont work correctly**
 - **comments** : Disable the comment of the post.
 - **toc** : Display a table of contents after `<!-- more -->` is inserted in a post (false: disable, true: enable)
 
