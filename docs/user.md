@@ -229,12 +229,14 @@ author:
 
 ``` yaml
 # Customization
-sidebar_behavior: 1                
-thumbnail_image: 1               
+sidebar_behavior: 1
+toc: true
+toc_title: Table of contents
+thumbnail_image: 1
 read_more_message: Continue reading
 go_to_message: Go to the website 
-cover_image: cover.png                 
-favicon:                         
+cover_image: cover.png
+favicon:
 image_gallery: 1
 archive_pagination: 1
 category_pagination: 1
@@ -246,6 +248,8 @@ tag_pagination: 1
    * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked
    * 3: Display header bar on all screens and large sidebar is swiped when open button is clicked  
    * 4: Display header bar on all screens and medium sidebar is swiped when open button is clicked)
+- **toc** : Display a table of contents after `<!-- more -->` is inserted in a post (false: disable, true: enable). This is a default behavior and it can be customizable for each post in front-matter
+- **toc_title** : Head title displayed at the top of the table of contents
 - **thumbnail_image** : Display thumbnail image of each post on index pages (disable: 0, enable: 1)
 - **read_more_message** : Message displayed after the `<!-- more -->` tag or after 300 characters in post
 - **go_to_message** : Message displayed after the `<!-- more -->` tag or after 300 characters for post with link layout
@@ -366,6 +370,7 @@ photos:
     - http://i.imgur.com/o9r19kD.jpg
     - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no#.jpg
 comments: false
+toc: false
 ```
 
 - **thumbnailImage** : Image displayed in index view.
@@ -373,6 +378,7 @@ comments: false
 - **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. 
 **If your image is external and the URL doesn't have an image extension like this : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no`, you have to add at the end `#.jpg` what ever the real image extension otherwise the Fancybox plugin will not detect your image and image gallery wont work correctly**
 - **comments** : Disable the comment of the post.
+- **toc** : Display a table of contents after `<!-- more -->` is inserted in a post (false: disable, true: enable)
 
 The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
 Of course, you can set external url.
