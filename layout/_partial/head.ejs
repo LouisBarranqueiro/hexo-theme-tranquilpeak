@@ -1,4 +1,9 @@
 <%
+    // Separate fb admin ids
+    if (theme.fb_admin_ids) {
+        fb_admin_ids = String(theme.fb_admin_ids).split(',');
+    }
+    // Create title of the page
     var title = '';
 
     if (is_home()) {
@@ -47,9 +52,43 @@
     <title><%= title %></title>
     <meta name="author" content="<%= config.author %>">
     <meta name="description" content="<%= config.title %>">
-    <link rel="icon" href="<%- url_for(theme.image_dir + '/' + theme.favicon) %>">
+    <% if (theme.favicon) { %>
+        <link rel="icon" href="<%- url_for(theme.image_dir + '/' + theme.favicon) %>">
+    <% } %>
     <% if ((config.feed) && (config.feed.path.length)) { %>
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="<%= config.feed.path %>">
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="<%- url_for(config.feed.path) %>">
+    <% } %>
+    <%- open_graph({
+        type: 'blog',
+        twitter_id: theme.author.twitter,
+        fb_app_id: theme.fb_app_id
+    }) %>
+    <% if (theme.author.google_plus) { %>
+        <meta rel="publisher" content="https://plus.google.com/<%= theme.author.google_plus %>"/>
+    <% } %>
+    <% if (typeof fb_admin_ids !== 'undefined') { %>
+        <% fb_admin_ids.forEach(function(fb_admin_id) { %>
+            <meta property="fb:admins" content="<%= fb_admin_id %>" />
+        <% }) %>
+    <% } %>
+    <% if (theme.gravatar_email) { %>
+        <meta property="og:image" content="<%- gravatar(theme.gravatar_email, 640) %>"/>
+    <% } else if (theme.author.picture) { %>
+        <meta property="og:image" content="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
+    <% } %>
+    <% if (page.thumbnailImage && page.thumbnailImage.length) { %>
+        <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + page.thumbnailImage) %>"/>
+        <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + page.thumbnailImage) %>" />
+    <% } %>
+    <% if (page.coverImage && page.coverImage.length) { %>
+        <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + page.coverImage) %>"/>
+        <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + page.coverImage) %>" />
+    <% } %>
+    <% if (page.photos && page.photos.length) { %>
+        <% page.photos.forEach(function(photo) { %>
+            <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + photo) %>" />
+            <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + photo) %>" />
+        <% }) %>
     <% } %>
     <!--STYLES-->
     <%- css('assets/css/font-awesome.css') %>

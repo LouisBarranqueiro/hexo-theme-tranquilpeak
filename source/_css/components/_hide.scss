@@ -1,3 +1,8 @@
+// Hide element on all screens
+.hide {
+    display: none;
+}
+
 // Hide element on very small screen and down
 @media #{$xsmall-and-down} {
     .hide-xs {

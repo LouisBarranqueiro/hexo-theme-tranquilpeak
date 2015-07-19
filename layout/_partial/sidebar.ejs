@@ -18,7 +18,10 @@
             <% if (url_for(theme.sidebar[i][n].url).indexOf(config.url) < 0 && url_for(theme.sidebar[i][n].url).indexOf(':') >= 0) { %>
                 <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank">
             <% } else { %>
-                <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(config.root.substr(0, config.root.lastIndexOf('/')) + theme.sidebar[i][n].url) %>">
+                <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>"
+                    href="<% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %><%- url_for(' ') %>
+                    <% } else if (theme.sidebar[i][n].url.indexOf("/") === 0) { %><%- url_for(theme.sidebar[i][n].url.substr(1)) %>
+                            <% } else { %><%- url_for(theme.sidebar[i][n].url) %><% } %>">
             <% } %>
                     <i class="sidebar-button-icon fa fa-lg <%= 'fa-' + theme.sidebar[i][n].icon %>"></i>
                     <span class="sidebar-button-desc"><%= theme.sidebar[i][n].title %></span>

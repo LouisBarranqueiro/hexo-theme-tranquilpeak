@@ -1,11 +1,23 @@
 <%
+    // Generate table of contents
+    var tableOfContents = null;
+    if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(post.content)) {
+        if (theme.toc_title) {
+            tableOfContents = '<h1 id=\"table-of-contents\">' + theme.toc_title + '</h1>';
+        } else {
+            tableOfContents = '<span id="table-of-contents"></span>';
+        }
+        tableOfContents += toc(post.content, {list_number: false})
+    }
+
+    // Generate cover image url
     var coverImageUrl;
 
     if (post.coverImage) {
         if ((post.coverImage.indexOf(config.url) < 0) && (post.coverImage.indexOf('://') >= 0)) {
             coverImageUrl = post.coverImage;
         } else {
-            coverImageUrl = url_for(post.path + post.coverImage);
+            coverImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage);
         }
     }
 %>
@@ -18,7 +30,11 @@
         <%- partial('post/header')%>
     <% } %>
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <%- post.content %>
+        <% if (tableOfContents) { %>
+            <%- post.content.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents) %>
+        <% } else { %>
+            <%- post.content %>
+        <% } %>
         <% if (theme.image_gallery) { %>
             <%- partial('post/gallery', {photos: post.photos})%>
         <% } %>

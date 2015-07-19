@@ -8,7 +8,7 @@
      * @constructor
      */
     var AboutCard = function() {
-        this.$openBtn   = $("#sidebar, #header").find("a[href$='/#about']");
+        this.$openBtn   = $("#sidebar, #header").find("a[href*='#about']");
         this.$closeBtn  = $('#about-btn-close');
         this.$blog      = $('#blog');
         this.$about     = $('#about');
@@ -22,18 +22,16 @@
          */
         run: function() {
             var self = this;
-
             // Detect click on open button
             self.$openBtn.click(function(e) {
                 e.preventDefault();
                 self.play();
-            })
-
+            });
             // Detect click on close button
             self.$closeBtn.click(function(e) {
                 e.preventDefault();
                 self.playBack();
-            })
+            });
         },
 
         /**

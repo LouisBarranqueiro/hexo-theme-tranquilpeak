@@ -1,0 +1,96 @@
+.share-options-bar {
+    position:           fixed;
+    bottom:             -155px;
+    background:         white;
+    height:             155px;
+    clear:              both;
+    border-top:         1px solid #eef2f8;
+    transition:         transform .25s ease-in-out;
+    z-index:            map-get($z-indexes, 'c-share-options-bar');
+    -webkit-transition: -webkit-transform .25s ease-in-out;
+    // use to animate the share option bar
+    &.opened {
+        @include prefix(transform, translate3d(0, -155px, 0), 'webkit' 'moz');
+    }
+
+    .share-options {
+        padding:    0;
+        margin:     0;
+        text-align: center;
+        list-style: none;
+
+        .share-option {
+            &:first-child {
+                .share-option-btn {
+                    padding: 20px 0 10px 0;
+                }
+            }
+            &:last-child {
+                .share-option-btn {
+                    padding: 10px 0 20px 0;
+                }
+            }
+            .share-option-btn {
+                color:   #6e7681;
+                display: block;
+                width:   100%;
+                padding: 10px 0 10px 0;
+
+                .fa {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+// mask where the user can click to close the share options bar
+.share-options-mask {
+    position: fixed;
+    top:      0;
+    left:     0;
+    width:    100%;
+    height:   100%;
+    display:  none;
+    z-index:  map-get($z-indexes, 'c-mask');
+}
+
+// Behavior of the share options bar on small screens
+@media #{$small-and-down} {
+    .share-options-bar {
+        // Display bottom bar in large size
+        @include share-options-bar-lg;
+    }
+}
+
+// Behavior of the share options bar on medium screens
+@media #{$medium-only} {
+    .share-options-bar {
+        // Display share options bar in small size
+        &[data-behavior="1"], &[data-behavior="2"] {
+            @include share-options-bar-md;
+        }
+        // Display share options bar in large size
+        &[data-behavior="3"], &[data-behavior="4"] {
+            @include share-options-bar-lg;
+        }
+    }
+}
+
+// Behavior of the share options bar on large screens
+@media #{$large-and-up} {
+    .share-options-bar {
+        // Display share options bar in small size
+        &[data-behavior="1"] {
+            @include share-options-bar-sm;
+        }
+        // Display share options bar in medium size
+        &[data-behavior="2"] {
+            @include share-options-bar-md;
+        }
+        // Display share options bar in large size
+        &[data-behavior="3"], &[data-behavior="4"] {
+            @include share-options-bar-lg;
+        }
+    }
+}

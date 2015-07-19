@@ -1,13 +1,14 @@
 <header id="header" data-behavior="<%= theme.sidebar_behavior %>">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="<%= config.url %>"><%= config.title %></a>
+        <a class="header-title-link" href="<%- url_for(' ') %>"><%= config.title %></a>
     </h1>
     <% if (theme.header && theme.header.right_link && theme.header.right_link.url && theme.header.right_link.icon) { %>
         <% if (url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
             <a  class="header-right-icon <% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>" href="<%- url_for(theme.header.right_link.url) %>" target="_blank">
         <% } else { %>
-            <a  class="header-right-icon <% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>" href="<%- url_for(config.root.substr(0, config.root.lastIndexOf('/')) + theme.header.right_link.url) %>">
+            <a  class="header-right-icon <% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
+                href="<% if (theme.header.right_link.url.indexOf("/") === 0) { %><%- url_for(theme.header.right_link.url.substr(1)) %><% } else { %><%- url_for(theme.header.right_link.url) %><% } %>">
         <% } %>
                 <i class="fa fa-lg fa-<%= theme.header.right_link.icon %>"></i>
             </a>

@@ -1,5 +1,6 @@
 .post-actions-wrap {
     height:      60px;
+    padding:     0 15px;
     line-height: 60px;
     clear:       both;
 
@@ -44,7 +45,7 @@
         li.post-action {
             float: right;
 
-            &:nth-child(n + 2) {
+            &:nth-child(n + 3) {
                 .post-action-btn {
                     margin-right: 15px;
                 }
@@ -53,7 +54,21 @@
     }
 }
 
-// Increase width of `.post-actions-share` on very small screen
+// Increase width of `.post-actions-share` on small screen
+@media #{$small-and-down} {
+    .post-actions-wrap {
+        ul.post-action-nav {
+            // Best width for responsive post's navigation panel on small screen
+            width: 25%;
+        }
+        ul.post-action-share {
+            // Best width for responsive post's share panel on small screen
+            width: 75%;
+        }
+    }
+}
+
+// Increase width of `.post-actions-nav` on very small screen
 @media #{$xsmall-and-down} {
     .post-actions-wrap {
         ul.post-action-nav {
