@@ -37,7 +37,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.1.1  
+- **Version** : 1.2.0  
 - **Compatibility** : Hexo 3.0.x
 
 ## Features ##
@@ -77,8 +77,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [tranquilpeak-hexo-theme-built-for-production-1.1.1]
-(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.1.1/tranquilpeak-hexo-theme-built-for-production-1.1.1.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)
+1. Download the latest version built and ready for production here : [tranquilpeak-hexo-theme-built-for-production-1.2.0]
+(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.2.0/tranquilpeak-hexo-theme-built-for-production-1.2.0.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 
 ## Hexo configuration ##
