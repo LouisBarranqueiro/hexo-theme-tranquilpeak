@@ -1,6 +1,6 @@
 # User documentation #
 
-Tranquilpeak theme is comptabile with Hexo v3.0.0 or higher
+Tranquilpeak theme is comptabile with Hexo v3.0.x
 
 This documentation will help you to install tranquilpeak-hexo-theme and configure it to use all features which it provides.  
 
@@ -14,7 +14,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [Installation](#installation)
 - [Hexo configuration](#hexo-configuration)
     * [Enable post assets folder](#enable-post-assets-folder)
-    * [Enable relative links](#enable-relative-links)
+    * [Disable relative links](#disable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
     * [Sidebar](#sidebar)
@@ -36,7 +36,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 - **Author** : Louis Barranqueiro
 - **Version** : 1.1.1  
-- **Compatibility** : Hexo v3.0.0 or higher  
+- **Compatibility** : Hexo 3.0.x
 
 ## Features ##
 
@@ -86,7 +86,7 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 
 If you want to take advantage of cover image, thumbnail image, and image gallery features, you have to enable post assets folder by setting `post_asset_folder` to  `true`in `_config.yml`.
 
-### Enable relative links ###
+### Disable relative links ###
 
 You have to set `relative_link` to `false` otherwise if you enter your blog url without the end `/`, like this `http://yourdomain.com/blog`, all assets will not be loaded.
 There is currently an issue on Hexo repository to fix this problem.

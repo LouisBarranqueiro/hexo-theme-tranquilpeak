@@ -20,8 +20,8 @@ A gorgeous responsive theme for Hexo blog framework
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Latest version** : 1.1.1  
-- **Compatibility** : Hexo v3.0.0 or higher  
+- **Version** : 1.1.1  
+- **Compatibility** : Hexo 3.0.x
 
 ## Features ##
 
@@ -88,6 +88,7 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 
 ##### For users 
 To install and configure the theme, consult the following documentation : [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md)  
+
 ##### For developers
 To understand better the code and edit  the theme, consult the following documentation : [developer documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/developer.md)
 

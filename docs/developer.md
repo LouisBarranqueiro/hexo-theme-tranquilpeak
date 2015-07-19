@@ -30,7 +30,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 - **Author** : Louis Barranqueiro
 - **Version** : 1.1.1  
-- **Compatibility** : Hexo v3.0.0 or higher  
+- **Compatibility** : Hexo 3.0.x
 
 ## Features ##
 
