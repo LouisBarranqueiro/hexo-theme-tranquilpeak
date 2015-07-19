@@ -146,8 +146,6 @@ gravatar_email:
 # Your swiftype install key
 swiftype_install_key:
 # Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
-# Visit https://developers.facebook.com/docs/platforminsights/domains for more information
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
-# Visit https://developers.facebook.com/docs/platforminsights/domains for more information
 fb_app_id:
