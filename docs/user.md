@@ -1,6 +1,6 @@
 # User documentation #
 
-Tranquilpeak theme is comptabile with Hexo v3.0.x
+Tranquilpeak theme is compatible with Hexo v3.0.x
 
 This documentation will help you to install tranquilpeak-hexo-theme and configure it to use all features which it provides.  
 
