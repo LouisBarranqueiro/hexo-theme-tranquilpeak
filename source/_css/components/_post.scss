@@ -97,6 +97,9 @@
         margin-top:  15px;
         font-weight: 300;
         overflow:    hidden;
+        word-break:  break-word;
+        @include prefix('word-break', 'break-all', 'ms moz');
+        @include prefix('hypens', 'auto', 'webkit moz');
     }
     .post-content {
         margin-top: 25px;
