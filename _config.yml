@@ -8,7 +8,7 @@ image_dir: assets/images
 # Sidebar Configuration
 #    You can add groups of links and links much as you want
 #    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
-#    E.g :
+#    E.g:
 #    -------------
 #       sidebar:                   # DON'T modify this variable name
 #            menu:                 # Name of your groups of links (changeable)
