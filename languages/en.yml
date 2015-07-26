@@ -1,0 +1,70 @@
+post_meta_date_format: MMM DD, YYYY
+all_categories_date_format: MMM DD, YYYY
+all_tags_date_format: MMM DD, YYYY
+all_archives_date_format: MMM DD, YYYY
+all_archives_month_format: MMMM
+
+label_newer_posts: NEWER POSTS
+label_older_posts: OLDER POSTS
+label_page: Page
+label_of: of
+label_in: in
+label_search_category: Search Category
+label_search_tag: Search Tag
+label_search_date: "Search Date (YEARMONTHDAY)"
+label_table_of_contents: Table of Content
+label_read_more_message: Continue reading
+label_go_to_message: Go to web site
+
+sidebar:
+    menu:
+        home:
+            title: Home
+            url: /
+        categories:
+            title: Categories
+            url: /all-categories
+        tags:
+            title: Tags
+            url: /all-tags
+        archives:
+            title: Archive
+            url: /all-archives
+        search:
+            title: Search
+            url: /#search
+        about:
+            title: About
+            url: /#about
+    author_links:
+        github:
+            title: GitHub
+            url: https://github.com/myUser
+        stack_overflow:
+            title: Stack Overflow
+            url: http://stackoverflow.com/users/myID/myUser
+        # twitter:
+        #     title: Twitter
+        #     url: link to my  profile
+        # facebook:
+        #     title: Facebook
+        #     url: link to my  profile
+        # google_plus:
+        #     title: Google +
+        #     url: link to my  profile
+        # linked_in:
+        #     title: Linked In
+        #     url: link to my  profile
+        # mail:
+        #     title: Mail
+        #     url: link to my  profile
+    rss:
+        rss:
+            title: RSS
+            url: /atom.xml
+
+author:
+    email: myenglishmail@mail.com
+    bio: My english description
+    job: My english job
+    location: My english location

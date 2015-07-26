@@ -1,0 +1,72 @@
+post_meta_date_format: DD/MM/YYYY
+all_categories_date_format: DD/MM/YYYY
+all_tags_date_format: DD/MM/YYYY
+all_archives_date_format: DD/MM/YYYY
+all_archives_month_format: MMMM
+
+label_newer_posts: POSTS MAIS NOVOS
+label_older_posts: POSTS MAIS ANTIGOS
+label_previous: ANTERIOR
+label_next: PRÓXIMO
+label_page: Página
+label_of: de
+label_in: em
+label_search_category: Pesquisar Categoria
+label_search_tag: Pesquisar Tag
+label_search_date: "Pesquisar Data (ANOMESDIA)"
+label_table_of_contents: Tabela de Conteúdo
+label_read_more_message: Continuar leitura
+label_go_to_message: Ir para o site
+
+sidebar:
+    menu:
+        home:
+            title: Início
+            url: /
+        categories:
+            title: Categorias
+            url: /all-categories
+        tags:
+            title: Tags
+            url: /all-tags
+        archives:
+            title: Arquivo
+            url: /all-archives
+        search:
+            title: Pesquisar
+            url: /#search
+        about:
+            title: Sobre
+            url: /#about
+    author_links:
+        github:
+             title: GitHub
+             url: https://github.com/myUser
+        stack_overflow:
+             title: Stack Overflow
+             url: http://stackoverflow.com/users/myID/myUser
+        # twitter:
+        #     title: Twitter
+        #     url: link to my  profile
+        # facebook:
+        #     title: Facebook
+        #     url: link to my  profile
+        # google_plus:
+        #     title: Google +
+        #     url: link to my  profile
+        # linked_in:
+        #     title: Linked In
+        #     url: link to my  profile
+        # mail:
+        #     title: Mail
+        #     url: link to my  profile
+    rss:
+        rss:
+            title: RSS
+            url: /atom.xml
+
+author:
+    email: meuemailportugues@mail.com
+    bio: Minha descrição em português
+    job: Minha profissião em português
+    location: Minha localização em português

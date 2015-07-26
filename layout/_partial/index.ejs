@@ -44,10 +44,10 @@
                             <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %><br>
                     <% } %>
                     <% if ((post.link) && (theme.go_to_message)) { %>
-                            <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= theme.go_to_message %> </a>
+                            <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= __(theme.go_to_message)  %> </a>
                     <% } else { %>
                         <% if (theme.read_more_message) { %>
-                            <a href="<%- url_for(post.path) %>" class="post-excerpt_link link "><%- theme.read_more_message %></a>
+                            <a href="<%- url_for(post.path) %>" class="post-excerpt_link link "><%- __(theme.read_more_message) %></a>
                             <% if (post.readingtime) { %>
                                 <span class="post-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
                             <% } %>

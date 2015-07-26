@@ -20,64 +20,64 @@ image_dir: assets/images
 sidebar:
     menu:
         home:
-            title: Home
-            url: /
+            title: sidebar.menu.home.title
+            url: sidebar.menu.home.url
             icon: home
         categories:
-            title: Categories
-            url: /all-categories
+            title: sidebar.menu.categories.title
+            url: sidebar.menu.categories.url
             icon: bookmark
         tags:
-            title: Tags
-            url: /all-tags
+            title: sidebar.menu.tags.title
+            url: sidebar.menu.tags.url
             icon: tags
         archives:
-            title: Archives
-            url: /all-archives
+            title: sidebar.menu.archives.title
+            url: sidebar.menu.archives.url
             icon: archive
         search:
-            title: Search
-            url: /#search
+            title: sidebar.menu.search.title
+            url: sidebar.menu.search.url
             icon: search
             # `st-search-show-outputs` classes are used to open swiftype search window
             class: st-search-show-outputs
         about:
-            title: About me
-            url: /#about
+            title: sidebar.menu.about.title
+            url: sidebar.menu.about.url
             icon: question
     author_links:
-        # github:
-        #     title: GitHub
-        #     url: https://github.com/
-        #     icon: github
-        # stack_overflow:
-        #     title: Stack Overflow
-        #     url: http://stackoverflow.com/users/
-        #     icon: stack-overflow
+         github:
+             title: sidebar.author_links.github.title
+             url: sidebar.author_links.github.url
+             icon: github
+         stack_overflow:
+             title: sidebar.author_links.stack_overflow.title
+             url: sidebar.author_links.stack_overflow.url
+             icon: stack-overflow
         # twitter:
-        #     title: Twitter
-        #     url: https://twitter.com/
+        #     title: sidebar.author_links.twitter.title
+        #     url: sidebar.author_links.twitter.url
         #     icon: twitter
         # facebook:
-        #     title: Facebook
-        #     url: https://www.facebook.com/
+        #     title: sidebar.author_links.facebook.title
+        #     url: sidebar.author_links.facebook.url
         #     icon: facebook
         # google_plus:
-        #     title: Google +
-        #     url: https://plus.google.com/
+        #     title: sidebar.author_links.google_plus.title
+        #     url: sidebar.author_links.google_plus.url
         #     icon: google-plus
         # linked_in:
-        #     title: Linked In
-        #     url: https://www.linkedin.com/profile/
+        #     title: sidebar.author_links.linked_in.title
+        #     url: sidebar.author_links.linked_in.url
         #     icon: linkedin
         # mail:
-        #     title: Mail
-        #     url: mailto:
+        #     title: sidebar.author_links.mail.title
+        #     url: sidebar.author_links.mail.url
         #     icon: envelope-o
     rss:
         rss:
-            title: RSS
-            url: /atom.xml
+            title: sidebar.rss.rss.title
+            url: sidebar.rss.rss.url
             icon: rss
 
 # Header configuration
@@ -86,17 +86,16 @@ sidebar:
 # DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
 header:
     right_link:
-        # url: /#search
-        # icon: search
-        # class: st-search-show-outputs
+         # url: /#search
+         # icon: search
+         # class: st-search-show-outputs
 
 # Author
 author:
-    email:
-    # Your biography (Markdown and HTML supported)
-    bio:
-    job:
-    location:
+    email: author.email 
+    bio: author.bio
+    job: author.job
+    location: author.location
     # Your profile picture located in folder `source/_images/` (development)
     # or in `source/assets/images/` (production).
     # Overwritten by your gravatar image if `gravatar_image` is enabled
@@ -116,13 +115,13 @@ author:
 # 4: Display header bar on all screens and medium sidebar is swiped
 sidebar_behavior: 1
 # Head title displayed at the top of the table of contents.
-toc_title: Table of contents
+toc_title: label_table_of_contents
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
-thumbnail_image: true
+thumbnail_image: truei
 # Message displayed after the <!-- more --> comment
-read_more_message: Continue reading
+read_more_message: label_read_more_message
 # Message displayed after the <!-- more --> comment or after 300 characters for post with link layout
-go_to_message: Go to the website
+go_to_message: label_go_to_message
 # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 cover_image: cover.jpg
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)

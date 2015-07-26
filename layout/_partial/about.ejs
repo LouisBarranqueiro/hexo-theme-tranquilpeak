@@ -10,20 +10,20 @@
         <% } %>
             <h4 id="about-card-name"><%= config.author %></h4>
         <% if (theme.author.bio) { %>
-            <h5 id="about-card-bio"><%- markdown(theme.author.bio) %></h5>
+            <h5 id="about-card-bio"><%- markdown(__(theme.author.bio)) %></h5>
         <% } %>
         <% if (theme.author.job) { %>
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <%- markdown(theme.author.job) %>
+                <%- markdown(__(theme.author.job)) %>
             </h5>
         <% } %>
         <% if (theme.author.location) { %>
             <h5 id="about-card-location">
                 <i class="fa fa-map-marker"></i>
                 <br/>
-                <%= theme.author.location %>
+                <%= __(theme.author.location) %>
             </h5>
         <% } %>
     </div>
