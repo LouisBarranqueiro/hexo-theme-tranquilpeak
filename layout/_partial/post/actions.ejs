@@ -52,7 +52,7 @@
             </li>
         <% } %>
         <li class="post-action">
-            <% if (post.excerpt && ((theme.toc && post.toc) || post.toc)) { %>
+            <% if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(post.content)) { %>
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">
             <%} else { %>
                 <a class="post-action-btn btn btn--default" href="#">
