@@ -54,6 +54,7 @@
             }
         }
     };
+
     $(document).ready(function() {
         if ($('.post-bottom-bar').length) {
             var postBottomBar = new PostBottomBar();
