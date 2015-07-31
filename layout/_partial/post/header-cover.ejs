@@ -10,7 +10,7 @@
             coverImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage);
         }
 %>
-    <div class="post-header-cover" style="background-image:url('<%= coverImageUrl %>');" data-behavior="<%= theme.sidebar_behavior %>">
+    <div class="post-header-cover" style="text-align:<%= (post.metaAlignment ? post.metaAlignment : 'left') %>;background-image:url('<%= coverImageUrl %>');" data-behavior="<%= theme.sidebar_behavior %>">
         <%- partial('header') %>
     </div>
 <% } %>
