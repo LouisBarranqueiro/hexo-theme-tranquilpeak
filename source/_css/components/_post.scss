@@ -15,58 +15,6 @@
     display:        inline-block;
     vertical-align: top;
 
-    .post-header {
-        .post-title {
-            margin:     0;
-            word-break: initial;
-            overflow:   hidden;
-
-            &:hover {
-                text-decoration: none;
-            }
-        }
-    }
-    // Cover image displayed in single post view
-    // When post's `coverImage` variable is defined
-    .post-header-cover {
-        position:          relative;
-        // Fix the cover image to the top of the page. `#main-content` have a top padding of 15p
-        top:               -15px;
-        background-size:   cover;
-        background-repeat: no-repeat;
-        display:           block;
-        width:             100%;
-        max-height:        450px;
-
-        .post-header {
-            // Use to center the content of `.post-header`
-            padding-top:    15%;
-            // Use to center the content of `.post-header`
-            padding-bottom: 15%;
-
-            .post-title {
-                margin:      0;
-                color:       white;
-                text-shadow: 0 2px 0 rgba(0, 0, 0, 0.9);
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-            // Post meta contains post's date, post's categories and tags
-            .post-meta {
-                font-size:      $font-size-base;
-                color:          white !important;
-                font-weight:    700;
-                letter-spacing: 0.05em;
-                text-shadow:    0 1px 0 rgba(0, 0, 0, 0.9);
-
-                a {
-                    color: white;
-                }
-            }
-        }
-    }
     // Post meta contains post's date, post's categories and tags
     .post-meta {
         line-height: 1.5em;
@@ -133,18 +81,6 @@
     }
 }
 
-// Respond to medium screen only
-@media #{$medium-only} {
-    // Increase the font size of the post's title
-    .post-header-cover {
-        .post-header {
-            .post-title {
-                font-size: map-get($headings-font-size, h1) + 0.2rem;
-            }
-        }
-    }
-}
-
 // Respond to small screen and up
 @media #{$small-and-up} {
     // Display the post's thumbnail image
@@ -164,18 +100,6 @@
         .post-wrap {
             display: inline-block;
             width:   calc(100% - #{$post-thumbnail-image-width} - 20px);
-        }
-    }
-}
-
-// Respond to large screen and up
-@media #{$large-and-up} {
-    // Increase the font size of the post's title
-    .post-header-cover {
-        .post-header {
-            .post-title {
-                font-size: map-get($headings-font-size, h1) + 0.6rem;
-            }
         }
     }
 }

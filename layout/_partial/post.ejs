@@ -9,24 +9,9 @@
         }
         tableOfContents += toc(post.content, {list_number: false})
     }
-
-    // Generate cover image url
-    var coverImageUrl;
-
-    if (post.coverImage) {
-        if ((post.coverImage.indexOf(config.url) < 0) && (post.coverImage.indexOf('://') >= 0)) {
-            coverImageUrl = post.coverImage;
-        } else {
-            coverImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage);
-        }
-    }
 %>
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
-    <% if (post.coverImage) { %>
-        <div class="post-header-cover" style="background-image:url('<%= coverImageUrl %>');">
-            <%- partial('post/header')%>
-        </div>
-    <% } else { %>
+    <% if (!post.coverImage) { %>
         <%- partial('post/header')%>
     <% } %>
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">

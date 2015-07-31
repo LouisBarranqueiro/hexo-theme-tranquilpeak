@@ -5,6 +5,7 @@
         <div id="blog">
             <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
             <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+            <%- partial('_partial/post/header-cover', {post: page}) %>
             <div id="main" data-behavior="<%= theme.sidebar_behavior %>">
                 <%- body %>
                 <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
