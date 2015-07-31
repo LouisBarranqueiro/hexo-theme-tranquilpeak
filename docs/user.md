@@ -32,6 +32,9 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [Writing posts](#writing-posts)
     * [Front-matter settings](#front-matter-settings)
     * [Display table of contents](#display-table-of-contents)
+    * [Tags](#tags)
+        * [Image](#image)
+        * [Fancybox](#fancybox)
 - [Running](#running)  
 
 ## General ##
@@ -60,6 +63,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Navigation menu  
 - GitHub theme for code highlighting  
 - Image gallery  
+- Image generator helper
 - Table of contents  
   
   
@@ -395,6 +399,38 @@ Of course, you can set external url.
 
 As post excerpt feature enable with `<!-- more -->` comment, you can display the table of contents of a post with  `<!-- toc -->`.  Place this comment where you want to display the table of content. You can also edit the title displayed at the top of the table of contents in the `_config.yml` file
  
+### Tags ###
+
+#### Image ###
+
+Tranquilpeak 1.3 introduce a new tag to helps user to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2014/10/29/Tags-plugins-showcase/#Images)
+
+Syntax : `{% image [classes] /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
+E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`  
+
+- **classes (optionnal)** : You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :
+        - **fancybox** : Generate a fancybox image.  
+        - **nocaption** : Caption of the image will not be displayed.  
+        - **left** : Image will float at the left.  
+        - **right** : Image will float at the right.  
+        - **center** : Image will be at center.  
+        - **fig-20** : Image will take 20% of the width of post width and automatically float at left.  
+        - **fig-25** : Image will take 25% of the width of post width and automatically float at left.  
+        - **fig-33** : Image will take 33% of the width of post width and automatically float at left.  
+        - **fig-50** : Image will take 50% of the width of post width and automatically float at left.  
+        - **fig-75** : Image will take 75% of the width of post width and automatically float at left.  
+        - **fig-100** : Image will take 100% of the width of post width.  
+        - **clear** : Add a div with `clear:both;` style attached after the image to retrieve the normal flow of the post.  
+- **Orignal image** : Path to the original image.  
+- **Thumbnail image (optionnal)** : Path to the thumbnail image. If empty, the orignal image will be displayed.  
+- **Width of thumbnail image (optionnal)** : Width to the thumbnail image. If the thumbnail image is empty, width will be attached to thumbnail image created from original image. E.g : `150px` or `85%`.  
+- **Height of thumbnail image (optionnal)** : Height to the thumbnail image. If the thumbnail image is empty, height will be attached to thumbnail image created from original image. E.g : `300px` or `20%`.  
+- **Title (optionnal)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
+       
+### Fancybox ###
+
+`fancybox` tag is deprecated since Tranquilpeak 1.3. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
+        
 ## Running ##
 
 Run `hexo server` and start writing! :)
