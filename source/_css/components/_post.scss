@@ -103,3 +103,26 @@
         }
     }
 }
+
+// Increase the font size of the post's title on medium screen (only for single post view)
+@media #{$medium-only} {
+    .post {
+        & > .post-header {
+            .post-title {
+                font-size: map-get($headings-font-size, h1) + 0.5rem;
+            }
+        }
+    }
+}
+
+// Increase the font size of the post's title on large screen (only for single post view)
+@media #{$large-and-up} {
+    .post {
+        & > .post-header {
+            .post-title {
+                font-size: map-get($headings-font-size, h1) + 0.9rem;
+            }
+        }
+    }
+}
+
