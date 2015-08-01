@@ -1,7 +1,7 @@
 #main {
     display:            block;
     min-height:         100%;
-    background:         #ffffff;
+    background:         map-get($main, 'background-color');
     transition:         transform .25s ease-in-out;
     -webkit-transition: -webkit-transform .25s ease-in-out;
 }

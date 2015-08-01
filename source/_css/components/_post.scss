@@ -15,6 +15,17 @@
     display:        inline-block;
     vertical-align: top;
 
+    .post-header {
+        .post-title {
+            margin:     0;
+            word-break: initial;
+            overflow:   hidden;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
     // Post meta contains post's date, post's categories and tags
     .post-meta {
         line-height: 1.5em;
