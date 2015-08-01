@@ -34,6 +34,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Display table of contents](#display-table-of-contents)
     * [Tags](#tags)
         * [Image](#image)
+        * [Wide image](#wide-image)
         * [Fancybox](#fancybox)
 - [Running](#running)  
 
@@ -409,9 +410,12 @@ As post excerpt feature enable with `<!-- more -->` comment, you can display the
  
 ### Tags ###
 
+Tranquilpeak 1.3 introduce 2 new tag to display wide images in full width and create beautiful galleries.
+**DON'T use anymore fancybox tag**. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
+
 #### Image ###
 
-Tranquilpeak 1.3 introduce a new tag to helps user to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2014/10/29/Tags-plugins-showcase/#Images)
+Image tag is useful to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2014/10/29/Tags-plugins-showcase/#Images)
 
 Syntax : `{% image [classes] /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
 E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`  
@@ -434,7 +438,17 @@ E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125
 - **Width of thumbnail image (optionnal)** : Width to the thumbnail image. If the thumbnail image is empty, width will be attached to thumbnail image created from original image. E.g : `150px` or `85%`.  
 - **Height of thumbnail image (optionnal)** : Height to the thumbnail image. If the thumbnail image is empty, height will be attached to thumbnail image created from original image. E.g : `300px` or `20%`.  
 - **Title (optionnal)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
-       
+  
+#### Wide image ###
+
+Wide image tag is useful to display wide images in full width. Check the the result : [Wide image tag demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2014/10/29/Tags-plugins-showcase/#Wide-images)
+
+Syntax : `{% wide_image /path/to/image [title text] %}`  
+E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" %}`  
+
+- **image** : Path to the original image.  
+- **Title (optionnal)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
+
 ### Fancybox ###
 
 `fancybox` tag is deprecated since Tranquilpeak 1.3. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 

@@ -1,6 +1,8 @@
 <%
-    // Generate table of contents
     var tableOfContents = null;
+    var postContent = post.content;
+
+    // Generate and insert table of contents in post content
     if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(post.content)) {
         if (theme.toc_title) {
             tableOfContents = '<h1 id=\"table-of-contents\">' + theme.toc_title + '</h1>';
@@ -8,7 +10,15 @@
             tableOfContents = '<span id="table-of-contents"></span>';
         }
         tableOfContents += toc(post.content, {list_number: false})
+        post.content = post.content.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents)
     }
+    // Replace `<!-- endcontent -->` by `</div>` and `<!-- content -->` by `</div class="main-content-wrap">`
+    // it's an hack to insert html tag without
+    // having auto delete or auto closed by the markdown render engine
+    // Currently used to insert an image in full width, out of `main-content-wrap` div
+    // which center the content and have a limited width (750px)
+    post.content = post.content.replace(/<!-- ?endcontent ?-->/g, '</div>')
+                               .replace(/<!-- ?content ?-->/g, '<div class="main-content-wrap">');
 %>
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
     <% if (post.coverCaption) { %>
@@ -17,15 +27,13 @@
     <% if (!post.coverImage || post.coverMeta === 'out') { %>
         <%- partial('post/header')%>
     <% } %>
-    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <% if (tableOfContents) { %>
-            <%- post.content.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents) %>
-        <% } else { %>
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
             <%- post.content %>
-        <% } %>
-        <% if (theme.image_gallery) { %>
-            <%- partial('post/gallery', {photos: post.photos})%>
-        <% } %>
+            <% if (theme.image_gallery) { %>
+                <%- partial('post/gallery', {photos: post.photos})%>
+            <% } %>
+        </div>
     </div>
     <div class="post-footer main-content-wrap">
         <% if ((post.tags) && (post.tags.length > 0)) { %>
