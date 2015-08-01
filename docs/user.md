@@ -378,6 +378,10 @@ Tranquilpeak introduces 2 new variables to configure precisely the style of your
 Example :  
 ``` markdown
 thumbnailImage: image-1.png
+metaAlignment: center
+coverImage: image-2.png
+coverCaption: "A beautiful sunrise"
+coverMeta: out
 coverImage: image-2.png
 photos:
     - image-3.jpg
@@ -391,7 +395,7 @@ comments: false
 - **thumbnailImage** : Image displayed in index view.
 - **coverImage** : Image displayed in full size of browser window at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. check the beautiful demo here : [Cover image demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
 - **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
-- **coverMeta** : True: display post meta (title, date and categories) on cover image, false: display meta (title, date and categories) under cover image as usual. Default behavior : true
+- **coverMeta** : `in`: display post meta (title, date and categories) on cover image, `out`: display meta (title, date and categories) under cover image as usual. Default behavior : `in`
 - **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. 
 - **comments** : Disable the comment of the post.
 

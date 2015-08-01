@@ -14,7 +14,7 @@
              style="background-image:url('<%= coverImageUrl %>');"
              data-behavior="<%= theme.sidebar_behavior %>"
              class="<%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>">
-            <% if (typeof post.coverMeta === "undefined" || post.coverMeta === true) { %>
+            <% if (typeof post.coverMeta === "undefined" || post.coverMeta === 'in') { %>
                 <%- partial('header') %>
             <% } %>
         </div>
