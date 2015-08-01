@@ -3,5 +3,6 @@
     font-size:  map-get($font-size, medium);
     text-align: center;
     margin-top: 70px;
-    height:     45px;
+    height:     auto;
+    padding:    20px 20px;
 }
