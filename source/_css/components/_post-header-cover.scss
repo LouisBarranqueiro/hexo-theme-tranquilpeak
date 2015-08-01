@@ -65,6 +65,9 @@
         }
     }
 }
+.post-header-cover-caption {
+    margin:5px 0 50px 0;
+}
 
 // Decrease the font size of the post's title on very small screen
 @media #{$xsmall-and-down} {

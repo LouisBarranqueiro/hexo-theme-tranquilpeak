@@ -1,14 +1,3 @@
-// Group of `.post`
-// Add margin and border bottom when `.post` are in `.post-group`
-.post-group {
-    .post {
-        // Space between 2 post
-        margin-top:    15px;
-        border-bottom: 1px solid #eef2f8;
-    }
-}
-
-// Post
 .post {
     position:       relative;
     width:          100%;
@@ -29,39 +18,24 @@
     // Post meta contains post's date, post's categories and tags
     .post-meta {
         line-height: 1.5em;
+        font-family: 'Open Sans', sans-serif;
+        font-size:   map-get($font-size, small);
+        font-weight: 400;
+        color:       map-get($colors, light);
 
         a {
             color: map-get($colors, light);
         }
     }
-    .post-meta,
-    .post-readingtime {
-        color: map-get($colors, light);
-    }
-    .post-excerpt_link {
-        // Bring the post's link nearest of the excerpt
-        margin-top: -15px;
-    }
-    .post-meta,
-    .post-readingtime,
-    .post-excerpt_link {
-        font-family: 'Open Sans', sans-serif;
-        font-size:   map-get($font-size, small);
-        font-weight: 400;
-    }
-    .post-excerpt,
     .post-content {
         font-family: 'Merriweather', serif;
         color:       map-get($colors, base);
-        margin-top:  15px;
+        margin-top:  60px;
         font-weight: 300;
         overflow:    hidden;
         word-break:  break-word;
         @include prefix('word-break', 'break-all', 'ms moz');
         @include prefix('hypens', 'auto', 'webkit moz');
-    }
-    .post-content {
-        margin-top: 25px;
 
         img {
             display:       block;
@@ -80,45 +54,10 @@
     }
 }
 
-// Respond to small screen and down
-@media #{$small-and-down} {
-    // Hide the post's thumbnail image
-    .post-thumbnailimg {
-        display: none;
-
-        img {
-            display: none;
-        }
-    }
-}
-
-// Respond to small screen and up
-@media #{$small-and-up} {
-    // Display the post's thumbnail image
-    .post.post--thumbnailimg {
-        .post-thumbnailimg {
-            display:        inline-block;
-            margin:         15px 0 30px 15px;
-            vertical-align: top;
-
-            img {
-                display:       block;
-                width:         $post-thumbnail-image-width;
-                height:        $post-thumbnail-image-width;
-                border-radius: 3px;
-            }
-        }
-        .post-wrap {
-            display: inline-block;
-            width:   calc(100% - #{$post-thumbnail-image-width} - 20px);
-        }
-    }
-}
-
 // Increase the font size of the post's title on medium screen (only for single post view)
 @media #{$medium-only} {
     .post {
-        & > .post-header {
+        .post-header {
             .post-title {
                 font-size: map-get($headings-font-size, h1) + 0.5rem;
             }
@@ -129,7 +68,7 @@
 // Increase the font size of the post's title on large screen (only for single post view)
 @media #{$large-and-up} {
     .post {
-        & > .post-header {
+        .post-header {
             .post-title {
                 font-size: map-get($headings-font-size, h1) + 0.9rem;
             }

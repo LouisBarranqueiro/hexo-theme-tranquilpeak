@@ -1,5 +1,4 @@
-<div class="post-header main-content-wrap"
-     style="text-align:<%= (post.metaAlignment ? post.metaAlignment : 'left') %>;">
+<div class="post-header main-content-wrap <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>">
     <% if (post.link) { %>
         <h1 itemprop="headline">
             <a class="link" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title || '(no title)' %></a>
@@ -9,5 +8,5 @@
             <%= post.title || '(no title)' %>
         </h1>
     <% } %>
-    <%- partial('meta') %>
+    <%- partial('meta',{classes: ['post-meta']}) %>
 </div>

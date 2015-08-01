@@ -390,6 +390,7 @@ comments: false
 - **metaAlignment** : Meta (title, date and categories) alignment (right, left or center). Default behavior : left
 - **thumbnailImage** : Image displayed in index view.
 - **coverImage** : Image displayed in full size of browser window at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. check the beautiful demo here : [Cover image demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
+- **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
 - **coverMeta** : True: display post meta (title, date and categories) on cover image, false: display meta (title, date and categories) under cover image as usual. Default behavior : true
 - **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. 
 - **comments** : Disable the comment of the post.

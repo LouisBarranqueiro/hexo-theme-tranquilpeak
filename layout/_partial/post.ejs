@@ -11,6 +11,9 @@
     }
 %>
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    <% if (post.coverCaption) { %>
+        <span class="post-header-cover-caption caption"><%= post.coverCaption %></span>
+    <% } %>
     <% if (!post.coverImage || post.coverMeta === false) { %>
         <%- partial('post/header')%>
     <% } %>

@@ -1,0 +1,103 @@
+// Group of `.postShorten`
+// Add margin and border bottom when `.postShorten` are in `.postShorten-group`
+.postShorten-group {
+    .postShorten {
+        // Space between 2 shorten post
+        margin-top:    15px;
+        border-bottom: 1px solid #eef2f8;
+    }
+}
+
+// Post
+.postShorten {
+    position:       relative;
+    width:          100%;
+    display:        inline-block;
+    vertical-align: top;
+
+    .postShorten-header {
+        .postShorten-title {
+            margin:     0;
+            word-break: initial;
+            overflow:   hidden;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    // postShorten meta contains post's date, post's categories and tags
+    .postShorten-meta {
+        line-height: 1.5em;
+
+        a {
+            color: map-get($colors, light);
+        }
+    }
+    .postShorten-meta,
+    .postShorten-readingtime {
+        color: map-get($colors, light);
+    }
+    .postShorten-excerpt_link {
+        // Bring the post's link nearest of the excerpt
+        margin-top: -15px;
+    }
+    .postShorten-meta,
+    .postShorten-readingtime,
+    .postShorten-excerpt_link {
+        font-family: 'Open Sans', sans-serif;
+        font-size:   map-get($font-size, small);
+        font-weight: 400;
+    }
+    .postShorten-excerpt,
+    .postShorten-content {
+        font-family: 'Merriweather', serif;
+        color:       map-get($colors, base);
+        font-weight: 300;
+        overflow:    hidden;
+        word-break:  break-word;
+        @include prefix('word-break', 'break-all', 'ms moz');
+        @include prefix('hypens', 'auto', 'webkit moz');
+    }
+    .postShorten-excerpt, {
+        margin-top: 15px;
+    }
+    .postShorten-content {
+        margin-top: 25px;
+    }
+}
+
+// Hide the post's thumbnail image on small screen and down
+@media #{$small-and-down} {
+    .postShorten-thumbnailimg {
+        display: none;
+
+        img {
+            display: none;
+        }
+    }
+}
+
+// Display the post's thumbnail image on small screen and up
+@media #{$small-and-up} {
+    .postShorten.postShorten--thumbnailimg {
+        .postShorten-thumbnailimg {
+            display:        inline-block;
+            margin:         15px 0 30px 15px;
+            vertical-align: top;
+
+            img {
+                display:       block;
+                width:         $post-thumbnail-image-width;
+                height:        $post-thumbnail-image-width;
+                border-radius: 3px;
+            }
+        }
+        .postShorten-wrap {
+            display: inline-block;
+            width:   calc(100% - #{$post-thumbnail-image-width} - 20px);
+        }
+    }
+}
+
+

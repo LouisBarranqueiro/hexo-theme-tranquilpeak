@@ -6,6 +6,17 @@
     -webkit-transition: -webkit-transform .25s ease-in-out;
 }
 
+// Set `padding-top` to `50px` when there is a cover image on page
+#main.hasCover {
+    padding-top: 50px !important;
+}
+
+// Set `padding-top` to 0 when there is a cover image and its caption on page
+// The cover caption have a `margin-top` to `50px` to replace the padding
+#main.hasCover.hasCoverCaption {
+    padding-top: 0 !important;
+}
+
 @media #{$small-and-down} {
     #main {
         // Display `main` div in large size
