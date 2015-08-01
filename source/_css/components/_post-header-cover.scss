@@ -22,7 +22,8 @@
     background-position:         center;
     background-repeat:           no-repeat;
     width:                       100%;
-    // 100% minus header high and minus 4px for perfect pixels
+    padding:                     calc(#{map-get($header, 'height')} + 30px) 0 30px 0;
+    // 100% minus header high, minus padding-top, minus padding bottom and minus 4px for perfect pixels
     height:                      calc(100% - #{map-get($header, 'height')} - 4px);
     z-index:                     map-get($z-indexes, 'c-post-header-cover');
     // Sidebar animation
@@ -65,8 +66,14 @@
         }
     }
 }
+
+// Decrease height of cover image
+.post-header-cover.post-header-cover--partial {
+    height: 60%;
+}
+
 .post-header-cover-caption {
-    margin:5px 0 50px 0;
+    margin: 5px 0 50px 0;
 }
 
 // Decrease the font size of the post's title on very small screen

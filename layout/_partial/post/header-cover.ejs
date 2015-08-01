@@ -10,10 +10,11 @@
             coverImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage);
         }
 %>
-        <div class="post-header-cover"
+        <div class="post-header-cover
+                    <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>
+                    <%= (post.coverSize ? 'post-header-cover--' + post.coverSize : '') %>"
              style="background-image:url('<%= coverImageUrl %>');"
-             data-behavior="<%= theme.sidebar_behavior %>"
-             class="<%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>">
+             data-behavior="<%= theme.sidebar_behavior %>">
             <% if (typeof post.coverMeta === "undefined" || post.coverMeta === 'in') { %>
                 <%- partial('header') %>
             <% } %>
