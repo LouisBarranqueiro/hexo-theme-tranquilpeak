@@ -5,7 +5,7 @@ var figureFullWidthClass = 'figure--fullWidth';
 var captionClass         = 'caption';
 
 /**
- * Image tag
+ * Wide image tag
  *
  * Syntax:
  *     {% wide_image /path/to/image [title text] %}
