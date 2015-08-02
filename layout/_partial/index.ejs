@@ -29,9 +29,9 @@
                 <div class="post-header">
                     <h1 class="post-title" itemprop="headline">
                         <% if (post.link) { %>
-                                <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(no title)' %></a>
+                                <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(' + __('post.no_title') + ')' %></a>
                         <% } else { %>
-                                <a class="link-unstyled" href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
+                                <a class="link-unstyled" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post.no_title') + ')' %></a>
                         <% } %>
                     </h1>
                     <%- partial('post/meta', {post: post}) %>
@@ -43,11 +43,11 @@
                         <p>
                             <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %><br>
                     <% } %>
-                    <% if ((post.link) && (theme.go_to_message)) { %>
-                            <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= __(theme.go_to_message)  %> </a>
+                    <% if ((post.link) && __('post.go_to_website')) { %>
+                            <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= __('post.go_to_website')  %> </a>
                     <% } else { %>
-                        <% if (theme.read_more_message) { %>
-                            <a href="<%- url_for(post.path) %>" class="post-excerpt_link link "><%- __(theme.read_more_message) %></a>
+                        <% if (__('post.read_more')) { %>
+                            <a href="<%- url_for(post.path) %>" class="post-excerpt_link link "><%- __('post.read_more') %></a>
                             <% if (post.readingtime) { %>
                                 <span class="post-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
                             <% } %>

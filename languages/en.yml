@@ -1,70 +1,46 @@
-post_meta_date_format: MMM DD, YYYY
-all_categories_date_format: MMM DD, YYYY
-all_tags_date_format: MMM DD, YYYY
-all_archives_date_format: MMM DD, YYYY
-all_archives_month_format: MMMM
+# date format displayed everywhere in the blog
+date_format: MMM DD, YYYY
 
-label_newer_posts: NEWER POSTS
-label_older_posts: OLDER POSTS
-label_page: Page
-label_of: of
-label_in: in
-label_search_category: Search Category
-label_search_tag: Search Tag
-label_search_date: "Search Date (YEARMONTHDAY)"
-label_table_of_contents: Table of Content
-label_read_more_message: Continue reading
-label_go_to_message: Go to web site
+global:
+    home: Home
+    categories: Categories
+    tags: Tags
+    archives: Archive
+    search: Search
+    about: About
+    github: GitHub
+    stack_overflow: Stack Overflow
+    twitter: Twitter
+    facebook: Facebook
+    google_plus: Google Plus
+    linked_in: Linked In
+    mail: Mail
+    rss: RSS
+    share_on_google_plus: Share on Google Plus
+    share_on_facebook: Share on Facebook
+    share_on_twitter: Share on Twitter
+    search_category: Search category
+    search_tag: Search tag
+    search_date: Search date (YYYY/MM/DD)
 
-sidebar:
-    menu:
-        home:
-            title: Home
-            url: /
-        categories:
-            title: Categories
-            url: /all-categories
-        tags:
-            title: Tags
-            url: /all-tags
-        archives:
-            title: Archive
-            url: /all-archives
-        search:
-            title: Search
-            url: /#search
-        about:
-            title: About
-            url: /#about
-    author_links:
-        github:
-            title: GitHub
-            url: https://github.com/myUser
-        stack_overflow:
-            title: Stack Overflow
-            url: http://stackoverflow.com/users/myID/myUser
-        # twitter:
-        #     title: Twitter
-        #     url: link to my  profile
-        # facebook:
-        #     title: Facebook
-        #     url: link to my  profile
-        # google_plus:
-        #     title: Google +
-        #     url: link to my  profile
-        # linked_in:
-        #     title: Linked In
-        #     url: link to my  profile
-        # mail:
-        #     title: Mail
-        #     url: link to my  profile
-    rss:
-        rss:
-            title: RSS
-            url: /atom.xml
+pagination:
+    page: page
+    of: of
+    newer_posts: NEWER POSTS
+    older_posts: OLDER POSTS
+    previous: PREVIOUS
+    next: NEXT
+
+post:
+    no_title : no title
+    categorized_in: in
+    tagged_in: TAGGED IN
+    toc: Table of Contents
+    read_more: Continue reading
+    go_to_website: Go to website
 
 author:
-    email: myenglishmail@mail.com
-    bio: My english description
-    job: My english job
-    location: My english location
+    # Your biography in english (Markdown and HTML supported)
+    bio:
+    # Your job in english
+    job:

@@ -4,7 +4,7 @@
 %>
 <div id="archives" class="main-content-wrap">
     <form id="filter-form" action="#">
-        <input name="date" type="text" class="form-control input--xlarge" placeholder="<%= __('label_search_date') %>" autofocus="autofocus">
+        <input name="date" type="text" class="form-control input--xlarge" placeholder="<%= __('global.search_date') %>" autofocus="autofocus">
     </form>
     <h5 class="archive-result text-color-base text-xlarge"></h5>
     <section class="boxes">
@@ -28,13 +28,13 @@
                 <% } %>
                 <ul class="archive-posts archive-month" data-date="<%= post.date.format('YYYYMM') %>">
                     <h5 class="archive-title">
-                        <a class="link-unstyled" href="<%- url_for('archives/' + post.date.format('YYYY/MM')) %>"><%= post.date.locale(page.lang).format(__('all_archives_month_format')) %></a>
+                        <a class="link-unstyled" href="<%- url_for('archives/' + post.date.format('YYYY/MM')) %>"><%= post.date.format('MMMM') %></a>
                     </h5>
                 <% lastMonth = currentMonth; %>
             <% } %>
             <li class="archive-post archive-day" data-date="<%= post.date.format('YYYYMMDD') %>">
-                <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
-                <span class="archive-post-date"><%= ' - ' + post.date.locale(page.lang).format(__('all_archives_date_format')).toLowerCase() %></span>
+                <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post.no_title') + ')' %></a>
+                <span class="archive-post-date"><%= ' - ' + post.date.locale(page.lang).format(__('date_format')).toLowerCase() %></span>
             </li>
         <% }) %>
     </section>

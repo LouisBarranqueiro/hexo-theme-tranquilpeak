@@ -8,18 +8,18 @@
                 <a class="btn btn--default btn--small" href="<%- url_for(page.prev_link) %>">
             <% } %>
                 <i class="fa fa-angle-left text-base icon-mr"></i>
-                    <span><%= __('label_newer_posts') %></span>
+                    <span><%= __('pagination.newer_posts') %></span>
             </a>
         </li>
         <% } %>
         <% if (page.next) { %>
         <li class="pagination-next">
             <a class="btn btn--default btn--small" href="<%- url_for(page.next_link) %>">
-                    <span><%= __('label_older_posts') %></span>
+                    <span><%= __('pagination.older_posts') %></span>
                 <i class="fa fa-angle-right text-base icon-ml"></i>
             </a>
         </li>
         <% } %>
-        <li class="pagination-number"><%= __('label_page') + ' ' + page.current + ' ' +  __('label_of')  + ' ' + page.total %></li>
+        <li class="pagination-number"><%= __('pagination.page') + ' ' + page.current + ' ' +  __('pagination.of')  + ' ' + page.total %></li>
     </ul>
 </div>

@@ -10,74 +10,74 @@ image_dir: assets/images
 #    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
 #    E.g:
 #    -------------
-#       sidebar:                   # DON'T modify this variable name
-#            menu:                 # Name of your groups of links (changeable)
-#                home:             # Name of your link (changeable)
-#                   title: Home    # Title of your link displayed
-#                   url: /         # URL of the link. If the URL is internal, domain name is not necessary
-#                   icon: home     # Name of the font awesome icon class without the `fa-`
-#                                  # Go to http://fontawesome.io/icons/ to find class name of icon
+#       sidebar:                          # DON'T modify this variable name
+#            menu:                        # Name of your groups of links (changeable)
+#                home:                    # Name of your link (changeable)
+#                   title: global.home    # Label of your link displayed. Labels are located in `languages` folder
+#                   url: /                # URL of the link. If the URL is internal, domain name is not necessary
+#                   icon: home            # Name of the font awesome icon class without the `fa-`
+#                                         # Go to http://fontawesome.io/icons/ to find class name of icon
 sidebar:
     menu:
         home:
-            title: sidebar.menu.home.title
-            url: sidebar.menu.home.url
+            title: global.home
+            url: /
             icon: home
         categories:
-            title: sidebar.menu.categories.title
-            url: sidebar.menu.categories.url
+            title: global.categories
+            url: /all-categories
             icon: bookmark
         tags:
-            title: sidebar.menu.tags.title
-            url: sidebar.menu.tags.url
+            title: global.tags
+            url: /all-tags
             icon: tags
         archives:
-            title: sidebar.menu.archives.title
-            url: sidebar.menu.archives.url
+            title: global.archives
+            url: /all-archives
             icon: archive
         search:
-            title: sidebar.menu.search.title
-            url: sidebar.menu.search.url
+            title: global.search
+            url: /#search
             icon: search
             # `st-search-show-outputs` classes are used to open swiftype search window
             class: st-search-show-outputs
         about:
-            title: sidebar.menu.about.title
-            url: sidebar.menu.about.url
+            title: global.about
+            url: /#about
             icon: question
     author_links:
-         github:
-             title: sidebar.author_links.github.title
-             url: sidebar.author_links.github.url
-             icon: github
-         stack_overflow:
-             title: sidebar.author_links.stack_overflow.title
-             url: sidebar.author_links.stack_overflow.url
-             icon: stack-overflow
+        # github:
+        #     title: global.github
+        #     url: https://github.com/
+        #     icon: github
+        # stack_overflow:
+        #     title: global.stack_overflow
+        #     url: http://stackoverflow.com/users
+        #     icon: stack-overflow
         # twitter:
-        #     title: sidebar.author_links.twitter.title
-        #     url: sidebar.author_links.twitter.url
+        #     title: global.twitter
+        #     url: https://twitter.com/
         #     icon: twitter
         # facebook:
-        #     title: sidebar.author_links.facebook.title
-        #     url: sidebar.author_links.facebook.url
+        #     title: global.facebook
+        #     url: https://facebook.com/
         #     icon: facebook
         # google_plus:
-        #     title: sidebar.author_links.google_plus.title
-        #     url: sidebar.author_links.google_plus.url
+        #     title: global.google_plus
+        #     url: https://plus.google.com/
         #     icon: google-plus
         # linked_in:
-        #     title: sidebar.author_links.linked_in.title
-        #     url: sidebar.author_links.linked_in.url
+        #     title: global.linked_in
+        #     url: https://www.linkedin.com/profile/
         #     icon: linkedin
         # mail:
-        #     title: sidebar.author_links.mail.title
-        #     url: sidebar.author_links.mail.url
+        #     title: global.mail
+        #     url: mailto:
         #     icon: envelope-o
     rss:
         rss:
-            title: sidebar.rss.rss.title
-            url: sidebar.rss.rss.url
+            title: global.rss
+            url: /atom.xml
             icon: rss
 
 # Header configuration
@@ -91,11 +91,10 @@ header:
          # class: st-search-show-outputs
 
 # Author
+# Your biography and your job is editable in each languages files in `languages` folder
 author:
-    email: author.email 
-    bio: author.bio
-    job: author.job
-    location: author.location
+    email:
+    location:
     # Your profile picture located in folder `source/_images/` (development)
     # or in `source/assets/images/` (production).
     # Overwritten by your gravatar image if `gravatar_image` is enabled
@@ -114,14 +113,8 @@ author:
 # 3: Display header bar on all screens and large sidebar is swiped
 # 4: Display header bar on all screens and medium sidebar is swiped
 sidebar_behavior: 1
-# Head title displayed at the top of the table of contents.
-toc_title: label_table_of_contents
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
-thumbnail_image: truei
-# Message displayed after the <!-- more --> comment
-read_more_message: label_read_more_message
-# Message displayed after the <!-- more --> comment or after 300 characters for post with link layout
-go_to_message: label_go_to_message
+thumbnail_image: true
 # Your blog cover picture located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 cover_image: cover.jpg
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
