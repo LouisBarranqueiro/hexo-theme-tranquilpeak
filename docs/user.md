@@ -17,15 +17,17 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Disable relative links](#disable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
-    * [Sidebar](#sidebar)
-    * [Header](#header)
-    * [Author](#author)
-    * [Customization](#customization)
-    * [Integrated services](#integrated-services)
-    * [Enable pages](#enable-pages)
-        * [Enable all-categories page](#enable-all-categories-page)
-        * [Enable all-tags page](#enable-all-tags-page)
-        * [Enable all-archives page](#enable-all-archives-page)
+    - [Languages configuration](#languages-configuration)
+    - [Theme configuration](#theme-configuration)
+        * [Sidebar](#sidebar)
+        * [Header](#header)
+        * [Author](#author)
+        * [Customization](#customization)
+        * [Integrated services](#integrated-services)
+        * [Enable pages](#enable-pages)
+            * [Enable all-categories page](#enable-all-categories-page)
+            * [Enable all-tags page](#enable-all-tags-page)
+            * [Enable all-archives page](#enable-all-archives-page)
 - [Integrated services configuration](#integrated-services-configuration)
     * [Google Analytics](#google-analytics)
         * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
@@ -54,6 +56,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Background cover image  
 - Beautiful about page  
 - Support Open Graph protocol  
+- Support internationalization (i18n)
   
   
 **Posts features :**  
@@ -120,9 +123,40 @@ If you want more informations on this plugin : [hexo-generator-feed](https://git
 
 ## Tranquilpeak configuration ##
 
-Complete `theme/tranquilpeak/_config.yml` with your information.
+### Languages configuration ###
 
-### Sidebar ###
+If you are new to Hexo and internationalization (i18n), please read [Hexo documentation - internationalization (i18n) section](https://hexo.io/docs/internationalization.html)
+
+Currently, the theme is delivered with english (en) and portuguese (pt-br) language file. 
+If your language is not available, follow this guidelines (E.g : add chinese language (zh-cn) :  
+1. Set `language` to `zh-cn` in Hexo configuration file `_config.yml`  
+2. Create `zh-cn` file in `theme/tranquilpeak/languages/` folder  
+3. Copy the content of `theme/tranquilpeak/languages/en.yml` and paste it to `zh-cn.yml` file  
+4. Replace all strings in english by their translation in chinese  
+5. Complete your description and your job in chinese and that's it!  
+
+Otherwise, complete your description and your job in the right language file(s) in `theme/tranquilpeak/languages`.
+
+You can also complete multiple files to have an internationalized blog. 
+To do that , follow this guidelines (E.g : for english (en) and portuguese (pt-br)) :  
+1. Set `language` in Hexo configuration file `_config.yml`:  
+```
+language:
+- en
+- pt-br
+```
+The default language will be english.  
+2. Complete your description and your job in each files in each languages  
+
+Now all content put in `pt-br` will be generated with portuguese labels.  
+The rest of the content will be generated with english labels.
+To see the result, check your blog with `http://yourdomain.com/pt-br/`.
+
+### Theme configuration ###
+
+Complete `theme/tranquilpeak/_config.yml` with your information. Read above sections to have more information.
+
+#### Sidebar ####
 
 The sidebar is powerful and easily configurable.
 DON'T modify variables name `sidebar`, `title`, `url` and `icon`.  
@@ -201,7 +235,7 @@ sidebar:
 - **class** (optional) : CSS Class added to the `a` link tag
 
 
-### Header ###
+#### Header ####
 
 The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
 
@@ -217,7 +251,7 @@ header:
 - **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
 - **class** : CSS Class added to the link
 
-### Author ###
+#### Author ####
 
 ``` yaml
 # Author
@@ -239,7 +273,7 @@ author:
 - **twitter** : Your Twitter username without the @. E.g : `tranquilpeak`
 - **google_plus** : Your google plus profile id. E.g : `+TranquilPeak` or `123812884128439`
 
-### Customization ###
+#### Customization ####
 
 ``` yaml
 # Customization
@@ -282,7 +316,7 @@ The same page with `category_pagination: false`:
 ![archives false](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-0.png)  
 
 
-### Integrated services ###
+#### Integrated services ####
 
 ``` yaml
 # Integrated services
@@ -293,12 +327,12 @@ swiftype_install_key:
 fb_admin_ids:
 fb_app_id:
 ```
-- **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.
-- **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog
-- **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
-- **swiftype_install_key** : Your Swiftype install key founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype install key is : `fsdkiG43fkfder32dgsR`.
-- **fb_admin_ids** : Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. E.g : `9830047,1003342`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.
-- **fb_app_id** : Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : `9841307`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.
+- **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.  
+- **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog  
+- **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X  
+- **swiftype_install_key** : Your Swiftype install key founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype install key is : `fsdkiG43fkfder32dgsR`.  
+- **fb_admin_ids** : Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. E.g : `9830047,1003342`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.  
+- **fb_app_id** : Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : `9841307`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.  
 
 ### Enable pages ###
 
