@@ -1,3 +1,11 @@
+<%
+    // Clear reading feature. Hide sidebar on article page if the feature is activated
+    if (is_post() && theme.sidebar_behavior < 3 &&
+        ((theme.clear_reading === true && page.clearReading !== false) ||
+        page.clearReading === true)) {
+        theme.sidebar_behavior += 2;
+    }
+%>
 <!DOCTYPE html>
 <html lang="<%= config.language %>">
     <%- partial('_partial/head') %>
