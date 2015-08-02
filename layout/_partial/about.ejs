@@ -9,14 +9,14 @@
             <img id="about-card-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
         <% } %>
             <h4 id="about-card-name"><%= config.author %></h4>
-        <% if (theme.author.bio) { %>
-            <h5 id="about-card-bio"><%- markdown(theme.author.bio) %></h5>
+        <% if (__('author.bio')) { %>
+            <h5 id="about-card-bio"><%- markdown(__('author.bio')) %></h5>
         <% } %>
-        <% if (theme.author.job) { %>
+        <% if (__('author.job')) { %>
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <%- markdown(theme.author.job) %>
+                <%- markdown(__('author.job')) %>
             </h5>
         <% } %>
         <% if (theme.author.location) { %>

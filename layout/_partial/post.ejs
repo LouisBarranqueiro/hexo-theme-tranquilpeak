@@ -4,8 +4,8 @@
 
     // Generate and insert table of contents in post content
     if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(post.content)) {
-        if (theme.toc_title) {
-            tableOfContents = '<h1 id=\"table-of-contents\">' + theme.toc_title + '</h1>';
+        if (__('post.toc_title')) {
+            tableOfContents = '<h1 id=\"table-of-contents\">' + __('post.toc') + '</h1>';
         } else {
             tableOfContents = '<span id="table-of-contents"></span>';
         }
@@ -37,8 +37,8 @@
     </div>
     <div class="post-footer main-content-wrap">
         <% if ((post.tags) && (post.tags.length > 0)) { %>
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">TAGGED IN</span><br/>
+            <div class="post-footer-tags"
+                <span class="text-color-light text-small"><%= __('post.tagged_in') %></span><br/>
                 <%- partial('post/tag', {tags: post.tags})%>
             </div>
         <% } %>
