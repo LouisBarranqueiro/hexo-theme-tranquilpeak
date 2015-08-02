@@ -136,7 +136,7 @@ read_more_message: Continue reading
 go_to_message: Go to the website
 # Your blog cover picture. I STRONGLY recommend you to use Google Photos to speed up loading of pages.
 # Current image is on Google Photos and you can continue to use it :).
-# Otherwise put your image in folder `source/_images/` (development)  or in `source/assets/images/` if you can't or wan't want to build the theme.
+# Otherwise put your image in folder `source/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
 # and use relative url : `/assets/images/your-image.png`
 cover_image: https://lh3.googleusercontent.com/WSHnrEioAVbc3rvNcltfJWcpu3o2JuvHOzgLb5HB7Ez6F4_E4J4W6KbM6Je7UjM
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)

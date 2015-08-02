@@ -120,7 +120,7 @@ If you want more informations on this plugin : [hexo-generator-feed](https://git
 
 ## Tranquilpeak configuration ##
 
-Complete `theme/tranquilpeak/_config.yml` with your informations.
+Complete `theme/tranquilpeak/_config.yml` with your information.
 
 ### Sidebar ###
 
@@ -266,7 +266,8 @@ tag_pagination: true
 - **thumbnail_image** : Display thumbnail image of each post on index pages 
 - **read_more_message** : Message displayed after the `<!-- more -->` comment or after 300 characters in post
 - **go_to_message** : Message displayed after the `<!-- more -->` comment or after 300 characters for post with link layout
-- **cover** : Your blog cover picture located in folder `source/assets/images/`. **Change the default cover image to have an unique blog**
+- **cover_image** : Your blog cover picture. **I STRONGLY recommend you to use Google Photos to speed up loading of pages.**
+Default image is on Google Photos and you can continue to use it :). Otherwise put your image in folder `source/assets/images/` and use relative url : `/assets/images/your-image.png` **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables. (false: disabled, true: enabled)
 - **archive_pagination** : Displaying style of archive pages. (false: pagination disabled, true: pagination enabled)
@@ -372,6 +373,8 @@ Follow these steps, to add new filter :
 To write articles, you have to user Markdown langague. [Here](https://guides.github.com/features/mastering-markdown/#examples) you can find the main basics of Markdown syntax.   
 Please note, there are many different versions of Markdown and some of them are not supported by Hexo.  
 To use tags plugins to highlight code or add Fancybox image, please read [Hexo docs](https://hexo.io/docs/tag-plugins.html)
+
+**I STRONGLY recommend you to use Google Photos as a CDN to store your all images of your blog to speed up loading of pages.**
 
 ### Front-matter settings ###
 
