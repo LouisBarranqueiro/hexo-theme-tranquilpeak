@@ -21,7 +21,7 @@ A gorgeous responsive theme for Hexo blog framework
 
 - **Author** : Louis Barranqueiro
 - **Version** : 1.2.0  
-- **Compatibility** : Hexo 3.0.x
+- **Compatibility** : Hexo 3.0.0 or later
 
 ## Features ##
 
@@ -33,6 +33,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Background cover image  
 - Beautiful about page  
 - Support Open Graph protocol  
+- Support internationalization (i18n)
   
   
 **Posts features :**  
@@ -43,6 +44,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Navigation menu  
 - GitHub theme for code highlighting  
 - Image gallery  
+- Image generator helpers
 - Table of contents  
   
   
@@ -52,8 +54,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Gravatar  
 - Swiftype  
 - Facebook Insights  
-  
-  
+    
 ## Quick start ##
 
 **Please read [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md), it's short and useful to discover all features and possibilities of the theme, especially the  [writing posts](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md#writing-posts) section**

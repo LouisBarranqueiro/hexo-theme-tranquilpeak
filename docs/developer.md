@@ -30,7 +30,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 - **Author** : Louis Barranqueiro
 - **Version** : 1.2.0  
-- **Compatibility** : Hexo 3.0.x
+- **Compatibility** : Hexo 3.0.0 or later
 
 ## Features ##
 
@@ -42,6 +42,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Background cover image  
 - Beautiful about page  
 - Support Open Graph protocol  
+- Support internationalization (i18n)
   
   
 **Posts features :**  
@@ -52,6 +53,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Navigation menu  
 - GitHub theme for code highlighting  
 - Image gallery  
+- Image generator helpers
 - Table of contents  
   
   
@@ -61,7 +63,6 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Gravatar  
 - Swiftype  
 - Facebook Insights  
-  
   
 ## Requirements ##
 
