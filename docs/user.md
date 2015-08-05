@@ -123,7 +123,7 @@ If you want more informations on this plugin : [hexo-generator-feed](https://git
 
 ## Tranquilpeak configuration ##
 
-### Languages configuration ###
+### Language configuration ###
 
 If you are new to Hexo and internationalization (i18n), please read [Hexo documentation - internationalization (i18n) section](https://hexo.io/docs/internationalization.html)
 
@@ -137,24 +137,12 @@ If your language is not available, follow this guidelines (E.g : add chinese lan
 
 Otherwise, complete your description and your job in the right language file(s) in `theme/tranquilpeak/languages`.
 
-You can also complete multiple files to have an internationalized blog. 
-To do that , follow this guidelines (E.g : for english (en) and portuguese (pt-br)) :  
-1. Set `language` in Hexo configuration file `_config.yml`:  
-```
-language:
-- en
-- pt-br
-```
-The default language will be english.  
-2. Complete your description and your job in each files in each languages  
-
-Now all content put in `pt-br` will be generated with portuguese labels.  
-The rest of the content will be generated with english labels.
-To see the result, check your blog with `http://yourdomain.com/pt-br/`.
+**Tranquilpeak theme is currently not ready to support multi-languages. It will be the next release.**
 
 ### Theme configuration ###
 
 Complete `theme/tranquilpeak/_config.yml` with your information. Read above sections to have more information.
+
 
 #### Sidebar ####
 
@@ -300,7 +288,7 @@ tag_pagination: true
 - **thumbnail_image** : Display thumbnail image of each post on index pages 
 - **read_more_message** : Message displayed after the `<!-- more -->` comment or after 300 characters in post
 - **go_to_message** : Message displayed after the `<!-- more -->` comment or after 300 characters for post with link layout
-- **cover_image** : Your blog cover picture. **I STRONGLY recommend you to use Google Photos to speed up loading of pages.**
+- **cover_image** : Your blog cover picture. **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos/Google Drive.**
 Default image is on Google Photos and you can continue to use it :). Otherwise put your image in folder `source/assets/images/` and use relative url : `/assets/images/your-image.png` **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables. (false: disabled, true: enabled)
@@ -408,7 +396,7 @@ To write articles, you have to user Markdown langague. [Here](https://guides.git
 Please note, there are many different versions of Markdown and some of them are not supported by Hexo.  
 To use tags plugins to highlight code or add Fancybox image, please read [Hexo docs](https://hexo.io/docs/tag-plugins.html)
 
-**I STRONGLY recommend you to use Google Photos as a CDN to store your all images of your blog to speed up loading of pages.**
+ **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos/Google Drive.**
 
 ### Front-matter settings ###
 
