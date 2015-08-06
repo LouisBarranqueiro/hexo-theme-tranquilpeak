@@ -270,7 +270,7 @@ toc_title: Table of contents
 thumbnail_image: true
 read_more_message: Continue reading
 go_to_message: Go to the website 
-cover_image: cover.png
+cover_image: http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1438532677/v1.3.0-cover.jpg
 favicon:
 image_gallery: true
 archive_pagination: true
@@ -288,8 +288,8 @@ tag_pagination: true
 - **thumbnail_image** : Display thumbnail image of each post on index pages 
 - **read_more_message** : Message displayed after the `<!-- more -->` comment or after 300 characters in post
 - **go_to_message** : Message displayed after the `<!-- more -->` comment or after 300 characters for post with link layout
-- **cover_image** : Your blog cover picture. **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos/Google Drive.**
-Default image is on Google Photos. Otherwise put your image in folder `source/assets/images/` and use relative url : `/assets/images/your-image.png` **Change the default cover image to have an unique blog**
+- **cover_image** : Your blog cover picture. **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.**
+Default image is on Cloudinary. Otherwise put your image in folder `source/assets/images/` and use relative url : `/assets/images/your-image.png` **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables. (false: disabled, true: enabled)
 - **archive_pagination** : Displaying style of archive pages. (false: pagination disabled, true: pagination enabled)
@@ -396,7 +396,7 @@ To write articles, you have to user Markdown langague. [Here](https://guides.git
 Please note, there are many different versions of Markdown and some of them are not supported by Hexo.  
 To use tags plugins to highlight code or add Fancybox image, please read [Hexo docs](https://hexo.io/docs/tag-plugins.html)
 
- **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos/Google Drive.**
+ **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.**
 
 ### Front-matter settings ###
 
