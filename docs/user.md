@@ -411,10 +411,10 @@ coverCaption: "A beautiful sunrise"
 coverMeta: out
 coverImage: image-2.png
 photos:
-    - image-3.jpg
-    - image-4.png
-    - http://i.imgur.com/o9r19kD.jpg
-    - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no
+    - image-3.jpg "New York"
+    - image-4.png "Paris"
+    - http://i.imgur.com/o9r19kD.jpg "Dubai"
+    - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no "Sidney"
 comments: false
 ```
 
@@ -425,7 +425,7 @@ comments: false
 - **coverSize**: `partial`: cover image take a part of the screen height (60%), `full`: cover image take the entire screen height.
 - **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
 - **coverMeta** : `in`: display post meta (title, date and categories) on cover image, `out`: display meta (title, date and categories) under cover image as usual. Default behavior : `in`
-- **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. 
+- **photos** : Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `url [caption]`, E.g : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no "New York"`
 - **comments** : Disable the comment of the post.
 
 The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
