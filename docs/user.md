@@ -1,5 +1,9 @@
 # User documentation #
 
+A gorgeous responsive theme for Hexo blog framework 
+
+![Tranquilpeak](http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1439030688/v1.3.0-showcase.png)
+
 Tranquilpeak theme is compatible with Hexo v3.0.x. The theme is compatible with higher versions of Hexo but these versions have some bugs with generation of relative urls so I recommend to use Hexo 3.0.x for the moment.
 
 This documentation will help you to install tranquilpeak-hexo-theme and configure it to use all features which it provides.  
@@ -298,10 +302,10 @@ Default image is on Cloudinary. Otherwise put your image in folder `source/asset
 
 Example :  
 A category page look like this with `category_pagination: true` :  
-![archives false](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-1.png)  
+![archives false](http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/w_300/v1439031170/v1.3.0-ud-archives-true.png)  
 
 The same page with `category_pagination: false`:  
-![archives false](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-0.png)  
+![archives false](http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/w_300/v1439031170/v1.3.0-ud-archives-false.png)  
 
 
 #### Integrated services ####
