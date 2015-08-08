@@ -1,0 +1,46 @@
+# date format displayed everywhere in the blog
+date_format: "MMM DD, YYYY"
+
+global:
+    home: "Home"
+    categories: "Categories"
+    tags: "Tags"
+    archives: "Archive"
+    search: "Search"
+    about: "About"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google Plus"
+    linked_in: "Linked In"
+    mail: "Mail"
+    rss: "RSS"
+    share_on_google_plus: "Share on Google Plus"
+    share_on_facebook: "Share on Facebook"
+    share_on_twitter: "Share on Twitter"
+    search_category: "Search category"
+    search_tag: "Search tag"
+    search_date: "Search date (YYYY/MM/DD)"
+
+pagination:
+    page: "page"
+    of: "of"
+    newer_posts: "NEWER POSTS"
+    older_posts: "OLDER POSTS"
+    previous: "PREVIOUS"
+    next: "NEXT"
+
+post:
+    no_title : "no title"
+    categorized_in: "in"
+    tagged_in: "TAGGED IN"
+    toc: "Table of Contents"
+    read_more: "Continue reading"
+    go_to_website: "Go to website"
+
+author:
+    # Your biography in english (Markdown and HTML supported)
+    bio: ""
+    # Your job in english
+    job: ""

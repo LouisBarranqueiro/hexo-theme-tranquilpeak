@@ -1,9 +1,13 @@
-<div class="post-meta">
-    <time  itemprop="datePublished" content="<%= post.date %>">
-        <%= post.date.format('MMM DD, YYYY') %>
+<div class="<%= (classes ? classes.join(' ') : '') %>">
+    <time itemprop="datePublished" content="<%= post.date %>">
+	<% if (post.lang) { %>
+		    <%= post.date.locale(post.lang).format(__('date_format')) %>
+    	<% } else { %>
+		    <%= post.date.locale(page.lang).format(__('date_format')) %>
+    	<% } %>
     </time>
     <% if ((post.categories) && (post.categories.length > 0)) { %>
-        <span>in </span>
+        <span><%= __('post.categorized_in')  %> </span>
         <%- partial('category', {categories: post.categories})%>
     <% } %>
 </div>

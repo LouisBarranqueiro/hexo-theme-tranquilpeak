@@ -1,6 +1,6 @@
 <div id="categories-archives" class="main-content-wrap">
     <form id="filter-form" action="##">
-        <input name="category" type="text" class="form-control input--xlarge" placeholder="Search a category" autofocus="autofocus">
+        <input name="category" type="text" class="form-control input--xlarge" placeholder="<%= __('global.search_category')  %>" autofocus="autofocus">
     </form>
     <h4 class="archive-result text-color-base text-xlarge"></h4>
     <section>
@@ -20,8 +20,8 @@
                     <ul class="archive-posts">
                         <% site.categories.findOne({'name': item.name}).posts.each(function(post) { %>
                             <li class="archive-post">
-                                <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
-                                <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                                <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post..no_title') + ')' %></a>
+                                <span class="archive-post-date"><%= ' - ' + post.date.locale(page.lang).format(__('date_format')).toLowerCase() %></span>
                             </li>
                         <% }) %>
                         <% site.categories.find({'parent': item._id}).forEach(function(childItem) { %>
@@ -32,8 +32,8 @@
                                 <ul class="archive-posts">
                                     <% site.categories.findOne({'name': childItem.name}).posts.each(function(post) { %>
                                         <li class="archive-post">
-                                            <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
-                                            <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                                            <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post..no_title') + ')' %></a>
+                                            <span class="archive-post-date"><%= ' - ' + post.date.locale(page.lang).format(__('date_format')).toLowerCase() %></span>
                                         </li>
                                     <% }) %>
                                     <% site.categories.find({'parent': childItem._id}).forEach(function(childChildItem) { %>
@@ -44,8 +44,8 @@
                                             <ul class="archive-posts">
                                                 <% site.categories.findOne({'name': childChildItem.name}).posts.each(function(post) { %>
                                                     <li class="archive-post">
-                                                        <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
-                                                        <span class="archive-post-date"><%= ' - ' + post.date.format('DD/MM/YYYY').toLowerCase() %></span>
+                                                        <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post..no_title') + ')' %></a>
+                                                        <span class="archive-post-date"><%= ' - ' + post.date.locale(page.lang).format(__('date_format')).toLowerCase() %></span>
                                                     </li>
                                                 <% }) %>
                                             </ul>

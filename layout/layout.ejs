@@ -1,19 +1,35 @@
+<%
+    var sidebarBehavior;
+    // Clear reading feature. Hide sidebar on article page if the feature is activated
+    if (is_post() && theme.sidebar_behavior < 3 &&
+        ((theme.clear_reading === true && page.clearReading !== false) ||
+        page.clearReading === true)) {
+        sidebarBehavior = theme.sidebar_behavior + 2;
+    }
+    else {
+        sidebarBehavior = theme.sidebar_behavior;
+    }
+%>
 <!DOCTYPE html>
 <html lang="<%= config.language %>">
     <%- partial('_partial/head') %>
     <body>
         <div id="blog">
-            <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-            <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-            <div id="main" data-behavior="<%= theme.sidebar_behavior %>">
+            <%- partial('_partial/header', {sidebarBehavior: sidebarBehavior}, {cache: !config.relative_link}) %>
+            <%- partial('_partial/sidebar', {sidebarBehavior: sidebarBehavior}, {cache: !config.relative_link}) %>
+            <%- partial('_partial/post/header-cover', {post: page, sidebarBehavior: sidebarBehavior}) %>
+            <div id="main" data-behavior="<%= sidebarBehavior %>"
+                 class="<%= (page.coverImage ? 'hasCover' : '') %>
+                        <%= (page.coverMeta === 'out' ? 'hasCoverMetaOut' : 'hasCoverMetaIn') %>
+                        <%= (page.coverCaption ? 'hasCoverCaption' : '') %>">
                 <%- body %>
                 <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
             </div>
             <% if (is_post()) { %>
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="<%= theme.sidebar_behavior %>">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="<%= sidebarBehavior %>">
                     <%- partial('_partial/post/actions', {post: page}) %>
                 </div>
-                <%- partial('_partial/post/share-options', {post: page}) %>
+                <%- partial('_partial/post/share-options', {post: page, sidebarBehavior: sidebarBehavior}) %>
             <% } %>
         </div>
         <%- partial('_partial/about', null, {cache: !config.relative_link}) %>

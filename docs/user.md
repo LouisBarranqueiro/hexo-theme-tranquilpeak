@@ -17,28 +17,34 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Disable relative links](#disable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
-    * [Sidebar](#sidebar)
-    * [Header](#header)
-    * [Author](#author)
-    * [Customization](#customization)
-    * [Integrated services](#integrated-services)
-    * [Enable pages](#enable-pages)
-        * [Enable all-categories page](#enable-all-categories-page)
-        * [Enable all-tags page](#enable-all-tags-page)
-        * [Enable all-archives page](#enable-all-archives-page)
+    - [Languages configuration](#languages-configuration)
+    - [Theme configuration](#theme-configuration)
+        * [Sidebar](#sidebar)
+        * [Header](#header)
+        * [Author](#author)
+        * [Customization](#customization)
+        * [Integrated services](#integrated-services)
+        * [Enable pages](#enable-pages)
+            * [Enable all-categories page](#enable-all-categories-page)
+            * [Enable all-tags page](#enable-all-tags-page)
+            * [Enable all-archives page](#enable-all-archives-page)
 - [Integrated services configuration](#integrated-services-configuration)
     * [Google Analytics](#google-analytics)
         * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
 - [Writing posts](#writing-posts)
     * [Front-matter settings](#front-matter-settings)
     * [Display table of contents](#display-table-of-contents)
+    * [Tags](#tags)
+        * [Image](#image)
+        * [Wide image](#wide-image)
+        * [Fancybox](#fancybox)
 - [Running](#running)  
 
 ## General ##
 
 - **Author** : Louis Barranqueiro
 - **Version** : 1.2.0  
-- **Compatibility** : Hexo 3.0.x
+- **Compatibility** : Hexo 3.0.0 or later
 
 ## Features ##
 
@@ -50,6 +56,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Background cover image  
 - Beautiful about page  
 - Support Open Graph protocol  
+- Support internationalization (i18n)
   
   
 **Posts features :**  
@@ -60,6 +67,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Navigation menu  
 - GitHub theme for code highlighting  
 - Image gallery  
+- Image generator helpers
 - Table of contents  
   
   
@@ -115,9 +123,28 @@ If you want more informations on this plugin : [hexo-generator-feed](https://git
 
 ## Tranquilpeak configuration ##
 
-Complete `theme/tranquilpeak/_config.yml` with your informations.
+### Language configuration ###
 
-### Sidebar ###
+If you are new to Hexo and internationalization (i18n), please read [Hexo documentation - internationalization (i18n) section](https://hexo.io/docs/internationalization.html)
+
+Currently, the theme is delivered with english (en) and portuguese (pt-br) language file. 
+If your language is not available, follow this guidelines (E.g : add chinese language (zh-cn) :  
+1. Set `language` to `zh-cn` in Hexo configuration file `_config.yml`  
+2. Create `zh-cn` file in `theme/tranquilpeak/languages/` folder  
+3. Copy the content of `theme/tranquilpeak/languages/en.yml` and paste it to `zh-cn.yml` file  
+4. Replace all strings in english by their translation in chinese  
+5. Complete your description and your job in chinese and that's it!  
+
+Otherwise, complete your description and your job in the right language file(s) in `theme/tranquilpeak/languages`.
+
+**Tranquilpeak theme is currently not ready to support multi-languages. It will be the next release.**
+
+### Theme configuration ###
+
+Complete `theme/tranquilpeak/_config.yml` with your information. Read above sections to have more information.
+
+
+#### Sidebar ####
 
 The sidebar is powerful and easily configurable.
 DON'T modify variables name `sidebar`, `title`, `url` and `icon`.  
@@ -196,7 +223,7 @@ sidebar:
 - **class** (optional) : CSS Class added to the `a` link tag
 
 
-### Header ###
+#### Header ####
 
 The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
 
@@ -212,7 +239,7 @@ header:
 - **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
 - **class** : CSS Class added to the link
 
-### Author ###
+#### Author ####
 
 ``` yaml
 # Author
@@ -234,7 +261,7 @@ author:
 - **twitter** : Your Twitter username without the @. E.g : `tranquilpeak`
 - **google_plus** : Your google plus profile id. E.g : `+TranquilPeak` or `123812884128439`
 
-### Customization ###
+#### Customization ####
 
 ``` yaml
 # Customization
@@ -243,7 +270,7 @@ toc_title: Table of contents
 thumbnail_image: true
 read_more_message: Continue reading
 go_to_message: Go to the website 
-cover_image: cover.png
+cover_image: http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1438532677/v1.3.0-cover.jpg
 favicon:
 image_gallery: true
 archive_pagination: true
@@ -256,11 +283,13 @@ tag_pagination: true
    * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked
    * 3: Display header bar on all screens and large sidebar is swiped when open button is clicked  
    * 4: Display header bar on all screens and medium sidebar is swiped when open button is clicked)
+- **clear_reading** : Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.
 - **toc_title** : Head title displayed at the top of the table of contents.
 - **thumbnail_image** : Display thumbnail image of each post on index pages 
 - **read_more_message** : Message displayed after the `<!-- more -->` comment or after 300 characters in post
 - **go_to_message** : Message displayed after the `<!-- more -->` comment or after 300 characters for post with link layout
-- **cover** : Your blog cover picture located in folder `source/assets/images/`. **Change the default cover image to have an unique blog**
+- **cover_image** : Your blog cover picture. **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.**
+Default image is on Cloudinary. Otherwise put your image in folder `source/assets/images/` and use relative url : `/assets/images/your-image.png` **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables. (false: disabled, true: enabled)
 - **archive_pagination** : Displaying style of archive pages. (false: pagination disabled, true: pagination enabled)
@@ -275,7 +304,7 @@ The same page with `category_pagination: false`:
 ![archives false](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/archives-0.png)  
 
 
-### Integrated services ###
+#### Integrated services ####
 
 ``` yaml
 # Integrated services
@@ -286,12 +315,12 @@ swiftype_install_key:
 fb_admin_ids:
 fb_app_id:
 ```
-- **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.
-- **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog
-- **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X
-- **swiftype_install_key** : Your Swiftype install key founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype install key is : `fsdkiG43fkfder32dgsR`.
-- **fb_admin_ids** : Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. E.g : `9830047,1003342`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.
-- **fb_app_id** : Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : `9841307`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.
+- **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.  
+- **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog  
+- **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X  
+- **swiftype_install_key** : Your Swiftype install key founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype install key is : `fsdkiG43fkfder32dgsR`.  
+- **fb_admin_ids** : Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. E.g : `9830047,1003342`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.  
+- **fb_app_id** : Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : `9841307`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.  
 
 ### Enable pages ###
 
@@ -367,6 +396,8 @@ To write articles, you have to user Markdown langague. [Here](https://guides.git
 Please note, there are many different versions of Markdown and some of them are not supported by Hexo.  
 To use tags plugins to highlight code or add Fancybox image, please read [Hexo docs](https://hexo.io/docs/tag-plugins.html)
 
+ **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.**
+
 ### Front-matter settings ###
 
 Tranquilpeak introduces 2 new variables to configure precisely the style of your post : `thumbnailImage` and `coverImage`.  
@@ -374,18 +405,27 @@ Tranquilpeak introduces 2 new variables to configure precisely the style of your
 Example :  
 ``` markdown
 thumbnailImage: image-1.png
+metaAlignment: center
+coverImage: image-2.png
+coverCaption: "A beautiful sunrise"
+coverMeta: out
 coverImage: image-2.png
 photos:
-    - image-3.jpg
-    - image-4.png
-    - http://i.imgur.com/o9r19kD.jpg
-    - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no
+    - image-3.jpg "New York"
+    - image-4.png "Paris"
+    - http://i.imgur.com/o9r19kD.jpg "Dubai"
+    - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no "Sidney"
 comments: false
 ```
 
+- **clearReading** : Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `theme.sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.
+- **metaAlignment** : Meta (title, date and categories) alignment (right, left or center). Default behavior : left
 - **thumbnailImage** : Image displayed in index view.
-- **coverImage** : Image displayed in large at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image.
-- **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. 
+- **coverImage** : Image displayed in full size at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. Check the beautiful demo here : [Cover image demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
+- **coverSize**: `partial`: cover image take a part of the screen height (60%), `full`: cover image take the entire screen height.
+- **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
+- **coverMeta** : `in`: display post meta (title, date and categories) on cover image, `out`: display meta (title, date and categories) under cover image as usual. Default behavior : `in`
+- **photos** : Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `url [caption]`, E.g : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no "New York"`
 - **comments** : Disable the comment of the post.
 
 The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
@@ -395,6 +435,51 @@ Of course, you can set external url.
 
 As post excerpt feature enable with `<!-- more -->` comment, you can display the table of contents of a post with  `<!-- toc -->`.  Place this comment where you want to display the table of content. You can also edit the title displayed at the top of the table of contents in the `_config.yml` file
  
+### Tags ###
+
+Tranquilpeak 1.3 introduce 2 new tag to display wide images in full width and create beautiful galleries.
+**DON'T use anymore fancybox tag**. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
+
+#### Image ###
+
+Image tag is useful to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2014/10/29/Tags-plugins-showcase/#Images)
+
+Syntax : `{% image [classes] /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
+E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`  
+
+- **classes (optionnal)** : You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :
+        - **fancybox** : Generate a fancybox image.  
+        - **nocaption** : Caption of the image will not be displayed.  
+        - **left** : Image will float at the left.  
+        - **right** : Image will float at the right.  
+        - **center** : Image will be at center.  
+        - **fig-20** : Image will take 20% of the width of post width and automatically float at left.  
+        - **fig-25** : Image will take 25% of the width of post width and automatically float at left.  
+        - **fig-33** : Image will take 33% of the width of post width and automatically float at left.  
+        - **fig-50** : Image will take 50% of the width of post width and automatically float at left.  
+        - **fig-75** : Image will take 75% of the width of post width and automatically float at left.  
+        - **fig-100** : Image will take 100% of the width of post width.  
+        - **clear** : Add a div with `clear:both;` style attached after the image to retrieve the normal flow of the post.  
+- **Orignal image** : Path to the original image.  
+- **Thumbnail image (optionnal)** : Path to the thumbnail image. If empty, the orignal image will be displayed.  
+- **Width of thumbnail image (optionnal)** : Width to the thumbnail image. If the thumbnail image is empty, width will be attached to thumbnail image created from original image. E.g : `150px` or `85%`.  
+- **Height of thumbnail image (optionnal)** : Height to the thumbnail image. If the thumbnail image is empty, height will be attached to thumbnail image created from original image. E.g : `300px` or `20%`.  
+- **Title (optionnal)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
+  
+#### Wide image ###
+
+Wide image tag is useful to display wide images in full width. Check the the result : [Wide image tag demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2014/10/29/Tags-plugins-showcase/#Wide-images)
+
+Syntax : `{% wide_image /path/to/image [title text] %}`  
+E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" %}`  
+
+- **image** : Path to the original image.  
+- **Title (optionnal)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
+
+### Fancybox ###
+
+`fancybox` tag is deprecated since Tranquilpeak 1.3. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
+        
 ## Running ##
 
 Run `hexo server` and start writing! :)

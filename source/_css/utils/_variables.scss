@@ -44,6 +44,7 @@ $z-indexes: (
     // position the cover below the whole blog
     'l-cover':             -1,
     'l-main':              10,
+    'c-post-header-cover': 15,
     'l-header':            20,
     'l-sidebar':           20,
     'l-about':             30,
@@ -125,7 +126,8 @@ $sidebar: (
 
 // Main
 $main: (
-    'padding-top': 15px
+    'padding-top':      15px,
+    'background-color': #fff
 );
 
 // Components settings

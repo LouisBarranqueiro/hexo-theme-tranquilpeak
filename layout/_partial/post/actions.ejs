@@ -3,21 +3,21 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 <% if (post.prev) { %>
-                    <a class="post-action-btn btn btn--default tooltip--top" href="<%- url_for(post.prev.path) %>"  data-tooltip="<%= post.prev.title || '(no title)' %>">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="<%- url_for(post.prev.path) %>"  data-tooltip="<%= post.prev.title || '(' + __('post.no_title') + ')' %>">
                 <% } else { %>
                     <a class="post-action-btn btn btn--disabled">
                 <% } %>
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml"><%= __('pagination.previous') %></span>
                 </a>
             </li>
             <li class="post-action">
                 <% if (post.next) { %>
-                    <a class="post-action-btn btn btn--default tooltip--top" href="<%- url_for(post.next.path) %>" data-tooltip="<%= post.next.title || '(no title)' %>">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="<%- url_for(post.next.path) %>" data-tooltip="<%= post.next.title || '(' + __('post.no_title') + ')' %>">
                 <% } else { %>
                     <a class="post-action-btn btn btn--disabled">
                 <% } %>
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr"><%= __('pagination.next') %></span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -52,7 +52,7 @@
             </li>
         <% } %>
         <li class="post-action">
-            <% if (post.excerpt && ((theme.toc && post.toc) || post.toc)) { %>
+            <% if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(post.content)) { %>
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">
             <%} else { %>
                 <a class="post-action-btn btn btn--default" href="#">
@@ -62,3 +62,4 @@
         </li>
     </ul>
 </div>
+

@@ -1,5 +1,5 @@
 <% var thumbnailImageUrl = null; %>
-<section class="post-group main-content-wrap">
+<section class="postShorten-group main-content-wrap">
     <% page.posts.each(function(post) { %>
         <% if ((theme.thumbnail_image) && (post.thumbnailImage) && ((post.thumbnailImage.length))) { %>
             <% if ((post.thumbnailImage.indexOf(config.url) < 0) && (post.thumbnailImage.indexOf('://') >= 0)) { %>
@@ -21,35 +21,35 @@
             <% } %>
         <% } %>
         <% if (thumbnailImageUrl != null) { %>
-            <article class="post post--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
+            <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
         <% } else { %>
-                <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+                <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting">
         <% } %>
-            <div class="post-wrap">
-                <div class="post-header">
-                    <h1 class="post-title" itemprop="headline">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
                         <% if (post.link) { %>
-                                <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(no title)' %></a>
+                                <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(' + __('post.no_title') + ')' %></a>
                         <% } else { %>
-                                <a class="link-unstyled" href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
+                                <a class="link-unstyled" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post.no_title') + ')' %></a>
                         <% } %>
                     </h1>
-                    <%- partial('post/meta', {post: post}) %>
+                    <%- partial('post/meta', {post: post, classes: ['postShorten-meta']}) %>
                 </div>
-                <div class="post-excerpt" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <% if (post.excerpt) { %>
                         <%- post.excerpt %>
                     <% } else { %>
                         <p>
                             <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %><br>
                     <% } %>
-                    <% if ((post.link) && (theme.go_to_message)) { %>
-                            <a href="<%- url_for(post.link) %>" target="new" class="post-excerpt_link link"><%= theme.go_to_message %> </a>
+                    <% if ((post.link) && __('post.go_to_website')) { %>
+                            <a href="<%- url_for(post.link) %>" target="new" class="postShorten-excerpt_link link"><%= __('post.go_to_website')  %> </a>
                     <% } else { %>
-                        <% if (theme.read_more_message) { %>
-                            <a href="<%- url_for(post.path) %>" class="post-excerpt_link link "><%- theme.read_more_message %></a>
+                        <% if (__('post.read_more')) { %>
+                            <a href="<%- url_for(post.path) %>" class="postShorten-excerpt_link link "><%- __('post.read_more') %></a>
                             <% if (post.readingtime) { %>
-                                <span class="post-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
+                                <span class="postShorten-readingtime"><%= ' - ' + post.readingtime + ' min read' %></span>
                             <% } %>
                         <% } %>
                     <% } %>
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <% if (thumbnailImageUrl != null) { %>
-                <div class="post-thumbnailimg">
+                <div class="postShorten-thumbnailimg">
                     <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
                 </div>
                 <% thumbnailImageUrl = null; %>

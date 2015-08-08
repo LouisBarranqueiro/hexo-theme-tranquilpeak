@@ -1,9 +1,30 @@
 #main {
     display:            block;
     min-height:         100%;
-    background:         #ffffff;
+    background:         map-get($main, 'background-color');
     transition:         transform .25s ease-in-out;
     -webkit-transition: -webkit-transform .25s ease-in-out;
+
+    &.hasCover {
+        // Set `padding-top` to `50px` when there is a cover image on page and
+        // if there is a cover caption or
+        // if its meta information are out of cover image
+        &.hasCoverCaption,
+        &.hasCoverMetaOut {
+            padding-top: 50px !important;
+        }
+
+        // Set `padding-top` to 0 when there is a cover image on page and
+        // if its meta information are on image or
+        // if its meta information are out of cover image and
+        // if there is a cover caption
+        //
+        // The cover caption have a `margin-top` to `50px` to replace the padding
+        &.hasCoverMetaIn,
+        &.hasCoverMetaOut.hasCoverCaption {
+            padding-top: 0 !important;
+        }
+    }
 }
 
 @media #{$small-and-down} {
