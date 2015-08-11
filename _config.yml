@@ -92,6 +92,7 @@ sidebar:
 # Header configuration
 # The link at the right of the header is customizable
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
+# You can also use your gravatar image linked with the url of your choice by only filling the url variable below.
 # DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
 header:
     right_link:

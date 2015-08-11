@@ -13,7 +13,16 @@
                 <i class="fa fa-lg fa-<%= theme.header.right_link.icon %>"></i>
             </a>
     <% } else if (theme.gravatar_email) { %>
-        <a class="header-right-picture" href="<%- url_for('/#about') %>">
+        <% if (theme.header && theme.header.right_link && theme.header.right_link.url) { %>
+          <% if (url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
+            <a class="header-right-picture" href="<%- url_for(theme.header.right_link.url) %>" target="blank">
+          <% } else { %>
+            <a class="header-right-picture" target="blank"
+               href="<% if (theme.header.right_link.url.indexOf("/") === 0) { %><%- url_for(theme.header.right_link.url.substr(1)) %><% } else { %><%- url_for(theme.header.right_link.url) %><% } %>">
+          <% } %>
+        <% } else { %>
+          <a class="header-right-picture" href="<%- url_for('/#about') %>">
+        <% } %>
             <img class="header-picture" src="<%- gravatar(theme.gravatar_email, 90) %>"/>
         </a>
     <% } else if (theme.author.picture) { %>
