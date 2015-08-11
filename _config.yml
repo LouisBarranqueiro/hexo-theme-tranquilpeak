@@ -92,12 +92,17 @@ sidebar:
 # Header configuration
 # The link at the right of the header is customizable
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
+# By default, author's gravatar or author's picture is displayed if `icon` is empty
 # DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
+# E.g to display a shortcut to open swiftype search window :
+#     url: /#search
+#     icon: search
+#     class: st-search-show-outputs
 header:
     right_link:
-         # url: /#search
-         # icon: search
-         # class: st-search-show-outputs
+        url: /#about
+        icon:
+        class:
 
 
 # Author
@@ -156,7 +161,7 @@ disqus_shortname:
 # Your Google analystics web property ID : UA-XXXXX-X
 google_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-gravatar_email:
+gravatar_email: louis.barranqueiro@gmail.com
 # Your swiftype install key
 swiftype_install_key:
 # Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
