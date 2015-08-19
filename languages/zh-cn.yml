@@ -1,4 +1,4 @@
-# date format displayed everywhere in the blog
+# 在所有地方显示的 date 格式化
 date_format: "MMM DD, YYYY"
 
 global:
@@ -40,7 +40,7 @@ post:
     go_to_website: "转到"
 
 author:
-    # Your biography in english (Markdown and HTML supported)
+    # 你的个人简介 (支持Markdown and HTML 语法)
     bio: ""
-    # Your job in english
+    # 你的工作简介
     job: ""
