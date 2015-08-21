@@ -155,6 +155,8 @@ tag_pagination: true
 disqus_shortname:
 # Your Google analystics web property ID : UA-XXXXX-X
 google_analytics_id:
+# Yandex metrika ID : 0000000
+yandex_metrika_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
 gravatar_email:
 # Your swiftype install key
