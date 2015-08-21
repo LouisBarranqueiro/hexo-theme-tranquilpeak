@@ -1,10 +1,10 @@
-<% if (theme.yandex_metric_id) { %>
+<% if (theme.yandex_metrika_id) { %>
     <script type="text/javascript">
         (function (d, w, c) {
             (w[c] = w[c] || []).push(function() {
                 try {
                     w.yaCounter = new Ya.Metrika({
-                        id:<%= theme.google_analytics_id %>,
+                        id:<%= theme.yandex_metrika_id %>,
                         clickmap:true,
                         trackLinks:true,
                         accurateTrackBounce:true,
@@ -25,6 +25,6 @@
             } else { f(); }
         })(document, window, "yandex_metrika_callbacks");
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/<%= theme.google_analytics_id %>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/<%= theme.yandex_metrika_id %>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 <% } %>
