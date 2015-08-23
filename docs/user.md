@@ -265,7 +265,7 @@ author:
 
 ``` yaml
 # Customization
-sidebar_behavior: 1
+sidebar_behavior: 2
 toc_title: Table of contents
 thumbnail_image: true
 read_more_message: Continue reading
@@ -279,8 +279,8 @@ tag_pagination: true
 ```
 
 - **sidebar_behavior** : Define the behavior of the header and sidebar :
-   * 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen and large sidebar is swiped when open button is clicked (default)
-   * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked
+   * 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen and large sidebar is swiped when open button is clicked
+   * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked (default)
    * 3: Display header bar on all screens and large sidebar is swiped when open button is clicked  
    * 4: Display header bar on all screens and medium sidebar is swiped when open button is clicked)
 - **clear_reading** : Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.
