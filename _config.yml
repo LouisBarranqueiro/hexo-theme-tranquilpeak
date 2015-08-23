@@ -118,8 +118,8 @@ author:
 # Customization
 # Define the behavior of the sidebar
 # 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
-# and large sidebar is swiped (default)
-# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
+# and large sidebar is swiped
+# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped (default)
 # 3: Display header bar on all screens and large sidebar is swiped
 # 4: Display header bar on all screens and medium sidebar is swiped
 sidebar_behavior: 2
