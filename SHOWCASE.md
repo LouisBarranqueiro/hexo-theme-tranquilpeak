@@ -10,6 +10,13 @@ Changes
 
  - adjust post's font for Chinese/Japanese character
  - wider width of post for large screen
+ - open external link in new tab from sidebar
+
+ TODO
+
+ - Image Loading Animation
+ - Post Thumbnail Scaletype (centercrop)
+ - share with Weibo, Wechat
 
 [kaedea](https://github.com/kaedea)
 
