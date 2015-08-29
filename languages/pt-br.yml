@@ -4,7 +4,9 @@ date_format: "DD/MM/YYYY"
 global:
     home: "Início"
     categories: "Categorias"
+    category: "Category"
     tags: "Tags"
+    tag: "Tag"
     archives: "Arquivo"
     search: "Pesquisar"
     about: "Sobre"
@@ -24,8 +26,8 @@ global:
     search_date: "Pesquisar data (AAAA/MM/DD)"
 
 pagination:
-    page: "página"
-    of: "de"
+    page: "página %d"
+    of: "de %d"
     newer_posts: "POSTS MAIS NOVOS"
     older_posts: "POSTS MAIS ANTIGOS"
     previous: "ANTERIOR"
