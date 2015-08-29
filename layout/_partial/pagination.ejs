@@ -20,6 +20,6 @@
             </a>
         </li>
         <% } %>
-        <li class="pagination-number"><%= __('pagination.page') + ' ' + page.current + ' ' +  __('pagination.of')  + ' ' + page.total %></li>
+        <li class="pagination-number"><%= _p('pagination.page', page.current) + ' ' + _p('pagination.of', page.total) %></li>
     </ul>
 </div>

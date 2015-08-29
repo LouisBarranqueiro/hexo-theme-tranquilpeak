@@ -4,8 +4,10 @@ date_format: "MMM DD, YYYY"
 global:
     home: "Home"
     categories: "Categories"
+    category: "Category"
     tags: "Tags"
-    archives: "Archive"
+    tag: "Tag"
+    archives: "Archives"
     search: "Search"
     about: "About"
     github: "GitHub"
@@ -24,8 +26,8 @@ global:
     search_date: "Search date (YYYY/MM/DD)"
 
 pagination:
-    page: "page"
-    of: "of"
+    page: "page %d"
+    of: "of %d"
     newer_posts: "NEWER POSTS"
     older_posts: "OLDER POSTS"
     previous: "PREVIOUS"
