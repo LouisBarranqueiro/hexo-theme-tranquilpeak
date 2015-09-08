@@ -131,13 +131,13 @@ If you want more informations on this plugin : [hexo-generator-feed](https://git
 
 If you are new to Hexo and internationalization (i18n), please read [Hexo documentation - internationalization (i18n) section](https://hexo.io/docs/internationalization.html)
 
-Currently, the theme is delivered with english (en) and portuguese (pt-br) language file. 
-If your language is not available, follow this guidelines (E.g : add chinese language (zh-cn) :  
-1. Set `language` to `zh-cn` in Hexo configuration file `_config.yml`  
-2. Create `zh-cn` file in `theme/tranquilpeak/languages/` folder  
-3. Copy the content of `theme/tranquilpeak/languages/en.yml` and paste it to `zh-cn.yml` file  
-4. Replace all strings in english by their translation in chinese  
-5. Complete your description and your job in chinese and that's it!  
+Currently, the theme is delivered with english (en), chinese (zh-cn) and portuguese (pt-br) language file. 
+If your language is not available, follow this guidelines (E.g : add russian language (ru) :  
+1. Set `language` to `ru` in Hexo configuration file `_config.yml`  
+2. Create `ru.yml` file in `theme/tranquilpeak/languages/` folder  
+3. Copy the content of `theme/tranquilpeak/languages/en.yml` and paste it to `ru.yml` file  
+4. Replace all strings in english by their translation in russian  
+5. Complete your description and your job in russian and that's it!  
 
 Otherwise, complete your description and your job in the right language file(s) in `theme/tranquilpeak/languages`.
 
