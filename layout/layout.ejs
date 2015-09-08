@@ -15,8 +15,8 @@
     <%- partial('_partial/head') %>
     <body>
         <div id="blog">
-            <%- partial('_partial/header', {sidebarBehavior: sidebarBehavior}, {cache: !config.relative_link}) %>
-            <%- partial('_partial/sidebar', {sidebarBehavior: sidebarBehavior}, {cache: !config.relative_link}) %>
+            <%- partial('_partial/header', {sidebarBehavior: sidebarBehavior}) %>
+            <%- partial('_partial/sidebar', {sidebarBehavior: sidebarBehavior}) %>
             <%- partial('_partial/post/header-cover', {post: page, sidebarBehavior: sidebarBehavior}) %>
             <div id="main" data-behavior="<%= sidebarBehavior %>"
                  class="<%= (page.coverImage ? 'hasCover' : '') %>
