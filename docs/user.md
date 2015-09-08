@@ -229,8 +229,8 @@ sidebar:
 
 #### Header ####
 
-The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
-
+The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. By default, author's gravatar or author's picture is displayed if `icon` is empty DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name.  
+E.g to display a shortcut to open swiftype search window :
 ``` yaml
 header:
     right_link:
