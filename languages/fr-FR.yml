@@ -40,7 +40,7 @@ post:
     go_to_website: "Aller au site web"
 
 author:
-    # Your biography in english (Markdown and HTML supported)
-  bio: "Une envie d'écrire, pour moi, et peut-être pour vous aussi?"
-    # Your job in english
-  job: "Non défini :)"
+    # Your biography in french (Markdown and HTML supported)
+  bio: ""
+    # Your job in french
+  job: ""
