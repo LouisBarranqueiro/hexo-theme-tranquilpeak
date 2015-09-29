@@ -3,7 +3,7 @@
     var coverImageUrl;
 
     if (post.coverImage) {
-        if ((post.coverImage.indexOf(config.url) < 0) && (post.coverImage.indexOf('://') >= 0)) {
+        if (post.coverImage.indexOf('://') >= 0) {
             coverImageUrl = post.coverImage;
         }
         else {
