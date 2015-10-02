@@ -41,7 +41,7 @@
                         <%- post.excerpt %>
                     <% } else { %>
                         <p>
-                            <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %><br>
+                            <%- markdown(post.content.substr(0, 200)) %><br>
                     <% } %>
                     <% if ((post.link) && __('post.go_to_website')) { %>
                             <a href="<%- url_for(post.link) %>" target="new" class="postShorten-excerpt_link link"><%= __('post.go_to_website')  %> </a>
