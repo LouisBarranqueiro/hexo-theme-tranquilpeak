@@ -4,8 +4,8 @@
 /// @param {List} $prefixes - List of prefixes to output
 @mixin prefix($property, $value, $prefixes: ()) {
     @each $prefix in $prefixes {
-        -#{$prefix}-#{$property}: $value;
+        -#{$prefix}-#{$property}: #{$value};
     }
 
-    #{$property}: $value;
+    #{$property}: #{$value};
 }
