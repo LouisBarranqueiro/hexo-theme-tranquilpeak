@@ -38,6 +38,7 @@
         width: calc(75% - 4px);
     }
     &.fig-100 {
+        @extend .left;
         width: calc(100% - 4px);
     }
     &.figure--fullWidth {

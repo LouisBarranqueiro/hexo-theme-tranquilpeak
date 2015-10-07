@@ -5,3 +5,10 @@
     padding-right: map-get($main-content, padding-right-left);
     padding-left:  map-get($main-content, padding-right-left);
 }
+
+// adjust post's max-width in large screen
+@media #{$large-and-up} {
+ .main-content-wrap { 
+    max-width:     map-get($main-content, max-width-large);
+    }
+}

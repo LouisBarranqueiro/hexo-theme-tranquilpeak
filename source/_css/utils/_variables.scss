@@ -5,7 +5,7 @@
 $font-family-base:    'Open Sans', sans-serif;
 // equal to 15px
 $font-size-base:      1.5rem;
-$font-color-base:     #5d686f;
+$font-color-base:     #424242;
 $line-height-base:    1.85em;
 $letter-spacing-base: 0.01em;
 
@@ -13,6 +13,21 @@ $letter-spacing-base: 0.01em;
 $font-size-base-sm-screen-reduction-factor: 0.1rem;
 // Reduction of font size base on medium screen only
 $font-size-base-md-screen-reduction-factor: 0.05rem;
+
+// Font
+// 'Open Sans', sans-serif;
+// 'Merriweather', serif;
+// 'Open Sans', "Noto Sans", "Noto Sans CJK SC", sans-serif;
+// 'Open Sans', SimHei, "Noto Sans", "Noto Sans CJK SC", sans-serif;
+// adobe-clean-semilight, helvetica, arial, sans-serif;
+// 'Open Sans', "Source Han Sans CN", "思源黑体 CN Normal", sans-serif;
+
+$font_base: $font-family-base;
+$font_content: 'Open Sans', "Noto Sans", "Noto Sans CJK SC", 'Microsoft Yahei', sans-serif;
+$font_title:   Verdana, Geneva, 'Open Sans', SimHei, "Noto Sans", "Noto Sans CJK SC", 'Microsoft Yahei', sans-serif;
+$font_sidebar: $font-family-base;
+$font_code: $font-family-base;
+$font_highlight: Menlo;
 
 // Font size : (X.Xrem = XXpx, 1.0rem = 10px)
 $font-size: (
@@ -26,6 +41,7 @@ $font-size: (
 
 // Colors
 $colors: (
+     // base
     'success': #4dc657,
     'danger':  #f5311d,
     'primary': #64b5f6,
@@ -33,8 +49,22 @@ $colors: (
     'base':    $font-color-base,
     'orange':  #e75c2f,
     'light':   #9eabb3,
+
      // use for tag `a`
-    'link':    #64b5f6
+    'link':    #42A5F5,
+    'link-hover':    #BBDEFB,
+
+    'grey300':    #E0E0E0,
+    'grey400':    #BDBDBD,
+    'grey600':    #757575,
+    'grey900':    #212121,
+
+     // postShorten separator
+    'separator': #E3F2FD,
+
+     // sidebar awesomefont
+    'sidebar': #ebebeb,
+    'sidebar-hover': #ffffff
 );
 
 // Z-indexes
@@ -113,7 +143,7 @@ $header:(
     'height':     55px,
     'background': #fff,
     'color':      #88909a,
-    'border':     1px solid #eef2f8
+    'border':     1px solid map-get($colors, separator)
 );
 
 // Sidebar
@@ -121,7 +151,8 @@ $sidebar: (
     'md-screen-width': 75px,
     'lg-screen-width': 250px,
     'background':      rgba(17, 26, 35, 0),
-    'color':           #ebebeb
+    'color':           map-get($colors, sidebar),
+    'color-hover':     map-get($colors, sidebar-hover)
 );
 
 // Main
@@ -136,7 +167,7 @@ $main: (
 
 // Highlight
 $highlight: (
-    'font-family': Menlo,
+    'font-family': $font_highlight,
     'font-size':   1.3rem,
     'border':      1px solid #d9d9d9,
     'line-height': 1.2em
@@ -172,6 +203,7 @@ $image-gallery-photos-margin: 2px;
 // Main content
 $main-content: (
     'max-width':          750px,
+    'max-width-large':    80%,
     'padding-right-left': 20px,
 );
 
@@ -181,9 +213,9 @@ $main-content: (
 // because they are larger than the post title or something like that
 // font-size : (X.Xrem = XXpx, 1.0rem = 10px)
 $markdown-headings-font-size: (
-    'h1': 2.15rem,
-    'h2': 2rem,
-    'h3': 1.8rem,
+    'h1': 2.8rem,
+    'h2': 2.4rem,
+    'h3': 2.0rem,
     'h4': 1.7rem,
     'h5': 1.6rem,
     'h6': 1.5rem
@@ -203,9 +235,10 @@ $post-thumbnail-image-width: 140px;
 // Tooltip
 $tooltip: (
     'min-width':    180px,
-    'background':   rgba(0, 0, 20, 0.93),
+    'background':   rgba(66, 165, 245, 0.93),
     // Don't change this value, used to horizontally center the tooltip content
     'arrow-width':  15px,
     // Don't change this value, used to vertically center the tooltip content
     'arrow-height': 12px
 );
+

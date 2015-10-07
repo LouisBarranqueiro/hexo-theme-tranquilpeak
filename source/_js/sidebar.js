@@ -159,4 +159,14 @@
         var sidebar = new Sidebar();
         sidebar.run();
     });
+    
+    //open external link in sidebar
+    $(document).ready(function() {
+    $('a').each(function() {
+      var a = new RegExp('/' + window.location.host + '/');
+      if (!a.test(this.href)) {
+      $(this).attr("target","_blank");
+      }
+   });
+});
 }(jQuery);

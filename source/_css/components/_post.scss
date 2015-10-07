@@ -18,19 +18,19 @@
     // Post meta contains post's date, post's categories and tags
     .post-meta {
         line-height: 1.5em;
-        font-family: 'Open Sans', sans-serif;
+        font-family: $font_content;
         font-size:   map-get($font-size, small);
         font-weight: 400;
-        color:       map-get($colors, light);
+        color:       map-get($colors, grey400);
 
         a {
-            color: map-get($colors, light);
+            color: map-get($colors, grey600);
         }
     }
     .post-content {
-        font-family: 'Merriweather', serif;
+        font-family: $font_content;
         color:       map-get($colors, base);
-        margin-top:  60px;
+        margin-top:  50px;
         font-weight: 300;
         overflow:    hidden;
         word-break:  break-word;
@@ -42,6 +42,7 @@
             width:         auto;
             max-width:     100%;
             border-radius: 3px;
+            border:        1px solid map-get($colors, grey300);   
         }
     }
     .post-footer {
@@ -54,12 +55,17 @@
     }
 }
 
+// style for title of toc
+#table-of-contents {
+    font-size: map-get($headings-font-size, h3);
+}
+
 // Increase the font size of the post's title on medium screen (only for single post view)
 @media #{$medium-only} {
     .post {
         .post-header {
             .post-title {
-                font-size: map-get($headings-font-size, h1) + 0.5rem;
+                font-size: map-get($headings-font-size, h1) + 0.0rem;
             }
         }
     }
@@ -70,7 +76,7 @@
     .post {
         .post-header {
             .post-title {
-                font-size: map-get($headings-font-size, h1) + 0.9rem;
+                font-size: map-get($headings-font-size, h1) + 0.0rem;
             }
         }
     }

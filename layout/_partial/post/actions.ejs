@@ -30,20 +30,23 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://plus.google.com/share?url=' + post.permalink %>">
+            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至Google+" href="<%= 'https://plus.google.com/share?url=' + post.permalink %>">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
+       
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://www.facebook.com/sharer/sharer.php?u=' + post.permalink %>">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://twitter.com/intent/tweet?text=' + post.permalink %>">
+            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至Twitter" href="<%= 'https://twitter.com/intent/tweet?text=' + post.permalink %>">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
+
+         <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至新浪微博" href="<%= 'http://www.jiathis.com/send/?webid=tsina&appkey=&uid=1850331&url=' + post.permalink + '&title=' + post.title %>">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+
         <% if (post.comments) { %>
             <li class="post-action">
                 <a class="post-action-btn btn btn--default" href="#disqus_thread">

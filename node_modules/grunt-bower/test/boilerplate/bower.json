@@ -1,0 +1,10 @@
+{
+  "name": "foo",
+  "version": "0.1.0",
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "jquery": "~2.0.3",
+    "jquery-ui": "~1.11.1",
+    "font-awesome": "~4.2.0"
+  }
+}

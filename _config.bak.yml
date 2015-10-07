@@ -1,0 +1,169 @@
+# I STRONGLY recommend you to use a CDN to speed up loading of pages.
+# There is many free CDN like Cloudinary or you can also use indirectly
+# by using services like Google Photos.
+
+# If you want to store images yourself, please read this guidelines:
+# For users, if you only use this theme, put your images directly in `source/assets/images` folder
+# But if you want to add local images, you can put your images directly in `source/assets/images` folder
+# For developpers, if you modify this theme, put your images in `source/_images` folder and
+# use grunt task `build` to synchronize assets
+
+
+# Image directory (default: images)
+image_dir: assets/images
+
+
+# Sidebar Configuration
+#    You can add groups of links and links much as you want
+#    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
+#    E.g:
+#    -------------
+#    sidebar:                   # DON'T modify this variable name
+#         menu:                 # Name of your groups of links (changeable)
+#             home:             # Name of your link (changeable)
+#                title: Home    # Title of your link displayed
+#                url: /         # URL of the link. If the URL is internal, domain name is not necessary
+#                icon: home     # Name of the font awesome icon class without the `fa-`
+#                               # Go to http://fontawesome.io/icons/ to find class name of icon
+sidebar:
+    menu:
+        home:
+            title: global.home
+            url: /
+            icon: home
+        categories:
+            title: global.categories
+            url: /all-categories
+            icon: bookmark
+        #tags:
+        #    title: global.tags
+        #    url: /all-tags
+        #    icon: tags
+        archives:
+            title: global.archives
+            url: /all-archives
+            icon: archive
+        search:
+            title: global.search
+            url: /#search
+            icon: search
+            # `st-search-show-outputs` classes are used to open swiftype search window
+            class: st-search-show-outputs
+        about:
+            title: global.about
+            url: /#about
+            icon: question
+
+    author_links:
+         github:
+             title: global.github
+             url: https://github.com/kaedea
+             icon: github
+        # stack_overflow:
+        #     title: global.stack_overflow
+        #     url: http://stackoverflow.com/users
+        #     icon: stack-overflow
+        # twitter:
+        #     title: global.twitter
+        #     url: https://twitter.com/
+        #     icon: twitter
+        # facebook:
+        #     title: global.facebook
+        #     url: https://facebook.com/
+        #     icon: facebook
+        # google_plus:
+        #     title: global.google_plus
+        #     url: https://plus.google.com/
+        #     icon: google-plus
+        # linked_in:
+        #     title: global.linked_in
+        #     url: https://www.linkedin.com/profile/
+        #     icon: linkedin
+         mail:
+             title: global.mail
+             url: mailto:kidhaibara@gmail.com
+             icon: envelope-o
+    #rss:
+    #    rss:
+    #        title: global.rss
+    #        url: /atom.xml
+    #        icon: rss
+
+
+# Header configuration
+# The link at the right of the header is customizable
+# You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
+# DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
+header:
+    right_link:
+         # url: /#search
+         # icon: search
+         # class: st-search-show-outputs
+
+
+# Author
+# Your biography and your job is editable in each languages files in `languages` folder
+author:
+    email: kidhaibara@gmail.com
+    location: Chiba Japan
+    bio: 話は安いものですので、コードを表させてください！
+    job: Android Develop
+    # Your profile picture located in folder `source/_images/` (development)
+    # or in `source/assets/images/` (production).
+    # Overwritten by your gravatar image if `gravatar_image` is enabled
+    picture: avatar_01.png
+    # Your Twitter username without the @. E.g : `tranquilpeak`
+    twitter:
+    # Your google plus profile id. E.g : `+Tranquilpeak` or `123812884128439`
+    google_plus:
+
+
+# Customization
+# Define the behavior of the sidebar
+# 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
+# and large sidebar is swiped (default)
+# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
+# 3: Display header bar on all screens and large sidebar is swiped
+# 4: Display header bar on all screens and medium sidebar is swiped
+sidebar_behavior: 1
+# Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
+clear_reading: false
+# Head title displayed at the top of the table of contents.
+toc_title: Index
+# Display thumbnail image of each post on index pages (false: disabled, true: enabled)
+thumbnail_image: true
+# Message displayed after the <!-- more --> comment
+read_more_message: 继续阅读
+# Message displayed after the <!-- more --> comment or after 300 characters for post with link layout
+go_to_message: Go to the website
+# Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
+# There is many free CDN like Cloudinary or you can also use indirectly
+# by using services like Google Photos.
+# Current image is on Cloudinary.
+# Otherwise put your image in folder `source/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
+# and use relative url : `/assets/images/your-image.png`
+cover_image: /assets/images/cover_miku.jpg
+# Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
+favicon: favicon.png
+# Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
+image_gallery: true
+# Pagination behavior of archive, category and tag pages (false: pagination disabled, true: pagination enabled)
+# 在Archive/Category/Tag页面显示文章风格（false表示显示标题，true表示显示详情）
+archive_pagination: true
+category_pagination: true
+tag_pagination: true
+
+
+# Integrated services
+# Your Disqus shortname
+disqus_shortname: 
+# Your Google analystics web property ID : UA-XXXXX-X
+google_analytics_id:
+# Your Gravatar email. Overwrite `author.picture` everywhere in the blog
+gravatar_email: #kidhaibara@gmail.com
+# Your swiftype install key
+swiftype_install_key: 
+# Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
+fb_admin_ids:
+# Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
+fb_app_id:

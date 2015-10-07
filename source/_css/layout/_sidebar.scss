@@ -1,6 +1,6 @@
 // Global CSS rules for all screen size
 #sidebar {
-    font-family:        'Open Sans', sans-serif;
+    font-family:        $font_sidebar;
     height:             100%;
     position:           fixed;
     top:                0;
@@ -44,7 +44,7 @@
                 &:hover,
                 &:active {
                     text-decoration: none;
-                    color:           lighten(map-get($sidebar, color), 35);
+                    color:           map-get($sidebar, color-hover);
                 }
             }
         }
