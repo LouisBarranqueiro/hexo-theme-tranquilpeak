@@ -115,8 +115,9 @@ author:
     email:
     location:
     # Your profile picture located in folder `source/_images/` (development)
-    # or in `source/assets/images/` (production).
-    # Overwritten by your gravatar image if `gravatar_image` is enabled
+    # or in `source/assets/images/` (production)
+    # or you can use an external url
+    # Overwritten by your gravatar image if `gravatar_email` is filled
     picture:
     # Your Twitter username without the @. E.g : `tranquilpeak`
     twitter:
