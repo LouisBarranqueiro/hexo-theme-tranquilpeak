@@ -1,30 +1,42 @@
 <% var thumbnailImageUrl = null; %>
+<!-- Define default position to right for the thumbnail image -->
+<% var thumbnailImagePosition = "right"; %>
+
 <section class="postShorten-group main-content-wrap">
     <% page.posts.each(function(post) { %>
-        <% if ((theme.thumbnail_image) && (post.thumbnailImage) && ((post.thumbnailImage.length))) { %>
-            <% if ((post.thumbnailImage.indexOf(config.url) < 0) && (post.thumbnailImage.indexOf('://') >= 0)) { %>
+        <!-- Define thumbnail image -->
+        <% if (theme.thumbnail_image && post.thumbnailImage && post.thumbnailImage.length) { %>
+            <% if (post.thumbnailImage.indexOf(config.url) < 0 && post.thumbnailImage.indexOf('://') >= 0) { %>
                 <% thumbnailImageUrl = post.thumbnailImage; %>
             <% } else { %>
                 <% thumbnailImageUrl = url_for(post.permalink + post.thumbnailImage); %>
             <% } %>
-        <% } else if ((theme.thumbnail_image) && (post.photos) && (post.photos.length)) { %>
-            <% if ((post.photos[0].indexOf(config.url) < 0) && (post.photos[0].indexOf('://') >= 0)) { %>
-                <% thumbnailImageUrl = post.photos[0]; %>
-            <% } else { %>
-                <% thumbnailImageUrl = url_for(post.permalink + post.photos[0]); %>
-            <% } %>
-        <% } else if ((theme.thumbnail_image) && (post.coverImage) && (post.coverImage.length)) { %>
-            <% if ((post.coverImage.indexOf(config.url) < 0) && (post.coverImage.indexOf('://') >= 0)) { %>
-                <% thumbnailImageUrl = post.coverImage; %>
-            <% } else { %>
-                <% thumbnailImageUrl = url_for(post.permalink + post.coverImage); %>
+        <!-- Define third images (cover image and first photo) as thumbnail image -->
+        <% } else if (theme.thumbnail_image && (post.autoThumbnailImage === true ||
+            (theme.auto_thumbnail_image === true && post.autoThumbnailImage !== false))) { %>
+            <% if (post.photos && post.photos.length) { %>
+                <% if (post.photos[0].indexOf(config.url) < 0 && post.photos[0].indexOf('://') >= 0) { %>
+                    <% thumbnailImageUrl = post.photos[0]; %>
+                <% } else { %>
+                    <% thumbnailImageUrl = url_for(post.permalink + post.photos[0]); %>
+                <% } %>
+            <% } else if (post.coverImage && post.coverImage.length) { %>
+                <% if (post.coverImage.indexOf(config.url) < 0 && post.coverImage.indexOf('://') >= 0) { %>
+                    <% thumbnailImageUrl = post.coverImage; %>
+                <% } else { %>
+                    <% thumbnailImageUrl = url_for(post.permalink + post.coverImage); %>
+                <% } %>
             <% } %>
         <% } %>
-        <% if (thumbnailImageUrl != null) { %>
-            <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting">
-        <% } else { %>
-                <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting">
-        <% } %>
+        <!-- Define  -->
+        <% if (thumbnailImageUrl !== null) { %>
+            <% if (post.thumbnailImagePosition && post.thumbnailImagePosition.length)  { %>
+                <% thumbnailImagePosition = post.thumbnailImagePosition; %>
+            <% } else if (theme.thumbnail_image_position && theme.thumbnail_image_position.length) { %>
+                <% thumbnailImagePosition = theme.thumbnail_image_position; %>
+            <% } %>
+        <% } %>
+        <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -36,14 +48,23 @@
                     </h1>
                     <%- partial('post/meta', {post: post, classes: ['postShorten-meta']}) %>
                 </div>
+                <% if (thumbnailImageUrl !== null &&
+                    (post.thumbnailImagePosition === "bottom" ||
+                    (theme.thumbnail_image_position === "bottom" && post.thumbnailImagePosition !== "right"))) { %>
+                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
+                        <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+                    </div>
+                    <% thumbnailImageUrl = null; %>
+                <% } %>
+
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     <% if (post.excerpt) { %>
                         <%- post.excerpt %>
                     <% } else { %>
                         <p>
-                            <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %><br>
+                            <%- post.content %>
                     <% } %>
-                    <% if ((post.link) && __('post.go_to_website')) { %>
+                    <% if (post.link && __('post.go_to_website')) { %>
                             <a href="<%- url_for(post.link) %>" target="new" class="postShorten-excerpt_link link"><%= __('post.go_to_website')  %> </a>
                     <% } else { %>
                         <% if (__('post.read_more')) { %>
@@ -58,7 +79,10 @@
                     <% } %>
                 </div>
             </div>
-            <% if (thumbnailImageUrl != null) { %>
+            <% if (thumbnailImageUrl !== null &&
+                    ((post.thumbnailImagePosition === "right" || post.thumbnailImagePosition === "left") ||
+                    ((theme.thumbnail_image_position === "right" || theme.thumbnail_image_position === "left") &&
+                    post.thumbnailImagePosition !== "bottom"))) { %>
                 <div class="postShorten-thumbnailimg">
                     <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
                 </div>

@@ -59,43 +59,84 @@
         @include prefix('word-break', 'break-all', 'ms moz');
         @include prefix('hypens', 'auto', 'webkit moz');
     }
-    .postShorten-excerpt, {
+    .postShorten-excerpt {
         margin-top: 15px;
     }
     .postShorten-content {
         margin-top: 25px;
     }
+    .postShorten-thumbnailimg {
+        img {
+            border-radius: 3px;
+        }
+    }
 }
 
-// Hide the post's thumbnail image on small screen and down
-@media #{$small-and-down} {
-    .postShorten-thumbnailimg {
-        display: none;
-
-        img {
+// Hide the post's thumbnail image on very small screen and down
+@media #{$xsmall-and-down} {
+    .postShorten {
+        .postShorten-thumbnailimg {
             display: none;
+
+            img {
+                display: none;
+            }
         }
     }
 }
 
 // Display the post's thumbnail image on small screen and up
 @media #{$small-and-up} {
-    .postShorten.postShorten--thumbnailimg {
+    .postShorten.postShorten--thumbnailimg-right {
         .postShorten-thumbnailimg {
-            display:        inline-block;
-            margin:         15px 0 30px 15px;
-            vertical-align: top;
+            float:  right;
+            margin: 5px 0 30px 15px;
 
             img {
-                display:       block;
-                width:         $post-thumbnail-image-width;
-                height:        $post-thumbnail-image-width;
-                border-radius: 3px;
+                display: block;
+                width:   $post-thumbnail-image-width;
+                height:  $post-thumbnail-image-width;
             }
         }
         .postShorten-wrap {
-            display: inline-block;
-            width:   calc(100% - #{$post-thumbnail-image-width} - 20px);
+            float: left;
+            width: calc(100% - #{$post-thumbnail-image-width} - 20px);
+        }
+    }
+    .postShorten.postShorten--thumbnailimg-left {
+        .postShorten-thumbnailimg {
+            float:  left;
+            margin: 5px 15px 30px 0;
+
+            img {
+                display: block;
+                width:   $post-thumbnail-image-width;
+                height:  $post-thumbnail-image-width;
+            }
+        }
+        .postShorten-wrap {
+            float: right;
+            width: calc(100% - #{$post-thumbnail-image-width} - 20px);
+        }
+    }
+    .postShorten.postShorten--thumbnailimg-bottom {
+        .postShorten-wrap {
+            display: block;
+            width:   100%;
+        }
+        .postShorten-thumbnailimg {
+
+            display:       block;
+            width:         100%;
+            overflow:      hidden;
+            margin:        15px 0 30px 0;
+            max-height:    180px;
+            border-radius: 3px;
+
+            img {
+                width:  auto;
+                height: auto;
+            }
         }
     }
 }
