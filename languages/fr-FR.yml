@@ -38,6 +38,7 @@ post:
     toc: "Table des matières"
     read_more: "Continuer"
     go_to_website: "Aller au site web"
+    comment_and_share: "Commenter et partager"
 
 author:
     # Your biography in french (Markdown and HTML supported)
