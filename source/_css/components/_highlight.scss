@@ -4,7 +4,7 @@ figure.highlight {
     border-radius: 3px;
     line-height:   map-get($highlight, line-height);
     color:         map-get($highlight-colors, night-rider);
-    font-family:   map-get($highlight, font-family);
+    font-family:   map-get($font-families, 'highlight');
     border:        map-get($highlight, border);
     overflow:      hidden;
 
@@ -32,7 +32,7 @@ figure.highlight {
         margin:        0;
         background:    #f7f7f7;
         border-bottom: map-get($highlight, border);
-        color:         #999;
+        color:         #999999;
 
         a {
             float: right;
@@ -45,7 +45,7 @@ figure.highlight {
         padding:      0.3em 0.5em;
 
         .line {
-            color: #aaa;
+            color: #aaaaaa;
         }
     }
     // Code container
@@ -63,8 +63,8 @@ figure.highlight {
 .gist {
     .line,
     .line-number {
-        font-size:   map-get($highlight, font-family);
-        font-family: 1em;
+        font-family: map-get($font-families, 'highlight');
+        font-size:   1em;
         margin:      0 0 5px 0;
     }
 }
