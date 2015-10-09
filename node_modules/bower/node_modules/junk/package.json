@@ -1,0 +1,66 @@
+{
+  "name": "junk",
+  "version": "1.0.2",
+  "description": "Filter out OS junk files like .DS_Store and Thumbs.db",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sindresorhus/junk"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "junk",
+    "trash",
+    "garbage",
+    "files",
+    "os",
+    "ignore",
+    "exclude",
+    "filter",
+    "temp",
+    "tmp"
+  ],
+  "devDependencies": {
+    "ava": "0.0.3"
+  },
+  "gitHead": "3a7be1c4dd897607457038e6ceba7492a2ded0e4",
+  "bugs": {
+    "url": "https://github.com/sindresorhus/junk/issues"
+  },
+  "homepage": "https://github.com/sindresorhus/junk",
+  "_id": "junk@1.0.2",
+  "_shasum": "cc71db3c05d53b3238d0f1dec97a88267c10700e",
+  "_from": "junk@>=1.0.0 <2.0.0",
+  "_npmVersion": "2.11.2",
+  "_nodeVersion": "0.12.5",
+  "_npmUser": {
+    "name": "sindresorhus",
+    "email": "sindresorhus@gmail.com"
+  },
+  "dist": {
+    "shasum": "cc71db3c05d53b3238d0f1dec97a88267c10700e",
+    "tarball": "http://registry.npmjs.org/junk/-/junk-1.0.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/junk/-/junk-1.0.2.tgz",
+  "readme": "ERROR: No README data found!"
+}

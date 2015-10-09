@@ -10,5 +10,5 @@
 
 // Box
 .box {
-    border-bottom: 1px solid #eef2f8;
+    border-bottom: 1px solid map-get($colors, separator);
 }

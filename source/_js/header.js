@@ -70,4 +70,13 @@
         var header = new Header();
         header.run();
     });
+
+      //img loading animation
+    $(document).ready(function(){  
+         //图片默认隐藏  
+         $('.postShorten-thumbnailimg img').hide();  
+         //使用fadeIn特效  
+         $("img").fadeIn("slow"); 
+    }); 
+
 }(jQuery);

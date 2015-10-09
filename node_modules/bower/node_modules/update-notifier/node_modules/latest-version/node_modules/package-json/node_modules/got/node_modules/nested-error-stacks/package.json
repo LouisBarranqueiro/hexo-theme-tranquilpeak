@@ -1,0 +1,61 @@
+{
+  "name": "nested-error-stacks",
+  "version": "1.0.1",
+  "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+  "bugs": {
+    "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+  },
+  "keywords": [
+    "error",
+    "nested",
+    "stack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdlavin/nested-error-stacks.git"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": {
+    "name": "Matt Lavin",
+    "email": "matt.lavin@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "inherits": "~2.0.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "uuid": "~1.4.1",
+    "chai": "~1.9.1"
+  },
+  "gitHead": "ba63770f16f3dd41c424822057fa78b82e2c0269",
+  "homepage": "https://github.com/mdlavin/nested-error-stacks",
+  "_id": "nested-error-stacks@1.0.1",
+  "_shasum": "d7bb90f2e66069d1f40b9d6e8daa69885ba39173",
+  "_from": "nested-error-stacks@>=1.0.0 <2.0.0",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "mdlavin",
+    "email": "matt.lavin@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "mdlavin",
+      "email": "matt.lavin@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "d7bb90f2e66069d1f40b9d6e8daa69885ba39173",
+    "tarball": "http://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-1.0.1.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-1.0.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

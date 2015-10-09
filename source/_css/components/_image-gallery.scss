@@ -10,7 +10,7 @@
         bottom:     0;
         // width: (full with) - ((padding right-left of `.image-gallery-metabar` + 0.05em) * 4) to be responsive on all screen
         width:      calc(100% - (1.5em) * 2);
-        font-family: 'Open Sans';
+        font-family: $font_base;
         font-style: italic;
         background: rgba(0, 0, 0, 0.75);
         font-size:  map-get($font-size, small);

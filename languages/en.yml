@@ -26,8 +26,8 @@ global:
 pagination:
     page: "page"
     of: "of"
-    newer_posts: "NEWER POSTS"
-    older_posts: "OLDER POSTS"
+    newer_posts: "Previous"
+    older_posts: "Next"
     previous: "PREVIOUS"
     next: "NEXT"
 
@@ -41,6 +41,6 @@ post:
 
 author:
     # Your biography in english (Markdown and HTML supported)
-    bio: ""
+    bio: "話は安いものですので、コードを表させてください！"
     # Your job in english
-    job: ""
+    job: "Android Developer"

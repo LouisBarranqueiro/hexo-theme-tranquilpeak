@@ -1,5 +1,5 @@
 html {
-    font-family: $font-family-base;
+    font-family: $font_base;
     // equal to 10px, useful to use em and rem
     font-size:   62.5%;
     // Gives you better control of the font size when the first selected font is not available.
@@ -15,7 +15,7 @@ body {
     margin:         0;
     padding:        0;
     background:     white;
-    font-family:    $font-family-base;
+    font-family:    $font_base;
     font-size:      map-get($font-size, base);
     line-height:    $line-height-base;
     letter-spacing: $letter-spacing-base;
@@ -35,10 +35,10 @@ h4,
 h5,
 h6 {
     letter-spacing: -0.04em;
-    font-family:    'Open Sans', sans-serif;
-    font-weight:    700;
+    font-family:    $font_title;
+    font-weight:    normal;
     line-height:    1.45em;
-    color:          #4a4a4a;
+    color:          map-get($colors, grey900);
 }
 
 h1,
@@ -77,7 +77,7 @@ a {
         text-decoration: none;
     }
     &:hover {
-        color:           map-get($colors, link);
+        color:            darken(map-get($colors, link), 15);
         text-decoration: underline;
     }
 }
@@ -115,11 +115,14 @@ dl {
 
 code {
     display:       inline-block;
-    font-family:   'Open Sans';
+    font-family:   $font_code;
     font-weight:   400;
-    border-radius: 3px;
+    font-size:     1.3rem;
+    border-radius: 5px;
     background:    #f5f5f5;
-    padding:       0 10px;
+    padding:       0 5px;
+    margin-left:   2px;
+    margin-right:  2px;
 }
 
 acronym,

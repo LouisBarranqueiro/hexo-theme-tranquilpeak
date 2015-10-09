@@ -4,7 +4,7 @@
     .postShorten {
         // Space between 2 shorten post
         margin-top:    15px;
-        border-bottom: 1px solid #eef2f8;
+        border-bottom: 1px solid map-get($colors, separator);
     }
 }
 
@@ -17,6 +17,7 @@
 
     .postShorten-header {
         .postShorten-title {
+            font-family: $font_title;
             margin:     0;
             word-break: initial;
             overflow:   hidden;
@@ -31,12 +32,16 @@
         line-height: 1.5em;
 
         a {
-            color: map-get($colors, light);
+            color: map-get($colors, grey600);
+             &:hover {
+                  color: map-get($colors, grey400);
+             }
         }
+       
     }
     .postShorten-meta,
     .postShorten-readingtime {
-        color: map-get($colors, light);
+        color: map-get($colors, grey400);
     }
     .postShorten-excerpt_link {
         // Bring the post's link nearest of the excerpt
@@ -45,13 +50,13 @@
     .postShorten-meta,
     .postShorten-readingtime,
     .postShorten-excerpt_link {
-        font-family: 'Open Sans', sans-serif;
+        font-family: $font_content;
         font-size:   map-get($font-size, small);
         font-weight: 400;
     }
     .postShorten-excerpt,
     .postShorten-content {
-        font-family: 'Merriweather', serif;
+        font-family: $font_content;
         color:       map-get($colors, base);
         font-weight: 300;
         overflow:    hidden;
@@ -90,12 +95,29 @@
                 display:       block;
                 width:         $post-thumbnail-image-width;
                 height:        $post-thumbnail-image-width;
-                border-radius: 3px;
+                border-radius: 5px;
+                object-fit: cover;
             }
         }
         .postShorten-wrap {
             display: inline-block;
             width:   calc(100% - #{$post-thumbnail-image-width} - 20px);
+        }
+    }
+}
+
+@media #{$medium-only} {
+     .postShorten.postShorten--thumbnailimg {
+        .postShorten-thumbnailimg {      
+            margin:         25px 0 30px 15px;       
+        }
+    }
+}
+
+@media #{$small-only} {
+     .postShorten.postShorten--thumbnailimg {
+        .postShorten-thumbnailimg {      
+            margin:         34px 0 30px 15px;       
         }
     }
 }
