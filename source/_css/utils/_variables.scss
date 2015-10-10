@@ -1,8 +1,30 @@
 // Global settings
 // --------------------------------------------
 
-// Typography
-$font-family-base:    'Open Sans', sans-serif;
+// Font families
+$open-sans:            'Open Sans';
+$open-sans-sans-serif: 'Open Sans', sans-serif;
+$merriweather-serif:   'Merriweather', serif;
+$menlo:                 Menlo;
+
+$font-family-base: $open-sans-sans-serif;
+
+$font-families: (
+   // base
+   'headings':          $open-sans-sans-serif,
+   // components
+   'code':              $open-sans,
+   'caption':           $merriweather-serif,
+   'image-gallery':     $open-sans,
+   'post-header-cover': $merriweather-serif,
+   'post-meta':         $open-sans-sans-serif,
+   'post-content':      $merriweather-serif,
+   'post-excerpt-link': $open-sans-sans-serif,
+   'highlight':         $menlo,
+   // layout
+   'sidebar':           $open-sans-sans-serif
+);
+
 // equal to 15px
 $font-size-base:      1.5rem;
 $font-color-base:     #5d686f;
@@ -136,7 +158,6 @@ $main: (
 
 // Highlight
 $highlight: (
-    'font-family': Menlo,
     'font-size':   1.3rem,
     'border':      1px solid #d9d9d9,
     'line-height': 1.2em

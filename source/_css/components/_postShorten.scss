@@ -45,13 +45,13 @@
     .postShorten-meta,
     .postShorten-readingtime,
     .postShorten-excerpt_link {
-        font-family: 'Open Sans', sans-serif;
+        font-family: map-get($font-families, 'post-excerpt-link');
         font-size:   map-get($font-size, small);
         font-weight: 400;
     }
     .postShorten-excerpt,
     .postShorten-content {
-        font-family: 'Merriweather', serif;
+        font-family: map-get($font-families, 'post-content');
         color:       map-get($colors, base);
         font-weight: 300;
         overflow:    hidden;

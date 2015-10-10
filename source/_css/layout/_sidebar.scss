@@ -1,6 +1,6 @@
 // Global CSS rules for all screen size
 #sidebar {
-    font-family:        'Open Sans', sans-serif;
+    font-family:        map-get($font-families, 'sidebar');
     height:             100%;
     position:           fixed;
     top:                0;
