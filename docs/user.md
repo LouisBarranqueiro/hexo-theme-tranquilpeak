@@ -404,11 +404,14 @@ To use tags plugins to highlight code or add Fancybox image, please read [Hexo d
 
 ### Front-matter settings ###
 
-Tranquilpeak introduces 2 new variables to configure precisely the style of your post : `thumbnailImage` and `coverImage`.  
+Tranquilpeak introduces new variables to give you a lot of possibilities.  
   
 Example :  
 ``` markdown
+clearReading: true
 thumbnailImage: image-1.png
+thumbnailImagePosition: bottom
+autoThumbnailImage: yes
 metaAlignment: center
 coverImage: image-2.png
 coverCaption: "A beautiful sunrise"
@@ -423,8 +426,10 @@ comments: false
 ```
 
 - **clearReading** : Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `theme.sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.
-- **metaAlignment** : Meta (title, date and categories) alignment (right, left or center). Default behavior : left
+- **autoThumbnailImage** : Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image. `autoThumbnailImage` overwrite the setting `auto_thumbnail_image` in the theme configuration file
 - **thumbnailImage** : Image displayed in index view.
+- **thumbnailImagePosition** : Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`). `thumbnailImagePosition` overwrite the setting `thumbnail_image_position` in the theme configuration file
+- **metaAlignment** : Meta (title, date and categories) alignment (right, left or center). Default behavior : left
 - **coverImage** : Image displayed in full size at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. Check the beautiful demo here : [Cover image demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
 - **coverSize**: `partial`: cover image take a part of the screen height (60%), `full`: cover image take the entire screen height.
 - **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
@@ -432,8 +437,8 @@ comments: false
 - **photos** : Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `url [caption]`, E.g : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no "New York"`
 - **comments** : Disable the comment of the post.
 
-The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
-Of course, you can set external url.
+**The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
+Of course, you can set external url.**
 
 ### Display table of contents ###
 
