@@ -37,6 +37,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
 - [Writing posts](#writing-posts)
     * [Front-matter settings](#front-matter-settings)
+    * [Define post excerpt](#define-post-excerpt)
+    * [Display all post content](#display-all-post-content)
     * [Display table of contents](#display-table-of-contents)
     * [Tags](#tags)
         * [Image](#image)
@@ -439,6 +441,16 @@ comments: false
 
 **The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
 Of course, you can set external url.**
+
+### Define post excerpt ###
+
+Tranquilpeak v1.4.0 introduce a new way to define post excerpt with `<!-- excerpt -->` comment. Use 
+- `<!-- more -->` to define post excerpt and keep the post excerpt in the post content
+- `<!-- excerpt -->` to define post excerpt and remove the post excerpt of the post content
+
+### Display all post content ###
+
+** To display all post content on index page, don't put `<!-- more -->` and `<!-- excerpt -->` comment in your post content.**
 
 ### Display table of contents ###
 
