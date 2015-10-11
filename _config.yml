@@ -150,7 +150,7 @@ auto_thumbnail_image: true
 # Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
 # There is many free CDN like Cloudinary or you can also use indirectly
 # by using services like Google Photos.
-# Current image is on Cloudinary.
+# Current image is on AWS S3 and delivered by AWS CloudFront.
 # Otherwise put your image in folder `source/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
 # and use relative url : `/assets/images/your-image.png`
 cover_image: http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1438975482/v1.3.0-cover.jpg
