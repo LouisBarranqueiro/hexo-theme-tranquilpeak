@@ -147,10 +147,6 @@ thumbnail_image_position: right
 # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
 # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
 auto_thumbnail_image: true
-# Message displayed after the <!-- more --> comment
-read_more_message: Continue reading
-# Message displayed after the <!-- more --> comment or after 300 characters for post with link layout
-go_to_message: Go to the website
 # Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
 # There is many free CDN like Cloudinary or you can also use indirectly
 # by using services like Google Photos.

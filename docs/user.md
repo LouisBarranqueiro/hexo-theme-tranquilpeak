@@ -249,17 +249,15 @@ header:
 # Author
 author:
     email:
-    bio:
-    job:
     location:
     picture:
     twitter:
     google_plus:
 ```
-
+  
+**Your biography and your job is editable in each languages files in `languages` folder**
+  
 - **email** : Your mail address. This address will be used to get your gravatar image if you activate gravatar option
-- **bio** : A short biography. Display on your about card (Markdown and HTML supported)
-- **job** : Your job (Markdown and HTML supported)
 - **location** : Your location
 - **picture** : Your profile picture. Overwritten by your gravatar image if gravatar option is enabled
 - **twitter** : Your Twitter username without the @. E.g : `tranquilpeak`
@@ -272,8 +270,6 @@ author:
 sidebar_behavior: 2
 toc_title: Table of contents
 thumbnail_image: true
-read_more_message: Continue reading
-go_to_message: Go to the website 
 cover_image: http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1438532677/v1.3.0-cover.jpg
 favicon:
 image_gallery: true
