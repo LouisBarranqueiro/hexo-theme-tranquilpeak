@@ -131,7 +131,7 @@ If you want more informations on this plugin : [hexo-generator-feed](https://git
 
 If you are new to Hexo and internationalization (i18n), please read [Hexo documentation - internationalization (i18n) section](https://hexo.io/docs/internationalization.html)
 
-Currently, the theme is delivered with english (en), chinese (zh-cn) and portuguese (pt-br) language file. 
+Currently, the theme is delivered with english (en), chinese (zh-cn), french (fr-FR) and portuguese (pt-br) language file. 
 If your language is not available, follow this guidelines (E.g : add russian language (ru) :  
 1. Set `language` to `ru` in Hexo configuration file `_config.yml`  
 2. Create `ru.yml` file in `theme/tranquilpeak/languages/` folder  
