@@ -2,7 +2,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquilpeak](http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1439030688/v1.3.0-showcase.png)
+![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/v1.3.0-showcase.jpg)
 
 Tranquilpeak theme is compatible with Hexo v3.0.x. The theme is compatible with higher versions of Hexo but these versions have some bugs with generation of relative urls so I recommend to use Hexo 3.0.x for the moment.
 
@@ -304,10 +304,10 @@ Default image is on AWS S3 and delivered by AWS CloudFront. Otherwise put your i
 
 Example :  
 A category page look like this with `category_pagination: true` :  
-![archives false](http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/w_300/v1439031170/v1.3.0-ud-archives-true.png)  
+![archives false](http://d1u9biwaxjngwg.cloudfront.net/docs/1.3.0/v1.3.0-ud-archives-true-300.png)  
 
 The same page with `category_pagination: false`:  
-![archives false](http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/w_300/v1439031170/v1.3.0-ud-archives-false.png)  
+![archives false](http://d1u9biwaxjngwg.cloudfront.net/docs/1.3.0/v1.3.0-ud-archives-false-300.png)  
 
 
 #### Integrated services ####
@@ -431,6 +431,15 @@ comments: false
 - **autoThumbnailImage** : Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image. `autoThumbnailImage` overwrite the setting `auto_thumbnail_image` in the theme configuration file
 - **thumbnailImage** : Image displayed in index view.
 - **thumbnailImagePosition** : Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`). `thumbnailImagePosition` overwrite the setting `thumbnail_image_position` in the theme configuration file
+
+Example: 
+A post on index page will look like this with :`thumbnailImagePosition` set to `bottom`:
+![thumbnail-image-position-bottom](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.3.0/TIP-bottom-400.jpg)  
+The same with : `thumbnailImagePosition` set to `right`:
+![thumbnail-image-position-right](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.3.0/TIP-right-400.png)  
+The same with : `thumbnailImagePosition` set to `left`:
+![thumbnail-image-position-left](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.3.0/TIP-left-400.png)  
+
 - **metaAlignment** : Meta (title, date and categories) alignment (right, left or center). Default behavior : left
 - **coverImage** : Image displayed in full size at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. Check the beautiful demo here : [Cover image demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
 - **coverSize**: `partial`: cover image take a part of the screen height (60%), `full`: cover image take the entire screen height.
