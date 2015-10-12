@@ -34,7 +34,7 @@
         }
 
         // Define position of the thumbnail image
-        if (!post.excerpt) {
+        if (!post.excerpt && !post.link) {
             thumbnailImagePosition = "bottom";
         } else if (thumbnailImageUrl !== null) {
             if (post.thumbnailImagePosition && post.thumbnailImagePosition.length)  {
@@ -71,23 +71,21 @@
                     </div>
                     <% thumbnailImageUrl = null; %>
                 <% } %>
-                <% if (post.excerpt) { %>
+                <% if (post.excerpt || post.link) { %>
                     <div class="postShorten-excerpt" itemprop="articleBody">
                         <%- post.excerpt %>
-                        <% if (post.link && __('post.go_to_website')) { %>
+                        <% if (post.link && _('post.go_to_website')) { %>
                             <a href="<%- url_for(post.link) %>" target="new" class="postShorten-excerpt_link link">
                                 <%= __('post.go_to_website') %>
                             </a>
-                        <% } else { %>
-                            <% if (__('post.read_more')) { %>
-                                <a href="<%- url_for(post.path) %>" class="postShorten-excerpt_link link">
-                                    <%- __('post.read_more') %>
-                                </a>
-                                <% if (post.readingtime) { %>
-                                    <span class="postShorten-readingtime">
-                                        <%= ' - ' + post.readingtime + ' min read' %>
-                                    </span>
-                                <% } %>
+                        <% } else if (__('post.read_more')) { %>
+                            <a href="<%- url_for(post.path) %>" class="postShorten-excerpt_link link">
+                                <%- __('post.read_more') %>
+                            </a>
+                            <% if (post.readingtime) { %>
+                                <span class="postShorten-readingtime">
+                                    <%= ' - ' + post.readingtime + ' min read' %>
+                                </span>
                             <% } %>
                         <% } %>
                     </div>
