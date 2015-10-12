@@ -63,7 +63,6 @@
             display:       block;
             width:         auto;
             max-width:     100%;
-            border-radius: 3px;
         }
     }
     .postShorten-excerpt {
@@ -71,11 +70,6 @@
     }
     .postShorten-content {
         margin-top: 25px;
-    }
-    .postShorten-thumbnailimg {
-        img {
-            border-radius: 3px;
-        }
     }
 }
 
@@ -136,9 +130,7 @@
             display:       block;
             width:         100%;
             overflow:      hidden;
-            margin:        15px 0 30px 0;
-            max-height:    180px;
-            border-radius: 3px;
+            margin:        15px 0 15px 0;
 
             img {
                 width:  auto;
