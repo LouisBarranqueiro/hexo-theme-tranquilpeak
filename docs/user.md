@@ -433,11 +433,13 @@ comments: false
 - **thumbnailImagePosition** : Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`). `thumbnailImagePosition` overwrite the setting `thumbnail_image_position` in the theme configuration file
 
 Example: 
-A post on index page will look like this with :`thumbnailImagePosition` set to `bottom`:
+A post on index page will look like this with :`thumbnailImagePosition` set to `bottom`:  
 ![thumbnail-image-position-bottom](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-bottom-400.jpg)  
-The same with : `thumbnailImagePosition` set to `right`:
+  
+The same with : `thumbnailImagePosition` set to `right`:  
 ![thumbnail-image-position-right](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-right-400.png)  
-The same with : `thumbnailImagePosition` set to `left`:
+  
+The same with : `thumbnailImagePosition` set to `left`:  
 ![thumbnail-image-position-left](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-left-400.png)  
 
 - **metaAlignment** : Meta (title, date and categories) alignment (right, left or center). Default behavior : left
@@ -464,7 +466,10 @@ Tranquilpeak v1.4.0 introduce a new way to define post excerpt with `<!-- excerp
 ### Display table of contents ###
 
 As post excerpt feature enable with `<!-- more -->` comment, you can display the table of contents of a post with  `<!-- toc -->`.  Place this comment where you want to display the table of content. You can also edit the title displayed at the top of the table of contents in the `_config.yml` file
- 
+  
+Here is what looks like the table of contents generated:  
+![thumbnail-image-position-left](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/toc-400.png) 
+  
 ### Tags ###
 
 Tranquilpeak 1.3 introduce 2 new tag to display wide images in full width and create beautiful galleries.
