@@ -152,7 +152,7 @@ auto_thumbnail_image: true
 # by using services like Google Photos.
 # Current image is on AWS S3 and delivered by AWS CloudFront.
 # Otherwise put your image in folder `source/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
-# and use relative url : `/assets/images/your-image.png`
+# and use relative url : `your-image.png`
 cover_image: cover.jpg
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 favicon:
