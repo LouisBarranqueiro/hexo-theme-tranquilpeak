@@ -35,7 +35,7 @@ h4,
 h5,
 h6 {
     letter-spacing: -0.04em;
-    font-family:    'Open Sans', sans-serif;
+    font-family:    map-get($font-families, 'headings');
     font-weight:    700;
     line-height:    1.45em;
     color:          #4a4a4a;
@@ -115,7 +115,7 @@ dl {
 
 code {
     display:       inline-block;
-    font-family:   'Open Sans';
+    font-family:   map-get($font-families, 'code');
     font-weight:   400;
     border-radius: 3px;
     background:    #f5f5f5;

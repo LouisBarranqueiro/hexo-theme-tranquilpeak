@@ -2,7 +2,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquilpeak](http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1439030688/v1.3.0-showcase.png)
+![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/v1.3.0-showcase.jpg)
 
 Tranquilpeak theme is compatible with Hexo v3.0.x. The theme is compatible with higher versions of Hexo but these versions have some bugs with generation of relative urls so I recommend to use Hexo 3.0.x for the moment.
 
@@ -37,6 +37,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
 - [Writing posts](#writing-posts)
     * [Front-matter settings](#front-matter-settings)
+    * [Define post excerpt](#define-post-excerpt)
+    * [Display all post content](#display-all-post-content)
     * [Display table of contents](#display-table-of-contents)
     * [Tags](#tags)
         * [Image](#image)
@@ -131,13 +133,13 @@ If you want more informations on this plugin : [hexo-generator-feed](https://git
 
 If you are new to Hexo and internationalization (i18n), please read [Hexo documentation - internationalization (i18n) section](https://hexo.io/docs/internationalization.html)
 
-Currently, the theme is delivered with english (en) and portuguese (pt-br) language file. 
-If your language is not available, follow this guidelines (E.g : add chinese language (zh-cn) :  
-1. Set `language` to `zh-cn` in Hexo configuration file `_config.yml`  
-2. Create `zh-cn` file in `theme/tranquilpeak/languages/` folder  
-3. Copy the content of `theme/tranquilpeak/languages/en.yml` and paste it to `zh-cn.yml` file  
-4. Replace all strings in english by their translation in chinese  
-5. Complete your description and your job in chinese and that's it!  
+Currently, the theme is delivered with english (en), chinese (zh-cn), french (fr-FR) and portuguese (pt-br) language file. 
+If your language is not available, follow this guidelines (E.g : add russian language (ru) :  
+1. Set `language` to `ru` in Hexo configuration file `_config.yml`  
+2. Create `ru.yml` file in `theme/tranquilpeak/languages/` folder  
+3. Copy the content of `theme/tranquilpeak/languages/en.yml` and paste it to `ru.yml` file  
+4. Replace all strings in english by their translation in russian  
+5. Complete your description and your job in russian and that's it!  
 
 Otherwise, complete your description and your job in the right language file(s) in `theme/tranquilpeak/languages`.
 
@@ -229,8 +231,8 @@ sidebar:
 
 #### Header ####
 
-The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
-
+The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. By default, author's gravatar or author's picture is displayed if `icon` is empty DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name.  
+E.g to display a shortcut to open swiftype search window :
 ``` yaml
 header:
     right_link:
@@ -249,19 +251,17 @@ header:
 # Author
 author:
     email:
-    bio:
-    job:
     location:
     picture:
     twitter:
     google_plus:
 ```
-
+  
+**Your biography and your job is editable in each languages files in `languages` folder**
+  
 - **email** : Your mail address. This address will be used to get your gravatar image if you activate gravatar option
-- **bio** : A short biography. Display on your about card (Markdown and HTML supported)
-- **job** : Your job (Markdown and HTML supported)
 - **location** : Your location
-- **picture** : Your profile picture. Overwritten by your gravatar image if gravatar option is enabled
+- **picture** : Your profile picture. Overwritten by your gravatar image if gravatar email is filled
 - **twitter** : Your Twitter username without the @. E.g : `tranquilpeak`
 - **google_plus** : Your google plus profile id. E.g : `+TranquilPeak` or `123812884128439`
 
@@ -269,11 +269,11 @@ author:
 
 ``` yaml
 # Customization
-sidebar_behavior: 1
+sidebar_behavior: 2
 toc_title: Table of contents
 thumbnail_image: true
-read_more_message: Continue reading
-go_to_message: Go to the website 
+thumbnail_image_position: right
+auto_thumbnail_image: true
 cover_image: http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1438532677/v1.3.0-cover.jpg
 favicon:
 image_gallery: true
@@ -283,17 +283,19 @@ tag_pagination: true
 ```
 
 - **sidebar_behavior** : Define the behavior of the header and sidebar :
-   * 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen and large sidebar is swiped when open button is clicked (default)
-   * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked
+   * 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen and large sidebar is swiped when open button is clicked
+   * 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked (default)
    * 3: Display header bar on all screens and large sidebar is swiped when open button is clicked  
    * 4: Display header bar on all screens and medium sidebar is swiped when open button is clicked)
 - **clear_reading** : Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.
 - **toc_title** : Head title displayed at the top of the table of contents.
 - **thumbnail_image** : Display thumbnail image of each post on index pages 
+- **thumbnail_image_position** : Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`). Set this value to `right` if you have old posts to keep the old style on them and define `thumbnailImagePosition` on a post to overwrite this setting. (Default : `right`)
+- **auto_thumbnail_image** : Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image. Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image and set `autoThumbnailImage` to `false` on a post to overwrite this setting. (Default : `true`)
 - **read_more_message** : Message displayed after the `<!-- more -->` comment or after 300 characters in post
 - **go_to_message** : Message displayed after the `<!-- more -->` comment or after 300 characters for post with link layout
 - **cover_image** : Your blog cover picture. **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.**
-Default image is on Cloudinary. Otherwise put your image in folder `source/assets/images/` and use relative url : `/assets/images/your-image.png` **Change the default cover image to have an unique blog**
+Default image is on AWS S3 and delivered by AWS CloudFront. Otherwise put your image in folder `source/assets/images/` and use relative url : `your-image.png` **Change the default cover image to have an unique blog**
 - **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables. (false: disabled, true: enabled)
 - **archive_pagination** : Displaying style of archive pages. (false: pagination disabled, true: pagination enabled)
@@ -302,10 +304,10 @@ Default image is on Cloudinary. Otherwise put your image in folder `source/asset
 
 Example :  
 A category page look like this with `category_pagination: true` :  
-![archives false](http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/w_300/v1439031170/v1.3.0-ud-archives-true.png)  
+![archives false](http://d1u9biwaxjngwg.cloudfront.net/docs/1.3.0/v1.3.0-ud-archives-true-300.png)  
 
 The same page with `category_pagination: false`:  
-![archives false](http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/w_300/v1439031170/v1.3.0-ud-archives-false.png)  
+![archives false](http://d1u9biwaxjngwg.cloudfront.net/docs/1.3.0/v1.3.0-ud-archives-false-300.png)  
 
 
 #### Integrated services ####
@@ -404,11 +406,14 @@ To use tags plugins to highlight code or add Fancybox image, please read [Hexo d
 
 ### Front-matter settings ###
 
-Tranquilpeak introduces 2 new variables to configure precisely the style of your post : `thumbnailImage` and `coverImage`.  
+Tranquilpeak introduces new variables to give you a lot of possibilities.  
   
 Example :  
 ``` markdown
+clearReading: true
 thumbnailImage: image-1.png
+thumbnailImagePosition: bottom
+autoThumbnailImage: yes
 metaAlignment: center
 coverImage: image-2.png
 coverCaption: "A beautiful sunrise"
@@ -423,8 +428,19 @@ comments: false
 ```
 
 - **clearReading** : Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `theme.sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.
-- **metaAlignment** : Meta (title, date and categories) alignment (right, left or center). Default behavior : left
+- **autoThumbnailImage** : Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image. `autoThumbnailImage` overwrite the setting `auto_thumbnail_image` in the theme configuration file
 - **thumbnailImage** : Image displayed in index view.
+- **thumbnailImagePosition** : Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`). `thumbnailImagePosition` overwrite the setting `thumbnail_image_position` in the theme configuration file
+
+Example: 
+A post on index page will look like this with :`thumbnailImagePosition` set to `bottom`:
+![thumbnail-image-position-bottom](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.3.0/TIP-bottom-400.jpg)  
+The same with : `thumbnailImagePosition` set to `right`:
+![thumbnail-image-position-right](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.3.0/TIP-right-400.png)  
+The same with : `thumbnailImagePosition` set to `left`:
+![thumbnail-image-position-left](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.3.0/TIP-left-400.png)  
+
+- **metaAlignment** : Meta (title, date and categories) alignment (right, left or center). Default behavior : left
 - **coverImage** : Image displayed in full size at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. Check the beautiful demo here : [Cover image demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
 - **coverSize**: `partial`: cover image take a part of the screen height (60%), `full`: cover image take the entire screen height.
 - **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
@@ -432,8 +448,18 @@ comments: false
 - **photos** : Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `url [caption]`, E.g : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no "New York"`
 - **comments** : Disable the comment of the post.
 
-The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
-Of course, you can set external url.
+**The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
+Of course, you can set external url.**
+
+### Define post excerpt ###
+
+Tranquilpeak v1.4.0 introduce a new way to define post excerpt with `<!-- excerpt -->` comment. Use 
+- `<!-- more -->` to define post excerpt and keep the post excerpt in the post content
+- `<!-- excerpt -->` to define post excerpt and remove the post excerpt of the post content
+
+### Display all post content ###
+
+** To display all post content on index page, don't put `<!-- more -->` and `<!-- excerpt -->` comment in your post content.**
 
 ### Display table of contents ###
 

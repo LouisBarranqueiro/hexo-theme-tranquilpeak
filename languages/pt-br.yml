@@ -4,7 +4,9 @@ date_format: "DD/MM/YYYY"
 global:
     home: "Início"
     categories: "Categorias"
+    category: "Category"
     tags: "Tags"
+    tag: "Tag"
     archives: "Arquivo"
     search: "Pesquisar"
     about: "Sobre"
@@ -13,7 +15,7 @@ global:
     twitter: "Twitter"
     facebook: "Facebook"
     google_plus: "Google Plus"
-    linked_in: "Linked In"
+    linkedin: "LinkedIn"
     mail: "Mail"
     rss: "RSS"
     share_on_google_plus: "Share on Google Plus"
@@ -24,8 +26,8 @@ global:
     search_date: "Pesquisar data (AAAA/MM/DD)"
 
 pagination:
-    page: "página"
-    of: "de"
+    page: "página %d"
+    of: "de %d"
     newer_posts: "POSTS MAIS NOVOS"
     older_posts: "POSTS MAIS ANTIGOS"
     previous: "ANTERIOR"
@@ -38,6 +40,7 @@ post:
     toc: "Tabela de Conteúdos"
     read_more: "Continuar leitura"
     go_to_website: "Ir para o site"
+    comment_and_share: "Comentar e compartilhar"
 
 author:
     # Your biography in portuguese (Markdown and HTML supported)

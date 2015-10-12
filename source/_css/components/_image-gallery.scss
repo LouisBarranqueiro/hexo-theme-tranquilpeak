@@ -6,18 +6,18 @@
     margin-bottom: 30px;
 
     .image-gallery-metabar {
-        position:   absolute;
-        bottom:     0;
+        position:    absolute;
+        bottom:      0;
         // width: (full with) - ((padding right-left of `.image-gallery-metabar` + 0.05em) * 4) to be responsive on all screen
-        width:      calc(100% - (1.5em) * 2);
-        font-family: 'Open Sans';
-        font-style: italic;
-        background: rgba(0, 0, 0, 0.75);
-        font-size:  map-get($font-size, small);
-        color:      white;
-        padding:    0.5em 1.5em;
+        width:       calc(100% - (1.5em) * 2);
+        font-family: map-get($font-families, 'image-gallery');
+        font-style:  italic;
+        background:  rgba(0, 0, 0, 0.75);
+        font-size:   map-get($font-size, small);
+        color:       white;
+        padding:     0.5em 1.5em;
         // Use to go over all images of the gallery
-        z-index:    1;
+        z-index:     1;
     }
     .image-gallery-photos {
         .photo-box {

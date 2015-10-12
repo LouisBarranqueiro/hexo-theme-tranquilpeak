@@ -1,0 +1,47 @@
+# date format displayed everywhere in the blog
+date_format: "DD MMM YYYY"
+
+global:
+    home: "Accueil"
+    categories: "Categories"
+    tags: "Tags"
+    archives: "Archive"
+    search: "Rechercher"
+    about: "À propos"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google Plus"
+    linkedin: "LinkedIn"
+    mail: "Mail"
+    rss: "RSS"
+    share_on_google_plus: "Partager sur Google Plus"
+    share_on_facebook: "Partager sur Facebook"
+    share_on_twitter: "Partager sur Twitter"
+    search_category: "Rechercher une catégorie"
+    search_tag: "Rechercher un tag"
+    search_date: "Rechercher une date (YYYY/MM/DD)"
+
+pagination:
+    page: "page"
+    of: "sur"
+    newer_posts: "POSTS RÉCENTS"
+    older_posts: "POSTS ANCIENTS"
+    previous: "PRÉCÉDENT"
+    next: "SUIVANT"
+
+post:
+    no_title : "sans titre"
+    categorized_in: "dans"
+    tagged_in: "TAGGÉ DANS"
+    toc: "Table des matières"
+    read_more: "Continuer"
+    go_to_website: "Aller au site web"
+    comment_and_share: "Commenter et partager"
+
+author:
+    # Your biography in french (Markdown and HTML supported)
+  bio: ""
+    # Your job in french
+  job: ""

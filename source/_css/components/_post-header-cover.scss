@@ -52,7 +52,7 @@
         // Post meta contains post's date, post's categories and tags
         .post-meta {
             max-width:      map-get($main-content, 'max-width');
-            font-family:    'Merriweather', serif;
+            font-family:    map-get($font-families, 'post-meta');
             font-size:      $font-size-base;
             color:          white !important;
             font-weight:    400;

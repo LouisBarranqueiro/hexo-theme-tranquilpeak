@@ -1,3 +1,7 @@
+# Tranquilpeak Hexo theme
+# Version : 1.3.0
+# Author : Louis Barranqueiro
+
 # I STRONGLY recommend you to use a CDN to speed up loading of pages.
 # There is many free CDN like Cloudinary or you can also use indirectly
 # by using services like Google Photos.
@@ -75,7 +79,7 @@ sidebar:
         #     url: https://plus.google.com/
         #     icon: google-plus
         # linked_in:
-        #     title: global.linked_in
+        #     title: global.linkedin
         #     url: https://www.linkedin.com/profile/
         #     icon: linkedin
         # mail:
@@ -92,12 +96,17 @@ sidebar:
 # Header configuration
 # The link at the right of the header is customizable
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
+# By default, author's gravatar or author's picture is displayed if `icon` is empty
 # DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
+# E.g to display a shortcut to open swiftype search window :
+#     url: /#search
+#     icon: search
+#     class: st-search-show-outputs
 header:
     right_link:
-         # url: /#search
-         # icon: search
-         # class: st-search-show-outputs
+        url: /#about
+        icon:
+        class:
 
 
 # Author
@@ -106,8 +115,9 @@ author:
     email:
     location:
     # Your profile picture located in folder `source/_images/` (development)
-    # or in `source/assets/images/` (production).
-    # Overwritten by your gravatar image if `gravatar_image` is enabled
+    # or in `source/assets/images/` (production)
+    # or you can use an external url
+    # Overwritten by your gravatar image if `gravatar_email` is filled
     picture:
     # Your Twitter username without the @. E.g : `tranquilpeak`
     twitter:
@@ -118,8 +128,8 @@ author:
 # Customization
 # Define the behavior of the sidebar
 # 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
-# and large sidebar is swiped (default)
-# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
+# and large sidebar is swiped
+# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped (default)
 # 3: Display header bar on all screens and large sidebar is swiped
 # 4: Display header bar on all screens and medium sidebar is swiped
 sidebar_behavior: 2
@@ -129,17 +139,21 @@ clear_reading: true
 toc_title: Table of contents
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
 thumbnail_image: true
-# Message displayed after the <!-- more --> comment
-read_more_message: Continue reading
-# Message displayed after the <!-- more --> comment or after 300 characters for post with link layout
-go_to_message: Go to the website
+# Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`)
+# Set this value to `right` if you have old posts to keep the old style on them
+# and define `thumbnailImagePosition` on a post to overwrite this setting
+thumbnail_image_position: right
+# Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image
+# Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
+# and set `autoThumbnailImage` to `false` on a post to overwrite this setting
+auto_thumbnail_image: true
 # Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
 # There is many free CDN like Cloudinary or you can also use indirectly
 # by using services like Google Photos.
-# Current image is on Cloudinary.
+# Current image is on AWS S3 and delivered by AWS CloudFront.
 # Otherwise put your image in folder `source/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
-# and use relative url : `/assets/images/your-image.png`
-cover_image: http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1438975482/v1.3.0-cover.jpg
+# and use relative url : `your-image.png`
+cover_image: cover.jpg
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
 favicon:
 # Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)

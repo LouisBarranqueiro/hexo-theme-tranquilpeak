@@ -1,0 +1,49 @@
+# 在所有地方显示的 date 格式化
+date_format: "MMM DD, YYYY"
+
+global:
+    home: "首页"
+    categories: "分类"
+    category: "分类"
+    tags: "标签"
+    tag: "标签"
+    archives: "归档"
+    search: "搜索"
+    about: "关于"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google Plus"
+    linkedin: "LinkedIn"
+    mail: "邮箱"
+    rss: "RSS"
+    share_on_google_plus: "分享到 Google+"
+    share_on_facebook: "分享到 Facebook"
+    share_on_twitter: "分享到 Twitter"
+    search_category: "搜索分类"
+    search_tag: "搜索标签"
+    search_date: "搜索日期 (YYYY/MM/DD)"
+
+pagination:
+    page: "第 %d 页"
+    of: "共 %d 页"
+    newer_posts: "上一页"
+    older_posts: "下一页"
+    previous: "上一篇"
+    next: "下一篇"
+
+post:
+    no_title : "无标题"
+    categorized_in: "发布在"
+    tagged_in: "标签"
+    toc: "目录"
+    read_more: "阅读全文"
+    go_to_website: "转到"
+    comment_and_share: "注释和共享"
+
+author:
+    # 你的个人简介 (支持 Markdown 和 HTML 语法)
+    bio: ""
+    # 你的工作简介
+    job: ""

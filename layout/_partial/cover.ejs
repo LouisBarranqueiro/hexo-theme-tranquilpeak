@@ -1,1 +1,12 @@
-<div id="cover" style="background-image:url('<%- url_for(theme.cover_image) %>');"></div>
+<%
+    var coverImageUrl = null;
+
+    // Generate URL of cover image
+    if (theme.cover_image.indexOf('://') > 0) {
+        coverImageUrl = theme.cover_image;
+    }
+    else {
+        coverImageUrl = url_for(theme.image_dir + '/' + theme.cover_image);
+    }
+%>
+<div id="cover" style="background-image:url('<%= coverImageUrl %>');"></div>

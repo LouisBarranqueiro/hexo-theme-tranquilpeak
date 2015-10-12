@@ -45,21 +45,27 @@
     .postShorten-meta,
     .postShorten-readingtime,
     .postShorten-excerpt_link {
-        font-family: 'Open Sans', sans-serif;
+        font-family: map-get($font-families, 'post-excerpt-link');
         font-size:   map-get($font-size, small);
         font-weight: 400;
     }
     .postShorten-excerpt,
     .postShorten-content {
-        font-family: 'Merriweather', serif;
+        font-family: map-get($font-families, 'post-content');
         color:       map-get($colors, base);
         font-weight: 300;
         overflow:    hidden;
         word-break:  break-word;
         @include prefix('word-break', 'break-all', 'ms moz');
         @include prefix('hypens', 'auto', 'webkit moz');
+
+        img {
+            display:       block;
+            width:         auto;
+            max-width:     100%;
+        }
     }
-    .postShorten-excerpt, {
+    .postShorten-excerpt {
         margin-top: 15px;
     }
     .postShorten-content {
@@ -67,35 +73,69 @@
     }
 }
 
-// Hide the post's thumbnail image on small screen and down
-@media #{$small-and-down} {
-    .postShorten-thumbnailimg {
-        display: none;
-
-        img {
+// Hide the post's thumbnail image on very small screen and down
+@media #{$xsmall-and-down} {
+    .postShorten {
+        .postShorten-thumbnailimg {
             display: none;
+
+            img {
+                display: none;
+            }
         }
     }
 }
 
 // Display the post's thumbnail image on small screen and up
 @media #{$small-and-up} {
-    .postShorten.postShorten--thumbnailimg {
+    .postShorten.postShorten--thumbnailimg-right {
         .postShorten-thumbnailimg {
-            display:        inline-block;
-            margin:         15px 0 30px 15px;
-            vertical-align: top;
+            float:  right;
+            margin: 5px 0 30px 15px;
 
             img {
-                display:       block;
-                width:         $post-thumbnail-image-width;
-                height:        $post-thumbnail-image-width;
-                border-radius: 3px;
+                display: block;
+                width:   $post-thumbnail-image-width;
+                height:  $post-thumbnail-image-width;
             }
         }
         .postShorten-wrap {
-            display: inline-block;
-            width:   calc(100% - #{$post-thumbnail-image-width} - 20px);
+            float: left;
+            width: calc(100% - #{$post-thumbnail-image-width} - 20px);
+        }
+    }
+    .postShorten.postShorten--thumbnailimg-left {
+        .postShorten-thumbnailimg {
+            float:  left;
+            margin: 5px 15px 30px 0;
+
+            img {
+                display: block;
+                width:   $post-thumbnail-image-width;
+                height:  $post-thumbnail-image-width;
+            }
+        }
+        .postShorten-wrap {
+            float: right;
+            width: calc(100% - #{$post-thumbnail-image-width} - 20px);
+        }
+    }
+    .postShorten.postShorten--thumbnailimg-bottom {
+        .postShorten-wrap {
+            display: block;
+            width:   100%;
+        }
+        .postShorten-thumbnailimg {
+
+            display:       block;
+            width:         100%;
+            overflow:      hidden;
+            margin:        15px 0 15px 0;
+
+            img {
+                width:  auto;
+                height: auto;
+            }
         }
     }
 }

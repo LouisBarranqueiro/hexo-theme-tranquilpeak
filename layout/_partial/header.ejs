@@ -1,24 +1,34 @@
+<!-- Define author's picture -->
+<% var authorPicture = null; %>
+<% if (!theme.header.right_link.icon) { %>
+    <% if (theme.gravatar_email && theme.gravatar_email.length) { %>
+        <% authorPicture = gravatar(theme.gravatar_email, 90); %>
+    <% } else if (theme.author.picture && theme.author.picture.length) { %>
+        <% if (theme.author.picture.indexOf('://') >= 0) { %>
+            <% authorPicture = theme.author.picture; %>
+        <% } else { %>
+            <% authorPicture = url_for(theme.image_dir + '/' + theme.author.picture); %>
+        <% } %>
+    <% } %>
+<% } %>
 <header id="header" data-behavior="<%= sidebarBehavior %>">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="<%- url_for(' ') %>"><%= config.title %></a>
     </h1>
-    <% if (theme.header && theme.header.right_link && theme.header.right_link.url && theme.header.right_link.icon) { %>
-        <% if (url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
-            <a  class="header-right-icon <% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>" href="<%- url_for(theme.header.right_link.url) %>" target="_blank">
-        <% } else { %>
-            <a  class="header-right-icon <% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
+    <% if (theme.header && theme.header.right_link) { %>
+        <% if (theme.header.right_link.url && url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
+            <a  class="<%= (theme.header.right_link.icon ? 'header-right-icon ' : 'header-right-picture ') %><% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
+                href="<%- url_for(theme.header.right_link.url) %>" target="_blank">
+        <% } else if (theme.header.right_link.url) { %>
+            <a  class="<%= (theme.header.right_link.icon ? 'header-right-icon ' : 'header-right-picture ') %><% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
                 href="<% if (theme.header.right_link.url.indexOf("/") === 0) { %><%- url_for(theme.header.right_link.url.substr(1)) %><% } else { %><%- url_for(theme.header.right_link.url) %><% } %>">
         <% } %>
-                <i class="fa fa-lg fa-<%= theme.header.right_link.icon %>"></i>
-            </a>
-    <% } else if (theme.gravatar_email) { %>
-        <a class="header-right-picture" href="<%- url_for('/#about') %>">
-            <img class="header-picture" src="<%- gravatar(theme.gravatar_email, 90) %>"/>
-        </a>
-    <% } else if (theme.author.picture) { %>
-        <a class="header-right-picture" href="<%- url_for('/#about') %>">
-            <img class="header-picture" src="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
+        <% if (theme.header.right_link.icon) { %>
+            <i class="fa fa-lg fa-<%= theme.header.right_link.icon %>"></i>
+        <% } else if (authorPicture) { %>
+            <img class="header-picture" src="<%= authorPicture %>"/>
+        <% } %>
         </a>
     <% } %>
 </header>

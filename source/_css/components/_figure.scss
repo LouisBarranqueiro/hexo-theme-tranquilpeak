@@ -38,13 +38,13 @@
         width: calc(75% - 4px);
     }
     &.fig-100 {
-        width: calc(100% - 4px);
+        width:  calc(100% - 4px);
+        margin: 2px;
     }
     &.figure--fullWidth {
         width: 100%;
         .figure-img {
-            margin:        0 auto;
-            border-radius: 0px !important;
+            margin: 0 auto;
         }
     }
 }

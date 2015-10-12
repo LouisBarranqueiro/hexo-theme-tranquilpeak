@@ -4,8 +4,10 @@ date_format: "MMM DD, YYYY"
 global:
     home: "Home"
     categories: "Categories"
+    category: "Category"
     tags: "Tags"
-    archives: "Archive"
+    tag: "Tag"
+    archives: "Archives"
     search: "Search"
     about: "About"
     github: "GitHub"
@@ -13,7 +15,7 @@ global:
     twitter: "Twitter"
     facebook: "Facebook"
     google_plus: "Google Plus"
-    linked_in: "Linked In"
+    linkedin: "LinkedIn"
     mail: "Mail"
     rss: "RSS"
     share_on_google_plus: "Share on Google Plus"
@@ -24,8 +26,8 @@ global:
     search_date: "Search date (YYYY/MM/DD)"
 
 pagination:
-    page: "page"
-    of: "of"
+    page: "page %d"
+    of: "of %d"
     newer_posts: "NEWER POSTS"
     older_posts: "OLDER POSTS"
     previous: "PREVIOUS"
@@ -38,6 +40,7 @@ post:
     toc: "Table of Contents"
     read_more: "Continue reading"
     go_to_website: "Go to website"
+    comment_and_share: "Comment and share"
 
 author:
     # Your biography in english (Markdown and HTML supported)

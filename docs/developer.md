@@ -87,6 +87,11 @@ tranquilpeak-hexo-theme
 ├── docs
 │   ├── developer.md
 │   └── user.md
+├── languages
+│   ├── en.yml
+│   ├── fr-FR.yml
+│   ├── pt-br.yml
+│   └── zh-cn.yml
 ├── layout
 │   ├── _partial
 │   │   ├── post
@@ -122,6 +127,13 @@ tranquilpeak-hexo-theme
 │   ├── page.ejs
 │   ├── post.ejs
 │   └── tag.ejs
+├── scripts
+│   ├── filters
+│   │   └── excerpt.js
+│   ├── tags
+│   │   ├── fancybox.js
+│   │   ├── image.js
+│   │   └── wide_image.js
 ├── source
 │   ├── _css
 │   │   ├── base
@@ -225,9 +237,24 @@ tranquilpeak-hexo-theme
 ```
 
 - **docs** : Contains user and developer documentation
+- **languages** : Contains language files
 - **layout** : Contains all views
+- **scripts** : Contains all scripts executed at the startup of Hexo
 - **source** : Contains all assets (css, js and images)
 - **tasks** : Contains all grunt tasks
+
+### Languages ### 
+
+```
+├── languages
+    ├── en.yml
+    ├── fr-FR.yml
+    ├── pt-br.yml
+    └── zh-cn.yml
+```
+
+Each files contains all labels used in the theme. 
+If you want to add a new language, duplicate an existing language file and replace all string by their translation.
 
 ### Views ###
 
@@ -272,6 +299,22 @@ tranquilpeak-hexo-theme
 - **layout** : Contails all mains views
 - **layout/partial** : Contains all partial views included in main views
 - **layout/partial/post** : Contains all partial views to build post
+
+### Scripts ###
+
+```
+├── scripts
+│   ├── filters
+│   │   └── excerpt.js
+│   ├── tags
+│   │   ├── fancybox.js
+│   │   ├── image.js
+│   │   └── wide_image.js
+```
+
+Each scrips is executed a the startup of Hexo. They are separed by categories:
+- filters : A filter is used to modify some specified data. Hexo passes data to filter in sequence and filters can modify the data.
+- tags : A tag helps users insert snippets to posts easily.
 
 ### Assets ###
 
