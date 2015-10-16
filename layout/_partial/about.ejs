@@ -18,14 +18,14 @@
             <img id="about-card-picture" src="<%= authorPicture %>"/>
         <% } %>
             <h4 id="about-card-name"><%= config.author %></h4>
-        <% if (__('author.bio')) { %>
-            <h5 id="about-card-bio"><%- markdown(__('author.bio')) %></h5>
+        <% if (theme.author.bio) { %>
+            <h5 id="about-card-bio"><%- markdown(theme.author.bio) %></h5>
         <% } %>
-        <% if (__('author.job')) { %>
+        <% if (theme.author.job) { %>
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <%- markdown(__('author.job')) %>
+                <%- markdown(theme.author.job) %>
             </h5>
         <% } %>
         <% if (theme.author.location) { %>
