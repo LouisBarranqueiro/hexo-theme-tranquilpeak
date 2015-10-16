@@ -114,6 +114,8 @@ header:
 author:
     email:
     location:
+    bio:
+    job:
     # Your profile picture located in folder `source/_images/` (development)
     # or in `source/assets/images/` (production)
     # or you can use an external url
