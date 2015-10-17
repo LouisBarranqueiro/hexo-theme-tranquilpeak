@@ -55,14 +55,12 @@
         color:       map-get($colors, base);
         font-weight: 300;
         overflow:    hidden;
-        word-break:  break-word;
-        @include prefix('word-break', 'break-all', 'ms moz');
         @include prefix('hypens', 'auto', 'webkit moz');
 
         img {
-            display:       block;
-            width:         auto;
-            max-width:     100%;
+            display:   block;
+            width:     auto;
+            max-width: 100%;
         }
     }
     .postShorten-excerpt {
@@ -127,10 +125,10 @@
         }
         .postShorten-thumbnailimg {
 
-            display:       block;
-            width:         100%;
-            overflow:      hidden;
-            margin:        15px 0 15px 0;
+            display:  block;
+            width:    100%;
+            overflow: hidden;
+            margin:   15px 0 15px 0;
 
             img {
                 width:  auto;
