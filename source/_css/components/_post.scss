@@ -33,14 +33,12 @@
         margin-top:  60px;
         font-weight: 300;
         overflow:    hidden;
-        word-break:  break-word;
-        @include prefix('word-break', 'break-all', 'ms moz');
         @include prefix('hypens', 'auto', 'webkit moz');
 
         img {
-            display:       block;
-            width:         auto;
-            max-width:     100%;
+            display:   block;
+            width:     auto;
+            max-width: 100%;
         }
     }
     .post-footer {
