@@ -1,0 +1,49 @@
+# 在所有地方顯示的 date 格式
+date_format: "MMM DD, YYYY"
+
+global:
+    home: "首頁"
+    categories: "分類"
+    category: "分類"
+    tags: "標籤"
+    tag: "標籤"
+    archives: "所有文章"
+    search: "搜尋"
+    about: "關於"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google Plus"
+    linkedin: "LinkedIn"
+    mail: "Email"
+    rss: "Atom"
+    share_on_google_plus: "分享到 Google+"
+    share_on_facebook: "分享到 Facebook"
+    share_on_twitter: "分享到 Twitter"
+    search_category: "搜尋分類"
+    search_tag: "搜尋標籤"
+    search_date: "搜尋日期（YYYY/MM/DD）"
+
+pagination:
+    page: "第 %d 頁"
+    of: "共 %d 頁"
+    newer_posts: "上一頁"
+    older_posts: "下一頁"
+    previous: "上一篇"
+    next: "下一篇"
+
+post:
+    no_title : "無標題"
+    categorized_in: "分類"
+    tagged_in: "標籤"
+    toc: "目錄"
+    read_more: "繼續閱讀"
+    go_to_website: "前往"
+    comment_and_share: "留言與分享"
+
+author:
+    # 你的個人簡介 (支援 Markdown 和 HTML 語法)
+    bio: ""
+    # 你的工作簡介
+    job: ""
