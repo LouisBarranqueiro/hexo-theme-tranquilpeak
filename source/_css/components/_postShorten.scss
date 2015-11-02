@@ -95,6 +95,8 @@
                 display: block;
                 width:   $post-thumbnail-image-width;
                 height:  $post-thumbnail-image-width;
+                object-fit: cover;
+                overflow: hidden;
             }
         }
         .postShorten-wrap {
@@ -111,6 +113,8 @@
                 display: block;
                 width:   $post-thumbnail-image-width;
                 height:  $post-thumbnail-image-width;
+                object-fit: cover;
+                overflow: hidden;
             }
         }
         .postShorten-wrap {
