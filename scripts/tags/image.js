@@ -101,3 +101,5 @@ hexo.extend.tag.register('image', function(args) {
 
     return html;
 });
+
+delete Array.prototype.reIndexOf;
