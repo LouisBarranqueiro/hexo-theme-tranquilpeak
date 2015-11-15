@@ -67,8 +67,21 @@ hexo.extend.tag.register('image', function(args) {
     // Get title of image
     var title = args.join(' ');
     // Build the image HTML structure
-    var image = '<img class="fig-img" src="' + (thumbnail || original) + '" width="' +
-                thumbnailWidth + '" height="' + thumbnailHeight + '" alt="' + title + '">';
+    var image = '<img class="fig-img" src="' + (thumbnail || original) + '" ';
+    // add image size
+    if (thumbnailWidth || thumbnailHeight) {
+        image += 'style="';
+        // add width
+        if (thumbnailWidth) {
+            image += 'width:' + thumbnailWidth + ';';
+        }
+        // add height
+        if (thumbnailHeight) {
+            image += 'height:' + thumbnailHeight + ';';
+        }
+        image += '"';
+    }
+    image += 'alt="' + title + '">';
 
     // Build div to retrieve normal flow of document
     if (classes.indexOf(clearClass) >= 0) {
@@ -88,7 +101,7 @@ hexo.extend.tag.register('image', function(args) {
 
     // Build HTML structure
     html += '<div class="' + figureClass + ' ' + classes.join(' ') + '"' +
-            (classes.reIndexOf(rFigClass) === -1 ? ' style="width:' + thumbnailWidth + ';"' : '' ) + '>';
+        (classes.reIndexOf(rFigClass) === -1 ? ' style="width:' + thumbnailWidth + ';"' : '' ) + '>';
     html += fancybox || image;
 
     // Add caption
