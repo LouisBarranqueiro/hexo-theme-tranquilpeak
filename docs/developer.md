@@ -497,12 +497,12 @@ Bower dependencies :
     │   ├── default.js
     │   ├── linkAssets.js
     │   ├── linkAssetsProd.js
-    │   └──syncAssets.js
+    │   └── syncAssets.js
     └── pipeline.js
 ```  
 
 - **config** : Default tasks
-- **register** : Alias tasks which call mutliple default tasks
+- **register** : Alias tasks which call multiple default tasks
 - **pipeline.js** : Files which contains a list of javascript and stylesheets files linked to the blog
 
 #### Pipeline #####
