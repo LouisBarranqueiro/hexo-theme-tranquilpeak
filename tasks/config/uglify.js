@@ -6,6 +6,7 @@ module.exports = function(grunt) {
                 mangle: {
                     except: [
                         'jQuery',
+                        'InstantClick',
                         'fancybox'
                     ]
                 }

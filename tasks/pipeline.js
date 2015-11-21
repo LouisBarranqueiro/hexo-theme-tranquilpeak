@@ -3,6 +3,7 @@ var tranquilpeakJsFilesToInject = [
     'jquery.js',
     'jquery.fancybox.js',
     'jquery.fancybox-thumbs.js',
+    'instantclick.js',
     'tranquilpeak.js'
 ];
 
