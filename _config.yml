@@ -163,7 +163,7 @@ archive_pagination: true
 category_pagination: true
 tag_pagination: true
 # Enable InstantClick
-instantclick: true
+instantclick: false
 
 
 # Integrated services
