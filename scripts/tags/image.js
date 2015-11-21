@@ -1,3 +1,6 @@
+(function() {
+    'use strict';
+
 // define function to search index in an array with a regex
 if (typeof Array.prototype.reIndexOf === 'undefined') {
     Array.prototype.reIndexOf = function(rx) {
@@ -100,4 +103,6 @@ hexo.extend.tag.register('image', function(args) {
     html += clear;
 
     return html;
+});
+
 });
