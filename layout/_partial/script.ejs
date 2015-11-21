@@ -3,6 +3,7 @@
 <%- js('assets/js/jquery.fancybox.js') %>
 <%- js('assets/js/jquery.fancybox-thumbs.js') %>
 <%- js('assets/js/tranquilpeak.js') %>
+<%- js('assets/js/instantclick.min.js') %>
 <!--SCRIPTS END-->
 <% if (theme.disqus_shortname && is_post() && post.comments) { %>
     <script type="text/javascript">
@@ -24,5 +25,22 @@
         })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
         _st('install','<%= theme.swiftype_install_key %>','2.0.0');
+    </script>
+<% } %>
+<% if (theme.instantclick) { %>
+    <script data-no-instant>
+    InstantClick.on('change', function(isInitialLoad) {
+      if (isInitialLoad === false) {
+        if (typeof MathJax !== 'undefined')     // MathJax compatibility
+          MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        if (typeof prettyPrint !== 'undefined') // Google code prettify
+          prettyPrint();
+        if (typeof _hmt !== 'undefined')        // Baidu analytics
+          _hmt.push(['_trackPageview', location.pathname + location.search]);
+        if (typeof ga !== 'undefined')          // Google analytics
+            ga('send', 'pageview', location.pathname + location.search);
+      }
+    });
+    InstantClick.init();
     </script>
 <% } %>
