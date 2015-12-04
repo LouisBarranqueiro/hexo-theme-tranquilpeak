@@ -95,7 +95,7 @@
         <link rel="icon" href="<%= resolveImgURL(theme.image_dir, theme.favicon) %>">
     <% } %>
     <% if ((config.feed) && (config.feed.path.length)) { %>
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="<%- url_for(config.feed.path) %>">
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="<%- url_for(config.feed.path) %>">
     <% } %>
     <%- open_graph({
         type: 'blog',
