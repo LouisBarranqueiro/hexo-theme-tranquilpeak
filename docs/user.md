@@ -2,7 +2,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.4.0.jpg)
+![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.4.jpg)
 
 Tranquilpeak theme is compatible with Hexo v3.0.x. The theme is compatible with higher versions of Hexo but these versions have some bugs with generation of relative urls so I recommend to use Hexo 3.0.x for the moment.
 
@@ -49,7 +49,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.4.0  
+- **Version** : 1.4.3
 - **Compatibility** : Hexo 3.0.0 or later
 
 ## Features ##
@@ -91,8 +91,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [tranquilpeak-hexo-theme-built-for-production-1.4.0]
-(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.4.0/tranquilpeak-hexo-theme-built-for-production-1.4.0.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)
+1. Download the latest version built and ready for production here : [tranquilpeak-hexo-theme-built-for-production-1.4.3]
+(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.4.3/tranquilpeak-hexo-theme-built-for-production-1.4.3.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 
 ## Hexo configuration ##
@@ -274,7 +274,7 @@ toc_title: Table of contents
 thumbnail_image: true
 thumbnail_image_position: right
 auto_thumbnail_image: true
-cover_image: http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1438532677/v1.4.0-cover.jpg
+cover_image: cover.jpg
 favicon:
 image_gallery: true
 archive_pagination: true
