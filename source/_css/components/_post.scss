@@ -33,7 +33,7 @@
         margin-top:  60px;
         font-weight: 300;
         overflow:    hidden;
-        @include prefix('hypens', 'auto', 'webkit moz');
+        @include prefix('hypens', 'auto', 'webkit' 'moz');
 
         img {
             display:   block;
