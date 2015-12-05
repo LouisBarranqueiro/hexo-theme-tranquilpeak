@@ -274,7 +274,7 @@ toc_title: Table of contents
 thumbnail_image: true
 thumbnail_image_position: right
 auto_thumbnail_image: true
-cover_image: cover.jpg
+cover_image: http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1438532677/v1.4.0-cover.jpg
 favicon:
 image_gallery: true
 archive_pagination: true
