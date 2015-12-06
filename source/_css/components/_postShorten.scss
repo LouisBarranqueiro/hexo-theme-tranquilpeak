@@ -55,7 +55,7 @@
         color:       map-get($colors, base);
         font-weight: 300;
         overflow:    hidden;
-        @include prefix('hypens', 'auto', 'webkit moz');
+        @include prefix('hypens', 'auto', 'webkit' 'moz');
 
         img {
             display:   block;
