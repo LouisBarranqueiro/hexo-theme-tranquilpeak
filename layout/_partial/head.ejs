@@ -1,14 +1,5 @@
 <%
     /**
-     * Check if an url is relative or not
-     * @param url
-     * @returns {Boolean}
-     */
-    function isRelativeURL(url) {
-        return url && url.indexOf('//') < 0;
-    }
-
-    /**
      * Resolve image URL
      * @param from
      * @param path
@@ -16,7 +7,7 @@
      */
     function resolveImgURL(from, path) {
         // check if the url provided is
-        if (from !== null && isRelativeURL(path)) {
+        if (from !== null && !is_remote_url(path)) {
             // format `from` path
             // remove .html at the end of url
             if (from.indexOf('.html') >= 0) {
