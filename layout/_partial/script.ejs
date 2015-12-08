@@ -4,7 +4,7 @@
 <%- js('assets/js/jquery.fancybox-thumbs.js') %>
 <%- js('assets/js/tranquilpeak.js') %>
 <!--SCRIPTS END-->
-<% if (theme.disqus_shortname && is_post() && post.comments) { %>
+<% if (theme.disqus_shortname && post.comments) { %>
     <script type="text/javascript">
         var disqus_shortname = '<%= theme.disqus_shortname %>';
         (function() {
