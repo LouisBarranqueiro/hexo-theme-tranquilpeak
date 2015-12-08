@@ -79,6 +79,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
   
 **Integrated services :**  
 - Disqus  
+- Duoshuo  
 - Google analytics  
 - Gravatar  
 - Swiftype  
@@ -316,6 +317,7 @@ The same page with `category_pagination: false`:
 ``` yaml
 # Integrated services
 disqus_shortname:
+duoshuo_shortname:
 gravatar_email: 
 google_analytics_id:  
 swiftype_install_key:
@@ -323,6 +325,7 @@ fb_admin_ids:
 fb_app_id:
 ```
 - **disqus_shortname**: Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.  
+- **duoshuo_shortname**: Your Duoshuo shortname. You can't use Disqus and Duoshuo together, then fill the right shortname. If both are filled, Disqus will be chosen.  
 - **gravatar_email**: Your gravatar email. Overwrite `author.picture` everywhere in the blog  
 - **google_analytics_id** : Your Google analystics web property ID : UA-XXXXX-X  
 - **swiftype_install_key** : Your Swiftype install key founded in `Engines > YOUR_ENGINE_NAME > Integrate > Install Search > Install code` menu of your account. Search a line similarly to this one : `_st('install','fsdkiG43fkfder32dgsR','2.0.0');`. Swiftype install key is : `fsdkiG43fkfder32dgsR`.  
