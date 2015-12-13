@@ -21,11 +21,11 @@ function displayCategoriesAndPosts(category) {
         'data-category="' + category.name.toLowerCase() + '" ' +
         'data-parent-categories="' + category.parents.join(',') + '">';
     // add category title
-    html += '<h5 class="archive-title">';
+    html += '<h4 class="archive-title text-xlarge">';
     html += '<a class="link-unstyled" href="' + url_for(category.path) + '">';
     html += category.name + ' (' + category.length + ')';
     html += '</a>';
-    html += '</h5>';
+    html += '</h4>';
     html += '<ul class="archive-posts">';
     // create html for its posts
     posts.forEach(function(post) {
