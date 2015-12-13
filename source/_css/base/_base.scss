@@ -60,11 +60,14 @@ h6 {
     }
 }
 
-p,
+p {
+    margin: 0 0 1.5em 0;
+}
+
 ul,
 ol,
 dl {
-    margin: 0 0 1.75em 0;
+    margin: 0 0 0.5em 0;
 }
 
 a {
@@ -114,6 +117,7 @@ dl {
 }
 
 code {
+    font-size:     map-get($font-size, medium);
     display:       inline-block;
     font-family:   map-get($font-families, 'code');
     font-weight:   400;
@@ -142,10 +146,9 @@ blockquote {
 
 // Reduce global font-size base and headings font size on small screen and down
 @media #{$small-and-down} {
-    body {
-        font-size: map-get($font-size, base) - $font-size-base-sm-screen-reduction-factor;
+    code {
+        font-size: map-get($font-size, medium) - $font-size-base-sm-screen-reduction-factor;
     }
-
     @each $key, $value in $headings-font-size {
         #{$key} {
             font-size: $value - $headings-font-size-sm-screen-reduction-factor;
@@ -155,10 +158,6 @@ blockquote {
 
 // Reduce global font-size base and headings font size on medium screen only
 @media #{$medium-only} {
-    body {
-        font-size: map-get($font-size, base) - $font-size-base-md-screen-reduction-factor;
-    }
-
     @each $key, $value in $headings-font-size {
         #{$key} {
             font-size: $value - $headings-font-size-md-screen-reduction-factor;
