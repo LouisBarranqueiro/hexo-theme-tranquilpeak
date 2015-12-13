@@ -25,6 +25,7 @@
                 width:      100%;
 
                 .sidebar-button-icon {
+                    font-size:      2rem;
                     display:        inline-block;
                     text-align:     center;
                     width:          30px;
@@ -61,6 +62,9 @@
             border-radius: 90px;
             margin-bottom: 5px;
         }
+        .sidebar-profile-name {
+            font-size: 1.6rem;
+        }
     }
     // Buttons
     ul.sidebar-buttons {
@@ -75,6 +79,7 @@
 
                 // Font-awesome icon
                 .sidebar-button-icon {
+                    font-size:      2rem;
                     display:        inline-block;
                     text-align:     center;
                     width:          30px;
@@ -90,7 +95,7 @@
                     width:          auto;
                     height:         35px;
                     line-height:    35px;
-                    font-size:      map-get($font-size, medium);
+                    font-size:      1.5rem;
                     letter-spacing: 0.3px;
                     vertical-align: middle;
                 }
