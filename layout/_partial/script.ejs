@@ -4,17 +4,35 @@
 <%- js('assets/js/jquery.fancybox-thumbs.js') %>
 <%- js('assets/js/tranquilpeak.js') %>
 <!--SCRIPTS END-->
-<% if (theme.disqus_shortname && is_post() && post.comments) { %>
-    <script type="text/javascript">
-        var disqus_shortname = '<%= theme.disqus_shortname %>';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+<% if (post.comments) { %>
+    <% if (theme.disqus_shortname) { %>
+        <script>
+             var disqus_config = function () {
+                 this.page.url = '<%= post.permalink %>';
+                 this.page.identifier = '<%= post.path %>';
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = '<%= theme.disqus_shortname %>';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    <% } else if (theme.duoshuo_shortname) { %>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:'<%= theme.duoshuo_shortname %>'};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    <% } %>
 <% } %>
 <% if (theme.swiftype_install_key) { %>
     <script type="text/javascript">

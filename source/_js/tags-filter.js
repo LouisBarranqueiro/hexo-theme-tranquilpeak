@@ -9,13 +9,13 @@
      * @constructor
      */
     var TagsFilter = function(tagsArchivesElem) {
-        this.$form          = $(tagsArchivesElem).find('#filter-form');
-        this.$inputSearch   = $(tagsArchivesElem + ' #filter-form input[name=tag]');
+        this.$form = $(tagsArchivesElem).find('#filter-form');
+        this.$inputSearch = $(tagsArchivesElem + ' #filter-form input[name=tag]');
         this.$archiveResult = $(tagsArchivesElem).find('.archive-result');
-        this.$tags          = $(tagsArchivesElem).find('.tag');
-        this.$posts         = $(tagsArchivesElem).find('.archive');
-        this.tags           = tagsArchivesElem + ' .tag';
-        this.posts          = tagsArchivesElem + ' .archive';
+        this.$tags = $(tagsArchivesElem).find('.tag');
+        this.$posts = $(tagsArchivesElem).find('.archive');
+        this.tags = tagsArchivesElem + ' .tag';
+        this.posts = tagsArchivesElem + ' .archive';
         // Html data attribute without `data-` of `.archive` element which contains the name of tag
         this.dataTag = 'tag';
     };
@@ -44,7 +44,7 @@
          * @returns {string} the name of tag entered by the user
          */
         getSearch: function() {
-            return this.$inputSearch.val().replace('.', '__').toLowerCase();
+            return this.$inputSearch.val().toLowerCase();
         },
 
         /**
@@ -52,7 +52,7 @@
          * @param {string} tag - name of a tag
          */
         filter: function(tag) {
-            if (tag == '') {
+            if (tag === '') {
                 this.showAll();
                 this.showResult(-1);
             }
@@ -68,12 +68,12 @@
          * @param {Number} numbTags - Number of tags found
          */
         showResult: function(numbTags) {
-            if (numbTags == 0) {
+            if (numbTags === 0) {
                 this.$archiveResult
                     .html('No tags found')
                     .show();
             }
-            else if (numbTags == -1) {
+            else if (numbTags === -1) {
                 this.$archiveResult
                     .html('')
                     .hide();
@@ -87,11 +87,11 @@
 
         /**
          * Count number of tags
-         * @param tag
+         * @param {string} tag
          * @returns {Number}
          */
         countTags: function(tag) {
-            return $(this.posts + '[data-' + this.dataTag + '*=' + tag + ']').length;
+            return $(this.posts + '[data-' + this.dataTag + '*=\'' + tag + '\']').length;
         },
 
         /**
@@ -99,8 +99,8 @@
          * @param {string} tag - name of a tag
          */
         showPosts: function(tag) {
-            $(this.tags + '[data-' + this.dataTag + '*=' + tag + ']').show();
-            $(this.posts + '[data-' + this.dataTag + '*=' + tag + ']').show();
+            $(this.tags + '[data-' + this.dataTag + '*=\'' + tag + '\']').show();
+            $(this.posts + '[data-' + this.dataTag + '*=\'' + tag + '\']').show();
         },
 
         /**

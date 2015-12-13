@@ -59,6 +59,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
   
 **Integrated services :**  
 - Disqus  
+- Duoshuo  
 - Google analytics  
 - Gravatar  
 - Swiftype  
@@ -98,6 +99,7 @@ tranquilpeak-hexo-theme
 │   │   │   ├── actions.ejs
 │   │   │   ├── category.ejs
 │   │   │   ├── disqus.ejs
+│   │   │   ├── duoshuo.ejs
 │   │   │   ├── gallery.ejs
 │   │   │   ├── header.ejs
 │   │   │   ├── header-cover.ejs
@@ -265,6 +267,7 @@ If you want to add a new language, duplicate an existing language file and repla
     │   │   ├── actions.ejs
     │   │   ├── category.ejs
     │   │   ├── disqus.ejs
+    │   │   ├── duoshuo.ejs
     │   │   ├── gallery.ejs
     │   │   ├── header.ejs
     │   │   ├── header-cover.ejs
@@ -497,12 +500,12 @@ Bower dependencies :
     │   ├── default.js
     │   ├── linkAssets.js
     │   ├── linkAssetsProd.js
-    │   └──syncAssets.js
+    │   └── syncAssets.js
     └── pipeline.js
 ```  
 
 - **config** : Default tasks
-- **register** : Alias tasks which call mutliple default tasks
+- **register** : Alias tasks which call multiple default tasks
 - **pipeline.js** : Files which contains a list of javascript and stylesheets files linked to the blog
 
 #### Pipeline #####

@@ -1,61 +1,115 @@
+<%
+/**
+ * Display all categories and posts of a category
+ * @param category
+ * @returns {string}
+ */
+function displayCategoriesAndPosts(category) {
+    // get its posts
+    var posts = category.posts;
+    // get its child categories
+    var childCategories = site.categories.find({'parent': category._id});
+    // init its parents
+    var boxCSSClass = '';
+    if (category.parents === undefined) {
+        category.parents = [];
+        boxCSSClass = 'box';
+    }
+    // create post content
+    var html = '';
+    html += '<div id="posts-list-' + category.name + '" class="archive ' + boxCSSClass + '" ' +
+        'data-category="' + category.name.toLowerCase() + '" ' +
+        'data-parent-categories="' + category.parents.join(',') + '">';
+    // add category title
+    html += '<h4 class="archive-title text-xlarge">';
+    html += '<a class="link-unstyled" href="' + url_for(category.path) + '">';
+    html += category.name + ' (' + category.length + ')';
+    html += '</a>';
+    html += '</h4>';
+    html += '<ul class="archive-posts">';
+    // create html for its posts
+    posts.forEach(function(post) {
+        html += '<li class="archive-post">';
+        html += '<a class="archive-post-title" href="' + url_for(post.path) + '">';
+        html += post.title || '(' + __('post.no_title') + ')';
+        html += '</a>';
+        html += '<span class="archive-post-date">';
+        html += ' - ' + post.date.locale(page.lang).format(__('date_format'));
+        html += '</span>';
+        html += '</li>';
+    });
+    if (childCategories.length > 0) {
+        // recursive iteration on its child categories
+        childCategories.forEach(function(childCategory) {
+            // clone parents of current category to its child category
+            childCategory.parents = category.parents.slice();
+            // add current category to the parent of current child category
+            childCategory.parents.push(category.name.toLowerCase());
+            html += displayCategoriesAndPosts(childCategory);
+        });
+    }
+    html += '</ul>';
+    html += '</div>';
+    return html;
+}
+
+/**
+ * Display all categories of a category
+ * @param category
+ * @returns {string}
+ */
+function displayCategories(category) {
+    // get all its child categories
+    var childCategories = site.categories.find({'parent': category._id});
+    // init parents
+    if (category.parents === undefined) {
+        category.parents = [];
+    }
+    // create category content
+    var html = '';
+    html += '<div>';
+    html += '<a href="#posts-list-' + category.name + '" ' +
+        'class="category-anchor" ' +
+        'data-category="' + category.name.toLowerCase() + '" ' +
+        'data-parent-categories="' + category.parents.join(',') + '">';
+    if (category.parent) {
+        html += ' / ';
+    }
+    html += category.name;
+    html += '</a>';
+    if (childCategories.length > 0) {
+        html += '<ul style="margin-bottom:0;">';
+        // recursive iteration on its child categories
+        childCategories.forEach(function(childCategory) {
+            // clone parents of current category to its child category
+            childCategory.parents = category.parents.slice();
+            // add current category to the parent of current child category
+            childCategory.parents.push(category.name.toLowerCase());
+            html += displayCategories(childCategory);
+        });
+        html += '</ul>';
+    }
+    html += '</div>';
+    return html;
+}
+%>
 <div id="categories-archives" class="main-content-wrap">
     <form id="filter-form" action="##">
-        <input name="category" type="text" class="form-control input--xlarge" placeholder="<%= __('global.search_category')  %>" autofocus="autofocus">
+        <input name="category" type="text" class="form-control input--xlarge"
+               placeholder="<%= __('global.search_category')  %>" autofocus="autofocus">
     </form>
     <h4 class="archive-result text-color-base text-xlarge"></h4>
-    <section>
-        <% site.categories.sort('name').each(function(item) { %>
-            <a class="category category--small category--primary" href="<%= '#posts-list-' + item.name %>" data-category="<%= item.name.replace('.', '__').replace(/ /g, '-').toLowerCase() %>">
-                <%= item.name %>
-            </a>
+    <section class="boxes">
+        <% site.categories.sort('name').each(function(category) { %>
+            <% if (!category.parent) { %>
+                <%- displayCategories(category) %>
+            <% } %>
         <% }); %>
     </section>
     <section class="boxes">
-        <% site.categories.sort('name').each(function(item) { %>
-            <% if (!item.parent) { %>
-                <div id="<%= 'posts-list-' + item.name %>" class="archive box" data-category="<%= item.name.replace('.', '__').replace(/ /g, '-').toLowerCase() %>">
-                    <h4 class="archive-title">
-                        <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(/ /g, '-') )%>"><%= item.name + ' (' + item.length + ')' %></a>
-                    </h4>
-                    <ul class="archive-posts">
-                        <% site.categories.findOne({'name': item.name}).posts.each(function(post) { %>
-                            <li class="archive-post">
-                                <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post..no_title') + ')' %></a>
-                                <span class="archive-post-date"><%= ' - ' + post.date.locale(page.lang).format(__('date_format')).toLowerCase() %></span>
-                            </li>
-                        <% }) %>
-                        <% site.categories.find({'parent': item._id}).forEach(function(childItem) { %>
-                            <div id="<%= 'posts-list-' + childItem.name %>" class="archive" data-category="<%= childItem.name.replace('.', '__').replace(/ /g, '-').toLowerCase() %>" data-parent-categories="<%= item.name.replace('.', '__').replace(/ /g, '-').toLowerCase() %>">
-                                <h5 class="archive-title">
-                                    <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(/ /g, '-') + '/' + childItem.name.replace(/ /g, '-'))%>"><%= childItem.name + ' (' + childItem.length + ')' %></a>
-                                </h5>
-                                <ul class="archive-posts">
-                                    <% site.categories.findOne({'name': childItem.name}).posts.each(function(post) { %>
-                                        <li class="archive-post">
-                                            <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post..no_title') + ')' %></a>
-                                            <span class="archive-post-date"><%= ' - ' + post.date.locale(page.lang).format(__('date_format')).toLowerCase() %></span>
-                                        </li>
-                                    <% }) %>
-                                    <% site.categories.find({'parent': childItem._id}).forEach(function(childChildItem) { %>
-                                        <div id="<%= 'posts-list-' + childChildItem.name %>" class="archive" data-category="<%= childChildItem.name.replace('.', '__').replace(/ /g, '-').toLowerCase() %>" data-parent-categories="<%= item.name.replace('.', '__').replace(/ /g, '-').toLowerCase() + ',' + childItem.name.replace('.', '__').replace(/ /g, '-').toLowerCase() %>">
-                                            <h5 class="archive-title">
-                                                <a class="link-unstyled" href="<%- url_for('categories/' + item.name.replace(/ /g, '-') + '/' + childItem.name.replace(/ /g, '-') + '/' + childChildItem.name.replace(/ /g, '-'))%>"><%= childChildItem.name + ' (' + childChildItem.length + ')' %></a>
-                                            </h5>
-                                            <ul class="archive-posts">
-                                                <% site.categories.findOne({'name': childChildItem.name}).posts.each(function(post) { %>
-                                                    <li class="archive-post">
-                                                        <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post..no_title') + ')' %></a>
-                                                        <span class="archive-post-date"><%= ' - ' + post.date.locale(page.lang).format(__('date_format')).toLowerCase() %></span>
-                                                    </li>
-                                                <% }) %>
-                                            </ul>
-                                        </div>
-                                    <% }) %>
-                                </ul>
-                            </div>
-                        <% }) %>
-                    </ul>
-                </div>
+        <% site.categories.sort('name').each(function(category) { %>
+            <% if (!category.parent) { %>
+                    <%- displayCategoriesAndPosts(category) %>
             <% } %>
         <% }); %>
     </section>

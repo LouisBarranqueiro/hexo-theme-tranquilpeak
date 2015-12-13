@@ -2,7 +2,7 @@
 
 <section class="postShorten-group main-content-wrap">
     <% page.posts.each(function(post) { %>
-        <%
+    <%
         var thumbnailImageUrl = null;
         var tableOfContents = null;
         var postContent = post.content;
@@ -10,22 +10,22 @@
         var thumbnailImagePosition = theme.thumbnail_image_position;
         /* Define thumbnail image */
         if (theme.thumbnail_image && post.thumbnailImage && post.thumbnailImage.length) {
-            if (post.thumbnailImage.indexOf('://') >= 0) {
+            if (is_remote_url(post.thumbnailImage)) {
                 thumbnailImageUrl = post.thumbnailImage;
             } else {
                 thumbnailImageUrl = url_for(post.permalink + post.thumbnailImage);
             }
-        // Define third images (cover image and first photo) as thumbnail image
+            // Define third images (cover image and first photo) as thumbnail image
         } else if (theme.thumbnail_image && (post.autoThumbnailImage === true ||
             (theme.auto_thumbnail_image === true && post.autoThumbnailImage !== false))) {
             if (post.photos && post.photos.length) {
-                if (post.photos[0].indexOf('://') >= 0) {
+                if (is_remote_url(post.photos[0])) {
                     thumbnailImageUrl = post.photos[0].match(rPhoto)[1];
                 } else {
                     thumbnailImageUrl = url_for(post.permalink + post.photos[0].match(rPhoto)[1]);
                 }
             } else if (post.coverImage && post.coverImage.length) {
-                if (post.coverImage.indexOf('://') >= 0) {
+                if (is_remote_url(post.coverImage)) {
                     thumbnailImageUrl = post.coverImage;
                 } else {
                     thumbnailImageUrl = url_for(post.permalink + post.coverImage);
@@ -52,66 +52,70 @@
             tableOfContents += toc(postContent, {list_number: false})
             postContent = postContent.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents)
         }
-        %>
-        <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        <% if (post.link) { %>
-                                <a class="link-unstyled" href="<%- url_for(post.link) %>"><%= post.title || '(' + __('post.no_title') + ')' %></a>
-                        <% } else { %>
-                                <a class="link-unstyled" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post.no_title') + ')' %></a>
-                        <% } %>
-                    </h1>
-                    <%- partial('post/meta', {post: post, classes: ['postShorten-meta']}) %>
-                </div>
-                <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "bottom") { %>
-                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
-                        <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
-                    </div>
-                    <% thumbnailImageUrl = null; %>
-                <% } %>
-                <% if (post.excerpt || post.link) { %>
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <%- post.excerpt %>
-                        <% if (post.link && _('post.go_to_website')) { %>
-                            <a href="<%- url_for(post.link) %>" target="new" class="postShorten-excerpt_link link">
-                                <%= __('post.go_to_website') %>
-                            </a>
-                        <% } else if (__('post.read_more')) { %>
-                            <a href="<%- url_for(post.path) %>" class="postShorten-excerpt_link link">
-                                <%- __('post.read_more') %>
-                            </a>
-                            <% if (post.readingtime) { %>
-                                <span class="postShorten-readingtime">
-                                    <%= ' - ' + post.readingtime + ' min read' %>
-                                </span>
-                            <% } %>
-                        <% } %>
-                    </div>
-                <% } else { %>
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <%- postContent %>
-                        <% if (theme.image_gallery) { %>
-                            <%- partial('post/gallery', {photos: post.photos, post: post})%>
-                        <% } %>
-                        <% if (__('post.comment_and_share')) { %>
-                            <p>
-                                <a href="<%- url_for(post.path + '#post-footer') %>" class="postShorten-excerpt_link link">
-                                    <%- __('post.comment_and_share') %>
-                                </a>
-                            </p>
-                        <% } %>
-                    </div>
-                <% } %>
+    %>
+    <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    <% if (post.link) { %>
+                        <a class="link-unstyled" href="<%- url_for(post.link) %>">
+                            <%= post.title || '(' + __('post.no_title') + ')' %>
+                        </a>
+                    <% } else { %>
+                        <a class="link-unstyled" href="<%- url_for(post.path) %>">
+                            <%= post.title || '(' + __('post.no_title') + ')' %>
+                        </a>
+                    <% } %>
+                </h1>
+                <%- partial('post/meta', {post: post, classes: ['postShorten-meta']}) %>
             </div>
-            <% if (thumbnailImageUrl !== null && thumbnailImagePosition !== "bottom") { %>
-                <div class="postShorten-thumbnailimg">
+            <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "bottom") { %>
+                <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
                     <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
                 </div>
                 <% thumbnailImageUrl = null; %>
             <% } %>
-        </article>
+            <% if (post.excerpt || post.link) { %>
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <%- post.excerpt %>
+                    <% if (post.link && _('post.go_to_website')) { %>
+                        <a href="<%- url_for(post.link) %>" target="new" class="postShorten-excerpt_link link">
+                            <%= __('post.go_to_website') %>
+                        </a>
+                    <% } else if (__('post.read_more')) { %>
+                        <a href="<%- url_for(post.path) %>" class="postShorten-excerpt_link link">
+                            <%- __('post.read_more') %>
+                        </a>
+                        <% if (post.readingtime) { %>
+                            <span class="postShorten-readingtime">
+                                <%= ' - ' + post.readingtime + ' min read' %>
+                            </span>
+                        <% } %>
+                    <% } %>
+                </div>
+            <% } else { %>
+                <div class="postShorten-content" itemprop="articleBody">
+                    <%- postContent %>
+                    <% if (theme.image_gallery) { %>
+                        <%- partial('post/gallery', {photos: post.photos, post: post})%>
+                    <% } %>
+                    <% if (__('post.comment_and_share')) { %>
+                        <p>
+                            <a href="<%- url_for(post.path + '#post-footer') %>" class="postShorten-excerpt_link link">
+                                <%- __('post.comment_and_share') %>
+                            </a>
+                        </p>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
+        <% if (thumbnailImageUrl !== null && thumbnailImagePosition !== "bottom") { %>
+            <div class="postShorten-thumbnailimg">
+                <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+            </div>
+            <% thumbnailImageUrl = null; %>
+        <% } %>
+    </article>
     <% }) %>
     <%- partial('pagination', {type: 'page'}) %>
 </section>

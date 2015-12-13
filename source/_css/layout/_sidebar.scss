@@ -11,6 +11,9 @@
     // Transition style (push)
     transition:         transform .25s ease-in-out;
     -webkit-transition: -webkit-transform .25s ease-in-out;
+    // Improve smoothing of the font by adding subpixel in Safari
+    @include prefix(font-smoothing, antialiased, 'webkit');
+
 
     // Author information
     .sidebar-profile {

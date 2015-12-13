@@ -50,6 +50,7 @@ A gorgeous responsive theme for Hexo blog framework
   
 **Integrated services :**  
 - Disqus  
+- Duoshuo  
 - Google analytics  
 - Gravatar  
 - Swiftype  

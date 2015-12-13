@@ -2,7 +2,7 @@
     var coverImageUrl = null;
 
     // Generate URL of cover image
-    if (theme.cover_image.indexOf('://') > 0) {
+    if (is_remote_url(theme.cover_image)) {
         coverImageUrl = theme.cover_image;
     }
     else {

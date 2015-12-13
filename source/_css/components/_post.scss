@@ -28,17 +28,22 @@
         }
     }
     .post-content {
-        font-family: map-get($font-families, 'post-content');
-        color:       map-get($colors, base);
-        margin-top:  60px;
-        font-weight: 300;
-        overflow:    hidden;
-        @include prefix('hypens', 'auto', 'webkit moz');
+        text-rendering: optimizelegibility;
+        letter-spacing: -0.3px;
+        font-family:    map-get($font-families, 'post-content');
+        color:          map-get($colors, base);
+        margin-top:     60px;
+        font-weight:    400;
+        overflow:       hidden;
+        @include prefix('hypens', 'auto', 'webkit' 'moz');
 
         img {
             display:   block;
             width:     auto;
             max-width: 100%;
+        }
+        p {
+            margin: 2em 0 0 0;
         }
     }
     .post-footer {
@@ -62,7 +67,7 @@
     }
 }
 
-// Increase the font size of the post's title on large screen (only for single post view)
+// Increase font size of the post's title on large screen (only for single post view)
 @media #{$large-and-up} {
     .post {
         .post-header {
@@ -73,3 +78,9 @@
     }
 }
 
+// Increase font-size on medium and large screen
+@media #{$medium-and-up} {
+    .post-content {
+        font-size: 1.7rem;
+    }
+}

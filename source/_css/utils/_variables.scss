@@ -13,7 +13,7 @@ $font-families: (
    // base
    'headings':          $open-sans-sans-serif,
    // components
-   'code':              $open-sans,
+   'code':              $menlo,
    'caption':           $merriweather-serif,
    'image-gallery':     $open-sans,
    'post-header-cover': $merriweather-serif,
@@ -26,23 +26,21 @@ $font-families: (
 );
 
 // equal to 15px
-$font-size-base:      1.5rem;
+$font-size-base:      1.6rem;
 $font-color-base:     #5d686f;
-$line-height-base:    1.85em;
+$line-height-base:    1.9em;
 $letter-spacing-base: 0.01em;
 
 // Reduction of font size base on small screen and down
 $font-size-base-sm-screen-reduction-factor: 0.1rem;
-// Reduction of font size base on medium screen only
-$font-size-base-md-screen-reduction-factor: 0.05rem;
 
 // Font size : (X.Xrem = XXpx, 1.0rem = 10px)
 $font-size: (
-    'xlarge': 1.7rem,
-    'large':  1.6rem,
+    'xlarge': 1.8rem,
+    'large':  1.7rem,
     'base':   $font-size-base,
-    'medium': 1.4rem,
-    'small':  1.25rem,
+    'medium': 1.5rem,
+    'small':  1.3rem,
     'xsmall': 1rem
 );
 
@@ -50,13 +48,13 @@ $font-size: (
 $colors: (
     'success': #4dc657,
     'danger':  #f5311d,
-    'primary': #64b5f6,
+    'primary': #349ef3,
     'purple':  #cf6ae0,
     'base':    $font-color-base,
     'orange':  #e75c2f,
     'light':   #9eabb3,
      // use for tag `a`
-    'link':    #64b5f6
+    'link':    #349ef3
 );
 
 // Z-indexes
@@ -158,9 +156,9 @@ $main: (
 
 // Highlight
 $highlight: (
-    'font-size':   1.3rem,
+    'font-size':   1.4rem,
     'border':      1px solid #d9d9d9,
-    'line-height': 1.2em
+    'line-height': 1.3em
 );
 // Highlight colors
 $highlight-colors: (
@@ -202,12 +200,12 @@ $main-content: (
 // because they are larger than the post title or something like that
 // font-size : (X.Xrem = XXpx, 1.0rem = 10px)
 $markdown-headings-font-size: (
-    'h1': 2.15rem,
-    'h2': 2rem,
-    'h3': 1.8rem,
-    'h4': 1.7rem,
-    'h5': 1.6rem,
-    'h6': 1.5rem
+    'h1': 3rem,
+    'h2': 2.8rem,
+    'h3': 2.6rem,
+    'h4': 2.4rem,
+    'h5': 2.3rem,
+    'h6': 2.2rem
 );
 // Reduction of markdwon headings on small screen and down
 $markdown-headings-font-size-sm-screen-reduction-factor: 0.35rem;

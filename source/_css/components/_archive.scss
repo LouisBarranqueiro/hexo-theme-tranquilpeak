@@ -14,8 +14,6 @@
         list-style: none;
 
         .archive-post {
-            font-size: map-get($font-size, medium);
-
             .archive-post-title {
                 margin-left: 10px;
                 color:       $font-color-base;

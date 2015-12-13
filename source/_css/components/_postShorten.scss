@@ -51,11 +51,13 @@
     }
     .postShorten-excerpt,
     .postShorten-content {
-        font-family: map-get($font-families, 'post-content');
-        color:       map-get($colors, base);
-        font-weight: 300;
-        overflow:    hidden;
-        @include prefix('hypens', 'auto', 'webkit moz');
+        text-rendering: optimizelegibility;
+        letter-spacing: -0.3px;
+        font-family:    map-get($font-families, 'post-content');
+        color:          map-get($colors, base);
+        font-weight:    400;
+        overflow:       hidden;
+        @include prefix('hypens', 'auto', 'webkit' 'moz');
 
         img {
             display:   block;
@@ -92,9 +94,11 @@
             margin: 5px 0 30px 15px;
 
             img {
-                display: block;
-                width:   $post-thumbnail-image-width;
-                height:  $post-thumbnail-image-width;
+                display:    block;
+                width:      $post-thumbnail-image-width;
+                height:     $post-thumbnail-image-width;
+                object-fit: cover;
+                overflow:   hidden;
             }
         }
         .postShorten-wrap {
@@ -108,9 +112,11 @@
             margin: 5px 15px 30px 0;
 
             img {
-                display: block;
-                width:   $post-thumbnail-image-width;
-                height:  $post-thumbnail-image-width;
+                display:    block;
+                width:      $post-thumbnail-image-width;
+                height:     $post-thumbnail-image-width;
+                object-fit: cover;
+                overflow:   hidden;
             }
         }
         .postShorten-wrap {
@@ -137,5 +143,3 @@
         }
     }
 }
-
-

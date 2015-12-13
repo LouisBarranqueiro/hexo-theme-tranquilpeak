@@ -13,7 +13,7 @@
                     <% var match = photo.match(rPhoto); %>
                     <% var photoUrl = match[1]; %>
                     <% var photoTitle = match[3] || ""; %>
-                <% if (photoUrl.indexOf('://') >= 0) { %>
+                <% if (is_remote_url(photoUrl)) { %>
                     <%  photoUrl = photoUrl; %>
                     <% if (!/.+\.[a-zA-Z0-9]{3,4}$/.test(photoUrl)) { %>
                         <%  photoUrl += "#.jpg"; %>

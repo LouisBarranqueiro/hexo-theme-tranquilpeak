@@ -1,4 +1,34 @@
 <%
+    /**
+     * Resolve image URL
+     * @param from
+     * @param path
+     * @returns {*}
+     */
+    function resolveImgURL(from, path) {
+        // check if the url provided is
+        if (from !== null && !is_remote_url(path)) {
+            // format `from` path
+            // remove .html at the end of url
+            if (from.indexOf('.html') >= 0) {
+                from = from.replace('.html', '')
+            }
+            // remove end `/` of `from` path
+            if (from.length === from.lastIndexOf('/') + 1) {
+                from = from.substr(0, from.lastIndexOf('/'))
+            }
+            // remove end `/` of `url` path
+            if (path.indexOf('/') === 1) {
+                path = url.substr(1);
+            }
+            return url_for(from + '/' + path);
+
+        }
+        else {
+            return path;
+        }
+    }
+
     // Separate fb admin ids
     if (theme.fb_admin_ids) {
         fb_admin_ids = String(theme.fb_admin_ids).split(',');
@@ -53,10 +83,10 @@
     <title><%= title %></title>
     <meta name="author" content="<%= config.author %>">
     <% if (theme.favicon) { %>
-        <link rel="icon" href="<%- url_for(theme.image_dir + '/' + theme.favicon) %>">
+        <link rel="icon" href="<%= resolveImgURL(theme.image_dir, theme.favicon) %>">
     <% } %>
     <% if ((config.feed) && (config.feed.path.length)) { %>
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="<%- url_for(config.feed.path) %>">
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="<%- url_for(config.feed.path) %>">
     <% } %>
     <%- open_graph({
         type: 'blog',
@@ -74,20 +104,20 @@
     <% if (theme.gravatar_email) { %>
         <meta property="og:image" content="<%- gravatar(theme.gravatar_email, 640) %>"/>
     <% } else if (theme.author.picture) { %>
-        <meta property="og:image" content="<%- url_for(theme.image_dir + '/' + theme.author.picture) %>"/>
+        <meta property="og:image" content="<%= resolveImgURL(theme.image_dir, theme.author.picture) %>"/>
     <% } %>
     <% if (page.thumbnailImage && page.thumbnailImage.length) { %>
-        <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + page.thumbnailImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + page.thumbnailImage) %>" />
+        <meta property="og:image" content="<%= resolveImgURL(page.path, page.thumbnailImage) %>"/>
+        <meta class="swiftype" name="image" data-type="enum" content="<%= resolveImgURL(page.path, page.thumbnailImage) %>" />
     <% } %>
     <% if (page.coverImage && page.coverImage.length) { %>
-        <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + page.coverImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + page.coverImage) %>" />
+        <meta property="og:image" content="<%= resolveImgURL(page.path, page.coverImage) %>"/>
+        <meta class="swiftype" name="image" data-type="enum" content="<%= resolveImgURL(page.path, page.coverImage) %>" />
     <% } %>
     <% if (page.photos && page.photos.length) { %>
         <% page.photos.forEach(function(photo) { %>
-            <meta property="og:image" content="<%- url_for(page.path.replace('.html', '/') + photo) %>" />
-            <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + photo) %>" />
+            <meta property="og:image" content="<%= resolveImgURL(page.path, photo) %>" />
+            <meta class="swiftype" name="image" data-type="enum" content="<%= resolveImgURL(page.path, photo) %>" />
         <% }) %>
     <% } %>
     <!--STYLES-->
