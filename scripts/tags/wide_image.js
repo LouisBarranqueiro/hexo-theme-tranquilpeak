@@ -1,8 +1,10 @@
-var rPath                = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[.\!\/\\w]*))|^[A-Za-z0-9_\/-]+\.\w{2,4})/;
-var figureClass          = 'figure';
-var figureImageClass     = 'figure-img';
+'use strict';
+
+var rPath = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[.\!\/\\w]*))|^[A-Za-z0-9_\/-]+\.\w{2,4})/;
+var figureClass = 'figure';
+var figureImageClass = 'figure-img';
 var figureFullWidthClass = 'figure--fullWidth';
-var captionClass         = 'caption';
+var captionClass = 'caption';
 
 /**
  * Wide image tag
@@ -29,7 +31,7 @@ hexo.extend.tag.register('wide_image', function(args) {
     // The theme will replace this comment tag by `<div class="main-content-wrap">` and `</div>` after marked job.
     html += '<!-- endcontent -->';
     html += '<div class="' + figureClass + ' ' + figureFullWidthClass + '">';
-    html += '<img class="' + figureImageClass +  '" src="' + image + '" alt="' + title + '">';
+    html += '<img class="' + figureImageClass + '" src="' + image + '" alt="' + title + '">';
     html += '<span class="' + captionClass + '">';
     html += title;
     html += '</span>';

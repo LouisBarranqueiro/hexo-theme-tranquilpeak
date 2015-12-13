@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Check if url is remote
  */
