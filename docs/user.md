@@ -2,7 +2,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.4.jpg)
+![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.5.jpg)
 
 Tranquilpeak theme is compatible with Hexo v3.0.x. The theme is compatible with higher versions of Hexo but these versions have some bugs with generation of relative urls so I recommend to use Hexo 3.0.x for the moment.
 
@@ -49,7 +49,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.4.3
+- **Version** : 1.5.0
 - **Compatibility** : Hexo 3.0.0 or later
 
 ## Features ##
@@ -92,8 +92,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-1.4.3]
-(https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.4.3/hexo-theme-tranquilpeak-built-for-production-1.4.3.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases)
+1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-1.5.0]
+(https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.5.0/hexo-theme-tranquilpeak-prod-1.5.0.zip)
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 
 ## Hexo configuration ##

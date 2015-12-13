@@ -2,7 +2,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.4.jpg)
+![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.5.jpg)
 
 ## Summary ##
 
@@ -12,15 +12,13 @@ A gorgeous responsive theme for Hexo blog framework
 - [Demo](#demo)
 - [Showcase](#showcase)
 - [Documentation](#documentation)
-    * [For users](#for-users)
-    * [For developers](#for-developers)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.4.3  
+- **Version** : 1.5.0  
 - **Compatibility** : Hexo 3.0.0 or later
 
 ## Features ##
@@ -60,8 +58,8 @@ A gorgeous responsive theme for Hexo blog framework
 
 **Please read [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md), it's short and useful to discover all features and possibilities of the theme, especially the  [writing posts](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md#writing-posts) section**
 ##### For people who want to use the original version of Tranquilpeak (users) 
-1. Download the latest version ready for production utilisation here : [hexo-theme-tranquilpeak-built-for-production-1.4.3]
-(https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.4.3/hexo-theme-tranquilpeak-built-for-production-1.4.3.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases)  
+1. Download the latest version ready for production utilisation here : [hexo-theme-tranquilpeak-prod-1.5.0]
+(https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.5.0/hexo-theme-tranquilpeak-built-for-production-1.5.0.zip)
 2. Follow [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md) to install and configure the theme  
 
 ##### For people who want to create their own version of tranquilpeak (developers)
