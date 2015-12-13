@@ -1,14 +1,14 @@
 {
-  "name": "tranquilpeak-hexo-theme",
+  "name": "hexo-theme-tranquilpeak",
   "version": "1.4.3",
-  "description": "A gorgeous responsive theme for Hexo blog framework ",
+  "description": "A gorgeous responsive theme for Hexo blog framework",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git"
+    "url": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git"
   },
   "keywords": [
     "hexo",
@@ -20,9 +20,9 @@
   "author": "Louis Barranqueiro",
   "license": "GNU General Public License v3.0",
   "bugs": {
-    "url": "https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues"
+    "url": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/issues"
   },
-  "homepage": "https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme",
+  "homepage": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak",
   "devDependencies": {
     "bower": "^1.3.12",
     "grunt": "^0.4.5",

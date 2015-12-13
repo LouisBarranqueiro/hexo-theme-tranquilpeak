@@ -92,8 +92,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [tranquilpeak-hexo-theme-built-for-production-1.4.3]
-(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.4.3/tranquilpeak-hexo-theme-built-for-production-1.4.3.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)
+1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-1.4.3]
+(https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.4.3/hexo-theme-tranquilpeak-built-for-production-1.4.3.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases)
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 
 ## Hexo configuration ##
@@ -446,9 +446,9 @@ The same with : `thumbnailImagePosition` set to `left`:
 ![thumbnail-image-position-left](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-left-400.png)  
 
 - **metaAlignment** : Meta (title, date and categories) alignment (right, left or center). Default behavior : left
-- **coverImage** : Image displayed in full size at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. Check the beautiful demo here : [Cover image demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
+- **coverImage** : Image displayed in full size at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. Check the beautiful demo here : [Cover image demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2015/05/13/Cover-image-showcase/)
 - **coverSize**: `partial`: cover image take a part of the screen height (60%), `full`: cover image take the entire screen height.
-- **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/05/13/Cover-image-showcase/)
+- **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2015/05/13/Cover-image-showcase/)
 - **coverMeta** : `in`: display post meta (title, date and categories) on cover image, `out`: display meta (title, date and categories) under cover image as usual. Default behavior : `in`
 - **photos** : Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `url [caption]`, E.g : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no "New York"`
 - **comments** : Disable the comment of the post.
@@ -480,7 +480,7 @@ Tranquilpeak 1.3 introduce 2 new tag to display wide images in full width and cr
 
 #### Image ###
 
-Image tag is useful to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2014/10/29/Tags-plugins-showcase/#Images)
+Image tag is useful to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Images)
 
 Syntax : `{% image [classes] /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
 E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`  
@@ -506,7 +506,7 @@ E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125
   
 #### Wide image ###
 
-Wide image tag is useful to display wide images in full width. Check the the result : [Wide image tag demo](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2014/10/29/Tags-plugins-showcase/#Wide-images)
+Wide image tag is useful to display wide images in full width. Check the the result : [Wide image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Wide-images)
 
 Syntax : `{% wide_image /path/to/image [title text] %}`  
 E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" %}`  
