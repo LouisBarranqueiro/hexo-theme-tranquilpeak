@@ -20,6 +20,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Enable post assets folder](#enable-post-assets-folder)
     * [Disable relative links](#disable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
+    * [Define global keywords](#define-global-keywords)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
     - [Languages configuration](#languages-configuration)
     - [Theme configuration](#theme-configuration)
@@ -127,6 +128,16 @@ feed:
 - **limit** : Maximum number of posts in the feed (Use `0` or `false` to show all posts)
 
 If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
+### Define global keywords ###
+
+You can define keywords for search engines. These keywords will be added on all pages.
+
+``` yaml
+keywords:
+- hexo
+- javascript
+```
 
 ## Tranquilpeak configuration ##
 
@@ -419,6 +430,9 @@ Tranquilpeak introduces new variables to give you a lot of possibilities.
   
 Example :  
 ``` markdown
+keywords:
+- javascript
+- hexo
 clearReading: true
 thumbnailImage: image-1.png
 thumbnailImagePosition: bottom
@@ -436,6 +450,7 @@ photos:
 comments: false
 ```
 
+- **keywords** : Define keywords for search engines. you can also define global keywords in Hexo configuration file.
 - **clearReading** : Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `theme.sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.
 - **autoThumbnailImage** : Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image. `autoThumbnailImage` overwrite the setting `auto_thumbnail_image` in the theme configuration file
 - **thumbnailImage** : Image displayed in index view.
