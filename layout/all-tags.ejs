@@ -14,7 +14,7 @@
         <% site.tags.sort('name').each(function(tag) { %>
             <div id="<%= tag.name + '-list' %>" class="archive box" data-tag="<%= tag.name.toLowerCase() %>">
                 <h4 class="archive-title">
-                    <a class="link-unstyled" href="<%- url_for('tags/' + tag.slug) %>">
+                    <a class="link-unstyled" href="<%- url_for(config.tag_dir + '/' + tag.slug) %>">
                         <%= tag.name + ' (' + tag.length + ')' %>
                     </a>
                 </h4>
