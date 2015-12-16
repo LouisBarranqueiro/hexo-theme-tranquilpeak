@@ -343,8 +343,10 @@ To enable `all-categories` page :
 2. Replace `source/all-categories/index.md` content with :
  
 ``` markdown
+---
 title: "all-categories"
 layout: "all-categories"
+comments: false
 ---
 ```
 
@@ -357,8 +359,10 @@ To enable `all-tags` page :
 2. Replace `source/all-tags/index.md` content with :
  
 ``` markdown
+---
 title: "all-tags"
 layout: "all-tags"
+comments: false
 ---
 ```
 
@@ -371,8 +375,10 @@ To enable `all-archives` page :
 2. Replace `source/all-archives/index.md` content with :
  
 ``` markdown
+---
 title: "all-archives"
 layout: "all-archives"
+comments: false
 ---
 ```  
 
