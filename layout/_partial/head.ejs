@@ -82,6 +82,15 @@
     <meta name="generator" content="<%= config.title %>">
     <title><%= title %></title>
     <meta name="author" content="<%= config.author %>">
+    <% if (page.keywords){ %>
+        <% if (config.keywords){ %>
+            <meta name="keywords" content="<%= page.keywords %>,<%= config.keywords %>">
+        <% } else { %>
+            <meta name="keywords" content="<%= page.keywords %>">
+        <% } %>
+    <% } else if (config.keywords){ %>
+    <meta name="keywords" content="<%= config.keywords %>">
+    <%} %>
     <% if (theme.favicon) { %>
         <link rel="icon" href="<%= resolveImgURL(theme.image_dir, theme.favicon) %>">
     <% } %>
