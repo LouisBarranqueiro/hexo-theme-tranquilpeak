@@ -51,7 +51,7 @@ $colors: (
     'primary': #349ef3,
     'purple':  #cf6ae0,
     'base':    $font-color-base,
-    'orange':  #e75c2f,
+    'warning':  #f5aa0a,
     'light':   #9eabb3,
      // use for tag `a`
     'link':    #349ef3
@@ -201,11 +201,11 @@ $main-content: (
 // font-size : (X.Xrem = XXpx, 1.0rem = 10px)
 $markdown-headings-font-size: (
     'h1': 3rem,
-    'h2': 2.8rem,
-    'h3': 2.6rem,
-    'h4': 2.4rem,
-    'h5': 2.3rem,
-    'h6': 2.2rem
+    'h2': 2.7rem,
+    'h3': 2.4rem,
+    'h4': 2.1rem,
+    'h5': 1.9rem,
+    'h6': 1.7rem
 );
 // Reduction of markdwon headings on small screen and down
 $markdown-headings-font-size-sm-screen-reduction-factor: 0.35rem;
