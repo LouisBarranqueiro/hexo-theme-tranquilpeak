@@ -133,6 +133,7 @@ tranquilpeak
 │   ├── filters
 │   │   └── excerpt.js
 │   ├── tags
+│   │   ├── alert.js
 │   │   ├── fancybox.js
 │   │   ├── image.js
 │   │   └── wide_image.js
@@ -141,6 +142,7 @@ tranquilpeak
 │   │   ├── base
 │   │   │   ├── _base.scss
 │   │   ├── components
+│   │   │   ├── _alert.scss
 │   │   │   ├── _archives.scss
 │   │   │   ├── _box.scss
 │   │   │   ├── _button.scss
