@@ -36,6 +36,7 @@ $font-size-base-sm-screen-reduction-factor: 0.1rem;
 
 // Font size : (X.Xrem = XXpx, 1.0rem = 10px)
 $font-size: (
+    'xxlarge': 2rem,
     'xlarge': 1.8rem,
     'large':  1.7rem,
     'base':   $font-size-base,

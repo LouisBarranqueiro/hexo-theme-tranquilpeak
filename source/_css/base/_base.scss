@@ -95,16 +95,19 @@ table {
     th {
         font-weight:    bold;
         padding-bottom: 0.5em;
-        border-bottom:  2px solid lighten(#dce4f1, 2);
+        border-bottom:  2px solid map-get($colors, 'base');
     }
     td {
-        border-bottom: 1px solid lighten(#dce4f1, 2);
+        border-bottom: 1px solid map-get($colors, 'base');
         padding:       1rem 0;
     }
 }
 
 hr {
-    border: 1px solid #eef2f8;
+    margin:     1.5em 0 0;
+    outline:    none;
+    border:     none;
+    border-top: 1px solid map-get($colors, 'base');
 }
 
 dl {
@@ -117,13 +120,12 @@ dl {
 }
 
 code {
-    font-size:     map-get($font-size, medium);
-    display:       inline-block;
-    font-family:   map-get($font-families, 'code');
-    font-weight:   400;
-    border-radius: 3px;
-    background:    #f5f5f5;
-    padding:       0 10px;
+    font-size:        map-get($font-size, small);
+    display:          inline-block;
+    font-family:      map-get($font-families, 'code');
+    font-weight:      400;
+    background-color: lighten(map-get($colors, 'base'), 54%);
+    padding:          0 10px;
 }
 
 acronym,
@@ -132,8 +134,9 @@ abbr {
 }
 
 blockquote {
-    border-left: 2px solid darken(#dce4f1, 3);
+    border-left: 2px solid map-get($colors, 'base');
     padding:     15px;
+    font-style:  italic;
     margin:      1.5em 0 0;
 
     cite {
