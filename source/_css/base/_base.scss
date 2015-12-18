@@ -133,14 +133,17 @@ abbr {
 
 blockquote {
     border-left: 2px solid darken(#dce4f1, 3);
-    padding:     10px 20px;
+    padding:     15px;
+    margin:      1.5em 0 0;
 
     cite {
         &:before {
             content: ' — ';
             padding: 0 0.3em;
         }
-
+    }
+    & > p:first-child {
+        margin: 0;
     }
 }
 
