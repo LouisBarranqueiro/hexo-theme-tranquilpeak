@@ -165,7 +165,8 @@ figure.highlight {
         .built_in {
             color: map-get($highlight-colors, bondi-blue);
         }
-        .xmlDocTag {
+        .xmlDocTag,
+        .doctag {
             color: map-get($highlight-colors, asparagus);
         }
     }
