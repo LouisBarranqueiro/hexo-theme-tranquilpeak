@@ -482,7 +482,10 @@ figure.highlight {
         }
         .id,
         .pseudo,
-        .class {
+        .class,
+        .selector-id,
+        .selector-class,
+        .selector-tag{
             color: map-get($highlight-colors, scampi);
         }
     }
