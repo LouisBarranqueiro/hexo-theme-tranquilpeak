@@ -332,15 +332,16 @@ figure.highlight {
     }
     // Nginx
     &.nginx .code {
-        .title {
+        .title,
+        .attribute {
             color: map-get($highlight-colors, cardinal);
         }
-        .built_in {
+        .built_in,
+        .literal {
             color: map-get($highlight-colors, bondi-blue);
         }
-        .regexp,
-        .number {
-            color: map-get($highlight-colors, persimmon);
+        .regexp {
+            color: map-get($highlight-colors, egyptian-blue);
         }
         .variable {
             color: map-get($highlight-colors, night-rider);
