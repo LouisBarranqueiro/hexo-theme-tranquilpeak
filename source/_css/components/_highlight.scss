@@ -200,7 +200,8 @@ figure.highlight {
     }
     // Diff
     &.diff .code {
-        .chunk {
+        .chunk,
+        .meta {
             color:       map-get($highlight-colors, scampi);
             font-weight: bold;
         }
