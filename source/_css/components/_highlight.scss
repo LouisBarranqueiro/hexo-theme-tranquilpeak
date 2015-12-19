@@ -216,8 +216,11 @@ figure.highlight {
     }
     // HTTP
     &.http .code {
-        .literal,
-        .attribute {
+        .attribute,
+        .attr {
+            color: map-get($highlight-colors, egyptian-blue);
+        }
+        .literal {
             color: map-get($highlight-colors, bondi-blue);
         }
         .request {
