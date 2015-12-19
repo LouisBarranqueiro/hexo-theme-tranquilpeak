@@ -496,7 +496,6 @@ figure.highlight {
         .important {
             color: map-get($highlight-colors, cardinal);
         }
-        .preprocessor,
         .number,
         .hexcolor,
         .function,
@@ -511,8 +510,15 @@ figure.highlight {
         }
         .id,
         .pseudo,
-        .class {
+        .class,
+        .preprocessor,
+        .selector-class,
+        .selector-id {
             color: map-get($highlight-colors, scampi);
+        }
+        .tag,
+        .selector-tag {
+            color: map-get($highlight-colors, asparagus);
         }
     }
     // Stylus
