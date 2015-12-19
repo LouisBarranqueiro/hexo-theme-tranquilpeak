@@ -3,14 +3,14 @@
 
     // Resize codeblocks
 
-    var ResizeCodeBlock = function(elem) {
+    var CodeBlockResizer = function(elem) {
         this.$codeBlocks = $(elem);
         // If you change value of `mediumScreenWidth`,
         // you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
         this.mediumScreenWidth = 768;
     };
 
-    ResizeCodeBlock.prototype = {
+    CodeBlockResizer.prototype = {
         run: function() {
             var self = this;
             // resize all codeblocks
@@ -41,7 +41,7 @@
     };
 
     $(document).ready(function() {
-        var resizer = new ResizeCodeBlock('figure.highlight');
+        var resizer = new CodeBlockResizer('figure.highlight');
         resizer.run();
     });
 }(jQuery);
