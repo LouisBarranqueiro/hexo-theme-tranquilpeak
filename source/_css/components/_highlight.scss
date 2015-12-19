@@ -173,7 +173,8 @@ figure.highlight {
     // CSS
     &.css .code {
         .at_rule,
-        .important {
+        .important,
+        .meta {
             color: map-get($highlight-colors, cardinal);
         }
         .attribute,
@@ -188,10 +189,12 @@ figure.highlight {
         }
         .id,
         .class,
-        .pseudo {
+        .pseudo,
+        .selector-pseudo {
             color: map-get($highlight-colors, scampi);
         }
-        .tag {
+        .tag,
+        .selector-tag {
             color: map-get($highlight-colors, asparagus);
         }
     }
