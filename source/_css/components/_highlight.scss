@@ -250,6 +250,8 @@ figure.highlight {
         .javadoc {
             color: map-get($highlight-colors, pewter);
         }
+        .meta,
+        .annotation,
         .javadoctag {
             color: map-get($highlight-colors, cardinal);
         }
