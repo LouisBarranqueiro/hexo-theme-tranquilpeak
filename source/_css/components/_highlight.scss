@@ -565,7 +565,8 @@ figure.highlight {
             color: map-get($highlight-colors, scampi);
         }
         .built_in,
-        .number {
+        .number,
+        .type {
             color: map-get($highlight-colors, bondi-blue);
         }
     }
