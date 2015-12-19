@@ -402,7 +402,8 @@ figure.highlight {
     // Python
     &.python .code {
         .decorator,
-        .title {
+        .title,
+        .meta {
             color: map-get($highlight-colors, scampi);
         }
         .number {
