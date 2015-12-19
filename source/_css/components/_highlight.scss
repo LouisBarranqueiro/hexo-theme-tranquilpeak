@@ -458,6 +458,12 @@ figure.highlight {
         .function {
             color: map-get($highlight-colors, bondi-blue);
         }
+        .name {
+            color: map-get($highlight-colors, cardinal);
+        }
+        .attr {
+            color: map-get($highlight-colors, bondi-blue);
+        }
     }
     // LESS
     &.less {
