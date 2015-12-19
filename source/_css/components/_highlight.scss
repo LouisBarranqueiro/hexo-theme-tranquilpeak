@@ -315,14 +315,18 @@ figure.highlight {
         .link_label,
         .strong,
         .emphasis,
-        .blockquote {
-            color: map-get($highlight-colors, persimmon);
+        .blockquote,
+        .quote,
+        .section {
+            color: map-get($highlight-colors, egyptian-blue);
         }
         .link_reference,
+        .symbol,
         .code {
             color: map-get($highlight-colors, bondi-blue);
         }
-        .link_url {
+        .link_url,
+        .link {
             text-decoration: underline;
         }
     }
