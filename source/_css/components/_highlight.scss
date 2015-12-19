@@ -301,13 +301,11 @@ figure.highlight {
         .constant {
             color: map-get($highlight-colors, night-rider);
         }
-        .variable {
-            color: map-get($highlight-colors, persimmon);
-        }
         .title {
             color: map-get($highlight-colors, scampi);
         }
-        .keyword {
+        .keyword,
+        .meta-keyword {
             color: map-get($highlight-colors, bondi-blue);
         }
     }
