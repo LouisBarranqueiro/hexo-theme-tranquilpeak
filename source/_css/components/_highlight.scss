@@ -130,7 +130,8 @@ figure.highlight {
             color: map-get($highlight-colors, bahama-blue);
         }
         .subst,
-        .regexp {
+        .regexp,
+        .attribute {
             color: map-get($highlight-colors, persimmon);
         }
     }
