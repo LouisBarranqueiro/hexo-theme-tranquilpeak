@@ -384,7 +384,8 @@ figure.highlight {
     }
     // PHP
     &.php .code {
-        .phpdoc {
+        .phpdoc,
+        .doctag {
             color: map-get($highlight-colors, cardinal);
         }
         .regexp {
