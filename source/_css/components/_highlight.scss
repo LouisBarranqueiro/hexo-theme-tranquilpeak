@@ -264,6 +264,7 @@ figure.highlight {
     }
     // JavaScript
     &.js .code {
+        .built_in,
         .title {
             color: map-get($highlight-colors, scampi);
         }
@@ -280,7 +281,6 @@ figure.highlight {
         .regexp {
             color: map-get($highlight-colors, persimmon);
         }
-        .built_in,
         .literal,
         .number {
             color: map-get($highlight-colors, bondi-blue);
