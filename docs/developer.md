@@ -202,6 +202,7 @@ tranquilpeak
 │   │   ├── about.js
 │   │   ├── archives-filter.js
 │   │   ├── categories-filter.js
+│   │   ├── codeblock-resizer.js
 │   │   ├── fancybox.js
 │   │   ├── header.js
 │   │   ├── image-gallery.js
@@ -414,6 +415,7 @@ Contains all images of the theme.
     ├── about.js
     ├── archives-filter.js
     ├── categories-filter.js
+    ├── codeblock-resizer.js
     ├── fancybox.js
     ├── header.js
     ├── image-gallery.js
@@ -427,6 +429,7 @@ Contains all images of the theme.
 - **about.js** : Fade out the blog and let drop the about card of the author and vice versa
 - **archives-filter.js** : Filter posts by using their date on archives page : `/archives`
 - **categories-filter.js** : Filter posts by using their categories on archives page : `/categories`
+- **codeblock-resizer.js** : Resize codeblocks to fit the screen width
 - **fancybox.js.js** : Run Fancybox plugin
 - **header.js** : Hide the header when the user scrolls down, and show it when he scrolls up
 - **image-gallery.js** : Resize all images of an image-gallery
