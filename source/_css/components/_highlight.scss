@@ -439,12 +439,14 @@ figure.highlight {
             color: map-get($highlight-colors, night-rider);
         }
         .value {
-            color: map-get($highlight-colors, persimmon);
+            color: map-get($highlight-colors, egyptian-blue);
         }
-        .attribute {
+        .attribute,
+        .attr {
             color: map-get($highlight-colors, scampi);
         }
-        .title {
+        .title,
+        .name {
             color: map-get($highlight-colors, asparagus);
         }
     }
