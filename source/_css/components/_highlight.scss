@@ -141,7 +141,10 @@ figure.highlight {
         .preprocessor {
             color: map-get($highlight-colors, persimmon);
         }
-        .title {
+        .meta-keyword {
+            color: map-get($highlight-colors, cardinal);
+        }
+        .title  {
             color: map-get($highlight-colors, scampi);
         }
         .number,
@@ -274,9 +277,10 @@ figure.highlight {
     // JSON
     &.json .code {
         .attribute {
-            color: map-get($highlight-colors, persimmon);
+            color: map-get($highlight-colors, egyptian-blue);
         }
-        .number {
+        .number,
+        .literal {
             color: map-get($highlight-colors, bondi-blue);
         }
     }
