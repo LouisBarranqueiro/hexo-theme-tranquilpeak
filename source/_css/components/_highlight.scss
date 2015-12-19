@@ -1,17 +1,14 @@
 figure.highlight {
-    background:    white;
-    margin:        10px 0;
-    border-radius: 3px;
-    line-height:   map-get($highlight, line-height);
-    color:         map-get($highlight-colors, night-rider);
-    border:        map-get($highlight, border);
-    overflow:      hidden;
+    background:     map-get($highlight, 'background');
+    margin:         10px 0;
+    line-height:    map-get($highlight, line-height);
+    color:          map-get($highlight-colors, night-rider);
+    padding-bottom: 15px;
+    overflow:       hidden;
 
     table {
-        display:    block;
-        width:      100%;
-        overflow-y: hidden;
-        overflow-x: auto;
+        display: block;
+        width:   100%;
     }
     // Reset for tag `pre` and  for class `.gutter`, `.code`, `.tag`
     pre,
@@ -27,12 +24,11 @@ figure.highlight {
     }
     // Meta bar which contains name of the file and his link
     figcaption {
-        font-size:     1.3rem;
-        padding:       10px 15px;
-        margin:        0;
-        background:    #f7f7f7;
-        border-bottom: map-get($highlight, border);
-        color:         #999999;
+        font-size:  1.3rem;
+        padding:    15px 15px 20px;
+        margin:     0;
+        background: map-get($highlight, 'background');
+        color:      #999999;
 
         a {
             float: right;
@@ -40,9 +36,9 @@ figure.highlight {
     }
     // Gutter which contains line numbers
     .gutter {
-        background:   white;
+        background:   map-get($highlight, 'background');
         border-right: map-get($highlight, border);
-        padding:      0.3em 0.5em;
+        padding:      0.3em 15px;
 
         .line {
             color: #aaaaaa;
@@ -50,7 +46,13 @@ figure.highlight {
     }
     // Code container
     .code {
-        padding: 0.3em 0.3em 0.3em 1em;
+        padding: 0.3em 15px 0.3em 1em;
+        width:   100%;
+
+        pre {
+            max-width:  calc(#{map-get($main-content, 'max-width')} - 50px);
+            overflow-x: auto;
+        }
     }
     // All lines in gutter and code container
     .line {
@@ -485,7 +487,7 @@ figure.highlight {
         .class,
         .selector-id,
         .selector-class,
-        .selector-tag{
+        .selector-tag {
             color: map-get($highlight-colors, scampi);
         }
     }
@@ -527,7 +529,7 @@ figure.highlight {
             color: map-get($highlight-colors, cardinal);
         }
         .tag,
-        .selector-tag{
+        .selector-tag {
             color: map-get($highlight-colors, asparagus);
         }
         .number,
