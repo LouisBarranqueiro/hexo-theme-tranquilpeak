@@ -349,12 +349,16 @@ figure.highlight {
     }
     // Objective-C
     &.objectivec .code {
-        .preprocessor {
+        .preprocessor,
+        .meta {
             color: map-get($highlight-colors, cardinal);
 
             .title {
                 color: map-get($highlight-colors, persimmon);
             }
+        }
+        .meta-string {
+            color: map-get($highlight-colors, egyptian-blue);
         }
         .title {
             color: map-get($highlight-colors, scampi);
