@@ -229,10 +229,12 @@ figure.highlight {
     }
     // INI
     &.ini .code {
-        .title {
+        .title,
+        .section {
             color: map-get($highlight-colors, scampi);
         }
-        .setting {
+        .setting,
+        .attr {
             color: map-get($highlight-colors, cardinal);
         }
         .value,
