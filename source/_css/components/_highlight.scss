@@ -76,7 +76,7 @@ figure.highlight {
         color: map-get($highlight-colors, pewter);
     }
     .string {
-        color: map-get($highlight-colors, persimmon);
+        color: map-get($highlight-colors, egyptian-blue);
     }
     .keyword {
         color: map-get($highlight-colors, cardinal);
@@ -84,6 +84,9 @@ figure.highlight {
     // ApacheConf
     &.apacheconf .code {
         .common,
+        .nomarkup,
+        .attribute,
+        .variable,
         .cbracket,
         .keyword {
             color: map-get($highlight-colors, bondi-blue);
@@ -91,6 +94,7 @@ figure.highlight {
         .sqbracket {
             color: map-get($highlight-colors, persimmon);
         }
+        .section,
         .tag {
             color: map-get($highlight-colors, asparagus);
         }
