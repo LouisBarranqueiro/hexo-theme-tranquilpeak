@@ -42,7 +42,7 @@
             width:     auto;
             max-width: 100%;
         }
-        :not(blockquote) {
+        :not(blockquote):not(.alert) {
             & > p {
                 margin: 1.5em 0 0 0;
             }
