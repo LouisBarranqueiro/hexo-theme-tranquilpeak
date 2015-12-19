@@ -526,7 +526,8 @@ figure.highlight {
         .at_rule {
             color: map-get($highlight-colors, cardinal);
         }
-        .tag {
+        .tag,
+        .selector-tag{
             color: map-get($highlight-colors, asparagus);
         }
         .number,
@@ -538,7 +539,10 @@ figure.highlight {
         .class,
         .id,
         .pseudo,
-        .title {
+        .title,
+        .selector-id,
+        .selector-pseudo,
+        .selector-class {
             color: map-get($highlight-colors, scampi);
         }
     }
