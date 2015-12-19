@@ -374,9 +374,13 @@ figure.highlight {
         .sub {
             color: map-get($highlight-colors, scampi);
         }
+        .title {
+            color: map-get($highlight-colors, scampi);
+        }
         .regexp {
             color: map-get($highlight-colors, persimmon);
         }
+
     }
     // PHP
     &.php .code {
