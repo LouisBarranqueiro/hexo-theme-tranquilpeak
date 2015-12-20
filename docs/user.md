@@ -43,6 +43,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Display table of contents](#display-table-of-contents)
     * [Tags](#tags)
         * [Alert](#alert)
+        * [Highlight text](#highlight-text)
         * [Image](#image)
         * [Wide image](#wide-image)
         * [Fancybox](#fancybox)
@@ -506,8 +507,19 @@ Tranquilpeak introduce new tags to display alert messages, images in full width 
 
 Alert tag is useful to highlight a content like a tips or a warning. Check what are the possibilities here : [Alert tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Alerts)
 
-Syntax : `{% alert [classes] %}content{% endalert %}`
-E.g : `{% alert danger no-icon %}Here is a danger alert without icon{% endalert %}`
+Syntax :  
+```
+{% alert [classes] %}
+content
+{% endalert %}
+```
+
+E.g : 
+```
+{% alert danger no-icon %}
+Here is a danger alert without icon
+{% endalert %}
+```
 
 - **classes** :   
         - **info** : info style  
@@ -515,6 +527,56 @@ E.g : `{% alert danger no-icon %}Here is a danger alert without icon{% endalert 
         - **warning** : warning style  
         - **danger** : danger style  
         - **no-icon** : hide icon of alert  
+
+#### Highlight Test ####
+
+![highlight_text-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.6/highlight_text-tag.png)
+
+Highlight text tag is useful to highlight an interesting part in a text. Check what are the possibilities here : [Highlight text tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Highlight-text)
+
+Syntax :  
+```
+{% hl_text [(classes | hexa code | rgb color | rgba color)] %} 
+content
+{% endhl_text %}
+``` 
+
+E.g :  
+```
+{% hl_text danger %}
+your highlighted text
+{% endhl_text %}
+```
+
+- **classes** :   
+        - **red**  
+        - **green**  
+        - **blue**  
+        - **purple**  
+        - **orange**  
+        - **yellow**  
+        - **cyan**  
+        - **primary**  
+        - **success**  
+        - **warning**  
+        - **danger**  
+        
+You can also use hexa color, rgb color, rgba color.
+
+E.g :  
+``` 
+{% hl_text #00FFFF %}  
+your highlighted text  
+{% endhl_text %}  
+```
+
+or 
+
+```
+{% hl_text rgba(12,12,12,0.4) %}  
+your highlighted text  
+{% endhl_text %}  
+```
 
 #### Image ####
 
