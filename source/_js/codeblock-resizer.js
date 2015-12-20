@@ -1,29 +1,29 @@
 +function($) {
     'use strict';
 
-    // Resize codeblocks
+    // Resize codeblocks to fit the screen width
 
     var CodeBlockResizer = function(elem) {
         this.$codeBlocks = $(elem);
-        // If you change value of `mediumScreenWidth`,
-        // you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
-        this.mediumScreenWidth = 768;
     };
 
     CodeBlockResizer.prototype = {
+        /**
+         * Run main feature
+         */
         run: function() {
             var self = this;
             // resize all codeblocks
-            if ($(window).width() < self.mediumScreenWidth) {
-                self.resize();
-            }
+            self.resize();
             // resize codeblocks when window is resized
             $(window).smartresize(function() {
-                if ($(window).width() < self.mediumScreenWidth) {
-                    self.resize();
-                }
-            })
+                self.resize();
+            });
         },
+
+        /**
+         * Resize codeblocks
+         */
         resize: function() {
             var self = this;
 
