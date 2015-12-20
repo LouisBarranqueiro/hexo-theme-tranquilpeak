@@ -15,6 +15,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Assets](#assets)
          * [Stylesheets](#stylesheets)
          * [Images](#images)
+         * [Images](#images)
          * [Javascript](#javascript)
 - [Build](#build)
     * [NPM dependencies](#npm-dependencies)
@@ -147,11 +148,10 @@ tranquilpeak
 │   │   │   ├── _box.scss
 │   │   │   ├── _button.scss
 │   │   │   ├── _caption.scss
-│   │   │   ├── _category.scss
+│   │   │   ├── _code.scss
 │   │   │   ├── _figure.scss
 │   │   │   ├── _form.scss
 │   │   │   ├── _hide.scss
-│   │   │   ├── _highlight.scss
 │   │   │   ├── _icon.scss
 │   │   │   ├── _image-gallery.scss
 │   │   │   ├── _link.scss
@@ -336,10 +336,10 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
         │   ├── _box.scss
         │   ├── _button.scss
         │   ├── _caption.scss
+        │   ├── _code.scss
         │   ├── _figure.scss
         │   ├── _form.scss
         │   ├── _hide.scss
-        │   ├── _highlight.scss
         │   ├── _icon.scss
         │   ├── _image-gallery.scss
         │   ├── _link.scss
