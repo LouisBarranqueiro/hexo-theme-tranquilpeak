@@ -1,5 +1,5 @@
 +function($) {
-    'use strict'
+    'use strict';
 
     // Hide the post bottom bar when the post footer is visible by the user,
     // and show it when the post footer isn't visible by the user
@@ -11,7 +11,10 @@
     var PostBottomBar = function() {
         this.$postBottomBar = $('.post-bottom-bar');
         this.$postFooter    = $('.post-footer');
-    }
+        this.delta            = 5;
+        this.lastScrollTop    = 0;
+        this.scrollTop;
+    };
 
     PostBottomBar.prototype = {
 
@@ -21,20 +24,17 @@
         run: function() {
             var self = this;
             var didScroll;
-
             // Run animation for first time
             self.swipePostBottomBar();
-
             // Detects if the user is scrolling
             $(window).scroll(function() {
-                self.didScroll = true;
+                didScroll = true;
             });
-
             // Check if the user scrolled every 250 milliseconds
             setInterval(function() {
-                if (self.didScroll) {
+                if (didScroll) {
                     self.swipePostBottomBar();
-                    self.didScroll = false;
+                    didScroll = false;
                 }
             }, 250);
         },
@@ -43,15 +43,19 @@
          * Animate the post bottom bar
          */
         swipePostBottomBar: function() {
-            var postFooterElemPos = (this.$postFooter.offset().top + this.$postBottomBar.height());
-
-            // Check if the post footer element is visible by the user
-            if (($(window).scrollTop() + $(window).height()) > (postFooterElemPos)) {
-                this.$postBottomBar.slideUp();
-            }
-            else {
+            this.scrollTop = $(window).scrollTop();
+            var postFooterElemPos = (this.$postFooter.offset().top + this.$postFooter.height() + this.$postBottomBar.height() / 2);
+            // show bottom bar
+            // if the user scrolled upwards more than `delta`
+            // and `post-footer` div isn't visible
+            if ((this.scrollTop < this.lastScrollTop) &&
+                ($(window).scrollTop() + $(window).height()) < (postFooterElemPos)) {
                 this.$postBottomBar.slideDown();
             }
+            else {
+                this.$postBottomBar.slideUp();
+            }
+            this.lastScrollTop = this.scrollTop;
         }
     };
 
