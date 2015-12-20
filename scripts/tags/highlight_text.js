@@ -24,10 +24,10 @@ function highlightText(args, content) {
 }
 
 /**
- * Highlight tag
+ * Highlight text tag
  *
  * Syntax:
- *   {% hl [hexa code color | rgb color | rgba color | css class] %}content{% hl %}
+ *   {% hl [(class | hexa code color | rgb color | rgba color)] %}content{% hl %}
  * E.g:
  *   {% highlight rgba(12,12,12,0.5) %}content{% highlight %}
  */
