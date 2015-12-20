@@ -136,6 +136,7 @@ tranquilpeak
 │   ├── tags
 │   │   ├── alert.js
 │   │   ├── fancybox.js
+│   │   ├── hightlight_text.js
 │   │   ├── image.js
 │   │   └── wide_image.js
 ├── source
@@ -152,6 +153,7 @@ tranquilpeak
 │   │   │   ├── _figure.scss
 │   │   │   ├── _form.scss
 │   │   │   ├── _hide.scss
+│   │   │   ├── _highlight-text.scss
 │   │   │   ├── _icon.scss
 │   │   │   ├── _image-gallery.scss
 │   │   │   ├── _link.scss
@@ -313,7 +315,9 @@ If you want to add a new language, duplicate an existing language file and repla
 │   ├── filters
 │   │   └── excerpt.js
 │   ├── tags
+│   │   ├── alert.js
 │   │   ├── fancybox.js
+│   │   ├── highlight_text.js
 │   │   ├── image.js
 │   │   └── wide_image.js
 ```
@@ -340,6 +344,7 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
         │   ├── _figure.scss
         │   ├── _form.scss
         │   ├── _hide.scss
+        │   ├── _hightlight_text.scss
         │   ├── _icon.scss
         │   ├── _image-gallery.scss
         │   ├── _link.scss
