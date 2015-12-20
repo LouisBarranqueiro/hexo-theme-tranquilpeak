@@ -155,13 +155,14 @@ $main: (
 // Files are located in `components` folder
 // --------------------------------------------
 
-// Highlight
+// Highlight code
 $highlight: (
     'background':  #f7f8f8,
     'font-size':   1.4rem,
     'border':      1px solid #e6e6e6,
     'line-height': 1.3em
 );
+
 // Highlight colors
 // name of colors: http://www.color-blindness.com
 $highlight-colors: (
@@ -187,7 +188,20 @@ $highlight-colors: (
     // Addition background color for .diff file
     'honeydew':        #eaffea
 );
-
+// Highlight text
+$highlight-text-bg-colors: (
+    'red':     lighten(red, 45%),
+    'green':   lighten(green, 65%),
+    'blue':    lighten(blue, 45%),
+    'purple':  lighten(purple, 70%),
+    'orange':  lighten(orange, 40%),
+    'yellow':  lighten(yellow, 40%),
+    'cyan':    lighten(cyan, 40%),
+    'primary': lighten(map-get($colors, 'primary'), 35%),
+    'success': lighten(map-get($colors, 'success'),35%),
+    'warning': lighten(map-get($colors, 'warning'), 40%),
+    'danger':  lighten(map-get($colors, 'danger'), 40%),
+);
 // Image gallery photos
 // Space between 2 photos
 $image-gallery-photos-margin: 2px;
