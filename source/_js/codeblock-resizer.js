@@ -14,7 +14,9 @@
         run: function() {
             var self = this;
             // resize all codeblocks
-            self.resize();
+            if ($(window).width() < self.mediumScreenWidth) {
+                self.resize();
+            }
             // resize codeblocks when window is resized
             $(window).smartresize(function() {
                 if ($(window).width() < self.mediumScreenWidth) {
