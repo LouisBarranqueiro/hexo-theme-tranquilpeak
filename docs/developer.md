@@ -15,6 +15,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Assets](#assets)
          * [Stylesheets](#stylesheets)
          * [Images](#images)
+         * [Images](#images)
          * [Javascript](#javascript)
 - [Build](#build)
     * [NPM dependencies](#npm-dependencies)
@@ -147,11 +148,10 @@ tranquilpeak
 │   │   │   ├── _box.scss
 │   │   │   ├── _button.scss
 │   │   │   ├── _caption.scss
-│   │   │   ├── _category.scss
+│   │   │   ├── _code.scss
 │   │   │   ├── _figure.scss
 │   │   │   ├── _form.scss
 │   │   │   ├── _hide.scss
-│   │   │   ├── _highlight.scss
 │   │   │   ├── _icon.scss
 │   │   │   ├── _image-gallery.scss
 │   │   │   ├── _link.scss
@@ -202,6 +202,7 @@ tranquilpeak
 │   │   ├── about.js
 │   │   ├── archives-filter.js
 │   │   ├── categories-filter.js
+│   │   ├── codeblock-resizer.js
 │   │   ├── fancybox.js
 │   │   ├── header.js
 │   │   ├── image-gallery.js
@@ -335,10 +336,10 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
         │   ├── _box.scss
         │   ├── _button.scss
         │   ├── _caption.scss
+        │   ├── _code.scss
         │   ├── _figure.scss
         │   ├── _form.scss
         │   ├── _hide.scss
-        │   ├── _highlight.scss
         │   ├── _icon.scss
         │   ├── _image-gallery.scss
         │   ├── _link.scss
@@ -414,6 +415,7 @@ Contains all images of the theme.
     ├── about.js
     ├── archives-filter.js
     ├── categories-filter.js
+    ├── codeblock-resizer.js
     ├── fancybox.js
     ├── header.js
     ├── image-gallery.js
@@ -427,6 +429,7 @@ Contains all images of the theme.
 - **about.js** : Fade out the blog and let drop the about card of the author and vice versa
 - **archives-filter.js** : Filter posts by using their date on archives page : `/archives`
 - **categories-filter.js** : Filter posts by using their categories on archives page : `/categories`
+- **codeblock-resizer.js** : Resize codeblocks to fit the screen width
 - **fancybox.js.js** : Run Fancybox plugin
 - **header.js** : Hide the header when the user scrolls down, and show it when he scrolls up
 - **image-gallery.js** : Resize all images of an image-gallery

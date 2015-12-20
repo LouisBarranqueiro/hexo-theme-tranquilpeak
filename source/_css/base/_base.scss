@@ -124,7 +124,7 @@ code {
     display:          inline-block;
     font-family:      map-get($font-families, 'code');
     font-weight:      400;
-    background-color: lighten(map-get($colors, 'base'), 54%);
+    background-color: map-get($highlight, 'background');
     padding:          0 10px;
 }
 
