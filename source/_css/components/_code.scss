@@ -3,7 +3,7 @@ figure.highlight {
     margin:         10px 0;
     line-height:    map-get($highlight, line-height);
     color:          map-get($highlight-colors, night-rider);
-    padding-top: 15px;
+    padding-top:    15px;
     padding-bottom: 15px;
     overflow:       hidden;
 
@@ -36,11 +36,6 @@ figure.highlight {
         }
     }
     // Gutter which contains line numbers
-    &.nogutter {
-        .gutter {
-            display:none;
-        }
-    }
     .gutter {
         background:   map-get($highlight, 'background');
         border-right: map-get($highlight, border);
