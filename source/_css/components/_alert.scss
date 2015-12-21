@@ -1,9 +1,11 @@
 .alert {
-    position:   relative;
-    text-align: left;
-    padding:    15px;
-    margin:     1em 0 0;
-
+    position:    relative;
+    text-align:  left;
+    padding:     6px 15px;
+    min-height:  30px;
+    margin:      1em 0 0;
+    border:      none;
+    border-left: 3px solid;
     p {
         margin: 1.5em 0 0;
 
@@ -16,15 +18,14 @@
 
         &:before {
             position:    absolute;
-            top:         15px;
+            top:         6px;
             left:        15px;
             font-family: 'FontAwesome';
             font-size:   2.5rem;
         }
     }
     &.info {
-        border:           none;
-        border-left:      2px solid map-get($colors, 'primary');
+        border-color:     map-get($colors, 'primary');
         background-color: lighten(map-get($colors, 'primary'), 37%);
 
         &:not(.no-icon) {
@@ -35,8 +36,7 @@
         }
     }
     &.success {
-        border:           none;
-        border-left:      2px solid map-get($colors, 'success');
+        border-color:     map-get($colors, 'success');
         background-color: lighten(map-get($colors, 'success'), 42%);
         content:          "\f058";
         &:not(.no-icon) {
@@ -47,8 +47,7 @@
         }
     }
     &.warning {
-        border:           none;
-        border-left:      2px solid map-get($colors, 'warning');
+        border-color:     map-get($colors, 'warning');
         background-color: lighten(map-get($colors, 'warning'), 42%);
         &:not(.no-icon) {
             &:before {
@@ -58,8 +57,7 @@
         }
     }
     &.danger {
-        border:           none;
-        border-left:      2px solid map-get($colors, 'danger');
+        border-color:     map-get($colors, 'danger');
         background-color: lighten(map-get($colors, 'danger'), 42%);
         &:not(.no-icon) {
             &:before {
