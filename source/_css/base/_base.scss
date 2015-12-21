@@ -93,13 +93,17 @@ table {
     text-align:      left;
 
     th {
-        font-weight:    bold;
-        padding-bottom: 0.5em;
-        border-bottom:  2px solid map-get($colors, 'base');
+        padding:       5px 10px;
+        font-weight:   bold;
+        border-bottom: 2px solid #909ba2;
     }
     td {
-        border-bottom: 1px solid map-get($colors, 'base');
-        padding:       1rem 0;
+        padding: 5px 10px;
+    }
+    tr {
+        &:nth-child(2n) {
+            background: #f7f8f8;
+        }
     }
 }
 
@@ -107,7 +111,7 @@ hr {
     margin:     1.5em 0 0;
     outline:    none;
     border:     none;
-    border-top: 1px solid map-get($colors, 'base');
+    border-top: 1px solid #eef2f8;
 }
 
 dl {
@@ -120,7 +124,7 @@ dl {
 }
 
 code {
-    font-size:        map-get($font-size, small);
+    font-size:        map-get($font-size, medium);
     display:          inline-block;
     font-family:      map-get($font-families, 'code');
     font-weight:      400;
@@ -135,7 +139,7 @@ abbr {
 
 blockquote {
     border-left: 3px solid map-get($colors, 'base');
-    padding:      0 15px;
+    padding:     0 15px;
     font-style:  italic;
     margin:      1.5em 0 0;
 
