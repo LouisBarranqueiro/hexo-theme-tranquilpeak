@@ -24,7 +24,7 @@
     width:                       100%;
     padding:                     calc(#{map-get($header, 'height')} + 30px) 0 30px 0;
     // 100% minus header high, minus padding-top, minus padding bottom and minus 4px for perfect pixels
-    height:                      calc(100% - #{map-get($header, 'height')} - 4px);
+    height:                      100%;
     z-index:                     map-get($z-indexes, 'c-post-header-cover');
     // Sidebar animation
     // Transition style (push)
