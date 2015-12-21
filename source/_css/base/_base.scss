@@ -134,8 +134,8 @@ abbr {
 }
 
 blockquote {
-    border-left: 2px solid map-get($colors, 'base');
-    padding:     15px;
+    border-left: 3px solid map-get($colors, 'base');
+    padding:      0 15px;
     font-style:  italic;
     margin:      1.5em 0 0;
 
