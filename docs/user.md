@@ -20,6 +20,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Enable post assets folder](#enable-post-assets-folder)
     * [Disable relative links](#disable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
+    * [Define global keywords](#define-global-keywords)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
     - [Languages configuration](#languages-configuration)
     - [Theme configuration](#theme-configuration)
@@ -41,6 +42,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Display all post content](#display-all-post-content)
     * [Display table of contents](#display-table-of-contents)
     * [Tags](#tags)
+        * [Alert](#alert)
+        * [Highlight text](#highlight-text)
         * [Image](#image)
         * [Wide image](#wide-image)
         * [Fancybox](#fancybox)
@@ -127,6 +130,16 @@ feed:
 - **limit** : Maximum number of posts in the feed (Use `0` or `false` to show all posts)
 
 If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
+### Define global keywords ###
+
+You can define keywords for search engines. These keywords will be added on all pages.
+
+``` yaml
+keywords:
+- hexo
+- javascript
+```
 
 ## Tranquilpeak configuration ##
 
@@ -343,8 +356,10 @@ To enable `all-categories` page :
 2. Replace `source/all-categories/index.md` content with :
  
 ``` markdown
+---
 title: "all-categories"
 layout: "all-categories"
+comments: false
 ---
 ```
 
@@ -357,8 +372,10 @@ To enable `all-tags` page :
 2. Replace `source/all-tags/index.md` content with :
  
 ``` markdown
+---
 title: "all-tags"
 layout: "all-tags"
+comments: false
 ---
 ```
 
@@ -371,8 +388,10 @@ To enable `all-archives` page :
 2. Replace `source/all-archives/index.md` content with :
  
 ``` markdown
+---
 title: "all-archives"
 layout: "all-archives"
+comments: false
 ---
 ```  
 
@@ -413,6 +432,9 @@ Tranquilpeak introduces new variables to give you a lot of possibilities.
   
 Example :  
 ``` markdown
+keywords:
+- javascript
+- hexo
 clearReading: true
 thumbnailImage: image-1.png
 thumbnailImagePosition: bottom
@@ -430,6 +452,7 @@ photos:
 comments: false
 ```
 
+- **keywords** : Define keywords for search engines. you can also define global keywords in Hexo configuration file.
 - **clearReading** : Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `theme.sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.
 - **autoThumbnailImage** : Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image. `autoThumbnailImage` overwrite the setting `auto_thumbnail_image` in the theme configuration file
 - **thumbnailImage** : Image displayed in index view.
@@ -475,17 +498,92 @@ Here is what looks like the table of contents generated:
   
 ### Tags ###
 
-Tranquilpeak 1.3 introduce 2 new tag to display wide images in full width and create beautiful galleries.
+Tranquilpeak introduce new tags to display alert messages, images in full width and create beautiful galleries.
 **DON'T use anymore fancybox tag**. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
 
-#### Image ###
+#### Alert ###
+
+![alert-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.6/alert-tag.png)
+
+Alert tag is useful to highlight a content like a tips or a warning. Check it live here : [Alert tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Alerts)
+
+Syntax :  
+```
+{% alert [classes] %}
+content
+{% endalert %}
+```
+
+E.g : 
+```
+{% alert danger no-icon %}
+Here is a danger alert without icon
+{% endalert %}
+```
+
+- **classes** :   
+        - **info** : info style  
+        - **success** : success style  
+        - **warning** : warning style  
+        - **danger** : danger style  
+        - **no-icon** : hide icon of alert  
+
+#### Highlight Text ####
+
+![highlight_text-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.6/highlight_text-tag.png)
+
+Highlight text tag is useful to highlight an interesting part in a text. Check it live here : [Highlight text tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Highlight-text)
+
+Syntax :  
+```
+{% hl_text [(classes | hexa code | rgb color | rgba color)] %} 
+content
+{% endhl_text %}
+``` 
+
+E.g :  
+```
+{% hl_text danger %}
+your highlighted text
+{% endhl_text %}
+```
+
+- **classes** :   
+        - red  
+        - green  
+        - blue  
+        - purple  
+        - orange  
+        - yellow  
+        - cyan  
+        - primary  
+        - success  
+        - warning  
+        - danger  
+        
+**You can also use hexa color, rgb color, rgba color.**
+
+**It's important to put the paragraph that contains highlight text tag inside** `<p>...</p>` 
+**otherwise the following content may not be rendered.**
+
+E.g (hexa color) :  
+``` 
+<p>Sed imperdiet urna et quam ultrices {% hl_text #00FFFF %}your highlighted text{% endhl_text %} dignissim ultrices libero.</p>
+```
+
+E.g (rgba color) :  
+```
+<p>Sed imperdiet urna et quam ultrices {% hl_text rgba(12, 12, 12, 0.4) %}your highlighted text{% endhl_text %} dignissim ultrices libero.</p>
+```
+
+#### Image ####
 
 Image tag is useful to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Images)
 
 Syntax : `{% image [classes] /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
 E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`  
 
-- **classes (optionnal)** : You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :
+- **classes (optionnal)** : You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :  
         - **fancybox** : Generate a fancybox image.  
         - **nocaption** : Caption of the image will not be displayed.  
         - **left** : Image will float at the left.  
@@ -504,9 +602,9 @@ E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125
 - **Height of thumbnail image (optionnal)** : Height to the thumbnail image. If the thumbnail image is empty, height will be attached to thumbnail image created from original image. E.g : `300px` or `20%`.  
 - **Title (optionnal)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
   
-#### Wide image ###
+#### Wide image ####
 
-Wide image tag is useful to display wide images in full width. Check the the result : [Wide image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Wide-images)
+Wide image tag is useful to display wide images in full width. It take the entire window width. Check the the result : [Wide image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Wide-images)
 
 Syntax : `{% wide_image /path/to/image [title text] %}`  
 E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" %}`  
@@ -514,7 +612,7 @@ E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" 
 - **image** : Path to the original image.  
 - **Title (optionnal)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
 
-### Fancybox ###
+#### Fancybox ####
 
 `fancybox` tag is deprecated since Tranquilpeak 1.3. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
         

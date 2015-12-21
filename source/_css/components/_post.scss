@@ -32,7 +32,7 @@
         letter-spacing: -0.3px;
         font-family:    map-get($font-families, 'post-content');
         color:          map-get($colors, base);
-        margin-top:     60px;
+        margin-top:     20px;
         font-weight:    400;
         overflow:       hidden;
         @include prefix('hypens', 'auto', 'webkit' 'moz');
@@ -42,8 +42,10 @@
             width:     auto;
             max-width: 100%;
         }
-        p {
-            margin: 2em 0 0 0;
+        :not(blockquote):not(.alert) {
+            & > p {
+                margin: 1.5em 0 0 0;
+            }
         }
     }
     .post-footer {

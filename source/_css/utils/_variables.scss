@@ -36,6 +36,7 @@ $font-size-base-sm-screen-reduction-factor: 0.1rem;
 
 // Font size : (X.Xrem = XXpx, 1.0rem = 10px)
 $font-size: (
+    'xxlarge': 2rem,
     'xlarge': 1.8rem,
     'large':  1.7rem,
     'base':   $font-size-base,
@@ -51,7 +52,7 @@ $colors: (
     'primary': #349ef3,
     'purple':  #cf6ae0,
     'base':    $font-color-base,
-    'orange':  #e75c2f,
+    'warning':  #f5aa0a,
     'light':   #9eabb3,
      // use for tag `a`
     'link':    #349ef3
@@ -154,13 +155,16 @@ $main: (
 // Files are located in `components` folder
 // --------------------------------------------
 
-// Highlight
+// Highlight code
 $highlight: (
+    'background':  #f7f8f8,
     'font-size':   1.4rem,
-    'border':      1px solid #d9d9d9,
+    'border':      1px solid #e6e6e6,
     'line-height': 1.3em
 );
+
 // Highlight colors
+// name of colors: http://www.color-blindness.com
 $highlight-colors: (
     // Background
     'white':           #fff,
@@ -174,6 +178,7 @@ $highlight-colors: (
     'cardinal':        #a71d5d,
     'scampi':          #795da3,
     'bahama-blue':     #1d3e81,
+    'egyptian-blue':   #183691,
     // Deletion color for .diff file
     'free-speech-red': #bd2c00,
     // Deletion background color for .diff file
@@ -183,7 +188,20 @@ $highlight-colors: (
     // Addition background color for .diff file
     'honeydew':        #eaffea
 );
-
+// Highlight text
+$highlight-text-bg-colors: (
+    'red':     lighten(red, 45%),
+    'green':   lighten(green, 65%),
+    'blue':    lighten(blue, 45%),
+    'purple':  lighten(purple, 70%),
+    'orange':  lighten(orange, 40%),
+    'yellow':  lighten(yellow, 40%),
+    'cyan':    lighten(cyan, 40%),
+    'primary': lighten(map-get($colors, 'primary'), 35%),
+    'success': lighten(map-get($colors, 'success'),35%),
+    'warning': lighten(map-get($colors, 'warning'), 40%),
+    'danger':  lighten(map-get($colors, 'danger'), 40%),
+);
 // Image gallery photos
 // Space between 2 photos
 $image-gallery-photos-margin: 2px;
@@ -201,11 +219,11 @@ $main-content: (
 // font-size : (X.Xrem = XXpx, 1.0rem = 10px)
 $markdown-headings-font-size: (
     'h1': 3rem,
-    'h2': 2.8rem,
-    'h3': 2.6rem,
-    'h4': 2.4rem,
-    'h5': 2.3rem,
-    'h6': 2.2rem
+    'h2': 2.7rem,
+    'h3': 2.4rem,
+    'h4': 2.1rem,
+    'h5': 1.9rem,
+    'h6': 1.7rem
 );
 // Reduction of markdwon headings on small screen and down
 $markdown-headings-font-size-sm-screen-reduction-factor: 0.35rem;

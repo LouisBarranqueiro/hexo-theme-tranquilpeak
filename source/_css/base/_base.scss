@@ -44,7 +44,7 @@ h6 {
 h1,
 h2,
 h3 {
-    margin: 2em 0 1em 0;
+    margin: 1em 0 1em 0;
 }
 
 h4,
@@ -93,18 +93,25 @@ table {
     text-align:      left;
 
     th {
-        font-weight:    bold;
-        padding-bottom: 0.5em;
-        border-bottom:  2px solid lighten(#dce4f1, 2);
+        padding:       5px 10px;
+        font-weight:   bold;
+        border-bottom: 2px solid #909ba2;
     }
     td {
-        border-bottom: 1px solid lighten(#dce4f1, 2);
-        padding:       1rem 0;
+        padding: 5px 10px;
+    }
+    tr {
+        &:nth-child(2n) {
+            background: #f7f8f8;
+        }
     }
 }
 
 hr {
-    border: 1px solid #eef2f8;
+    margin:     1.5em 0 0;
+    outline:    none;
+    border:     none;
+    border-top: 1px solid #eef2f8;
 }
 
 dl {
@@ -117,13 +124,12 @@ dl {
 }
 
 code {
-    font-size:     map-get($font-size, medium);
-    display:       inline-block;
-    font-family:   map-get($font-families, 'code');
-    font-weight:   400;
-    border-radius: 3px;
-    background:    #f5f5f5;
-    padding:       0 10px;
+    font-size:        map-get($font-size, medium);
+    display:          inline-block;
+    font-family:      map-get($font-families, 'code');
+    font-weight:      400;
+    background-color: map-get($highlight, 'background');
+    padding:          0 10px;
 }
 
 acronym,
@@ -132,15 +138,19 @@ abbr {
 }
 
 blockquote {
-    border-left: 2px solid darken(#dce4f1, 3);
-    padding:     10px 20px;
+    border-left: 3px solid map-get($colors, 'base');
+    padding:     0 15px;
+    font-style:  italic;
+    margin:      1.5em 0 0;
 
     cite {
         &:before {
             content: ' — ';
             padding: 0 0.3em;
         }
-
+    }
+    & > p:first-child {
+        margin: 0;
     }
 }
 

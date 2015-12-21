@@ -1,23 +1,22 @@
 figure.highlight {
-    background:    white;
-    margin:        10px 0;
-    border-radius: 3px;
-    line-height:   map-get($highlight, line-height);
-    color:         map-get($highlight-colors, night-rider);
-    border:        map-get($highlight, border);
-    overflow:      hidden;
+    background:     map-get($highlight, 'background');
+    margin:         10px 0;
+    line-height:    map-get($highlight, line-height);
+    color:          map-get($highlight-colors, night-rider);
+    padding-top:    15px;
+    padding-bottom: 15px;
+    overflow:       hidden;
 
     table {
-        display:    block;
-        width:      100%;
-        overflow-y: hidden;
-        overflow-x: auto;
+        display: block;
+        width:   100%;
     }
     // Reset for tag `pre` and  for class `.gutter`, `.code`, `.tag`
     pre,
     .gutter,
     .code,
     .tag {
+        background-color: inherit;
         font-family: #{map-get($font-families, 'highlight')};
         border:      none;
         padding:     0;
@@ -25,14 +24,19 @@ figure.highlight {
         // To override cursor attribute of `.tag` components
         cursor:      text;
     }
+    // hide gutter when code is plain text
+    &.plain {
+        .gutter {
+            display:none;
+        }
+    }
     // Meta bar which contains name of the file and his link
     figcaption {
-        font-size:     1.3rem;
-        padding:       10px 15px;
-        margin:        0;
-        background:    #f7f7f7;
-        border-bottom: map-get($highlight, border);
-        color:         #999999;
+        font-size:  1.3rem;
+        padding:    0 15px 20px;
+        margin:     0;
+        background: map-get($highlight, 'background');
+        color:      #999999;
 
         a {
             float: right;
@@ -40,9 +44,9 @@ figure.highlight {
     }
     // Gutter which contains line numbers
     .gutter {
-        background:   white;
+        background:   map-get($highlight, 'background');
         border-right: map-get($highlight, border);
-        padding:      0.3em 0.5em;
+        padding:      0.3em 15px;
 
         .line {
             color: #aaaaaa;
@@ -50,7 +54,13 @@ figure.highlight {
     }
     // Code container
     .code {
-        padding: 0.3em 0.3em 0.3em 1em;
+        padding: 0.3em 15px 0.3em 1em;
+        width:   100%;
+
+        pre {
+            max-width:  calc(#{map-get($main-content, 'max-width')} - 50px);
+            overflow-x: auto;
+        }
     }
     // All lines in gutter and code container
     .line {
@@ -76,7 +86,7 @@ figure.highlight {
         color: map-get($highlight-colors, pewter);
     }
     .string {
-        color: map-get($highlight-colors, persimmon);
+        color: map-get($highlight-colors, egyptian-blue);
     }
     .keyword {
         color: map-get($highlight-colors, cardinal);
@@ -84,6 +94,9 @@ figure.highlight {
     // ApacheConf
     &.apacheconf .code {
         .common,
+        .nomarkup,
+        .attribute,
+        .variable,
         .cbracket,
         .keyword {
             color: map-get($highlight-colors, bondi-blue);
@@ -91,6 +104,7 @@ figure.highlight {
         .sqbracket {
             color: map-get($highlight-colors, persimmon);
         }
+        .section,
         .tag {
             color: map-get($highlight-colors, asparagus);
         }
@@ -126,7 +140,8 @@ figure.highlight {
             color: map-get($highlight-colors, bahama-blue);
         }
         .subst,
-        .regexp {
+        .regexp,
+        .attribute {
             color: map-get($highlight-colors, persimmon);
         }
     }
@@ -136,7 +151,10 @@ figure.highlight {
         .preprocessor {
             color: map-get($highlight-colors, persimmon);
         }
-        .title {
+        .meta-keyword {
+            color: map-get($highlight-colors, cardinal);
+        }
+        .title  {
             color: map-get($highlight-colors, scampi);
         }
         .number,
@@ -157,14 +175,16 @@ figure.highlight {
         .built_in {
             color: map-get($highlight-colors, bondi-blue);
         }
-        .xmlDocTag {
+        .xmlDocTag,
+        .doctag {
             color: map-get($highlight-colors, asparagus);
         }
     }
     // CSS
     &.css .code {
         .at_rule,
-        .important {
+        .important,
+        .meta {
             color: map-get($highlight-colors, cardinal);
         }
         .attribute,
@@ -179,16 +199,19 @@ figure.highlight {
         }
         .id,
         .class,
-        .pseudo {
+        .pseudo,
+        .selector-pseudo {
             color: map-get($highlight-colors, scampi);
         }
-        .tag {
+        .tag,
+        .selector-tag {
             color: map-get($highlight-colors, asparagus);
         }
     }
     // Diff
     &.diff .code {
-        .chunk {
+        .chunk,
+        .meta {
             color:       map-get($highlight-colors, scampi);
             font-weight: bold;
         }
@@ -203,8 +226,11 @@ figure.highlight {
     }
     // HTTP
     &.http .code {
-        .literal,
-        .attribute {
+        .attribute,
+        .attr {
+            color: map-get($highlight-colors, egyptian-blue);
+        }
+        .literal {
             color: map-get($highlight-colors, bondi-blue);
         }
         .request {
@@ -213,10 +239,12 @@ figure.highlight {
     }
     // INI
     &.ini .code {
-        .title {
+        .title,
+        .section {
             color: map-get($highlight-colors, scampi);
         }
-        .setting {
+        .setting,
+        .attr {
             color: map-get($highlight-colors, cardinal);
         }
         .value,
@@ -232,6 +260,8 @@ figure.highlight {
         .javadoc {
             color: map-get($highlight-colors, pewter);
         }
+        .meta,
+        .annotation,
         .javadoctag {
             color: map-get($highlight-colors, cardinal);
         }
@@ -244,6 +274,7 @@ figure.highlight {
     }
     // JavaScript
     &.js .code {
+        .built_in,
         .title {
             color: map-get($highlight-colors, scampi);
         }
@@ -260,7 +291,6 @@ figure.highlight {
         .regexp {
             color: map-get($highlight-colors, persimmon);
         }
-        .built_in,
         .literal,
         .number {
             color: map-get($highlight-colors, bondi-blue);
@@ -269,9 +299,10 @@ figure.highlight {
     // JSON
     &.json .code {
         .attribute {
-            color: map-get($highlight-colors, persimmon);
+            color: map-get($highlight-colors, egyptian-blue);
         }
-        .number {
+        .number,
+        .literal {
             color: map-get($highlight-colors, bondi-blue);
         }
     }
@@ -280,13 +311,11 @@ figure.highlight {
         .constant {
             color: map-get($highlight-colors, night-rider);
         }
-        .variable {
-            color: map-get($highlight-colors, persimmon);
-        }
         .title {
             color: map-get($highlight-colors, scampi);
         }
-        .keyword {
+        .keyword,
+        .meta-keyword {
             color: map-get($highlight-colors, bondi-blue);
         }
     }
@@ -296,28 +325,33 @@ figure.highlight {
         .link_label,
         .strong,
         .emphasis,
-        .blockquote {
-            color: map-get($highlight-colors, persimmon);
+        .blockquote,
+        .quote,
+        .section {
+            color: map-get($highlight-colors, egyptian-blue);
         }
         .link_reference,
+        .symbol,
         .code {
             color: map-get($highlight-colors, bondi-blue);
         }
-        .link_url {
+        .link_url,
+        .link {
             text-decoration: underline;
         }
     }
     // Nginx
     &.nginx .code {
-        .title {
+        .title,
+        .attribute {
             color: map-get($highlight-colors, cardinal);
         }
-        .built_in {
+        .built_in,
+        .literal {
             color: map-get($highlight-colors, bondi-blue);
         }
-        .regexp,
-        .number {
-            color: map-get($highlight-colors, persimmon);
+        .regexp {
+            color: map-get($highlight-colors, egyptian-blue);
         }
         .variable {
             color: map-get($highlight-colors, night-rider);
@@ -325,12 +359,16 @@ figure.highlight {
     }
     // Objective-C
     &.objectivec .code {
-        .preprocessor {
+        .preprocessor,
+        .meta {
             color: map-get($highlight-colors, cardinal);
 
             .title {
                 color: map-get($highlight-colors, persimmon);
             }
+        }
+        .meta-string {
+            color: map-get($highlight-colors, egyptian-blue);
         }
         .title {
             color: map-get($highlight-colors, scampi);
@@ -346,13 +384,18 @@ figure.highlight {
         .sub {
             color: map-get($highlight-colors, scampi);
         }
+        .title {
+            color: map-get($highlight-colors, scampi);
+        }
         .regexp {
             color: map-get($highlight-colors, persimmon);
         }
+
     }
     // PHP
     &.php .code {
-        .phpdoc {
+        .phpdoc,
+        .doctag {
             color: map-get($highlight-colors, cardinal);
         }
         .regexp {
@@ -369,7 +412,8 @@ figure.highlight {
     // Python
     &.python .code {
         .decorator,
-        .title {
+        .title,
+        .meta {
             color: map-get($highlight-colors, scampi);
         }
         .number {
@@ -405,12 +449,14 @@ figure.highlight {
             color: map-get($highlight-colors, night-rider);
         }
         .value {
-            color: map-get($highlight-colors, persimmon);
+            color: map-get($highlight-colors, egyptian-blue);
         }
-        .attribute {
+        .attribute,
+        .attr {
             color: map-get($highlight-colors, scampi);
         }
-        .title {
+        .title,
+        .name {
             color: map-get($highlight-colors, asparagus);
         }
     }
@@ -420,6 +466,12 @@ figure.highlight {
             color: map-get($highlight-colors, scampi);
         }
         .function {
+            color: map-get($highlight-colors, bondi-blue);
+        }
+        .name {
+            color: map-get($highlight-colors, cardinal);
+        }
+        .attr {
             color: map-get($highlight-colors, bondi-blue);
         }
     }
@@ -440,7 +492,10 @@ figure.highlight {
         }
         .id,
         .pseudo,
-        .class {
+        .class,
+        .selector-id,
+        .selector-class,
+        .selector-tag {
             color: map-get($highlight-colors, scampi);
         }
     }
@@ -451,7 +506,6 @@ figure.highlight {
         .important {
             color: map-get($highlight-colors, cardinal);
         }
-        .preprocessor,
         .number,
         .hexcolor,
         .function,
@@ -466,8 +520,15 @@ figure.highlight {
         }
         .id,
         .pseudo,
-        .class {
+        .class,
+        .preprocessor,
+        .selector-class,
+        .selector-id {
             color: map-get($highlight-colors, scampi);
+        }
+        .tag,
+        .selector-tag {
+            color: map-get($highlight-colors, asparagus);
         }
     }
     // Stylus
@@ -475,7 +536,8 @@ figure.highlight {
         .at_rule {
             color: map-get($highlight-colors, cardinal);
         }
-        .tag {
+        .tag,
+        .selector-tag {
             color: map-get($highlight-colors, asparagus);
         }
         .number,
@@ -487,7 +549,10 @@ figure.highlight {
         .class,
         .id,
         .pseudo,
-        .title {
+        .title,
+        .selector-id,
+        .selector-pseudo,
+        .selector-class {
             color: map-get($highlight-colors, scampi);
         }
     }
@@ -510,7 +575,8 @@ figure.highlight {
             color: map-get($highlight-colors, scampi);
         }
         .built_in,
-        .number {
+        .number,
+        .type {
             color: map-get($highlight-colors, bondi-blue);
         }
     }
