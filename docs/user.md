@@ -549,33 +549,31 @@ your highlighted text
 ```
 
 - **classes** :   
-        - **red**  
-        - **green**  
-        - **blue**  
-        - **purple**  
-        - **orange**  
-        - **yellow**  
-        - **cyan**  
-        - **primary**  
-        - **success**  
-        - **warning**  
-        - **danger**  
+        - red  
+        - green  
+        - blue  
+        - purple  
+        - orange  
+        - yellow  
+        - cyan  
+        - primary  
+        - success  
+        - warning  
+        - danger  
         
-You can also use hexa color, rgb color, rgba color.
+**You can also use hexa color, rgb color, rgba color.**
 
-E.g :  
+**It's important to put the paragraph that contains highlight text tag inside** `<p>...</p>` 
+**otherwise the following content may not be rendered.**
+
+E.g (hexa color) :  
 ``` 
-{% hl_text #00FFFF %}  
-your highlighted text  
-{% endhl_text %}  
+<p>Sed imperdiet urna et quam ultrices {% hl_text #00FFFF %}your highlighted text{% endhl_text %} dignissim ultrices libero.</p>
 ```
 
-or 
-
+E.g (rgba color) :  
 ```
-{% hl_text rgba(12,12,12,0.4) %}  
-your highlighted text  
-{% endhl_text %}  
+<p>Sed imperdiet urna et quam ultrices {% hl_text rgba(12, 12, 12, 0.4) %}your highlighted text{% endhl_text %} dignissim ultrices libero.</p>
 ```
 
 #### Image ####
@@ -585,7 +583,7 @@ Image tag is useful to add images and create beautiful galleries. Check what are
 Syntax : `{% image [classes] /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
 E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`  
 
-- **classes (optionnal)** : You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :
+- **classes (optionnal)** : You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :  
         - **fancybox** : Generate a fancybox image.  
         - **nocaption** : Caption of the image will not be displayed.  
         - **left** : Image will float at the left.  
