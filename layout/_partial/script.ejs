@@ -9,7 +9,11 @@
         <script>
              var disqus_config = function () {
                  this.page.url = '<%= post.permalink %>';
-                 this.page.identifier = '<%= post.path %>';
+                 <% if (post.disqusIdentifier) { %>
+                    this.page.identifier = '<%= post.disqusIdentifier %>';
+                 <% } else { %>
+                    this.page.identifier = '<%= post.path %>';
+                 <% } %>                 
              };
             (function() {
                 var d = document, s = d.createElement('script');
