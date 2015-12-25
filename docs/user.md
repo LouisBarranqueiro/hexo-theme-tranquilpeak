@@ -433,6 +433,7 @@ Tranquilpeak introduces new variables to give you a lot of possibilities.
   
 Example :  
 ``` markdown
+disqusIdentifier: fdsF34ff34
 keywords:
 - javascript
 - hexo
@@ -453,6 +454,7 @@ photos:
 comments: false
 ```
 
+- **disqusIdentifier** : Define a unique string which is used to look up a page's thread in the Disqus system.
 - **keywords** : Define keywords for search engines. you can also define global keywords in Hexo configuration file.
 - **clearReading** : Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `theme.sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.
 - **autoThumbnailImage** : Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image. `autoThumbnailImage` overwrite the setting `auto_thumbnail_image` in the theme configuration file
