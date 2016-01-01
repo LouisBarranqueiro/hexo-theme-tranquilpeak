@@ -44,9 +44,9 @@
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
-        <% if (post.comments) { %>
+        <% if (post.comments && (theme.disqus_shortname || theme.duoshuo_shortname)) { %>
             <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                <a class="post-action-btn btn btn--default" href="#<%= (theme.duoshuo_shortname ? 'ds-thread' : 'disqus_thread') %>">
                     <i class="fa fa-comment-o"></i>
                 </a>
             </li>
