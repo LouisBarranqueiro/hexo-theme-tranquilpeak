@@ -54,10 +54,11 @@
         <li class="post-action">
             <% if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(post.content)) { %>
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">
+                <i class="fa fa-list"></i>
             <%} else { %>
                 <a class="post-action-btn btn btn--default" href="#">
+                <i class="fa fa-arrow-up"></i>
             <% } %>
-                <i class="fa fa-list"></i>
             </a>
         </li>
     </ul>
