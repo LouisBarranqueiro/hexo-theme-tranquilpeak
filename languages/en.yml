@@ -41,6 +41,7 @@ post:
     read_more: "Continue reading"
     go_to_website: "Go to website"
     comment_and_share: "Comment and share"
+    reading_time: " min read"
 
 author:
     # Your biography in english (Markdown and HTML supported)

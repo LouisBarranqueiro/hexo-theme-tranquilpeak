@@ -1,19 +1,37 @@
 <div id="share-options-bar" class="share-options-bar" data-behavior="<%= sidebarBehavior %>">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="<%= 'https://plus.google.com/share?url=' + post.permalink %>">
-                <i class="fa fa-google-plus"></i><span class=""><%= __('global.share_on_google_plus') %></span>
-            </a>
+            <% if (config.language != 'zh-cn') { %>
+                <a class="share-option-btn" target="new" href="<%= 'https://plus.google.com/share?url=' + post.permalink %>">
+                    <i class="fa fa-google-plus"></i><span class=""><%= __('global.share_on_google_plus') %></span>
+                </a>
+            <% } else { %>
+                <a class="share-option-btn" target="new" href="<%= 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + post.permalink %>">
+                    <i class="fa fa-qq"></i><span class=""><%= __('global.share_on_qzone') %></span>
+                </a>
+            <% } %>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="<%= 'https://www.facebook.com/sharer/sharer.php?u=' + post.permalink %>">
-                <i class="fa fa-facebook-official"></i><span><%= __('global.share_on_facebook') %></span>
-            </a>
+            <% if (config.language != 'zh-cn') { %>
+                <a class="share-option-btn" target="new" href="<%= 'https://www.facebook.com/sharer/sharer.php?u=' + post.permalink %>">
+                    <i class="fa fa-facebook-official"></i><span><%= __('global.share_on_facebook') %></span>
+                </a>
+            <% } else { %>
+                <a class="share-option-btn" target="new" href="<%= 'http://share.v.t.qq.com/index.php?c=share&a=index&url=' + post.permalink %>">
+                    <i class="fa fa-tencent-weibo"></i><span class=""><%= __('global.share_on_tencent_weibo') %></span>
+                </a>
+            <% } %>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="<%= 'https://twitter.com/intent/tweet?text=' + post.permalink %>">
-                <i class="fa fa-twitter"></i><span><%= __('global.share_on_twitter') %></span>
-            </a>
+            <% if (config.language != 'zh-cn') { %>
+                <a class="share-option-btn" target="new" href="<%= 'https://twitter.com/intent/tweet?text=' + post.permalink %>">
+                    <i class="fa fa-twitter"></i><span><%= __('global.share_on_twitter') %></span>
+                </a>
+            <% } else { %>
+                <a class="share-option-btn" target="new" href="<%= 'http://service.weibo.com/share/share.php?url=' + post.permalink %>">
+                    <i class="fa fa-weibo"></i><span class=""><%= __('global.share_on_sina_weibo') %></span>
+                </a>
+            <% } %>
         </li>
     </ul>
 </div>

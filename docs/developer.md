@@ -465,11 +465,11 @@ NPM dependencies :
 "grunt-contrib-uglify" : "^0.7.0"
 "grunt-contrib-watch" : "^0.6.1"
 "grunt-sails-linker" : "^0.10.1"
-"grunt-sass" : "1.0.0",
+"grunt-sass" : "1.1.0"
 "grunt-sync" : "^0.2.3"
 "grunt-text-replace" : "^0.4.0"
 "include-all" : "^0.1.6"
-"load-grunt-tasks" : "~0.2.0"
+"rand-token" : "^0.2.1"
 ```
  
 ### Bower dependencies ###

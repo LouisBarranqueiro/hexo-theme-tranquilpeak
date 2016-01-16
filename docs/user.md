@@ -20,6 +20,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Enable post assets folder](#enable-post-assets-folder)
     * [Disable relative links](#disable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
+    * [Enable Favicon](#enable-favicon)
     * [Define global keywords](#define-global-keywords)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
     - [Languages configuration](#languages-configuration)
@@ -131,6 +132,10 @@ feed:
 - **limit** : Maximum number of posts in the feed (Use `0` or `false` to show all posts)
 
 If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
+### Enable Favicon ###
+
+You can enable favicon by putting your `favicon.ico` into folder `source/assets/images/`.
 
 ### Define global keywords ###
 
@@ -290,7 +295,6 @@ thumbnail_image: true
 thumbnail_image_position: right
 auto_thumbnail_image: true
 cover_image: cover.jpg
-favicon:
 image_gallery: true
 archive_pagination: true
 category_pagination: true
@@ -311,7 +315,6 @@ tag_pagination: true
 - **go_to_message** : Message displayed after the `<!-- more -->` comment or after 300 characters for post with link layout
 - **cover_image** : Your blog cover picture. **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.**
 Default image is on AWS S3 and delivered by AWS CloudFront. Otherwise put your image in folder `source/assets/images/` and use relative url : `your-image.png` **Change the default cover image to have an unique blog**
-- **favicon** : Your favicon located in folder `source/assets/images/`
 - **image_gallery** : Display an image gallery at the end of a post which have `photos` variables. (false: disabled, true: enabled)
 - **archive_pagination** : Displaying style of archive pages. (false: pagination disabled, true: pagination enabled)
 - **category_pagination** :  Displaying style of category pages. (false: pagination disabled, true: pagination enabled)

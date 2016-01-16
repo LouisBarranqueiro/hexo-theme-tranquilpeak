@@ -30,19 +30,37 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://plus.google.com/share?url=' + post.permalink %>">
-                <i class="fa fa-google-plus"></i>
-            </a>
+            <% if (config.language != 'zh-cn') { %>
+                <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://plus.google.com/share?url=' + post.permalink %>">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            <% } else { %>
+                <a class="post-action-btn btn btn--default" target="new" href="<%= 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + post.permalink %>">
+                    <i class="fa fa-qq"></i>
+                </a>
+            <% } %>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://www.facebook.com/sharer/sharer.php?u=' + post.permalink %>">
-                <i class="fa fa-facebook-official"></i>
-            </a>
+            <% if (config.language != 'zh-cn') { %>
+                <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://www.facebook.com/sharer/sharer.php?u=' + post.permalink %>">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            <% } else { %>
+                <a class="post-action-btn btn btn--default" target="new" href="<%= 'http://share.v.t.qq.com/index.php?c=share&a=index&url=' + post.permalink %>">
+                    <i class="fa fa-tencent-weibo"></i>
+                </a>
+            <% } %>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://twitter.com/intent/tweet?text=' + post.permalink %>">
-                <i class="fa fa-twitter"></i>
-            </a>
+            <% if (config.language != 'zh-cn') { %>
+                <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://twitter.com/intent/tweet?text=' + post.permalink %>">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            <% } else { %>
+                <a class="post-action-btn btn btn--default" target="new" href="<%= 'http://service.weibo.com/share/share.php?url=' + post.permalink %>">
+                    <i class="fa fa-weibo"></i>
+                </a>
+            <% } %>
         </li>
         <% if (post.comments) { %>
             <li class="post-action">

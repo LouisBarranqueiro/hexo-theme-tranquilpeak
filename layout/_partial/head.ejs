@@ -63,15 +63,16 @@
     (function() {
         if (config.keywords) {
             keywords += config.keywords;
-            keywords += ',';
+            if (page.keywords) {
+                keywords += ',';
+            }
         }
         if (page.keywords) {
             keywords += page.keywords;
         }
     })();
 %>
-<head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="<%= config.title %>">
     <title><%= title %></title>
@@ -79,11 +80,8 @@
     <% if (keywords) { %>
         <meta name="keywords" content="<%= keywords %>">
     <% } %>
-    <% if (theme.favicon) { %>
-        <link rel="icon" href="<%= resolve_asset_url(theme.image_dir, theme.favicon) %>">
-    <% } %>
     <% if ((config.feed) && (config.feed.path.length)) { %>
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="<%- url_for(config.feed.path) %>">
+        <%- feed_tag(config.url + url_for(config.feed.path)) %>
     <% } %>
     <%- open_graph({
         type: 'blog',
@@ -105,16 +103,22 @@
     <% } %>
     <% if (page.thumbnailImage && page.thumbnailImage.length) { %>
         <meta property="og:image" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>" />
+        <% if (theme.swiftype_install_key) { %>
+            <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>" />
+        <% } %>
     <% } %>
     <% if (page.coverImage && page.coverImage.length) { %>
         <meta property="og:image" content="<%= resolve_asset_url(page.path, page.coverImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.coverImage) %>" />
+        <% if (theme.swiftype_install_key) { %>
+            <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.coverImage) %>" />
+        <% } %>
     <% } %>
     <% if (page.photos && page.photos.length) { %>
         <% page.photos.forEach(function(photo) { %>
             <meta property="og:image" content="<%= resolve_asset_url(page.path, photo) %>" />
-            <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, photo) %>" />
+            <% if (theme.swiftype_install_key) { %>
+                <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, photo) %>" />
+            <% } %>
         <% }) %>
     <% } %>
     <!--STYLES-->
@@ -125,4 +129,3 @@
     <!--STYLES END-->
     <%- partial('google-analytics') %>
     <%- partial('baidu-analytics') %>
-</head>

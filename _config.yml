@@ -154,8 +154,6 @@ auto_thumbnail_image: true
 # Otherwise put your image in folder `source/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
 # and use relative url : `your-image.png`
 cover_image: cover.jpg
-# Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
-favicon:
 # Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
 image_gallery: true
 # Pagination behavior of archive, category and tag pages (false: pagination disabled, true: pagination enabled)
