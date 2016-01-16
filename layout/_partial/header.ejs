@@ -3,6 +3,9 @@
 <% if (!theme.header.right_link.icon) { %>
     <% if (theme.gravatar_email && theme.gravatar_email.length) { %>
         <% authorPicture = gravatar(theme.gravatar_email, 90); %>
+        <% if (config.language = 'zh-cn') { %>
+            <% authorPicture = authorPicture.replace(/www.gravatar.com/, 'gravatar.moefont.com'); %>
+        <% } %>
     <% } else if (theme.author.picture && theme.author.picture.length) { %>
         <% if (is_remote_url(theme.author.picture)) { %>
             <% authorPicture = theme.author.picture; %>
