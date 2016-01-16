@@ -25,21 +25,14 @@
             })();
         </script>
     <% } else if (theme.duoshuo_shortname) { %>
-        <script type="text/javascript">
+        <script>
             var duoshuoQuery = {short_name:'<%= theme.duoshuo_shortname %>'};
-            (function() {
-                var ds = document.createElement('script');
-                ds.type = 'text/javascript';ds.async = true;
-                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                ds.charset = 'UTF-8';
-                (document.getElementsByTagName('head')[0]
-                || document.getElementsByTagName('body')[0]).appendChild(ds);
-            })();
         </script>
+        <script async src="//static.duoshuo.com/embed.js"></script>
     <% } %>
 <% } %>
 <% if (theme.swiftype_install_key) { %>
-    <script type="text/javascript">
+    <script>
         (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
                 (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
             e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
