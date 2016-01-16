@@ -1,5 +1,5 @@
-# 在所有地方显示的 date 格式化
-date_format: "MMM DD, YYYY"
+# 日期格式
+date_format: "YYYY年M月D日"
 
 global:
     home: "首页"
@@ -14,7 +14,7 @@ global:
     stack_overflow: "Stack Overflow"
     twitter: "Twitter"
     facebook: "Facebook"
-    google_plus: "Google Plus"
+    google_plus: "Google+"
     linkedin: "LinkedIn"
     mail: "邮箱"
     rss: "RSS"
@@ -23,7 +23,7 @@ global:
     share_on_twitter: "分享到 Twitter"
     search_category: "搜索分类"
     search_tag: "搜索标签"
-    search_date: "搜索日期 (YYYY/MM/DD)"
+    search_date: "搜索日期 (年/月/日)"
 
 pagination:
     page: "第 %d 页"
@@ -35,15 +35,15 @@ pagination:
 
 post:
     no_title : "无标题"
-    categorized_in: "发布在"
+    categorized_in: "分类"
     tagged_in: "标签"
     toc: "目录"
     read_more: "阅读全文"
-    go_to_website: "转到"
-    comment_and_share: "注释和共享"
+    go_to_website: "打开"
+    comment_and_share: "评论和分享"
 
 author:
-    # 你的个人简介 (支持 Markdown 和 HTML 语法)
+    # 个人简介 (支持 Markdown 语法)
     bio: ""
-    # 你的工作简介
+    # 工作简介
     job: ""
