@@ -20,6 +20,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Enable post assets folder](#enable-post-assets-folder)
     * [Disable relative links](#disable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
+    * [Enable Favicon](#enable-favicon)
     * [Define global keywords](#define-global-keywords)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
     - [Languages configuration](#languages-configuration)
@@ -131,6 +132,10 @@ feed:
 - **limit** : Maximum number of posts in the feed (Use `0` or `false` to show all posts)
 
 If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
+### Enable Favicon ###
+
+You can enable favicon by putting your `favicon.ico` into folder `source/assets/images/`.
 
 ### Define global keywords ###
 
