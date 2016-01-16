@@ -41,6 +41,7 @@ post:
     read_more: "阅读全文"
     go_to_website: "打开"
     comment_and_share: "评论和分享"
+    reading_time: "分钟阅读"
 
 author:
     # 个人简介 (支持 Markdown 语法)

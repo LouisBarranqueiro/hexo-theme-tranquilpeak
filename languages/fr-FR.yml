@@ -39,6 +39,7 @@ post:
     read_more: "Continuer"
     go_to_website: "Aller au site web"
     comment_and_share: "Commenter et partager"
+    reading_time: " min lesen"
 
 author:
     # Your biography in french (Markdown and HTML supported)
