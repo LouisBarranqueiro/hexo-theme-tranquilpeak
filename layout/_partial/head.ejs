@@ -80,9 +80,6 @@
     <% if (keywords) { %>
         <meta name="keywords" content="<%= keywords %>">
     <% } %>
-    <% if (theme.favicon) { %>
-        <link rel="icon" href="<%= resolve_asset_url(theme.image_dir, theme.favicon) %>">
-    <% } %>
     <% if ((config.feed) && (config.feed.path.length)) { %>
         <%- feed_tag(config.url + url_for(config.feed.path)) %>
     <% } %>
@@ -106,16 +103,22 @@
     <% } %>
     <% if (page.thumbnailImage && page.thumbnailImage.length) { %>
         <meta property="og:image" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>" />
+        <% if (theme.swiftype_install_key) { %>
+            <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>" />
+        <% } %>
     <% } %>
     <% if (page.coverImage && page.coverImage.length) { %>
         <meta property="og:image" content="<%= resolve_asset_url(page.path, page.coverImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.coverImage) %>" />
+        <% if (theme.swiftype_install_key) { %>
+            <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.coverImage) %>" />
+        <% } %>
     <% } %>
     <% if (page.photos && page.photos.length) { %>
         <% page.photos.forEach(function(photo) { %>
             <meta property="og:image" content="<%= resolve_asset_url(page.path, photo) %>" />
-            <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, photo) %>" />
+            <% if (theme.swiftype_install_key) { %>
+                <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, photo) %>" />
+            <% } %>
         <% }) %>
     <% } %>
     <!--STYLES-->
