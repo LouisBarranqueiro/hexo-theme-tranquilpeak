@@ -1,4 +1,4 @@
-<% var rPhoto = /([\w:\-\/._#]+) *(["|'](.+)["|'])*/; %>
+<% var rPhoto = /([\w:\-\/._#]+) ([\w:\-\/._#]+)* *(?:["|'](.+)["|'])*/; %>
 <% if ((photos) && (photos.length)) { %>
     <% var imageGalleryClass; %>
     <% if (photos.length > 2) { %>
@@ -10,20 +10,29 @@
         </div>
         <div class="image-gallery-photos <%= imageGalleryClass %>">
             <% photos.forEach(function(photo) { %>
-                    <% var match = photo.match(rPhoto); %>
-                    <% var photoUrl = match[1]; %>
-                    <% var photoTitle = match[3] || ""; %>
-                <% if (is_remote_url(photoUrl)) { %>
-                    <%  photoUrl = photoUrl; %>
-                    <% if (!/.+\.[a-zA-Z0-9]{3,4}$/.test(photoUrl)) { %>
-                        <%  photoUrl += "#.jpg"; %>
+                <% var match = photo.match(rPhoto); %>
+                <% var originalUrl = match[1]; %>
+                <% var thumbnailUrl = match[2]; %>
+                <% var photoTitle = match[3] || ''; %>
+                <% if (is_remote_url(originalUrl)) { %>
+                    <% if (!/.+\.[a-zA-Z0-9]{3,4}$/.test(originalUrl)) { %>
+                        <%  originalUrl += "#.jpg"; %>
                     <% } %>
                 <% } else { %>
-                    <% photoUrl = url_for(post.path.replace('.html', '/') + photo); %>
+                    <% originalUrl = url_for(post.path.replace('.html', '/') + originalUrl); %>
+                <% } %>
+                <% if (thumbnailUrl) { %>
+                    <% if (is_remote_url(thumbnailUrl)) { %>
+                        <% if (!/.+\.[a-zA-Z0-9]{3,4}$/.test(thumbnailUrl)) { %>
+                            <%  thumbnailUrl += "#.jpg"; %>
+                        <% } %>
+                    <% } else { %>
+                        <% thumbnailUrl = url_for(post.path.replace('.html', '/') + thumbnailUrl); %>
+                    <% } %>
                 <% } %>
                 <div class="photo-box">
-                    <a class="photo-box-inner fancybox" rel="fancybox-thumb" data-fancybox-group="<%= 'gallery-' + post.id %>" title="<%= photoTitle %>" href="<%= photoUrl %>">
-                        <img class="photo" src="<%= photoUrl %>" itemprop="image">
+                    <a class="photo-box-inner fancybox" data-fancybox-group="<%= 'gallery-' + post._id %>" title="<%= photoTitle %>" href="<%= (originalUrl || thumbnailUrl) %>">
+                        <img class="photo" src="<%= (thumbnailUrl || originalUrl) %>" itemprop="image">
                     </a>
                 </div>
             <% }); %>

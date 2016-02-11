@@ -150,6 +150,7 @@ If you are new to Hexo and internationalization (i18n), please read [Hexo docume
 
 Currently, the theme is delivered with english (en), chinese (zh-cn), french (fr-FR) and portuguese (pt-br) language file. 
 If your language is not available, follow this guidelines (E.g : add russian language (ru) :  
+
 1. Set `language` to `ru` in Hexo configuration file `_config.yml`  
 2. Create `ru.yml` file in `theme/tranquilpeak/languages/` folder  
 3. Copy the content of `theme/tranquilpeak/languages/en.yml` and paste it to `ru.yml` file  
@@ -450,7 +451,7 @@ photos:
     - image-3.jpg "New York"
     - image-4.png "Paris"
     - http://i.imgur.com/o9r19kD.jpg "Dubai"
-    - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no "Sidney"
+    - https://example.com/orignal.jpg https://example.com/thumbnail.jpg "Sidney"
 comments: false
 ```
 
@@ -476,7 +477,7 @@ The same with : `thumbnailImagePosition` set to `left`:
 - **coverSize**: `partial`: cover image take a part of the screen height (60%), `full`: cover image take the entire screen height.
 - **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2015/05/13/Cover-image-showcase/)
 - **coverMeta** : `in`: display post meta (title, date and categories) on cover image, `out`: display meta (title, date and categories) under cover image as usual. Default behavior : `in`
-- **photos** : Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `url [caption]`, E.g : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no "New York"`
+- **photos** : Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `original url [thumbnail url] [caption]`, E.g : `https://example.com/original.jpg https://example.com/thumbnail.jpg "New York"`
 - **comments** : Disable the comment of the post.
 
 **The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
