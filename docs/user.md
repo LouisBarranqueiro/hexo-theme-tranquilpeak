@@ -584,9 +584,8 @@ E.g (rgba color) :
 
 Image tag is useful to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Images)
 
-Syntax : `{% image [classes] /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
-E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`  
-
+Syntax : `{% image [classes] group:group-name /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
+E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`
 - **classes (optionnal)** : You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :  
         - **fancybox** : Generate a fancybox image.  
         - **nocaption** : Caption of the image will not be displayed.  
@@ -600,6 +599,7 @@ E.g : `{% image fancybox right clear image2.png http://google.fr/images/image125
         - **fig-75** : Image will take 75% of the width of post width and automatically float at left.  
         - **fig-100** : Image will take 100% of the width of post width.  
         - **clear** : Add a div with `clear:both;` style attached after the image to retrieve the normal flow of the post.  
+- **Group** : Name of a group, used to create a gallery. **Only for image with `fancybox` css class** (optional) 
 - **Orignal image** : Path to the original image.  
 - **Thumbnail image (optionnal)** : Path to the thumbnail image. If empty, the orignal image will be displayed.  
 - **Width of thumbnail image (optionnal)** : Width to the thumbnail image. If the thumbnail image is empty, width will be attached to thumbnail image created from original image. E.g : `150px` or `85%`.  
