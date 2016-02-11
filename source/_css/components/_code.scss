@@ -17,17 +17,17 @@ figure.highlight {
     .code,
     .tag {
         background-color: inherit;
-        font-family: #{map-get($font-families, 'highlight')};
-        border:      none;
-        padding:     0;
-        margin:      0;
+        font-family:      #{map-get($font-families, 'highlight')};
+        border:           none;
+        padding:          0;
+        margin:           0;
         // To override cursor attribute of `.tag` components
-        cursor:      text;
+        cursor:           text;
     }
     // hide gutter when code is plain text
     &.plain {
         .gutter {
-            display:none;
+            display: none;
         }
     }
     // Meta bar which contains name of the file and his link
@@ -60,6 +60,7 @@ figure.highlight {
         pre {
             max-width:  calc(#{map-get($main-content, 'max-width')} - 50px);
             overflow-x: auto;
+            overflow-y: hidden;
         }
     }
     // All lines in gutter and code container
