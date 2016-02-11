@@ -6,7 +6,10 @@
     <form id="filter-form" action="#">
         <input name="date" type="text" class="form-control input--xlarge" placeholder="<%= __('global.search_date') %>" autofocus="autofocus">
     </form>
-    <h5 class="archive-result text-color-base text-xlarge"></h5>
+    <h5 class="archive-result text-color-base text-xlarge"
+        data-message-zero="<%= __('global.posts_found.zero') %>"
+        data-message-one="<%= __('global.posts_found.one') %>"
+        data-message-other="<%= __('global.posts_found.other') %>"></h5>
     <section class="boxes">
         <% site.posts.sort('date', 'desc').each(function(post) { %>
             <% var currentYear = post.date.year(); %>

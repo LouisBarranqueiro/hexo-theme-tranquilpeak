@@ -9,15 +9,20 @@
      * @constructor
      */
     var ArchivesFilter = function(archivesElem) {
-        this.$form          = $(archivesElem).find('#filter-form');
-        this.$searchInput   = $(archivesElem).find('input[name=date]');
+        this.$form = $(archivesElem).find('#filter-form');
+        this.$searchInput = $(archivesElem).find('input[name=date]');
         this.$archiveResult = $(archivesElem).find('.archive-result');
-        this.$postsYear     = $(archivesElem).find('.archive-year');
-        this.$postsMonth    = $(archivesElem).find('.archive-month');
-        this.$postsDay      = $(archivesElem).find('.archive-day');
-        this.postsYear      = archivesElem + ' .archive-year';
-        this.postsMonth     = archivesElem + ' .archive-month';
-        this.postsDay       = archivesElem + ' .archive-day';
+        this.$postsYear = $(archivesElem).find('.archive-year');
+        this.$postsMonth = $(archivesElem).find('.archive-month');
+        this.$postsDay = $(archivesElem).find('.archive-day');
+        this.postsYear = archivesElem + ' .archive-year';
+        this.postsMonth = archivesElem + ' .archive-month';
+        this.postsDay = archivesElem + ' .archive-day';
+        this.messages = {
+            zero: this.$archiveResult.data('message-zero'),
+            one: this.$archiveResult.data('message-one'),
+            other: this.$archiveResult.data('message-other')
+        };
     };
 
     ArchivesFilter.prototype = {
@@ -89,13 +94,16 @@
          */
         showResult: function(numbPosts) {
             if (numbPosts == 0) {
-                this.$archiveResult.html('No posts found').show();
+                this.$archiveResult.html(this.messages.zero).show();
             }
             else if (numbPosts == -1) {
                 this.$archiveResult.html('').hide();
             }
+            else if (numbPosts == 1) {
+                this.$archiveResult.html(numbPosts + ' ' + this.messages.one).show();
+            }
             else {
-                this.$archiveResult.html(numbPosts + ' post' + ((numbPosts > 1) ? 's' : '') + ' found').show();
+                this.$archiveResult.html(numbPosts + ' ' + this.messages.other).show();
             }
         },
 
