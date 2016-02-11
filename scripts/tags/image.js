@@ -17,19 +17,19 @@
     var rClass = /^[_a-zA-Z0-9-]+$/;
     var rSize = /^\d+(?:|\.\d+)(?:px|%)?$/;
     var rFigClass = /(^fig-\d{2,3}$|^center$)/;
+    var rGroup = /^group:(.+)/;
     var fancyboxClass = 'fancybox';
     var figureClass = 'figure';
     var captionClass = 'caption';
     var noCaptionClass = 'nocaption';
     var clearClass = 'clear';
-
     /**
      * Image tag
      *
      * Syntax:
-     *     {% image [classes] /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}
+     *     {% image [classes] group:group1 /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}
      * E.g:
-     *     {% image fig-50 right fancybox image2.png http://google.fr/images/image125.png "A beautiful sunrise" %}
+     *     {% image fig-50 right fancybox group:travel image2.png http://google.fr/images/image125.png "A beautiful sunrise" %}
      */
     hexo.extend.tag.register('image', function(args) {
         var original;
@@ -40,10 +40,17 @@
         var html = '';
         var fancybox = '';
         var clear = '';
-
+        var group = '';
         // Get CSS classes
         while (args.length && rClass.test(args[0])) {
             classes.push(args.shift());
+        }
+
+        // Get group to define `data-fancybox-group` html attribute
+        var groupMatch = args[0].match(rGroup);
+        if (groupMatch != null) {
+            args.shift();
+            group = groupMatch[1];
         }
 
         // Get path of original image
@@ -92,7 +99,7 @@
 
         // Add Fancybox structure around image
         if (classes.indexOf(fancyboxClass) >= 0) {
-            fancybox += '<a class="' + fancyboxClass + '" href="' + original + '" title="' + title + '">';
+            fancybox += '<a class="' + fancyboxClass + '" href="' + original + '" title="' + title + '" data-fancybox-group="' + group +'">';
             fancybox += image;
             fancybox += '</a>';
             // remove `fancyfox` class of `classes` to not be attached on the main div
