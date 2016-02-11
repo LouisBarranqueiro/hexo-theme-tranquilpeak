@@ -24,6 +24,19 @@ global:
     search_category: "搜尋分類"
     search_tag: "搜尋標籤"
     search_date: "搜尋日期（YYYY/MM/DD）"
+    posts_found:
+        zero: "no posts found"
+        one: "post found"
+        other: "posts found"
+    categories_found:
+        zero: "no categories found"
+        one: "cartegory found"
+        other: "categories found"
+    tags_found:
+        zero: "no tags found"
+        one: "tag found"
+        other: "tags found"
+
 
 pagination:
     page: "第 %d 頁"

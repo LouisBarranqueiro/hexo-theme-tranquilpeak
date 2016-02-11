@@ -24,6 +24,19 @@ global:
     search_category: "Поиск по разделу"
     search_tag: "Поиск по тегу"
     search_date: "Поиск по дате (ГГГГ/ММ/ДД)"
+    posts_found:
+        zero: "no posts found"
+        one: "post found"
+        other: "posts found"
+    categories_found:
+        zero: "no categories found"
+        one: "cartegory found"
+        other: "categories found"
+    tags_found:
+        zero: "no tags found"
+        one: "tag found"
+        other: "tags found"
+
 
 pagination:
     page: "Страница %d"
