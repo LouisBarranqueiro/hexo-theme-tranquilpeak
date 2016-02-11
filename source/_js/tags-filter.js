@@ -18,6 +18,11 @@
         this.posts = tagsArchivesElem + ' .archive';
         // Html data attribute without `data-` of `.archive` element which contains the name of tag
         this.dataTag = 'tag';
+        this.messages = {
+            zero: this.$archiveResult.data('message-zero'),
+            one: this.$archiveResult.data('message-one'),
+            other: this.$archiveResult.data('message-other')
+        };
     };
 
     TagsFilter.prototype = {
@@ -70,7 +75,7 @@
         showResult: function(numbTags) {
             if (numbTags === 0) {
                 this.$archiveResult
-                    .html('No tags found')
+                    .html(this.messages.zero)
                     .show();
             }
             else if (numbTags === -1) {
@@ -78,9 +83,14 @@
                     .html('')
                     .hide();
             }
+            else if (numbTags == 1) {
+                this.$archiveResult
+                    .html(numbTags + ' ' + this.messages.one)
+                    .show();
+            }
             else {
                 this.$archiveResult
-                    .html(numbTags + ' tag' + ((numbTags > 1) ? 's' : '') + ' found')
+                    .html(numbTags + ' ' + this.messages.other)
                     .show();
             }
         },
