@@ -445,7 +445,8 @@ figure.highlight {
         }
     }
     // XML, HTML
-    &.xml {
+    &.xml,
+    &.html {
         .tag {
             color: map-get($highlight-colors, night-rider);
         }
