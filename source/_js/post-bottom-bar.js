@@ -10,10 +10,10 @@
      */
     var PostBottomBar = function() {
         this.$postBottomBar = $('.post-bottom-bar');
-        this.$postFooter    = $('.post-footer');
-        this.delta            = 5;
-        this.lastScrollTop    = 0;
-        this.scrollTop;
+        this.$postFooter = $('.post-actions-wrap');
+        this.$header = $('#header');
+        this.delta = 1;
+        this.lastScrollTop = 0;
     };
 
     PostBottomBar.prototype = {
@@ -40,22 +40,22 @@
         },
 
         /**
-         * Animate the post bottom bar
+         * Swipe the post bottom bar
          */
         swipePostBottomBar: function() {
-            this.scrollTop = $(window).scrollTop();
-            var postFooterElemPos = (this.$postFooter.offset().top + this.$postFooter.height() + this.$postBottomBar.height() / 2);
+            var scrollTop = $(window).scrollTop();
             // show bottom bar
             // if the user scrolled upwards more than `delta`
             // and `post-footer` div isn't visible
-            if ((this.scrollTop < this.lastScrollTop) &&
-                ($(window).scrollTop() + $(window).height()) < (postFooterElemPos)) {
+            if (this.lastScrollTop > scrollTop &&
+                (this.$postFooter.offset().top + this.$postFooter.height() > scrollTop + $(window).height() ||
+                this.$postFooter.offset().top < scrollTop + this.$header.height())) {
                 this.$postBottomBar.slideDown();
             }
             else {
                 this.$postBottomBar.slideUp();
             }
-            this.lastScrollTop = this.scrollTop;
+            this.lastScrollTop = scrollTop;
         }
     };
 
