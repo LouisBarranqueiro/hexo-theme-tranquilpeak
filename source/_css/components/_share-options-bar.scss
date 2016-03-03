@@ -1,6 +1,8 @@
 .share-options-bar {
     position:           fixed;
-    bottom:             -155px;
+    // height + border-top
+    // used to hide the div at the bottom of the window
+    bottom:             -156px;
     background:         white;
     height:             155px;
     clear:              both;
