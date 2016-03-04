@@ -30,9 +30,7 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <%- postContent %>
-            <% if (theme.image_gallery) { %>
-                <%- partial('post/gallery', {photos: post.photos})%>
-            <% } %>
+            <%- partial('post/gallery') %>
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">

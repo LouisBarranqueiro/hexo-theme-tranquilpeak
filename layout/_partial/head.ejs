@@ -3,6 +3,7 @@
     var title_suffix = ' - ' + config.title;
     var fb_admin_ids = [];
     var keywords = '';
+    var photos = [];
 
     /**
      * Separate fb admin ids
@@ -69,6 +70,32 @@
             keywords += page.keywords;
         }
     })();
+
+    /**
+     * Extract original url of page photos and store it
+     * to add them in open graph and swiftype meta tag
+     */
+    (function() {
+        /**
+         * Extract original url of a photo and store it
+         */
+        function processImage(img) {
+            var rPhoto = /([\w:\-\/._#]+) ([\w:\-\/._#]+)* *(?:["|'](.+)["|'])*/;
+            match = img.match(rPhoto);
+            photos.push(resolve_asset_url(page.path, match[1]));
+        }
+
+        if (page.gallery && page.gallery.length) {
+            page.gallery.forEach(function(photo) {
+                processImage(photo)
+            });
+        }
+        else if (page.photos && page.photos.length) {
+            page.photos.forEach(function(photo) {
+                processImage(photo);
+            });
+        }
+    })();
 %>
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
@@ -111,10 +138,10 @@
         <meta property="og:image" content="<%= resolve_asset_url(page.path, page.coverImage) %>"/>
         <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.coverImage) %>" />
     <% } %>
-    <% if (page.photos && page.photos.length) { %>
-        <% page.photos.forEach(function(photo) { %>
-            <meta property="og:image" content="<%= resolve_asset_url(page.path, photo) %>" />
-            <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, photo) %>" />
+    <% if (photos && photos.length) { %>
+        <% photos.forEach(function(photo) { %>
+            <meta property="og:image" content="<%= photo %>" />
+            <meta class="swiftype" name="image" data-type="enum" content="<%= photo) %>" />
         <% }) %>
     <% } %>
     <!--STYLES-->

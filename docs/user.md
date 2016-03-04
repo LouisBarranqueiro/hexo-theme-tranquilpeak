@@ -431,6 +431,8 @@ To use tags plugins to highlight code or add Fancybox image, please read [Hexo d
 ### Front-matter settings ###
 
 Tranquilpeak introduces new variables to give you a lot of possibilities.  
+
+**Since Tranquilpeak 1.7, if you declare some photos in `photos` varible with a caption or an thumbnail url, please use `gallery` variable name instead of `photos` otherwise Hexo will generate wrong url for these images in open graph meta tag.**
   
 Example :  
 ``` markdown
@@ -447,7 +449,7 @@ coverImage: image-2.png
 coverCaption: "A beautiful sunrise"
 coverMeta: out
 coverImage: image-2.png
-photos:
+gallery:
     - image-3.jpg "New York"
     - image-4.png "Paris"
     - http://i.imgur.com/o9r19kD.jpg "Dubai"
@@ -477,7 +479,7 @@ The same with : `thumbnailImagePosition` set to `left`:
 - **coverSize**: `partial`: cover image take a part of the screen height (60%), `full`: cover image take the entire screen height.
 - **coverCaption** : Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2015/05/13/Cover-image-showcase/)
 - **coverMeta** : `in`: display post meta (title, date and categories) on cover image, `out`: display meta (title, date and categories) under cover image as usual. Default behavior : `in`
-- **photos** : Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `original url [thumbnail url] [caption]`, E.g : `https://example.com/original.jpg https://example.com/thumbnail.jpg "New York"`
+- **gallery** : **Formerly **photos**. Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `original url [thumbnail url] [caption]`, E.g : `https://example.com/original.jpg https://example.com/thumbnail.jpg "New York"`
 - **comments** : Disable the comment of the post.
 
 **The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
