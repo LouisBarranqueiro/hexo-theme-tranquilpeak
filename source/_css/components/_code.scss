@@ -582,4 +582,21 @@ figure.highlight {
             color: map-get($highlight-colors, bondi-blue);
         }
     }
+    // YAML
+    &.yml {
+        .line
+        .attr {
+            color: map-get($highlight-colors, asparagus);
+        }
+        .line,
+        .string,
+        .type,
+        .literal,
+        .meta {
+            color: map-get($highlight-colors, egyptian-blue);
+        }
+        .number {
+            color: map-get($highlight-colors, bondi-blue);
+        }
+    }
 }
