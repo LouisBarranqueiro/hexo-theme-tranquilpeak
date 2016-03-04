@@ -8,10 +8,10 @@
      * @constructor
      */
     var AboutCard = function() {
-        this.$openBtn   = $("#sidebar, #header").find("a[href*='#about']");
-        this.$closeBtn  = $('#about-btn-close');
-        this.$blog      = $('#blog');
-        this.$about     = $('#about');
+        this.$openBtn = $("#sidebar, #header").find("a[href*='#about']");
+        this.$closeBtn = $('#about-btn-close');
+        this.$blog = $('#blog');
+        this.$about = $('#about');
         this.$aboutCard = $('#about-card');
     };
 
@@ -55,7 +55,6 @@
          */
         playBack: function() {
             var self = this;
-
             // Lift the about card
             self.liftAboutCard();
             // Fade in the blog after that the about card lifted up
@@ -72,15 +71,24 @@
          * Slide the card to the middle
          */
         dropAboutCard: function() {
-            var self            = this;
+            var self = this;
             var aboutCardHeight = self.$aboutCard.innerHeight();
-
+            // default offset from top
+            var offsetTop = ($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight;
+            // if card is longer than the window
+            // scroll is enable
+            // and re-define offsetTop
+            if (aboutCardHeight + 30 > $(window).height()) {
+                self.$about.css('overflow-y', 'scroll');
+                self.$aboutCard.css('margin', '15px auto');
+                offsetTop = aboutCardHeight;
+            }
             self.$aboutCard
                 .css('top', '0px')
                 .css('top', '-' + aboutCardHeight + 'px')
                 .show(500, function() {
                     self.$aboutCard.animate({
-                        top: '+=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
+                        top: '+=' + offsetTop + 'px'
                     });
                 });
         },
@@ -89,13 +97,19 @@
          * Slide the card to the top
          */
         liftAboutCard: function() {
-            var self            = this;
+            var self = this;
             var aboutCardHeight = self.$aboutCard.innerHeight();
-
+            // default offset from top
+            var offsetTop = ($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight;
+            if (aboutCardHeight > $(window).height()) {
+                self.$about.css('overflow-y', 'hidden');
+                offsetTop = aboutCardHeight;
+            }
             self.$aboutCard.animate({
-                top: '-=' + (($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight) + 'px'
+                top: '-=' + offsetTop + 'px'
             }, 500, function() {
                 self.$aboutCard.hide();
+                self.$aboutCard.removeAttr('style');
             });
         }
     };
