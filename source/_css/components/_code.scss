@@ -60,3 +60,13 @@ figure.highlight {
         font-size: map-get($highlight, font-size);
     }
 }
+
+// Gist
+.gist {
+    .line,
+    .line-number {
+        font-family: map-get($font-families, 'highlight');
+        font-size:   1em;
+        margin:      0 0 5px 0;
+    }
+}

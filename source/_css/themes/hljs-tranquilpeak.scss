@@ -16,16 +16,6 @@ figure.highlight {
     }
 }
 
-// Gist
-.gist {
-    .line,
-    .line-number {
-        font-family: map-get($font-families, 'highlight');
-        font-size:   1em;
-        margin:      0 0 5px 0;
-    }
-}
-
 // Highlight code coloration
 .highlight {
     // General
