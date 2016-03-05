@@ -317,6 +317,10 @@ If you want to add a new language, duplicate an existing language file and repla
 ├── scripts
 │   ├── filters
 │   │   └── excerpt.js
+│   ├── helpers
+│   │   ├── absolute_url.js
+│   │   ├── is_remote_url.js
+│   │   └── resolve_asset_url.js
 │   ├── tags
 │   │   ├── alert.js
 │   │   ├── fancybox.js
@@ -326,8 +330,9 @@ If you want to add a new language, duplicate an existing language file and repla
 ```
 
 Each scrips is executed a the startup of Hexo. They are separed by categories:
-- filters : A filter is used to modify some specified data. Hexo passes data to filter in sequence and filters can modify the data.
-- tags : A tag helps users insert snippets to posts easily.
+- **filters** : A filter is used to modify some specified data. Hexo passes data to filter in sequence and filters can modify the data.
+- **helpers** : Helpers are used in templates to help insert snippets quickly. Helpers cannot be used in source files.
+- **tags** : A tag helps users insert snippets to posts easily.
 
 ### Assets ###
 
@@ -396,7 +401,7 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
 ```  
   
 SCSS structure follow 7-1 pattern of [sass guidelines](http://sass-guidelin.es/#the-7-1-pattern)  
-If you want more informations and to understand better this code, consult [sass guidelines](http://sass-guidelin.es/)  
+If you want more information and to understand better this code, consult [sass guidelines](http://sass-guidelin.es/)  
 
 #### Fonts #####
 
