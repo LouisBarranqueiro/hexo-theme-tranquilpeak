@@ -36,6 +36,9 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [Integrated services configuration](#integrated-services-configuration)
     * [Google Analytics](#google-analytics)
         * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
+- [Quick & easy modifications](#quick-&-easy-modifications)  
+    * [Prerequisites](#prerequisites)
+    * [Change code coloration (Highlight.js theme)](#change-code-coloration-\(Highlight.js-theme\))
 - [Writing posts](#writing-posts)
     * [Front-matter settings](#front-matter-settings)
     * [Define post excerpt](#define-post-excerpt)
@@ -420,6 +423,28 @@ Follow these steps, to add new filter :
 7. Select **Custom filter**, **Filter Field** : `Hostname`, **Filter Pattern** :  `(.*?localhost.*?)`  
 8. Click on **Save** button   
 
+## Quick & easy modifications
+
+### Prerequisites
+
+Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
+1. Install requirements : [developer documentation - requirements](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#requirements)
+2. Install npm dependencies with `npm install`
+3. Install bower dependencies with `bower install`
+
+**Run all commands in theme folder : `hexo-blog/themes/tranquilpeak`**
+
+### Change code coloration (Highlight.js theme)
+
+Tranquilpeak integrate its own highlight.js theme inspired by GitHub. 
+Of course, you can replace it with an other theme found on highlight.js repository. Since Hexo use different CSS class names, all theme are not ready out of the box, but it is very easy to make them compatible. 
+
+Follow these steps :
+1. Get your theme here : [Highlight.js theme](https://github.com/isagalaev/highlight.js/tree/master/src/styles) or create yours
+2. Follow guidelines in `source/_css/themes/hljs-custom.scss` file
+3. Build the theme with `grunt buildProd`. Learn more about grunt tasks : [developer documentation - grunt tasks](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#grunt-tasks)
+
+
 ## Writing posts ##
 
 To write articles, you have to user Markdown langague. [Here](https://guides.github.com/features/mastering-markdown/#examples) you can find the main basics of Markdown syntax.   
@@ -622,27 +647,6 @@ E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" 
 
 `fancybox` tag is deprecated since Tranquilpeak 1.3. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
   
-## Quick & easy modifications
-
-### Prerequisites
-
-Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
-1. Install requirements : [developer documentation - requirements](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#requirements)
-2. Install npm dependencies with `npm install`
-3. Install bower dependencies with `bower install`
-
-**Run all commands in theme folder : `hexo-blog/themes/tranquilpeak`**
-
-### Change code coloration (Highlight.js theme)
-
-Tranquilpeak integrate its own highlight.js theme inspired by GitHub. 
-Of course, you can replace it with an other theme found on highlight.js repository. Since Hexo use different CSS class names, all theme are not ready out of the box, but it is very easy to make them compatible. 
-
-Follow these steps :
-1. Get your theme here : [Highlight.js theme](https://github.com/isagalaev/highlight.js/tree/master/src/styles) or create yours
-2. Follow guidelines in `source/_css/themes/hljs-custom.scss` file
-3. Build the theme with `grunt buildProd`. Learn more about grunt tasks : [developer documentation - grunt tasks](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#grunt-tasks)
-
 ## Running ##
 
 Run `hexo server` and start writing! :)
