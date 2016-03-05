@@ -9,15 +9,15 @@ figure.highlight {
         color:      #999999;
     }
     .gutter {
-        background: map-get($highlight, 'background');
+        background:         map-get($highlight, 'background');
+        border-right-color: #e6e6e6;
+
         .line {
             color: #aaaaaa;
         }
     }
-}
 
-// Highlight code coloration
-.highlight {
+    // Highlight code coloration
     // General
     .comment {
         color: map-get($highlight-colors, pewter);
