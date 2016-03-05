@@ -133,11 +133,16 @@ tranquilpeak
 ├── scripts
 │   ├── filters
 │   │   └── excerpt.js
+│   ├── helpers
+│   │   ├── absolute_url.js
+│   │   ├── is_remote_url.js
+│   │   └── resolve_asset_url.js
 │   ├── tags
 │   │   ├── alert.js
 │   │   ├── fancybox.js
 │   │   ├── hightlight_text.js
 │   │   ├── image.js
+│   │   ├── tabbed_codeblock_.js
 │   │   └── wide_image.js
 ├── source
 │   ├── _css
@@ -215,6 +220,7 @@ tranquilpeak
 │   │   ├── share-options.js
 │   │   ├── sidebar.js
 │   │   ├── smartresize.js
+│   │   ├── tabbed-codeblocks.js
 │   │   └── tags-filter.js
 ├── tasks
 │   ├── config
@@ -326,6 +332,7 @@ If you want to add a new language, duplicate an existing language file and repla
 │   │   ├── fancybox.js
 │   │   ├── highlight_text.js
 │   │   ├── image.js
+│   │   ├── tabbed_codeblock_.js
 │   │   └── wide_image.js
 ```
 
@@ -439,13 +446,14 @@ Contains all images of the theme.
     ├── share-options.js
     ├── sidebar.js
     ├── smartresize.js
+    ├── tabbed-codeblocks.js
     └── tags-filter.js
 ```
 
 - **about.js** : Fade out the blog and let drop the about card of the author and vice versa
 - **archives-filter.js** : Filter posts by using their date on archives page : `/archives`
 - **categories-filter.js** : Filter posts by using their categories on archives page : `/categories`
-- **codeblock-resizer.js** : Resize codeblocks to fit the screen width
+- **codeblock-resizer.js** : Resize code blocks to fit the screen width
 - **fancybox.js.js** : Run Fancybox plugin
 - **header.js** : Hide the header when the user scrolls down, and show it when he scrolls up
 - **image-gallery.js** : Resize all images of an image-gallery
@@ -453,6 +461,7 @@ Contains all images of the theme.
 - **share-options.js** : Open and close the share-options bar 
 - **sidebar.js** : Open and close the sidebar by swiping the sidebar and the blog and vice versa
 - **smartresize.js** : Debouncing function from [John Hann](https://github.com/unscriptable)
+- **tabbed-codeblocks.js** : Animate tabs of tabbed code blocks
 - **tags-filter.scss** : Filter posts by using their tags on archives page : `/tags`  
   
 Each file correspond to a feature.  
