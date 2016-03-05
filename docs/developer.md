@@ -179,6 +179,9 @@ tranquilpeak
 │   │   │   ├── _header.scss
 │   │   │   ├── _main.scss
 │   │   │   └── _sidebar.scss
+│   │   ├── themes
+│   │   │   ├── _hljs-custom.scss
+│   │   │   └── _hljs-tranquilpeak.scss
 │   │   ├── utils
 │   │   │   ├── mixins
 │   │   │   │   ├── _bottom-bar.scss
@@ -370,6 +373,9 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
         │   ├── _header.scss
         │   ├── _main.scss
         │   └── _sidebar.scss
+        ├── themes
+        │   ├── _hljs-custom.scss
+        │   └── _hljs-tranquilpeak.scss
         ├── utils
         │   ├── mixins
         │   │   ├── _bottom-bar.scss
