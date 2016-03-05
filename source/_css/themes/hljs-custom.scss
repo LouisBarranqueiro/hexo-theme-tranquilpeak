@@ -8,87 +8,23 @@
 /// 5. Remove `hljs-` of all CSS class name. E.g : `.hljs-comment` becomes `.comment
 /// 6. Comment line 61 (`'themes/tranquilpeak',`) of `source/_css/tranquilpeak.scss` file
 /// 7. Run `grunt buildProd` to build the theme and see the result
-
+/*
 figure.highlight {
-    background: #322931;
-    color:      #b9b5b8;
+    background: ;
+    color: ;
 
     figcaption {
-        background: #322931;
-        color:      #b9b5b8;
+        background: ;
+        color: ;
     }
     .gutter {
-        background:         #322931;
-        border-right-color: #322931;
+        background: ;
+        border-right-color: ;
         .line {
-            color: #b9b5b8;
+            color: ;
         }
     }
     // PUT YOUR THEME HERE
-    .comment,
-    .quote {
-        color: #989498;
-    }
 
-    /* Red */
-    .variable,
-    .template-variable,
-    .attribute,
-    .tag,
-    .name,
-    .selector-id,
-    .selector-class,
-    .regexp,
-    .link,
-    .deletion {
-        color: #dd464c;
-    }
-
-    /* Orange */
-    .number,
-    .built_in,
-    .builtin-name,
-    .literal,
-    .type,
-    .params {
-        color: #fd8b19;
-    }
-
-    /* Yellow */
-    .class .title {
-        color: #fdcc59;
-    }
-
-    /* Green */
-    .string,
-    .symbol,
-    .bullet,
-    .addition {
-        color: #8fc13e;
-    }
-
-    /* Aqua */
-    .meta {
-        color: #149b93;
-    }
-
-    /* Blue */
-    .function,
-    .section,
-    .title {
-        color: #1290bf;
-    }
-
-    /* Purple */
-    .keyword,
-    .selector-tag {
-        color: #c85e7c;
-    }
-    .emphasis {
-        font-style: italic;
-    }
-
-    .strong {
-        font-weight: bold;
-    }
 }
+*/
