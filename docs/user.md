@@ -38,6 +38,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
 - [Quick & easy modifications](#quick-&-easy-modifications)  
     * [Prerequisites](#prerequisites)
+    * [Change global style](#change-global-style)
     * [Change code coloration (Highlight.js theme)](#change-code-coloration-\(Highlight.js-theme\))
 - [Writing posts](#writing-posts)
     * [Front-matter settings](#front-matter-settings)
@@ -433,6 +434,10 @@ Since you are going to edit the theme, you have to build it to see changes. So f
 3. Install bower dependencies with `bower install`
 
 **Run all commands in theme folder : `hexo-blog/themes/tranquilpeak`**
+
+### Change global style
+
+If you want to change font families, font size, sidebar color, things like that, take a look at `source/_css/utils/_variables.scss` file. This file contains global variables used in this theme. **Build the theme after changes to see changes.**
 
 ### Change code coloration (Highlight.js theme)
 
