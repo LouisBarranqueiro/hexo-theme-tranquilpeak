@@ -1,7 +1,7 @@
 html {
     font-family: $font-family-base;
     // equal to 10px, useful to use em and rem
-    font-size:   62.5%;
+    font-size:   10px;
     // Gives you better control of the font size when the first selected font is not available.
     @include prefix(text-size-adjust, 100%, 'ms' 'webkit');
     // Overrides the highlight color shown when the user taps
@@ -123,6 +123,23 @@ dl {
     }
 }
 
+// code block
+pre > code {
+    display:     block;
+    width:       100%;
+    box-sizing:  border-box;
+    padding:     15px;
+    font-family: #{map-get($font-families, 'highlight')};
+    border:      none;
+    margin:      0;
+    // To override cursor attribute of `.tag` components
+    cursor:      text;
+    overflow-x:  auto;
+    line-height: map-get($highlight, line-height) + 0.4em;
+    font-size:   map-get($highlight, font-size);
+}
+
+// inline code
 code {
     font-size:        map-get($font-size, medium);
     display:          inline-block;

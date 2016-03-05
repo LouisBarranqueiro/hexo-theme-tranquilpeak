@@ -1,6 +1,24 @@
-/// Official theme for Tranquilpeak
-// Code block style
-figure.highlight {
+// Official theme for Tranquilpeak
+// Default code block
+pre > code {
+    background: map-get($highlight, 'background');
+    color:      map-get($highlight-colors, night-rider);
+}
+
+// Default inline code
+code {
+    background-color: map-get($highlight, 'background');
+}
+
+// Tabbed code block tab
+.codeblock--tabbed figcaption .tab.active {
+    background: map-get($colors, 'primary');
+    color:      white;
+}
+
+// Highlight code block
+figure.highlight,
+.codeblock {
     background: map-get($highlight, 'background');
     color:      map-get($highlight-colors, night-rider);
 
