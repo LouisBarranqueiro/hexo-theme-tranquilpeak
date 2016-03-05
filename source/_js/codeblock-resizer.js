@@ -1,7 +1,7 @@
 +function($) {
     'use strict';
 
-    // Resize codeblocks to fit the screen width
+    // Resize code blocks to fit the screen width
 
     var CodeBlockResizer = function(elem) {
         this.$codeBlocks = $(elem);
@@ -31,17 +31,11 @@
                 var $code = $(this).find('.code');
                 // get padding of code div
                 var codePaddings = $code.width() - $code.innerWidth();
-                // codeblock div width with padding - gutter div with padding + code div padding
+                // code block div width with padding - gutter div with padding + code div padding
                 var width = $(this).outerWidth() - $gutter.outerWidth() + codePaddings;
                 // apply new width
                 $code.css('width', width);
                 $code.children('pre').css('width', width);
-                // Add extra padding-bottom to gutter
-                if ($code.find('pre').hasHorizontalScrollBar()) {
-                    // 21px : perfect height to simulate a scroll bar added to the gutter
-                    // used to align line number with line of code
-                    $gutter.css('padding-bottom', '21px');
-                }
             });
         }
     };
