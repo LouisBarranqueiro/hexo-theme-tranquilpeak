@@ -49,6 +49,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Alert](#alert)
         * [Highlight text](#highlight-text)
         * [Image](#image)
+        * [Tabbed code block](#tabbed-code-block)
         * [Wide image](#wide-image)
         * [Fancybox](#fancybox)
 - [Running](#running)  
@@ -618,7 +619,7 @@ Image tag is useful to add images and create beautiful galleries. Check what are
 
 Syntax : `{% image [classes] group:group-name /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
 E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`
-- **classes (optionnal)** : You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :  
+- **classes (optional)** : You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :  
         - **fancybox** : Generate a fancybox image.  
         - **nocaption** : Caption of the image will not be displayed.  
         - **left** : Image will float at the left.  
@@ -633,11 +634,43 @@ E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/im
         - **clear** : Add a div with `clear:both;` style attached after the image to retrieve the normal flow of the post.  
 - **Group** : Name of a group, used to create a gallery. **Only for image with `fancybox` css class** (optional) 
 - **Orignal image** : Path to the original image.  
-- **Thumbnail image (optionnal)** : Path to the thumbnail image. If empty, the orignal image will be displayed.  
-- **Width of thumbnail image (optionnal)** : Width to the thumbnail image. If the thumbnail image is empty, width will be attached to thumbnail image created from original image. E.g : `150px` or `85%`.  
-- **Height of thumbnail image (optionnal)** : Height to the thumbnail image. If the thumbnail image is empty, height will be attached to thumbnail image created from original image. E.g : `300px` or `20%`.  
-- **Title (optionnal)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
-  
+- **Thumbnail image (optional)** : Path to the thumbnail image. If empty, the orignal image will be displayed.  
+- **Width of thumbnail image (optional)** : Width to the thumbnail image. If the thumbnail image is empty, width will be attached to thumbnail image created from original image. E.g : `150px` or `85%`.  
+- **Height of thumbnail image (optional)** : Height to the thumbnail image. If the thumbnail image is empty, height will be attached to thumbnail image created from original image. E.g : `300px` or `20%`.  
+- **Title (optional)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
+ 
+#### Tabbed code block ####
+
+![tabbed_codeblock-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.7/tabbed_codeblock-tag.png)
+
+Check it live : [tabbed code block demo]()
+
+Syntax : 
+``` js
+  {% tabbed_codeblock [name] [link] %}
+      <!-- tab [lang] -->
+          source code
+      <!-- endtab -->
+  {% endtabbed_codeblock %}
+```
+E.g : 
+``` js
+  {% tabbed_codeblock example http://example.com %}
+      <!-- tab js -->
+          var test = 'test';
+      <!-- endtab -->
+      <!-- tab css -->
+          .btn {
+              color: red;
+          }
+      <!-- endtab -->
+  {% endtabbed_codeblock %}
+``` 
+
+- **name (optional)** :  Name of the code block, or of the file
+- **link (optional)** :  Link to a demo, or a file
+- **lang (optional)** :  Programming language use for the current tab
+
 #### Wide image ####
 
 Wide image tag is useful to display wide images in full width. It take the entire window width. Check the the result : [Wide image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Wide-images)
@@ -646,7 +679,7 @@ Syntax : `{% wide_image /path/to/image [title text] %}`
 E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" %}`  
 
 - **image** : Path to the original image.  
-- **Title (optionnal)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
+- **Title (optional)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
 
 #### Fancybox ####
 
