@@ -15,28 +15,28 @@ var captionClass = 'caption';
  *     {% wide_image http://google.fr/images/image125.png "A beautiful sunrise" %}
  */
 hexo.extend.tag.register('wide_image', function(args) {
-    var image;
-    var html = '';
+  var image;
+  var html = '';
 
-    // Get path of image
-    if (rPath.test(args[0])) {
-        image = args.shift();
-    }
+  // Get path of image
+  if (rPath.test(args[0])) {
+    image = args.shift();
+  }
 
-    // Get title of image
-    var title = args.join(' ');
+  // Get title of image
+  var title = args.join(' ');
 
-    // Place image out of `main-content-wrap` div to be display in full width
-    // We ise  `<!-- endcontent -->` and `<!-- content -->` here to not be auto deleted or closed by marked module.
-    // The theme will replace this comment tag by `<div class="main-content-wrap">` and `</div>` after marked job.
-    html += '<!-- endcontent -->';
-    html += '<div class="' + figureClass + ' ' + figureFullWidthClass + '">';
-    html += '<img class="' + figureImageClass + '" src="' + image + '" alt="' + title + '">';
-    html += '<span class="' + captionClass + '">';
-    html += title;
-    html += '</span>';
-    html += '</div>';
-    html += '<!-- content -->';
+  // Place image out of `main-content-wrap` div to be display in full width
+  // We ise  `<!-- endcontent -->` and `<!-- content -->` here to not be auto deleted or closed by marked module.
+  // The theme will replace this comment tag by `<div class="main-content-wrap">` and `</div>` after marked job.
+  html += '<!-- endcontent -->';
+  html += '<div class="' + figureClass + ' ' + figureFullWidthClass + '">';
+  html += '<img class="' + figureImageClass + '" src="' + image + '" alt="' + title + '">';
+  html += '<span class="' + captionClass + '">';
+  html += title;
+  html += '</span>';
+  html += '</div>';
+  html += '<!-- content -->';
 
-    return html;
+  return html;
 });
