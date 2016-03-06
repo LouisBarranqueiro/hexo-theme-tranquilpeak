@@ -72,6 +72,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 2. **Hexo CLI** : v0.1.4 or higher. Run `npm install hexo-cli -g`
 3. **Grunt CLI** : v0.1.13 or higher. Run `npm install grunt-cli -g`
 4. **Bower** : v1.4.1 or higher. Run `npm install bower -g`
+5. **ESLint** : v2.3.0 or higher. Run `npm install eslint -g`
+6. **ESLint config Google** : v0.4.0 or higher. Run `npm install eslint -g`
 
 ## Installation ##
 
@@ -81,7 +83,19 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 4. Complete `theme/tranquilpeak/_config.yml` with your informations by following directives in comments
 
 If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
-  
+
+## Style guide ##
+
+### Javascript
+
+We use [ESLint](http://eslint.org) with Google style to maintain code style.  
+Check code status with :
+``` bash
+npm run eslint
+# or
+grunt eslint
+```
+
 ## Code structure ##
 
 ```
