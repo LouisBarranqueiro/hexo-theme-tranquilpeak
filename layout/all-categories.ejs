@@ -98,8 +98,12 @@ function displayCategories(category) {
         <input name="category" type="text" class="form-control input--xlarge"
                placeholder="<%= __('global.search_category')  %>" autofocus="autofocus">
     </form>
-    <h4 class="archive-result text-color-base text-xlarge"></h4>
-    <section class="boxes">
+    <h5 class="archive-result text-color-base text-xlarge"
+        data-message-zero="<%= __('global.categories_found.zero') %>"
+        data-message-one="<%= __('global.categories_found.one') %>"
+        data-message-other="<%= __('global.categories_found.other') %>"></h5>
+
+        <section class="boxes">
         <% site.categories.sort('name').each(function(category) { %>
             <% if (!category.parent) { %>
                 <%- displayCategories(category) %>

@@ -2,8 +2,12 @@
     <form id="filter-form" action="#">
         <input name="tag" type="text" class="form-control input--xlarge" placeholder="<%= __('global.search_tag') %>" autofocus="autofocus">
     </form>
-    <h4 class="archive-result text-color-base text-xlarge"></h4>
-    <section>
+    <h4 class="archive-result text-color-base text-xlarge"
+        data-message-zero="<%= __('global.tags_found.zero') %>"
+        data-message-one="<%= __('global.tags_found.one') %>"
+        data-message-other="<%= __('global.tags_found.other') %>"></h4>
+
+        <section>
         <% site.tags.sort('name').each(function(tag) { %>
             <a class="tag tag--primary tag--small" href="<%= '#' + tag.name + '-list' %>" data-tag="<%= tag.name.toLowerCase() %>">
                 <%= tag.name %>

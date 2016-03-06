@@ -21,6 +21,11 @@
         this.dataCategory = 'category';
         // Html data attribute without `data-` of `.archive` element which contains the name of parent's categories
         this.dataParentCategories = 'parent-categories';
+        this.messages = {
+            zero: this.$archiveResult.data('message-zero'),
+            one: this.$archiveResult.data('message-one'),
+            other: this.$archiveResult.data('message-other')
+        };
     };
 
     CategoriesFilter.prototype = {
@@ -71,19 +76,16 @@
          */
         showResult: function(numbCategories) {
             if (numbCategories == 0) {
-                this.$archiveResult
-                    .html('No categories found')
-                    .show();
+                this.$archiveResult.html(this.messages.zero).show();
             }
             else if (numbCategories == -1) {
-                this.$archiveResult
-                    .html('')
-                    .hide();
+                this.$archiveResult.html('').hide();
+            }
+            else if (numbCategories == 1) {
+                this.$archiveResult.html(numbCategories + ' ' + this.messages.one).show();
             }
             else {
-                this.$archiveResult
-                    .html(numbCategories + ' categor' + ((numbCategories > 1) ? 'ies' : 'y') + ' found')
-                    .show();
+                this.$archiveResult.html(numbCategories + ' ' + this.messages.other).show();
             }
         },
 

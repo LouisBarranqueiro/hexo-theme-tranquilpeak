@@ -24,6 +24,19 @@ global:
     search_category: "搜索分类"
     search_tag: "搜索标签"
     search_date: "搜索日期 (YYYY/MM/DD)"
+    posts_found:
+        zero: "没有发现帖子"
+        one: "发现后"
+        other: "发现帖子"
+    categories_found:
+        zero: "没有找到类别"
+        one: "发现类"
+        other: "发现类别"
+    tags_found:
+        zero: "没有发现标签"
+        one: "标签发现"
+        other: "发现标签"
+
 
 pagination:
     page: "第 %d 页"
