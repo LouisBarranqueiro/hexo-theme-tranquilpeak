@@ -80,7 +80,7 @@
          * Extract original url of a photo and store it
          */
         function processImage(img) {
-            var rPhoto = /([\w:\-\/._#]+) ([\w:\-\/._#]+)* *(?:["|'](.+)["|'])*/;
+            var rPhoto = /([\w:\-\/._#]+)(?:\s+([\w:\-\/._#]+))*(?:\s*["|'](.+)["|'])*/;
             match = img.match(rPhoto);
             photos.push(resolve_asset_url(page.path, match[1]));
         }
