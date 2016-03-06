@@ -1,6 +1,19 @@
 {
     "extends": "google",
     "rules": {
-        "comma-dangle": [2,"never"]
+        "comma-dangle": [2,"never"],
+        "valid-jsdoc": [2, {
+            "requireReturnDescription": false,
+            "requireParamDescription": false
+        }],
+        "no-undef":[1],
+        "brace-style": [2, "stroustrup"],
+        "no-trailing-spaces": [2, { "skipBlankLines": true }],
+        "eqeqeq":[1]
+    },
+
+    "env": {
+        "browser": true,
+        "node": true
     }
 }
