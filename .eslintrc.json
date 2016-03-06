@@ -1,0 +1,6 @@
+{
+    "extends": "google",
+    "rules": {
+        "comma-dangle": [2,"never"]
+    }
+}
