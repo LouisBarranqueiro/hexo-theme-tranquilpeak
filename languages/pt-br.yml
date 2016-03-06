@@ -1,4 +1,4 @@
-# date format displayed everywhere in the blog
+# formato de data exibido em todos os lugares no blog
 date_format: "DD/MM/YYYY"
 
 global:
@@ -18,9 +18,9 @@ global:
     linkedin: "LinkedIn"
     mail: "Mail"
     rss: "RSS"
-    share_on_google_plus: "Share on Google Plus"
-    share_on_facebook: "Share on Facebook"
-    share_on_twitter: "Share on Twitter"
+    share_on_google_plus: "Partilhar no Google Plus"
+    share_on_facebook: "SPartilhar no Facebook"
+    share_on_twitter: "Partilhar no Twitter"
     search_category: "Pesquisar categoria"
     search_tag: "Pesquisar tag"
     search_date: "Pesquisar data (AAAA/MM/DD)"
@@ -55,7 +55,7 @@ post:
     comment_and_share: "Comentar e compartilhar"
 
 author:
-    # Your biography in portuguese (Markdown and HTML supported)
+    # Sua biografia (Markdown and HTML supported)
     bio: ""
-    # Your job in portuguese
+    # Seu trabalho
     job: ""

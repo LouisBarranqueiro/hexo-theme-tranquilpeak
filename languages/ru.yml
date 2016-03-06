@@ -25,18 +25,17 @@ global:
     search_tag: "Поиск по тегу"
     search_date: "Поиск по дате (ГГГГ/ММ/ДД)"
     posts_found:
-        zero: "no posts found"
-        one: "post found"
-        other: "posts found"
+        zero: "ни одна должность не найдено"
+        one: "статьи найдено"
+        other: "статьи найдены"
     categories_found:
-        zero: "no categories found"
-        one: "cartegory found"
-        other: "categories found"
+        zero: "Категория не найдены"
+        one: "категория найдены"
+        other: "категории найдены"
     tags_found:
-        zero: "no tags found"
-        one: "tag found"
-        other: "tags found"
-
+        zero: "нет тега не найдено"
+        one: "найден тег"
+        other: "теги найдены"
 
 pagination:
     page: "Страница %d"

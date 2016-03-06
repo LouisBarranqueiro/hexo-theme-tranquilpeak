@@ -25,15 +25,15 @@ global:
     search_tag: "Search tag"
     search_date: "Search date (YYYY/MM/DD)"
     posts_found:
-        zero: "no posts found"
+        zero: "no post found"
         one: "post found"
         other: "posts found"
     categories_found:
-        zero: "no categories found"
+        zero: "no category found"
         one: "cartegory found"
         other: "categories found"
     tags_found:
-        zero: "no tags found"
+        zero: "no tag found"
         one: "tag found"
         other: "tags found"
 
@@ -55,7 +55,7 @@ post:
     comment_and_share: "Comment and share"
 
 author:
-    # Your biography in english (Markdown and HTML supported)
+    # Your biography (Markdown and HTML supported)
     bio: ""
-    # Your job in english
+    # Your job
     job: ""
