@@ -4,6 +4,7 @@
   "description": "A gorgeous responsive theme for Hexo blog framework",
   "main": "Gruntfile.js",
   "scripts": {
+    "eslint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "grunt-contrib-cssmin": "^0.12.0",
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^0.4.6",
     "grunt-sails-linker": "^0.10.1",
     "grunt-sass": "1.1.0",
     "grunt-sync": "^0.2.3",
