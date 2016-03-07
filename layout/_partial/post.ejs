@@ -4,7 +4,7 @@
 
     // Generate and insert table of contents in post content
     if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(postContent)) {
-        if (__('post.toc_title')) {
+        if (__('post.toc')) {
             tableOfContents = '<h1 id=\"table-of-contents\">' + __('post.toc') + '</h1>';
         } else {
             tableOfContents = '<span id="table-of-contents"></span>';
