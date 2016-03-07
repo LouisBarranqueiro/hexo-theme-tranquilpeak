@@ -42,7 +42,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Navigation menu  
 - GitHub theme for code highlighting  
 - Image gallery  
-- Image generator helpers
+- Tags for image (FancyBox), wide image, tabbed code block, highlighted text
 - Table of contents  
   
   
