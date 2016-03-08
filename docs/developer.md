@@ -89,7 +89,7 @@ If you want to configure the theme, please follow the [user documentation](https
 
 ### Javascript
 
-We use [ESLint](http://eslint.org) with Google style to maintain code style.  
+We use [ESLint](http://eslint.org) based on Google code style to maintain code style.  
 Check code status with :
 ``` bash
 npm run eslint
