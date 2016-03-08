@@ -97,7 +97,7 @@ To understand better the code and edit  the theme, consult the following documen
 
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
 
-All pull requests must be done on the `dev` branch.
+Read [guidelines for contributing](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/.github/CONTRIBUTING.md) for more information.
 
 ## License ##
 
