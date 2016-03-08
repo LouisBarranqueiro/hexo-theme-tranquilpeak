@@ -6,22 +6,22 @@
   var path = require('path');
   var async = require('async');
 
-  var postsDir = path.resolve(process.cwd(), path.resolve(hexo.config.source_dir, '_tests'));
-  var rExcerpt = /(?:<!-- ?more ?-->|<!-- ?excerpt ?-->)/;
-  var rFilename = /.md$/;
-
   /**
-   * Return an array with all file which doesn't have excerpt tag
-   * @param _callback
+   * Return an array with all files which don't have an excerpt tag
+   * @param {function} cb a callback
    */
-  function getInvalidPosts(_callback) {
+  function getInvalidPosts(cb) {
     /**
-     * Open, read, check that the file have an excerpt tag
-     * @param filename
-     * @param callback
+     * Check that the file have an excerpt tag
+     * @param {String} filename
+     * @param {function} callback
      */
-    function readFile(filename, callback) {
+    function checkFile(filename, callback) {
+      var postsDir = path.resolve(process.cwd(), path.resolve(hexo.config.source_dir, '_tests'));
+      var rExcerpt = /(?:<!-- ?more ?-->|<!-- ?excerpt ?-->)/;
+      var rFilename = /.md$/;
       var filepath = path.resolve(postsDir, filename);
+      // check that file is a markdown file
       if (rFilename.test(filename)) {
         fs.readFile(filepath, 'utf8', function(error, data) {
           if (error) {
@@ -30,7 +30,8 @@
           }
           data = fm(data);
           var content = data.body;
-          if (!rExcerpt.test(content)) {
+          // search excerpt tag
+          if (content && !rExcerpt.test(content)) {
             invalidPosts.push(filepath);
           }
           return callback();
@@ -39,17 +40,18 @@
     }
 
     var invalidPosts = [];
+    // read in posts folder
     fs.readdir(postsDir, function(error, filenames) {
       if (error) {
         return done(error);
       }
-      // read each files
-      async.forEach(filenames, readFile, function(error) {
+      // check each files
+      async.forEach(filenames, checkFile, function(error) {
         if (error) {
           throw error;
         }
         else {
-          _callback(invalidPosts);
+          cb(invalidPosts);
         }
       })
     });
@@ -57,13 +59,13 @@
 
   /**
    * Add `<!-- more -->` tag in each post file which doesn't have an excerpt tag
-   * @param posts
-   * @param _callback
+   * @param {Array} posts an array of filepath
+   * @param {function} cb a callback
    */
-  function fixInvalidPosts(posts, _callback) {
+  function fixInvalidPosts(posts, cb) {
 
     /**
-     * Open, read and add `<!-- more -->` tag in the file
+     * Add `<!-- more -->` tag in the file
      * @param filename
      * @param callback
      */
@@ -73,11 +75,17 @@
           if (error) {
             return callback(filename + ' : can\'t access file');
           }
+          // regex to search a sentence (japanese, chinese allowed)
           var rSentence = /([.?!。])\s*(?=[A-Z一-龠ぁ-ゔァ-ヴー々〆〤])/;
+          // get body of post
           var content = fm(data).body;
+          // get index of the first sentence
           var index = content.search(rSentence);
+          // insert `<!-- more -->` tag at `index`
           content = content.slice(0, index + 1) + '<!-- more -->' + content.slice(index + 1);
+          // erase the old body of post with the new
           data = data.slice(0, data.indexOf(content.slice(0, index))) + content;
+          // write the file with the new data
           fs.writeFile(filename, data, function(error) {
             if (error) {
               return callback(filename + ' not found');
@@ -89,23 +97,21 @@
       }
     }
 
+    // process each files
     async.forEach(posts, processFile, function(error) {
       if (error) {
         throw error;
       }
       else {
-        _callback();
+        cb();
       }
     })
   }
 
   /**
-   * Tranquilpeak 1.7.0 migrator
    * Add `<!-- more -->` tag in each post file which doesn't have an excerpt tag
-   * @param args
    */
-  function migrator(args) {
-    console.log('-> Migration started');
+  function autoExcerptMigration(cb) {
     console.log('Checking for posts without `<-- more -->` and `<!-- excerpt -->` tag...');
     getInvalidPosts(function(posts) {
       console.log(posts.length + ' post(s) found');
@@ -113,11 +119,11 @@
         console.log('Since auto excerpt feature doesn\'t exist anymore in Tranquilpeak 1.7.0');
         console.log('The \'<!-- more -->\' tag will be inserted at the end of the first sentence of each posts which don\'t have excerpt tag');
         fixInvalidPosts(posts, function() {
-          console.log('-> Migration finished successfully')
+          cb();
         });
       }
       else {
-        console.log('-> Migration finished successfully')
+        cb();
       }
     });
 
@@ -125,6 +131,12 @@
 
   /**
    * Register migrator
+   * @param {Array} args
    */
-  hexo.extend.migrator.register('1.7.0', migrator);
+  hexo.extend.migrator.register('1.7.0', function(args) {
+    console.log('-> Migration started');
+    autoExcerptMigration(function() {
+      console.log('-> Migration finished successfully')
+    });
+  });
 })();
