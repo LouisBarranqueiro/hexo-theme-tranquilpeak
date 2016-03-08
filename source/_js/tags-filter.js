@@ -85,7 +85,7 @@
           .html('')
           .hide();
       }
-      else if (numbTags == 1) {
+      else if (numbTags === 1) {
         this.$archiveResult
           .html(numbTags + ' ' + this.messages.one)
           .show();

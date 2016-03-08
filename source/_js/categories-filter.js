@@ -17,9 +17,11 @@
     this.$categories = $(categoriesArchivesElem).find('.category-anchor');
     this.posts = categoriesArchivesElem + ' .archive';
     this.categories = categoriesArchivesElem + ' .category-anchor';
-    // Html data attribute without `data-` of `.archive` element which contains the name of category
+    // Html data attribute without `data-` of `.archive` element
+    // which contains the name of category
     this.dataCategory = 'category';
-    // Html data attribute without `data-` of `.archive` element which contains the name of parent's categories
+    // Html data attribute without `data-` of `.archive` element
+    // which contains the name of parent's categories
     this.dataParentCategories = 'parent-categories';
     this.messages = {
       zero: this.$archiveResult.data('message-zero'),
@@ -61,7 +63,7 @@
      * @return {void}
      */
     filter: function(category) {
-      if (category == '') {
+      if (category === '') {
         this.showAll();
         this.showResult(-1);
       }
@@ -78,13 +80,13 @@
      * @return {void}
      */
     showResult: function(numbCategories) {
-      if (numbCategories == 0) {
+      if (numbCategories === 0) {
         this.$archiveResult.html(this.messages.zero).show();
       }
-      else if (numbCategories == -1) {
+      else if (numbCategories === -1) {
         this.$archiveResult.html('').hide();
       }
-      else if (numbCategories == 1) {
+      else if (numbCategories === 1) {
         this.$archiveResult.html(numbCategories + ' ' + this.messages.one).show();
       }
       else {
@@ -109,27 +111,30 @@
     showPosts: function(category) {
       var self = this;
       var parents;
+      var categories = self.categories + '[data-' + self.dataCategory + '*=\'' + category + '\']';
+      var posts = self.posts + '[data-' + self.dataCategory + '*=\'' + category + '\']';
 
       if (self.countCategories(category) > 0) {
         // Check if selected categories have parents
-        if ($(self.categories + '[data-' + this.dataCategory + '*=\'' + category + '\'][data-' + self.dataParentCategories + ']').length) {
+        if ($(categories + '[data-' + self.dataParentCategories + ']').length) {
           // Get all categories that matches search
-          $(self.categories + '[data-' + self.dataCategory + '*=\'' + category + '\']').each(function() {
+          $(categories).each(function() {
             // Get all its parents categories name
             parents = $(this).attr('data-' + self.dataParentCategories).split(',');
             // Show only the title of the parents's categories and hide their posts
             parents.forEach(function(parent) {
-              $(self.categories + '[data-' + self.dataCategory + '=\'' + parent + '\']').show();
-              $(self.posts + '[data-' + self.dataCategory + '=\'' + parent + '\']').show();
-              $(self.posts + '[data-' + self.dataCategory + '=\'' + parent + '\'] > .archive-posts > .archive-post').hide();
+              var dataAttr = '[data-' + self.dataCategory + '=\'' + parent + '\']';
+              $(self.categories + dataAttr).show();
+              $(self.posts + dataAttr).show();
+              $(self.posts + dataAttr + ' > .archive-posts > .archive-post').hide();
             });
           });
         }
       }
       // Show categories and related posts found
-      $(self.categories + '[data-' + self.dataCategory + '*=\'' + category + '\']').show();
-      $(self.posts + '[data-' + self.dataCategory + '*=\'' + category + '\']').show();
-      $(self.posts + '[data-' + self.dataCategory + '*=\'' + category + '\'] > .archive-posts > .archive-post').show();
+      $(categories).show();
+      $(posts).show();
+      $(posts + ' > .archive-posts > .archive-post').show();
     },
 
     /**

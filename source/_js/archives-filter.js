@@ -74,7 +74,7 @@
       var numberPosts;
 
       // Check if the search is empty
-      if (date[0] == '') {
+      if (date[0] === '') {
         this.showAll();
         this.showResult(-1);
       }
@@ -96,13 +96,13 @@
      * @returns {void}
      */
     showResult: function(numbPosts) {
-      if (numbPosts == 0) {
+      if (numbPosts === 0) {
         this.$archiveResult.html(this.messages.zero).show();
       }
-      else if (numbPosts == -1) {
+      else if (numbPosts === -1) {
         this.$archiveResult.html('').hide();
       }
-      else if (numbPosts == 1) {
+      else if (numbPosts === 1) {
         this.$archiveResult.html(numbPosts + ' ' + this.messages.one).show();
       }
       else {

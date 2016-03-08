@@ -46,12 +46,13 @@
      */
     swipePostBottomBar: function() {
       var scrollTop = $(window).scrollTop();
+      var postFooterOffsetTop = this.$postFooter.offset().top;
       // show bottom bar
       // if the user scrolled upwards more than `delta`
       // and `post-footer` div isn't visible
       if (this.lastScrollTop > scrollTop &&
-        (this.$postFooter.offset().top + this.$postFooter.height() > scrollTop + $(window).height() ||
-        this.$postFooter.offset().top < scrollTop + this.$header.height())) {
+        (postFooterOffsetTop + this.$postFooter.height() > scrollTop + $(window).height() ||
+        postFooterOffsetTop < scrollTop + this.$header.height())) {
         this.$postBottomBar.slideDown();
       }
       else {

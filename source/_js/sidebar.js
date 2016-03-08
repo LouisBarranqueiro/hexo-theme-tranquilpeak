@@ -17,7 +17,8 @@
     // Each element has a different behavior when the sidebar is opened
     this.$blog = $('.post-bottom-bar, #header, #main, .post-header-cover');
     // If you change value of `mediumScreenWidth`,
-    // you have to change value of `$screen-min: (md-min)` too in `source/_css/utils/variables.scss`
+    // you have to change value of `$screen-min: (md-min)` too
+    // in `source/_css/utils/variables.scss`
     this.mediumScreenWidth = 768;
   };
 
@@ -93,7 +94,8 @@
      */
     swipeSidebarToRight: function() {
       var self = this;
-      // Check if the sidebar isn't swiped and prevent multiple click on the open button with `.processing` class
+      // Check if the sidebar isn't swiped
+      // and prevent multiple click on the open button with `.processing` class
       if (!self.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
         // Swipe the sidebar to the right
         self.$sidebar.addClass('processing pushed');
@@ -110,7 +112,8 @@
      */
     swipeSidebarToLeft: function() {
       var self = this;
-      // Check if the sidebar is swiped and prevent multiple click on the close button with `.processing` class
+      // Check if the sidebar is swiped
+      // and prevent multiple click on the close button with `.processing` class
       if (self.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
         // Swipe the sidebar to the left
         self.$sidebar
@@ -125,7 +128,8 @@
      */
     swipeBlogToRight: function() {
       var self = this;
-      // Check if the blog isn't swiped and prevent multiple click on the open button with `.processing` class
+      // Check if the blog isn't swiped
+      // and prevent multiple click on the open button with `.processing` class
       if (!self.$blog.hasClass('pushed') && !this.$blog.hasClass('processing')) {
         // Swipe the blog to the right
         self.$blog.addClass('processing pushed');
@@ -142,7 +146,8 @@
      */
     swipeBlogToLeft: function() {
       var self = this;
-      // Check if the blog is swiped and prevent multiple click on the close button with `.processing` class
+      // Check if the blog is swiped
+      // and prevent multiple click on the close button with `.processing` class
       if (self.$blog.hasClass('pushed') && !this.$blog.hasClass('processing')) {
         // Swipe the blog to the left
         self.$blog

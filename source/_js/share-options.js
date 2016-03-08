@@ -46,8 +46,10 @@
     openShareOptions: function() {
       var self = this;
 
-      // Check if the share option bar isn't opened and prevent multiple click on the open button with `.processing` class
-      if (!self.$shareOptionsBar.hasClass('opened') && !this.$shareOptionsBar.hasClass('processing')) {
+      // Check if the share option bar isn't opened
+      // and prevent multiple click on the open button with `.processing` class
+      if (!self.$shareOptionsBar.hasClass('opened') &&
+        !this.$shareOptionsBar.hasClass('processing')) {
         // Open the share option bar
         self.$shareOptionsBar.addClass('processing opened');
 
@@ -64,8 +66,10 @@
     closeShareOptions: function() {
       var self = this;
 
-      // Check if the share options bar is opened and prevent multiple click on the close button with `.processing` class
-      if (self.$shareOptionsBar.hasClass('opened') && !this.$shareOptionsBar.hasClass('processing')) {
+      // Check if the share options bar is opened
+      // and prevent multiple click on the close button with `.processing` class
+      if (self.$shareOptionsBar.hasClass('opened') &&
+        !this.$shareOptionsBar.hasClass('processing')) {
         // Close the share option bar
         self.$shareOptionsBar
           .addClass('processing')
