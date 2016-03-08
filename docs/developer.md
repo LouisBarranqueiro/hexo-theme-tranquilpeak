@@ -10,6 +10,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Style guide](#style-guide)
 - [Code structure](#code-structure)
     * [Views](#views)
     * [Assets](#assets)
