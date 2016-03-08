@@ -1,6 +1,10 @@
 'use strict';
 
-var pathRegex = /(((?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[.\!\/\\w]*))?)/;
+var pathRegex = new RegExp(
+  '((([A-Za-z]{3,9}:(?:\\/\\/)?)(?:[-;:&=+$,\\w]+@)?' +
+  '[A-Za-z0-9.-]+|(?:www.|[-;:&=+$,\\w]+@)[A-Za-z0-9.-]+)' +
+  '((?:\\/[\\+~%\\/.\\w-_]*)?\\??(?:[-+=&;%@.\\w_]*)' +
+  '#?(?:[.!\\/\\w]*))|^[A-Za-z0-9_\\/-]+\\.\\w{2,4})');
 var classRegex = /^[a-zA-Z0-9-_]+$/;
 
 /**
@@ -24,7 +28,7 @@ hexo.extend.tag.register('fancybox', function(args) {
   }
 
   var title = args.join(' ');
-
+  
   return '<a class="fancybox" href="' + original + '" title="' + title + '">' +
     '<img class="' + cssClass + '" src="' + (thumbnail || original) + '" alt="' + title + '">' +
     '</a>' +

@@ -8,7 +8,7 @@
    * @param {Number} startpos
    * @return {Number}
    */
-  function getRegexIndexOf(array, regex) {
+  function reIndexOf(array, regex) {
     for (var i in this) {
       if (array[i].toString().match(regex)) {
         return i;
@@ -17,7 +17,11 @@
     return -1;
   }
   
-  var rPath = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[.\!\/\\w]*))|^[A-Za-z0-9_\/-]+\.\w{2,4})/;
+  var rPath = new RegExp(
+    '((([A-Za-z]{3,9}:(?:\\/\\/)?)(?:[-;:&=+$,\\w]+@)?' +
+    '[A-Za-z0-9.-]+|(?:www.|[-;:&=+$,\\w]+@)[A-Za-z0-9.-]+)' +
+    '((?:\\/[\\+~%\\/.\\w-_]*)?\\??(?:[-+=&;%@.\\w_]*)' +
+    '#?(?:[.!\\/\\w]*))|^[A-Za-z0-9_\\/-]+\\.\\w{2,4})');
   var rClass = /^[_a-zA-Z0-9-]+$/;
   var rSize = /^\d+(?:|\.\d+)(?:px|%)?$/;
   var rFigClass = /(^fig-\d{2,3}$|^center$)/;
@@ -31,9 +35,11 @@
    * Image tag
    *
    * Syntax:
-   *     {% image [classes] group:group1 /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}
+   *     {% image [classes] group:group1 /path/to/image [/path/to/thumbnail]
+   *     [width of thumbnail] [height of thumbnail] [title text] %}
    * E.g:
-   *     {% image fig-50 right fancybox group:travel image2.png http://google.fr/images/image125.png "A beautiful sunrise" %}
+   *     {% image fig-50 right fancybox group:travel image2.png http://example.com/image125.png
+   *     100% 160px "A beautiful sunrise" %}
    */
   hexo.extend.tag.register('image', function(args) {
     var original;
@@ -103,7 +109,9 @@
     
     // Add Fancybox structure around image
     if (classes.indexOf(fancyboxClass) >= 0) {
-      fancybox += '<a class="' + fancyboxClass + '" href="' + original + '" title="' + title + '" data-fancybox-group="' + group + '">';
+      fancybox +=
+        '<a class="' + fancyboxClass + '" href="' + original + '" title="' + title + '"' +
+        ' data-fancybox-group="' + group + '">';
       fancybox += image;
       fancybox += '</a>';
       // remove `fancyfox` class of `classes` to not be attached on the main div
@@ -112,7 +120,7 @@
     
     // Build HTML structure
     html += '<div class="' + figureClass + ' ' + classes.join(' ') + '"' +
-      (getRegexIndexOf(classes, rFigClass) === -1 ? ' style="width:' + thumbnailWidth + ';"' : '') + '>';
+      (reIndexOf(classes, rFigClass) === -1 ? ' style="width:' + thumbnailWidth + ';"' : '') + '>';
     html += fancybox || image;
     
     // Add caption

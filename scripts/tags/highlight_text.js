@@ -1,6 +1,7 @@
 'use strict';
 
-var colorRegex = /^(#[A-Fa-f0-9]{6}|#[A-Fa-f0-9]{3})|(rgba?\(\d{1,3},\d{1,3},\d{1,3}(?:,\d{1,3})?\))$/;
+var colorRegex =
+  /^(#[A-Fa-f0-9]{6}|#[A-Fa-f0-9]{3})|(rgba?\(\d{1,3},\d{1,3},\d{1,3}(?:,\d{1,3})?\))$/;
 var classRegex = /^[a-zA-Z0-9-_]+$/;
 
 /**

@@ -1,6 +1,5 @@
 (function() {
   'use strict';
-
   /**
    * Search index in an array with a regex
    * @param {String} str
