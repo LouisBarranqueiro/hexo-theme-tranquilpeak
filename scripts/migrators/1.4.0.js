@@ -1,15 +1,16 @@
 (function() {
   'use strict';
-
+  
   var fs = require('fs');
   var path = require('path');
   var async = require('async');
   var prompt = require('prompt');
   var moment = require('moment');
   var mkdirp = require('mkdirp');
+  var marked = require('marked');
   var frontMatter = require('hexo-front-matter');
   var sourceDir = path.resolve(process.cwd(), hexo.config.source_dir);
-
+  
   /**
    * Return an array with all files which don't have an excerpt tag
    * @param {String} dir a directory name
@@ -19,7 +20,7 @@
    */
   function searchPostsWithoutExcerpt(dir, date, cb) {
     var postsDir = path.resolve(sourceDir, dir);
-
+    
     /**
      * Check that the file have an excerpt tag
      * @param {String} filename
@@ -38,7 +39,9 @@
           }
           // check if post is well formed
           if (!postIsWellFormed(data)) {
-            return callback(filename + ' : malformed. Can\'t parse it. Check its structure.');
+            return callback(
+              filename + ' : malformed. Can\'t parse it. ' +
+              'Check its structure.');
           }
           // parse post (front-matter and content)
           data = frontMatter.parse(data);
@@ -53,7 +56,7 @@
         });
       }
     }
-
+    
     var invalidPosts = [];
     // parse date (user input)
     date = moment(date);
@@ -66,7 +69,9 @@
       filenames = filenames.map(function(filename) {
         return path.resolve(postsDir, filename);
       });
-      console.log('Checking for posts without `<-- more -->` and `<!-- excerpt -->` tag...');
+      console.log(
+        'Checking for posts without `<-- more -->` ' +
+        'and `<!-- excerpt -->` tag...');
       console.log('------------');
       // check each files
       async.forEach(filenames, checkFile, function(error) {
@@ -82,42 +87,55 @@
       })
     });
   }
-
+  
   /**
-   * Add `<!-- more -->` tag in each post file which doesn't have an excerpt tag
+   * Add `<!-- excerpt -->` tag in each post file
+   * which doesn't have an excerpt tag
    * @param {Array} posts an array of filepath
    * @param {function} cb a callback
    * @return {void}
    */
   function fixPostsWithoutExcerpt(posts, cb) {
     var migrationDir = path.resolve(sourceDir, '_migrated_posts');
-
+    
     /**
-     * Add `<!-- more -->` tag in the file
+     * Add `<!-- excerpt -->` tag in the file
      * @param {String} filename
      * @param {function} callback
      * @return {function} callback
      */
     function processFile(filename, callback) {
+      
+      /**
+       * Clean a string - render markdown and remove HTML tags
+       * @param {String} str
+       * @returns {String}
+       */
+      function clean(str) {
+        var reHtmlTags = /<\/?[^>]+(>|$)/g;
+        return marked(str.trim()).replace(reHtmlTags, '');
+      }
+      
       fs.readFile(filename, 'utf8', function(error, data) {
         if (error) {
           return callback(filename + ' : can\'t access file');
         }
-        // regex to search a sentence (japanese, chinese allowed)
-        var rSentence = /([.?!。])\s*(?=[A-Z一-龠ぁ-ゔァ-ヴー々〆〤\n])/;
-        // parse data
-        var content = frontMatter.parse(data)._content;
-        // get index of the first sentence
-        var index = content.search(rSentence);
-        if (content.substr(index).search(rSentence) !== -1) {
-          index = index + content.substr(index).search(rSentence);
-        }
         // update filename with new path (migration directory)
         var newFilename = path.resolve(migrationDir, path.basename(filename));
-        // insert `<!-- more -->` tag at `index`
-        content = content.slice(0, index + 1) + '<!-- more -->' + content.slice(index + 1);
-        // erase the old body of post with the new
-        data = data.slice(0, data.indexOf(content.slice(0, index))) + content;
+        // parse data
+        var post = frontMatter.parse(data);
+        // clean post content (render markdown and remove html tags)
+        var content = clean(post._content);
+        // get index of the first end of line
+        var index = content.search('\n');
+        // insert `<!-- excerpt -->` tag at `index`
+        var excerpt = content.substr(0, index + 1) + '<!-- excerpt -->\n';
+        // redefine content with the original content
+        content = post._content;
+        // insert excerpt between front-matter and content
+        data = data.slice(0, data.indexOf(content.substr(0, 80)));
+        data += excerpt;
+        data += content;
         // write the file with the new data
         fs.writeFile(newFilename, data, function(error) {
           if (error) {
@@ -128,11 +146,13 @@
         });
       });
     }
-
+    
     // create migration directory or use existing
     mkdirp(migrationDir, function(error) {
       if (error) {
-        console.log('failed to create ' + path.basename(migrationDir) + ' directory');
+        console.log(
+          'failed to create ' + path.basename(migrationDir) +
+          ' directory');
         throw error;
       }
       console.log('------------');
@@ -149,7 +169,7 @@
       });
     });
   }
-
+  
   /**
    * Check if a post have a correct structure (front-matter and body)
    * @param {String} data content of a post file
@@ -162,7 +182,8 @@
   }
   
   /**
-   * Add `<!-- more -->` tag in each post file which doesn't have an excerpt tag
+   * Add `<!-- excerpt -->` tag in each post file
+   * which doesn't have an excerpt tag
    * @param {function} cb
    * @return {void}
    */
@@ -196,15 +217,19 @@
     };
     
     console.log('------------');
-    console.log('Auto excerpt feature doesn\'t exist anymore since Tranquilpeak 1.4.0');
     console.log(
-      'To overcome this, the \'<!-- more -->\' tag will be inserted at the end of the first ' +
-      'sentence of each posts which don\'t have excerpt tag');
-    console.log('Provide the date of your last post written with Tranquilpeak < v1.4.0');
+      'Auto excerpt feature doesn\'t exist anymore ' +
+      'since Tranquilpeak 1.4.0');
+    console.log(
+      'To overcome this, the \'<!-- excerpt -->\' tag will be inserted at ' +
+      'the end of the first sentence of each posts which don\'t have ' +
+      'excerpt tag');
+    console.log(
+      'Provide the date of your last post written with ' +
+      'Tranquilpeak < v1.4.0');
     console.log('------------');
     // ask posts directory and date
     prompt.get([postsDirSchema, dateSchema], function(error, data) {
-      console.log(data);
       searchPostsWithoutExcerpt(data.postsDir, data.date, function(posts) {
         if (posts.length) {
           // ask yes or no
