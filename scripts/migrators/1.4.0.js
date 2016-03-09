@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  
+
   var fs = require('fs');
   var path = require('path');
   var async = require('async');
@@ -10,7 +10,7 @@
   var marked = require('marked');
   var frontMatter = require('hexo-front-matter');
   var sourceDir = path.resolve(process.cwd(), hexo.config.source_dir);
-  
+
   /**
    * Return an array with all files which don't have an excerpt tag
    * @param {String} dir a directory name
@@ -19,8 +19,9 @@
    * @return {void}
    */
   function searchPostsWithoutExcerpt(dir, date, cb) {
+    var invalidPosts = [];
     var postsDir = path.resolve(sourceDir, dir);
-    
+
     /**
      * Check that the file have an excerpt tag
      * @param {String} filename
@@ -56,8 +57,7 @@
         });
       }
     }
-    
-    var invalidPosts = [];
+
     // parse date (user input)
     date = moment(date);
     // read in posts folder
@@ -84,10 +84,10 @@
         });
         console.log(invalidPosts.length + ' post(s) found');
         cb(invalidPosts);
-      })
+      });
     });
   }
-  
+
   /**
    * Add `<!-- excerpt -->` tag in each post file
    * which doesn't have an excerpt tag
@@ -97,7 +97,7 @@
    */
   function fixPostsWithoutExcerpt(posts, cb) {
     var migrationDir = path.resolve(sourceDir, '_migrated_posts');
-    
+
     /**
      * Add `<!-- excerpt -->` tag in the file
      * @param {String} filename
@@ -105,7 +105,6 @@
      * @return {function} callback
      */
     function processFile(filename, callback) {
-      
       /**
        * Clean a string - render markdown and remove HTML tags
        * @param {String} str
@@ -115,7 +114,7 @@
         var reHtmlTags = /<\/?[^>]+(>|$)/g;
         return marked(str.trim()).replace(reHtmlTags, '');
       }
-      
+
       fs.readFile(filename, 'utf8', function(error, data) {
         if (error) {
           return callback(filename + ' : can\'t access file');
@@ -146,7 +145,7 @@
         });
       });
     }
-    
+
     // create migration directory or use existing
     mkdirp(migrationDir, function(error) {
       if (error) {
@@ -169,7 +168,7 @@
       });
     });
   }
-  
+
   /**
    * Check if a post have a correct structure (front-matter and body)
    * @param {String} data content of a post file
@@ -180,7 +179,7 @@
     var reFrontMatterNew = /^([\s\S]+?)\n(-{3,}|;{3,})(?:$|\n([\s\S]*)$)/;
     return reFrontMatter.test(data) || reFrontMatterNew.test(data);
   }
-  
+
   /**
    * Add `<!-- excerpt -->` tag in each post file
    * which doesn't have an excerpt tag
@@ -215,7 +214,7 @@
       default: '_posts',
       required: true
     };
-    
+
     console.log('------------');
     console.log(
       'Auto excerpt feature doesn\'t exist anymore ' +
@@ -250,7 +249,7 @@
       });
     });
   }
-  
+
   /**
    * Register 1.4.0 migrator
    * @param {Array} args
@@ -260,7 +259,7 @@
     prompt.start();
     autoExcerptMigration(function() {
       console.log('------------');
-      console.log('-> Migration finished')
+      console.log('-> Migration finished');
     });
   });
 })();
