@@ -104,11 +104,14 @@
           return callback(filename + ' : can\'t access file');
         }
         // regex to search a sentence (japanese, chinese allowed)
-        var rSentence = /([.?!。])\s*(?=[A-Z一-龠ぁ-ゔァ-ヴー々〆〤])/;
+        var rSentence = /([.?!。])\s*(?=[A-Z一-龠ぁ-ゔァ-ヴー々〆〤\n])/;
         // parse data
         var content = frontMatter.parse(data)._content;
         // get index of the first sentence
         var index = content.search(rSentence);
+        if (content.substr(index).search(rSentence) !== -1) {
+          index = index + content.substr(index).search(rSentence);
+        }
         // update filename with new path (migration directory)
         var newFilename = path.resolve(migrationDir, path.basename(filename));
         // insert `<!-- more -->` tag at `index`
@@ -125,7 +128,7 @@
         });
       });
     }
-  
+
     // create migration directory or use existing
     mkdirp(migrationDir, function(error) {
       if (error) {
@@ -137,7 +140,6 @@
       console.log('------------');
       console.log('Processing posts...');
       console.log('------------');
-    
       // process each files
       async.forEach(posts, processFile, function(error) {
         if (error) {
@@ -225,10 +227,10 @@
   }
   
   /**
-   * Register migrator
+   * Register 1.4.0 migrator
    * @param {Array} args
    */
-  hexo.extend.migrator.register('1.7.0', function(args) {
+  hexo.extend.migrator.register('1.4.0', function(args) {
     console.log('-> Migration started');
     prompt.start();
     autoExcerptMigration(function() {
