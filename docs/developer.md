@@ -7,16 +7,18 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## Summary ##
 
 - [General](#general)
-- [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Code style](#Code-style)
-    * [Javascript](#javascript)
+- [Code style](#code-style)
+    * [Javascript code](#javascript-code)
+         * [ESLint configuration](#eslint-configuration)
+         * [Files/folders ignored by ESLint](#filesfolders-ignored-by-eslint)
+         * [Check code style](#check-code-style)
 - [Code structure](#code-structure)
     * [Views](#views)
     * [Assets](#assets)
          * [Stylesheets](#stylesheets)
-         * [Images](#images)
+         * [Fonts](#fonts)
          * [Images](#images)
          * [Javascript](#javascript)
 - [Build](#build)
@@ -35,39 +37,6 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - **Version** : 1.6.2
 - **Compatibility** : Hexo 3.0.0 or later
 
-## Features ##
-
-**General features :**  
-- Fully responsive  
-- Optimized for tablets & mobiles  
-- Configurable menu of the sidebar  
-- Pages to filter tags, categories and archives  
-- Background cover image  
-- Beautiful about page  
-- Support Open Graph protocol  
-- Support internationalization (i18n)
-  
-  
-**Posts features :**  
-- Thumbnail image  
-- Cover image  
-- Responsive videos & images  
-- Sharing options  
-- Navigation menu  
-- GitHub theme for code highlighting  
-- Image gallery  
-- Tags for image (FancyBox), wide image, tabbed code block, highlighted text
-- Table of contents  
-  
-  
-**Integrated services :**  
-- Disqus  
-- Duoshuo  
-- Google analytics  
-- Gravatar  
-- Swiftype  
-- Facebook Insights  
-  
 ## Requirements ##
 
 1. **Node** : v0.10.35 or higher. Download [Node](https://nodejs.org/download/)
@@ -77,22 +46,27 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 5. **ESLint** : v2.3.0 or higher. Run `npm install eslint -g`
 6. **ESLint config Google** : v0.4.0 or higher. Run `npm install eslint -g`
 
+
 ## Installation ##
 
 1. Run `git clone https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git`
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 3. Modify the theme in `_config.yml` by changing `theme` variable  to `tranquilpeak`
-4. Complete `theme/tranquilpeak/_config.yml` with your informations by following directives in comments
+4. Complete `theme/tranquilpeak/_config.yml` with your information by following directives in comments
+5. Go in `theme/tranquilpeak` folder with `cd themes/tranquilpeak`
+6. Install all [requirements](#requirements)
+7. Run `npm install` to install all [NPM dependencies](#npm-dependencies)
+8. Run `bower install` to install all [Bower dependencies](#bower-dependencies)
 
 If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
 
-## Code Style ##
+## Code style ##
 
-### Javascript
+### Javascript code
 
 We use [ESLint](http://eslint.org) based on Google code style to maintain code style.  
 
-#### ESLint Configuration
+#### ESLint configuration
 
 `.eslinrc.json` file :
 
