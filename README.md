@@ -23,6 +23,8 @@ A gorgeous responsive theme for Hexo blog framework
 
 ## Features ##
 
+## Features ##
+
 **General features :**  
 - Fully responsive  
 - Optimized for tablets & mobiles  
@@ -32,7 +34,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Beautiful about page  
 - Support Open Graph protocol  
 - Support internationalization (i18n)
-  
+- Easily customizable (fonts, colors, layout elements, code coloration, etc..) 
   
 **Posts features :**  
 - Thumbnail image  
@@ -40,20 +42,20 @@ A gorgeous responsive theme for Hexo blog framework
 - Responsive videos & images  
 - Sharing options  
 - Navigation menu  
-- GitHub theme for code highlighting  
+- GitHub theme for code highlighting (customizable)  
 - Image gallery  
-- Tags for image (FancyBox), wide image, tabbed code block, highlighted text
+- Tags for image (FancyBox), wide image, tabbed code block, highlighted text, alerts
 - Table of contents  
-  
   
 **Integrated services :**  
 - Disqus  
 - Duoshuo  
-- Google analytics
-- Baidu analytics
+- Google analytics  
+- Baidu analytics  
 - Gravatar  
 - Swiftype  
 - Facebook Insights  
+ 
     
 ## Quick start ##
 

@@ -71,7 +71,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Beautiful about page  
 - Support Open Graph protocol  
 - Support internationalization (i18n)
-  
+- Easily customizable (fonts, colors, layout elements, code coloration, etc..) 
   
 **Posts features :**  
 - Thumbnail image  
@@ -79,11 +79,10 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Responsive videos & images  
 - Sharing options  
 - Navigation menu  
-- GitHub theme for code highlighting  
+- GitHub theme for code highlighting (customizable)  
 - Image gallery  
-- Tags for image (FancyBox), wide image, tabbed code block, highlighted text
+- Tags for image (FancyBox), wide image, tabbed code block, highlighted text, alerts
 - Table of contents  
-  
   
 **Integrated services :**  
 - Disqus  
