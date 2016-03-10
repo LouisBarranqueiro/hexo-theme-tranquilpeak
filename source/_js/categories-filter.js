@@ -82,10 +82,10 @@
                 this.$archiveResult.html('').hide();
             }
             else if (numbCategories == 1) {
-                this.$archiveResult.html(numbCategories + ' ' + this.messages.one).show();
+                this.$archiveResult.html(this.messages.one).show();
             }
             else {
-                this.$archiveResult.html(numbCategories + ' ' + this.messages.other).show();
+                this.$archiveResult.html(this.messages.other.replace(/%d/, numbCategories)).show();
             }
         },
 

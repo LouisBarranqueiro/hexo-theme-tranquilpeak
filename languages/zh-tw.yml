@@ -25,17 +25,17 @@ global:
     search_tag: "搜尋標籤"
     search_date: "搜尋日期（YYYY/MM/DD）"
     posts_found:
-        zero: "無後發現"
-        one: "發現後"
-        other: "發現帖子"
+        zero: "沒有找到文章"
+        one: "找到 1 篇文章"
+        other: "找到 %d 篇文章"
     categories_found:
-        zero: "沒有找到類別"
-        one: "發現類"
-        other: "發現類別"
+        zero: "没有找到分類"
+        one: "找到 1 個分類"
+        other: "找到 %d 個分類"
     tags_found:
-        zero: "沒有發現標籤"
-        one: "標籤發現"
-        other: "發現標籤"
+        zero: "沒有找到標籤"
+        one: "找到 1 個標籤"
+        other: "找到 %d 個標籤"
 
 pagination:
     page: "第 %d 頁"
