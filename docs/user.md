@@ -22,7 +22,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Enable RSS feed](#enable-rss-feed)
     * [Define global keywords](#define-global-keywords)
 - [Tranquilpeak configuration](#tranquilpeak-configuration)
-    - [Languages configuration](#languages-configuration)
+    - [Language configuration](#language-configuration)
     - [Theme configuration](#theme-configuration)
         * [Sidebar](#sidebar)
         * [Header](#header)
