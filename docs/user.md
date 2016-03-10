@@ -35,11 +35,13 @@ If you want to report a bug or ask a question, [create an issue](https://github.
             * [Enable all-archives page](#enable-all-archives-page)
 - [Integrated services configuration](#integrated-services-configuration)
     * [Google Analytics](#google-analytics)
-        * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
-- [Quick & easy modifications](#quick-&-easy-modifications)  
+        * [Exclude hostname (localhost) while writing articles](#exclude-hostname-localhost-while-writing-articles)
+- [Quick & easy modifications](#quick--easy-modifications)  
     * [Prerequisites](#prerequisites)
     * [Change global style](#change-global-style)
-    * [Change code coloration (Highlight.js theme)](#change-code-coloration-\(Highlight.js-theme\))
+    * [Change code coloration (Highlight.js theme)](#change-code-coloration-highlightjs-theme)
+- [Migrating posts](#migrating-posts)
+    * [v1.3.0 or lower to v1.4.0 or higher](#v130-or-lower-to-v140-or-higher)
 - [Writing posts](#writing-posts)
     * [Front-matter settings](#front-matter-settings)
     * [Define post excerpt](#define-post-excerpt)
@@ -450,6 +452,34 @@ Follow these steps :
 3. Build the theme with `grunt buildProd`. Learn more about grunt tasks : [developer documentation - grunt tasks](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#grunt-tasks)
 
 
+## Migrating posts ##
+
+### v1.3.0 or lower to v1.4.0 or higher
+
+If you used Tranquilpeak v1.3.0 or lower, you used maybe the  auto excerpt feature  : If there is no tag `<!-- more -->` in your post, so the excerpt is defined by cut the content after 250 characters.
+  
+Auto excerpt feature doesn't exist anymore since Tranquilpeak v1.4.0. And now, when there is no tag `<-- more -->` and `<!-- excerpt -->` in your post, the post is not cut and it will be displayed entirely on index page. 
+Maybe, you don't want to display entirely all of your old posts. So If you have a lot of posts to edit and you don't want to do to define the excerpt manually, use our script to automate this task.
+  
+With the migration script, the `<!-- excerpt -->` tag will be inserted at the end of the line of each posts which don't have an excerpt tag (more and excerpt).
+
+1. Run `hexo migrate 1.4.0` in your blog directory. 
+2. It will ask you :
+  * The name of the directory that contains all of your post (default: **_posts**) 
+  * The date of your last post written with a version of Tranquil anterior to 1.4.0
+3. Your old posts will be put in **_1.4.0_old_posts** directory and the new posts in **_posts**
+
+#### Known issues
+
+##### The migration stopped after **Checking for posts without `<-- more -->` and `<!-- excerpt -->` tag** step
+
+We don't know if it come from Node.js (from specific version or not) or permissions of the directory which contains posts but follow these steps to fix this issue :
+
+1. Rename your posts directory
+2. Create a directory : **_posts**
+3. Move all of your posts in **_posts** directory
+4. Re-run migration script
+ 
 ## Writing posts ##
 
 To write articles, you have to user Markdown langague. [Here](https://guides.github.com/features/mastering-markdown/#examples) you can find the main basics of Markdown syntax.   
