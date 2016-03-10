@@ -9,7 +9,6 @@
   var mkdirp = require('mkdirp');
   var marked = require('marked');
   var frontMatter = require('hexo-front-matter');
-  var sourceDir = path.resolve(process.cwd(), hexo.config.source_dir);
 
   /**
    * Return an array with all files which don't have an excerpt tag
@@ -18,9 +17,10 @@
    * @param {function} cb a callback
    * @return {void}
    */
-  function searchPostsWithoutExcerpt(dir, date, cb) {
-    var invalidPosts = [];
+  function migratePostsWithoutExcerpt(dir, date, cb) {
+    var sourceDir = path.resolve(process.cwd(), hexo.config.source_dir);
     var postsDir = path.resolve(sourceDir, dir);
+    var migrationDir = path.resolve(sourceDir, '_migrated_posts');
 
     /**
      * Check that the file have an excerpt tag
@@ -28,9 +28,53 @@
      * @param {function} callback
      * @return {function} callback
      */
-    function checkFile(filename, callback) {
+    function processFile(filename, callback) {
       var rExcerpt = /(?:<!-- ?more ?-->|<!-- ?excerpt ?-->)/;
       var rFilename = /.md$/;
+
+      /**
+       * Clean a string - render markdown and remove HTML tags
+       * @param {String} str
+       * @returns {String}
+       */
+      function clean(str) {
+        var reHtmlTags = /<\/?[^>]+(>|$)/g;
+        return marked(str.trim()).replace(reHtmlTags, '');
+      }
+
+      /**
+       * Check if a post have a correct structure (front-matter and body)
+       * @param {String} data content of a post file
+       * @return {Boolean} false: malformed, true: well formed
+       */
+      function postIsWellFormed(data) {
+        var reFrontMatter = /^(-{3,}|;{3,})\n([\s\S]+?)\n\1(?:$|\n([\s\S]*)$)/;
+        var reFrontMatterNew = /^([\s\S]+?)\n(-{3,}|;{3,})(?:$|\n([\s\S]*)$)/;
+        return reFrontMatter.test(data) || reFrontMatterNew.test(data);
+      }
+
+      /**
+       * Insert excerpt in data
+       * @param {String} data file content
+       * @param {Object} post post content parsed with hexo-front-matter
+       * @return {String} data data updated
+       */
+      function insertExcerpt(data, post) {
+        // clean post content (render markdown and remove html tags)
+        var content = clean(post._content);
+        // get index of the first end of line
+        var index = content.search('\n');
+        // insert `<!-- excerpt -->` tag at `index`
+        var excerpt = content.substr(0, index + 1) + '<!-- excerpt -->\n';
+        // redefine content with the original content
+        content = post._content;
+        // insert excerpt between front-matter and content
+        data = data.slice(0, data.indexOf(content.substr(0, 80)));
+        data += excerpt;
+        data += content;
+        return data;
+      }
+
       // check that file is a markdown file
       if (rFilename.test(filename)) {
         fs.readFile(filename, 'utf8', function(error, data) {
@@ -44,16 +88,26 @@
               filename + ' : malformed. Can\'t parse it. ' +
               'Check its structure.');
           }
-          // parse post (front-matter and content)
-          data = frontMatter.parse(data);
+          // parse data (front-matter and content)
+          var post = frontMatter.parse(data);
           // parse post date
-          var postDate = moment(data.date).format('YYYY-MM-DD');
-          // search excerpt tag
-          if (data._content && !rExcerpt.test(data._content) &&
+          var postDate = moment(post.date).format('YYYY-MM-DD');
+          // update filename with new path (migration directory)
+          var newFilename = path.resolve(migrationDir, path.basename(filename));
+          // insert excerpt
+          if (post._content && !rExcerpt.test(post._content) &&
             date.isSameOrAfter(postDate)) {
-            invalidPosts.push(filename);
+            console.log(path.basename(filename) + ' : fixed');
+            data = insertExcerpt(data, post);
           }
-          return callback();
+          // write the file
+          fs.writeFile(newFilename, data, function(error) {
+            if (error) {
+              throw error;
+            }
+            console.log(path.basename(filename) + ' : migrated');
+            return callback();
+          });
         });
       }
     }
@@ -73,111 +127,49 @@
         'Checking for posts without `<-- more -->` ' +
         'and `<!-- excerpt -->` tag...');
       console.log('------------');
-      // check each files
-      async.forEach(filenames, checkFile, function(error) {
+      // create migration directory or use existing
+      mkdirp(migrationDir, function(error) {
         if (error) {
+          console.log(
+            'failed to create ' + path.basename(migrationDir) +
+            ' directory');
           throw error;
         }
-        // display all invalid posts name
-        invalidPosts.forEach(function(post) {
-          console.log(path.basename(post));
+        console.log(path.basename(migrationDir) + ' directory created');
+        console.log('------------');
+        // process each files
+        async.forEach(filenames, processFile, function(error) {
+          if (error) {
+            throw error;
+          }
+          cb(postsDir, migrationDir);
         });
-        console.log(invalidPosts.length + ' post(s) found');
-        cb(invalidPosts);
       });
     });
   }
 
   /**
-   * Add `<!-- excerpt -->` tag in each post file
-   * which doesn't have an excerpt tag
-   * @param {Array} posts an array of filepath
-   * @param {function} cb a callback
+   * Rename posts and migration directory
+   * @param {String} postsDir
+   * @param {String} migrationDir
+   * @param {function} cb
    * @return {void}
    */
-  function fixPostsWithoutExcerpt(posts, cb) {
-    var migrationDir = path.resolve(sourceDir, '_migrated_posts');
-
-    /**
-     * Add `<!-- excerpt -->` tag in the file
-     * @param {String} filename
-     * @param {function} callback
-     * @return {function} callback
-     */
-    function processFile(filename, callback) {
-      /**
-       * Clean a string - render markdown and remove HTML tags
-       * @param {String} str
-       * @returns {String}
-       */
-      function clean(str) {
-        var reHtmlTags = /<\/?[^>]+(>|$)/g;
-        return marked(str.trim()).replace(reHtmlTags, '');
-      }
-
-      fs.readFile(filename, 'utf8', function(error, data) {
-        if (error) {
-          return callback(filename + ' : can\'t access file');
-        }
-        // update filename with new path (migration directory)
-        var newFilename = path.resolve(migrationDir, path.basename(filename));
-        // parse data
-        var post = frontMatter.parse(data);
-        // clean post content (render markdown and remove html tags)
-        var content = clean(post._content);
-        // get index of the first end of line
-        var index = content.search('\n');
-        // insert `<!-- excerpt -->` tag at `index`
-        var excerpt = content.substr(0, index + 1) + '<!-- excerpt -->\n';
-        // redefine content with the original content
-        content = post._content;
-        // insert excerpt between front-matter and content
-        data = data.slice(0, data.indexOf(content.substr(0, 80)));
-        data += excerpt;
-        data += content;
-        // write the file with the new data
-        fs.writeFile(newFilename, data, function(error) {
-          if (error) {
-            return callback(error);
-          }
-          console.log(path.basename(filename) + ' : processed');
-          return callback();
-        });
-      });
-    }
-
-    // create migration directory or use existing
-    mkdirp(migrationDir, function(error) {
-      if (error) {
-        console.log(
-          'failed to create ' + path.basename(migrationDir) +
-          ' directory');
-        throw error;
-      }
-      console.log('------------');
-      console.log(path.basename(migrationDir) + ' directory created');
-      console.log('------------');
-      console.log('Processing posts...');
-      console.log('------------');
-      // process each files
-      async.forEach(posts, processFile, function(error) {
-        if (error) {
-          throw error;
-        }
-        cb();
-      });
-    });
-  }
-
-  /**
-   * Check if a post have a correct structure (front-matter and body)
-   * @param {String} data content of a post file
-   * @return {Boolean} false: malformed, true: well formed
-   */
-  function postIsWellFormed(data) {
-    var reFrontMatter = /^(-{3,}|;{3,})\n([\s\S]+?)\n\1(?:$|\n([\s\S]*)$)/;
-    var reFrontMatterNew = /^([\s\S]+?)\n(-{3,}|;{3,})(?:$|\n([\s\S]*)$)/;
-    return reFrontMatter.test(data) || reFrontMatterNew.test(data);
+  function renamePostsDir(postsDir, migrationDir, cb) {
+    var oldPostsDir = path.normalize(postsDir + '/../_old' + path.basename(postsDir));
+    console.log('------------');
+    console.log(oldPostsDir);
+    console.log(
+      'renaming \'' + path.basename(postsDir) + '\' ' +
+      'in \'' + path.basename(oldPostsDir) + '\'');
+    fs.renameSync(postsDir, oldPostsDir);
+    console.log('renamed complete');
+    console.log(
+      'renaming \'' + path.basename(migrationDir) + '\' ' +
+      'in \'' + path.basename(postsDir) + '\'');
+    fs.renameSync(migrationDir, postsDir);
+    console.log('renamed complete');
+    cb();
   }
 
   /**
@@ -196,16 +188,6 @@
       hidden: false,
       required: true
     };
-    var reYes = /^y(?:es)?$/i;
-    var yesSchema = {
-      description: '(Y/n)',
-      type: 'string',
-      pattern: /^(y(?:es)?|n(?:o)?)$/i,
-      message: '(Y/n)',
-      hidden: false,
-      default: 'y',
-      required: true
-    };
     var postsDirSchema = {
       name: 'postsDir',
       description: 'Enter your post folder',
@@ -214,7 +196,6 @@
       default: '_posts',
       required: true
     };
-
     console.log('------------');
     console.log(
       'Auto excerpt feature doesn\'t exist anymore ' +
@@ -229,23 +210,11 @@
     console.log('------------');
     // ask posts directory and date
     prompt.get([postsDirSchema, dateSchema], function(error, data) {
-      searchPostsWithoutExcerpt(data.postsDir, data.date, function(posts) {
-        if (posts.length) {
-          // ask yes or no
-          prompt.get(yesSchema, function(error, data) {
-            if (reYes.test(data.question)) {
-              fixPostsWithoutExcerpt(posts, function() {
-                cb();
-              });
-            }
-            else {
-              cb();
-            }
-          });
-        }
-        else {
+      console.time('-> Migration executed in ');
+      migratePostsWithoutExcerpt(data.postsDir, data.date, function(postDir, migrationDir) {
+        renamePostsDir(postDir, migrationDir, function() {
           cb();
-        }
+        });
       });
     });
   }
@@ -254,12 +223,12 @@
    * Register 1.4.0 migrator
    * @param {Array} args
    */
-  hexo.extend.migrator.register('1.4.0', function(args) {
+  hexo.extend.migrator.register('1.4.0', function() {
     console.log('-> Migration started');
     prompt.start();
     autoExcerptMigration(function() {
       console.log('------------');
-      console.log('-> Migration finished');
+      console.timeEnd('-> Migration executed in ');
     });
   });
 })();
