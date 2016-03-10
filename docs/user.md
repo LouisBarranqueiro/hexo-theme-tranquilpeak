@@ -59,7 +59,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.6.1
+- **Version** : 1.7.0
 - **Compatibility** : Hexo 3.0.0 or later
 
 ## Features ##
@@ -102,8 +102,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-1.6.2]
-(https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.6.2/hexo-theme-tranquilpeak-built-for-production-1.6.2.zip)
+1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-1.7.0]
+(https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.7.0/hexo-theme-tranquilpeak-built-for-production-1.7.0.zip)
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 
 ## Hexo configuration ##
@@ -492,7 +492,7 @@ To write articles, you have to user Markdown langague. [Here](https://guides.git
 Please note, there are many different versions of Markdown and some of them are not supported by Hexo.  
 To use tags plugins to highlight code or add Fancybox image, please read [Hexo docs](https://hexo.io/docs/tag-plugins.html)
 
- **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.**
+**I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.**
 
 ### Front-matter settings ###
 

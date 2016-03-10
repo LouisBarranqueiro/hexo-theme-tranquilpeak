@@ -34,7 +34,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.6.2
+- **Version** : 1.7.0
 - **Compatibility** : Hexo 3.0.0 or later
 
 ## Requirements ##
