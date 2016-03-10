@@ -328,7 +328,7 @@ tranquilpeak
 - **source** : Contains all assets (css, js and images)
 - **tasks** : Contains all grunt tasks
 
-### Languages ### 
+### Languages ###
 
 ```
 ├── languages
