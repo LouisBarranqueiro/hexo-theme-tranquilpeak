@@ -172,7 +172,7 @@ Otherwise, complete your description and your job in the right language file(s) 
 Complete `theme/tranquilpeak/_config.yml` with your information. Read above sections to have more information.
 
 
-#### Sidebar ####
+#### Sidebar
 
 The sidebar is powerful and easily configurable.
 DON'T modify variables name `sidebar`, `title`, `url` and `icon`.  
@@ -251,7 +251,7 @@ sidebar:
 - **class** (optional) : CSS Class added to the `a` link tag
 
 
-#### Header ####
+#### Header
 
 The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. By default, author's gravatar or author's picture is displayed if `icon` is empty DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name.  
 E.g to display a shortcut to open swiftype search window :
@@ -267,7 +267,7 @@ header:
 - **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
 - **class** : CSS Class added to the link
 
-#### Author ####
+#### Author
 
 ``` yaml
 # Author
@@ -287,7 +287,7 @@ author:
 - **twitter** : Your Twitter username without the @. E.g : `tranquilpeak`
 - **google_plus** : Your google plus profile id. E.g : `+TranquilPeak` or `123812884128439`
 
-#### Customization ####
+#### Customization
 
 ``` yaml
 # Customization
@@ -332,7 +332,7 @@ The same page with `category_pagination: false`:
 ![archives false](http://d1u9biwaxjngwg.cloudfront.net/docs/1.4.0/ud-archives-false-300.png)  
 
 
-#### Integrated services ####
+#### Integrated services
 
 ``` yaml
 # Integrated services
@@ -357,7 +357,7 @@ fb_app_id:
 Tranquilpeak provides you 3 pages to display all posts title and date by tags, by categories, by date and an about page. To enable one of this pages, 
 read following step.
 
-#### Enable all-categories page ####
+#### Enable all-categories page
 
 To enable `all-categories` page :  
 1. Run `hexo new page "all-categories"`. A new folder named `all-categories` will be created in `source/`  
@@ -373,7 +373,7 @@ comments: false
 
 New page will be reach at : `/all-categories`. On this page, users will be able to search and filter categories.
 
-#### Enable all-tags page ####
+#### Enable all-tags page
 
 To enable `all-tags` page :  
 1. Run `hexo new page "all-tags"`. A new folder named `all-tags` will be created in `source/`  
@@ -389,7 +389,7 @@ comments: false
 
 New page will be reach at : `/all-tags`. On this page, users will be able to search and filter tags.
 
-#### Enable all-archives page ####
+#### Enable all-archives page
 
 To enable `all-archives` page :  
 1. Run `hexo new page "all-archives"`. A new folder named `all-archives` will be created in `source/`  
@@ -411,7 +411,7 @@ On this page, users will be able to search and filter posts.
 
 ### Google Analytics ###
 
-#### Exclude hostname (localhost) while writing articles ####
+#### Exclude hostname (localhost) while writing articles
 
 While you are writing articles, you need to check the result a lot of times before deploying your site.
 If you have enable Google analytics service, Google will include all requests done, even when hostname is localhost and this can greatly skew the results.
@@ -426,9 +426,9 @@ Follow these steps, to add new filter :
 7. Select **Custom filter**, **Filter Field** : `Hostname`, **Filter Pattern** :  `(.*?localhost.*?)`  
 8. Click on **Save** button   
 
-## Quick & easy modifications
+## Quick & easy modifications ##
 
-### Prerequisites
+### Prerequisites ###
 
 Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
 1. Install requirements : [developer documentation - requirements](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#requirements)
@@ -437,11 +437,11 @@ Since you are going to edit the theme, you have to build it to see changes. So f
 
 **Run all commands in theme folder : `hexo-blog/themes/tranquilpeak`**
 
-### Change global style
+### Change global style ###
 
 If you want to change font families, font size, sidebar color, things like that, take a look at `source/_css/utils/_variables.scss` file. This file contains global variables used in this theme. **Build the theme after changes to see changes.**
 
-### Change code coloration (Highlight.js theme)
+### Change code coloration (Highlight.js theme) ###
 
 Tranquilpeak integrate its own highlight.js theme inspired by GitHub. 
 Of course, you can replace it with an other theme found on highlight.js repository. Since Hexo use different CSS class names, all theme are not ready out of the box, but it is very easy to make them compatible. 
@@ -454,7 +454,13 @@ Follow these steps :
 
 ## Migrating posts ##
 
-### v1.3.0 or lower to v1.4.0 or higher
+### Prerequisites ###
+
+Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
+1. Install requirements : [developer documentation - requirements](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#requirements)
+2. Install npm dependencies with `npm install`
+
+### v1.3.0 or lower to v1.4.0 or higher ###
 
 If you used Tranquilpeak v1.3.0 or lower, you used maybe the  auto excerpt feature  : If there is no tag `<!-- more -->` in your post, so the excerpt is defined by cut the content after 250 characters.
   
@@ -567,7 +573,7 @@ Here is what looks like the table of contents generated:
 Tranquilpeak introduce new tags to display alert messages, images in full width and create beautiful galleries.
 **DON'T use anymore fancybox tag**. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
 
-#### Alert ###
+#### Alert
 
 ![alert-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.6/alert-tag.png)
 
@@ -594,7 +600,7 @@ Here is a danger alert without icon
         - **danger** : danger style  
         - **no-icon** : hide icon of alert  
 
-#### Highlight Text ####
+#### Highlight Text
 
 ![highlight_text-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.6/highlight_text-tag.png)
 
@@ -642,7 +648,7 @@ E.g (rgba color) :
 <p>Sed imperdiet urna et quam ultrices {% hl_text rgba(12, 12, 12, 0.4) %}your highlighted text{% endhl_text %} dignissim ultrices libero.</p>
 ```
 
-#### Image ####
+#### Image
 
 Image tag is useful to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Images)
 
@@ -668,7 +674,7 @@ E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/im
 - **Height of thumbnail image (optional)** : Height to the thumbnail image. If the thumbnail image is empty, height will be attached to thumbnail image created from original image. E.g : `300px` or `20%`.  
 - **Title (optional)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
  
-#### Tabbed code block ####
+#### Tabbed code block
 
 ![tabbed_codeblock-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.7/tabbed_codeblock-tag.png)
 
@@ -700,7 +706,7 @@ E.g :
 - **link (optional)** :  Link to a demo, or a file
 - **lang (optional)** :  Programming language use for the current tab
 
-#### Wide image ####
+#### Wide image
 
 Wide image tag is useful to display wide images in full width. It take the entire window width. Check the the result : [Wide image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Wide-images)
 
@@ -710,7 +716,7 @@ E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" 
 - **image** : Path to the original image.  
 - **Title (optional)** : Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.  
 
-#### Fancybox ####
+#### Fancybox
 
 `fancybox` tag is deprecated since Tranquilpeak 1.3. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
   
