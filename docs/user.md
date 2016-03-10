@@ -457,9 +457,10 @@ Follow these steps :
 
 ### v1.3.0 or lower to v1.4.0 or higher
 
-If you used Tranquilpeak v1.3.0 or lower, you may be used auto excerpt feature : If there is no tag `<!-- more -->` in your post then, the excerpt is defined by cut the content after 250 characters.
-Auto excerpt feature doesn't exist anymore since Tranquilpeak 1.4.0. And now, when there is no tag `<-- more -->` and `<!-- excerpt -->` in your post, the post is not cut and it will be displayed entirely on index page. You may be don't want to display entirely all of your old posts and you maybe have a lot of posts. 
-To overcome this, with the migration script, the <!-- excerpt --> tag will be inserted at the end of the line of each posts which don't have an excerpt tag (more and excerpt).
+If you used Tranquilpeak v1.3.0 or lower, you used maybe the  auto excerpt feature  : If there is no tag `<!-- more -->` in your post, so the excerpt is defined by cut the content after 250 characters.
+Auto excerpt feature doesn't exist anymore since Tranquilpeak v1.4.0. And now, when there is no tag `<-- more -->` and `<!-- excerpt -->` in your post, the post is not cut and it will be displayed entirely on index page. 
+Maybe, you don't want to display entirely all of your old posts. So If you have a lot of posts to edit and you don't want to do to define the excerpt manually, use our script to automate this task.
+With the migration script, the `<!-- excerpt -->` tag will be inserted at the end of the line of each posts which don't have an excerpt tag (more and excerpt).
 
 1. Run `hexo migrate 1.4.0` in your blog directory. 
 2. It will ask you :
