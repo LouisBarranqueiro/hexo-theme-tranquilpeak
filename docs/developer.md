@@ -343,7 +343,7 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
 
 ### Assets ###
 
-#### Stylesheets ####
+#### Stylesheets
     
 ```
 ├── source
@@ -410,7 +410,7 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
 SCSS structure follow 7-1 pattern of [sass guidelines](http://sass-guidelin.es/#the-7-1-pattern)  
 If you want more information and to understand better this code, consult [sass guidelines](http://sass-guidelin.es/)  
 
-#### Fonts #####
+#### Fonts
 
 ```
 ├── _fonts
@@ -420,7 +420,7 @@ If you want more information and to understand better this code, consult [sass g
 
 If you have local fonts, place them in this folder and import them in `source/_css/utils/_fonts.scss`.
 
-#### Images #####
+#### Images 
 
 ```
 ├── _images
@@ -431,7 +431,7 @@ If you have local fonts, place them in this folder and import them in `source/_c
   
 Contains all images of the theme.  
 
-#### Javascript #####
+#### Javascript
 
 ```
 ├── _js
@@ -515,7 +515,7 @@ Bower dependencies :
 
 ### Grunt tasks ###
 
-##### Tasks structure ##### 
+#### Tasks structure 
   
 ```
 ├── tasks
@@ -545,7 +545,7 @@ Bower dependencies :
 - **register** : Alias tasks which call multiple default tasks
 - **pipeline.js** : Files which contains a list of javascript and stylesheets files linked to the blog
 
-#### Pipeline #####
+#### Pipeline
 
 ``` javascript
 // Js files to inject in `layout/_partial/script.ejs`
@@ -569,7 +569,7 @@ var tranquilpeakCssFilesToInject = [
 
 On production environment, these javascript and stylesheets files are concatenate and minify in 1 javascript file and 1 stylesheet file and linked to their respective views
 
-#### Config tasks ####
+#### Config tasks 
 
 - **bower** : Copy all needed files by types from bower dependencies  
 - **clean** : Delete `source/assets` folder  
@@ -592,7 +592,7 @@ On production environment, these javascript and stylesheets files are concatenat
 - **uglify** : Minify `source/assets/js/script.js` file in `source/assets/js/script.min.js`  
 - **watch** : Watch assets from `source/_*/**/*` folder to detect changes and launch `syncAssets` task  
 
-#### Register tasks ####
+#### Register tasks
 
 - **build** : Synchronize bower dependencies, images, fonts, compile assets (css and js) and link it to views  
 - **buildProd** : Synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views  
