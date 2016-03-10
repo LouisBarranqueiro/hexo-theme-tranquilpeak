@@ -10,6 +10,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Code style](#Code-style)
+    * [Javascript](#javascript)
 - [Code structure](#code-structure)
     * [Views](#views)
     * [Assets](#assets)
@@ -72,6 +74,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 2. **Hexo CLI** : v0.1.4 or higher. Run `npm install hexo-cli -g`
 3. **Grunt CLI** : v0.1.13 or higher. Run `npm install grunt-cli -g`
 4. **Bower** : v1.4.1 or higher. Run `npm install bower -g`
+5. **ESLint** : v2.3.0 or higher. Run `npm install eslint -g`
+6. **ESLint config Google** : v0.4.0 or higher. Run `npm install eslint -g`
 
 ## Installation ##
 
@@ -81,11 +85,67 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 4. Complete `theme/tranquilpeak/_config.yml` with your informations by following directives in comments
 
 If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
-  
+
+## Code Style ##
+
+### Javascript
+
+We use [ESLint](http://eslint.org) based on Google code style to maintain code style.  
+
+#### ESLint Configuration
+
+`.eslinrc.json` file :
+
+```json
+{
+    "extends": "google",
+    "rules": {
+        "comma-dangle": [2,"never"],
+        "valid-jsdoc": [2, {
+            "requireReturnDescription": false,
+            "requireParamDescription": false
+        }],
+        "no-undef":[0],
+        "brace-style": [2, "stroustrup"],
+        "no-trailing-spaces": [2, {"skipBlankLines": true }],
+        "eqeqeq":[1],
+        "max-len": [1, 100, 4, {"ignoreUrls": true}]
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    }
+}
+``` 
+
+#### Files/folders ignored by ESLint
+
+`.eslintignore` file :
+
+```
+node_modules/
+source/_bower_components/
+source/assets/
+source/_js/smartresize.js
+```
+
+#### Check code style
+
+Check code style with :
+``` bash
+npm run eslint
+# or
+grunt eslint
+```
+
 ## Code structure ##
 
 ```
 tranquilpeak
+├── .github
+│   ├── CONTRIBUTING.md
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── ISSUE_TEMPLATE.md
 ├── docs
 │   ├── developer.md
 │   └── user.md
@@ -93,7 +153,9 @@ tranquilpeak
 │   ├── en.yml
 │   ├── fr-FR.yml
 │   ├── pt-br.yml
-│   └── zh-cn.yml
+│   ├── ru.yml
+│   ├── zh-cn.yml
+│   └── zh-tw.yml
 ├── layout
 │   ├── _partial
 │   │   ├── post
@@ -108,8 +170,9 @@ tranquilpeak
 │   │   │   ├── share-options.ejs
 │   │   │   └── tag.ejs
 │   │   ├── about.ejs
-│   │   ├── archive-post.ejs
 │   │   ├── archive.ejs
+│   │   ├── archive-post.ejs
+│   │   ├── baidu-analytics.ejs
 │   │   ├── cover.ejs
 │   │   ├── footer.ejs
 │   │   ├── google-analytics.ejs
@@ -228,30 +291,36 @@ tranquilpeak
 │   │   ├── clean.js
 │   │   ├── concat.js
 │   │   ├── cssmin.js
+│   │   ├── exec.js
 │   │   ├── replace.js
 │   │   ├── sails-linker.js
 │   │   ├── sass.js
 │   │   ├── sync.js
 │   │   ├── uglify.js
-│   │   └── default.js
+│   │   └── watch.js
 │   ├── register
 │   │   ├── build.js
 │   │   ├── buildProd.js
 │   │   ├── compileAssets.js
+│   │   ├── default.js
+│   │   ├── eslint.js
 │   │   ├── linkAssets.js
 │   │   ├── linkAssetsProd.js
-│   │   ├── syncAssets.js
-│   │   └── default.js
+│   │   └── syncAssets.js
 │   └── pipeline.js
 ├── .bowerrc
-├── Gruntfile.js
-├── LICENSE
-├── README.md
+├── .eslintignore
+├── .eslintrc.json
+├── .gitignore
 ├── _config.yml
 ├── bower.json
-└── package.json
+├── Gruntfile.js
+├── LICENSE
+├── package.json
+└── README.md
 ```
 
+- **.github** : Contains file templates for GitHub
 - **docs** : Contains user and developer documentation
 - **languages** : Contains language files
 - **layout** : Contains all views
@@ -289,8 +358,9 @@ If you want to add a new language, duplicate an existing language file and repla
     │   │   ├── share-options.ejs
     │   │   └── tag.ejs
     │   ├── about.ejs
-    │   ├── archive-post.ejs
     │   ├── archive.ejs
+    │   ├── archive-post.ejs
+    │   ├── baidu-analytics.ejs
     │   ├── cover.ejs
     │   ├── footer.ejs
     │   ├── google-analytics.ejs
@@ -321,19 +391,19 @@ If you want to add a new language, duplicate an existing language file and repla
 
 ```
 ├── scripts
-│   ├── filters
-│   │   └── excerpt.js
-│   ├── helpers
-│   │   ├── absolute_url.js
-│   │   ├── is_remote_url.js
-│   │   └── resolve_asset_url.js
-│   ├── tags
-│   │   ├── alert.js
-│   │   ├── fancybox.js
-│   │   ├── highlight_text.js
-│   │   ├── image.js
-│   │   ├── tabbed_codeblock_.js
-│   │   └── wide_image.js
+    ├── filters
+    │   └── excerpt.js
+    ├── helpers
+    │   ├── absolute_url.js
+    │   ├── is_remote_url.js
+    │   └── resolve_asset_url.js
+    ├── tags
+    │   ├── alert.js
+    │   ├── fancybox.js
+    │   ├── highlight_text.js
+    │   ├── image.js
+    │   ├── tabbed_codeblock_.js
+    │   └── wide_image.js
 ```
 
 Each scrips is executed a the startup of Hexo. They are separed by categories:
@@ -347,7 +417,7 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
     
 ```
 ├── source
-│   ├── _css
+    ├── _css
         ├── base
         │   ├── _base.scss
         ├── components
@@ -475,29 +545,32 @@ To install npm dependencies, run `npm install`
 NPM dependencies :  
 
 ``` json
-"async": "^1.5.2"
-"bower": "^1.3.12"
-"grunt": "^0.4.5"
-"grunt-bower": "^0.18.0"
-"grunt-contrib-clean": "~0.5.0"
-"grunt-contrib-concat": "^0.5.0"
-"grunt-contrib-copy": "~0.4.1"
-"grunt-contrib-cssmin": "^0.12.0"
-"grunt-contrib-uglify": "^0.7.0"
-"grunt-contrib-watch": "^0.6.1"
-"grunt-sails-linker": "^0.10.1"
-"grunt-sass": "1.1.0"
-"grunt-sync": "^0.2.3"
-"grunt-text-replace": "^0.4.0"
-"hexo-front-matter": "^0.2.2"
-"hexo-renderer-marked": "^0.2.10"
-"hexo-util": "^0.5.1"
-"include-all": "^0.1.6"
-"load-grunt-tasks": "~0.2.0"
-"mkdirp": "^0.5.1"
-"moment": "^2.12.0"
-"rand-token": "^0.2.1"
-"strip-indent": "^1.0.1"
+"devDependencies": {
+    "async": "^1.5.2",
+    "bower": "^1.3.12",
+    "grunt": "^0.4.5",
+    "grunt-bower": "^0.18.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "^0.12.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^0.4.6",
+    "grunt-sails-linker": "^0.10.1",
+    "grunt-sass": "1.1.0",
+    "grunt-sync": "^0.2.3",
+    "grunt-text-replace": "^0.4.0",
+    "hexo-front-matter": "^0.2.2",
+    "hexo-renderer-marked": "^0.2.10",
+    "hexo-util": "^0.5.1",
+    "include-all": "^0.1.6",
+    "load-grunt-tasks": "~0.2.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.12.0",
+    "rand-token": "^0.2.1",
+    "strip-indent": "^1.0.1"
+}
 ```
  
 ### Bower dependencies ###
@@ -524,6 +597,7 @@ Bower dependencies :
     │   ├── clean.js
     │   ├── concat.js
     │   ├── cssmin.js
+    │   ├── exec.js
     │   ├── replace.js
     │   ├── sails-linker.js
     │   ├── sass.js
@@ -535,6 +609,7 @@ Bower dependencies :
     │   ├── buildProd.js
     │   ├── compileAssets.js
     │   ├── default.js
+    │   ├── eslint.js
     │   ├── linkAssets.js
     │   ├── linkAssetsProd.js
     │   └── syncAssets.js
@@ -578,6 +653,7 @@ On production environment, these javascript and stylesheets files are concatenat
     * prodCss : Concat all stylesheets files located in `source/assets/css/` into 1 file : `source/assets/css/style.css`  
     * prodJs : Concat all javascript listed in `tasks/pipeline.js` in 1 file : `source/assets/js/script.js`  
 - **cssmin** : Minify `source/assets/cssstyle.css` file in : `source/assets/cssstyle.min.css`   
+- **exec** : Execute shell commands
 - **replace** : 
     * linker : Replace `EJS_ENDTAG` string to resolve a problem of ejs escaping with sails-linker tasks  
     * cssFancybox : Resolve path of images in fancybox.css. Impossible to use an other plugin to do that because in the bower fancybox packages, css files and images are in the same folder and that not the case in assets folder.
@@ -597,6 +673,7 @@ On production environment, these javascript and stylesheets files are concatenat
 - **build** : Synchronize bower dependencies, images, fonts, compile assets (css and js) and link it to views  
 - **buildProd** : Synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views  
 - **default** : Build the theme once and rebuild after each change
+- **eslint** : Check code style with ESLint
 - **compileAssets** : Compile scss files and concat js files
 - **linkAssets** : Link all javascript and stylesheets files to views  
 - **linkAssetsProd** : Link one javascript file and one stylesheet file (concatenated and minified) to views  

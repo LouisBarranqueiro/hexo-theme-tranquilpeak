@@ -1,0 +1,4 @@
+node_modules/
+source/_bower_components/
+source/assets/
+source/_js/smartresize.js

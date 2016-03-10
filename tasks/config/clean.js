@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
-    grunt.config.set('clean', {
-        // Delete the `assets` folder
-        build: ['source/assets']
-    });
+  grunt.config.set('clean', {
+    // Delete the `assets` folder
+    build: ['source/assets']
+  });
 
-    grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 };
