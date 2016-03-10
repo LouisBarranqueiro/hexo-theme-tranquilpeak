@@ -103,7 +103,7 @@
                 this.$archiveResult.html(this.messages.one).show();
             }
             else {
-                this.$archiveResult.html(this.messages.other.replace(/%d/, numbPosts)).show();
+                this.$archiveResult.html(this.messages.other.replace(/\{n\}/, numbPosts)).show();
             }
         },
 

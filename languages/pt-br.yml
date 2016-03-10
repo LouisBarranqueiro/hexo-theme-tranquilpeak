@@ -26,16 +26,16 @@ global:
     search_date: "Pesquisar data (AAAA/MM/DD)"
     posts_found:
         zero: "não foram encontrados artigos"
-        one: "artigo encontrados"
-        other: "artigos encontrados"
+        one: "1 artigo encontrados"
+        other: "{n} artigos encontrados"
     categories_found:
         zero: "não foram encontrados categorias"
-        one: "category encontrados"
-        other: "categorias encontrados"
+        one: "1 category encontrados"
+        other: "{n} categorias encontrados"
     tags_found:
         zero: "não foram encontrados tag"
-        one: "tag encontrados"
-        other: "tags encontrados"
+        one: "1 tag encontrados"
+        other: "{n} tags encontrados"
 
 pagination:
     page: "página %d"

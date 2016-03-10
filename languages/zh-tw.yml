@@ -27,15 +27,15 @@ global:
     posts_found:
         zero: "沒有找到文章"
         one: "找到 1 篇文章"
-        other: "找到 %d 篇文章"
+        other: "找到 {n} 篇文章"
     categories_found:
         zero: "没有找到分類"
         one: "找到 1 個分類"
-        other: "找到 %d 個分類"
+        other: "找到 {n} 個分類"
     tags_found:
         zero: "沒有找到標籤"
         one: "找到 1 個標籤"
-        other: "找到 %d 個標籤"
+        other: "找到 {n} 個標籤"
 
 pagination:
     page: "第 %d 頁"

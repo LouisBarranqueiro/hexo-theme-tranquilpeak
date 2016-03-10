@@ -83,7 +83,7 @@
                 this.$archiveResult.html(this.messages.one).show();
             }
             else {
-                this.$archiveResult.html(this.messages.other.replace(/%d/, numbTags)).show();
+                this.$archiveResult.html(this.messages.other.replace(/\{n\}/, numbTags)).show();
             }
         },
 

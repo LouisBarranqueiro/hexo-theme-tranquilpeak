@@ -27,15 +27,15 @@ global:
     posts_found:
         zero: "no post found"
         one: "1 post found"
-        other: "%d posts found"
+        other: "{n} posts found"
     categories_found:
         zero: "no category found"
         one: "1 cartegory found"
-        other: "%d categories found"
+        other: "{n} categories found"
     tags_found:
         zero: "no tag found"
         one: "1 tag found"
-        other: "%d tags found"
+        other: "{n} tags found"
 
 pagination:
     page: "page %d"
