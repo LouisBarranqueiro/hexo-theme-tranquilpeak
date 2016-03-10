@@ -20,7 +20,7 @@
   function migratePostsWithoutExcerpt(dir, date, cb) {
     var sourceDir = path.resolve(process.cwd(), hexo.config.source_dir);
     var postsDir = path.resolve(sourceDir, dir);
-    var migrationDir = path.resolve(sourceDir, '_migrated_posts');
+    var migrationDir = path.resolve(sourceDir, '_1.4.0_migrated_posts');
 
     /**
      * Check that the file have an excerpt tag
@@ -105,7 +105,7 @@
             if (error) {
               throw error;
             }
-            console.log(path.basename(filename) + ' : migrated');
+            console.log(path.basename(filename) + ' : copied');
             return callback();
           });
         });
@@ -124,18 +124,18 @@
         return path.resolve(postsDir, filename);
       });
       console.log(
-        'Checking for posts without `<-- more -->` ' +
+        '-> Checking for posts without `<-- more -->` ' +
         'and `<!-- excerpt -->` tag...');
       console.log('------------');
       // create migration directory or use existing
       mkdirp(migrationDir, function(error) {
         if (error) {
           console.log(
-            'failed to create ' + path.basename(migrationDir) +
+            '-> Failed to create ' + path.basename(migrationDir) +
             ' directory');
           throw error;
         }
-        console.log(path.basename(migrationDir) + ' directory created');
+        console.log('-> ' + path.basename(migrationDir) + ' directory created');
         console.log('------------');
         // process each files
         async.forEach(filenames, processFile, function(error) {
@@ -156,19 +156,18 @@
    * @return {void}
    */
   function renamePostsDir(postsDir, migrationDir, cb) {
-    var oldPostsDir = path.normalize(postsDir + '/../_old' + path.basename(postsDir));
+    var oldPostsDir = path.normalize(postsDir + '/../_1.4.0_old' + path.basename(postsDir));
     console.log('------------');
-    console.log(oldPostsDir);
     console.log(
-      'renaming \'' + path.basename(postsDir) + '\' ' +
+      '-> Renaming \'' + path.basename(postsDir) + '\' ' +
       'in \'' + path.basename(oldPostsDir) + '\'');
     fs.renameSync(postsDir, oldPostsDir);
-    console.log('renamed complete');
+    console.log('-> Renamed complete');
     console.log(
-      'renaming \'' + path.basename(migrationDir) + '\' ' +
+      '-> Renaming \'' + path.basename(migrationDir) + '\' ' +
       'in \'' + path.basename(postsDir) + '\'');
     fs.renameSync(migrationDir, postsDir);
-    console.log('renamed complete');
+    console.log('-> Renamed complete');
     cb();
   }
 
@@ -198,15 +197,15 @@
     };
     console.log('------------');
     console.log(
-      'Auto excerpt feature doesn\'t exist anymore ' +
+      '-> Auto excerpt feature doesn\'t exist anymore ' +
       'since Tranquilpeak 1.4.0');
     console.log(
-      'To overcome this, the \'<!-- excerpt -->\' tag will be inserted at ' +
+      '-> To overcome this, the \'<!-- excerpt -->\' tag will be inserted at ' +
       'the end of the first line of each posts which don\'t have ' +
       'excerpt tag');
     console.log(
-      'Provide the date of your last post written with ' +
-      'Tranquilpeak < v1.4.0');
+      '-> Provide the name of your posts directory and the date of your ' +
+      'last post written with Tranquilpeak < v1.4.0');
     console.log('------------');
     // ask posts directory and date
     prompt.get([postsDirSchema, dateSchema], function(error, data) {
