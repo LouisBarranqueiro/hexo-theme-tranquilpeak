@@ -153,7 +153,9 @@ tranquilpeak
 │   ├── en.yml
 │   ├── fr-FR.yml
 │   ├── pt-br.yml
-│   └── zh-cn.yml
+│   ├── ru.yml
+│   ├── zh-cn.yml
+│   └── zh-tw.yml
 ├── layout
 │   ├── _partial
 │   │   ├── post
@@ -168,8 +170,9 @@ tranquilpeak
 │   │   │   ├── share-options.ejs
 │   │   │   └── tag.ejs
 │   │   ├── about.ejs
-│   │   ├── archive-post.ejs
 │   │   ├── archive.ejs
+│   │   ├── archive-post.ejs
+│   │   ├── baidu-analytics.ejs
 │   │   ├── cover.ejs
 │   │   ├── footer.ejs
 │   │   ├── google-analytics.ejs
@@ -355,8 +358,9 @@ If you want to add a new language, duplicate an existing language file and repla
     │   │   ├── share-options.ejs
     │   │   └── tag.ejs
     │   ├── about.ejs
-    │   ├── archive-post.ejs
     │   ├── archive.ejs
+    │   ├── archive-post.ejs
+    │   ├── baidu-analytics.ejs
     │   ├── cover.ejs
     │   ├── footer.ejs
     │   ├── google-analytics.ejs
@@ -387,19 +391,19 @@ If you want to add a new language, duplicate an existing language file and repla
 
 ```
 ├── scripts
-│   ├── filters
-│   │   └── excerpt.js
-│   ├── helpers
-│   │   ├── absolute_url.js
-│   │   ├── is_remote_url.js
-│   │   └── resolve_asset_url.js
-│   ├── tags
-│   │   ├── alert.js
-│   │   ├── fancybox.js
-│   │   ├── highlight_text.js
-│   │   ├── image.js
-│   │   ├── tabbed_codeblock_.js
-│   │   └── wide_image.js
+    ├── filters
+    │   └── excerpt.js
+    ├── helpers
+    │   ├── absolute_url.js
+    │   ├── is_remote_url.js
+    │   └── resolve_asset_url.js
+    ├── tags
+    │   ├── alert.js
+    │   ├── fancybox.js
+    │   ├── highlight_text.js
+    │   ├── image.js
+    │   ├── tabbed_codeblock_.js
+    │   └── wide_image.js
 ```
 
 Each scrips is executed a the startup of Hexo. They are separed by categories:
@@ -413,7 +417,7 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
     
 ```
 ├── source
-│   ├── _css
+    ├── _css
         ├── base
         │   ├── _base.scss
         ├── components
