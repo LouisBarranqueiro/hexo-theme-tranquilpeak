@@ -202,7 +202,7 @@
       'since Tranquilpeak 1.4.0');
     console.log(
       'To overcome this, the \'<!-- excerpt -->\' tag will be inserted at ' +
-      'the end of the first sentence of each posts which don\'t have ' +
+      'the end of the first line of each posts which don\'t have ' +
       'excerpt tag');
     console.log(
       'Provide the date of your last post written with ' +
