@@ -74,24 +74,16 @@
          */
         showResult: function(numbTags) {
             if (numbTags === 0) {
-                this.$archiveResult
-                    .html(this.messages.zero)
-                    .show();
+                this.$archiveResult.html(this.messages.zero).show();
             }
             else if (numbTags === -1) {
-                this.$archiveResult
-                    .html('')
-                    .hide();
+                this.$archiveResult.html('').hide();
             }
             else if (numbTags == 1) {
-                this.$archiveResult
-                    .html(numbTags + ' ' + this.messages.one)
-                    .show();
+                this.$archiveResult.html(this.messages.one).show();
             }
             else {
-                this.$archiveResult
-                    .html(numbTags + ' ' + this.messages.other)
-                    .show();
+                this.$archiveResult.html(this.messages.other.replace(/%d/, numbTags)).show();
             }
         },
 

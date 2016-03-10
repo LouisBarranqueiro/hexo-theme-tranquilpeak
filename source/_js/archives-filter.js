@@ -100,10 +100,10 @@
                 this.$archiveResult.html('').hide();
             }
             else if (numbPosts == 1) {
-                this.$archiveResult.html(numbPosts + ' ' + this.messages.one).show();
+                this.$archiveResult.html(this.messages.one).show();
             }
             else {
-                this.$archiveResult.html(numbPosts + ' ' + this.messages.other).show();
+                this.$archiveResult.html(this.messages.other.replace(/%d/, numbPosts)).show();
             }
         },
 

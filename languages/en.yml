@@ -26,16 +26,16 @@ global:
     search_date: "Search date (YYYY/MM/DD)"
     posts_found:
         zero: "no post found"
-        one: "post found"
-        other: "posts found"
+        one: "1 post found"
+        other: "%d posts found"
     categories_found:
         zero: "no category found"
-        one: "cartegory found"
-        other: "categories found"
+        one: "1 cartegory found"
+        other: "%d categories found"
     tags_found:
         zero: "no tag found"
-        one: "tag found"
-        other: "tags found"
+        one: "1 tag found"
+        other: "%d tags found"
 
 pagination:
     page: "page %d"
