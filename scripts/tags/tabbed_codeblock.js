@@ -3,12 +3,13 @@
 var util = require('hexo-util');
 var highlight = util.highlight;
 var stripIndent = require('strip-indent');
+var jsDom = require('jsdom');
 var rCaptionUrl = /(\S[\S\s]*)\s+(https?:\/\/)(\S+)/i;
 var rCaption = /(\S[\S\s]*)/;
 var rTab = /<!--\s*tab (\w*)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g;
 
 // create a window with a document to use jQuery library
-require("jsdom").env("", function(err, window) {
+jsDom.env("", function(err, window) {
   if (err) {
     console.error(err);
     return;
@@ -109,8 +110,8 @@ require("jsdom").env("", function(err, window) {
    *       <!-- endtab -->
    *       <!-- tab css -->
    *           .btn {
-     *               color: red;
-     *           }
+   *               color: red;
+   *           }
    *       <!-- endtab -->
    *   {% endtabbed_codeblock %}
    */
