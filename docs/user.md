@@ -30,9 +30,6 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Customization](#customization)
         * [Integrated services](#integrated-services)
         * [Enable pages](#enable-pages)
-            * [Enable all-categories page](#enable-all-categories-page)
-            * [Enable all-tags page](#enable-all-tags-page)
-            * [Enable all-archives page](#enable-all-archives-page)
 - [Integrated services configuration](#integrated-services-configuration)
     * [Google Analytics](#google-analytics)
         * [Exclude hostname (localhost) while writing articles](#exclude-hostname-localhost-while-writing-articles)
@@ -65,35 +62,38 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## Features ##
 
 **General features :**  
-- Fully responsive  
-- Optimized for tablets & mobiles  
-- Configurable menu of the sidebar  
-- Pages to filter tags, categories and archives  
-- Background cover image  
-- Beautiful about page  
-- Support Open Graph protocol  
-- Support internationalization (i18n)
-- Easily customizable (fonts, colors, layout elements, code coloration, etc..) 
+
+- Fully responsive
+- Optimized for tablets & mobiles
+- Configurable menu of the sidebar
+- Pages to filter tags, categories and archives
+- Background cover image
+- Beautiful about page
+- Support Open Graph protocol
+- Support internationalization (i18
+- Easily customizable (fonts, colors, layout elements, code coloration, etc..
   
 **Posts features :**  
-- Thumbnail image  
-- Cover image  
-- Responsive videos & images  
-- Sharing options  
-- Navigation menu  
-- GitHub theme for code highlighting (customizable)  
-- Image gallery  
-- Tags for image (FancyBox), wide image, tabbed code block, highlighted text, alerts
+
+- Thumbnail image
+- Cover image
+- Responsive videos & images
+- Sharing options
+- Navigation menu
+- GitHub theme for code highlighting (customizable)
+- Image gallery
+- Tags for images (FancyBox), wide images, tabbed code blocks, highlighted text, alerts
 - Table of contents  
   
 **Integrated services :**  
-- Disqus  
-- Duoshuo  
-- Google analytics  
-- Baidu analytics  
-- Gravatar  
-- Swiftype  
-- Facebook Insights  
+
+- Disqus
+- Duoshuo
+- Google analytics
+- Baidu analytics
+- Gravatar
+- Swiftype
+- Facebook Insights
 
 ## Requirements ##
 
@@ -136,7 +136,7 @@ feed:
 - **path** : Feed path (Default: atom.xml/rss2.xml)
 - **limit** : Maximum number of posts in the feed (Use `0` or `false` to show all posts)
 
-If you want more informations on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+If you want more information on this plugin : [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
 ### Define global keywords ###
 
@@ -165,12 +165,11 @@ If your language is not available, follow this guidelines (E.g : add russian lan
 
 Otherwise, complete your description and your job in the right language file(s) in `theme/tranquilpeak/languages`.
 
-**Tranquilpeak theme is currently not ready to support multi-languages. It will be the next release.**
+**Tranquilpeak theme is currently not ready to support multi-languages. It will be in a next release.**
 
 ### Theme configuration ###
 
 Complete `theme/tranquilpeak/_config.yml` with your information. Read above sections to have more information.
-
 
 #### Sidebar
 
@@ -250,7 +249,6 @@ sidebar:
 - **icon** : Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)
 - **class** (optional) : CSS Class added to the `a` link tag
 
-
 #### Header
 
 The right link of the header is customizable. You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture. By default, author's gravatar or author's picture is displayed if `icon` is empty DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name.  
@@ -324,7 +322,7 @@ Default image is on AWS S3 and delivered by AWS CloudFront. Otherwise put your i
 - **category_pagination** :  Displaying style of category pages. (false: pagination disabled, true: pagination enabled)
 - **tag_pagination** :  Displaying style of tag pages. (false: pagination disabled, true: pagination enabled)
 
-Example :  
+E.g :  
 A category page look like this with `category_pagination: true` :  
 ![archives false](http://d1u9biwaxjngwg.cloudfront.net/docs/1.4.0/ud-archives-true-300.png)  
 
@@ -359,8 +357,9 @@ read following step.
 
 #### Enable all-categories page
 
-To enable `all-categories` page :  
-1. Run `hexo new page "all-categories"`. A new folder named `all-categories` will be created in `source/`  
+To enable `all-categories` page :
+
+1. Run `hexo new page "all-categories"`. A new folder named `all-categories` will be created in `source/`
 2. Replace `source/all-categories/index.md` content with :
  
 ``` markdown
@@ -375,8 +374,9 @@ New page will be reach at : `/all-categories`. On this page, users will be able 
 
 #### Enable all-tags page
 
-To enable `all-tags` page :  
-1. Run `hexo new page "all-tags"`. A new folder named `all-tags` will be created in `source/`  
+To enable `all-tags` page :
+
+1. Run `hexo new page "all-tags"`. A new folder named `all-tags` will be created in `source/`
 2. Replace `source/all-tags/index.md` content with :
  
 ``` markdown
@@ -391,8 +391,9 @@ New page will be reach at : `/all-tags`. On this page, users will be able to sea
 
 #### Enable all-archives page
 
-To enable `all-archives` page :  
-1. Run `hexo new page "all-archives"`. A new folder named `all-archives` will be created in `source/`  
+To enable `all-archives` page :
+
+1. Run `hexo new page "all-archives"`. A new folder named `all-archives` will be created in `source/`
 2. Replace `source/all-archives/index.md` content with :
  
 ``` markdown
@@ -417,20 +418,22 @@ While you are writing articles, you need to check the result a lot of times befo
 If you have enable Google analytics service, Google will include all requests done, even when hostname is localhost and this can greatly skew the results.
 To overcome this, you have to add a filter on Google Analytics website.
    
-Follow these steps, to add new filter :   
-1. Sign in to your Google Analytics account 
-2. Select the **Admin** tab and navigate to the **property** in which you want to create the filter **(Account > Property > View)**  
-3. In **View** column, click on **Filters** button  
-4. Click on **+ NEW FILTER** button  
-6. Enter a name for the filter  
-7. Select **Custom filter**, **Filter Field** : `Hostname`, **Filter Pattern** :  `(.*?localhost.*?)`  
-8. Click on **Save** button   
+Follow these steps, to add new filter :
+
+1. Sign in to your Google Analytics account
+2. Select the **Admin** tab and navigate to the **property** in which you want to create the filter **(Account > Property > View)**
+3. In **View** column, click on **Filters** button
+4. Click on **+ NEW FILTER** button
+6. Enter a name for the filter
+7. Select **Custom filter**, **Filter Field** : `Hostname`, **Filter Pattern** :  `(.*?localhost.*?)`
+8. Click on **Save** button
 
 ## Quick & easy modifications ##
 
 ### Prerequisites ###
 
 Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
+
 1. Install requirements : [developer documentation - requirements](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#requirements)
 2. Install npm dependencies with `npm install`
 3. Install bower dependencies with `bower install`
@@ -447,16 +450,17 @@ Tranquilpeak integrate its own highlight.js theme inspired by GitHub.
 Of course, you can replace it with an other theme found on highlight.js repository. Since Hexo use different CSS class names, all theme are not ready out of the box, but it is very easy to make them compatible. 
 
 Follow these steps :
+
 1. Get your theme here : [Highlight.js theme](https://github.com/isagalaev/highlight.js/tree/master/src/styles) or create yours
 2. Follow guidelines in `source/_css/themes/hljs-custom.scss` file
 3. Build the theme with `grunt buildProd`. Learn more about grunt tasks : [developer documentation - grunt tasks](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#grunt-tasks)
-
 
 ## Migrating posts ##
 
 ### Prerequisites ###
 
 Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
+
 1. Install requirements : [developer documentation - requirements](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#requirements)
 2. Install npm dependencies with `npm install`
 
@@ -559,7 +563,7 @@ Tranquilpeak v1.4.0 introduce a new way to define post excerpt with `<!-- excerp
 
 ### Display all post content ###
 
-** To display all post content on index page, don't put `<!-- more -->` and `<!-- excerpt -->` comment in your post content.**
+**To display all post content on index page, don't put `<!-- more -->` and `<!-- excerpt -->` comment in your post content.**
 
 ### Display table of contents ###
 
@@ -676,11 +680,13 @@ E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/im
  
 #### Tabbed code block
 
+Tabbed code blocks are useful to group multiple code blocks related. For example, the source code of a web component (html, css and js). Or compare a source code in different languages.
+
 ![tabbed_codeblock-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.7/tabbed_codeblock-tag.png)
 
-Check it live : [tabbed code block demo]()
+Check it live : [tabbed code block demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Tabbed-code-block)
 
-Syntax : 
+Syntax :
 ``` js
   {% tabbed_codeblock [name] [link] %}
       <!-- tab [lang] -->
@@ -688,7 +694,8 @@ Syntax :
       <!-- endtab -->
   {% endtabbed_codeblock %}
 ```
-E.g : 
+
+E.g :  
 ``` js
   {% tabbed_codeblock example http://example.com %}
       <!-- tab js -->
