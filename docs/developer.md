@@ -539,9 +539,12 @@ NPM dependencies :
     "hexo-renderer-marked": "^0.2.10",
     "hexo-util": "^0.5.1",
     "include-all": "^0.1.6",
+    "jquery": "^2.2.1",
+    "jsdom": "^8.1.0",
     "load-grunt-tasks": "~0.2.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.12.0",
+    "prompt": "^1.0.0",
     "rand-token": "^0.2.1",
     "strip-indent": "^1.0.1"
 }
@@ -555,9 +558,11 @@ Bower dependencies are located in `source/_bower_components`
 Bower dependencies :  
 
 ``` json
-"Font-awesome" : "~4.3.0"
-"jQuery" : "~2.1.3"
-"Fancybox" : "~2.1.5"
+"dependencies": {
+    "fontawesome": "~4.3.0",
+    "jquery": "~2.1.3",
+    "fancybox": "~2.1.5"
+}
 ```
 
 ### Grunt tasks ###
