@@ -63,13 +63,13 @@ A gorgeous responsive theme for Hexo blog framework
 
 **Please read [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md), it's short and useful to discover all features and possibilities of the theme, especially the  [writing posts](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md#writing-posts) section**
 
-##### For people who want to use the original version of Tranquilpeak without modifications (users)
+#### For people who want to use the original version of Tranquilpeak without modifications (users)
 
 1. Download the latest version ready for production use here : [hexo-theme-tranquilpeak-prod-1.7.0]
 (https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.7.0/hexo-theme-tranquilpeak-built-for-production-1.7.0.zip)
 2. Follow [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md) to install and configure the theme  
 
-##### For people who want to create their own version of tranquilpeak (developers)
+#### For people who want to create their own version of tranquilpeak (developers)
 
 1. Run `git clone https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git`  
 2. Follow [developer documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md) to edit and build the theme  
@@ -87,11 +87,11 @@ Create an issue with your blog url and a short description of your changes by cl
 
 If it's your first time using Hexo, please check [Hexo official documentation](https://hexo.io/docs/)
 
-##### For users
+#### For users
 
 To install and configure the theme, consult the following documentation : [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
 
-##### For developers
+#### For developers
 
 To understand the code, the workflow and edit the theme, consult the following documentation : [developer documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md)
 
