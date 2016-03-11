@@ -81,7 +81,7 @@ Check out Tranquilpeak theme in live : [hexo-theme-tranquilpeak demo](http://lou
 ## Showcase ##
 
 I would like to create a showcase with all blogs that use Tranquilpeak, please, add your blog into.  
-Create an issue with your blog url and a short description of your changes by clicking [here](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/issues/new?title=Add%20my%20blog%20into%20showcase&body=Hey,%20check%20out%20my%20custom%20version%20of%20Tranquilpeak%20:%0D%0A*%20URL%20:%20%0D%0A*%20Changes%20(short%20description)%20:%20)  
+**Click [here](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/issues/new?title=Add%20my%20blog%20into%20the%20showcase&body=Hey,%20add%20my%20blog%20into%20the%20showcase:) to add your blog into the showcase.**
 
 ## Documentation ##
 
