@@ -83,8 +83,6 @@
       // scroll is enable
       // and re-define offsetTop
       if (aboutCardHeight + 30 > $(window).height()) {
-        self.$about.css('overflow-y', 'scroll');
-        self.$aboutCard.css('margin', '15px auto');
         offsetTop = aboutCardHeight;
       }
       self.$aboutCard
@@ -106,8 +104,7 @@
       var aboutCardHeight = self.$aboutCard.innerHeight();
       // default offset from top
       var offsetTop = ($(window).height() / 2) - (aboutCardHeight / 2) + aboutCardHeight;
-      if (aboutCardHeight > $(window).height()) {
-        self.$about.css('overflow-y', 'hidden');
+      if (aboutCardHeight + 30 > $(window).height()) {
         offsetTop = aboutCardHeight;
       }
       self.$aboutCard.animate({
