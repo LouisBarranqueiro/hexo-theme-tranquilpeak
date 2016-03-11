@@ -117,7 +117,7 @@
     // read in posts folder
     fs.readdir(postsDir, function(error, filenames) {
       if (error) {
-        return done(error);
+        throw error;
       }
       // resolve path for all filenames
       filenames = filenames.map(function(filename) {
