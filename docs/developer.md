@@ -68,7 +68,7 @@ We use [ESLint](http://eslint.org) based on Google code style to maintain code s
 
 #### ESLint configuration
 
-`.eslinrc.json` file :
+`.eslintrc.json` file :
 
 ```json
 {
@@ -79,15 +79,10 @@ We use [ESLint](http://eslint.org) based on Google code style to maintain code s
             "requireReturnDescription": false,
             "requireParamDescription": false
         }],
-        "no-undef":[0],
         "brace-style": [2, "stroustrup"],
         "no-trailing-spaces": [2, {"skipBlankLines": true }],
         "eqeqeq":[1],
         "max-len": [1, 100, 4, {"ignoreUrls": true}]
-    },
-    "env": {
-        "browser": true,
-        "node": true
     }
 }
 ``` 
@@ -181,6 +176,7 @@ tranquilpeak
 │   │   ├── image.js
 │   │   ├── tabbed_codeblock_.js
 │   │   └── wide_image.js
+│   └── .eslintrc.json
 ├── source
 │   ├── _css
 │   │   ├── base
@@ -246,6 +242,7 @@ tranquilpeak
 │   ├── _images
 │   │   └── cover.jpg
 │   └── _js
+│   │   ├── .eslintrc.json
 │   │   ├── about.js
 │   │   ├── archives-filter.js
 │   │   ├── categories-filter.js
@@ -378,6 +375,7 @@ If you want to add a new language, duplicate an existing language file and repla
     │   ├── image.js
     │   ├── tabbed_codeblock_.js
     │   └── wide_image.js
+    └── .eslintrc.json
 ```
 
 Each scrips is executed a the startup of Hexo. They are separed by categories:
@@ -479,6 +477,7 @@ Contains all images of the theme.
 
 ```
 ├── _js
+    ├── .eslintrc.json
     ├── about.js
     ├── archives-filter.js
     ├── categories-filter.js

@@ -1,0 +1,8 @@
+{
+    "globals": {
+        "hexo": false
+    },
+    "env": {
+        "node": true
+    }
+}
