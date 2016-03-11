@@ -9,13 +9,13 @@ var rCaption = /(\S[\S\s]*)/;
 var rTab = /<!--\s*tab (\w*)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g;
 
 // create a window with a document to use jQuery library
-jsDom.env("", function(err, window) {
+jsDom.env('', function(err, window) {
   if (err) {
     console.error(err);
     return;
   }
-
-  var $ = require("jquery")(window);
+  
+  var $ = require('jquery')(window);
 
   /**
    * Tabbed code block
