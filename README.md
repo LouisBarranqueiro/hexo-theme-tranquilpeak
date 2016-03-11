@@ -4,7 +4,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-[![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.6.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
+[![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.7.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
 
 ## Summary ##
 
