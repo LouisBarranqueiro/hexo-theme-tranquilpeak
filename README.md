@@ -17,6 +17,7 @@ A gorgeous responsive theme for Hexo blog framework
 - [Showcase](#showcase)
 - [License](#license)
 
+
 ## General ##
 
 - **Author** : Louis Barranqueiro
