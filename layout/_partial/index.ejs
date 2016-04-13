@@ -70,7 +70,7 @@
                 <%- partial('post/meta', {post: post, classes: ['postShorten-meta']}) %>
             </div>
             <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "bottom") { %>
-                <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
+                <div class="postShorten-thumbnailimg postShorten--thumbnailimg-bottom">
                     <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
                 </div>
                 <% thumbnailImageUrl = null; %>
