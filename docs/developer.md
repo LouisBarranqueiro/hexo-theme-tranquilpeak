@@ -8,7 +8,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 - [General](#general)
 - [Requirements](#requirements)
-- [Installation](#installation)
+- [Installation](#installation)1
 - [Code style](#code-style)
     * [Javascript code](#javascript-code)
          * [ESLint configuration](#eslint-configuration)
@@ -34,7 +34,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.7.0
+- **Version** : 1.7.1
 - **Compatibility** : Hexo 3.0.0 or later
 
 ## Requirements ##
@@ -169,6 +169,8 @@ tranquilpeak
 │   │   ├── absolute_url.js
 │   │   ├── is_remote_url.js
 │   │   └── resolve_asset_url.js
+│   ├── migrators
+│   │   └── 1.4.0.js
 │   ├── tags
 │   │   ├── alert.js
 │   │   ├── fancybox.js
@@ -368,6 +370,8 @@ If you want to add a new language, duplicate an existing language file and repla
     │   ├── absolute_url.js
     │   ├── is_remote_url.js
     │   └── resolve_asset_url.js
+    ├── migrators
+    │   └── 1.4.0.js
     ├── tags
     │   ├── alert.js
     │   ├── fancybox.js
@@ -381,6 +385,7 @@ If you want to add a new language, duplicate an existing language file and repla
 Each scrips is executed a the startup of Hexo. They are separed by categories:
 - **filters** : A filter is used to modify some specified data. Hexo passes data to filter in sequence and filters can modify the data.
 - **helpers** : Helpers are used in templates to help insert snippets quickly. Helpers cannot be used in source files.
+- **migrators** : A migrator helps users migrate posts from other system or Hexo theme to Hexo.
 - **tags** : A tag helps users insert snippets to posts easily.
 
 ### Assets ###
@@ -542,6 +547,7 @@ NPM dependencies :
     "jsdom": "^8.1.0",
     "load-grunt-tasks": "~0.2.0",
     "mkdirp": "^0.5.1",
+    "marked": "^0.3.5",
     "moment": "^2.12.0",
     "prompt": "^1.0.0",
     "rand-token": "^0.2.1",
