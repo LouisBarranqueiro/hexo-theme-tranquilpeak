@@ -8,8 +8,10 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 - [General](#general)
 - [Requirements](#requirements)
+- [Dependencies](#dependencies)
+    * [NPM dependencies](#npm-dependencies)
+    * [Bower dependencies](#bower-dependencies)
 - [Installation](#installation)
-- [NPM scripts](#NPM-scripts)
 - [Code style](#code-style)
     * [Javascript code](#javascript-code)
          * [ESLint configuration](#eslint-configuration)
@@ -23,14 +25,13 @@ If you want to report a bug or ask a question, [create an issue](https://github.
          * [Fonts](#fonts)
          * [Images](#images)
          * [Javascript](#javascript)
+- [NPM scripts](#NPM-scripts)
+- [Grunt tasks](#grunt-tasks)
+    * [Tasks structure](#tasks-structure)
+    * [Pipeline](#pipeline)
+    * [Config tasks](#config-tasks)
+    * [Register tasks](#register-tasks)
 - [Build](#build)
-    * [NPM dependencies](#npm-dependencies)
-    * [Bower dependencies](#bower-dependencies)
-    * [Grunt tasks](#grunt-tasks)
-        * [Tasks structure](#tasks-structure)
-        * [Pipeline](#pipeline)
-        * [Config tasks](#config-tasks)
-        * [Register tasks](#register-tasks)
 - [Running](#running)
 
 ## General ##
@@ -48,14 +49,60 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 5. **ESLint** : v2.3.0 or higher. Run `npm install eslint -g`
 6. **ESLint config Google** : v0.4.0 or higher. Run `npm install eslint -g`
 
-## NPM scripts
+## Dependencies ##
 
-Use `npm run <script_name>` to run one of these scripts. E.g : `npm run installation` 
+### NPM dependencies ###
 
-- **installation** : Install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
-- **start** : Build the theme once and rebuild after each change
-- **prod** : Build the theme for production. (synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views)
-- **lint** : Check code style with [ESLint](http://eslint.org)
+To install npm dependencies, run `npm install`  
+  
+NPM dependencies :  
+
+``` json
+"devDependencies": {
+    "async": "^1.5.2",
+    "bower": "^1.3.12",
+    "grunt": "^0.4.5",
+    "grunt-bower": "^0.18.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "^0.12.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^0.4.6",
+    "grunt-sails-linker": "^0.10.1",
+    "grunt-sass": "1.1.0",
+    "grunt-sync": "^0.2.3",
+    "grunt-text-replace": "^0.4.0",
+    "hexo-front-matter": "^0.2.2",
+    "hexo-renderer-marked": "^0.2.10",
+    "hexo-util": "^0.5.1",
+    "include-all": "^0.1.6",
+    "jquery": "^2.2.1",
+    "jsdom": "^8.1.0",
+    "load-grunt-tasks": "~0.2.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.12.0",
+    "prompt": "^1.0.0",
+    "rand-token": "^0.2.1",
+    "strip-indent": "^1.0.1"
+}
+```
+ 
+### Bower dependencies ###
+
+To install bower dependencies, run `bower install`  
+Bower dependencies are located in `source/_bower_components`
+
+Bower dependencies :  
+
+``` json
+"dependencies": {
+    "fontawesome": "~4.3.0",
+    "jquery": "~2.1.3",
+    "fancybox": "~2.1.5"
+}
+```
 
 ## Installation ##
 
@@ -523,64 +570,19 @@ Contains all images of the theme.
   
 Each file correspond to a feature.  
   
-## Build ##
+## NPM scripts
 
-### NPM dependencies ###
+Use `npm run <script_name>` to run one of these scripts. E.g : `npm run installation` 
 
-To install npm dependencies, run `npm install`  
-  
-NPM dependencies :  
+- **installation** : Install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
+- **start** : Build the theme once and rebuild after each change
+- **prod** : Build the theme for production. (synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views)
+- **lint** : Check code style with [ESLint](http://eslint.org)
 
-``` json
-"devDependencies": {
-    "async": "^1.5.2",
-    "bower": "^1.3.12",
-    "grunt": "^0.4.5",
-    "grunt-bower": "^0.18.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-cssmin": "^0.12.0",
-    "grunt-contrib-uglify": "^0.7.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-exec": "^0.4.6",
-    "grunt-sails-linker": "^0.10.1",
-    "grunt-sass": "1.1.0",
-    "grunt-sync": "^0.2.3",
-    "grunt-text-replace": "^0.4.0",
-    "hexo-front-matter": "^0.2.2",
-    "hexo-renderer-marked": "^0.2.10",
-    "hexo-util": "^0.5.1",
-    "include-all": "^0.1.6",
-    "jquery": "^2.2.1",
-    "jsdom": "^8.1.0",
-    "load-grunt-tasks": "~0.2.0",
-    "mkdirp": "^0.5.1",
-    "moment": "^2.12.0",
-    "prompt": "^1.0.0",
-    "rand-token": "^0.2.1",
-    "strip-indent": "^1.0.1"
-}
-```
- 
-### Bower dependencies ###
 
-To install bower dependencies, run `bower install`  
-Bower dependencies are located in `source/_bower_components`
+## Grunt tasks ##
 
-Bower dependencies :  
-
-``` json
-"dependencies": {
-    "fontawesome": "~4.3.0",
-    "jquery": "~2.1.3",
-    "fancybox": "~2.1.5"
-}
-```
-
-### Grunt tasks ###
-
-#### Tasks structure 
+### Tasks structure 
   
 ```
 ├── tasks
@@ -612,7 +614,7 @@ Bower dependencies :
 - **register** : Alias tasks which call multiple default tasks
 - **pipeline.js** : Files which contains a list of javascript and stylesheets files linked to the blog
 
-#### Pipeline
+### Pipeline
 
 ``` javascript
 // Js files to inject in `layout/_partial/script.ejs`
@@ -636,7 +638,7 @@ var tranquilpeakCssFilesToInject = [
 
 On production environment, these javascript and stylesheets files are concatenate and minify in 1 javascript file and 1 stylesheet file and linked to their respective views
 
-#### Config tasks 
+### Config tasks 
 
 - **bower** : Copy all needed files by types from bower dependencies  
 - **clean** : Delete `source/assets` folder  
@@ -660,7 +662,7 @@ On production environment, these javascript and stylesheets files are concatenat
 - **uglify** : Minify `source/assets/js/script.js` file in `source/assets/js/script.min.js`  
 - **watch** : Watch assets from `source/_*/**/*` folder to detect changes and launch `syncAssets` task  
 
-#### Register tasks
+### Register tasks
 
 - **build** : Synchronize bower dependencies, images, fonts, compile assets (css and js) and link it to views  
 - **buildProd** : Synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views  
@@ -673,11 +675,15 @@ On production environment, these javascript and stylesheets files are concatenat
 
 When you run `grunt build` or `grunt buildProd` tasks, a `source/assets` folder will be created with all files generated in. When you will start your hexo server, only this folder will be copied in `public` folder
 
-**Development environment**:    
-1. Run `grunt default` and start coding :)
+## Build ##
 
-**Production environment (before deploying your blog)** :  Run `grunt buildProd` to build the project with some optimization (concat and minify).  
-Your blog will have only 1 file for javascript and 1 file for stylesheets to reduce number of HTTP requests and improve performance.
+### Development environment  
+
+1. Run `npm run start` or `grunt default` and start coding :)
+
+### Production environment (before deploying your blog)
+
+1. Run `npm run prod` or `grunt buildProd` to build the project with some optimization (concat and minify) to reduce number of HTTP requests and improve performance.
 
 ## Running ##
 
