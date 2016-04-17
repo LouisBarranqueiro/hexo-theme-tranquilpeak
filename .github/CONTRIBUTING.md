@@ -11,7 +11,7 @@ All kinds of contributions (enhancements, new features, documentation & code imp
 We use [ESLint](http://eslint.org) based on Google code style to maintain code style.  
 Check code status with :
 ``` bash
-npm run eslint
+npm run lint
 # or
 grunt eslint
 ```
