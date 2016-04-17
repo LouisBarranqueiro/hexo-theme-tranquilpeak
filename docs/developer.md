@@ -351,14 +351,15 @@ tranquilpeak
 ├── package.json
 └── README.md
 ```
-
-- **.github** : Contains file templates for GitHub
-- **docs** : Contains user and developer documentation
-- **languages** : Contains language files
-- **layout** : Contains all views
-- **scripts** : Contains all scripts executed at the startup of Hexo
-- **source** : Contains all assets (css, js and images)
-- **tasks** : Contains all grunt tasks
+|File/Folder|Description|
+|---|---|
+|**.github**|Contains file templates for GitHub|
+|**docs**|Contains user and developer documentation|
+|**languages**|Contains language files|
+|**layout**|Contains all views|
+|**scripts**|Contains all scripts executed at the startup of Hexo|
+|**source**|Contains all assets (css, js and images)|
+|**tasks**|Contains all grunt tasks|
 
 ### Languages ###
 
@@ -414,10 +415,11 @@ If you want to add a new language, duplicate an existing language file and repla
     ├── post.ejs
     └── tag.ejs
 ```
-
-- **layout** : Contails all mains views
-- **layout/partial** : Contains all partial views included in main views
-- **layout/partial/post** : Contains all partial views to build post
+|Folder|Description|
+|---|---|
+|layout|Contails all mains views|
+|layout/partial|Contains all partial views included in main views|
+|layout/partial/post|Contains all partial views to build post|
 
 ### Scripts ###
 
@@ -440,9 +442,12 @@ If you want to add a new language, duplicate an existing language file and repla
 ```
 
 Each scrips is executed a the startup of Hexo. They are separed by categories:
-- **filters** : A filter is used to modify some specified data. Hexo passes data to filter in sequence and filters can modify the data.
-- **helpers** : Helpers are used in templates to help insert snippets quickly. Helpers cannot be used in source files.
-- **tags** : A tag helps users insert snippets to posts easily.
+
+|Folder|Description|
+|---|---|
+|filters|A filter is used to modify some specified data. Hexo passes data to filter in sequence and filters can modify the data.|
+|helpers|Helpers are used in templates to help insert snippets quickly. Helpers cannot be used in source files.|
+|tags|A tag helps users insert snippets to posts easily.|
 
 ### Assets ###
 
@@ -519,7 +524,9 @@ If you want more information and to understand better this code, consult [sass g
 ├── _fonts
     └── .gitkeep
 ```
-- **.gitkeep** : Ignore this file. It only exists because git refuses to push empty directories to a remote server. .gitkeep is an unofficial convention that has emerged as a workaround for people who don't discriminate against empty directories.  
+|File|Description|
+|---|---|
+|.gitkeep|Ignore this file. It only exists because git refuses to push empty directories to a remote server. .gitkeep is an unofficial convention that has emerged as a workaround for people who don't discriminate against empty directories.|  
 
 If you have local fonts, place them in this folder and import them in `source/_css/utils/_fonts.scss`.
 
@@ -529,8 +536,9 @@ If you have local fonts, place them in this folder and import them in `source/_c
 ├── _images
     └── cover.jpg
 ```
-
-- **cover.png** : Default background cover of the blog
+|File|Description|
+|---|---|
+|cover.png|Default background cover of the blog|
   
 Contains all images of the theme.  
 
@@ -553,31 +561,35 @@ Contains all images of the theme.
     ├── tabbed-codeblocks.js
     └── tags-filter.js
 ```
-
-- **about.js** : Fade out the blog and let drop the about card of the author and vice versa
-- **archives-filter.js** : Filter posts by using their date on archives page : `/archives`
-- **categories-filter.js** : Filter posts by using their categories on archives page : `/categories`
-- **codeblock-resizer.js** : Resize code blocks to fit the screen width
-- **fancybox.js.js** : Run Fancybox plugin
-- **header.js** : Hide the header when the user scrolls down, and show it when he scrolls up
-- **image-gallery.js** : Resize all images of an image-gallery
-- **post-bottom-bar.js** : Hide the post bottom bar when the post footer is visible by the user, and vice versa
-- **share-options.js** : Open and close the share-options bar 
-- **sidebar.js** : Open and close the sidebar by swiping the sidebar and the blog and vice versa
-- **smartresize.js** : Debouncing function from [John Hann](https://github.com/unscriptable)
-- **tabbed-codeblocks.js** : Animate tabs of tabbed code blocks
-- **tags-filter.scss** : Filter posts by using their tags on archives page : `/tags`  
+|File|Description|
+|---|---|
+|about.js|Fade out the blog and let drop the about card of the author and vice versa|
+|archives-filter.js|Filter posts by using their date on archives page : `/archives`|
+|categories-filter.js|Filter posts by using their categories on archives page : `/categories`|
+|codeblock-resizer.js|Resize code blocks to fit the screen width|
+|fancybox.js.js|Run Fancybox plugin|
+|header.js|Hide the header when the user scrolls down, and show it when he scrolls up|
+|image-gallery.js|Resize all images of an image-gallery|
+|post-bottom-bar.js|Hide the post bottom bar when the post footer is visible by the user, and vice versa|
+|share-options.js|Open and close the share-options bar|
+|sidebar.js|Open and close the sidebar by swiping the sidebar and the blog and vice versa|
+|smartresize.js|Debouncing function from [John Hann](https://github.com/unscriptable)|
+|tabbed-codeblocks.js|Animate tabs of tabbed code blocks|
+|tags-filter.js|Filter posts by using their tags on archives page : `/tags`|
   
 Each file correspond to a feature.  
   
 ## NPM scripts
 
 Use `npm run <script_name>` to run one of these scripts. E.g : `npm run installation` 
-
-- **installation** : Install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
-- **start** : Build the theme once and rebuild after each change
-- **prod** : Build the theme for production. (synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views)
-- **lint** : Check code style with [ESLint](http://eslint.org)
+  
+  
+|`npm run ...`|Description|
+|---|---|
+|`installation`|Install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)|
+|`start`|Build the theme once and rebuild after each change|
+|`prod`|Build the theme for production. (synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views)|
+|`lint`|Check code style with [ESLint](http://eslint.org)|
 
 
 ## Grunt tasks ##
@@ -610,9 +622,11 @@ Use `npm run <script_name>` to run one of these scripts. E.g : `npm run installa
     └── pipeline.js
 ```  
 
-- **config** : Default tasks
-- **register** : Alias tasks which call multiple default tasks
-- **pipeline.js** : Files which contains a list of javascript and stylesheets files linked to the blog
+|File/folder|Description|
+|---|---|
+|config|Default tasks|
+|register|Alias tasks which call multiple default tasks|
+|pipeline.js|Files which contains a list of javascript and stylesheets files linked to the blog|
 
 ### Pipeline
 
@@ -632,46 +646,40 @@ var tranquilpeakCssFilesToInject = [
     'tranquilpeak.css'
 ];
 ```
-
-- **tranquilpeakJsFilesToInject** :  Files injected in `layout/_partial/script.ejs` (developement environment)
-- **tranquilpeakCssFilesToInject** :  Files injected in`layout/_partial/head.ejs` (developement environment)
+|Variable|Description|
+|---|---|
+|tranquilpeakJsFilesToInject|Files injected in `layout/_partial/script.ejs` (developement environment)|
+|tranquilpeakCssFilesToInject|Files injected in`layout/_partial/head.ejs` (developement environment)|
 
 On production environment, these javascript and stylesheets files are concatenate and minify in 1 javascript file and 1 stylesheet file and linked to their respective views
 
 ### Config tasks 
 
-- **bower** : Copy all needed files by types from bower dependencies  
-- **clean** : Delete `source/assets` folder  
-- **concat** : 
-    * devJs : Concat all javascript files located in `source/_js/` into 1 file : `source/assets/js/tranquilpeak.js`  
-    * prodCss : Concat all stylesheets files located in `source/assets/css/` into 1 file : `source/assets/css/style.css`  
-    * prodJs : Concat all javascript listed in `tasks/pipeline.js` in 1 file : `source/assets/js/script.js`  
-- **cssmin** : Minify `source/assets/cssstyle.css` file in : `source/assets/cssstyle.min.css`   
-- **exec** : Execute shell commands
-- **replace** : 
-    * linker : Replace `EJS_ENDTAG` string to resolve a problem of ejs escaping with sails-linker tasks  
-    * cssFancybox : Resolve path of images in fancybox.css. Impossible to use an other plugin to do that because in the bower fancybox packages, css files and images are in the same folder and that not the case in assets folder.
-    * cssTranquilpeak : Resolve path of images and fonts in tranquilpeak.css.
-- **sails-linker** : 
-    * devJs : Link all javascript files listed in `tasks/pipeline.js`  to `layout/_partial/script.ejs`  
-    * devCss : Link all stylesheets files listed in `tasks/pipeline.js`  to `layout/_partial/head.ejs`  
-    * prodJs : Link `source/assets/js/script.min.js` file in `layout/_partial/script.ejs`  
-    * prodCss : Link `source/assets/js/style.min.css` file in `layout/_partial/head.ejs`  
-- **sass** : Compile `source/_css/tranquilpeak.scss` file in `source/assets/css/tranquilpeak.css`  
-- **sync** : Synchronize images from `source/_images` to `source/assets/images` and fonts from `source/_fonts` to `source/assets/fonts`
-- **uglify** : Minify `source/assets/js/script.js` file in `source/assets/js/script.min.js`  
-- **watch** : Watch assets from `source/_*/**/*` folder to detect changes and launch `syncAssets` task  
+|Task|Description|
+|---|---|
+|bower|Copy all needed files by types from bower dependencies|
+|clean|Delete `source/assets` folder|
+|concat|<ul><li>devJs : Concat all javascript files located in `source/_js/` into 1 file : `source/assets/js/tranquilpeak.js`</li><li>prodCss : Concat all stylesheets files located in `source/assets/css/` into 1 file : `source/assets/css/style.css`</li><li>prodJs : Concat all javascript listed in `tasks/pipeline.js` in 1 file : `source/assets/js/script.js`</li></ul>|
+|cssmin|Minify `source/assets/cssstyle.css` file in : `source/assets/cssstyle.min.css`|
+|exec|<ul><li>eslint : run `eslint .`</li></ul>|
+|replace|<ul><li>linker : Replace `EJS_ENDTAG` string to resolve a problem of ejs escaping with sails-linker tasks</li><li>cssFancybox : Resolve path of images in fancybox.css. Impossible to use an other plugin to do that because in the bower fancybox packages, css files and images are in the same folder and that not the case in assets folder.</li><li>cssTranquilpeak : Resolve path of images and fonts in tranquilpeak.css.</li></ul>|
+|sails-linker|<ul><li>devJs : Link all javascript files listed in `tasks/pipeline.js`  to `layout/_partial/script.ejs`</li><li>devCss : Link all stylesheets files listed in `tasks/pipeline.js`  to `layout/_partial/head.ejs`</li><li>prodJs : Link `source/assets/js/script.min.js` file in `layout/_partial/script.ejs`</li><li>prodCss : Link `source/assets/js/style.min.css` file in `layout/_partial/head.ejs`</li></ul>|
+|sass|Compile `source/_css/tranquilpeak.scss` file in `source/assets/css/tranquilpeak.css`|
+|sync|Synchronize images from `source/_images` to `source/assets/images` and fonts from `source/_fonts` to `source/assets/fonts`|
+|watch|Watch assets from `source/_*/**/*` folder to detect changes and launch `syncAssets` task|
 
 ### Register tasks
 
-- **build** : Synchronize bower dependencies, images, fonts, compile assets (css and js) and link it to views  
-- **buildProd** : Synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views  
-- **default** : Build the theme once and rebuild after each change
-- **eslint** : Check code style with ESLint
-- **compileAssets** : Compile scss files and concat js files
-- **linkAssets** : Link all javascript and stylesheets files to views  
-- **linkAssetsProd** : Link one javascript file and one stylesheet file (concatenated and minified) to views  
-- **syncAssets** : Synchronize assets (css, js, fonts and images)
+|Task|Description|
+|---|---|
+|build|Synchronize bower dependencies, images, fonts, compile assets (css and js) and link it to views|
+|buildProd|Synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views|
+|default|Build the theme once and rebuild after each change|
+|eslint|Check code style with ESLint|
+|compileAssets|Compile scss files and concat js files|
+|linkAssets|Link all javascript and stylesheets files to views|
+|linkAssetsProd|Link one javascript file and one stylesheet file (concatenated and minified) to views|
+|syncAssets|Synchronize assets (css, js, fonts and images)|
 
 When you run `grunt build` or `grunt buildProd` tasks, a `source/assets` folder will be created with all files generated in. When you will start your hexo server, only this folder will be copied in `public` folder
 
