@@ -6,7 +6,7 @@
  - **Node version** : 
  - **Hexo version** : 
  - **Hexo-cli version** : 
- - **Tranquilpeak version** : 
+ - **Tranquilpeak version** : <!-- Does the theme is original or modified? -->
  
 <!-- fill this part for bugs reporting if needed  -->
 ### Actual behavior
