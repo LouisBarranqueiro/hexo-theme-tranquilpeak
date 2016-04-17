@@ -4,8 +4,9 @@
   "description": "A gorgeous responsive theme for Hexo blog framework",
   "main": "Gruntfile.js",
   "scripts": {
-    "start": "grunt default",
     "installation": "npm install hexo-cli -g && npm install grunt-cli -g && npm install bower -g && npm install eslint -g && npm install eslint -g && npm install && bower --allow-root install",
+    "start": "grunt default",
+    "prod": "grunt buildProd",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
