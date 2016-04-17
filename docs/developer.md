@@ -9,6 +9,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - [General](#general)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [NPM scripts](#NPM-scripts)
 - [Code style](#code-style)
     * [Javascript code](#javascript-code)
          * [ESLint configuration](#eslint-configuration)
@@ -46,6 +47,14 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 5. **ESLint** : v2.3.0 or higher. Run `npm install eslint -g`
 6. **ESLint config Google** : v0.4.0 or higher. Run `npm install eslint -g`
 
+## NPM scripts
+
+Use `npm run <script_name>` to run one of these scripts. E.g : `npm run installation` 
+
+- **installation** : Install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
+- **start** : Build the theme once and rebuild after each change
+- **prod** : Build the theme for production. (synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views)
+- **lint** : Check code style with [ESLint](http://eslint.org)
 
 ## Installation ##
 
@@ -54,9 +63,13 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 3. Modify the theme in `_config.yml` by changing `theme` variable  to `tranquilpeak`
 4. Complete `theme/tranquilpeak/_config.yml` with your information by following directives in comments
 5. Go in `theme/tranquilpeak` folder with `cd themes/tranquilpeak`
-6. Install all [requirements](#requirements)
-7. Run `npm install` to install all [NPM dependencies](#npm-dependencies)
-8. Run `bower install` to install all [Bower dependencies](#bower-dependencies)
+6. Run `npm run installation` to install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
+
+You can also install all stuff separately with:
+
+1. Install all [requirements](#requirements)
+2. Run `npm install` to install all [NPM dependencies](#npm-dependencies)
+3. Run `bower install` to install all [Bower dependencies](#bower-dependencies)
 
 If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
 
@@ -102,7 +115,7 @@ source/_js/smartresize.js
 
 Check code style with :
 ``` bash
-npm run eslint
+npm run lint
 # or
 grunt eslint
 ```
