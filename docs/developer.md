@@ -17,6 +17,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
          * [Check code style](#check-code-style)
 - [Code structure](#code-structure)
     * [Views](#views)
+    * [Scripts](#scripts)
     * [Assets](#assets)
          * [Stylesheets](#stylesheets)
          * [Fonts](#fonts)
