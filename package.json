@@ -5,7 +5,7 @@
   "main": "Gruntfile.js",
   "scripts": {
     "installation": "npm install hexo-cli -g && npm install grunt-cli -g && npm install bower -g && npm install eslint -g && npm install eslint -g && npm install && bower --allow-root install",
-    "eslint": "eslint .",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
