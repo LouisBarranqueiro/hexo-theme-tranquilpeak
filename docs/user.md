@@ -434,11 +434,9 @@ Follow these steps, to add new filter :
 
 Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
 
-1. Install requirements : [developer documentation - requirements](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#requirements)
-2. Install npm dependencies with `npm install`
-3. Install bower dependencies with `bower install`
+1. Run with sudo `npm run installation` to install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
 
-**Run all commands in theme folder : `hexo-blog/themes/tranquilpeak`**
+**Run command in theme folder : `hexo-blog/themes/tranquilpeak`**
 
 ### Change global style ###
 
@@ -453,7 +451,7 @@ Follow these steps :
 
 1. Get your theme here : [Highlight.js theme](https://github.com/isagalaev/highlight.js/tree/master/src/styles) or create yours
 2. Follow guidelines in `source/_css/themes/hljs-custom.scss` file
-3. Build the theme with `grunt buildProd`. Learn more about grunt tasks : [developer documentation - grunt tasks](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#grunt-tasks)
+3. Build the theme with `npm run prod` or `grunt buildProd`. Learn more about Grunt tasks : [Grunt tasks](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#grunt-tasks)
 
 ## Migrating posts ##
 
@@ -461,8 +459,7 @@ Follow these steps :
 
 Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
 
-1. Install requirements : [developer documentation - requirements](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#requirements)
-2. Install npm dependencies with `npm install`
+1. Run with sudo `npm run installation` to install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
 
 ### v1.3.0 or lower to v1.4.0 or higher ###
 
