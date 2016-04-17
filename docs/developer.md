@@ -111,7 +111,7 @@ Bower dependencies :
 3. Modify the theme in `_config.yml` by changing `theme` variable  to `tranquilpeak`
 4. Complete `theme/tranquilpeak/_config.yml` with your information by following directives in comments
 5. Go in `theme/tranquilpeak` folder with `cd themes/tranquilpeak`
-6. Run `npm run installation` to install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
+6. Run with sudo `npm run installation` to install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
 
 You can also install all stuff separately with:
 
