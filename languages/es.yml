@@ -1,0 +1,61 @@
+# formato de fecha usado en todo el blog
+date_format: "DD MMM YYYY"
+
+global:
+    home: "Inicio"
+    categories: "Categorías"
+    category: "Categoría"
+    tags: "Etiquetas"
+    tag: "Etiqueta"
+    archives: "Archivos"
+    search: "Buscar"
+    about: "Acerca de"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google Plus"
+    linkedin: "LinkedIn"
+    mail: "Correo"
+    rss: "RSS"
+    share_on_google_plus: "Compartir en Google Plus"
+    share_on_facebook: "Compartir en Facebook"
+    share_on_twitter: "Compartir en Twitter"
+    search_category: "Buscar categoría"
+    search_tag: "Buscar etiqueta"
+    search_date: "Buscar fecha (YYYY/MM/DD)"
+    posts_found:
+        zero: "no se encontraron artículos"
+        one: "1 artículo encontrado"
+        other: "{n} artículos encontrados"
+    categories_found:
+        zero: "no se encontraron categorías"
+        one: "1 categoría encontrada"
+        other: "{n} categorias encontradas"
+    tags_found:
+        zero: "no se encontraron etiquetas"
+        one: "1 etiqueta encontrada"
+        other: "{n} etiquetas encontradas"
+
+pagination:
+    page: "página %d"
+    of: "de %d"
+    newer_posts: "ARTÍCULOS RECIENTES"
+    older_posts: "ARTÍCULOS ANTERIORES"
+    previous: "ANTERIOR"
+    next: "SIGUIENTE"
+
+post:
+    no_title : "sin título"
+    categorized_in: "en"
+    tagged_in: "ETIQUETADO EN"
+    toc: "Tabla de contenido"
+    read_more: "Seguir leyendo"
+    go_to_website: "Ir al sitio web"
+    comment_and_share: "Comentar y compartir"
+
+author:
+    # Tu biografía (Markdown y HTML soportados)
+    bio: ""
+    # Tu trabajo
+    job: ""
