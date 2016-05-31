@@ -124,10 +124,18 @@
             width: calc(100% - #{$post-thumbnail-image-width} - 20px);
         }
     }
+    .postShorten.postShorten--thumbnailimg-top {
+        .postShorten-thumbnailimg {
+            margin-top: 5px;
+        }
+    }
     .postShorten.postShorten--thumbnailimg-bottom {
         .postShorten-wrap {
             display: block;
             width:   100%;
+        }
+        .postShorten-excerpt > p {
+            margin-bottom: 0;
         }
         .postShorten-thumbnailimg {
 

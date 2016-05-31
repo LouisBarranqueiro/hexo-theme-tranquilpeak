@@ -55,6 +55,14 @@
     %>
     <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
+            <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "top") { %>
+                <a href="<%- url_for(post.path) %>">
+                    <div class="postShorten-thumbnailimg">
+                        <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+                    </div>
+                </a>
+                <% thumbnailImageUrl = null; %>
+            <% } %>
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     <% if (post.link) { %>
@@ -69,14 +77,6 @@
                 </h1>
                 <%- partial('post/meta', {post: post, classes: ['postShorten-meta']}) %>
             </div>
-            <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "bottom") { %>
-                <a href="<%- url_for(post.path) %>">
-                    <div class="postShorten-thumbnailimg postShorten--thumbnailimg-bottom">
-                        <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
-                    </div>
-                </a>
-                <% thumbnailImageUrl = null; %>
-            <% } %>
             <% if (post.excerpt || post.link) { %>
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     <%- post.excerpt %>
@@ -111,7 +111,7 @@
                 </div>
             <% } %>
         </div>
-        <% if (thumbnailImageUrl !== null && thumbnailImagePosition !== "bottom") { %>
+        <% if (thumbnailImageUrl !== null && thumbnailImagePosition !== "top") { %>
             <a href="<%- url_for(post.path) %>">
                 <div class="postShorten-thumbnailimg">
                     <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
