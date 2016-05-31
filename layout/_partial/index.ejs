@@ -70,9 +70,11 @@
                 <%- partial('post/meta', {post: post, classes: ['postShorten-meta']}) %>
             </div>
             <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "bottom") { %>
-                <div class="postShorten-thumbnailimg postShorten--thumbnailimg-bottom">
-                    <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
-                </div>
+                <a href="<%- url_for(post.path) %>">
+                    <div class="postShorten-thumbnailimg postShorten--thumbnailimg-bottom">
+                        <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+                    </div>
+                </a>
                 <% thumbnailImageUrl = null; %>
             <% } %>
             <% if (post.excerpt || post.link) { %>
@@ -110,9 +112,11 @@
             <% } %>
         </div>
         <% if (thumbnailImageUrl !== null && thumbnailImagePosition !== "bottom") { %>
-            <div class="postShorten-thumbnailimg">
-                <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
-            </div>
+            <a href="<%- url_for(post.path) %>">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+                </div>
+            </a>
             <% thumbnailImageUrl = null; %>
         <% } %>
     </article>
