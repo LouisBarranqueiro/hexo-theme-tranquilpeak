@@ -1,0 +1,61 @@
+# date format displayed everywhere in the blog
+date_format: "YYYY/MM/DD"
+
+global:
+    home: "ホーム"
+    categories: "カテゴリー"
+    category: "カテゴリー"
+    tags: "タグ"
+    tag: "タグ"
+    archives: "アーカイブ"
+    search: "検索"
+    about: "プロフィール"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google Plus"
+    linkedin: "LinkedIn"
+    mail: "メール"
+    rss: "RSS"
+    share_on_google_plus: "Google Plusで共有"
+    share_on_facebook: "Facebookで共有"
+    share_on_twitter: "Twitterで共有"
+    search_category: "カテゴリー検索"
+    search_tag: "タグ検索"
+    search_date: "日付検索 (YYYY/MM/DD)"
+    posts_found:
+        zero: "見つかりませんでした。"
+        one: "1件見つかりました。"
+        other: "{n} 件見つかりました。"
+    categories_found:
+        zero: "見つかりませんでした。"
+        one: "1件のカテゴリーが見つかりました。"
+        other: "{n} 件のカテゴリーが見つかりました。"
+    tags_found:
+        zero: "見つかりませんでした。"
+        one: "1件のタグが見つかりました。"
+        other: "{n} 件のタグが見つかりました。"
+
+pagination:
+    page: "page %d"
+    of: "of %d"
+    newer_posts: "新しい投稿"
+    older_posts: "古い投稿"
+    previous: "前"
+    next: "次"
+
+post:
+    no_title : "タイトルなし"
+    categorized_in: "カテゴリー"
+    tagged_in: "タグ"
+    toc: "目次"
+    read_more: "続きを読む"
+    go_to_website: "ウェブサイトへ"
+    comment_and_share: "コメント・シェア"
+
+author:
+    # Your biography (Markdown and HTML supported)
+    bio: ""
+    # Your job
+    job: ""
