@@ -8,9 +8,6 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 - [General](#general)
 - [Requirements](#requirements)
-- [Dependencies](#dependencies)
-    * [NPM dependencies](#npm-dependencies)
-    * [Bower dependencies](#bower-dependencies)
 - [Installation](#installation)
 - [Code style](#code-style)
     * [Javascript code](#javascript-code)
@@ -46,63 +43,6 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 2. **Hexo CLI** : v0.1.4 or higher. Run `npm install hexo-cli -g`
 3. **Grunt CLI** : v0.1.13 or higher. Run `npm install grunt-cli -g`
 4. **Bower** : v1.4.1 or higher. Run `npm install bower -g`
-5. **ESLint** : v2.3.0 or higher. Run `npm install eslint -g`
-6. **ESLint config Google** : v0.4.0 or higher. Run `npm install eslint -g`
-
-## Dependencies ##
-
-### NPM dependencies ###
-
-To install npm dependencies, run `npm install`  
-  
-NPM dependencies :  
-
-``` json
-"devDependencies": {
-    "async": "^1.5.2",
-    "bower": "^1.3.12",
-    "grunt": "^0.4.5",
-    "grunt-bower": "^0.18.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-cssmin": "^0.12.0",
-    "grunt-contrib-uglify": "^0.7.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-exec": "^0.4.6",
-    "grunt-sails-linker": "^0.10.1",
-    "grunt-sass": "1.1.0",
-    "grunt-sync": "^0.2.3",
-    "grunt-text-replace": "^0.4.0",
-    "hexo-front-matter": "^0.2.2",
-    "hexo-renderer-marked": "^0.2.10",
-    "hexo-util": "^0.5.1",
-    "include-all": "^0.1.6",
-    "jquery": "^2.2.1",
-    "jsdom": "^8.1.0",
-    "load-grunt-tasks": "~0.2.0",
-    "mkdirp": "^0.5.1",
-    "moment": "^2.12.0",
-    "prompt": "^1.0.0",
-    "rand-token": "^0.2.1",
-    "strip-indent": "^1.0.1"
-}
-```
- 
-### Bower dependencies ###
-
-To install bower dependencies, run `bower install`  
-Bower dependencies are located in `source/_bower_components`
-
-Bower dependencies :  
-
-``` json
-"dependencies": {
-    "fontawesome": "~4.3.0",
-    "jquery": "~2.1.3",
-    "fancybox": "~2.1.5"
-}
-```
 
 ## Installation ##
 
@@ -111,56 +51,15 @@ Bower dependencies :
 3. Modify the theme in `_config.yml` by changing `theme` variable  to `tranquilpeak`
 4. Complete `theme/tranquilpeak/_config.yml` with your information by following directives in comments
 5. Go in `theme/tranquilpeak` folder with `cd themes/tranquilpeak`
-6. Run with sudo `npm run installation` to install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
-
-You can also install all stuff separately with:
-
-1. Install all [requirements](#requirements)
-2. Run `npm install` to install all [NPM dependencies](#npm-dependencies)
-3. Run `bower install` to install all [Bower dependencies](#bower-dependencies)
+6. Install [requirements](#requirements)
+7. Run `npm install` to install [NPM dependencies](#npm-dependencies)
+8. Run `bower install` to install [Bower dependencies](#bower-dependencies) 
 
 If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
 
 ## Code style ##
 
-### Javascript code
-
-We use [ESLint](http://eslint.org) based on Google code style to maintain code style.  
-
-#### ESLint configuration
-
-`.eslintrc.json` file :
-
-```json
-{
-    "extends": "google",
-    "rules": {
-        "comma-dangle": [2,"never"],
-        "valid-jsdoc": [2, {
-            "requireReturnDescription": false,
-            "requireParamDescription": false
-        }],
-        "brace-style": [2, "stroustrup"],
-        "no-trailing-spaces": [2, {"skipBlankLines": true }],
-        "eqeqeq":[1],
-        "max-len": [1, 100, 4, {"ignoreUrls": true}]
-    }
-}
-``` 
-
-#### Files/folders ignored by ESLint
-
-`.eslintignore` file :
-
-```
-node_modules/
-source/_bower_components/
-source/assets/
-source/_js/smartresize.js
-```
-
-#### Check code style
-
+We use [ESLint](http://eslint.org) based on Google code style to maintain javascript code style.  
 Check code style with :
 ``` bash
 npm run lint
@@ -173,186 +72,14 @@ grunt eslint
 ```
 tranquilpeak
 ├── .github
-│   ├── CONTRIBUTING.md
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── ISSUE_TEMPLATE.md
 ├── docs
-│   ├── developer.md
-│   └── user.md
 ├── languages
-│   ├── en.yml
-│   ├── fr-FR.yml
-│   ├── pt-br.yml
-│   ├── ru.yml
-│   ├── zh-cn.yml
-│   └── zh-tw.yml
 ├── layout
-│   ├── _partial
-│   │   ├── post
-│   │   │   ├── actions.ejs
-│   │   │   ├── category.ejs
-│   │   │   ├── disqus.ejs
-│   │   │   ├── duoshuo.ejs
-│   │   │   ├── gallery.ejs
-│   │   │   ├── header.ejs
-│   │   │   ├── header-cover.ejs
-│   │   │   ├── meta.ejs
-│   │   │   ├── share-options.ejs
-│   │   │   └── tag.ejs
-│   │   ├── about.ejs
-│   │   ├── archive.ejs
-│   │   ├── archive-post.ejs
-│   │   ├── baidu-analytics.ejs
-│   │   ├── cover.ejs
-│   │   ├── footer.ejs
-│   │   ├── google-analytics.ejs
-│   │   ├── head.ejs
-│   │   ├── header.ejs
-│   │   ├── index.ejs
-│   │   ├── pagination.ejs
-│   │   ├── post.ejs
-│   │   ├── script.ejs
-│   │   └── sidebar.ejs
-│   ├── all-archives.ejs
-│   ├── all-categories.ejs
-│   ├── all-tags.ejs
-│   ├── archives.ejs
-│   ├── category.ejs
-│   ├── index.ejs
-│   ├── layout.ejs
-│   ├── page.ejs
-│   ├── post.ejs
-│   └── tag.ejs
 ├── scripts
-│   ├── filters
-│   │   └── excerpt.js
-│   ├── helpers
-│   │   ├── absolute_url.js
-│   │   ├── is_remote_url.js
-│   │   └── resolve_asset_url.js
-│   ├── migrators
-│   │   └── 1.4.0.js
-│   ├── tags
-│   │   ├── alert.js
-│   │   ├── fancybox.js
-│   │   ├── hightlight_text.js
-│   │   ├── image.js
-│   │   ├── tabbed_codeblock_.js
-│   │   └── wide_image.js
-│   └── .eslintrc.json
 ├── source
-│   ├── _css
-│   │   ├── base
-│   │   │   ├── _base.scss
-│   │   ├── components
-│   │   │   ├── _alert.scss
-│   │   │   ├── _archives.scss
-│   │   │   ├── _box.scss
-│   │   │   ├── _button.scss
-│   │   │   ├── _caption.scss
-│   │   │   ├── _code.scss
-│   │   │   ├── _figure.scss
-│   │   │   ├── _form.scss
-│   │   │   ├── _hide.scss
-│   │   │   ├── _highlight-text.scss
-│   │   │   ├── _icon.scss
-│   │   │   ├── _image-gallery.scss
-│   │   │   ├── _link.scss
-│   │   │   ├── _main-content.scss
-│   │   │   ├── _markdown.scss
-│   │   │   ├── _pagination.scss
-│   │   │   ├── _post.scss
-│   │   │   ├── _post-actions.scss
-│   │   │   ├── _post-header-cover.scss
-│   │   │   ├── _postShorten.scss
-│   │   │   ├── _pullquote.scss
-│   │   │   ├── _share-options-bar.scss
-│   │   │   ├── _tag.scss
-│   │   │   ├── _text.scss
-│   │   │   ├── _tooltip.scss
-│   │   │   └── _video.scss
-│   │   ├── layout
-│   │   │   ├── _about.scss
-│   │   │   ├── _blog.scss
-│   │   │   ├── _bottom-bar.scss
-│   │   │   ├── _cover.scss
-│   │   │   ├── _footer.scss
-│   │   │   ├── _header.scss
-│   │   │   ├── _main.scss
-│   │   │   └── _sidebar.scss
-│   │   ├── themes
-│   │   │   ├── _hljs-custom.scss
-│   │   │   └── _hljs-tranquilpeak.scss
-│   │   ├── utils
-│   │   │   ├── mixins
-│   │   │   │   ├── _bottom-bar.scss
-│   │   │   │   ├── _button.scss
-│   │   │   │   ├── _category.scss
-│   │   │   │   ├── _form.scss
-│   │   │   │   ├── _header.scss
-│   │   │   │   ├── _main.scss
-│   │   │   │   ├── _opacity.scss
-│   │   │   │   ├── _post-header-cover.scss
-│   │   │   │   ├── _prefix.scss
-│   │   │   │   └── _share-options-bar.scss
-│   │   │   │   └── _sidebar.scss
-│   │   │   │   └── _tag.scss
-│   │   │   ├── _font.scss
-│   │   │   └── _variables.scss
-│   │   └── tranquilpeak.scss
-│   ├── _fonts 
-│   │   └── .gitkeep
-│   ├── _images
-│   │   └── cover.jpg
-│   └── _js
-│   │   ├── .eslintrc.json
-│   │   ├── about.js
-│   │   ├── archives-filter.js
-│   │   ├── categories-filter.js
-│   │   ├── codeblock-resizer.js
-│   │   ├── fancybox.js
-│   │   ├── header.js
-│   │   ├── image-gallery.js
-│   │   ├── post-bottom-bar.js
-│   │   ├── share-options.js
-│   │   ├── sidebar.js
-│   │   ├── smartresize.js
-│   │   ├── tabbed-codeblocks.js
-│   │   └── tags-filter.js
-├── tasks
-│   ├── config
-│   │   ├── bower.js
-│   │   ├── clean.js
-│   │   ├── concat.js
-│   │   ├── cssmin.js
-│   │   ├── exec.js
-│   │   ├── replace.js
-│   │   ├── sails-linker.js
-│   │   ├── sass.js
-│   │   ├── sync.js
-│   │   ├── uglify.js
-│   │   └── watch.js
-│   ├── register
-│   │   ├── build.js
-│   │   ├── buildProd.js
-│   │   ├── compileAssets.js
-│   │   ├── default.js
-│   │   ├── eslint.js
-│   │   ├── linkAssets.js
-│   │   ├── linkAssetsProd.js
-│   │   └── syncAssets.js
-│   └── pipeline.js
-├── .bowerrc
-├── .eslintignore
-├── .eslintrc.json
-├── .gitignore
-├── _config.yml
-├── bower.json
-├── Gruntfile.js
-├── LICENSE
-├── package.json
-└── README.md
+└── tasks
 ```
+
 |File/Folder|Description|
 |---|---|
 |**.github**|Contains file templates for GitHub|
@@ -365,14 +92,6 @@ tranquilpeak
 
 ### Languages ###
 
-```
-├── languages
-    ├── en.yml
-    ├── fr-FR.yml
-    ├── pt-br.yml
-    └── zh-cn.yml
-```
-
 Each files contains all labels used in the theme. 
 If you want to add a new language, duplicate an existing language file and replace all string by their translation.
 
@@ -382,40 +101,9 @@ If you want to add a new language, duplicate an existing language file and repla
 ├── layout
     ├── _partial
     │   ├── post
-    │   │   ├── actions.ejs
-    │   │   ├── category.ejs
-    │   │   ├── disqus.ejs
-    │   │   ├── duoshuo.ejs
-    │   │   ├── gallery.ejs
-    │   │   ├── header.ejs
-    │   │   ├── header-cover.ejs
-    │   │   ├── meta.ejs
-    │   │   ├── share-options.ejs
-    │   │   └── tag.ejs
-    │   ├── about.ejs
-    │   ├── archive.ejs
-    │   ├── archive-post.ejs
-    │   ├── baidu-analytics.ejs
-    │   ├── cover.ejs
-    │   ├── footer.ejs
-    │   ├── google-analytics.ejs
-    │   ├── head.ejs
-    │   ├── header.ejs
-    │   ├── index.ejs
-    │   ├── pagination.ejs
-    │   ├── post.ejs
-    │   ├── script.ejs
-    │   └── sidebar.ejs
-    ├── all-archives.ejs
-    ├── all-categories.ejs
-    ├── all-tags.ejs
-    ├── archives.ejs
-    ├── category.ejs
-    ├── index.ejs
-    ├── layout.ejs
-    ├── page.ejs
-    ├── post.ejs
-    └── tag.ejs
+    │   ...
+    ...
+...
 ```
 |Folder|Description|
 |---|---|
@@ -428,21 +116,9 @@ If you want to add a new language, duplicate an existing language file and repla
 ```
 ├── scripts
     ├── filters
-    │   └── excerpt.js
     ├── helpers
-    │   ├── absolute_url.js
-    │   ├── is_remote_url.js
-    │   └── resolve_asset_url.js
     ├── migrators
-    │   └── 1.4.0.js
-    ├── tags
-    │   ├── alert.js
-    │   ├── fancybox.js
-    │   ├── highlight_text.js
-    │   ├── image.js
-    │   ├── tabbed_codeblock_.js
-    │   └── wide_image.js
-    └── .eslintrc.json
+    └── tags
 ```
 
 Each scrips is executed a the startup of Hexo. They are separed by categories:
@@ -458,69 +134,7 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
 ### Assets ###
 
 #### Stylesheets
-    
-```
-├── source
-    ├── _css
-        ├── base
-        │   ├── _base.scss
-        ├── components
-        │   ├── _archives.scss
-        │   ├── _box.scss
-        │   ├── _button.scss
-        │   ├── _caption.scss
-        │   ├── _code.scss
-        │   ├── _figure.scss
-        │   ├── _form.scss
-        │   ├── _hide.scss
-        │   ├── _hightlight_text.scss
-        │   ├── _icon.scss
-        │   ├── _image-gallery.scss
-        │   ├── _link.scss
-        │   ├── _main-content.scss
-        │   ├── _markdown.scss
-        │   ├── _pagination.scss
-        │   ├── _post.scss
-        │   ├── _post-actions.scss
-        │   ├── _post-header-cover.scss
-        │   ├── _postShorten.scss
-        │   ├── _pullquote.scss
-        │   ├── _share-options-bar.scss
-        │   ├── _tag.scss
-        │   ├── _text.scss
-        │   ├── _tooltip.scss
-        │   └── _video.scss
-        ├── layout
-        │   ├── _about.scss
-        │   ├── _blog.scss
-        │   ├── _bottom-bar.scss
-        │   ├── _cover.scss
-        │   ├── _footer.scss
-        │   ├── _header.scss
-        │   ├── _main.scss
-        │   └── _sidebar.scss
-        ├── themes
-        │   ├── _hljs-custom.scss
-        │   └── _hljs-tranquilpeak.scss
-        ├── utils
-        │   ├── mixins
-        │   │   ├── _bottom-bar.scss
-        │   │   ├── _button.scss
-        │   │   ├── _category.scss
-        │   │   ├── _form.scss
-        │   │   ├── _header.scss
-        │   │   ├── _main.scss
-        │   │   ├── _opacity.scss
-        │   │   ├── _post-header-cover.scss
-        │   │   ├── _prefix.scss
-        │   │   └── _share-options-bar.scss
-        │   │   └── _sidebar.scss
-        │   │   └── _tag.scss
-        │   ├── _font.scss
-        │   └── _variables.scss
-        └── tranquilpeak.scss
-```  
-  
+
 SCSS structure follow 7-1 pattern of [sass guidelines](http://sass-guidelin.es/#the-7-1-pattern)  
 If you want more information and to understand better this code, consult [sass guidelines](http://sass-guidelin.es/)  
 
@@ -587,11 +201,10 @@ Each file correspond to a feature.
   
 ## NPM scripts
 
-Use `npm run <script_name>` to run one of these scripts. E.g : `npm run installation` 
+Use `npm run <script_name>` to run one of these scripts. E.g : `npm run start` 
     
 |`npm run ...`|Description|
 |---|---|
-|`installation`|Install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)|
 |`start`|Build the theme once and rebuild after each change|
 |`prod`|Build the theme for production. (synchronize bower dependencies, images, fonts, compile assets (css and js) with some optimization (concat and minify) and link it to views)|
 |`lint`|Check code style with [ESLint](http://eslint.org)|
@@ -603,26 +216,7 @@ Use `npm run <script_name>` to run one of these scripts. E.g : `npm run installa
 ```
 ├── tasks
     ├── config
-    │   ├── bower.js
-    │   ├── clean.js
-    │   ├── concat.js
-    │   ├── cssmin.js
-    │   ├── exec.js
-    │   ├── replace.js
-    │   ├── sails-linker.js
-    │   ├── sass.js
-    │   ├── sync.js
-    │   ├── uglify.js
-    │   └── default.js
     ├── register
-    │   ├── build.js
-    │   ├── buildProd.js
-    │   ├── compileAssets.js
-    │   ├── default.js
-    │   ├── eslint.js
-    │   ├── linkAssets.js
-    │   ├── linkAssetsProd.js
-    │   └── syncAssets.js
     └── pipeline.js
 ```  
 
