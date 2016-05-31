@@ -157,7 +157,17 @@ keywords:
 
 If you are new to Hexo and internationalization (i18n), please read [Hexo documentation - internationalization (i18n) section](https://hexo.io/docs/internationalization.html)
 
-Currently, the theme is delivered with english (en), chinese (zh-cn), french (fr-FR) and portuguese (pt-br) language file. 
+Currently, the theme is delivered with :
+
+- Chinese (zh-CN)
+- Chinese Traditional (zh-TW)
+- English (en)
+- French (fr-FR)
+- Japanase (ja)
+- Portuguese (pt-BR)
+- Russian (ru)
+- Spanish (es)
+
 If your language is not available, follow this guidelines (E.g : add russian language (ru) :  
 
 1. Set `language` to `ru` in Hexo configuration file `_config.yml`  
@@ -493,7 +503,7 @@ We don't know if it come from Node.js (from specific version or not) or permissi
  
 ## Writing posts ##
 
-To write articles, you have to user Markdown langague. [Here](https://guides.github.com/features/mastering-markdown/#examples) you can find the main basics of Markdown syntax.   
+To write articles, you have to use Markdown language. [Here](https://guides.github.com/features/mastering-markdown/#examples) you can find the main basics of Markdown syntax.   
 Please note, there are many different versions of Markdown and some of them are not supported by Hexo.  
 To use tags plugins to highlight code or add Fancybox image, please read [Hexo docs](https://hexo.io/docs/tag-plugins.html)
 
