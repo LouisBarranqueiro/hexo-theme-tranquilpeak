@@ -440,9 +440,7 @@ Follow these steps, to add new filter :
 
 ### Prerequisites ###
 
-Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
-
-1. Run with sudo `npm run installation` to install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
+Since you are going to edit the theme, you have to install all the necessary to build it after changes : [Installation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#installation)
 
 **Run command in theme folder : `hexo-blog/themes/tranquilpeak`**
 
@@ -465,9 +463,7 @@ Follow these steps :
 
 ### Prerequisites ###
 
-Since you are going to edit the theme, you have to build it to see changes. So follow this steps to install the necessary :
-
-1. Run with sudo `npm run installation` to install all [requirements](#requirements), [NPM dependencies](#npm-dependencies) and [Bower dependencies](#bower-dependencies)
+Since you are going to edit the theme, you have to install all the necessary to build it after changes : [Installation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#installation)
 
 ### v1.3.0 or lower to v1.4.0 or higher ###
 
