@@ -513,7 +513,7 @@ To use tags plugins to highlight code or add Fancybox image, please read [Hexo d
 
 Tranquilpeak introduces new variables to give you a lot of possibilities.  
 
-**Since Tranquilpeak 1.7, if you declare some photos in `photos` varible with a caption or an thumbnail url, please use `gallery` variable name instead of `photos` otherwise Hexo will generate wrong url for these images in open graph meta tag.**
+**Since Tranquilpeak 1.7, if you declare some photos in `photos` variable with a caption or an thumbnail url, please use `gallery` variable name instead of `photos` otherwise Hexo will generate wrong url for these images in open graph meta tag.**
   
 Example :  
 ``` markdown
