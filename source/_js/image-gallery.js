@@ -69,7 +69,7 @@
 
         // Checks if image width is smaller than his box
         if (imageWidth < photoBoxWidth) {
-          imageRatio = (imageHeight / photoBoxWidth);
+          imageRatio = (imageHeight / imageWidth);
 
           $image.css({
             width: photoBoxWidth,

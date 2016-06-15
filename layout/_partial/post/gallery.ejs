@@ -19,10 +19,10 @@
                 var match = photo.match(rPhoto);
                 photo = {
                     title: match[3] || '',
-                    original: resolve_asset_url(page.path, match[1])
+                    original: resolve_asset_url(post.path, match[1])
                 };
                 if (match[2]) {
-                    photo.thumbnail = resolve_asset_url(page.path, match[2]);
+                    photo.thumbnail = resolve_asset_url(post.path, match[2]);
                 }
                 /* add anchor otherwise FancyBox doesn't recognize the image
                 if there is no extension at the end */

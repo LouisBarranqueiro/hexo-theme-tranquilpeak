@@ -13,7 +13,7 @@ hexo.extend.helper.register('resolve_asset_url', function(from, url) {
     if (from.indexOf('.html') >= 0) {
       from = from.replace('.html', '/');
     }
-    else if (from.length !== from.lastIndexOf('/')) {
+    else if (from.slice(-1) !== '/') {
       from += '/';
     }
     // add `/` at end of `from` url

@@ -9,6 +9,7 @@
         "brace-style": [2, "stroustrup"],
         "no-trailing-spaces": [2, {"skipBlankLines": true }],
         "eqeqeq":[1],
-        "max-len": [1, 100, 4, {"ignoreUrls": true}]
+        "max-len": [1, 100, 4, {"ignoreUrls": true}],
+        "no-useless-escape":0
     }
 }
