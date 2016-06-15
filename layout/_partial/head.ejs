@@ -118,7 +118,7 @@
         fb_app_id: theme.fb_app_id
     }) %>
     <% if (theme.author.google_plus) { %>
-        <meta rel="publisher" content="https://plus.google.com/<%= theme.author.google_plus %>"/>
+        <link rel="publisher" content="https://plus.google.com/<%= theme.author.google_plus %>"/>
     <% } %>
     <% if (typeof fb_admin_ids !== 'undefined') { %>
         <% fb_admin_ids.forEach(function(fb_admin_id) { %>
