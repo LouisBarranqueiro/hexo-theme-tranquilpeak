@@ -19,7 +19,7 @@ global:
     mail: "Mail"
     rss: "RSS"
     share_on_google_plus: "Partilhar no Google Plus"
-    share_on_facebook: "SPartilhar no Facebook"
+    share_on_facebook: "Partilhar no Facebook"
     share_on_twitter: "Partilhar no Twitter"
     search_category: "Pesquisar categoria"
     search_tag: "Pesquisar tag"
