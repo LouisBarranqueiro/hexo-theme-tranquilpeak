@@ -27,7 +27,7 @@
         <% if (theme.header.right_link.icon) { %>
             <i class="fa fa-lg fa-<%= theme.header.right_link.icon %>"></i>
         <% } else if (authorPicture) { %>
-            <img class="header-picture" src="<%= authorPicture %>"/>
+            <img class="header-picture" src="<%= authorPicture %>" alt="<%- (__('author.picture')) ? __('author.picture') : '' %>"/>
         <% } %>
         </a>
     <% } %>
