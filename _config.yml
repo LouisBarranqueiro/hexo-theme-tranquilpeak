@@ -57,31 +57,39 @@ sidebar:
             title: global.about
             url: /#about
             icon: question
+            # me: is used to determine if this is a link to a personal (author) profile (not blog page or business page)
+            me: true
     author_links:
         # github:
         #     title: global.github
         #     url: https://github.com/
         #     icon: github
+        #     me: true
         # stack_overflow:
         #     title: global.stack_overflow
         #     url: http://stackoverflow.com/users
         #     icon: stack-overflow
+        #     me: true
         # twitter:
         #     title: global.twitter
         #     url: https://twitter.com/
         #     icon: twitter
+        #     me: true
         # facebook:
         #     title: global.facebook
         #     url: https://facebook.com/
         #     icon: facebook
+        #     me: true
         # google_plus:
         #     title: global.google_plus
         #     url: https://plus.google.com/
         #     icon: google-plus
+        #     me: true
         # linked_in:
         #     title: global.linkedin
         #     url: https://www.linkedin.com/profile/
         #     icon: linkedin
+        #     me: true
         # mail:
         #     title: global.mail
         #     url: mailto:
