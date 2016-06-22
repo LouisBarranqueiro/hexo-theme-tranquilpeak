@@ -1,14 +1,17 @@
 <!-- Define author's picture -->
-<% var authorPicture = null; %>
-<% if (theme.gravatar_email && theme.gravatar_email.length) { %>
-    <% authorPicture = gravatar(theme.gravatar_email, 110); %>
-<% } else if (theme.author.picture && theme.author.picture.length) { %>
-<% if (is_remote_url(theme.author.picture)) { %>
-        <% authorPicture = theme.author.picture; %>
-    <% } else { %>
-        <% authorPicture = url_for(theme.image_dir + '/' + theme.author.picture); %>
-    <% } %>
-<% } %>
+<% 
+	var authorPicture = null;
+
+	if (theme.gravatar_email && theme.gravatar_email.length) { 
+		authorPicture = gravatar(theme.gravatar_email, 110); 
+	} else if (theme.author.picture && theme.author.picture.length) { 
+		if (is_remote_url(theme.author.picture)) { 
+			authorPicture = theme.author.picture; 
+		} else { 
+			authorPicture = url_for(theme.image_dir + '/' + theme.author.picture); 
+		} 
+	} 
+%>
 <nav id="sidebar" data-behavior="<%= sidebarBehavior %>">
     <% if (authorPicture) { %>
         <div class="sidebar-profile">
