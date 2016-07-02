@@ -21,8 +21,8 @@ A gorgeous responsive theme for Hexo blog framework
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.8.0
-- **Compatibility** : Hexo 3.0.0 or later
+- **Version** : 1.8.1
+- **Compatibility** : Node v4 or later, Hexo 3.0.0 or later 
 
 ## Features ##
 
@@ -66,8 +66,8 @@ A gorgeous responsive theme for Hexo blog framework
 
 ##### For people who want to use the original version of Tranquilpeak without modifications (users)
 
-1. Download the latest version ready for production use here : [hexo-theme-tranquilpeak-prod-1.8.0]
-(https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.8.0/hexo-theme-tranquilpeak-built-for-production-1.8.0.zip)
+1. Download the latest version ready for production use here : [hexo-theme-tranquilpeak-prod-1.8.1]
+(https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.8.1/hexo-theme-tranquilpeak-built-for-production-1.8.1.zip)
 2. Follow [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md) to install and configure the theme  
 
 ##### For people who want to create their own version of tranquilpeak (developers) 
