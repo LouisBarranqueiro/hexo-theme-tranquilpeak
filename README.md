@@ -22,7 +22,7 @@ A gorgeous responsive theme for Hexo blog framework
 
 - **Author** : Louis Barranqueiro
 - **Version** : 1.8.0
-- **Compatibility** : Hexo 3.0.0 or later
+- **Compatibility** : Node v4 or later, Hexo 3.0.0 or later 
 
 ## Features ##
 
