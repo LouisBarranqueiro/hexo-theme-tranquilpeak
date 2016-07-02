@@ -26,6 +26,10 @@
             display: block;
             margin:  0 auto;
         }
+        .sidebar-profile-name {
+            font-size: 1.1em;
+            color: map-get($sidebar, color);
+        }
     }
     // Sidebar's buttons
     ul.sidebar-buttons {
@@ -72,6 +76,7 @@
         }
     }
 }
+
 // Define sidebar behavior configured in `_config.yml` for medium screen
 @media #{$medium-only} {
     #sidebar {
@@ -89,6 +94,7 @@
         }
     }
 }
+
 // Define sidebar behavior configured in `_config.yml` for large screen
 @media #{$large-only} {
     #sidebar {
@@ -125,5 +131,12 @@
             left: -#{map-get($sidebar, md-screen-width)};
             @include sidebar-md;
         }
+    }
+}
+
+// display author bio only on extra large screen
+@media #{$large-and-down} {
+    #sidebar .sidebar-profile-bio {
+        display: none;
     }
 }

@@ -102,6 +102,7 @@ $small-and-up:    "only screen and (min-width : #{map-get($screen, sm-min)})" !d
 $medium-and-down: "only screen and (max-width : #{map-get($screen, md-max)})" !default;
 $medium-only:     "only screen and (min-width : #{map-get($screen, md-min)}) and (max-width : #{map-get($screen, md-max)})" !default;
 $medium-and-up:   "only screen and (min-width : #{map-get($screen, md-min)})" !default;
+$large-and-down:  "only screen and (max-width : #{map-get($screen, lg-max)})" !default;
 $large-only:      "only screen and (min-width : #{map-get($screen, lg-min)}) and (max-width : #{map-get($screen, lg-max)})" !default;
 $large-and-up:    "only screen and (min-width : #{map-get($screen, lg-min)})" !default;
 $xlarge-and-up:   "only screen and (min-width : #{map-get($screen, xlg-min)})" !default;
