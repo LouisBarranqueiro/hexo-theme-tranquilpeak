@@ -90,7 +90,7 @@
     }
 }
 // Define sidebar behavior configured in `_config.yml` for large screen
-@media #{$large-and-up} {
+@media #{$large-only} {
     #sidebar {
         &[data-behavior="1"] {
             @include sidebar-lg;
@@ -101,6 +101,25 @@
         &[data-behavior="3"] {
             left: -#{map-get($sidebar, lg-screen-width)};
             @include sidebar-lg;
+        }
+        &[data-behavior="4"] {
+            left: -#{map-get($sidebar, md-screen-width)};
+            @include sidebar-md;
+        }
+    }
+}
+
+@media #{$xlarge-and-up} {
+    #sidebar {
+        &[data-behavior="1"] {
+            @include sidebar-xlg;
+        }
+        &[data-behavior="2"] {
+            @include sidebar-md;
+        }
+        &[data-behavior="3"] {
+            left: -#{map-get($sidebar, xlg-screen-width)};
+            @include sidebar-xlg;
         }
         &[data-behavior="4"] {
             left: -#{map-get($sidebar, md-screen-width)};

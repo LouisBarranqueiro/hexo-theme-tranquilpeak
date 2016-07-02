@@ -1,3 +1,10 @@
+/// Mixin helper to stylized `main` div in extra small size
+@mixin main-xs {
+    padding-top: map-get($main, padding-top);
+    float:       right;
+    width:       calc(100% - #{map-get($sidebar, xlg-screen-width)});
+}
+
 /// Mixin helper to stylized `main` div in small size
 @mixin main-sm {
     padding-top: map-get($main, padding-top);
@@ -30,5 +37,12 @@
 @mixin main-pushed-lg {
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
+}
+
+/// Mixin helper to push `main` div from extra large sidebar size
+@mixin main-pushed-xlg {
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, xlg-screen-width)}, 0, 0), 'webkit' 'moz');
     }
 }

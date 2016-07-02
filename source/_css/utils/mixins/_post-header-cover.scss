@@ -1,3 +1,10 @@
+/// Mixin helper to stylized post header cover in extra small size
+/// minus width of sidebar on extra large screen
+@mixin post-header-cover-xs {
+    width: calc(100% - #{map-get($sidebar, xlg-screen-width)});
+    left:  map-get($sidebar, xlg-screen-width);
+}
+
 /// Mixin helper to stylized post header cover in small size
 /// minus width of sidebar on large screen
 @mixin post-header-cover-sm {
@@ -29,5 +36,12 @@
 @mixin post-header-cover-pushed-lg {
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
+}
+
+/// Mixin helper to pushed post header cover from extra large sidebar size
+@mixin post-header-cover-pushed-xlg {
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, xlg-screen-width)}, 0, 0), 'webkit' 'moz');
     }
 }

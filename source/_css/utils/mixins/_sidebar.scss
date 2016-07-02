@@ -107,3 +107,64 @@
         @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
     }
 }
+/// Mixin helper to display the sidebar in large size
+@mixin sidebar-xlg {
+    width: map-get($sidebar, xlg-screen-width);
+
+    // Author information
+    .sidebar-profile {
+        height:         130px;
+        padding-top:    40px;
+        padding-bottom: 7.5px;
+
+        .sidebar-profile-picture {
+            width:         90px;
+            height:        90px;
+            border-radius: 90px;
+            margin-bottom: 5px;
+        }
+        .sidebar-profile-name {
+            font-size: 1.6rem;
+        }
+    }
+    // Buttons
+    ul.sidebar-buttons {
+        li.sidebar-button {
+            text-align: left;
+
+            .sidebar-button-link {
+                text-align:   left;
+                width:        auto;
+                padding-left: 23px;
+                padding-top:  0;
+
+                // Font-awesome icon
+                .sidebar-button-icon {
+                    font-size:      2rem;
+                    display:        inline-block;
+                    text-align:     center;
+                    width:          30px;
+                    height:         30px;
+                    line-height:    30px;
+                    padding-top:    0;
+                    vertical-align: middle;
+                    margin-right:   15px;
+                }
+                // Description (name) of a link
+                .sidebar-button-desc {
+                    display:        inline-block;
+                    width:          auto;
+                    height:         35px;
+                    line-height:    35px;
+                    font-size:      1.5rem;
+                    letter-spacing: 0.3px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    // Used to animate the sidebar (pushed effect)
+    &.pushed {
+        @include prefix(transform, translate3d(#{map-get($sidebar, xlg-screen-width)}, 0, 0), 'webkit' 'moz');
+    }
+}
