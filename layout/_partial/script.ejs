@@ -48,3 +48,10 @@
         _st('install','<%= theme.swiftype_install_key %>','2.0.0');
     </script>
 <% } %>
+<% if (config.algolia && config.algolia.appId && config.algolia.apiKey) { %>
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+        var client = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
+        var index = client.initIndex('<%= config.algolia.indexName %>');
+    </script>
+<% } %>
