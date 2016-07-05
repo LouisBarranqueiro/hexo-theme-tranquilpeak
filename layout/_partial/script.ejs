@@ -13,7 +13,7 @@
                     this.page.identifier = '<%= post.disqusIdentifier %>';
                  <% } else { %>
                     this.page.identifier = '<%= post.path %>';
-                 <% } %>                 
+                 <% } %>
              };
             (function() {
                 var d = document, s = d.createElement('script');
@@ -48,10 +48,10 @@
         _st('install','<%= theme.swiftype_install_key %>','2.0.0');
     </script>
 <% } %>
-<% if (config.algolia && config.algolia.appId && config.algolia.apiKey) { %>
+<% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script>
-        var client = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
-        var index = client.initIndex('<%= config.algolia.indexName %>');
+        var algoliaClient = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
+        var algoliaIndex = algoliaClient.initIndex('<%= config.algolia.indexName %>');
     </script>
 <% } %>
