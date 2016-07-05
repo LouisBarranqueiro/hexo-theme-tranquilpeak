@@ -1,5 +1,4 @@
-+function($) {
-
+(function($) {
   'use strict';
 
   /**
@@ -53,7 +52,7 @@
       // send search when form is submitted
       self.$searchForm.submit(function(event) {
         event.preventDefault();
-        self.search(self.$searchInput.val())
+        self.search(self.$searchInput.val());
       });
     },
 
@@ -84,8 +83,10 @@
     search: function(search) {
       var self = this;
       this.algolia.search(search, function(err, content) {
-        self.showResults(content.hits);
-        self.showResultsCount(content.nbHits);
+        if (!err) {
+          self.showResults(content.hits);
+          self.showResultsCount(content.nbHits);
+        }
       });
     },
 
@@ -106,7 +107,7 @@
      */
     showResults: function(posts) {
       var html = '';
-      posts.map(function(post) {
+      posts.forEach(function(post) {
         html += '<div class="media">';
         if (post.thumbnailImageUrl) {
           html += '<div class="media-left">';
@@ -161,7 +162,7 @@
         string = this.$resultsCount.data('message-zero');
         this.$noResults.show();
       }
-      else if (count == 1) {
+      else if (count === 1) {
         string = this.$resultsCount.data('message-one');
         this.$noResults.hide();
       }
@@ -169,7 +170,7 @@
         string = this.$resultsCount.data('message-other').replace(/\{n\}/, count);
         this.$noResults.hide();
       }
-      this.$resultsCount.html(string)
+      this.$resultsCount.html(string);
     },
 
     /**
@@ -187,7 +188,6 @@
      * @returns {void}
      */
     hideOverlay: function() {
-      var self = this;
       $('.overlay').fadeOut(function() {
         $(this).remove();
         $('body').css('overflow', 'auto');
@@ -202,4 +202,4 @@
       searchModal.run();
     }
   });
-}(jQuery);
+})(jQuery);

@@ -50,23 +50,20 @@
         if (isRemoteUrl(post.thumbnailImage)) {
           return post.thumbnailImage;
         }
-        else {
-          return urlFor(post.permalink + post.thumbnailImage);
-        }
+
+        return urlFor(post.permalink + post.thumbnailImage);
       }
 
       // Define third images (cover image and first photo) as thumbnail image
       if (theme.thumbnail_image && (post.autoThumbnailImage === true ||
         (theme.auto_thumbnail_image === true && post.autoThumbnailImage !== false))) {
-
         // use photos
         if (post.photos && post.photos.length) {
           if (isRemoteUrl(post.photos[0])) {
             return post.photos[0].match(rPhoto)[1];
           }
-          else {
-            return urlFor(post.permalink + post.photos[0].match(rPhoto)[1]);
-          }
+
+          return urlFor(post.permalink + post.photos[0].match(rPhoto)[1]);
         }
 
         // use cover image
@@ -74,9 +71,8 @@
           if (isRemoteUrl(post.coverImage)) {
             return post.coverImage;
           }
-          else {
-            return urlFor(post.permalink + post.coverImage);
-          }
+
+          return urlFor(post.permalink + post.coverImage);
         }
       }
       return null;

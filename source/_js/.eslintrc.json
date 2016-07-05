@@ -1,6 +1,7 @@
 {
     "globals": {
-        "jQuery": false
+        "jQuery": false,
+        "algoliaIndex": false
     },
     "env": {
         "browser": true
