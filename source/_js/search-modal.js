@@ -117,7 +117,7 @@
         html += '<div class="media">';
         if (post.thumbnailImageUrl) {
           html += '<div class="media-left">';
-          html += '<a class="link-unstyled">';
+          html += '<a class="link-unstyled" href="' + (post.link || post.permalink) +'">';
           html += '<img class="media-image" ' +
             'src="' + post.thumbnailImageUrl + '" ' +
             'width="90" height="90"/>';
@@ -126,7 +126,7 @@
         }
 
         html += '<div class="media-body">';
-        html += '<a class="link-unstyled">';
+        html += '<a class="link-unstyled" href="' + (post.link || post.permalink) +'">';
         html += '<h3 class="media-heading">' + post.title + '</h3>';
         html += '</a>';
         html += '<span class="media-meta">';
