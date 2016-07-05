@@ -12,8 +12,9 @@
     this.$closeButton = this.$searchModal.find('.close-button');
     this.$searchForm = $('#algolia-search-form');
     this.$searchInput = $('#algolia-search-input');
-    this.$results = this.$searchModal.find('.modal-body');
-    this.$resultsCount = this.$searchModal.find('.search-nbHits');
+    this.$results = this.$searchModal.find('.results');
+    this.$noResults = this.$searchModal.find('.no-result');
+    this.$resultsCount = this.$searchModal.find('.results-count');
     this.algolia = algoliaIndex;
   };
 
@@ -157,13 +158,16 @@
     showResultsCount: function(count) {
       var string = '';
       if (count < 1) {
-        string = this.$resultsCount.data('message-zero')
+        string = this.$resultsCount.data('message-zero');
+        this.$noResults.show();
       }
       else if (count == 1) {
-        string = this.$resultsCount.data('message-one')
+        string = this.$resultsCount.data('message-one');
+        this.$noResults.hide();
       }
       else if (count > 1) {
         string = this.$resultsCount.data('message-other').replace(/\{n\}/, count);
+        this.$noResults.hide();
       }
       this.$resultsCount.html(string)
     },

@@ -11,8 +11,9 @@
         font-size: 0.95em;
     }
     .search-input {
-        padding: 0 140px 0 25px;
-        margin:  0;
+        box-sizing: border-box;
+        padding:    0 130px 0 25px;
+        margin:     0;
     }
     .modal-header {
         padding-bottom: 8px;
@@ -29,9 +30,31 @@
     hr {
         margin-top: 0;
     }
-    .search-nbHits {
+    .results-count {
         line-height: 50px;
         color:       $font-color-base;
+    }
+    .searchby-algolia {
+        position: absolute;
+        top:      15px;
+        right:    45px;
+    }
+    .searchby-algolia-text {
+        display:        inline-block;
+        vertical-align: top;
+        line-height:    20px;
+        height:         20px;
+    }
+    .searchby-algolia-logo {
+        display:        inline-block;
+        vertical-align: top;
+        height:         20px;
+    }
+    .no-result {
+        display: none;
+        position:  relative;
+        top:       50%;
+        transform: translateY(-50%);
     }
 }
 
