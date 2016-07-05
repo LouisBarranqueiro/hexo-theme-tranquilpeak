@@ -108,6 +108,7 @@
     showResults: function(posts) {
       var html = '';
       posts.forEach(function(post) {
+        var lang = window.navigator.userLanguage || window.navigator.language || post.lang;
         html += '<div class="media">';
         if (post.thumbnailImageUrl) {
           html += '<div class="media-left">';
@@ -124,7 +125,9 @@
         html += '<h3 class="media-heading">' + post.title + '</h3>';
         html += '</a>';
         html += '<span class="media-meta">';
-        html += '<span class="media-date text-small">' + post.date + '</span>';
+        html += '<span class="media-date text-small">';
+        html += moment(post.date).locale(lang).format('ll');
+        html += '</span>';
         html += '</span>';
         html += '<p class="media-content hide-xs font-merryweather">' + post.excerpt + '</p>';
         html += '</div>';
