@@ -57,7 +57,7 @@
 
       // close modal when `ESC` button is pressed
       $(document).keyup(function(e) {
-        if (e.keyCode === 27 && self.$searchModal.length > 0) {
+        if (e.keyCode === 27 && self.$searchModal.is(':visible')) {
           self.close();
         }
       });
