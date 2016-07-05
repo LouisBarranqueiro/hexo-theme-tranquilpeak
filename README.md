@@ -57,7 +57,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Google analytics
 - Baidu analytics
 - Gravatar
-- Swiftype
+- Algolia
 - Facebook Insights
  
 ## Quick start ##
