@@ -54,7 +54,7 @@
     position:   fixed;
     top:        0;
     left:       0;
-    z-index:    map-get($z-indexes, 'c-search');
+    z-index:    map-get($z-indexes, 'c-overlay');
     overflow:   hidden;
 }
 
