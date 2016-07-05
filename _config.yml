@@ -51,8 +51,8 @@ sidebar:
             title: global.search
             url: /#search
             icon: search
-            # `st-search-show-outputs` classes are used to open swiftype search window
-            class: st-search-show-outputs
+            # `open-algolia-search` classes are used to open algolia search modal
+            class: open-algolia-search
         about:
             title: global.about
             url: /#about
@@ -98,10 +98,10 @@ sidebar:
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
 # By default, author's gravatar or author's picture is displayed if `icon` is empty
 # DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
-# E.g to display a shortcut to open swiftype search window :
+# E.g to display a shortcut to open algolia search window :
 #     url: /#search
 #     icon: search
-#     class: st-search-show-outputs
+#     class: open-algolia-search
 header:
     right_link:
         url: /#about
