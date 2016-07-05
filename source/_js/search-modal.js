@@ -30,6 +30,19 @@
         self.open();
       });
 
+      // open modal when `s` button is pressed
+      $(document).keyup(function(event) {
+        var target = event.target || event.srcElement;
+        // exit if user is focusing an input
+        if (target.tagName.toUpperCase() == 'INPUT') {
+          return;
+        }
+
+        if (event.keyCode === 83 && !self.$searchModal.is(':visible')) {
+          self.open();
+        }
+      });
+
       // close button when overlay is clicked
       self.$searchModal.click(function(e) {
         if (e.target === this) {
@@ -63,6 +76,7 @@
     open: function() {
       this.showSearchModal();
       this.showOverlay();
+      this.$searchInput.focus();
     },
 
     /**
@@ -73,6 +87,7 @@
       this.hideSearchModal();
       this.hideOverlay();
       this.resetSearch();
+      this.$searchInput.blur();
     },
 
     /**
@@ -109,6 +124,7 @@
       var html = '';
       posts.forEach(function(post) {
         var lang = window.navigator.userLanguage || window.navigator.language || post.lang;
+
         html += '<div class="media">';
         if (post.thumbnailImageUrl) {
           html += '<div class="media-left">';
