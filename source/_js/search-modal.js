@@ -80,13 +80,12 @@
     },
 
     /**
-     * Close and reset search modal and overlay
+     * Close search modal and overlay
      * @returns {void}
      */
     close: function() {
       this.hideSearchModal();
       this.hideOverlay();
-      this.resetSearch();
       this.$searchInput.blur();
     },
 
@@ -103,16 +102,6 @@
           self.showResultsCount(content.nbHits);
         }
       });
-    },
-
-    /**
-     * Reset search field and results
-     * @returns {void}
-     */
-    resetSearch: function() {
-      this.$searchInput.val('');
-      this.$results.html('');
-      this.$resultsCount.html('');
     },
 
     /**
