@@ -20,7 +20,7 @@
      */
     (function() {
         if (theme.author.google_plus_business) {
-            publisher = theme.author.google_plus;
+            publisher = theme.author.google_plus_business;
         }
         else if (theme.author.google_plus) {
             publisher = theme.author.google_plus;
@@ -130,7 +130,7 @@
         twitter_id: theme.author.twitter,
         fb_app_id: theme.fb_app_id
     }) %>
-    <% if (publisher != '') { %>
+    <% if (publisher) { %>
         <link rel="publisher" href="https://plus.google.com/<%= publisher %>"/>
     <% } %>
     <% if (typeof fb_admin_ids !== 'undefined') { %>
