@@ -51,8 +51,8 @@ sidebar:
             title: global.search
             url: /#search
             icon: search
-            # `st-search-show-outputs` classes are used to open swiftype search window
-            class: st-search-show-outputs
+            # `open-algolia-search` classes are used to open algolia search modal
+            class: open-algolia-search
         about:
             title: global.about
             url: /#about
@@ -98,10 +98,10 @@ sidebar:
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
 # By default, author's gravatar or author's picture is displayed if `icon` is empty
 # DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
-# E.g to display a shortcut to open swiftype search window :
+# E.g to display a shortcut to open algolia search window :
 #     url: /#search
 #     icon: search
-#     class: st-search-show-outputs
+#     class: open-algolia-search
 header:
     right_link:
         url: /#about
@@ -179,8 +179,6 @@ google_analytics_id:
 baidu_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
 gravatar_email:
-# Your swiftype install key
-swiftype_install_key:
 # Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
