@@ -121,8 +121,12 @@ author:
     picture:
     # Your Twitter username without the @. E.g : `tranquilpeak`
     twitter:
-    # Your google plus profile id. E.g : `+Tranquilpeak` or `123812884128439`
+    # Your personal google plus profile id, not your blog or business page id.
+    # E.g : `+JohnDoe` or `123812884128439`
     google_plus:
+    # Your businnes google plus profile id. If not provided, personal will be used instead.
+    # E.g : `+Tranquilpeak` or `123812884128439`
+    google_plus_business:
 
 
 # Customization
