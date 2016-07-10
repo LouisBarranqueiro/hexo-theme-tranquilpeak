@@ -4,6 +4,7 @@
     var fb_admin_ids = [];
     var keywords = '';
     var photos = [];
+    var publisher = '';
 
     /**
      * Separate fb admin ids
@@ -11,6 +12,18 @@
     (function() {
         if (theme.fb_admin_ids) {
             fb_admin_ids = String(theme.fb_admin_ids).split(',');
+        }
+    })();
+
+    /**
+     * Pick publisher G+ profile
+     */
+    (function() {
+        if (theme.author.google_plus_business) {
+            publisher = theme.author.google_plus_business;
+        }
+        else if (theme.author.google_plus) {
+            publisher = theme.author.google_plus;
         }
     })();
 
@@ -117,8 +130,8 @@
         twitter_id: theme.author.twitter,
         fb_app_id: theme.fb_app_id
     }) %>
-    <% if (theme.author.google_plus) { %>
-        <meta rel="publisher" content="https://plus.google.com/<%= theme.author.google_plus %>"/>
+    <% if (publisher) { %>
+        <link rel="publisher" href="https://plus.google.com/<%= publisher %>"/>
     <% } %>
     <% if (typeof fb_admin_ids !== 'undefined') { %>
         <% fb_admin_ids.forEach(function(fb_admin_id) { %>

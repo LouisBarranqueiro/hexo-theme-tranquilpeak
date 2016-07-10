@@ -51,8 +51,8 @@ sidebar:
             title: global.search
             url: /#search
             icon: search
-            # `st-search-show-outputs` classes are used to open swiftype search window
-            class: st-search-show-outputs
+            # `open-algolia-search` classes are used to open algolia search modal
+            class: open-algolia-search
         about:
             title: global.about
             url: /#about
@@ -98,10 +98,10 @@ sidebar:
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
 # By default, author's gravatar or author's picture is displayed if `icon` is empty
 # DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
-# E.g to display a shortcut to open swiftype search window :
+# E.g to display a shortcut to open algolia search window :
 #     url: /#search
 #     icon: search
-#     class: st-search-show-outputs
+#     class: open-algolia-search
 header:
     right_link:
         url: /#about
@@ -121,18 +121,22 @@ author:
     picture:
     # Your Twitter username without the @. E.g : `tranquilpeak`
     twitter:
-    # Your google plus profile id. E.g : `+Tranquilpeak` or `123812884128439`
+    # Your personal google plus profile id, not your blog or business page id.
+    # E.g : `+JohnDoe` or `123812884128439`
     google_plus:
+    # Your businnes google plus profile id. If not provided, personal will be used instead.
+    # E.g : `+Tranquilpeak` or `123812884128439`
+    google_plus_business:
 
 
 # Customization
 # Define the behavior of the sidebar
-# 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
+# 1: Display extra large sidebar on extra large screen, large sidebar on large screen, medium sidebar on medium screen and header bar on small screen (default)
 # and large sidebar is swiped
-# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped (default)
-# 3: Display header bar on all screens and large sidebar is swiped
+# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
+# 3: Display header bar on all screens, large sidebar is swiped on large screen and extra large bar on extra large screen
 # 4: Display header bar on all screens and medium sidebar is swiped
-sidebar_behavior: 2
+sidebar_behavior: 1
 # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
 clear_reading: true
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
@@ -175,8 +179,6 @@ google_analytics_id:
 baidu_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
 gravatar_email:
-# Your swiftype install key
-swiftype_install_key:
 # Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307

@@ -70,11 +70,13 @@
     &.header-up {
         @include prefix(transform, translate3d(0, -#{map-get($header, height)}, 0), 'webkit' 'moz');
     }
+
     // Push the header from the size of the large sidebar
     &[data-behavior="1"],
     &[data-behavior="3"] {
         @include header-pushed-lg;
     }
+
     // Push the header from the size of the medium sidebar
     &[data-behavior="2"],
     &[data-behavior="4"] {
@@ -87,6 +89,16 @@
         // Hide header
         &[data-behavior="1"], &[data-behavior="2"] {
             display: none;
+        }
+    }
+}
+
+// Push the header from the size of the extra large sidebar
+@media #{$xlarge-and-up} {
+    #header {
+        &[data-behavior="1"],
+        &[data-behavior="3"] {
+            @include header-pushed-xlg;
         }
     }
 }

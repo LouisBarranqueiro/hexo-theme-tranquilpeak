@@ -72,7 +72,9 @@ $z-indexes: (
     'c-mask':              30,
     'c-post-bottom-bar':   40,
     'c-share-options-bar': 50,
-    'c-tooltip':           1000
+    'c-tooltip':           1000,
+    'c-overlay':           1009,
+    'c-modal':             1010
 );
 
 // Media Query Ranges
@@ -83,12 +85,14 @@ $screen-min: (
      // If you change value of `md-min`,
      // you have to change value of `mediumScreenWidth` too in `source/_js/sidebar.js`
     'md-min': 768px,
-    'lg-min': 1024px
+    'lg-min': 1024px,
+    'xlg-min': 1280px
 );
 $screen-max: (
     'xs-max': map-get($screen-min, sm-min) - 1,
     'sm-max': map-get($screen-min, md-min) - 1,
-    'md-max': map-get($screen-min, lg-min) - 1
+    'md-max': map-get($screen-min, lg-min) - 1,
+    'lg-max': map-get($screen-min, xlg-min) - 1
 );
 // Merged screen-* Maps
 $screen: map-merge($screen-min, $screen-max);
@@ -100,7 +104,10 @@ $small-and-up:    "only screen and (min-width : #{map-get($screen, sm-min)})" !d
 $medium-and-down: "only screen and (max-width : #{map-get($screen, md-max)})" !default;
 $medium-only:     "only screen and (min-width : #{map-get($screen, md-min)}) and (max-width : #{map-get($screen, md-max)})" !default;
 $medium-and-up:   "only screen and (min-width : #{map-get($screen, md-min)})" !default;
+$large-and-down:  "only screen and (max-width : #{map-get($screen, lg-max)})" !default;
+$large-only:      "only screen and (min-width : #{map-get($screen, lg-min)}) and (max-width : #{map-get($screen, lg-max)})" !default;
 $large-and-up:    "only screen and (min-width : #{map-get($screen, lg-min)})" !default;
+$xlarge-and-up:   "only screen and (min-width : #{map-get($screen, xlg-min)})" !default;
 
 // Base settings
 // Files are located in `base` folder
@@ -139,10 +146,11 @@ $header:(
 
 // Sidebar
 $sidebar: (
-    'md-screen-width': 75px,
-    'lg-screen-width': 250px,
-    'background':      rgba(17, 26, 35, 0),
-    'color':           #ebebeb
+    'md-screen-width':  75px,
+    'lg-screen-width':  250px,
+    'xlg-screen-width': 500px,
+    'background':       rgba(17, 26, 35, 0),
+    'color':            #ebebeb
 );
 
 // Main
