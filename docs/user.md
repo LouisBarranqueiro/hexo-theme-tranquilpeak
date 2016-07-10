@@ -435,17 +435,36 @@ The search modal of the theme use Algolia API to search in your posts. Of course
 3. Run `hexo algolia` to index your posts on Algolia. 
 4. Configure the search on your Algolia dashboard.
 
-**Each time you want to deploy your blog, run `hexo algolia` this command before deploying it.** Currently, the plugin clear the existing index on Algolia and re-index all your posts.
+**Each time you want to deploy your blog, run `hexo algolia` before deploying it.** Currently, the plugin clear the existing index on Algolia and re-index all your posts.
 
 **Required fields**
-```
+``` yml
 fields:
   - title
   - date
   - excerpt
-  - content
+  - excerpt:strip
   - permalink
   - thumbnailImageUrl
+```
+
+**Standard configuration**
+``` yml
+algolia:
+  appId: "Z7A3XW4R2I"
+  apiKey: "12db1ad54372045549ef465881c17e743"
+  adminApiKey: "40321c7c207e7f73b63a19aa24c4761b"
+  chunkSize: 5000
+  indexName: "tranquilpeak"
+  fields:
+    - title
+    - date
+    - permalink
+    - thumbnailImageUrl
+    - tags
+    - categories
+    - excerpt
+    - excerpt:strip
 ```
 
 ### Google Analytics ###
