@@ -8,7 +8,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 - [General](#general)
 - [Requirements](#requirements)
-- [Installation](#installation)1
+- [Installation](#installation)
 - [Code style](#code-style)
 - [Code structure](#code-structure)
     * [Languages](#languages)
