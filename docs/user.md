@@ -57,7 +57,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.8.1
+- **Version** : 1.9.0
 - **Compatibility** : Node v4 or later, Hexo v3.0.0 or later
 
 ## Features ##
