@@ -140,7 +140,7 @@
     }
 }
 
-@media #{$large-and-up} {
+@media #{$large-only} {
     // Increase the font size of the post's title on large screen
     .post-header-cover {
         .post-header {
@@ -161,6 +161,36 @@
         &[data-behavior="3"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
+        }
+        // Display post header cover div in large size and push it from the size of the medium sidebar
+        &[data-behavior="4"] {
+            @include post-header-cover-lg;
+            @include post-header-cover-pushed-md;
+        }
+    }
+}
+
+@media #{$xlarge-and-up} {
+    // Increase the font size of the post's title on large screen
+    .post-header-cover {
+        .post-header {
+            .post-title {
+                font-size:   map-get($headings-font-size, h1) + 3.7rem;
+                line-height: 1.3em;
+            }
+        }
+        // Display post header cover div in extra small size
+        &[data-behavior="1"] {
+            @include post-header-cover-xs;
+        }
+        // Display post header cover div in medium size
+        &[data-behavior="2"] {
+            @include post-header-cover-md;
+        }
+        // Display post header cover div in large size and push it from the size of the extra large sidebar
+        &[data-behavior="3"] {
+            @include post-header-cover-lg;
+            @include post-header-cover-pushed-xlg;
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="4"] {
