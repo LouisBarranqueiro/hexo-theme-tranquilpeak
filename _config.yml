@@ -127,12 +127,12 @@ author:
 
 # Customization
 # Define the behavior of the sidebar
-# 1: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
+# 1: Display extra large sidebar on extra large screen, large sidebar on large screen, medium sidebar on medium screen and header bar on small screen (default)
 # and large sidebar is swiped
-# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped (default)
-# 3: Display header bar on all screens and large sidebar is swiped
+# 2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
+# 3: Display header bar on all screens, large sidebar is swiped on large screen and extra large bar on extra large screen
 # 4: Display header bar on all screens and medium sidebar is swiped
-sidebar_behavior: 2
+sidebar_behavior: 1
 # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
 clear_reading: true
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
