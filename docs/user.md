@@ -309,7 +309,6 @@ author:
 ``` yaml
 # Customization
 sidebar_behavior: 1
-toc_title: Table of contents
 thumbnail_image: true
 thumbnail_image_position: right
 auto_thumbnail_image: true
@@ -325,7 +324,6 @@ tag_pagination: true
 |---|---|
 |sidebar_behavior|Define the behavior of the header and sidebar :<ul><li>1: Display extra large sidebar on extra large screen, large sidebar on large screen, medium sidebar on medium screen and header bar on small screen and large sidebar is swiped when open button is clicked (default)</li><li>2: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped when open button is clicked</li><li>3: Display header bar on all screens and large or extra large sidebar is swiped when open button is clicked  </li><li>4: Display header bar on all screens and medium sidebar is swiped when open button is clicked)</li></ul>|
 |clear_reading|Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. Useless if `sidebar_behavior` is equal to `3` or `4`. (true: enable, false: disable). Default behavior : `theme.clear_reading` value in theme configuration file.|
-|toc_title|Head title displayed at the top of the table of contents.|
 |thumbnail_image|Display thumbnail image of each post on index pages|
 |thumbnail_image_position|Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`). Set this value to `right` if you have old posts to keep the old style on them and define `thumbnailImagePosition` on a post to overwrite this setting. (Default : `right`)|
 |auto_thumbnail_image|Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image. Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image and set `autoThumbnailImage` to `false` on a post to overwrite this setting. (Default : `true`)|
