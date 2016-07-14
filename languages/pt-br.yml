@@ -10,6 +10,7 @@ global:
     archives: "Arquivo"
     search: "Pesquisar"
     about: "Sobre"
+    author_picture: "Foto do autor"
     github: "GitHub"
     stack_overflow: "Stack Overflow"
     twitter: "Twitter"
@@ -59,4 +60,3 @@ author:
     bio: ""
     # Seu trabalho
     job: ""
-    picture: "Foto do author"
