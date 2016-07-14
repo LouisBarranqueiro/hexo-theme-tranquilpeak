@@ -205,7 +205,7 @@
 
   $(document).ready(function() {
     // launch feature only if there is an Algolia index available
-    if (algoliaIndex) {
+    if (typeof algoliaIndex !== 'undefined') {
       var searchModal = new SearchModal();
       searchModal.run();
     }
