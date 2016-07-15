@@ -10,6 +10,7 @@ global:
     archives: "Archives"
     search: "Search"
     about: "About"
+    author_picture: "Author's picture"
     github: "GitHub"
     stack_overflow: "Stack Overflow"
     twitter: "Twitter"

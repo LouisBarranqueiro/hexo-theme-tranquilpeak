@@ -10,6 +10,7 @@ global:
     archives: "アーカイブ"
     search: "検索"
     about: "プロフィール"
+    author_picture: "著者の絵"
     github: "GitHub"
     stack_overflow: "Stack Overflow"
     twitter: "Twitter"

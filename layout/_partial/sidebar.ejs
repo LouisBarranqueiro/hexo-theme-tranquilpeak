@@ -14,7 +14,7 @@
         <% if (authorPicture) { %>
             <div class="sidebar-profile">
                 <a href="<%- url_for('/#about') %>">
-                        <img class="sidebar-profile-picture" src="<%= authorPicture %>"/>
+                    <img class="sidebar-profile-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
                 </a>
                 <h4 class="sidebar-profile-name"><%= config.author %></h4>
                 <% if (__('author.bio')) { %>
