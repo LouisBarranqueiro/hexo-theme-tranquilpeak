@@ -14,7 +14,6 @@
     // Improve smoothing of the font by adding subpixel in Safari
     @include prefix(font-smoothing, antialiased, 'webkit');
 
-
     // Author information
     .sidebar-profile {
         color:         map-get($sidebar, color);
@@ -28,7 +27,7 @@
         }
         .sidebar-profile-name {
             font-size: 1.1em;
-            color: map-get($sidebar, color);
+            color:     map-get($sidebar, color);
         }
     }
     // Sidebar's buttons
@@ -130,6 +129,13 @@
         &[data-behavior="4"] {
             left: -#{map-get($sidebar, md-screen-width)};
             @include sidebar-md;
+        }
+        // hide bio in sidebar when small sidebar is enabled
+        &[data-behavior="2"],
+        &[data-behavior="4"] {
+            .sidebar-profile-bio {
+                display: none;
+            }
         }
     }
 }
