@@ -19,11 +19,11 @@
         @include bottom-bar-lg;
 
         // Push the bottom bar from the size of the large sidebar
-        &[data-behavior="1"], &[data-behavior="3"] {
+        &[data-behavior="1"], &[data-behavior="5"] {
             @include bottom-bar-pushed-lg;
         }
         // Push the bottom bar from the size of the medium sidebar
-        &[data-behavior="2"], &[data-behavior="4"] {
+        &[data-behavior="3"], &[data-behavior="6"] {
             @include bottom-bar-pushed-md;
         }
     }
@@ -32,17 +32,17 @@
 @media #{$medium-only} {
     #bottom-bar {
         // Display bottom bar in medium size and push it from the size of the medium sidebar
-        &[data-behavior="1"], &[data-behavior="2"] {
+        &[data-behavior="1"], &[data-behavior="3"] {
             @include bottom-bar-md;
             @include bottom-bar-pushed-md;
         }
         // Display bottom bar in large size and push it from the size of the large sidebar
-        &[data-behavior="3"] {
+        &[data-behavior="5"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-lg;
         }
         // Display bottom bar in large size and push it from the size of the medium sidebar
-        &[data-behavior="4"] {
+        &[data-behavior="6"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-md;
         }
@@ -57,17 +57,17 @@
             @include bottom-bar-pushed-lg;
         }
         // Display bottom bar in medium size and push it from the size of the medium sidebar
-        &[data-behavior="2"] {
+        &[data-behavior="3"] {
             @include bottom-bar-md;
             @include bottom-bar-pushed-md;
         }
         // Display bottom bar in large size and push it from the size of the large sidebar
-        &[data-behavior="3"] {
+        &[data-behavior="5"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-lg;
         }
         // Display bottom bar in large size and push it from the size of the medium sidebar
-        &[data-behavior="4"] {
+        &[data-behavior="6"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-md;
         }
@@ -82,17 +82,17 @@
             @include bottom-bar-pushed-xlg;
         }
         // Display bottom bar in medium size and push it from the size of the medium sidebar
-        &[data-behavior="2"] {
+        &[data-behavior="3"] {
             @include bottom-bar-md;
             @include bottom-bar-pushed-md;
         }
         // Display bottom bar in large size and push it from the size of the extra large sidebar
-        &[data-behavior="3"] {
+        &[data-behavior="5"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-xlg;
         }
         // Display bottom bar in large size and push it from the size of the medium sidebar
-        &[data-behavior="4"] {
+        &[data-behavior="6"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-md;
         }
