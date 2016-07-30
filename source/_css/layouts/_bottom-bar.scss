@@ -49,7 +49,7 @@
     }
 }
 
-@media #{$large-and-up} {
+@media #{$large-only} {
     #bottom-bar {
         // Display bottom bar in small size and push it from the size of the large sidebar
         &[data-behavior="1"] {
@@ -74,7 +74,7 @@
     }
 }
 
-@media #{$large-and-up} {
+@media #{$xlarge-and-up} {
     #bottom-bar {
         // Display bottom bar in small size and push it from the size of the extra large sidebar
         &[data-behavior="1"] {
