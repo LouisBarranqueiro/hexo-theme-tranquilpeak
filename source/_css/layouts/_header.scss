@@ -73,6 +73,8 @@
 
     // Push the header from the size of the large sidebar
     &[data-behavior="1"],
+    &[data-behavior="2"],
+    &[data-behavior="4"],
     &[data-behavior="5"] {
         @include header-pushed-lg;
     }
@@ -87,7 +89,9 @@
 @media #{$medium-and-up} {
     #header {
         // Hide header
-        &[data-behavior="1"], &[data-behavior="4"] {
+        &[data-behavior="1"],
+        &[data-behavior="2"],
+        &[data-behavior="3"] {
             display: none;
         }
     }
@@ -97,8 +101,12 @@
 @media #{$xlarge-and-up} {
     #header {
         &[data-behavior="1"],
-        &[data-behavior="5"] {
+        &[data-behavior="4"] {
             @include header-pushed-xlg;
+        }
+        &[data-behavior="2"],
+        &[data-behavior="5"] {
+            @include header-pushed-lg;
         }
     }
 }

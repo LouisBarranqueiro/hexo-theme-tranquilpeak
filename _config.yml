@@ -131,15 +131,20 @@ author:
 
 # Customization
 # Define the behavior of the sidebar
-# 1: Display extra large sidebar on extra large screen, large sidebar on large screen, medium sidebar on medium screen and header bar on small screen (default)
-# 2: Display large sidebar on large screen, medium sidebar on medium screen and header bar on small screen
-# and large sidebar is swiped
-# 3: Display medium sidebar on large and medium screen and header bar on small screen and medium sidebar is swiped
-# 4: Display header bar on all screens, extra large sidebar is swiped on extra large screen and large sidebar is swiped on all lower screens
+# 1: Display extra large sidebar on extra large screen, large sidebar on large screen,
+# medium sidebar on medium screen and header bar on small screen and
+# extra large sidebar is swiped on extra large screen and large sidebar on all lower screen (default)
+# 2: Display large sidebar on large screen, medium sidebar on medium screen and
+# header bar on small screen and large sidebar is swiped
+# 3: Display medium sidebar on large and medium screen and header bar on small screen and
+# medium sidebar is swiped
+# 4: Display header bar on all screens, extra large sidebar is swiped on extra large screen and
+# large sidebar is swiped on all lower screens
 # 5: Display header bar on all screens and large sidebar is swiped on large screen
 # 6: Display header bar on all screens and medium sidebar is swiped
-sidebar_behavior: 1
-# Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
+sidebar_behavior: 6
+# Hide sidebar on all article page to let article take full width to improve reading, and
+# enjoy wide images and cover images. (true: enable, false: disable)
 clear_reading: true
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
 thumbnail_image: true
@@ -147,7 +152,8 @@ thumbnail_image: true
 # Set this value to `right` if you have old posts to keep the old style on them
 # and define `thumbnailImagePosition` on a post to overwrite this setting
 thumbnail_image_position: right
-# Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image
+# Automatically select the cover image or the first photo from the gallery of a post if
+# there is no thumbnail image as the thumbnail image
 # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
 # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
 auto_thumbnail_image: true
@@ -155,7 +161,8 @@ auto_thumbnail_image: true
 # There is many free CDN like Cloudinary or you can also use indirectly
 # by using services like Google Photos.
 # Current image is on AWS S3 and delivered by AWS CloudFront.
-# Otherwise put your image in folder `source/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
+# Otherwise put your image in folder `source/_images/` (development)
+# or in `source/assets/images/` if you can't or don't want to build the theme,
 # and use relative url : `your-image.png`
 cover_image: cover.jpg
 # Your favicon located in folder `source/_images/` (development) or in `source/assets/images/` (production)
@@ -180,7 +187,7 @@ google_analytics_id:
 # Your Baidu analystics web property ID : 9505a5af654a2478f93fd6c0ae4f687d
 baidu_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-gravatar_email:
+gravatar_email: louis.barranqueiro@gmail.com
 # Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
