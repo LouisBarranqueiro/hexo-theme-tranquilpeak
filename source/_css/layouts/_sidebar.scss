@@ -14,6 +14,9 @@
     // Improve smoothing of the font by adding subpixel in Safari
     @include prefix(font-smoothing, antialiased, 'webkit');
 
+    .sidebar-container {
+        overflow: auto;
+    }
     // Author information
     .sidebar-profile {
         color:         map-get($sidebar, color);
@@ -124,7 +127,6 @@
 
 @media #{$xlarge-and-up} {
     #sidebar {
-
         &[data-behavior="1"] {
             @include sidebar-xlg;
         }
@@ -148,6 +150,7 @@
         }
         // hide bio in sidebar when small sidebar is enabled
         &[data-behavior="3"],
+        &[data-behavior="5"],
         &[data-behavior="6"] {
             .sidebar-profile-bio {
                 display: none;
