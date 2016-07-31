@@ -35,6 +35,7 @@
         // Push `main` div from the size of the large sidebar
         &[data-behavior="1"],
         &[data-behavior="2"],
+        &[data-behavior="4"],
         &[data-behavior="5"] {
             @include main-pushed-lg;
         }
@@ -55,6 +56,7 @@
             @include main-md;
         }
         // Display `main` div in large size and push it from the size of the large sidebar
+        &[data-behavior="4"],
         &[data-behavior="5"] {
             @include main-lg;
             @include main-pushed-lg;
@@ -79,7 +81,8 @@
             @include main-md;
         }
         // Display `main` div in large size and push it from the size of the large sidebar
-        &[data-behavior="5"] {
+        &[data-behavior="4"],
+        &[data-behavior="5"]{
             @include main-lg;
             @include main-pushed-lg;
         }
@@ -106,9 +109,14 @@
             @include main-md;
         }
         // Display `main` div in large size and push it from the size of the extra large sidebar
-        &[data-behavior="5"] {
+        &[data-behavior="4"] {
             @include main-lg;
             @include main-pushed-xlg;
+        }
+        // Display `main` div in large size and push it from the size of the extra large sidebar
+        &[data-behavior="5"] {
+            @include main-lg;
+            @include main-pushed-lg;
         }
         // Display `main` div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {

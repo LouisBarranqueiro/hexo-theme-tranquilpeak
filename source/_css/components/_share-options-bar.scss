@@ -75,6 +75,7 @@
             @include share-options-bar-md;
         }
         // Display share options bar in large size
+        &[data-behavior="4"],
         &[data-behavior="5"],
         &[data-behavior="6"] {
             @include share-options-bar-lg;
@@ -95,7 +96,9 @@
             @include share-options-bar-md;
         }
         // Display share options bar in large size
-        &[data-behavior="5"], &[data-behavior="6"] {
+        &[data-behavior="4"],
+        &[data-behavior="5"],
+        &[data-behavior="6"] {
             @include share-options-bar-lg;
         }
     }

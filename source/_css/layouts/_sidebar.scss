@@ -67,6 +67,7 @@
     #sidebar {
         &[data-behavior="1"],
         &[data-behavior="2"],
+        &[data-behavior="4"],
         &[data-behavior="5"] {
             left: -#{map-get($sidebar, lg-screen-width)};
             @include sidebar-lg;
@@ -87,6 +88,7 @@
         &[data-behavior="3"] {
             @include sidebar-md;
         }
+        &[data-behavior="4"],
         &[data-behavior="5"] {
             left: -#{map-get($sidebar, lg-screen-width)};
             @include sidebar-lg;
@@ -108,6 +110,7 @@
         &[data-behavior="3"] {
             @include sidebar-md;
         }
+        &[data-behavior="4"],
         &[data-behavior="5"] {
             left: -#{map-get($sidebar, lg-screen-width)};
             @include sidebar-lg;
@@ -131,9 +134,13 @@
         &[data-behavior="3"] {
             @include sidebar-md;
         }
-        &[data-behavior="5"] {
+        &[data-behavior="4"] {
             left: -#{map-get($sidebar, xlg-screen-width)};
             @include sidebar-xlg;
+        }
+        &[data-behavior="5"] {
+            left: -#{map-get($sidebar, lg-screen-width)};
+            @include sidebar-lg;
         }
         &[data-behavior="6"] {
             left: -#{map-get($sidebar, md-screen-width)};

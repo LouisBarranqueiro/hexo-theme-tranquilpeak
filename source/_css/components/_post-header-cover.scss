@@ -106,6 +106,7 @@
         // Push post header cover div from the size of the large sidebar
         &[data-behavior="1"],
         &[data-behavior="2"],
+        &[data-behavior="4"],
         &[data-behavior="5"] {
             @include post-header-cover-pushed-lg;
         }
@@ -133,6 +134,7 @@
             @include post-header-cover-md;
         }
         // Display post header cover div in large size and push it from the size of the large sidebar
+        &[data-behavior="4"],
         &[data-behavior="5"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
@@ -164,6 +166,7 @@
             @include post-header-cover-md;
         }
         // Display post header cover div in large size and push it from the size of the large sidebar
+        &[data-behavior="4"],
         &[data-behavior="5"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
@@ -197,10 +200,15 @@
         &[data-behavior="3"] {
             @include post-header-cover-md;
         }
+        // Display post header cover div in large size and push it from the size of the large sidebar
+        &[data-behavior="4"] {
+            @include post-header-cover-lg;
+            @include post-header-cover-pushed-xlg;
+        }
         // Display post header cover div in large size and push it from the size of the extra large sidebar
         &[data-behavior="5"] {
             @include post-header-cover-lg;
-            @include post-header-cover-pushed-xlg;
+            @include post-header-cover-pushed-lg;
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
