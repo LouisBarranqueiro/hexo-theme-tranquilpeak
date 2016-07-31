@@ -149,6 +149,7 @@
             @include sidebar-md;
         }
         // hide bio in sidebar when small sidebar is enabled
+        &[data-behavior="2"],
         &[data-behavior="3"],
         &[data-behavior="5"],
         &[data-behavior="6"] {
