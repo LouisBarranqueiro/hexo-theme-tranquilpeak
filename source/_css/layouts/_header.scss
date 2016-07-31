@@ -88,7 +88,10 @@
 @media #{$medium-and-up} {
     #header {
         // Hide header
-        &[data-behavior="1"], &[data-behavior="2"], &[data-behavior="4"] {
+        &[data-behavior="1"],
+        &[data-behavior="2"],
+        &[data-behavior="3"],
+        &[data-behavior="4"] {
             display: none;
         }
     }

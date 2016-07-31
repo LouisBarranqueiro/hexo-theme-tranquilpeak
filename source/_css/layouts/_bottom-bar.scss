@@ -32,7 +32,9 @@
 @media #{$medium-only} {
     #bottom-bar {
         // Display bottom bar in medium size and push it from the size of the medium sidebar
-        &[data-behavior="1"], &[data-behavior="2"], &[data-behavior="3"] {
+        &[data-behavior="1"],
+        &[data-behavior="2"],
+        &[data-behavior="3"] {
             @include bottom-bar-md;
             @include bottom-bar-pushed-md;
         }
