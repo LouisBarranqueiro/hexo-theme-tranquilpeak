@@ -69,11 +69,15 @@
 @media #{$medium-only} {
     .share-options-bar {
         // Display share options bar in small size
-        &[data-behavior="1"], &[data-behavior="2"] {
+        &[data-behavior="1"],
+        &[data-behavior="2"],
+        &[data-behavior="3"] {
             @include share-options-bar-md;
         }
         // Display share options bar in large size
-        &[data-behavior="3"], &[data-behavior="4"] {
+        &[data-behavior="4"],
+        &[data-behavior="5"],
+        &[data-behavior="6"] {
             @include share-options-bar-lg;
         }
     }
@@ -83,15 +87,18 @@
 @media #{$large-and-up} {
     .share-options-bar {
         // Display share options bar in small size
-        &[data-behavior="1"] {
+        &[data-behavior="1"],
+        &[data-behavior="2"]{
             @include share-options-bar-sm;
         }
         // Display share options bar in medium size
-        &[data-behavior="2"] {
+        &[data-behavior="3"] {
             @include share-options-bar-md;
         }
         // Display share options bar in large size
-        &[data-behavior="3"], &[data-behavior="4"] {
+        &[data-behavior="4"],
+        &[data-behavior="5"],
+        &[data-behavior="6"] {
             @include share-options-bar-lg;
         }
     }

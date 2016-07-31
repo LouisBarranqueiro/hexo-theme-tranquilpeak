@@ -15,25 +15,25 @@
             <i class="fa fa-remove"></i>
         </div>
         <% if (authorPicture) { %>
-            <img id="about-card-picture" src="<%= authorPicture %>"/>
+            <img id="about-card-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
         <% } %>
             <h4 id="about-card-name"><%= config.author %></h4>
         <% if (__('author.bio')) { %>
-            <h5 id="about-card-bio"><%- markdown(__('author.bio')) %></h5>
+            <div id="about-card-bio"><%- markdown(__('author.bio')) %></div>
         <% } %>
         <% if (__('author.job')) { %>
-            <h5 id="about-card-job">
+            <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
                 <%- markdown(__('author.job')) %>
-            </h5>
+            </div>
         <% } %>
         <% if (theme.author.location) { %>
-            <h5 id="about-card-location">
+            <div id="about-card-location">
                 <i class="fa fa-map-marker"></i>
                 <br/>
                 <%= theme.author.location %>
-            </h5>
+            </div>
         <% } %>
     </div>
 </div>

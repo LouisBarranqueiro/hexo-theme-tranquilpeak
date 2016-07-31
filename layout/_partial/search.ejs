@@ -16,7 +16,7 @@
         <div class="modal-body">
             <div class="no-result text-color-light text-center"><%= __('global.posts_found.zero') %></div>
             <div class="results">
-                <% site.posts.forEach(function(post) { %>
+                <% site.posts.sort('date').limit(config.per_page).forEach(function(post) { %>
                 <div class="media">
                     <% if (post.thumbnailImageUrl) { %>
                     <div class="media-left">

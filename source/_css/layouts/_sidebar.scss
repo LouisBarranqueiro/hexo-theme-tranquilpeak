@@ -14,7 +14,9 @@
     // Improve smoothing of the font by adding subpixel in Safari
     @include prefix(font-smoothing, antialiased, 'webkit');
 
-
+    .sidebar-container {
+        overflow: auto;
+    }
     // Author information
     .sidebar-profile {
         color:         map-get($sidebar, color);
@@ -28,7 +30,7 @@
         }
         .sidebar-profile-name {
             font-size: 1.1em;
-            color: map-get($sidebar, color);
+            color:     map-get($sidebar, color);
         }
     }
     // Sidebar's buttons
@@ -66,11 +68,15 @@
 // and with javascript located in `source/_js/_sidebar.js`, it will animate the swipe of the sidebar
 @media #{$small-and-down} {
     #sidebar {
-        &[data-behavior="1"], &[data-behavior="3"] {
+        &[data-behavior="1"],
+        &[data-behavior="2"],
+        &[data-behavior="4"],
+        &[data-behavior="5"] {
             left: -#{map-get($sidebar, lg-screen-width)};
             @include sidebar-lg;
         }
-        &[data-behavior="2"], &[data-behavior="4"] {
+        &[data-behavior="3"],
+        &[data-behavior="6"] {
             left: -#{map-get($sidebar, md-screen-width)};
             @include sidebar-md;
         }
@@ -81,14 +87,16 @@
 @media #{$medium-only} {
     #sidebar {
         &[data-behavior="1"],
-        &[data-behavior="2"] {
+        &[data-behavior="2"],
+        &[data-behavior="3"] {
             @include sidebar-md;
         }
-        &[data-behavior="3"] {
+        &[data-behavior="4"],
+        &[data-behavior="5"] {
             left: -#{map-get($sidebar, lg-screen-width)};
             @include sidebar-lg;
         }
-        &[data-behavior="4"] {
+        &[data-behavior="6"] {
             left: -#{map-get($sidebar, md-screen-width)};
             @include sidebar-md;
         }
@@ -98,17 +106,19 @@
 // Define sidebar behavior configured in `_config.yml` for large screen
 @media #{$large-only} {
     #sidebar {
-        &[data-behavior="1"] {
+        &[data-behavior="1"],
+        &[data-behavior="2"] {
             @include sidebar-lg;
         }
-        &[data-behavior="2"] {
+        &[data-behavior="3"] {
             @include sidebar-md;
         }
-        &[data-behavior="3"] {
+        &[data-behavior="4"],
+        &[data-behavior="5"] {
             left: -#{map-get($sidebar, lg-screen-width)};
             @include sidebar-lg;
         }
-        &[data-behavior="4"] {
+        &[data-behavior="6"] {
             left: -#{map-get($sidebar, md-screen-width)};
             @include sidebar-md;
         }
@@ -121,15 +131,31 @@
             @include sidebar-xlg;
         }
         &[data-behavior="2"] {
-            @include sidebar-md;
+            @include sidebar-lg;
         }
         &[data-behavior="3"] {
+            @include sidebar-md;
+        }
+        &[data-behavior="4"] {
             left: -#{map-get($sidebar, xlg-screen-width)};
             @include sidebar-xlg;
         }
-        &[data-behavior="4"] {
+        &[data-behavior="5"] {
+            left: -#{map-get($sidebar, lg-screen-width)};
+            @include sidebar-lg;
+        }
+        &[data-behavior="6"] {
             left: -#{map-get($sidebar, md-screen-width)};
             @include sidebar-md;
+        }
+        // hide bio in sidebar when small sidebar is enabled
+        &[data-behavior="2"],
+        &[data-behavior="3"],
+        &[data-behavior="5"],
+        &[data-behavior="6"] {
+            .sidebar-profile-bio {
+                display: none;
+            }
         }
     }
 }

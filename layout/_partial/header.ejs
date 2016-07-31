@@ -13,9 +13,9 @@
 <% } %>
 <header id="header" data-behavior="<%= sidebarBehavior %>">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
+    <div class="header-title">
         <a class="header-title-link" href="<%- url_for(' ') %>"><%= config.title %></a>
-    </h1>
+    </div>
     <% if (theme.header && theme.header.right_link) { %>
         <% if (theme.header.right_link.url && url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
             <a  class="<%= (theme.header.right_link.icon ? 'header-right-icon ' : 'header-right-picture ') %><% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
@@ -27,7 +27,7 @@
         <% if (theme.header.right_link.icon) { %>
             <i class="fa fa-lg fa-<%= theme.header.right_link.icon %>"></i>
         <% } else if (authorPicture) { %>
-            <img class="header-picture" src="<%= authorPicture %>"/>
+            <img class="header-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
         <% } %>
         </a>
     <% } %>

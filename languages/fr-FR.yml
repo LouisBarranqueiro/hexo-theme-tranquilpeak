@@ -8,6 +8,7 @@ global:
     archives: "Archive"
     search: "Rechercher"
     about: "À propos"
+    author_picture: "Photo de l'auteur"
     github: "GitHub"
     stack_overflow: "Stack Overflow"
     twitter: "Twitter"

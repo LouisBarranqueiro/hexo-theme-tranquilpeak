@@ -10,6 +10,7 @@ global:
     archives: "所有文章"
     search: "搜尋"
     about: "關於"
+    author_picture: "作者的圖片"
     github: "GitHub"
     stack_overflow: "Stack Overflow"
     twitter: "Twitter"

@@ -10,6 +10,7 @@ global:
     archives: "Архив"
     search: "Поиск"
     about: "Об авторе"
+    author_picture: "Авторская фотография"
     github: "GitHub"
     stack_overflow: "Stack Overflow"
     twitter: "Twitter"
