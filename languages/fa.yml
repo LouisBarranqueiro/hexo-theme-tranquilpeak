@@ -1,0 +1,63 @@
+# date format displayed everywhere in the blog
+date_format: "dddd، DD MMM YYYY"
+
+global:
+    home: "خانه"
+    categories: "دسته‌بندی‌ها"
+    category: "دسته‌بندی"
+    tags: "برچسب‌ها"
+    tag: "برچسب"
+    archives: "آرشیو مطالب"
+    search: "جست‌و‌جو"
+    about: "درباره"
+    github: "گیت‌هاب"
+    instagram: "اینستاگرام"
+    telegram: "کانال تلگرام"
+    stack_overflow: "Stack Overflow"
+    twitter: "توییتر"
+    facebook: "فیسبوک"
+    google_plus: "گوگل پلاس"
+    linkedin: "لینکداین"
+    mail: "ایمیل"
+    rss: "RSS"
+    share_on_google_plus: "در گوگل پلاس به اشتراک بگذارید"
+    share_on_facebook: "در فیسبوک به اشتراک بگذارید"
+    share_on_twitter: "در توییتر به اشتراک بگذارید"
+    search_category: "جست‌و‌جوی موضوع"
+    search_tag: "جست‌و‌جوی برچسب"
+    search_date: "جست‌و‌جوی تاریخ (سال/ماه/روز)"
+    posts_found:
+        zero: "هیچ پستی یافت نشد :("
+        one: "۱ پست یافت شد"
+        other: "{n} پست یافت شد"
+    categories_found:
+        zero: "هیچ موضوعی یافت نشد :("
+        one: "۱ موضوع یافت شد"
+        other: "{n} موضوع یافت شد"
+    tags_found:
+        zero: "هیچ برچسبی یافت نشد :("
+        one: "۱ برچسب پیدا شد"
+        other: "{n} برچسب پیدا شد"
+
+pagination:
+    page: "صفحه %d"
+    of: "از %d"
+    newer_posts: "پست‌های جدیدتر"
+    older_posts: "پست‌های قدیمیتر"
+    previous: "قبلی"
+    next: "بعدی"
+
+post:
+    no_title : "بدون عنوان"
+    categorized_in: "در"
+    tagged_in: "تگ شده در"
+    toc: "فهرست موضوعات"
+    read_more: "بیشتر بخوانید"
+    go_to_website: "به سایت بروید"
+    comment_and_share: "در مورد پست بحث کنید"
+
+author:
+    # Your biography (Markdown and HTML supported)
+    bio: "یادداشت‌های یه المپیاد کامپیوتری در حال یادگیری لینوکس!"
+    # Your job
+    job: "المپیادی، برنامه نویس!"
