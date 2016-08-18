@@ -59,7 +59,6 @@
     "moment": "^2.13.0",
     "moment-jalaali": "^0.4.0",
     "prompt": "^1.0.0",
-    "strip-indent": "^1.0.1",
-    "jalali-date": "~0.1.5"
+    "strip-indent": "^1.0.1"
   }
 }
