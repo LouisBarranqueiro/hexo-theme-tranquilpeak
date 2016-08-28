@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-tranquilpeak",
-  "version": "1.8.0",
+  "version": "1.9.1",
   "description": "A gorgeous responsive theme for Hexo blog framework",
   "main": "Gruntfile.js",
   "scripts": {
@@ -52,12 +52,11 @@
     "async": "^1.5.2",
     "hexo-front-matter": "^0.2.2",
     "hexo-util": "^0.5.1",
-    "jquery": "^2.2.4",
     "jsdom": "^8.1.0",
+    "jquery": "^2.2.4",
     "marked": "^0.3.5",
     "mkdirp": "^0.5.1",
     "moment": "^2.13.0",
-    "moment-jalaali": "^0.4.0",
     "prompt": "^1.0.0",
     "strip-indent": "^1.0.1"
   }
