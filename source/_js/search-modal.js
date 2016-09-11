@@ -33,8 +33,9 @@
       // open modal when `s` button is pressed
       $(document).keyup(function(event) {
         var target = event.target || event.srcElement;
-        // exit if user is focusing an input
-        if (target.tagName.toUpperCase() === 'INPUT') {
+        // exit if user is focusing an input or textarea
+        var tagName = target.tagName.toUpperCase();
+        if (tagName === 'INPUT' || tagName === 'TEXTAREA') {
           return;
         }
 
