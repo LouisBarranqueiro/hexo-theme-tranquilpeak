@@ -48,7 +48,7 @@ pagination:
 
 post:
     no_title : "Без названия"
-    categorized_in: " "
+    categorized_in: "в"
     tagged_in: "Теги: "
     toc: "Содержание"
     read_more: "Читать далее"
