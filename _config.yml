@@ -207,22 +207,22 @@ sharing_options:
         icon: "fa-google-plus"
         url: "https://plus.google.com/share?url={{post.permalink}}"
     # Asian
-    weibo:
-        title: "Weibo"
-        icon: "fa-weibo"
-        url: "http://service.weibo.com/share/share.php?&title={{post.permalink}}"
-    qq:
-        title: "QQ"
-        icon: "fa-qq"
-        url: "http://connect.qq.com/widget/shareqq/index.html?url={{post.permalink}}&title={{post.title}}"
-    qzone:
-        title: "Qzone"
-        icon: "fa-star"
-        url: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{post.permalink}}"
-    renren:
-        title: "Renren"
-        icon: "fa-renren"
-        url: "http://widget.renren.com/dialog/share?resourceUrl={{post.permalink}}"
+    # weibo:
+    #     title: "Weibo"
+    #     icon: "fa-weibo"
+    #     url: "http://service.weibo.com/share/share.php?&title={{post.permalink}}"
+    # qq:
+    #     title: "QQ"
+    #     icon: "fa-qq"
+    #     url: "http://connect.qq.com/widget/shareqq/index.html?url={{post.permalink}}&title={{post.title}}"
+    # qzone:
+    #     title: "Qzone"
+    #     icon: "fa-star"
+    #     url: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{post.permalink}}"
+    # renren:
+    #     title: "Renren"
+    #     icon: "fa-renren"
+    #     url: "http://widget.renren.com/dialog/share?resourceUrl={{post.permalink}}"
     # Russian
     # vk:
     #     title: "VK"
