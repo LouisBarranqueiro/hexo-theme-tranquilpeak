@@ -1,20 +1,14 @@
 <div id="share-options-bar" class="share-options-bar" data-behavior="<%= sidebarBehavior %>">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
     <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="<%= 'https://plus.google.com/share?url=' + post.permalink %>">
-                <i class="fa fa-google-plus"></i><span><%= __('global.share_on_google_plus') %></span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="<%= 'https://www.facebook.com/sharer/sharer.php?u=' + post.permalink %>">
-                <i class="fa fa-facebook-official"></i><span><%= __('global.share_on_facebook') %></span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="<%= 'https://twitter.com/intent/tweet?text=' + post.permalink %>">
-                <i class="fa fa-twitter"></i><span><%= __('global.share_on_twitter') %></span>
-            </a>
-        </li>
+        <% for(var option in theme.sharing_options)  {%>
+            <% var icon = theme.sharing_options[option].icon %>
+            <% var url = generate_sharing_link(post, theme.sharing_options[option].url) %>
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="<%= url %>">
+                    <i class="fa <%= icon %>"></i><span><%= __('global.share_on_' + option) %></span>
+                </a>
+            </li>
+        <% } %>
     </ul>
 </div>
-<div id="share-options-mask" class="share-options-mask"></div>

@@ -29,21 +29,15 @@
                 <i class="fa fa-share-alt"></i>
             </a>
         </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://plus.google.com/share?url=' + post.permalink %>">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://www.facebook.com/sharer/sharer.php?u=' + post.permalink %>">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="<%= 'https://twitter.com/intent/tweet?text=' + post.permalink %>">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
+        <% for(var option in theme.sharing_options)  {%>
+            <% var icon = theme.sharing_options[option].icon %>
+            <% var url = generate_sharing_link(post, theme.sharing_options[option].url) %>
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="<%= url %>">
+                    <i class="fa <%= icon %>"></i>
+                </a>
+            </li>
+        <% } %>
         <% if (post.comments && (theme.disqus_shortname || theme.duoshuo_shortname)) { %>
             <li class="post-action">
                 <a class="post-action-btn btn btn--default" href="#<%= (theme.duoshuo_shortname ? 'ds-thread' : 'disqus_thread') %>">

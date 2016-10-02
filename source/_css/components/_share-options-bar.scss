@@ -2,23 +2,31 @@
     position:           fixed;
     // height + border-top
     // used to hide the div at the bottom of the window
-    bottom:             -156px;
+    bottom:             -100%;
     background:         white;
-    height:             155px;
+    height:             100%;
     clear:              both;
     border-top:         1px solid #eef2f8;
     transition:         transform .25s ease-in-out;
     z-index:            map-get($z-indexes, 'c-share-options-bar');
     -webkit-transition: -webkit-transform .25s ease-in-out;
+    display:            -webkit-flex;
+    display:            -webkit-box;
+    display:            -moz-box;
+    display:            -ms-flexbox;
+    display:            flex;
+    flex-direction:     column;
+    justify-content:    center;
+    align-items:        center;
+
     // use to animate the share option bar
     &.opened {
-        @include prefix(transform, translate3d(0, -155px, 0), 'webkit' 'moz');
+        @include prefix(transform, translate3d(0, -100%, 0), 'webkit' 'moz');
     }
 
     .share-options {
         padding:    0;
         margin:     0;
-        text-align: center;
         list-style: none;
 
         .share-option {
@@ -46,15 +54,13 @@
     }
 }
 
-// mask where the user can click to close the share options bar
-.share-options-mask {
-    position: fixed;
-    top:      0;
-    left:     0;
-    width:    100%;
-    height:   100%;
-    display:  none;
-    z-index:  map-get($z-indexes, 'c-mask');
+#btn-close-shareoptions {
+    position:  absolute;
+    top:       15px;
+    right:     15px;
+    font-size: 20px;
+    color:     map-get($colors, 'base');
+    cursor:    pointer;
 }
 
 // Behavior of the share options bar on small screens
@@ -88,7 +94,7 @@
     .share-options-bar {
         // Display share options bar in small size
         &[data-behavior="1"],
-        &[data-behavior="2"]{
+        &[data-behavior="2"] {
             @include share-options-bar-sm;
         }
         // Display share options bar in medium size

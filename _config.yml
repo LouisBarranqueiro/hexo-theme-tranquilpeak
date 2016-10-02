@@ -192,3 +192,45 @@ gravatar_email:
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
 fb_app_id:
+
+
+# Sharing options
+# Comment and uncomment to enable or disable sharing options
+# If you wanna add a sharing option, read user documentation :
+# Tranquilpeak configuration > Theme configuration > sharing-options
+sharing_options:
+    facebook:
+        icon: "fa-facebook-official"
+        url: "https://www.facebook.com/sharer/sharer.php?u={{post.permalink}}"
+    twitter:
+        icon: "fa-twitter"
+        url: "https://twitter.com/intent/tweet?text={{post.permalink}}"
+    google_plus:
+        icon: "fa-google-plus"
+        url: "https://plus.google.com/share?url={{post.permalink}}"
+    # Asian social networks
+    # weibo:
+    #     title: "Weibo"
+    #     icon: "fa-weibo"
+    #     url: "http://service.weibo.com/share/share.php?&title={{post.permalink}}"
+    # qq:
+    #     title: "QQ"
+    #     icon: "fa-qq"
+    #     url: "http://connect.qq.com/widget/shareqq/index.html?url={{post.permalink}}&title={{post.title}}"
+    # qzone:
+    #     title: "Qzone"
+    #     icon: "fa-star"
+    #     url: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{post.permalink}}"
+    # renren:
+    #     title: "Renren"
+    #     icon: "fa-renren"
+    #     url: "http://widget.renren.com/dialog/share?resourceUrl={{post.permalink}}"
+    # Russian social networks
+    # vk:
+    #     title: "VK"
+    #     icon: "fa-vk"
+    #     url: "https://vk.com/share.php?url={{post.permalink}}"
+    # odnoklassniki:
+    #     title: "Odnoklassniki"
+    #     icon: "fa-odnoklassniki"
+    #     url: "https://connect.ok.ru/offer?url={{post.permalink}}"
