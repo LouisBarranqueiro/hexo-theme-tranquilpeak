@@ -29,6 +29,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Author](#author)
         * [Customization](#customization)
         * [Integrated services](#integrated-services)
+        * [Sharing options](#sharing-options)
         * [Enable pages](#enable-pages)
 - [Integrated services configuration](#integrated-services-configuration)
     * [Algolia](#algolia)
@@ -364,6 +365,43 @@ fb_app_id:
 |google_analytics_id|Your Google analystics web property ID : UA-XXXXX-X|
 |fb_admin_ids|Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. E.g : `9830047,1003342`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.|
 |fb_app_id|Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : `9841307`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.|
+
+#### Sharing options
+
+``` yaml
+# Sharing options
+sharing_options:
+    facebook:
+        icon: "fa-facebook-official"
+        url: "https://www.facebook.com/sharer/sharer.php?u={{post.permalink}}"
+    twitter:
+        icon: "fa-twitter"
+        url: "https://twitter.com/intent/tweet?text={{post.permalink}}"
+    google_plus:
+        icon: "fa-google-plus"
+        url: "https://plus.google.com/share?url={{post.permalink}}"
+```
+
+You can comment and uncomment to enable or disable sharing options. If your own sharing options, follow these steps. E.g with **foo_bar** social network:
+
+1. Add a new option based on the other.
+```
+sharing_options:
+    foo_bar:
+        icon: "fa-foo_bar"
+        url: "https://www.foo_bar.com/sharer/sharer.php?u={{post.permalink}}"
+```
+2. Add a line in the language file that you use (location: `themes/tranquilpeak/languages/`)
+```
+global:
+    share_on_foo_bar: "Share on Foo Bar"
+```
+
+|Variable|Description|
+|---|---|
+|icon|Name of the font awesome icon class without the `fa-` (Go to [font-awesome icons](http://fontawesome.io/icons/) to find class name of icon)|
+|url|URL of the link. use `{{` `}}` to insert post variable. Eg: `{{post.date}}` |
+
 
 ### Enable pages ###
 

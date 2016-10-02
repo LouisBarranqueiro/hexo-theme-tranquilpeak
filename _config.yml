@@ -195,7 +195,9 @@ fb_app_id:
 
 
 # Sharing options
-# Comment and uncomment to enable or disable a sharing option
+# Comment and uncomment to enable or disable sharing options
+# If you wanna add a sharing option, read user documentation :
+# Tranquilpeak configuration > Theme configuration > sharing-options
 sharing_options:
     facebook:
         icon: "fa-facebook-official"
@@ -206,7 +208,7 @@ sharing_options:
     google_plus:
         icon: "fa-google-plus"
         url: "https://plus.google.com/share?url={{post.permalink}}"
-    # Asian
+    # Asian social networks
     # weibo:
     #     title: "Weibo"
     #     icon: "fa-weibo"
@@ -223,7 +225,7 @@ sharing_options:
     #     title: "Renren"
     #     icon: "fa-renren"
     #     url: "http://widget.renren.com/dialog/share?resourceUrl={{post.permalink}}"
-    # Russian
+    # Russian social networks
     # vk:
     #     title: "VK"
     #     icon: "fa-vk"
