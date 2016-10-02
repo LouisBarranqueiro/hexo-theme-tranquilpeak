@@ -13,6 +13,17 @@ module.exports = function(grunt) {
         expand: false,
         keepExpandedHierarchy: false,
         packageSpecific: {
+          fontawesome: {
+            files: [
+              'css/font-awesome.css',
+              'fonts/FontAwesome.otf',
+              'fonts/fontawesome-webfont.eot',
+              'fonts/fontawesome-webfont.svg',
+              'fonts/fontawesome-webfont.ttf',
+              'fonts/fontawesome-webfont.woff',
+              'fonts/fontawesome-webfont.woff2'
+            ]
+          },
           fancybox: {
             files: [
               'source/blank.gif',
