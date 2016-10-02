@@ -4,6 +4,7 @@
     height: $pagination-height;
 
     .pagination {
+        position:    relative;
         height:      $pagination-height;
         line-height: $pagination-height;
         display:     block;
