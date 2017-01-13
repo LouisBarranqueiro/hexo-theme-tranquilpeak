@@ -166,3 +166,10 @@
         display: none;
     }
 }
+
+// Hide sidebar in print layout
+@media print {
+    #sidebar {
+        display: none;
+    }
+}

@@ -81,3 +81,10 @@
         }
     }
 }
+
+// Hide post actions in print layout
+@media print {
+    .post-actions-wrap {
+        display: none;
+    }
+}

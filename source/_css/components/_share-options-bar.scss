@@ -109,3 +109,10 @@
         }
     }
 }
+
+// Hide share options in print layout
+@media print {
+    .share-options-bar {
+        display: none;
+    }
+}

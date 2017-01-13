@@ -110,3 +110,10 @@
         }
     }
 }
+
+// Hide header in print layout
+@media print {
+    #header {
+        display: none;
+    }
+}
