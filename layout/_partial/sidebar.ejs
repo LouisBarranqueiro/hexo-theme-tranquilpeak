@@ -27,7 +27,7 @@
             <% for (var n in theme.sidebar[i]) { %>
                 <li class="sidebar-button">
                     <% if (url_for(theme.sidebar[i][n].url).indexOf(config.url) < 0 && url_for(theme.sidebar[i][n].url).indexOf(':') >= 0) { %>
-                        <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank">
+                        <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank" rel="noopener">
                     <% } else { %>
                         <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>"
                             <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %> href="<%- url_for(' ') %>"
