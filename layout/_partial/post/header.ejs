@@ -1,7 +1,7 @@
 <div class="post-header main-content-wrap <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>">
     <% if (post.link) { %>
         <h1 itemprop="headline">
-            <a class="link" href="<%- url_for(post.link) %>" target="_blank" itemprop="url">
+            <a class="link" href="<%- url_for(post.link) %>" target="_blank" rel="noopener" itemprop="url">
                 <%= post.title || '(' + __('post.no_title') + ')' %>
             </a>
         </h1>
