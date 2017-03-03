@@ -106,6 +106,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-1.8.0]
 (https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.8.0/hexo-theme-tranquilpeak-built-for-production-1.8.0.zip)
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
+3. Run `npm install`, `bower install` and `grunt` in the `themes/tranquilpeak` directory
+4. Run `hexo server` in the root of your application
 
 ## Hexo configuration ##
 
