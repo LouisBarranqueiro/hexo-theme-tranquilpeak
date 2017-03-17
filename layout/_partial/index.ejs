@@ -1,5 +1,6 @@
 <section class="postShorten-group main-content-wrap">
     <% page.posts.each(function(post) { %>
+    <% if (page.lang == post.lang) { %>
     <%
         var tableOfContents = null;
         var thumbnailImageUrl = post.thumbnailImageUrl;
@@ -95,6 +96,7 @@
             <% thumbnailImageUrl = null; %>
         <% } %>
     </article>
+    <% } %>
     <% }) %>
     <%- partial('pagination', {type: 'page'}) %>
 </section>
