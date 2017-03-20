@@ -10,4 +10,7 @@
         <span><%= __('post.categorized_in')  %> </span>
         <%- partial('category', {categories: post.categories})%>
     <% } %>
+    <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="<%= (post.author ? post.author : config.author) %>" />
+    </div>
 </div>
