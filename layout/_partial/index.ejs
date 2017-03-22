@@ -32,8 +32,14 @@
         <div class="postShorten-wrap">
             <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "top") { %>
                 <a href="<%- url_for(post.path) %>">
-                    <div class="postShorten-thumbnailimg">
-                        <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+                    <div class="postShorten-thumbnailimg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                        <img alt="" src="<%= thumbnailImageUrl %>"/>
+                        <meta itemprop="url" content="<%= thumbnailImageUrl %>">
+                        <% // width and height are required ImageObject, values hardcode should have way to populate from
+                           // css variables 
+                        %>
+                        <meta itemprop="width" content="140">
+                        <meta itemprop="height" content="140">
                     </div>
                 </a>
                 <% thumbnailImageUrl = null; %>
@@ -88,8 +94,14 @@
         </div>
         <% if (thumbnailImageUrl !== null && thumbnailImagePosition !== "top") { %>
             <a href="<%- url_for(post.path) %>">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+                <div class="postShorten-thumbnailimg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                    <img alt="" src="<%= thumbnailImageUrl %>"/>
+                    <meta itemprop="url" content="<%= thumbnailImageUrl %>">
+                    <% // width and height are required ImageObject, values hardcode should have way to populate from
+                       // css variables 
+                    %>
+                    <meta itemprop="width" content="140">
+                    <meta itemprop="height" content="140">
                 </div>
             </a>
             <% thumbnailImageUrl = null; %>
