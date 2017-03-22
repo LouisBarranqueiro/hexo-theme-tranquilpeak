@@ -47,11 +47,11 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     <% if (post.link) { %>
-                        <a class="link-unstyled" href="<%- url_for(post.link) %>">
+                        <a class="link-unstyled" href="<%- url_for(post.link) %>" itemprop="mainEntityOfPage">
                             <%= post.title || '(' + __('post.no_title') + ')' %>
                         </a>
                     <% } else { %>
-                        <a class="link-unstyled" href="<%- url_for(post.path) %>">
+                        <a class="link-unstyled" href="<%- url_for(post.path) %>" itemprop="mainEntityOfPage">
                             <%= post.title || '(' + __('post.no_title') + ')' %>
                         </a>
                     <% } %>
