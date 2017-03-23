@@ -1,0 +1,25 @@
+<% if (theme.onesignal_app_id) { %>
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+        appId: '<%= theme.onesignal_app_id %>',
+      <% if (theme.onesignal_safari_web_id) { %>
+        safari_web_id: '<%= theme.onesignal_safari_web_id %>',
+      <% } %>
+          autoRegister: false, /* Set to true to automatically prompt visitors */
+      <% if (theme.onesignal_app_subdomain !== null) { %>
+          subdomainName: '<%= theme.onesignal_subdomain %>',
+          /*
+                   subdomainName: Use the value you entered in step 1.4: http://imgur.com/a/f6hqN
+                         */
+          httpPermissionRequest: {
+                  enable: true
+                },
+      <% } %>
+          notifyButton: {
+                    enable: true /* Set to false to hide */
+                }
+        }]);
+    </script>
+<% } %>

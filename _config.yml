@@ -192,6 +192,10 @@ gravatar_email:
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
 fb_app_id:
+# Your Opensignal.com App ID, Safari Web Id (if enabled) and subdomain (do not set later if your site is fully HTTPS)
+onesignal_app_id: 
+onesignal_subdomain: 
+onesignal_safari_web_id: 
 
 
 # Sharing options
