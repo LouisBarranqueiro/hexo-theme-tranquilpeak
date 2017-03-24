@@ -72,5 +72,4 @@ notify:
     # Texto pedindo autorização para push (Markdown e HTML suportados)
     text: "Gostaria de notificá-lo quando um novo artigo for publicado. Tudo bem? Garanto que você não receberá mais que uma notificação por semana."
     accept: "Sim"
-    reject: "No, thanks"
     cancel: "Cancelar notificações"

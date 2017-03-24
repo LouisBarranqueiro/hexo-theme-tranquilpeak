@@ -64,3 +64,9 @@ author:
     bio: "یادداشت‌های یه المپیاد کامپیوتری در حال یادگیری لینوکس!"
     # Your job
     job: "المپیادی، برنامه نویس!"
+
+notify:
+    # Text asking permission to push notification (Markdown and HTML supported)
+    text: "May I send you push notifications?"
+    accept: "Yes"
+    cancel: "Cancel notifications"
