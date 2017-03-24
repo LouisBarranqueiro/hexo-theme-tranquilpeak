@@ -19,6 +19,7 @@ global:
     linkedin: "LinkedIn"
     mail: "Mail"
     rss: "RSS"
+    push_notification: "Notificação web"
     share_on_facebook: "Partilhar no Facebook"
     share_on_twitter: "Partilhar no Twitter"
     share_on_google_plus: "Partilhar no Google+"
@@ -66,3 +67,10 @@ author:
     bio: ""
     # Seu trabalho
     job: ""
+
+notify:
+    # Texto pedindo autorização para push (Markdown e HTML suportados)
+    text: "Gostaria de notificá-lo quando um novo artigo for publicado. Tudo bem? Garanto que você não receberá mais que uma notificação por semana."
+    accept: "Sim"
+    reject: "No, thanks"
+    cancel: "Cancelar notificações"

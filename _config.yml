@@ -91,6 +91,10 @@ sidebar:
             title: global.rss
             url: /atom.xml
             icon: rss
+        webpush:
+            title: global.push_notification 
+            url: /#notify
+            icon: bell
 
 
 # Header configuration

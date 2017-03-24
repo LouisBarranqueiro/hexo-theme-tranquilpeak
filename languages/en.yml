@@ -24,6 +24,7 @@ global:
     odnoklassniki: "Odnoklassniki"
     linkedin: "LinkedIn"
     mail: "Mail"
+    push_notification: "Push notification"
     rss: "RSS"
     share_on_facebook: "Share on Facebook"
     share_on_twitter: "Share on Twitter"

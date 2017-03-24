@@ -1,0 +1,32 @@
+<% /* Define Onesignal notification permission request */ %>
+<% var authorPicture = null; %>
+<% if (theme.gravatar_email && theme.gravatar_email.length) { %>
+    <% authorPicture = gravatar(theme.gravatar_email, 110); %>
+<% } else if (theme.author.picture && theme.author.picture.length) { %>
+    <% if (is_remote_url(theme.author.picture)) { %>
+        <% authorPicture = theme.author.picture; %>
+    <% } else { %>
+        <% authorPicture = url_for(theme.image_dir + '/' + theme.author.picture); %>
+    <% } %>
+<% } %>
+<div id="notify">
+    <div id="notify-card">
+        <div id="notify-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        <% if (authorPicture) { %>
+            <img id="notify-card-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
+        <% } %>
+            <h4 id="notify-card-name"><%= config.title %></h4>
+        <% if (__('notify.text')) { %>
+            <div id="notify-card-text"><%- markdown(__('notify.text')) %></div>
+        <% } %>
+        <% if (__('author.job')) { %>
+            <div id="notify-card-buttons">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <%- markdown(__('author.job')) %>
+            </div>
+        <% } %>
+    </div>
+</div>
