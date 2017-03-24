@@ -20,12 +20,14 @@
             <h4 id="notify-card-name"><%= config.title %></h4>
         <% if (__('notify.text')) { %>
             <div id="notify-card-text"><%- markdown(__('notify.text')) %></div>
-        <% } %>
-        <% if (__('author.job')) { %>
+
             <div id="notify-card-buttons">
-                <i class="fa fa-briefcase"></i>
-                <br/>
-                <%- markdown(__('author.job')) %>
+                <a href="#" id="notify-subscribe-link" >
+                    <i class="fa fa-check"><%- markdown(__('notify.accept')) %></i>
+                </a>
+                <a href="#" id="notify-unsubscribe-link" >
+                    <i class="fa fa-bell-slash"><%- markdown(__('notify.cancel')) %></i>
+                </a>
             </div>
         <% } %>
     </div>

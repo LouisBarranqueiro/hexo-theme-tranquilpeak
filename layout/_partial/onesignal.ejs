@@ -1,6 +1,21 @@
 <% if (theme.onesignal_app_id) { %>
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
   <script>
+    function subscribe() {
+        OneSignal.push(["registerForPushNotifications"]);
+        event.preventDefault();
+        // Hides accept and show cancel
+        document.getElementById("notify-subscribe-link").style.display = 'none';
+        document.getElementById("notify-unsubscribe-link").style.display = '';
+    }
+
+    function unsubscribe() {
+        OneSignal.push(["setSubscription", false]);
+        // Hides cancel and show accept
+        document.getElementById("notify-subscribe-link").style.display = '';
+        document.getElementById("notify-unsubscribe-link").style.display = 'none';
+    }
+
     var OneSignal = window.OneSignal || [];
     OneSignal.push(["init", {
         appId: '<%= theme.onesignal_app_id %>',
@@ -18,8 +33,30 @@
                 },
       <% } %>
           notifyButton: {
-                    enable: true /* Set to false to hide */
+                    enable: false /* Set to false to hide */
                 }
         }]);
-    </script>
+    OneSignal.push(function() {
+        // If we're on an unsupported browser, do nothing
+        if (!OneSignal.isPushNotificationsSupported()) {
+            return;
+        }
+        OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+            if (isEnabled) {
+                // The user is subscribed to notifications
+                // Hides accept and show cancel
+                document.getElementById("notify-subscribe-link").addEventListener('click', subscribe);
+                document.getElementById("notify-subscribe-link").style.display = 'none';
+                document.getElementById("notify-unsubscribe-link").addEventListener('click', unsubscribe);
+                document.getElementById("notify-unsubscribe-link").style.display = '';
+            } else {
+                // Hides cancel and show accept
+                document.getElementById("notify-subscribe-link").addEventListener('click', subscribe);
+                document.getElementById("notify-subscribe-link").style.display = '';
+                document.getElementById("notify-unsubscribe-link").addEventListener('click', unsubscribe);
+                document.getElementById("notify-unsubscribe-link").style.display = 'none';
+            }
+        });
+    });
+  </script>
 <% } %>
