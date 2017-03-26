@@ -1,0 +1,62 @@
+# Datumsformat welches überall im Blog angezeigt wird
+date_format: "DD MMM YYYY"
+
+global:
+    home: "Home"
+    categories: "Kategorien"
+    category: "Kategorie"
+    tags: "Tags"
+    tag: "Tag"
+    archives: "Archiv"
+    search: "Suche"
+    about: "Über"
+    author_picture: "Bild des Autors"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google Plus"
+    linkedin: "LinkedIn"
+    mail: "E-Mail"
+    rss: "RSS"
+    share_on_google_plus: "Teilen auf Google Plus"
+    share_on_facebook: "Teilen auf Facebook"
+    share_on_twitter: "Teilen auf Twitter"
+    search_category: "Suche nach Kategorie"
+    search_tag: "Suche nach Tags"
+    search_date: "Such Datum (YYYY/MM/DD)"
+    posts_found:
+        zero: "keinen Beitrag gefunden"
+        one: "1 Beitrag gefunden"
+        other: "{n} Einträge gefunden"
+    categories_found:
+        zero: "keine Kategorie gefunden"
+        one: "1 Kategorie gefunden"
+        other: "{n} Kategorien gefunden"
+    tags_found:
+        zero: "keinen Tags gefunden"
+        one: "1 Tag gefunden"
+        other: "{n} Tags gefunden"
+
+pagination:
+    page: "Seite %d"
+    of: "von %d"
+    newer_posts: "NEUERE BEITRÄGE"
+    older_posts: "ÄLTERE BEITRÄGE"
+    previous: "FRÜHER"
+    next: "NÄCHSTER"
+
+post:
+    no_title : "kein Titel"
+    categorized_in: "in"
+    tagged_in: "GETAGGT IN"
+    toc: "Inhaltsverzeichnis"
+    read_more: "Weiterlesen"
+    go_to_website: "Zur Website"
+    comment_and_share: "Kommentieren und teilen"
+
+author:
+    # Deine Biografie (Markdown and HTML supported)
+    bio: ""
+    # Dein Job
+    job: ""
