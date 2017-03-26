@@ -47,7 +47,7 @@ pagination:
     next: "NÄCHSTER"
 
 post:
-    no_title : "kein Title"
+    no_title : "kein Titel"
     categorized_in: "in"
     tagged_in: "GETAGGT IN"
     toc: "Inhaltsverzeichnis"
