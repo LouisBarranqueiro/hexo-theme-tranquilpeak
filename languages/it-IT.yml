@@ -57,6 +57,6 @@ post:
 
 author:
     # LA tua biografia (Markdown e HTML sono supportati)
-    bio:
+    bio: ""
     # Il tuo lavoro
-    job: 
+    job: ""
