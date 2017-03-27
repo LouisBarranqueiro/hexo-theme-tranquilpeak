@@ -40,7 +40,7 @@
                 <%- partial('post/tag', {tags: post.tags})%>
             </div>
         <% } %>
-        <% if (!post.hideActions) { %>
+        <% if (post.actions === undefined || post.actions) { %>
             <%- partial('post/actions', {postContent: postContent}) %>
         <% } %>
         <% if (post.comments) { %>

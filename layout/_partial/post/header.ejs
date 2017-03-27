@@ -10,7 +10,7 @@
             <%= post.title || '(' + __('post.no_title') + ')' %>
         </h1>
     <% } %>
-    <% if (!post.hideMeta) { %>
+    <% if (post.meta === undefined || post.meta) { %>
         <%- partial('meta',{classes: ['post-meta']}) %>
     <% } %>
 </div>
