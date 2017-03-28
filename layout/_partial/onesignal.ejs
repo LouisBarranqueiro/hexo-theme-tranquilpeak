@@ -1,4 +1,7 @@
 <% if (theme.onesignal_app_id) { %>
+  <% if (theme.onesignal_app_subdomain !== null) { %>
+  <link rel="manifest" href="/manifest.json">
+  <% } %>
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
   <script>
     function subscribe() {
