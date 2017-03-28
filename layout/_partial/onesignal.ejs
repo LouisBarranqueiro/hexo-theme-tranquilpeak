@@ -1,5 +1,5 @@
 <% if (theme.onesignal_app_id) { %>
-  <% if (theme.onesignal_app_subdomain !== null) { %>
+  <% if (theme.onesignal_subdomain === null) { %>
   <link rel="manifest" href="/manifest.json">
   <% } %>
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
@@ -26,7 +26,7 @@
         safari_web_id: '<%= theme.onesignal_safari_web_id %>',
       <% } %>
           autoRegister: false, /* Set to true to automatically prompt visitors */
-      <% if (theme.onesignal_app_subdomain !== null) { %>
+      <% if (theme.onesignal_subdomain !== null) { %>
           subdomainName: '<%= theme.onesignal_subdomain %>',
           /*
                    subdomainName: Use the value you entered in step 1.4: http://imgur.com/a/f6hqN
