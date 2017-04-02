@@ -612,6 +612,8 @@ gallery:
     - http://i.imgur.com/o9r19kD.jpg "Dubai"
     - https://example.com/orignal.jpg https://example.com/thumbnail.jpg "Sidney"
 comments: false
+meta: false
+actions: false
 ```
 
 |Variable|Description|
@@ -628,7 +630,9 @@ comments: false
 |coverCaption|Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2015/05/13/Cover-image-showcase/)|
 |coverMeta|`in`: display post meta (title, date and categories) on cover image, `out`: display meta (title, date and categories) under cover image as usual. Default behavior : `in`|
 |gallery|Formerly **photos**. Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `original url [thumbnail url] [caption]`, E.g : `https://example.com/original.jpg https://example.com/thumbnail.jpg "New York"`|
-|comments|Disable the comment of the post.
+|comments|Disable the comment of the post.|
+|meta|Disable post meta (date, categories).|
+|actions|Disable post actions (navigation, share links).|
 
 Example: 
 A post on index page will look like this with :`thumbnailImagePosition` set to `bottom`:  
@@ -798,7 +802,28 @@ E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" 
 #### Fancybox
 
 `fancybox` tag is deprecated since Tranquilpeak 1.3. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
-  
+
+### Custom 404 error page
+
+When a user requests a page that the server cannot find, a standard *404* error page will be displayed. To create a custom 404 page that fits the theme first create a `404.md` file in your Hexo `source` folder.
+
+Hide post meta, actions and comments using front-matter settings:
+
+``` yaml
+title: Page not found
+meta: false
+actions: false
+comments: false
+```
+
+Now you can customize your 404 error page just like any other blog post.
+Finally, you need to tell your server to use `/404.html` (which Hexo generates out of `404.md`) as your default 404 error page. Here are tutorials for some common web servers/providers:
+
+ - [Apache](https://www.digitalocean.com/community/tutorials/how-to-create-a-custom-404-page-in-apache)
+ - [Nginx](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-to-use-custom-error-pages-on-ubuntu-14-04)
+ - [GitHub Pages](https://help.github.com/articles/creating-a-custom-404-page-for-your-github-pages-site/)
+ - [Amazon Cloudfront/S3](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html)
+
 ## Running ##
 
 Run `hexo server` and start writing! :)

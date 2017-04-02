@@ -40,7 +40,9 @@
                 <%- partial('post/tag', {tags: post.tags})%>
             </div>
         <% } %>
-        <%- partial('post/actions', {postContent: postContent}) %>
+        <% if (post.actions === undefined || post.actions) { %>
+            <%- partial('post/actions', {postContent: postContent}) %>
+        <% } %>
         <% if (post.comments) { %>
             <% if (theme.disqus_shortname) { %>
                 <%- partial('post/disqus') %>

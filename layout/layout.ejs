@@ -25,7 +25,7 @@
                 <%- body %>
                 <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
             </div>
-            <% if (is_post()) { %>
+            <% if (is_post() && (page.actions === undefined || page.actions)) { %>
                 <div id="bottom-bar" class="post-bottom-bar" data-behavior="<%= sidebarBehavior %>">
                     <%- partial('_partial/post/actions', {post: page}) %>
                 </div>
