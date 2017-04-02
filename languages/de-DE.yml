@@ -60,3 +60,9 @@ author:
     bio: ""
     # Dein Job
     job: ""
+
+notify:
+    # Text asking permission to push notification (Markdown and HTML supported)
+    text: "May I send you push notifications?"
+    accept: "Yes"
+    cancel: "Cancel notifications"

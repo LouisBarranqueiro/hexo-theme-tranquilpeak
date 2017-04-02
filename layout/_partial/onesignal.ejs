@@ -1,0 +1,65 @@
+<% if (theme.onesignal_app_id) { %>
+  <% if (theme.onesignal_subdomain === null) { %>
+  <link rel="manifest" href="/manifest.json">
+  <% } %>
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+  <script>
+    function subscribe() {
+        OneSignal.push(["registerForPushNotifications"]);
+        event.preventDefault();
+        // Hides accept and show cancel
+        document.getElementById("notify-subscribe-link").style.display = 'none';
+        document.getElementById("notify-unsubscribe-link").style.display = '';
+    }
+
+    function unsubscribe() {
+        OneSignal.push(["setSubscription", false]);
+        // Hides cancel and show accept
+        document.getElementById("notify-subscribe-link").style.display = '';
+        document.getElementById("notify-unsubscribe-link").style.display = 'none';
+    }
+
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+        appId: '<%= theme.onesignal_app_id %>',
+      <% if (theme.onesignal_safari_web_id) { %>
+        safari_web_id: '<%= theme.onesignal_safari_web_id %>',
+      <% } %>
+          autoRegister: false, /* Set to true to automatically prompt visitors */
+      <% if (theme.onesignal_subdomain !== null) { %>
+          subdomainName: '<%= theme.onesignal_subdomain %>',
+          /*
+                   subdomainName: Use the value you entered in step 1.4: http://imgur.com/a/f6hqN
+                         */
+          httpPermissionRequest: {
+                  enable: true
+                },
+      <% } %>
+          notifyButton: {
+                    enable: false /* Set to false to hide */
+                }
+        }]);
+    OneSignal.push(function() {
+        // If we're on an unsupported browser, do nothing
+        if (!OneSignal.isPushNotificationsSupported()) {
+            return;
+        }
+        OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+            if (isEnabled) {
+                // The user is subscribed to notifications
+                // Hides accept and show cancel
+                document.getElementById("notify-subscribe-link").addEventListener('click', subscribe);
+                document.getElementById("notify-subscribe-link").style.display = 'none';
+                document.getElementById("notify-unsubscribe-link").addEventListener('click', unsubscribe);
+                document.getElementById("notify-unsubscribe-link").style.display = '';
+            } else {
+                // Hides cancel and show accept
+                document.getElementById("notify-subscribe-link").addEventListener('click', subscribe);
+                document.getElementById("notify-subscribe-link").style.display = '';
+                document.getElementById("notify-unsubscribe-link").addEventListener('click', unsubscribe);
+                document.getElementById("notify-unsubscribe-link").style.display = 'none';
+            }
+        });
+    });
+  </script>
+<% } %>

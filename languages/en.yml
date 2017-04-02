@@ -24,6 +24,7 @@ global:
     odnoklassniki: "Odnoklassniki"
     linkedin: "LinkedIn"
     mail: "Mail"
+    push_notification: "Push notification"
     rss: "RSS"
     share_on_facebook: "Share on Facebook"
     share_on_twitter: "Share on Twitter"
@@ -72,3 +73,9 @@ author:
     bio: ""
     # Your job
     job: ""
+
+notify:
+    # Text asking permission to push notification (Markdown and HTML supported)
+    text: "May I send you push notifications?"
+    accept: "Yes"
+    cancel: "Cancel notifications"

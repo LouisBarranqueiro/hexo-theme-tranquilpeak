@@ -1,0 +1,113 @@
+#notify {
+    display:     none;
+    position:    fixed;
+    top:         0;
+    left:        0;
+    width:       100%;
+    height:      100%;
+    background:  map-get($notify, background);
+    text-align:  center;
+    line-height: 100%;
+    overflow-y:  auto;
+    overflow-x:  hidden;
+    z-index:     map-get($z-indexes, l-notify);
+
+    #notify-card {
+        position:      relative;
+        // Position the card out the page to improve the javascript drop effect
+        top:           -1000px;
+        display:       block;
+        background:    white;
+        max-width:     400px;
+        margin:        15px auto;
+        border-radius: 3px;
+        padding:       30px 0;
+        @include prefix(box-shadow, 0 0 5px rgba(0, 0, 0, 0.50), 'webkit' 'moz');
+
+        #notify-btn-close {
+            position: absolute;
+            top:      15px;
+            right:    15px;
+            color:    map-get($colors, light);
+            cursor:   pointer;
+
+            &:hover {
+                color: darken(map-get($colors, light), 15);
+            }
+        }
+        #notify-card-picture {
+            margin-bottom: 15px;
+        }
+        #notify-card-name {
+            margin-top:    0;
+            margin-bottom: 20px;
+        }
+        #notify-card-bio {
+            padding: 0 30px;
+            margin:  0 0 30px 0;
+        }
+        #notify-card-job,
+        #notify-card-location {
+            display:        inline-block;
+            vertical-align: top;
+        }
+        #notify-card-job,
+        #notify-card-location,
+        #notify-card-bio {
+            font-size:   $font-size-base;
+            line-height: $line-height-base;
+            font-weight: 400;
+            color:       map-get($colors, base);
+        }
+    }
+}
+
+// Improve responsiveness of notify card on small screen and down
+@media #{$small-and-down} {
+    #notify {
+        #notify-card {
+            width: 90%;
+
+            #notify-card-job,
+            #notify-card-location {
+                display: block;
+                width:   calc(100% - 60px); // 60px = padding right + padding left of `#notify-card`
+                padding: 0 30px;
+            }
+            #notify-card-picture {
+                width:         90px;
+                height:        90px;
+                border-radius: 45px;
+            }
+            #notify-card-job {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+// Improve responsiveness of notify card on medium screen and up
+@media #{$medium-and-up} {
+    #notify {
+        #notify-card {
+            width: 80%;
+            #notify-card-picture {
+                width:         110px;
+                height:        110px;
+                border-radius: 55px;
+            }
+            #notify-card-job,
+            #notify-card-location {
+                display: inline-block;
+                // 48px =  padding right of `#notify-card-job` + `#notify-card-location`
+                width:   calc((100% / 2) - 48px);
+            }
+            #notify-card-job {
+                padding: 0 15px 0 30px;
+            }
+            #notify-card-location {
+                padding: 0 30px 0 15px;
+            }
+        }
+    }
+}

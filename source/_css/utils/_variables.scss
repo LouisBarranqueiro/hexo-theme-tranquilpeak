@@ -69,6 +69,7 @@ $z-indexes: (
     'l-header':            20,
     'l-sidebar':           20,
     'l-about':             30,
+    'l-notify':            30,
     'c-mask':              30,
     'c-post-bottom-bar':   40,
     'c-share-options-bar': 50,
@@ -151,6 +152,11 @@ $sidebar: (
     'xlg-screen-width': 500px,
     'background':       rgba(17, 26, 35, 0),
     'color':            #ebebeb
+);
+
+// Notify Card
+$notify: (
+    'background': rgba(17, 26, 35, 0),
 );
 
 // Main

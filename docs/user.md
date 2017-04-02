@@ -35,6 +35,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Algolia](#algolia)
     * [Google Analytics](#google-analytics)
         * [Exclude hostname (localhost) while writing articles](#exclude-hostname-localhost-while-writing-articles)
+    * [Onesignal Push Notifications](#onesignal-push-notifications)
 - [Quick & easy modifications](#quick--easy-modifications)  
     * [Prerequisites](#prerequisites)
     * [Change global style](#change-global-style)
@@ -73,8 +74,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Background cover image
 - Beautiful about page
 - Support Open Graph protocol
-- Support internationalization (i18
-- Easily customizable (fonts, colors, layout elements, code coloration, etc..
+- Support internationalization (i18)
+- Easily customizable (fonts, colors, layout elements, code coloration, etc..)
   
 **Posts features :**  
 
@@ -97,6 +98,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Gravatar
 - Algolia
 - Facebook Insights
+- Onesignal Webpush notifications
 
 ## Requirements ##
 
@@ -356,6 +358,9 @@ gravatar_email:
 google_analytics_id: 
 fb_admin_ids:
 fb_app_id:
+onesignal_app_id:
+onesignal_subdomain:
+onesignal_safari_web_id:
 ```
 
 |Variable|Description|
@@ -366,6 +371,9 @@ fb_app_id:
 |google_analytics_id|Your Google analystics web property ID : UA-XXXXX-X|
 |fb_admin_ids|Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. E.g : `9830047,1003342`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.|
 |fb_app_id|Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : `9841307`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.|
+|onesignal_app_id|Your app_id is designated by [Onesignal](https://onesignal.com) when you create the blog app on their dasboard, it is used to notify users subscribed using browsers like Chrome and Firefox|
+|onesignal_safari_web_id|Same as app_id but used only if you include Safari browser support|
+|onesignal_subdomain|Subdomain property is only necessary if your blog is accessible through HTTP, it fully supports HTTPS ([recommended](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)) than leave this blank|
 
 #### Sharing options
 
@@ -521,6 +529,27 @@ Follow these steps, to add new filter :
 6. Enter a name for the filter
 7. Select **Custom filter**, **Filter Field** : `Hostname`, **Filter Pattern** :  `(.*?localhost.*?)`
 8. Click on **Save** button
+
+### Onesignal Push Notifications ###
+
+[Onesignal](https://onesignal.com) is a service to send push notifications to users subscribed to your site. First you need to create an account on their
+service and then create an `App`. App is how onesignal call their push "channels", one app can support multiple types of notifications, for your site you
+want the webpush type. Follow the instructions there to setup Chrome/Firefox support and optionally Safari as well; after finish take note of app_id and
+safari_app_id to complete the configuration file. It is important to notice that there are two types of support for webpush messages. 
+
+The first one is to be used by sites acessible from HTTP protocol (or from both HTTP and HTTPS). The HTTP traffic is plain text and the lack of security
+ implies that you cannot push messages from "yourdomain.com" but from something like "yourdomain.com.onegsinal.com"; it may also annoy your end user since
+he needs to agree uppon a onesignal modal (not customized by this theme). To use this type, take note of the subdomain you configured at onesignal dashboard
+during webpush app setup and configure it in the theme configuration. Let it blank to use second method below.
+
+The second and preferd method is used for sites that does not accept HTTP traffic or redirects it to HTTPS. Remember that Google ranks HTTP sites lower than
+HTTPS counterparts so it is recommended you upgrade your site if necessary. When this type of webpush is used, users will be notified by yourdomain.com referer,
+ what looks way more professional. To use this method configure onesignal app according and leave `onesignal_subdomain` configuration blank.
+
+In either case, users can subscribe to your site notifications by clicking on the bell icon on the sidebar and clicking accept. The same place offers the user
+a way to unsubscribe (opt-out as onesignal calls it).
+
+In order to send notifications use onesignal dashboard or any other method provided.
 
 ## Quick & easy modifications ##
 
