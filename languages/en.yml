@@ -63,9 +63,12 @@ post:
     categorized_in: "in"
     tagged_in: "TAGGED IN"
     toc: "Table of Contents"
+    back_to_top: "Back to top"
     read_more: "Continue reading"
     go_to_website: "Go to website"
     comment_and_share: "Comment and share"
+    comment: "Leave a comment"
+    share: "Share this post"
 
 author:
     # Your biography (Markdown and HTML supported)
