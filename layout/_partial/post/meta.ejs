@@ -6,8 +6,14 @@
 		    <%= post.date.locale(page.lang).format(__('date_format')) %>
     	<% } %>
     </time>
+    <% if (post.updated) { %>
+    <time itemprop="dateModified" datetime="<%= post.updated.format() %>" />
+    <% } %>
     <% if ((post.categories) && (post.categories.length > 0)) { %>
         <span><%= __('post.categorized_in')  %> </span>
         <%- partial('category', {categories: post.categories})%>
     <% } %>
+    <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="<%= (post.author ? post.author : config.author) %>" />
+    </div>
 </div>

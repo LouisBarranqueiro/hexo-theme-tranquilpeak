@@ -10,13 +10,13 @@
     <% } %>
 <% } %>
 <nav id="sidebar" data-behavior="<%= sidebarBehavior %>">
-    <div class="sidebar-container">
+    <div class="sidebar-container" itemscope itemtype="http://schema.org/Person">
         <% if (authorPicture) { %>
             <div class="sidebar-profile">
-                <a href="<%- url_for('/#about') %>">
-                    <img class="sidebar-profile-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
+                <a href="<%- url_for('/#about') %>" itemprop="url">
+                    <img itemprop="image" class="sidebar-profile-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
                 </a>
-                <h4 class="sidebar-profile-name"><%= config.author %></h4>
+                <h4 class="sidebar-profile-name" itemprop="name"><%= config.author %></h4>
                 <% if (__('author.bio')) { %>
                     <h5 class="sidebar-profile-bio"><%- markdown(__('author.bio')) %></h5>
                 <% } %>
@@ -27,9 +27,9 @@
             <% for (var n in theme.sidebar[i]) { %>
                 <li class="sidebar-button">
                     <% if (url_for(theme.sidebar[i][n].url).indexOf(config.url) < 0 && url_for(theme.sidebar[i][n].url).indexOf(':') >= 0) { %>
-                        <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank" rel="noopener">
+                        <a itemprop="sameAs" class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank" rel="noopener">
                     <% } else { %>
-                        <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>"
+                        <a itemprop="sameAs" class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>"
                             <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %> href="<%- url_for(' ') %>"
                             <% } else if (theme.sidebar[i][n].url.indexOf("/") === 0) { %> href="<%- url_for(theme.sidebar[i][n].url.substr(1)) %>"
                             <% } else { %> href="<%- url_for(theme.sidebar[i][n].url) %>"<% } %>
