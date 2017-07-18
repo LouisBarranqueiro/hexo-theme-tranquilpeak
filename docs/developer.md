@@ -89,8 +89,8 @@ tranquilpeak
 
 ### Languages ###
 
-Each files contains all labels used in the theme. 
-If you want to add a new language, duplicate an existing language file and replace all string by their translation.
+Each file contains all the labels used in the theme.
+If you want to add a new language, duplicate an existing language file and replace every string with their translation.
 
 ### Views ###
 
@@ -118,7 +118,7 @@ If you want to add a new language, duplicate an existing language file and repla
     └── tags
 ```
 
-Each scrips is executed a the startup of Hexo. They are separed by categories:
+Each script is executed at the startup of Hexo. They are separated by categories:
 
 |Folder|Description|
 |---|---|
@@ -133,7 +133,7 @@ Each scrips is executed a the startup of Hexo. They are separed by categories:
 #### Stylesheets
 
 SCSS structure follow 7-1 pattern of [sass guidelines](http://sass-guidelin.es/#the-7-1-pattern)  
-If you want more information and to understand better this code, consult [sass guidelines](http://sass-guidelin.es/)  
+If you want more information to better understand this code, consult [sass guidelines](http://sass-guidelin.es/)
 
 #### Fonts
 
@@ -246,7 +246,7 @@ var tranquilpeakCssFilesToInject = [
 |tranquilpeakJsFilesToInject|Files injected in `layout/_partial/script.ejs` (developement environment)|
 |tranquilpeakCssFilesToInject|Files injected in`layout/_partial/head.ejs` (developement environment)|
 
-On production environment, these javascript and stylesheets files are concatenate and minify in 1 javascript file and 1 stylesheet file and linked to their respective views
+In the production environment, these javascript and stylesheets files are concatenated and minified into 1 javascript file and 1 stylesheet file and linked to their respective views.
 
 ### Config tasks 
 
