@@ -118,6 +118,8 @@ If it's your first time using Hexo, please check [Hexo official documentation](h
 
 If you want to take advantage of cover image, thumbnail image, and image gallery features, you have to enable post assets folder by setting `post_asset_folder` to  `true`in `_config.yml`.
 
+**Note:** Anyway you have to specify the absolute path of post asset (or the relative path from the root of your site) because of [disabled relative links](#disable-relative-links)
+
 ### Disable relative links ###
 
 You have to set `relative_link` to `false` otherwise if you enter your blog url without the end `/`, like this `http://yourdomain.com/blog`, all assets will not be loaded.
