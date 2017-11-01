@@ -174,20 +174,22 @@ archive_pagination: true
 category_pagination: true
 tag_pagination: true
 
-# Gitment
+# Gitment - A github issue comment tool.
+# Repository: https://github.com/imsun/gitment
+# Demo: https://imsun.github.io/gitment/
 # Introduction: https://imsun.net/posts/gitment-introduction/
 # Quick link to setup a new Github application: https://github.com/settings/applications/new
-#gitment:
-  # Switch
-  #enable: false
-  # Your Github ID here (Github username):
-  #githubID:
-  # The repo to store comments:
-  #repo:
-  # Your client ID:
-  #ClientID:
-  # Your client secret:
-  #ClientSecret:
+# gitment:
+#   # Switch
+#   enable: false
+#   # Your Github ID here (Github username):
+#   githubID:
+#   # The repo to store comments:
+#   repo:
+#   # Your client ID:
+#   ClientID:
+#   # Your client secret:
+#   ClientSecret:
 
 # Integrated services
 # You can't use Disqus and Duoshuo together
