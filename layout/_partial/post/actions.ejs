@@ -38,13 +38,19 @@
                 </a>
             </li>
         <% } %>
-        <% if (post.comments && (theme.disqus_shortname || theme.duoshuo_shortname)) { %>
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#<%= (theme.duoshuo_shortname ? 'ds-thread' : 'disqus_thread') %>">
+        <% if (post.comments) { %>
+	    <li class="post-action">
+              <% if (theme.gitment.enable) { %>
+                <a class="post-action-btn btn btn--default" href="#gcomment">
+                     <i class="fa fa-comment-o"></i>
+                </a>
+              <% } else { %>
+	        <a class="post-action-btn btn btn--default" href="#<%= (theme.duoshuo_shortname ? 'ds-thread' : 'disqus_thread') %>">
                     <i class="fa fa-comment-o"></i>
                 </a>
-            </li>
-        <% } %>
+	      <% } %>
+	    </li>
+	<% } %>
         <li class="post-action">
             <% if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(post.content)) { %>
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">

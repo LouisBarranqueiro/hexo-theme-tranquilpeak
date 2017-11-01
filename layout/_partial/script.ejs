@@ -36,6 +36,33 @@
                 || document.getElementsByTagName('body')[0]).appendChild(ds);
             })();
         </script>
+    <% } else if (theme.gitment.enable) { %>
+        <script type="text/javascript">
+            (function() {
+                var gc = document.createElement('script');
+                gc.type = 'text/javascript';gc.async = true;
+                gc.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//imsun.github.io/gitment/dist/gitment.browser.js';
+                gc.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(gc);
+        		var gc_style = document.createElement( "link" );
+        		gc_style.href = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//imsun.github.io/gitment/style/default.css';
+        		gc_style.type = "text/css";
+        		gc_style.rel = "stylesheet";
+        		gc_style.media = "screen,print";
+        		document.getElementsByTagName('head')[0].appendChild(gc_style);
+        		var gitment = new Gitment({
+                    id: '<%= post.permalink %>',
+                    owner: '<%- theme.gitment.githubID %>',
+                    repo: '<%- theme.gitment.repo %>',
+                    oauth: {
+                        client_id: '<%- theme.gitment.ClientID %>',
+                        client_secret: '<%- theme.gitment.ClientSecret %>',
+                    }
+                });
+                gitment.render('gcomment');
+            })();
+	    </script>
     <% } %>
 <% } %>
 <% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
