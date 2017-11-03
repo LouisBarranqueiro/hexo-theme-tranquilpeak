@@ -15,7 +15,7 @@
         <div class="image-gallery-photos <%= imageGalleryClass %>">
             <% photos.forEach(function(photo) { %>
             <%
-                var rPhoto = /([\w:\-\/._#]+)(?:\s+([\w:\-\/._#]+))*(?:\s*["|'](.+)["|'])*/;
+                var rPhoto = /([\w:\-\/._#?=]+)(?:\s+([\w:\-\/._#?=]+))*(?:\s*["|'](.+)["|'])*/;
                 var match = photo.match(rPhoto);
                 photo = {
                     title: match[3] || '',
