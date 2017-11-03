@@ -63,11 +63,6 @@
                         <a href="<%- url_for(post.path) %>" class="postShorten-excerpt_link link">
                             <%- __('post.read_more') %>
                         </a>
-                        <% if (post.readingtime) { %>
-                            <span class="postShorten-readingtime">
-                                <%= ' - ' + post.readingtime + ' min read' %>
-                            </span>
-                        <% } %>
                     <% } %>
                 </div>
             <% } else { %>

@@ -10,4 +10,11 @@
         <span><%= __('post.categorized_in')  %> </span>
         <%- partial('category', {categories: post.categories})%>
     <% } %>
+    <span>-</span>
+    <% if (post.readingtime) { %>
+        <span class="postShorten-readingtime">
+            <i class="fa fa-clock-o"></i>
+            <span><%= post.readingtime + ' min read' %></span>
+        </span>
+    <% } %>
 </div>
