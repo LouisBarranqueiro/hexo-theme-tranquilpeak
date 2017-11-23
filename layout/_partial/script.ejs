@@ -53,14 +53,14 @@
                 document.getElementsByTagName('head')[0].appendChild(gc_style);
                 var gitment = new Gitment({
                     id: '<%= post.permalink %>',
-                    owner: '<%- theme.gitment.githubID %>',
+                    owner: '<%- theme.gitment.github_id %>',
                     repo: '<%- theme.gitment.repo %>',
                     oauth: {
-                        client_id: '<%- theme.gitment.ClientID %>',
-                        client_secret: '<%- theme.gitment.ClientSecret %>',
+                        client_id: '<%- theme.gitment.client_id %>',
+                        client_secret: '<%- theme.gitment.client_secret %>',
                     }
                 });
-                gitment.render('gcomment');
+                gitment.render('gitment');
             })();
 	    </script>
     <% } %>
