@@ -28,7 +28,7 @@
                 <% } %>
                 <ul class="archive-posts archive-month" data-date="<%= post.date.format('YYYYMM') %>">
                     <h5 class="archive-title">
-                        <a class="link-unstyled" href="<%- url_for('archives/' + post.date.format('YYYY/MM')) %>"><%= post.date.format('MMMM') %></a>
+                        <a class="link-unstyled" href="<%- url_for('archives/' + post.date.format('YYYY/MM')) %>"><%= post.date.locale(page.lang).format('MMMM') %></a>
                     </h5>
                 <% lastMonth = currentMonth; %>
             <% } %>
