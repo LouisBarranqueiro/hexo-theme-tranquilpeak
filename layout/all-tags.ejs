@@ -23,7 +23,7 @@
                     </a>
                 </h4>
                 <ul class="archive-posts">
-                    <% site.tags.findOne({'name': tag.name}).posts.each(function(post) { %>
+                    <% site.tags.findOne({'name': tag.name}).posts.sort('date', 'desc').each(function(post) { %>
                         <li class="archive-post">
                             <a class="archive-post-title" href="<%- url_for(post.path) %>">
                                 <%= post.title || '(' + __('post.no_title') + ')' %>
