@@ -51,9 +51,12 @@ post:
     categorized_in: "in"
     tagged_in: "GETAGGT IN"
     toc: "Inhaltsverzeichnis"
+    back_to_top: "Nach oben"
     read_more: "Weiterlesen"
     go_to_website: "Zur Website"
     comment_and_share: "Kommentieren und teilen"
+    comment: "Kommentieren"
+    share: "Diesen Beitrag teilen"
 
 author:
     # Deine Biografie (Markdown and HTML supported)
