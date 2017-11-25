@@ -17,7 +17,10 @@
 image_dir: assets/images
 
 
+# ---------------------
 # Sidebar Configuration
+# ---------------------
+
 #    You can add groups of links and links much as you want
 #    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
 #    E.g:
@@ -93,7 +96,10 @@ sidebar:
             icon: rss
 
 
+# --------------------
 # Header configuration
+# --------------------
+
 # The link at the right of the header is customizable
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
 # By default, author's gravatar or author's picture is displayed if `icon` is empty
@@ -109,7 +115,10 @@ header:
         class:
 
 
+# ------
 # Author
+# ------
+
 # Your biography and your job is editable in each languages files in `languages` folder
 author:
     email:
@@ -129,7 +138,10 @@ author:
     google_plus_business:
 
 
+# -------------
 # Customization
+# -------------
+
 # Define the behavior of the sidebar
 # 1: Display extra large sidebar on extra large screen, large sidebar on large screen,
 # medium sidebar on medium screen and header bar on small screen and
@@ -174,19 +186,18 @@ archive_pagination: true
 category_pagination: true
 tag_pagination: true
 
-# Integrated services
-# You can't use Disqus and Duoshuo together
-# then fill the right shortname
+# ---------------
+# Comment systems
+# ---------------
+
 # Your Disqus shortname
 disqus_shortname:
-# Your Duoshuo shortname
-duoshuo_shortname:
 # Your Gitment information
 # Read https://github.com/imsun/gitment#get-started to setup Gitment
 gitment:
     # Switch
     enable: false
-    # Your Github ID here (Github username):
+    # Your Github ID (Github username):
     github_id:
     # The repo to store comments:
     repo:
@@ -194,6 +205,11 @@ gitment:
     client_id:
     # Your client secret:
     client_secret:
+
+# -------------------
+# Integrated services
+# -------------------
+
 # Your Google analystics web property ID : UA-XXXXX-X
 google_analytics_id:
 # Your Baidu analystics web property ID : 9505a5af654a2478f93fd6c0ae4f687d
@@ -206,7 +222,10 @@ fb_admin_ids:
 fb_app_id:
 
 
+# ---------------
 # Sharing options
+# ---------------
+
 # Comment and uncomment to enable or disable sharing options
 # If you wanna add a sharing option, read user documentation :
 # Tranquilpeak configuration > Theme configuration > sharing-options

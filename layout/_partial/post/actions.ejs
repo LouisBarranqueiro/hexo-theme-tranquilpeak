@@ -45,9 +45,9 @@
                          <i class="fa fa-comment-o"></i>
                     </a>
                 </li>
-            <% } else if (theme.disqus_shortname || theme.duoshuo_shortname) { %>
+            <% } else if (theme.disqus_shortname) { %>
                 <li class="post-action">
-                    <a class="post-action-btn btn btn--default" href="#<%= (theme.duoshuo_shortname ? 'ds-thread' : 'disqus_thread') %>">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread">
                         <i class="fa fa-comment-o"></i>
                     </a>
                 </li>

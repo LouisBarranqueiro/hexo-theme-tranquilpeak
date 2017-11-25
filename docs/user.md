@@ -351,7 +351,6 @@ The same page with `category_pagination: false`:
 ``` yaml
 # Integrated services
 disqus_shortname:
-duoshuo_shortname:
 gravatar_email: 
 google_analytics_id: 
 fb_admin_ids:
@@ -361,7 +360,6 @@ fb_app_id:
 |Variable|Description|
 |---|---|
 |disqus_shortname|Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.| 
-|duoshuo_shortname|Your Duoshuo shortname. You can't use Disqus and Duoshuo together, then fill the right shortname. If both are filled, Disqus will be chosen.|
 |gravatar_email|Your gravatar email. Overwrite `author.picture` everywhere in the blog|
 |google_analytics_id|Your Google analystics web property ID : UA-XXXXX-X|
 |fb_admin_ids|Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. E.g : `9830047,1003342`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.|
