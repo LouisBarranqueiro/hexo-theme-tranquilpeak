@@ -61,6 +61,10 @@ post:
     read_more: "阅读全文"
     go_to_website: "转到"
     comment_and_share: "评论和共享"
+    gallery: "画廊"
+    image:
+        one: "图片"
+        other: "%d 图片"
 
 author:
     # 你的个人简介 (支持 Markdown 和 HTML 语法)

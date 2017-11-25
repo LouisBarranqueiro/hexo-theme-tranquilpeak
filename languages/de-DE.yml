@@ -57,6 +57,10 @@ post:
     comment_and_share: "Kommentieren und teilen"
     comment: "Kommentieren"
     share: "Diesen Beitrag teilen"
+    gallery: "Gallerie"
+    image:
+        one: "bild"
+        other: "%d bild"
 
 author:
     # Deine Biografie (Markdown and HTML supported)

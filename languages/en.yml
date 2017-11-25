@@ -69,6 +69,10 @@ post:
     comment_and_share: "Comment and share"
     comment: "Leave a comment"
     share: "Share this post"
+    gallery: "Gallery"
+    image:
+        one: "image"
+        other: "%d images"
 
 author:
     # Your biography (Markdown and HTML supported)

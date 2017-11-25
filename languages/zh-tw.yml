@@ -60,6 +60,10 @@ post:
     read_more: "繼續閱讀"
     go_to_website: "前往"
     comment_and_share: "留言與分享"
+    gallery: "畫廊"
+    image:
+        one: "圖片"
+        other: "%d 圖片"
 
 author:
     # 你的個人簡介 (支援 Markdown 和 HTML 語法)

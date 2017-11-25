@@ -58,6 +58,10 @@ post:
     read_more: "بیشتر بخوانید"
     go_to_website: "به سایت بروید"
     comment_and_share: "در مورد پست بحث کنید"
+    gallery: "گالری"
+    image:
+        one: "تصویر"
+        other: "%d تصورات"
 
 author:
     # Your biography (Markdown and HTML supported)

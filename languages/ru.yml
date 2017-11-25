@@ -60,6 +60,10 @@ post:
     read_more: "Читать далее"
     go_to_website: "Перейти на сайт"
     comment_and_share: "Обсудить и поделиться"
+    gallery: "галерея"
+    image:
+        one: "образ"
+        other: "%d изображений"
 
 author:
     # Расскажите немного о себе (поддерживаются Markdown и HTML)

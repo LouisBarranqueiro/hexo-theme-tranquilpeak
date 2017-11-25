@@ -10,7 +10,7 @@
     %>
     <div class="image-gallery">
         <div class="image-gallery-metabar">
-            <span><%= 'Gallery : ' + photos.length + ' images' %></span>
+            <span><%= __('post.gallery')  + ': ' + _p('post.image', photos.length) %></span>
         </div>
         <div class="image-gallery-photos <%= imageGalleryClass %>">
             <% photos.forEach(function(photo) { %>
