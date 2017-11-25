@@ -54,6 +54,10 @@ post:
     read_more: "Weiterlesen"
     go_to_website: "Zur Website"
     comment_and_share: "Kommentieren und teilen"
+    gallery: "Gallerie"
+    image:
+        one: "bild"
+        other: "%d bild"
 
 author:
     # Deine Biografie (Markdown and HTML supported)

@@ -60,6 +60,10 @@ post:
     read_more: "Continuar leitura"
     go_to_website: "Ir para o site"
     comment_and_share: "Comentar e compartilhar"
+    gallery: "Galeria"
+    image:
+        one: "imagen"
+        other: "%d imagens"
 
 author:
     # Sua biografia (Markdown and HTML supported)

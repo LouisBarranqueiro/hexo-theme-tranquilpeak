@@ -60,6 +60,10 @@ post:
     read_more: "続きを読む"
     go_to_website: "ウェブサイトへ"
     comment_and_share: "コメント・シェア"
+    gallery: "ギャラリー"
+    image:
+        one: "偶像"
+        other: "%d イメージ"
 
 author:
     # Your biography (Markdown and HTML supported)
