@@ -36,6 +36,35 @@
                 || document.getElementsByTagName('body')[0]).appendChild(ds);
             })();
         </script>
+    <% } else if (theme.gitment.enable) { %>
+        <script type="text/javascript">
+            (function() {
+                function render() {
+                    new Gitment({
+                        id: '<%= post.permalink %>',
+                        owner: '<%- theme.gitment.github_id %>',
+                        repo: '<%- theme.gitment.repo %>',
+                        oauth: {
+                            client_id: '<%- theme.gitment.client_id %>',
+                            client_secret: '<%- theme.gitment.client_secret %>',
+                        }
+                    }).render('gitment');
+                }
+                var gc = document.createElement('script');
+                gc.type = 'text/javascript';
+                gc.src = 'http://imsun.github.io/gitment/dist/gitment.browser.js';
+                gc.charset = 'UTF-8';
+                gc.onload = render;
+                gc.async = true;
+                document.querySelector('body').appendChild(gc);
+                var gcs = document.createElement('link');
+                gcs.href = '//imsun.github.io/gitment/style/default.css';
+                gcs.type = 'text/css';
+                gcs.rel = 'stylesheet';
+                gcs.media = 'screen,print';
+                document.querySelector('head').appendChild(gcs);
+            })();
+	    </script>
     <% } %>
 <% } %>
 <% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>

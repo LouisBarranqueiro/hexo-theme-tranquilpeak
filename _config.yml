@@ -174,7 +174,6 @@ archive_pagination: true
 category_pagination: true
 tag_pagination: true
 
-
 # Integrated services
 # You can't use Disqus and Duoshuo together
 # then fill the right shortname
@@ -182,6 +181,19 @@ tag_pagination: true
 disqus_shortname:
 # Your Duoshuo shortname
 duoshuo_shortname:
+# Your Gitment information
+# Read https://github.com/imsun/gitment#get-started to setup Gitment
+gitment:
+    # Switch
+    enable: false
+    # Your Github ID here (Github username):
+    github_id:
+    # The repo to store comments:
+    repo:
+    # Your client ID:
+    client_id:
+    # Your client secret:
+    client_secret:
 # Your Google analystics web property ID : UA-XXXXX-X
 google_analytics_id:
 # Your Baidu analystics web property ID : 9505a5af654a2478f93fd6c0ae4f687d
