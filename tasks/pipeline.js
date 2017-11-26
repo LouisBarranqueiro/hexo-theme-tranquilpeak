@@ -2,7 +2,7 @@
 var tranquilpeakJsFilesToInject = [
   'jquery.js',
   'jquery.fancybox.js',
-  'jquery.fancybox-thumbs.js',
+  'thumbs.js',
   'tranquilpeak.js'
 ];
 
@@ -10,7 +10,7 @@ var tranquilpeakJsFilesToInject = [
 var tranquilpeakCssFilesToInject = [
   'font-awesome.css',
   'jquery.fancybox.css',
-  'jquery.fancybox-thumbs.css',
+  'thumbs.css',
   'tranquilpeak.css'
 ];
 

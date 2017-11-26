@@ -1,0 +1,27 @@
+.fancybox-caption-wrap {
+    padding: 0;
+    background: transparent;
+
+    .fancybox-caption {
+        text-align: center;
+        border: none;
+    }
+}
+
+.fancybox-thumbs {
+    top: auto;
+    width: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 95px;
+    padding: 10px 10px 5px 10px;
+    box-sizing: border-box;
+    opacity: 1;
+    background: transparent;
+}
+
+.fancybox-show-thumbs .fancybox-inner {
+    right: 0;
+    bottom: 95px;
+}

@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         expand: false,
         keepExpandedHierarchy: false,
         packageSpecific: {
-          fontawesome: {
+          'font-awesome': {
             files: [
               'css/font-awesome.css',
               'fonts/FontAwesome.otf',
@@ -26,16 +26,10 @@ module.exports = function(grunt) {
           },
           fancybox: {
             files: [
-              'source/blank.gif',
-              'source/fancybox_loading.gif',
-              'source/fancybox_loading@2x.gif',
-              'source/fancybox_overlay.png',
-              'source/fancybox_sprite.png',
-              'source/fancybox_sprite@2x.png',
-              'source/jquery.fancybox.js',
-              'source/jquery.fancybox.css',
-              'source/helpers/jquery.fancybox-thumbs.css',
-              'source/helpers/jquery.fancybox-thumbs.js'
+              'dist/jquery.fancybox.css',
+              'dist/jquery.fancybox.js',
+              'src/js/thumbs.js',
+              'src/css/thumbs.css'
             ]
           }
         }
