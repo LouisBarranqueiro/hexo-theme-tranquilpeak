@@ -31,9 +31,17 @@
                 }
             %>
             <div class="photo-box">
-                <a class="photo-box-inner fancybox" data-fancybox-group="<%= 'gallery-' + post._id %>"
-                   title="<%= photo.title %>" href="<%= (photo.original || photo.thumbnail) %>">
-                    <img class="photo" src="<%= (photo.thumbnail || photo.original) %>" itemprop="image">
+                <a
+                    class="photo-box-inner fancybox"
+                    data-fancybox="<%= 'gallery-' + post._id %>"
+                    data-caption="<%= photo.title %>"
+                    title="<%= photo.title %>"
+                    href="<%= (photo.original || photo.thumbnail) %>"
+                >
+                    <img
+		                    class="photo" src="<%= (photo.thumbnail || photo.original) %>"
+		                    itemprop="image"
+                    >
                 </a>
             </div>
             <% }) %>
