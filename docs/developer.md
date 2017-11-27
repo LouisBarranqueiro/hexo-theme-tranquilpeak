@@ -51,6 +51,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 6. Install [requirements](#requirements)
 7. Run `npm install` to install [NPM dependencies](#npm-dependencies)
 8. Run `bower install` to install [Bower dependencies](#bower-dependencies) 
+9. Run `grunt build` to make [assets folder](#register-tasks) 
 
 If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
 
