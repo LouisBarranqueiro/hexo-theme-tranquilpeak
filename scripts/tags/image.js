@@ -50,7 +50,7 @@
     var html = '';
     var fancybox = '';
     var clear = '';
-    var group = '';
+    var group = 'default';
     // Get CSS classes
     while (args.length && rClass.test(args[0])) {
       classes.push(args.shift());
@@ -111,7 +111,7 @@
     if (classes.indexOf(fancyboxClass) >= 0) {
       fancybox +=
         '<a class="' + fancyboxClass + '" href="' + original + '" title="' + title + '"' +
-        ' data-fancybox-group="' + group + '">';
+        ' data-caption="' + title + '" data-fancybox="' + group + '">';
       fancybox += image;
       fancybox += '</a>';
       // remove `fancyfox` class of `classes` to not be attached on the main div
