@@ -1,0 +1,361 @@
+From 98a461dc1a4a18f7bac285aac24396b983155cc6 Mon Sep 17 00:00:00 2001
+From: zyzyz <gnsuntkrtakwut@gmail.com>
+Date: Sun, 10 Dec 2017 16:37:46 +0800
+Subject: [PATCH] apply mul-lang diff
+
+---
+ _config.yml                                |  4 ++-
+ layout/_partial/footer.ejs                 | 12 +++++++
+ layout/_partial/header.ejs                 |  2 +-
+ layout/_partial/sidebar.ejs                |  8 ++---
+ layout/all-archives.ejs                    |  6 ++--
+ layout/all-categories.ejs                  |  8 +++--
+ layout/all-tags.ejs                        |  9 ++++--
+ layout/layout.ejs                          |  6 ++--
+ scripts/helpers/language_helper.js         | 50 ++++++++++++++++++++++++++++++
+ source/_css/components/_lang-selector.scss | 24 ++++++++++++++
+ source/_css/tranquilpeak.scss              |  1 +
+ source/_js/language-selector.js            | 35 +++++++++++++++++++++
+ 12 files changed, 148 insertions(+), 17 deletions(-)
+ create mode 100644 scripts/helpers/language_helper.js
+ create mode 100644 source/_css/components/_lang-selector.scss
+ create mode 100644 source/_js/language-selector.js
+
+diff --git a/_config.yml b/_config.yml
+index 718b1f49..e5229ae1 100644
+--- a/_config.yml
++++ b/_config.yml
+@@ -12,7 +12,9 @@
+ # For developpers, if you modify this theme, put your images in `source/_images` folder and
+ # use grunt task `build` to synchronize assets
+ 
+-
++# Multi-language mode
++# It will change the way of resolving URLs below
++enable_multi_lang: true
+ # Image directory (default: images)
+ image_dir: assets/images
+ 
+diff --git a/layout/_partial/footer.ejs b/layout/_partial/footer.ejs
+index c4e589eb..e36d5796 100755
+--- a/layout/_partial/footer.ejs
++++ b/layout/_partial/footer.ejs
+@@ -2,4 +2,16 @@
+     <span class="copyrights">
+         Copyrights &copy; <%= date(new Date(), 'YYYY') + ' ' + config.author || config.title %>. All Rights Reserved.
+     </span>
++    <% if (site.data.languages && config.language && config.language.length > 1) { %>
++        <div class="lang-selector-wrap">
++            <label class="lang-selector-label"><i class="fa fa-globe"></i><span><%= language_name(page.lang) %></span></label>
++            <select class="lang-selector" data-canonical="<%= handle_canonical_path(page.canonical_path) %>">
++                <% Object.keys(site.data.languages).forEach(function(currLang) { %>
++                    <option value="<%= currLang %>" <% if (page.lang === currLang) {%>selected<%}%> >
++                        <%= language_name(currLang) %>
++                    </option>
++                <% }) %>
++            </select>
++        </div>
++    <% } %>
+ </footer>
+diff --git a/layout/_partial/header.ejs b/layout/_partial/header.ejs
+index a6c2cf8d..82253224 100644
+--- a/layout/_partial/header.ejs
++++ b/layout/_partial/header.ejs
+@@ -14,7 +14,7 @@
+ <header id="header" data-behavior="<%= sidebarBehavior %>">
+     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+     <div class="header-title">
+-        <a class="header-title-link" href="<%- url_for(' ') %>"><%= config.title %></a>
++        <a class="header-title-link" href="<%- url_for_lang(' ') %>"><%= config.title %></a>
+     </div>
+     <% if (theme.header && theme.header.right_link) { %>
+         <% if (theme.header.right_link.url && url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
+diff --git a/layout/_partial/sidebar.ejs b/layout/_partial/sidebar.ejs
+index e3a16012..fcb4e05f 100644
+--- a/layout/_partial/sidebar.ejs
++++ b/layout/_partial/sidebar.ejs
+@@ -13,7 +13,7 @@
+     <div class="sidebar-container">
+         <% if (authorPicture) { %>
+             <div class="sidebar-profile">
+-                <a href="<%- url_for('/#about') %>">
++                <a href="<%- url_for_lang('/#about') %>">
+                     <img class="sidebar-profile-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
+                 </a>
+                 <h4 class="sidebar-profile-name"><%= config.author %></h4>
+@@ -30,9 +30,9 @@
+                         <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank" rel="noopener" title="<%= __(theme.sidebar[i][n].title) %>">
+                     <% } else { %>
+                         <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>"
+-                            <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %> href="<%- url_for(' ') %>"
+-                            <% } else if (theme.sidebar[i][n].url.indexOf("/") === 0) { %> href="<%- url_for(theme.sidebar[i][n].url.substr(1)) %>"
+-                            <% } else { %> href="<%- url_for(theme.sidebar[i][n].url) %>"<% } %>
++                            <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %> href="<%- url_for_lang(' ') %>"
++                            <% } else if (theme.sidebar[i][n].url.indexOf("/") === 0) { %> href="<%- url_for_lang(theme.sidebar[i][n].url.substr(1)) %>"
++                            <% } else { %> href="<%- url_for_lang(theme.sidebar[i][n].url) %>"<% } %>
+                             title="<%= __(theme.sidebar[i][n].title) %>"
+                         >
+                     <% } %>
+diff --git a/layout/all-archives.ejs b/layout/all-archives.ejs
+index 60268d70..d4ba550e 100644
+--- a/layout/all-archives.ejs
++++ b/layout/all-archives.ejs
+@@ -12,6 +12,7 @@
+         data-message-other="<%= __('global.posts_found.other') %>"></h5>
+     <section class="boxes">
+         <% site.posts.sort('date', 'desc').each(function(post) { %>
++<% if (page.lang === post.lang) { %>
+             <% var currentYear = post.date.year(); %>
+             <% var currentMonth = post.date.format('MM'); %>
+             <% if (lastYear != currentYear) { %>
+@@ -22,7 +23,7 @@
+                 <% lastYear = currentYear; %>
+                 <div class="archive archive-year box" data-date="<%= post.date.year() %>">
+                     <h4 class="archive-title">
+-                        <a class="link-unstyled" href="<%- url_for(config.archive_dir + '/' + currentYear) %>"><%= currentYear %></a>
++                        <a class="link-unstyled" href="<%- url_for_lang(config.archive_dir + '/' + currentYear) %>"><%= currentYear %></a>
+                     </h4>
+             <% } %>
+             <% if (lastMonth != currentMonth) { %>
+@@ -31,7 +32,7 @@
+                 <% } %>
+                 <ul class="archive-posts archive-month" data-date="<%= post.date.format('YYYYMM') %>">
+                     <h5 class="archive-title">
+-                        <a class="link-unstyled" href="<%- url_for(config.archive_dir + '/' + post.date.format('YYYY/MM')) %>"><%= post.date.locale(page.lang).format('MMMM') %></a>
++                        <a class="link-unstyled" href="<%- url_for_lang(config.archive_dir + '/' + post.date.format('YYYY/MM')) %>"><%= post.date.locale(page.lang).format('MMMM') %></a>
+                     </h5>
+                 <% lastMonth = currentMonth; %>
+             <% } %>
+@@ -39,6 +40,7 @@
+                 <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(' + __('post.no_title') + ')' %></a>
+                 <span class="archive-post-date"><%= ' - ' + post.date.locale(page.lang).format(__('date_format')).toLowerCase() %></span>
+             </li>
++<% } %>            
+         <% }) %>
+     </section>
+ </div>
+diff --git a/layout/all-categories.ejs b/layout/all-categories.ejs
+index f9ddbefa..7bb3f227 100644
+--- a/layout/all-categories.ejs
++++ b/layout/all-categories.ejs
+@@ -6,7 +6,9 @@
+  */
+ function displayCategoriesAndPosts(category) {
+     // get its posts
+-    var posts = category.posts;
++    var posts = category.posts.filter(function(post) {
++        return post.lang === page.lang
++    });
+     // get its child categories
+     var childCategories = site.categories.find({'parent': category._id});
+     // init its parents
+@@ -22,8 +24,8 @@ function displayCategoriesAndPosts(category) {
+         'data-parent-categories="' + category.parents.join(',') + '">';
+     // add category title
+     html += '<h4 class="archive-title text-xlarge">';
+-    html += '<a class="link-unstyled" href="' + url_for(category.path) + '">';
+-    html += category.name + ' (' + category.length + ')';
++    html += '<a class="link-unstyled" href="' + url_for_lang(category.path) + '">';
++    html += category.name + ' (' + posts.length + ')';
+     html += '</a>';
+     html += '</h4>';
+     html += '<ul class="archive-posts">';
+diff --git a/layout/all-tags.ejs b/layout/all-tags.ejs
+index 9c9dc16b..ae0d6321 100644
+--- a/layout/all-tags.ejs
++++ b/layout/all-tags.ejs
+@@ -16,14 +16,17 @@
+     </section>
+     <section class="boxes">
+         <% site.tags.sort('name').each(function(tag) { %>
++            <% var filteredPost = tag.posts.filter(function(post) {
++                return post.lang === page.lang;
++            })%>
+             <div id="<%= tag.name + '-list' %>" class="archive box" data-tag="<%= tag.name.toLowerCase() %>">
+                 <h4 class="archive-title">
+-                    <a class="link-unstyled" href="<%- url_for(config.tag_dir + '/' + tag.slug) %>">
+-                        <%= tag.name + ' (' + tag.length + ')' %>
++                    <a class="link-unstyled" href="<%- url_for_lang(config.tag_dir + '/' + tag.slug) %>">
++                        <%= tag.name + ' (' + filteredPost.length + ')' %>
+                     </a>
+                 </h4>
+                 <ul class="archive-posts">
+-                    <% site.tags.findOne({'name': tag.name}).posts.sort('date', 'desc').each(function(post) { %>
++                    <% filteredPost.sort('date', 'desc').each(function(post) { %>
+                         <li class="archive-post">
+                             <a class="archive-post-title" href="<%- url_for(post.path) %>">
+                                 <%= post.title || '(' + __('post.no_title') + ')' %>
+diff --git a/layout/layout.ejs b/layout/layout.ejs
+index 37b4150a..0127925a 100755
+--- a/layout/layout.ejs
++++ b/layout/layout.ejs
+@@ -11,7 +11,7 @@
+     }
+ %>
+ <!DOCTYPE html>
+-<html lang="<%= config.language %>">
++<html lang="<%= page.lang %>">
+     <%- partial('_partial/head') %>
+     <body>
+         <div id="blog">
+@@ -23,7 +23,7 @@
+                         <%= (page.coverMeta === 'out' ? 'hasCoverMetaOut' : 'hasCoverMetaIn') %>
+                         <%= (page.coverCaption ? 'hasCoverCaption' : '') %>">
+                 <%- body %>
+-                <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
++                <%- partial('_partial/footer', null) %>
+             </div>
+             <% if (is_post() && (page.actions === undefined || page.actions)) { %>
+                 <div id="bottom-bar" class="post-bottom-bar" data-behavior="<%= sidebarBehavior %>">
+@@ -32,7 +32,7 @@
+                 <%- partial('_partial/post/share-options', {post: page, sidebarBehavior: sidebarBehavior}) %>
+             <% } %>
+         </div>
+-        <%- partial('_partial/about', null, {cache: !config.relative_link}) %>
++        <%- partial('_partial/about', null) %>
+         <% if (config.algolia) { %>
+             <%- partial('_partial/search', null, {cache: true}) %>
+         <% } %>
+diff --git a/scripts/helpers/language_helper.js b/scripts/helpers/language_helper.js
+new file mode 100644
+index 00000000..de04b089
+--- /dev/null
++++ b/scripts/helpers/language_helper.js
+@@ -0,0 +1,50 @@
++'use strict';
++
++var url = require('url');
++
++/**
++ * A wrapper of url_for.
++ * Handled multi-language path if set.
++ */
++hexo.extend.helper.register('url_for_lang', function(relativePath) {
++  var page = this.page;
++
++  if (relativePath[0] !== '/') {
++    relativePath = '/' + relativePath;
++  }
++  if (this.theme.enable_multi_lang) {
++    var lang = page.lang || page.language;
++    if (lang) {
++      relativePath = lang.toString() + relativePath;
++    }
++  }
++
++  return this.url_for(relativePath);
++});
++
++/**
++ * Getter of language name's plain text
++ */
++hexo.extend.helper.register('language_name', function(lang) {
++  var data = this.site.data.languages[lang];
++  return data.name || data;
++});
++
++/**
++ * Remove language part from canonical path if has
++ */
++hexo.extend.helper.register('handle_canonical_path', function(path) {
++  var page = this.page;
++  var slash = '/';
++  var retPath = url.parse(path).pathname;
++
++  if (retPath[0] === slash) {
++    retPath = retPath.substr(1);
++  }
++  var slashIndex = retPath.indexOf(slash);
++  if (retPath.substring(0, slashIndex) === page.lang) {
++    retPath = retPath.substr(slashIndex + 1);
++  }
++
++  return retPath;
++});
+diff --git a/source/_css/components/_lang-selector.scss b/source/_css/components/_lang-selector.scss
+new file mode 100644
+index 00000000..405433b9
+--- /dev/null
++++ b/source/_css/components/_lang-selector.scss
+@@ -0,0 +1,24 @@
++.lang-selector-wrap {
++    display:      inline-block;
++    position:     relative;
++    padding-left: 5px;
++
++    .lang-selector-label {
++
++      i {
++        padding-right: 3px;
++      }
++
++    }
++
++    .lang-selector {
++      opacity:  0;
++      position: absolute;
++      top:      0;
++      left:     0;
++      width:    100%;
++      height:   100%;
++      -webkit-appearance: menulist-button;
++      font-size: inherit;
++    }
++}
+\ No newline at end of file
+diff --git a/source/_css/tranquilpeak.scss b/source/_css/tranquilpeak.scss
+index 0c914804..3d8b379a 100755
+--- a/source/_css/tranquilpeak.scss
++++ b/source/_css/tranquilpeak.scss
+@@ -42,6 +42,7 @@
+     'components/highlight-text',
+     'components/icon',
+     'components/image-gallery',
++    'components/lang-selector',
+     'components/link',
+     'components/main-content',
+     'components/markdown',
+diff --git a/source/_js/language-selector.js b/source/_js/language-selector.js
+new file mode 100644
+index 00000000..b54cf483
+--- /dev/null
++++ b/source/_js/language-selector.js
+@@ -0,0 +1,35 @@
++(function($) {
++  'use strict';
++  
++  /**
++   * LanguageSelector
++   * @constructor
++   */
++  var LanguageSelector = function() {
++    this.$selector = $('.lang-selector');
++  };
++
++  LanguageSelector.prototype = {
++
++    run: function() {
++      var self = this;
++
++      self.$selector.change(function() {
++        var lang = this.value;
++        var canonical = this.dataset.canonical;
++        if (lang) {
++          lang += '/';
++        }
++
++        location.href = '/' + lang + canonical;
++      });
++    }
++  };
++
++  $(document).ready(function() {
++    if ($('.lang-selector').length) {
++      var langSelector = new LanguageSelector();
++      langSelector.run();
++    }
++  });
++})(jQuery);
+-- 
+2.15.0
+
