@@ -35,8 +35,8 @@ A gorgeous responsive theme for Hexo blog framework
 - Background cover image
 - Beautiful about page
 - Support Open Graph protocol
-- Support internationalization (i18
-- Easily customizable (fonts, colors, layout elements, code coloration, etc..
+- Support internationalization (i18)
+- Easily customizable (fonts, colors, layout elements, code coloration, etc..)
   
 **Posts features :**  
 
