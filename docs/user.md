@@ -553,6 +553,7 @@ Hide post meta, actions and comments using front-matter settings:
 
 ``` yaml
 title: Page not found
+layout: 404
 meta: false
 actions: false
 comments: false
