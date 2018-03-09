@@ -42,9 +42,14 @@
             width:     auto;
             max-width: 100%;
         }
-        :not(blockquote):not(.alert) {
+        :not(blockquote):not(li):not(.alert) {
             & > p {
                 margin: 1.5em 0 0 0;
+            }
+        }
+        li {
+            p {
+                margin: 0 0 0 0;
             }
         }
     }
