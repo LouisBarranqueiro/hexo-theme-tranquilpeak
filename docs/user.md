@@ -54,6 +54,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Tabbed code block](#tabbed-code-block)
         * [Wide image](#wide-image)
         * [Fancybox](#fancybox)
+- [Multi-Language Solution](#multi-language-solution)
 - [Running](#running)  
 
 ## General ##
@@ -823,6 +824,34 @@ E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" 
 #### Fancybox
 
 `fancybox` tag is deprecated since Tranquilpeak 1.3. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
+
+## Multi-Language Solution ##
+
+Following the steps below allows you to build a multi-language site. 
+
+1. Uninstall `hexo-generator-index/archive/category/tag` and install `hexo-generator-basic-set`.
+    + The new plugin will modify the url and do the pagination by the language when `hexo g` is running. Read [this](https://github.com/zyzyz/hexo-generator-basic-set/blob/master/ReadMe.md) for more detail.
+
+2. After the proper setting in the first step, create posts and the 3 tranquilpeak-specific pages with `-lang <post language>`.
+    + It should create new posts under `source/_posts/<post language>`.
+    + Because the `permalink` setting in `config.yml` is not for pages, after creating tranquilpeak specific 3 pages, user should manually move the new folders under `source/<post language>`.
+    + Assign a same slug for one post in each language to enable post-level language switch. (of course you must have posts with different languages first)
+
+3. Direct to `themes/tranquilpeak` and apply the patch file under `themes/tranquilpeak/patches`
+    + The content of this file corrects the url for some button in template and adds a language switcher at the footer.
+
+4. Create a new file `languages.yml` under `source/_data`, and add a map like:
+
+    > en: English  
+    > fr-FR: français  
+    > zh-cn: 简体中文  
+    > ja: 日本語  
+
+    + the map is used for switcher display.
+
+5. Make sure there's a setting `enable_multi_lang` in tranquilpeak's `_config.yml` and set as `true`.
+
+6. Run `hexo g`.
 
 ## Running ##
 
