@@ -43,8 +43,8 @@ global:
         other: "{n} tags trouvés"
 
 pagination:
-    page: "page"
-    of: "sur"
+    page: "page %d"
+    of: "sur %d"
     newer_posts: "POSTS RÉCENTS"
     older_posts: "POSTS ANCIENTS"
     previous: "PRÉCÉDENT"
