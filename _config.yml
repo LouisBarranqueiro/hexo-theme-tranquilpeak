@@ -226,9 +226,23 @@ fb_app_id:
 # Sharing options
 # ---------------
 
-# Comment and uncomment to enable or disable sharing options
-# If you wanna add a sharing option, read user documentation :
-# Tranquilpeak configuration > Theme configuration > sharing-options
+# Comment or uncomment lines to disable or enable sharing options.
+# If you want to add a sharing option, follow these steps.
+# E.g: with `foo_bar` social network:
+#
+# 1. Add a new option based on the other.
+# ```
+# sharing_options:
+#     foo_bar:
+#         icon: "fa-foo_bar"
+#         url: "https://www.foo_bar.com/sharer/sharer.php?u={{post.permalink}}"
+# ```
+#
+# 2. Add a line in the language file that you use (location: `themes/tranquilpeak/languages/`)
+# ```
+# global:
+#     share_on_foo_bar: "Share on Foo Bar"
+# ```
 sharing_options:
     facebook:
         icon: "fa-facebook-official"
