@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "node"
+  - "lts/*"
+  - "8"
+
+install:
+  - npm install
+
+script:
+  - npm run lint
+  - npm run prod
