@@ -12,21 +12,7 @@ We use [ESLint](http://eslint.org) based on Google code style to maintain code s
 Check code status with :
 ``` bash
 npm run lint
-# or
-grunt eslint
 ```
-
-## Issues ##
-
-When you create an issue to report a bug or ask a question, please include your :
-
- - Operating system with version
- - Node version
- - Hexo version
- - Hexo-cli version
- - Tranquilpeak version
-
-and all others related information that are susceptible to help us.
 
 ## Pull requests ##
 
@@ -36,5 +22,5 @@ Before a pull request :
 
  - There is no tests yet so verify that your code is running well. Blog generation (`hexo g`) must not outputs errors
  - Check code style with eslint.
- - Don't forget to update user and/or developer documentation if it's necessary
+ - Don't forget to update the documentation if it's necessary
  
