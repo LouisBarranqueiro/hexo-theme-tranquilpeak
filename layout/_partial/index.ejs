@@ -28,18 +28,18 @@
             postContent = postContent.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents)
         }
     %>
-    <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>">
         <div class="postShorten-wrap">
             <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "top") { %>
                 <a href="<%- url_for(post.path) %>">
                     <div class="postShorten-thumbnailimg">
-                        <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+                        <img alt="" src="<%= thumbnailImageUrl %>"/>
                     </div>
                 </a>
                 <% thumbnailImageUrl = null; %>
             <% } %>
             <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
+                <h1 class="postShorten-title">
                     <% if (post.link) { %>
                         <a class="link-unstyled" href="<%- url_for(post.link) %>">
                             <%= post.title || '(' + __('post.no_title') + ')' %>
@@ -53,7 +53,7 @@
                 <%- partial('post/meta', {post: post, classes: ['postShorten-meta']}) %>
             </div>
             <% if (post.excerpt || post.link) { %>
-                <div class="postShorten-excerpt" itemprop="articleBody">
+                <div class="postShorten-excerpt">
                     <%- post.excerpt %>
                     <% if (post.link && _('post.go_to_website')) { %>
                         <a href="<%- url_for(post.link) %>" target="new" class="postShorten-excerpt_link link">
@@ -71,7 +71,7 @@
                     <% } %>
                 </div>
             <% } else { %>
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-content">
                     <%- postContent %>
                     <% if (theme.image_gallery) { %>
                         <%- partial('post/gallery', {photos: post.photos, post: post})%>
@@ -89,7 +89,7 @@
         <% if (thumbnailImageUrl !== null && thumbnailImagePosition !== "top") { %>
             <a href="<%- url_for(post.path) %>">
                 <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="<%= thumbnailImageUrl %>"/>
+                    <img alt="" src="<%= thumbnailImageUrl %>"/>
                 </div>
             </a>
             <% thumbnailImageUrl = null; %>

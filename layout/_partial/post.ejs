@@ -20,14 +20,14 @@
     postContent = postContent.replace(/<!-- ?endcontent ?-->/g, '</div>')
                                .replace(/<!-- ?content ?-->/g, '<div class="main-content-wrap">');
 %>
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+<article class="post">
     <% if (post.coverCaption) { %>
         <span class="post-header-cover-caption caption"><%= post.coverCaption %></span>
     <% } %>
     <% if (!post.coverImage || post.coverMeta === 'out') { %>
         <%- partial('post/header')%>
     <% } %>
-    <div class="post-content markdown" itemprop="articleBody">
+    <div class="post-content markdown">
         <div class="main-content-wrap">
             <%- postContent %>
             <%- partial('post/gallery') %>

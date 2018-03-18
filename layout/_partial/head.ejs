@@ -125,6 +125,7 @@
     <% if ((config.feed) && (config.feed.path.length)) { %>
         <link rel="alternate" type="application/atom+xml" title="RSS" href="<%- url_for(config.feed.path) %>">
     <% } %>
+    <%- json_ld() %>
     <%- open_graph({
         type: 'blog',
         twitter_id: theme.author.twitter,

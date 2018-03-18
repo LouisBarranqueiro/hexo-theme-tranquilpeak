@@ -8,7 +8,7 @@ var rCaptionUrl = /(\S[\S\s]*)\s+(https?:\/\/)(\S+)/i;
 var rCaption = /(\S[\S\s]*)/;
 var rTab = /<!--\s*tab (\w*)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g;
 // create a window with a document to use jQuery library
-var window = (new JSDOM('')).window
+var window = (new JSDOM('')).window;
 var $ = require('jquery')(window);
 
 /**
