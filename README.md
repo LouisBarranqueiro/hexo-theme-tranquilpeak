@@ -59,7 +59,7 @@ A gorgeous responsive theme for Hexo blog framework
 
 ## Demo
 
-Check out [Tranquilpeak theme demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
+Check out [Tranquilpeak theme demo](https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
 
 ## Contributing
 
