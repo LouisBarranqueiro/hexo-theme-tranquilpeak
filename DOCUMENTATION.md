@@ -10,15 +10,15 @@
 
 ## Installation
 
-1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak releases](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases)
-2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
-3. Modify the theme in Hexo configuration file `_config.yml` by changing `theme` variable to `tranquilpeak`
+1. Download the latest version built and ready for production here : [releases](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases)
+2. Rename the folder in `tranquilpeak` and place it in the `themes` folder of your Hexo blog
+3. Modify the theme in Hexo configuration file (`_config.yml`) by setting `theme` variable to `tranquilpeak`
 
 ## Hexo configuration
 
 ### Enable post assets folder
 
-If you want to take advantage of cover image, thumbnail image, and image gallery features, you have to enable post assets folder by setting `post_asset_folder` to  `true`in `_config.yml`.
+If you want to take advantage of cover image, thumbnail image, and image gallery features, you have to enable post assets folder by setting `post_asset_folder` to  `true` in Hexo configuration file (`_config.yml`).
 
 ### Disable relative links
 
@@ -28,7 +28,7 @@ There is currently an issue on Hexo repository to fix this problem.
 ### Enable RSS feed
 
 1. Execute `npm install hexo-generator-feed --save` in your Hexo blog folder  
-2. Add this lines in `_config.yml` :  
+2. Add these lines in Hexo configuration file (`_config.yml`):  
 
 ``` yaml
 feed:
@@ -61,7 +61,7 @@ keywords:
 
 If you are new to Hexo and internationalization (i18n), please read [Hexo documentation - internationalization (i18n) section](https://hexo.io/docs/internationalization.html)
 
-Currently, the theme is delivered with :
+Currently, the theme is delivered with:
 
 - Chinese (zh-CN)
 - Chinese Traditional (zh-TW)
@@ -97,15 +97,15 @@ The search modal of the theme works with Algolia API to search in your posts. To
 
 ### Enable pages
 
-Tranquilpeak provides you 3 pages to display all posts title and date by tags, by categories, by date and an about page. To enable one of this pages, 
-read following step.
+Tranquilpeak provides 3 pages to filter all posts by tags, categories and date. To enable one of these pages, 
+read following steps.
 
 #### Enable all-categories page
 
-To enable `all-categories` page :
+To enable `all-categories` page:
 
 1. Run `hexo new page "all-categories"`. A new folder named `all-categories` will be created in `source/`
-2. Replace `source/all-categories/index.md` content with :
+2. Replace `source/all-categories/index.md` content with:
  
 ``` markdown
 ---
@@ -115,14 +115,14 @@ comments: false
 ---
 ```
 
-New page will be reach at : `/all-categories`. On this page, users will be able to search and filter categories.
+This page will be reachable at: `/all-categories`. On this page, users will be able to search and filter posts by categories.
 
 #### Enable all-tags page
 
-To enable `all-tags` page :
+To enable `all-tags` page:
 
 1. Run `hexo new page "all-tags"`. A new folder named `all-tags` will be created in `source/`
-2. Replace `source/all-tags/index.md` content with :
+2. Replace `source/all-tags/index.md` content with:
  
 ``` markdown
 ---
@@ -132,14 +132,14 @@ comments: false
 ---
 ```
 
-New page will be reach at : `/all-tags`. On this page, users will be able to search and filter tags.
+This page will be reachable at: `/all-tags`. On this page, users will be able to search and filter posts by tags.
 
 #### Enable all-archives page
 
-To enable `all-archives` page :
+To enable `all-archives` page:
 
 1. Run `hexo new page "all-archives"`. A new folder named `all-archives` will be created in `source/`
-2. Replace `source/all-archives/index.md` content with :
+2. Replace `source/all-archives/index.md` content with:
  
 ``` markdown
 ---
@@ -149,8 +149,7 @@ comments: false
 ---
 ```  
 
-New page will be reach at : `/all-archives`.  
-On this page, users will be able to search and filter posts.  
+This page will be reachable at: `/all-archives`. On this page, users will be able to search and filter posts by date.  
 **Search pattern** : YYYY/MMM/DD
 
 ## Integrated services configuration ##
@@ -188,8 +187,8 @@ If you want to change font families, font size, sidebar color, things like that,
 
 ### Change code coloration (Highlight.js theme)
 
-Tranquilpeak integrate its own highlight.js theme inspired by GitHub. 
-Of course, you can replace it with an other theme found on highlight.js repository. Since Hexo use different CSS class names, all theme are not ready out of the box, but it is very easy to make them compatible. 
+Tranquilpeak integrates its own highlight.js theme inspired by GitHub. 
+Of course, you can replace it with an other theme found on highlight.js repository. Since Hexo uses different CSS class names, all themeS are not ready out of the box, but it is very easy to make them compatible. 
 
 Follow these steps :
 
@@ -267,9 +266,9 @@ actions: false
 |thumbnailImage|Image displayed in index view.|
 |thumbnailImagePosition|Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`). `thumbnailImagePosition` overwrite the setting `thumbnail_image_position` in the theme configuration file|
 |metaAlignment|Meta (title, date and categories) alignment (right, left or center). Default behavior : left|
-|coverImage|Image displayed in full size at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. Check the beautiful demo here : [Cover image demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2015/05/13/Cover-image-showcase/)|
+|coverImage|Image displayed in full size at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image. Check the beautiful demo here : [Cover image demo](https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2015/05/13/Cover-image-showcase/)|
 |coverSize|`partial`: cover image take a part of the screen height (60%), `full`: cover image take the entire screen height.|
-|coverCaption|Add a caption under the cover image : [Cover caption demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2015/05/13/Cover-image-showcase/)|
+|coverCaption|Add a caption under the cover image : [Cover caption demo](https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2015/05/13/Cover-image-showcase/)|
 |coverMeta|`in`: display post meta (title, date and categories) on cover image, `out`: display meta (title, date and categories) under cover image as usual. Default behavior : `in`|
 |gallery|Formerly **photos**. Images displayed in an image gallery (with fancybox) at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. format: `original url [thumbnail url] [caption]`, E.g : `https://example.com/original.jpg https://example.com/thumbnail.jpg "New York"`|
 |comments|Disable the comment of the post.|
@@ -293,7 +292,6 @@ Of course, you can set external url.**
 
 ### Define post excerpt
 
-Tranquilpeak v1.4.0 introduce a new way to define post excerpt with `<!-- excerpt -->` comment. Use 
 - `<!-- more -->` to define post excerpt and keep the post excerpt in the post content
 - `<!-- excerpt -->` to define post excerpt and remove the post excerpt of the post content
 
@@ -303,21 +301,20 @@ Tranquilpeak v1.4.0 introduce a new way to define post excerpt with `<!-- excerp
 
 ### Display table of contents
 
-As post excerpt feature enable with `<!-- more -->` comment, you can display the table of contents of a post with  `<!-- toc -->`.  Place this comment where you want to display the table of content. You can also edit the title displayed at the top of the table of contents in the `_config.yml` file
+You can display table of contents of a post with  `<!-- toc -->`.  Place this comment where you want to display it. You can also edit the title displayed at the top of the table of contents in the `_config.yml` file.
   
-Here is what looks like the table of contents generated:  
 ![thumbnail-image-position-left](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/toc-400.png) 
   
 ### Tags
 
-Tranquilpeak introduce new tags to display alert messages, images in full width and create beautiful galleries.
+Tranquilpeak introduces new tags to display alert messages, images in full width and create beautiful galleries.
 **DON'T use anymore fancybox tag**. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
 
 #### Alert
 
 ![alert-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.6/alert-tag.png)
 
-Alert tag is useful to highlight a content like a tips or a warning. Check it live here : [Alert tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Alerts)
+Alert tag is useful to highlight a content like a tips or a warning. Check it live here : [Alert tag demo](https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Alerts)
 
 Syntax :  
 ```
@@ -341,7 +338,7 @@ Here is a danger alert without icon
 
 ![highlight_text-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.6/highlight_text-tag.png)
 
-Highlight text tag is useful to highlight an interesting part in a text. Check it live here : [Highlight text tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Highlight-text)
+Highlight text tag is useful to highlight an interesting part in a text. Check it live here : [Highlight text tag demo](https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Highlight-text)
 
 Syntax :  
 ```
@@ -378,7 +375,7 @@ E.g (rgba color) :
 
 #### Image
 
-Image tag is useful to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Images)
+Image tag is useful to add images and create beautiful galleries. Check what are the possibilities here : [Image tag demo](https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Images)
 
 Syntax : `{% image [classes] group:group-name /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %}`  
 E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`
@@ -399,7 +396,7 @@ Tabbed code blocks are useful to group multiple code blocks related. For example
 
 ![tabbed_codeblock-tag](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.7/tabbed_codeblock-tag.png)
 
-Check it live : [tabbed code block demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Tabbed-code-block)
+Check it live : [tabbed code block demo](https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Tabbed-code-block)
 
 Syntax :
 ``` js
@@ -431,7 +428,7 @@ E.g :
 
 #### Wide image
 
-Wide image tag is useful to display wide images in full width. It take the entire window width. Check the the result : [Wide image tag demo](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Wide-images)
+Wide image tag is useful to display wide images in full width. It takes entire window width. Check the result : [Wide image tag demo](https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/2014/10/29/Tags-plugins-showcase/#Wide-images)
 
 Syntax : `{% wide_image /path/to/image [title text] %}`  
 E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" %}`  

@@ -5,7 +5,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-[![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.11.0.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
+[![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v2.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
 
 ## Summary
 
@@ -22,13 +22,13 @@ A gorgeous responsive theme for Hexo blog framework
 
 - Fully responsive
 - Optimized for tablets & mobiles
-- Configurable menu of the sidebar
+- Customizable sidebar menu
 - Pages to filter tags, categories and archives
 - Background cover image
 - Beautiful about page
 - Support Open Graph protocol
-- Support internationalization (i18)
-- Easily customizable (fonts, colors, layout elements, code coloration, etc..)
+- Support internationalization (i18n)
+- Easily customizable (fonts, colors, layout elements, code coloration, etc...)
   
 **Posts features :**  
 
@@ -39,7 +39,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Navigation menu
 - GitHub theme for code highlighting (customizable)
 - Image gallery
-- Tags for images (FancyBox), wide images, tabbed code blocks, highlighted text, alerts
+- Tags for images (FancyBox, wide images, tabbed code blocks, highlighted text, alerts)
 - Table of contents  
   
 **Integrated services :**  
@@ -56,7 +56,7 @@ A gorgeous responsive theme for Hexo blog framework
 ## Quick start
 
 1. Download the latest version built and ready for production here : [releases](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases)
-2. Read [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md) to install, configure the theme and discover all its features.  
+2. Read [documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/DOCUMENTATION.md) to install and configure the theme.  
 
 ## Demo
 
@@ -64,7 +64,7 @@ Check out [Tranquilpeak theme demo](https://louisbarranqueiro.github.io/hexo-the
 
 ## Contributing
 
-All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
+All kinds of contributions (enhancements, features, documentation & code improvements, bugs reporting) are welcome.
 
 Read [guidelines for contributing](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/.github/CONTRIBUTING.md) for more information.
 
