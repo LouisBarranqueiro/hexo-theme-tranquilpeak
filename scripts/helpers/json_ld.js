@@ -9,11 +9,25 @@ function jsonLd() {
   const theme = this.theme;
   const authorEmail = theme.author.email;
   const authorImage = theme.author.picture || (authorEmail ? this.gravatar(authorEmail) : null);
-  const authorLinks = Object.values(theme.sidebar.author_links || []).map((link) => link.url);
+  const authorLinks = theme.sidebar.author_links;
+  const links = [];
+
+  if (authorLinks) {
+    for (let key in authorLinks) {
+      if (authorLinks.hasOwnProperty(key)) {
+        const link = authorLinks[key].url;
+
+        if (link) {
+          links.push(link);
+        }
+      }
+    }
+  }
+
   const author = {
     '@type': 'Person',
     name: config.author,
-    sameAs: authorLinks
+    sameAs: links
   };
   // Google does not accept `Person` as item type for the publisher property
   const publisher = Object.assign({}, author, {'@type': 'Organization'});
