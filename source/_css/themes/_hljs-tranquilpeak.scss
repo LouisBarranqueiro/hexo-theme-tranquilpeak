@@ -117,6 +117,18 @@ figure.highlight,
             color: map-get($highlight-colors, bondi-blue);
         }
     }
+    // Clojure
+    &.clj .code {
+        .builtin-name {
+            color: map-get($highlight-colors, persimmon);
+        }
+        .name {
+            color: map-get($highlight-colors, scampi);
+        }
+        .number {
+            color: map-get($highlight-colors, bondi-blue);
+        }
+    }
     // C#
     &.cs .code {
         .preprocessor,
@@ -453,6 +465,15 @@ figure.highlight,
         .selector-class,
         .selector-tag {
             color: map-get($highlight-colors, scampi);
+        }
+    }
+    // Lisp
+    &.lisp .code {
+        .name {
+            color: map-get($highlight-colors, persimmon);
+        }
+        .number {
+            color: map-get($highlight-colors, bondi-blue);
         }
     }
     // SCSS
