@@ -26,70 +26,70 @@ image_dir: assets/images
 #             home:             # Name of your link (changeable)
 #                title: Home    # Title of your link displayed
 #                url: /         # URL of the link. If the URL is internal, domain name is not necessary
-#                icon: home     # Name of the font awesome icon class without the `fa-`
-#                               # Go to http://fontawesome.io/icons/ to find class name of icon
+#                icon: home     # CSS class names of the Font Awesome icon
+#                               # Go to https://fontawesome.com/icons?d=gallery&m=free to find icons you want
 sidebar:
     menu:
         home:
             title: global.home
             url: /
-            icon: home
+            icon: fa fa-home
         categories:
             title: global.categories
             url: /all-categories
-            icon: bookmark
+            icon: fa fa-bookmark
         tags:
             title: global.tags
             url: /all-tags
-            icon: tags
+            icon: fa fa-tags
         archives:
             title: global.archives
             url: /all-archives
-            icon: archive
+            icon: fa fa-archive
         search:
             title: global.search
             url: /#search
-            icon: search
+            icon: fa fa-search
             # `open-algolia-search` classes are used to open algolia search modal
             class: open-algolia-search
         about:
             title: global.about
             url: /#about
-            icon: question
+            icon: fa fa-question
     author_links:
-        # github:
-        #     title: global.github
-        #     url: https://github.com/
-        #     icon: github
-        # stack_overflow:
-        #     title: global.stack_overflow
-        #     url: http://stackoverflow.com/users
-        #     icon: stack-overflow
-        # twitter:
-        #     title: global.twitter
-        #     url: https://twitter.com/
-        #     icon: twitter
-        # facebook:
-        #     title: global.facebook
-        #     url: https://facebook.com/
-        #     icon: facebook
-        # google_plus:
-        #     title: global.google_plus
-        #     url: https://plus.google.com/
-        #     icon: google-plus
-        # linked_in:
-        #     title: global.linkedin
-        #     url: https://www.linkedin.com/profile/
-        #     icon: linkedin
-        # mail:
-        #     title: global.mail
-        #     url: mailto:
-        #     icon: envelope-o
+        github:
+            title: global.github
+            url: https://github.com/
+            icon: fab fa-github
+        stack_overflow:
+            title: global.stack_overflow
+            url: http://stackoverflow.com/users
+            icon: fab fa-stack-overflow
+        twitter:
+            title: global.twitter
+            url: https://twitter.com/
+            icon: fab fa-twitter
+        facebook:
+            title: global.facebook
+            url: https://facebook.com/
+            icon: fab fa-facebook
+        google_plus:
+            title: global.google_plus
+            url: https://plus.google.com/
+            icon: fab fa-google-plus
+        linked_in:
+            title: global.linkedin
+            url: https://www.linkedin.com/profile/
+            icon: fab fa-linkedin
+        mail:
+            title: global.mail
+            url: mailto
+            icon: fab fa-envelope
     rss:
         rss:
             title: global.rss
             url: /atom.xml
-            icon: rss
+            icon: fa fa-rss
 
 
 # --------------------
