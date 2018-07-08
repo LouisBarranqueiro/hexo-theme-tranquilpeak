@@ -5,6 +5,7 @@ module.exports = function(grunt) {
     'copy:dev',
     'syncAssets',
     'replace:cssFancybox',
+    'replace:cssFontAwesome',
     'replace:cssTranquilpeak',
     'concat',
     'cssmin',

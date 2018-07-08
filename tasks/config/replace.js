@@ -26,6 +26,16 @@ module.exports = function(grunt) {
         to: 'url(\'../images/'
       }]
     },
+    cssFontAwesome: {
+      overwrite: true,
+      src: [
+        'source/assets/css/all.css'
+      ],
+      replacements: [{
+        from: 'url(../webfonts/',
+        to: 'url(../fonts/'
+      }]
+    },
     // Modify url of images and fonts in tranquilpeak.css to resolve images and fonts path.
     cssTranquilpeak: {
       overwrite: true,

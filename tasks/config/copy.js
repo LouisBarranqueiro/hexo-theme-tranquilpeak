@@ -3,7 +3,7 @@ var cssDestFolder = './source/assets/css/';
 var fontsDestFolder = './source/assets/fonts/';
 
 var fancyboxPath = './node_modules/@fancyapps/fancybox';
-var fontAwesomePath = './node_modules/font-awesome';
+var fontAwesomePath = './node_modules/@fortawesome/fontawesome-free';
 var jqueryPath = './node_modules/jquery';
 
 module.exports = function(grunt) {
@@ -38,16 +38,16 @@ module.exports = function(grunt) {
                 },
                 // font-awesome
                 {
-                    src: fontAwesomePath + '/css/font-awesome.css',
-                    dest: cssDestFolder,
-                    flatten: true,
-                    expand: true
+                  src: fontAwesomePath + '/css/all.css',
+                  dest: cssDestFolder,
+                  flatten: true,
+                  expand: true
                 },
                 {
-                    src: fontAwesomePath + '/fonts/*',
-                    dest: fontsDestFolder,
-                    flatten: true,
-                    expand: true
+                  src: fontAwesomePath + '/webfonts/*',
+                  dest: fontsDestFolder,
+                  flatten: true,
+                  expand: true
                 },
                 // jquery
                 {
@@ -60,5 +60,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 };
