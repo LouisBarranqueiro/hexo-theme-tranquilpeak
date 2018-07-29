@@ -241,7 +241,7 @@ fb_app_id:
 # ```
 sharing_options:
     facebook:
-        icon: "fa-facebook-official"
+        icon: "fa-facebook"
         url: "https://www.facebook.com/sharer/sharer.php?u={{post.permalink}}"
     twitter:
         icon: "fa-twitter"
