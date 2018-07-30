@@ -84,7 +84,7 @@ sidebar:
         mail:
             title: global.mail
             url: mailto
-            icon: fab fa-envelope
+            icon: fa fa-envelope
     rss:
         rss:
             title: global.rss
