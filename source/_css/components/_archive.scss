@@ -27,9 +27,10 @@
             }
             // Change styl of the list by adding font-awesome icon
             &::before {
-                font-family: 'FontAwesome';
+                font-family: 'Font Awesome 5 Free';
                 content:     '\f0da';
                 font-size:   map-get($font-size, small);
+                font-weight:    900;
             }
         }
     }
