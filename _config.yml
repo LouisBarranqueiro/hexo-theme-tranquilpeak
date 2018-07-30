@@ -84,7 +84,7 @@ sidebar:
         mail:
             title: global.mail
             url: mailto
-            icon: fab fa-envelope
+            icon: fa fa-envelope
     rss:
         rss:
             title: global.rss
@@ -102,7 +102,7 @@ sidebar:
 # DON'T edit `header`, `right_link`, `url`, `icon` and `class` variable name
 # E.g to display a shortcut to open algolia search window :
 #     url: /#search
-#     icon: search
+#     icon: "fa fa-search"
 #     class: open-algolia-search
 header:
     right_link:
@@ -241,37 +241,37 @@ fb_app_id:
 # ```
 sharing_options:
     facebook:
-        icon: "fa-facebook-official"
+        icon: "fab fa-facebook"
         url: "https://www.facebook.com/sharer/sharer.php?u={{post.permalink}}"
     twitter:
-        icon: "fa-twitter"
+        icon: "fab fa-twitter"
         url: "https://twitter.com/intent/tweet?text={{post.permalink}}"
     google_plus:
-        icon: "fa-google-plus"
+        icon: "fab fa-google-plus"
         url: "https://plus.google.com/share?url={{post.permalink}}"
     # Asian social networks
-    # weibo:
-    #     title: "Weibo"
-    #     icon: "fa-weibo"
-    #     url: "http://service.weibo.com/share/share.php?&title={{post.permalink}}"
-    # qq:
-    #     title: "QQ"
-    #     icon: "fa-qq"
-    #     url: "http://connect.qq.com/widget/shareqq/index.html?url={{post.permalink}}&title={{post.title}}"
-    # qzone:
-    #     title: "Qzone"
-    #     icon: "fa-star"
-    #     url: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{post.permalink}}"
-    # renren:
-    #     title: "Renren"
-    #     icon: "fa-renren"
-    #     url: "http://widget.renren.com/dialog/share?resourceUrl={{post.permalink}}"
+#    weibo:
+#        title: "Weibo"
+#        icon: "fab fa-weibo"
+#        url: "http://service.weibo.com/share/share.php?&title={{post.permalink}}"
+#    qq:
+#        title: "QQ"
+#        icon: "fab fa-qq"
+#        url: "http://connect.qq.com/widget/shareqq/index.html?url={{post.permalink}}&title={{post.title}}"
+#    qzone:
+#        title: "Qzone"
+#        icon: "fa fa-star"
+#        url: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{post.permalink}}"
+#    renren:
+#        title: "Renren"
+#        icon: "fab fa-renren"
+#        url: "http://widget.renren.com/dialog/share?resourceUrl={{post.permalink}}"
     # Russian social networks
-    # vk:
-    #     title: "VK"
-    #     icon: "fa-vk"
-    #     url: "https://vk.com/share.php?url={{post.permalink}}"
-    # odnoklassniki:
-    #     title: "Odnoklassniki"
-    #     icon: "fa-odnoklassniki"
-    #     url: "https://connect.ok.ru/offer?url={{post.permalink}}"
+#    vk:
+#        title: "VK"
+#        icon: "fab fa-vk"
+#        url: "https://vk.com/share.php?url={{post.permalink}}"
+#    odnoklassniki:
+#        title: "Odnoklassniki"
+#        icon: "fab fa-odnoklassniki"
+#        url: "https://connect.ok.ru/offer?url={{post.permalink}}"

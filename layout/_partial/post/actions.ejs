@@ -36,7 +36,7 @@
             <% var url = generate_sharing_link(post, theme.sharing_options[option].url) %>
             <li class="post-action hide-xs">
                 <a class="post-action-btn btn btn--default" target="new" href="<%= url %>" title="<%= __('global.share_on_' + option) %>">
-                    <i class="fa <%= icon %>" aria-hidden="true"></i>
+                    <i class="<%= icon %>" aria-hidden="true"></i>
                 </a>
             </li>
         <% } %>
@@ -44,13 +44,13 @@
             <% if (theme.gitment.enable) { %>
                 <li class="post-action">
                     <a class="post-action-btn btn btn--default" href="#gitment">
-                         <i class="fa fa-comment-o"></i>
+                         <i class="fa fa-comment"></i>
                     </a>
                 </li>
             <% } else if (theme.disqus_shortname) { %>
                 <li class="post-action">
                     <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                        <i class="fa fa-comment-o"></i>
+                        <i class="fa fa-comment"></i>
                     </a>
                 </li>
             <% } %>

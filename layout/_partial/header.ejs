@@ -25,7 +25,7 @@
                 href="<% if (theme.header.right_link.url.indexOf("/") === 0) { %><%- url_for(theme.header.right_link.url.substr(1)) %><% } else { %><%- url_for(theme.header.right_link.url) %><% } %>">
         <% } %>
         <% if (theme.header.right_link.icon) { %>
-            <i class="fa fa-lg fa-<%= theme.header.right_link.icon %>"></i>
+            <i class="<%= theme.header.right_link.icon %> fa-lg"></i>
         <% } else if (authorPicture) { %>
             <img class="header-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
         <% } %>
