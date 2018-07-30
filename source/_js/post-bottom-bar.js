@@ -14,8 +14,8 @@
     this.$header = $('#header');
     this.delta = 15;
     this.lastScrollTop = 0;
-    this.lastScrollDownPos = 0
-    this.lastScrollUpPos = 0
+    this.lastScrollDownPos = 0;
+    this.lastScrollUpPos = 0;
   };
 
   PostBottomBar.prototype = {
@@ -59,14 +59,14 @@
           (postFooterOffsetTop + this.$postFooter.height() > scrollTop + $(window).height() ||
             postFooterOffsetTop < scrollTop + this.$header.height())) {
           this.$postBottomBar.slideDown();
-          this.lastScrollUpPos = scrollTop
+          this.lastScrollUpPos = scrollTop;
         }
       }
 
       // scrolling down
       if (scrollTop > this.lastScrollUpPos + this.delta) {
         this.$postBottomBar.slideUp();
-        this.lastScrollDownPos = scrollTop
+        this.lastScrollDownPos = scrollTop;
       }
 
       this.lastScrollTop = scrollTop;
