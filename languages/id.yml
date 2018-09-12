@@ -1,0 +1,81 @@
+# date format displayed everywhere in the blog
+date_format: "DD MMM YYYY"
+
+global:
+    home: "Rumah"
+    categories: "Kategori"
+    category: "Kategori"
+    tags: "Tag"
+    tag: "Tag"
+    archives: "Arsip"
+    search: "Telusuri"
+    about: "Tentang"
+    author_picture: "Foto Penulis"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google +"
+    weibo: "Weibo"
+    qq: "QQ"
+    qzone: "Qzone"
+    renren: "Renren"
+    vk: "VK"
+    odnoklassniki: "Odnoklassniki"
+    linkedin: "LinkedIn"
+    mail: "Mail"
+    rss: "RSS"
+    share_on_facebook: "Bagikan ke Facebook"
+    share_on_twitter: "Bagikan ke Twitter"
+    share_on_google_plus: "Bagikan ke Google+"
+    share_on_weibo: "Bagikan ke Weibo"
+    share_on_qq: "Bagikan ke QQ"
+    share_on_qzone: "Bagikan ke Qzone"
+    share_on_renren: "Bagikan ke Renren"
+    share_on_vk: "Bagikan ke VK"
+    share_on_odnoklassniki: "Bagikan ke Odnoklassniki"
+    search_category: "Telusuri kategori"
+    search_tag: "Telusuri tag"
+    search_date: "Telusuri tanggal (YYYY/MM/DD)"
+    posts_found:
+        zero: "pos tidak ditemukan"
+        one: "1 pos ditemukan"
+        other: "{n} pos ditemukan"
+    categories_found:
+        zero: "kategori tidak ditemukan"
+        one: "1 kategori ditemukan"
+        other: "{n} kategori ditemukan"
+    tags_found:
+        zero: "tag tidak ditemukan"
+        one: "1 tag ditemukan"
+        other: "{n} tag ditemukan"
+
+pagination:
+    page: "halaman %d"
+    of: "dari %d"
+    newer_posts: "POS LEBIH BARU"
+    older_posts: "POS LEBIH LAMA"
+    previous: "SEBELUMNYA"
+    next: "BERIKUTNYA"
+
+post:
+    no_title : "tidak berjudul"
+    categorized_in: "in"
+    tagged_in: "TAGGED IN"
+    toc: "Daftar Isi"
+    back_to_top: "Kembali ke atas"
+    read_more: "Lanjutkan membaca"
+    go_to_website: "Ke situs web"
+    comment_and_share: "Komentar dan berbagi"
+    comment: "Tinggalkan komentar"
+    share: "Bagikan pos ini"
+    gallery: "Galeri"
+    image:
+        one: "gambar"
+        other: "%d gambar"
+
+author:
+    # Your biography (Markdown and HTML supported)
+    bio: ""
+    # Your job
+    job: ""
