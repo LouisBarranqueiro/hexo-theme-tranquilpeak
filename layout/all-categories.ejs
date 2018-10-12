@@ -40,7 +40,7 @@ function displayCategoriesAndPosts(category) {
     });
     if (childCategories.length > 0) {
         // recursive iteration on its child categories
-        childCategories.forEach(function(childCategory) {
+        childCategories.sort('name', 'asc').forEach(function(childCategory) {
             // clone parents of current category to its child category
             childCategory.parents = category.parents.slice();
             // add current category to the parent of current child category
@@ -80,7 +80,7 @@ function displayCategories(category) {
     if (childCategories.length > 0) {
         html += '<ul style="margin-bottom:0;">';
         // recursive iteration on its child categories
-        childCategories.forEach(function(childCategory) {
+        childCategories.sort('name', 'asc').forEach(function(childCategory) {
             // clone parents of current category to its child category
             childCategory.parents = category.parents.slice();
             // add current category to the parent of current child category
