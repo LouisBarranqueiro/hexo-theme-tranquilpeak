@@ -7,7 +7,7 @@
     "start": "npm run grunt -- default",
     "build": "npm run prod",
     "prod": "npm run grunt -- buildProd",
-    "grunt": "./node_modules/grunt-cli/bin/grunt",
+    "grunt": "node ./node_modules/grunt-cli/bin/grunt",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
