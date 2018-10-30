@@ -17,6 +17,10 @@
 
     .postShorten-thumbnailimg {
         overflow:hidden;
+
+        img{
+           border-radius: 5px;
+        }
     }
     .postShorten-header {
         .postShorten-title {
