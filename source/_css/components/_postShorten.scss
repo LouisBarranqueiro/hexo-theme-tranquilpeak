@@ -17,10 +17,6 @@
 
     .postShorten-thumbnailimg {
         overflow:hidden;
-
-        img{
-           border-radius: 5px;
-        }
     }
     .postShorten-header {
         .postShorten-title {
@@ -154,7 +150,7 @@
             img {
                 width:      100%;
                 height:     auto;
-                max-height: $post-thumbnail-image-max-height;
+                max-height: $post-bottom-thumbnail-image-max-height;
                 object-fit: cover;
             }
         }
