@@ -148,8 +148,10 @@
             margin:   15px 0 15px 0;
 
             img {
-                width:  auto;
-                height: auto;
+                width:      100%;
+                height:     auto;
+                max-height: $post-bottom-thumbnail-image-max-height;
+                object-fit: cover;
             }
         }
     }
