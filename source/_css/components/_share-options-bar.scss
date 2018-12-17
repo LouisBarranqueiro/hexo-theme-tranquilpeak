@@ -6,6 +6,7 @@
     background:         white;
     height:             100%;
     clear:              both;
+    box-sizing:         border-box;
     border-top:         1px solid #eef2f8;
     transition:         transform .25s ease-in-out;
     z-index:            map-get($z-indexes, 'c-share-options-bar');
