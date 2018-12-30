@@ -1,14 +1,16 @@
-<div id="share-options-bar" class="share-options-bar" data-behavior="<%= sidebarBehavior %>">
-    <i id="btn-close-shareoptions" class="fa fa-times"></i>
-    <ul class="share-options">
-        <% for(var option in theme.sharing_options)  {%>
-            <% var icon = theme.sharing_options[option].icon %>
-            <% var url = generate_sharing_link(post, theme.sharing_options[option].url) %>
-            <li class="share-option">
-                <a class="share-option-btn" target="new" href="<%= url %>">
-                    <i class="<%= icon %>" aria-hidden="true"></i><span><%= __('global.share_on_' + option) %></span>
-                </a>
-            </li>
-        <% } %>
-    </ul>
-</div>
+<% if (theme.sharing_options && Object.keys(theme.sharing_options).length) { %>
+    <div id="share-options-bar" class="share-options-bar" data-behavior="<%= sidebarBehavior %>">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            <% for(var option in theme.sharing_options)  { %>
+                <% var icon = theme.sharing_options[option].icon %>
+                <% var url = generate_sharing_link(post, theme.sharing_options[option].url) %>
+                <li class="share-option">
+                    <a class="share-option-btn" target="new" href="<%= url %>">
+                        <i class="<%= icon %>" aria-hidden="true"></i><span><%= __('global.share_on_' + option) %></span>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+<% } %>
