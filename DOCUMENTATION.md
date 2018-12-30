@@ -175,7 +175,7 @@ Follow these steps, to add new filter :
 ## Modifying the theme
 
 1. Run `npm install` to install dependencies
-2. Run `hexo s` then `npm run start` and start coding :)
+2. Run `hexo serve` then `npm run start` and start coding :)
 
 ### Save changes
 
