@@ -1,0 +1,82 @@
+# 블로그의 모든 곳에 표시되는 날짜 형식
+date_format: "YYYY/MM/DD"
+
+global:
+    home: "Home"
+    categories: "카테고리"
+    category: "카테고리"
+    tags: "태그"
+    tag: "태그"
+    archives: "아카이브"
+    search: "검색"
+    about: "About"
+    author_picture: "저자 이미지"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google +"
+    weibo: "Weibo"
+    qq: "QQ"
+    qzone: "Qzone"
+    renren: "Renren"
+    vk: "VK"
+    odnoklassniki: "Odnoklassniki"
+    linkedin: "LinkedIn"
+    mail: "Mail"
+    rss: "RSS"
+    share_on_facebook: "Facebook에 공유하기"
+    share_on_twitter: "Twitter에 공유하기"
+    share_on_google_plus: "Google+에 공유하기"
+    share_on_weibo: "Weibo에 공유하기"
+    share_on_qq: "QQ에 공유하기"
+    share_on_qzone: "Qzone에 공유하기"
+    share_on_renren: "Renren에 공유하기"
+    share_on_vk: "VK에 공유하기"
+    share_on_odnoklassniki: "Odnoklassniki에 공유하기"
+    search_category: "카테고리 검색"
+    search_tag: "태그 검색"
+    search_date: "날짜 검색 (YYYY/MM/DD)"
+    posts_found:
+        zero: "포스트가 없습니다."
+        one: "1 개의 포스트가 있습니다."
+        other: "{n} 개의 포스트가 있습니다."
+    categories_found:
+        zero: "카테고리가 없습니다."
+        one: "1 개의 카테고리가 있습니다."
+        other: "{n} 개의 카테고리가 있습니다."
+    tags_found:
+        zero: "태그가 없습니다."
+        one: "1 개의 태그가 있습니다."
+        other: "{n} 개의 태그가 있습니다."
+
+pagination:
+    page: "page %d"
+    of: "of %d"
+    newer_posts: "최근 포스트"
+    older_posts: "이전 포스트"
+    previous: "이전"
+    next: "다음"
+
+post:
+    no_title : "제목 없음"
+    categorized_in: "카테고리"
+    tagged_in: "태그"
+    toc: "목차"
+    back_to_top: "맨 위로"
+    read_more: "계속 읽기"
+    go_to_website: "웹 사이트로 이동"
+    comment_and_share: "댓글 공유"
+    comment: "댓글을 남겨주세요"
+    share: "이 포스트 공유하기"
+    gallery: "갤러리"
+    image:
+        one: "이미지"
+        other: "%d 이미지"
+
+author:
+    # Your biography (마크다운과 HTML이 지원됩니다.)
+    bio: ""
+    # Your job
+    job: ""
+
