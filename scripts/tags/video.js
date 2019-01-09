@@ -115,10 +115,10 @@
     html += '<div';
     var placement = 'left';
     if (classes.indexOf('right') >= 0) {
-      placement = 'right'
+      placement = 'right';
     }
     if (classes.indexOf('center') >= 0) {
-      placement = 'center'
+      placement = 'center';
     }
     let pos = ' style="text-align:' + placement + '"';
     html += pos;
