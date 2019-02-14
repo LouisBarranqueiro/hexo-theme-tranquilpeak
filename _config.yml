@@ -201,6 +201,8 @@ gitment:
     client_id:
     # Your client secret:
     client_secret:
+    # Your self gitment.browser.js, see this link: https://github.com/imsun/gitment/issues/170
+    self_browser_js: 
 
 # -------------------
 # Integrated services

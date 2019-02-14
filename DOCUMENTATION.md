@@ -13,6 +13,7 @@
 1. Download the latest version built and ready for production here : [releases](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases)
 2. Rename the folder in `tranquilpeak` and place it in the `themes` folder of your Hexo blog
 3. Modify the theme in Hexo configuration file (`_config.yml`) by setting `theme` variable to `tranquilpeak`
+4. If you want to use gitment, check Gitment settings in theme configuration to install it.
 
 ## Hexo configuration
 
@@ -106,7 +107,7 @@ To enable `all-categories` page:
 
 1. Run `hexo new page "all-categories"`. A new folder named `all-categories` will be created in `source/`
 2. Replace `source/all-categories/index.md` content with:
- 
+
 ``` markdown
 ---
 title: "all-categories"
@@ -123,7 +124,7 @@ To enable `all-tags` page:
 
 1. Run `hexo new page "all-tags"`. A new folder named `all-tags` will be created in `source/`
 2. Replace `source/all-tags/index.md` content with:
- 
+
 ``` markdown
 ---
 title: "all-tags"
@@ -140,17 +141,107 @@ To enable `all-archives` page:
 
 1. Run `hexo new page "all-archives"`. A new folder named `all-archives` will be created in `source/`
 2. Replace `source/all-archives/index.md` content with:
- 
+
 ``` markdown
 ---
 title: "all-archives"
 layout: "all-archives"
 comments: false
 ---
-```  
+```
 
 This page will be reachable at: `/all-archives`. On this page, users will be able to search and filter posts by date.  
 **Search pattern** : YYYY/MMM/DD
+
+#### Gitment settings
+
+Gitment can not use now, when try to initialize comments it will raise exception : '[object ProgressEvent]'
+
+##### Chinese version
+
+Reason can see this issue (chinese version): https://github.com/imsun/gitment/issues/170
+
+Solution can see this blog (chinese version): https://sherry0429.github.io/2019/02/12/gitment%E4%BF%AE%E5%A4%8D/
+
+##### English version
+
+Gitment author in node_modules/gitment/gitment.browser.js code this:
+
+```javascript
+ _utils.http.post('https://gh-oauth.imsun.net', {
+    code: code,
+    client_id: client_id,
+    client_secret: client_secret
+  }, '').then(function (data) {
+    _this.accessToken = data.access_token;
+    _this.update();
+  }).catch(function (e) {
+    _this.state.user.isLoggingIn = false;
+    alert(e);
+  });
+```
+'https://gh-oauth.imsun.net' this server's explain can see readme in gitment, author said:
+
+```
+Why does Gitment send a request to gh-oauth.imsun.net?
+https://gh-oauth.imsun.net is an simple open-source service to proxy one request during users logging in. Because GitHub doesn't attach a CORS header to it.
+
+This service won't record or store anything. It only attaches a CORS header to that request and provides proxy. So that users can login in the frontend without any server-side implementation.
+
+For more details, checkout this project.
+```
+
+__but now this server can not support service anymore__, (2019-2-14 10:07:49)，so we have to:
+
+1. make our own server do the same thing like https://gh-oauth.imsun.net
+   1. git clone https://github.com/imsun/gh-oauth-server on your cloud server
+   2. then npm install & start, it will listen in 3000 port
+   3. use agent program like nginx or other, make a web address replace as ip address to access gh-oauth-server
+2. replace gitment.browser.js 'https://gh-oauth.imsun.net' with our server address
+3. upload modified gitment.browser.js to cloud server/ftp/oss etc (to __make it can be access from a web link__)
+4. in this theme's _config.yml
+   1. in gitment configuration
+   2.  self_browser_js = https://yourlink/gitment.browser.js
+5. self_browser_js  will reference in hexo-theme-tranquilpeak\layout\_partial\script.ejs like:
+
+```javascript
+gc.src = '<%- theme.gitment.self_browser_js %>';
+```
+
+__by the way, if you do not want to update theme version, just do step 1 to step 3, and then__
+
+1. modify hexo-theme-tranquilpeak\layout\_partial\script.ejs
+
+```
+gc.src = 'xxxxxx'
+```
+
+to
+
+```javascript
+gc.src = '<%- theme.gitment.self_browser_js %>';
+```
+
+2. modify _config.yml, add self_browser_js settings to gitment, like :
+
+```shell
+gitment:
+    # Switch
+    enable: false
+    # Your Github ID (Github username):
+    github_id:
+    # The repo to store comments:
+    repo:
+    # Your client ID:
+    client_id:
+    # Your client secret:
+    client_secret:
+    # Your self gitment.browser.js, see this link: https://github.com/imsun/gitment/issues/170
+    self_browser_js: 
+
+```
+
+
 
 ## Integrated services configuration ##
 
@@ -161,7 +252,7 @@ This page will be reachable at: `/all-archives`. On this page, users will be abl
 While you are writing articles, you need to check the result a lot of times before deploying your site.
 If you have enable Google analytics service, Google will include all requests done, even when hostname is localhost and this can greatly skew the results.
 To overcome this, you have to add a filter on Google Analytics website.
-   
+
 Follow these steps, to add new filter :
 
 1. Sign in to your Google Analytics account
@@ -230,7 +321,7 @@ To use tags plugins to highlight code or add Fancybox image, please read [Hexo d
 Tranquilpeak introduces new variables to give you a lot of possibilities.  
 
 **Since Tranquilpeak 1.7, if you declare some photos in `photos` variable with a caption or an thumbnail url, please use `gallery` variable name instead of `photos` otherwise Hexo will generate wrong url for these images in open graph meta tag.**
-  
+
 Example :  
 ``` markdown
 disqusIdentifier: fdsF34ff34
@@ -278,10 +369,10 @@ actions: false
 Example: 
 A post on index page will look like this with :`thumbnailImagePosition` set to `bottom`:  
 ![thumbnail-image-position-bottom](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-bottom-400.jpg)  
-  
+
 The same with : `thumbnailImagePosition` set to `right`:  
 ![thumbnail-image-position-right](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-right-400.png)  
-  
+
 The same with : `thumbnailImagePosition` set to `left`:  
 ![thumbnail-image-position-left](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-left-400.png)  
 
@@ -302,9 +393,9 @@ Of course, you can set external url.**
 ### Display table of contents
 
 You can display table of contents of a post with  `<!-- toc -->`.  Place this comment where you want to display it. You can also edit the title displayed at the top of the table of contents in the `_config.yml` file.
-  
+
 ![thumbnail-image-position-left](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/toc-400.png) 
-  
+
 ### Tags
 
 Tranquilpeak introduces new tags to display alert messages, images in full width and create beautiful galleries.
@@ -345,7 +436,7 @@ Syntax :
 {% hl_text [(classes | hexa code | rgb color | rgba color)] %} 
 content
 {% endhl_text %}
-``` 
+```
 
 E.g :  
 ```
@@ -355,9 +446,9 @@ your highlighted text
 ```
 
 |Argument|Description|
-|---|---| 
+|---|---|
 |Classes|<strong>classes</strong> : <ul><li>red</li><li>green</li><li>blue</li><li>purple</li><li>orange</li><li>yellow</li><li>cyan</li><li>primary</li><li>success</li><li>warning</li><li>danger</li></ul>|
-        
+
 **You can also use hexa color, rgb color, rgba color.**
 
 **It's important to put the paragraph that contains highlight text tag inside** `<p>...</p>` 
@@ -381,7 +472,7 @@ Syntax : `{% image [classes] group:group-name /path/to/image [/path/to/thumbnail
 E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/images/image125.png 150px 300px "A beautiful sunrise" %}`
 
 |Argument|Description|
-|---|---| 
+|---|---|
 |Classes (optional)|You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :  <ul><li><strong>fancybox</strong> : Generate a fancybox image.</li><li><strong>nocaption</strong> : Caption of the image will not be displayed.</li><li><strong>left</strong> : Image will float at the left.</li><li><strong>right</strong> : Image will float at the right.</li><li><strong>center</strong> : Image will be at center.</li><li><strong>fig-20</strong> : Image will take 20% of the width of post width and automatically float at left.</li><li><strong>fig-25</strong> : Image will take 25% of the width of post width and automatically float at left.</li><li><strong>fig-33</strong> : Image will take 33% of the width of post width and automatically float at left.</li><li><strong>fig-50</strong> : Image will take 50% of the width of post width and automatically float at left.</li><li><strong>fig-75</strong> : Image will take 75% of the width of post width and automatically float at left.</li><li><strong>fig-100</strong> : Image will take 100% of the width of post width.</li><li><strong>clear</strong> : Add a div with `clear:both;` style attached after the image to retrieve the normal flow of the post.</li></ul>|
 |Group (optional)| Name of a group, used to create a gallery. **Only for image with `fancybox` css class**|
 |Orignal image| Path to the original image.|
@@ -389,7 +480,7 @@ E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/im
 |Width of thumbnail image (optional)| Width to the thumbnail image. If the thumbnail image is empty, width will be attached to thumbnail image created from original image. E.g : `150px` or `85%`.|
 |Height of thumbnail image (optional)| Height to the thumbnail image. If the thumbnail image is empty, height will be attached to thumbnail image created from original image. E.g : `300px` or `20%`.|
 |Title (optional)| Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.|
- 
+
 #### Tabbed code block
 
 Tabbed code blocks are useful to group multiple code blocks related. For example, the source code of a web component (html, css and js). Or compare a source code in different languages.
@@ -419,9 +510,9 @@ E.g :
           }
       <!-- endtab -->
   {% endtabbed_codeblock %}
-``` 
+```
 |Argument|Description|
-|---|---| 
+|---|---|
 |Name (optional)|Name of the code block, or of the file|
 |Link (optional)|Link to a demo, or a file|
 |Lang (optional)|Programming language use for the current tab|
@@ -434,9 +525,9 @@ Syntax : `{% wide_image /path/to/image [title text] %}`
 E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" %}`  
 
 |Argument|Description|
-|---|---| 
+|---|---|
 |Image|Path to the original image.|
-|Title (optional)|Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.| 
+|Title (optional)|Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.|
 
 #### Fancybox
 
