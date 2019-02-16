@@ -1,5 +1,15 @@
 <section class="postShorten-group main-content-wrap">
-    <% page.posts.each(function(post) { %>
+    <%
+        function sortByPinned(posts) {
+            let postsCopy = posts.slice(0);
+            postsCopy.sort(function(firstPost, secondPost) {
+                if (!(firstPost.pinned ^ secondPost.pinned)) return 0;
+                return secondPost.pinned ? 1 : -1;
+            });
+            return postsCopy;
+        }
+    %>
+    <% sortByPinned(page.posts.data).forEach(function(post) { %>
     <%
         var tableOfContents = null;
         var thumbnailImageUrl = post.thumbnailImageUrl;
