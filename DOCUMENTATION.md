@@ -390,6 +390,22 @@ E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/im
 |Height of thumbnail image (optional)| Height to the thumbnail image. If the thumbnail image is empty, height will be attached to thumbnail image created from original image. E.g : `300px` or `20%`.|
 |Title (optional)| Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.|
  
+### Video
+The video tag is useful to add html5 mp4 videos. Sometimes used as more efficient "gifs" since in compairison, "gifs" are [way too huge](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/).
+Take a look at some examples here: [Video Tag Demo](https://benmitchinson.com/Video-Tag-Demo/)
+
+Syntax : `{% video [classes] videoURL [Optional Poster (Thumbnail) URL] [Width %] [Caption] %}
+
+E.g : ` {% video center https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4 https://peach.blender.org/wp-content/uploads/title_anouncement.jpg 100% 60 Poster (Thumbnail) Enabled %}
+ 
+|Argument|Description|
+|---|---| 
+|Classes (optional)|Make sure to separate your class properties with whitespaces. Tranquilpeak integrates many css classes to create nice effects: </li><li><strong>left</strong> : Video will float at the left (default alignment).</li><li><strong>right</strong> : Video will float at the right.</li><li><strong>center</strong> : Video will be at center.</li><li><strong>clear</strong> : Add a div with `clear:both;` style attached after the image to retrieve the normal flow of the post.</li><li><strong>nocaption</strong> : the provided caption will not be displayed.</li><li><strong>loop</strong> : once over, the video will playback from the beginning.</li><li><strong>nocontrols</strong> : The video's default controls will be hidden. Most browsers still make them accessible by right clicking on the video.</li><li><strong>autoplay</strong> : Video will autoplay on page load. <strong>must be used with the 'mute' class</strong> to obey browser standards. Most likely will not work otherwise.</li><li><strong>muted</strong> : Video will start on mute</li></ul>|
+|videoURL| Path to the original video.|
+|Poster image (optional thumbnail)| Path to the thumbnail image. If empty, the initial frame of video will be displayed.|
+|Width of thumbnail image (optional)| Width of the video frame. E.g : `85%`.|
+|Caption (optional)| Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.|
+
 #### Tabbed code block
 
 Tabbed code blocks are useful to group multiple code blocks related. For example, the source code of a web component (html, css and js). Or compare a source code in different languages.
