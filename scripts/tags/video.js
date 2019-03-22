@@ -27,11 +27,11 @@
    * Video tag
    *
    * Syntax:
-   *     {% video [classes] /path/to/video
-   *     [width%] [title text] %}
+   *     {% video [classes] videoURL [Optional Poster (Thumbnail) URL] 
+   *     [Width] [Height] [Caption] %}
    * E.g:
-   *     {% video http://example.com/video145.mp4
-   *     100% "A beautiful sunrise" %}
+   *     {% video loop http://example.com/video145.mp4 
+   *     http://example.com/image.png 100% 95% "A beautiful sunrise" %}
    */
   hexo.extend.tag.register('video', function(args) {
     var original;
@@ -68,24 +68,24 @@
     var title = args.join(' ');
 
     // Build the video HTML structure
-    var video = '<video';
+    var video = '<video ';
     if (classes.indexOf(autoplayClass) >= 0) {
-      video += ' autoplay playsinline';
+      video += 'autoplay playsinline ';
     }
     if (classes.indexOf(loopClass) >= 0) {
-      video += ' loop';
+      video += 'loop ';
     }
     if (classes.indexOf(mutedClass) >= 0) {
-      video += ' muted';
+      video += 'muted ';
     }
     if (classes.indexOf(noControlsClass) === -1) {
-      video += ' controls';
+      video += 'controls ';
     }
     if (poster !== '') {
-      video += ' poster="' + poster + '"';
+      video += 'poster="' + poster + '" ';
     }
     // add size
-    video += ' style="';
+    video += 'style="';
     if (width || height) {
       // add width
       if (width) {

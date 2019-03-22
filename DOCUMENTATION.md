@@ -391,12 +391,12 @@ E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/im
 |Title (optional)| Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.|
  
 ### Video
-The video tag is useful to add html5 mp4 videos. Sometimes used as more efficient "gifs" since in compairison, "gifs" are [way too huge](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/).
+The video tag provides a way conveniently add videos. Often videos are prefered over gifs, since in compairison, "gifs" are [much larger and harder to deliever](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/).
 Take a look at some examples here: [Video Tag Demo](https://benmitchinson.com/Video-Tag-Demo/)
 
-Syntax : `{% video [classes] videoURL [Optional Poster (Thumbnail) URL] [Width %] [Caption] %}
+Syntax : `{% video [classes] videoURL [Optional Poster (Thumbnail) URL] [Width] [Height] [Caption] %}`
 
-E.g : ` {% video center https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4 https://peach.blender.org/wp-content/uploads/title_anouncement.jpg 100% 60 Poster (Thumbnail) Enabled %}
+E.g : `{% video center https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4 https://peach.blender.org/wp-content/uploads/title_anouncement.jpg 100% 60 Poster (Thumbnail) Enabled %}`
  
 |Argument|Description|
 |---|---| 
