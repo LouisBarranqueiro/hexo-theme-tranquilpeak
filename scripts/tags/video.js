@@ -27,10 +27,10 @@
    * Video tag
    *
    * Syntax:
-   *     {% video [classes] videoURL [Optional Poster (Thumbnail) URL] 
+   *     {% video [classes] videoURL [Optional Poster (Thumbnail) URL]
    *     [Width] [Height] [Caption] %}
    * E.g:
-   *     {% video loop http://example.com/video145.mp4 
+   *     {% video loop http://example.com/video145.mp4
    *     http://example.com/image.png 100% 95% "A beautiful sunrise" %}
    */
   hexo.extend.tag.register('video', function(args) {
