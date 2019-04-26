@@ -47,6 +47,12 @@
                          <i class="fa fa-comment"></i>
                     </a>
                 </li>
+            <% } else if (theme.gitalk.enable) { %>
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#gitalk">
+                         <i class="fa fa-comment"></i>
+                    </a>
+                </li>
             <% } else if (theme.disqus_shortname) { %>
                 <li class="post-action">
                     <a class="post-action-btn btn btn--default" href="#disqus_thread">

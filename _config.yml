@@ -202,6 +202,20 @@ gitment:
     # Your client secret:
     client_secret:
 
+# Your Gitalk information
+gitalk:
+    # Switch
+    enable: false
+    # Your Github ID (Github username):
+    github_id:
+    # The repo to store comments:
+    repo:
+    # Your client ID:
+    client_id:
+    # Your client secret:
+    client_secret:
+    # Distraction Free:
+    distraction_free: false
 # -------------------
 # Integrated services
 # -------------------
