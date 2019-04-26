@@ -1,6 +1,6 @@
 var jsDestFolder = './source/assets/js/';
 var cssDestFolder = './source/assets/css/';
-var fontsDestFolder = './source/assets/fonts/';
+var fontsDestFolder = './source/assets/webfonts/';
 
 var fancyboxPath = './node_modules/@fancyapps/fancybox';
 var fontAwesomePath = './node_modules/@fortawesome/fontawesome-free';

@@ -48,6 +48,8 @@
                 <%- partial('post/disqus') %>
             <% } else if (theme.gitment.enable) { %>
                 <%- partial('post/gitment') %>
+            <% } else if (theme.gitalk.enable) { %>
+                <%- partial('post/gitalk') %>
             <% } %>
         <% } %>
     </div>
