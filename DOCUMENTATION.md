@@ -67,7 +67,7 @@ Currently, the theme is delivered with:
 - Chinese Traditional (zh-TW)
 - English (en)
 - French (fr-FR)
-- Japanase (ja)
+- Japanese (ja)
 - Portuguese (pt-BR)
 - Russian (ru)
 - Spanish (es)
