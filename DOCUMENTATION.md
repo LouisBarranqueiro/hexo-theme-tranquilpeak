@@ -404,8 +404,8 @@ E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/im
 
 The video tag provides a way conveniently add videos. Take a look at some examples here: [Video Tag Demo](https://benmitchinson.com/Video-Tag-Demo/)
 
-Syntax : `{% video [classes] videoURL [Optional Poster (Thumbnail) URL] [Width] [Height] [Caption] %}`
-E.g : `{% video center https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4 https://peach.blender.org/wp-content/uploads/title_anouncement.jpg 100% 60 Poster (Thumbnail) Enabled %}`
+Syntax : `{% video [classes] videoURL [Optional Poster (Thumbnail) URL] [Width] [Caption] %}`
+E.g : `{% video center https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4 https://peach.blender.org/wp-content/uploads/title_anouncement.jpg 100% Poster (Thumbnail) Enabled %}`
  
 |Argument|Description|
 |---|---| 

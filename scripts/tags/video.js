@@ -23,12 +23,13 @@
   var loopClass = 'loop';
   var mutedClass = 'muted';
   var noControlsClass = 'nocontrols';
+  var figureClass = 'figure';
   /**
    * Video tag
    *
    * Syntax:
    *     {% video [classes] videoURL [Optional Poster (Thumbnail) URL]
-   *     [Width] [Height] [Caption] %}
+   *     [Width] [Caption] %}
    * E.g:
    *     {% video loop http://example.com/video145.mp4
    *     http://example.com/image.png 100% 95% "A beautiful sunrise" %}
@@ -37,7 +38,6 @@
     var original;
     var poster = '';
     var width = '';
-    var height = '';
     var classes = [];
     var html = '';
     var clear = '';
@@ -57,11 +57,6 @@
     // Get width of video
     if (args.length && rSize.test(args[0])) {
       width = args.shift();
-    }
-    
-    // Get height of video
-    if (args.length && rSize.test(args[0])) {
-      height = args.shift();
     }
     
     // Get title of video
@@ -84,22 +79,7 @@
     if (poster !== '') {
       video += 'poster="' + poster + '" ';
     }
-    // add size
-    video += 'style="';
-    if (width || height) {
-      // add width
-      if (width) {
-        video += 'width:' + width + ';';
-      }
-      // add height
-      if (height) {
-        video += 'height:' + height + ';';
-      }
-    }
-    else {
-      video += 'width:100%;';
-    }
-    video += '" alt="' + title + '">\n';
+    video += 'alt="' + title + '">\n';
     video += '<source src="' + original + '" type="video/mp4">\n';
     video += '<p>Your browser doesn\'t support HTML5 Video :/</p>';
     video += '</video>';
@@ -112,29 +92,32 @@
     }
     
     // Build HTML structure
-    html += '<div';
-    var placement = 'left';
+    var placement = 'center';
     if (classes.indexOf('right') >= 0) {
       placement = 'right';
     }
-    if (classes.indexOf('center') >= 0) {
-      placement = 'center';
+    if (classes.indexOf('left') >= 0) {
+      placement = 'left';
     }
-    let pos = ' style="text-align:' + placement + '"';
-    html += pos;
-    html += '>';
+    html += '<div class="' + figureClass + ' ' + placement + '"';
+    // add width figure div, defaults to 100% width, height scales accordingly
+    html += ' style="width:';
+    html += (width) ? (width) : ("100%")
+    html += ';">\n';
     html += video;
     
     // Add caption
     if (title && classes.indexOf(noCaptionClass) === -1) {
-      html += '<span class="' + captionClass + '">';
+      html += '\n<span class="' + captionClass + '">';
       html += title + '';
       html += '</span>';
     }
     
-    html += '</div>';
-    // add `clear` div
+    html += '\n</div>';
+
+    // add `clear` div if previously specified
     html += clear;
     return html;
+  
   });
 })();
