@@ -8,6 +8,16 @@
    * @param {Number} startpos
    * @return {Number}
    */
+  function reIndexOf(array, regex) {
+    let i = 0;
+    while(i < array.length){
+      if (array[i].toString().match(regex)) {
+        return i;
+      }
+      i++;
+    }
+    return -1;
+  }
 
   var rPath = new RegExp(
     '((([A-Za-z]{3,9}:(?:\\/\\/)?)(?:[-;:&=+$,\\w]+@)?' +
@@ -16,6 +26,7 @@
     '#?(?:[.!\\/\\w]*))|^[A-Za-z0-9_\\/-]+\\.\\w{2,4})');
   var rClass = /^[_a-zA-Z0-9-]+$/;
   var rSize = /^\d+(?:|\.\d+)(?:px|%)?$/;
+  var rFigClass = /(^fig-\d{2,3}$)/;
   var captionClass = 'caption';
   var noCaptionClass = 'nocaption';
   var clearClass = 'clear';
@@ -92,18 +103,28 @@
     }
     
     // Build HTML structure
-    var placement = 'center';
+    var placement = '';
     if (classes.indexOf('right') >= 0) {
-      placement = 'right';
+      placement = ' right';
     }
-    if (classes.indexOf('left') >= 0) {
-      placement = 'left';
+    else if (classes.indexOf('left') >= 0) {
+      placement = ' left';
     }
-    html += '<div class="' + figureClass + ' ' + placement + '"';
-    // add width figure div, defaults to 100% width, height scales accordingly
-    html += ' style="width:';
-    html += (width) ? (width) : ("100%")
-    html += ';">\n';
+    else if (classes.indexOf('center') >= 0) {
+      placement = ' center';
+    }
+    html += '<div class="' + figureClass + placement;
+    if(reIndexOf(classes, rFigClass) === -1){
+      html += '" style="width:';
+      html += (width) ? (width) : ("100%")
+      html += ';">\n';
+    }
+    else{
+      html += ' ' + classes[reIndexOf(classes, rFigClass)]
+      html += '">\n';
+    }
+
+    
     html += video;
     
     // Add caption
