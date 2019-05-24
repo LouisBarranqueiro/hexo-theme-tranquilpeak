@@ -10,7 +10,7 @@
    */
   function reIndexOf(array, regex) {
     let i = 0;
-    while(i < array.length){
+    while (i < array.length) {
       if (array[i].toString().match(regex)) {
         return i;
       }
@@ -114,13 +114,13 @@
       placement = ' center';
     }
     html += '<div class="' + figureClass + placement;
-    if(reIndexOf(classes, rFigClass) === -1){
+    if (reIndexOf(classes, rFigClass) === -1) {
       html += '" style="width:';
-      html += (width) ? (width) : ("100%")
+      html += (width) ? (width) : ('100%');
       html += ';">\n';
     }
-    else{
-      html += ' ' + classes[reIndexOf(classes, rFigClass)]
+    else {
+      html += ' ' + classes[reIndexOf(classes, rFigClass)];
       html += '">\n';
     }
 
@@ -139,6 +139,5 @@
     // add `clear` div if previously specified
     html += clear;
     return html;
-  
   });
 })();
