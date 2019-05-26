@@ -54,7 +54,7 @@
     "@fortawesome/fontawesome-free": "5.8.2",
     "hexo-util": "0.6.3",
     "jquery": "3.4.1",
-    "jsdom": "11.6.2",
+    "jsdom": "15.1.0",
     "strip-indent": "2.0.0"
   },
   "engines": {
