@@ -13,7 +13,7 @@ function jsonLd() {
   const links = [];
 
   if (authorLinks) {
-    for (let key in authorLinks) {
+    for (const key in authorLinks) {
       if (authorLinks.hasOwnProperty(key)) {
         const link = authorLinks[key].url;
 
