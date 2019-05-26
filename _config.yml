@@ -151,7 +151,7 @@ author:
 # 5: Display header bar on all screens and large sidebar is swiped on large screen
 # 6: Display header bar on all screens and medium sidebar is swiped
 sidebar_behavior: 1
-# Hide sidebar on all article page to let article take full width to improve reading, and
+# Hide sidebar on all article pages to let articles take full width to improve reading, and
 # enjoy wide images and cover images. (true: enable, false: disable)
 clear_reading: true
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
@@ -181,6 +181,8 @@ image_gallery: true
 archive_pagination: true
 category_pagination: true
 tag_pagination: true
+# Show a simple wordcount & the number minutes to read
+wordcount: true
 
 # ---------------
 # Comment systems
