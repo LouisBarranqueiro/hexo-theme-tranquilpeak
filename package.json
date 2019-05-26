@@ -50,7 +50,7 @@
     "rand-token": "0.4.0"
   },
   "dependencies": {
-    "@fancyapps/fancybox": "3.2.5",
+    "@fancyapps/fancybox": "3.5.7",
     "@fortawesome/fontawesome-free": "5.1.0",
     "hexo-util": "0.6.3",
     "jquery": "3.3.1",
