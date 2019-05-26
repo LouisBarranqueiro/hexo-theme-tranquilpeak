@@ -56,8 +56,8 @@
     <% } %>
 <% } %>
 <% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
-    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/algoliasearch@3.33.0/dist/algoliasearch.min.js"></script>
     <script>
         var algoliaClient = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
         var algoliaIndex = algoliaClient.initIndex('<%= config.algolia.indexName %>');
