@@ -1,3 +1,6 @@
+<%
+ const GALLERY_IMAGES_DISPLAYED_LIMIT = 3
+ %>
 <% if (theme.image_gallery &&
     ((post.gallery && post.gallery.length) || (post.photos && post.photos.length))) { %>
     <%
@@ -13,7 +16,7 @@
             <span><%= __('post.gallery')  + ': ' + _p('post.image', photos.length) %></span>
         </div>
         <div class="image-gallery-photos <%= imageGalleryClass %>">
-            <% photos.forEach(function(photo) { %>
+            <% photos.forEach(function(photo, photoIndex) { %>
             <%
                 var rPhoto = /([\w:\-\/._#?=]+)(?:\s+([\w:\-\/._#?=]+))*(?:\s*["|'](.+)["|'])*/;
                 var match = photo.match(rPhoto);
@@ -38,9 +41,12 @@
                     title="<%= photo.title %>"
                     href="<%= (photo.original || photo.thumbnail) %>"
                 >
-                    <img
-		                    class="photo" src="<%= (photo.thumbnail || photo.original) %>"
-                    >
+                    <% if (photoIndex < GALLERY_IMAGES_DISPLAYED_LIMIT) {%>
+
+                        <img
+                                class="photo" src="<%= (photo.thumbnail || photo.original) %>"
+                        >
+                    <% } %>
                 </a>
             </div>
             <% }) %>
