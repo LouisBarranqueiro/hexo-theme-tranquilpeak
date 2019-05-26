@@ -32,8 +32,8 @@ module.exports = function(grunt) {
         'source/assets/css/all.css'
       ],
       replacements: [{
-        from: 'url(../webfonts/',
-        to: 'url(../fonts/'
+        from: '../webfonts/',
+        to: '../fonts/'
       }]
     },
     // Modify url of images and fonts in tranquilpeak.css to resolve images and fonts path.

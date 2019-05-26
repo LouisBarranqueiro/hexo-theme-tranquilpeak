@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "3.5.7",
-    "@fortawesome/fontawesome-free": "5.1.0",
+    "@fortawesome/fontawesome-free": "5.8.2",
     "hexo-util": "0.6.3",
     "jquery": "3.3.1",
     "jsdom": "11.6.2",
