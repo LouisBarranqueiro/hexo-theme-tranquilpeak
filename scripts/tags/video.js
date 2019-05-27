@@ -1,13 +1,6 @@
 (function() {
   'use strict';
   
-  /**
-   * search index in an array with a regex
-   * @param {Array} array
-   * @param {Regex} regex
-   * @param {Number} startpos
-   * @return {Number}
-   */
   function reIndexOf(array, regex) {
     let i = 0;
     while (i < array.length) {
@@ -75,16 +68,16 @@
 
     // Build the video HTML structure
     var video = '<video ';
-    if (classes.indexOf(autoplayClass) >= 0) {
+    if (classes.includes(autoplayClass)) {
       video += 'autoplay playsinline ';
     }
-    if (classes.indexOf(loopClass) >= 0) {
+    if (classes.includes(loopClass)) {
       video += 'loop ';
     }
-    if (classes.indexOf(mutedClass) >= 0) {
+    if (classes.includes(mutedClass)) {
       video += 'muted ';
     }
-    if (classes.indexOf(noControlsClass) === -1) {
+    if (!classes.includes(noControlsClass)) {
       video += 'controls ';
     }
     if (poster !== '') {
@@ -96,7 +89,7 @@
     video += '</video>';
 
     // Build div to retrieve normal flow of document
-    if (classes.indexOf(clearClass) >= 0) {
+    if (classes.includes(clearClass)) {
       clear = '<div style="clear:both;"></div>';
       // remove `clear` class of `classes` to not be attached on the main div
       classes.splice(classes.indexOf(clearClass), 1);
@@ -104,13 +97,13 @@
     
     // Build HTML structure
     var placement = '';
-    if (classes.indexOf('right') >= 0) {
+    if (classes.includes('right')) {
       placement = ' right';
     }
-    else if (classes.indexOf('left') >= 0) {
+    else if (classes.includes('left')) {
       placement = ' left';
     }
-    else if (classes.indexOf('center') >= 0) {
+    else if (classes.includes('center')) {
       placement = ' center';
     }
     html += '<div class="' + figureClass + placement;
@@ -128,7 +121,7 @@
     html += video;
     
     // Add caption
-    if (title && classes.indexOf(noCaptionClass) === -1) {
+    if (title && !classes.includes(noCaptionClass)) {
       html += '\n<span class="' + captionClass + '">';
       html += title + '';
       html += '</span>';
