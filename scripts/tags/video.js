@@ -1,16 +1,5 @@
 (function() {
   'use strict';
-  
-  function reIndexOf(array, regex) {
-    let i = 0;
-    while (i < array.length) {
-      if (array[i].toString().match(regex)) {
-        return i;
-      }
-      i++;
-    }
-    return -1;
-  }
 
   var rPath = new RegExp(
     '((([A-Za-z]{3,9}:(?:\\/\\/)?)(?:[-;:&=+$,\\w]+@)?' +
@@ -28,6 +17,14 @@
   var mutedClass = 'muted';
   var noControlsClass = 'nocontrols';
   var figureClass = 'figure';
+  var videoClasses = [
+    captionClass,
+    noCaptionClass,
+    autoplayClass,
+    loopClass,
+    mutedClass,
+    noControlsClass
+  ]
   /**
    * Video tag
    *
@@ -36,7 +33,7 @@
    *     [Width] [Caption] %}
    * E.g:
    *     {% video loop http://example.com/video145.mp4
-   *     http://example.com/image.png 100% 95% "A beautiful sunrise" %}
+   *     http://example.com/image.png 95% "A beautiful sunrise" %}
    */
   hexo.extend.tag.register('video', function(args) {
     var original;
@@ -95,31 +92,19 @@
       classes.splice(classes.indexOf(clearClass), 1);
     }
     
-    // Build HTML structure
-    var placement = '';
-    if (classes.includes('right')) {
-      placement = ' right';
-    }
-    else if (classes.includes('left')) {
-      placement = ' left';
-    }
-    else if (classes.includes('center')) {
-      placement = ' center';
-    }
-    html += '<div class="' + figureClass + placement;
-    if (reIndexOf(classes, rFigClass) === -1) {
-      html += '" style="width:';
-      html += (width) ? (width) : ('100%');
-      html += ';">\n';
-    }
-    else {
-      html += ' ' + classes[reIndexOf(classes, rFigClass)];
-      html += '">\n';
-    }
+    // remove all video-related classes to only have style-related classes
+    videoClasses.forEach(function(videoClass) {
+      if (classes.includes(videoClass)) {
+        classes.splice(classes.indexOf(videoClass), 1)
+      }
+    })
 
-    
+    // Build HTML structure
+    html += '<div class="' + figureClass + ' ' + classes.join(' ') + '" '
+    html += width ? 'style="width:' + width + '"; ' : ''
+    html += '>\n';
     html += video;
-    
+
     // Add caption
     if (title && !classes.includes(noCaptionClass)) {
       html += '\n<span class="' + captionClass + '">';
