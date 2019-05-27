@@ -33,6 +33,11 @@
         e.preventDefault();
         self.playBack();
       });
+      // Detect click on close button outside of card
+      self.$about.click(function(e) {
+        e.preventDefault();
+        self.playBack();
+      });
     },
 
     /**
