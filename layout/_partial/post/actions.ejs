@@ -41,19 +41,11 @@
             </li>
         <% } %>
         <% if (post.comments) { %>
-            <% if (theme.gitment.enable) { %>
-                <li class="post-action">
-                    <a class="post-action-btn btn btn--default" href="#gitment">
-                         <i class="fa fa-comment"></i>
-                    </a>
-                </li>
-            <% } else if (theme.disqus_shortname) { %>
-                <li class="post-action">
-                    <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                        <i class="fa fa-comment"></i>
-                    </a>
-                </li>
-            <% } %>
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment"></i>
+                </a>
+            </li>
         <% } %>
         <li class="post-action">
             <% if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(post.content)) { %>
