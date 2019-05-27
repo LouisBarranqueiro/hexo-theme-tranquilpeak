@@ -67,7 +67,7 @@
     var title = args.join(' ');
 
     // Build the video HTML structure
-    var video = '<video ';
+    var video = '<video class="fig-video" ';
     if (classes.includes(autoplayClass)) {
       video += 'autoplay playsinline ';
     }
@@ -131,6 +131,7 @@
 
     // add `clear` div if previously specified
     html += clear;
+    console.log("TCL: html", html)
     return html;
   });
 })();
