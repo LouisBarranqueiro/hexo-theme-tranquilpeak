@@ -59,25 +59,24 @@
             (function() {
                 function render() {
                     new Gitalk({
-                      clientID: '<%- theme.gitalk.client_id %>',
-                      clientSecret: '<%- theme.gitalk.client_secret %>',
-                      repo: '<%- theme.gitalk.repo %>',
-                      owner: '<%- theme.gitalk.owner %>',
-                      admin: ['<%- theme.gitalk.owner %>'],
-                      id: "<%= post.title %>",
-                      labels: <%- theme.gitalk.options.labels %>,
-                      language: '<%- theme.gitalk.options.language %>',
-                      perPage: '<%- theme.gitalk.options.perPage %>',
-                      distractionFreeMode: <%- theme.gitalk.options.distractionFreeMode %>,
-                      pagerDirection: '<%- theme.gitalk.options.pagerDirection %>',
-                      createIssueManually: <%- theme.gitalk.options.createIssueManually %>,
-                      proxy: '<%- theme.gitalk.options.proxy %>',
-                      enableHotKey: <%- theme.gitalk.options.enableHotKey %>,
+                      clientID: '<%= theme.gitalk.client_id %>',
+                      clientSecret: '<%= theme.gitalk.client_secret %>',
+                      repo: '<%= theme.gitalk.repo %>',
+                      owner: '<%= theme.gitalk.owner %>',
+                      admin: ['<%= theme.gitalk.owner %>'],
+                      id: '<%= post.title %>',
+                      labels: <%= theme.gitalk.options.labels %>,
+                      language: '<%= theme.gitalk.options.language %>',
+                      perPage: '<%= theme.gitalk.options.perPage %>',
+                      distractionFreeMode: <%= theme.gitalk.options.distractionFreeMode %>,
+                      pagerDirection: '<%= theme.gitalk.options.pagerDirection %>',
+                      createIssueManually: <%= theme.gitalk.options.createIssueManually %>,
+                      enableHotKey: <%= theme.gitalk.options.enableHotKey %>,
                       flipMoveOptions: {
-                        staggerDelayBy: <%- theme.gitalk.options.flipMoveOptions.staggerDelayBy %>,
-                        appearAnimation: '<%- theme.gitalk.options.flipMoveOptions.appearAnimation %>',
-                        enterAnimation: '<%- theme.gitalk.options.flipMoveOptions.enterAnimation %>',
-                        leaveAnimation: '<%- theme.gitalk.options.flipMoveOptions.leaveAnimation %>'
+                        staggerDelayBy: <%= theme.gitalk.options.flipMoveOptions.staggerDelayBy %>,
+                        appearAnimation: '<%= theme.gitalk.options.flipMoveOptions.appearAnimation %>',
+                        enterAnimation: '<%= theme.gitalk.options.flipMoveOptions.enterAnimation %>',
+                        leaveAnimation: '<%= theme.gitalk.options.flipMoveOptions.leaveAnimation %>'
                       }
                     }).render('gitalk')
                 }
