@@ -1,9 +1,8 @@
-<!--SCRIPTS-->
 <%- js('assets/js/jquery.js') %>
 <%- js('assets/js/jquery.fancybox.js') %>
 <%- js('assets/js/thumbs.js') %>
 <%- js('assets/js/tranquilpeak.js') %>
-<!--SCRIPTS END-->
+
 <% if (post.comments) { %>
     <% if (theme.disqus_shortname) { %>
         <script>
@@ -26,38 +25,25 @@
         </script>
     <% } else if (theme.gitment.enable) { %>
         <script type="text/javascript">
-            (function() {
-                function render() {
-                    new Gitment({
-                        id: '<%= post.permalink %>',
-                        owner: '<%- theme.gitment.github_id %>',
-                        repo: '<%- theme.gitment.repo %>',
-                        oauth: {
-                            client_id: '<%- theme.gitment.client_id %>',
-                            client_secret: '<%- theme.gitment.client_secret %>',
-                        }
-                    }).render('gitment');
-                }
-                var gc = document.createElement('script');
-                gc.type = 'text/javascript';
-                gc.src = '//imsun.github.io/gitment/dist/gitment.browser.js';
-                gc.charset = 'UTF-8';
-                gc.onload = render;
-                gc.async = true;
-                document.querySelector('body').appendChild(gc);
-                var gcs = document.createElement('link');
-                gcs.href = '//imsun.github.io/gitment/style/default.css';
-                gcs.type = 'text/css';
-                gcs.rel = 'stylesheet';
-                gcs.media = 'screen,print';
-                document.querySelector('head').appendChild(gcs);
-            })();
+            let renderComments = function() {
+                new Gitment({
+                    id: '<%= post.permalink %>',
+                    owner: '<%- theme.gitment.github_id %>',
+                    repo: '<%- theme.gitment.repo %>',
+                    oauth: {
+                        client_id: '<%- theme.gitment.client_id %>',
+                        client_secret: '<%- theme.gitment.client_secret %>',
+                    }
+                }).render('gitment');
+            }
 	    </script>
+        <script async type="text/javascript" src="https://imsun.github.io/gitment/dist/gitment.browser.js" integrity="sha384-WNhyO7j8gxdziV+Xr9lmQU2uZTQfy9nBFm/UnCJgkyLIv0d68cssSgWPfF1fGsWx" crossorigin="anonymous" charset="UTF-8" onload="renderComments()"></script>
+        <link href="https://imsun.github.io/gitment/style/default.css" type="text/css" rel="stylesheet" media="screen,print" integrity="sha384-6bey3OzoNK5+hxn3NeCVMY3+HP9NwnZ5QDjD/gp01pTVgWvnCq0hmPinLlVTtHVu" crossorigin="anonymous">
     <% } %>
 <% } %>
 <% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
-    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js" integrity="sha256-S6pRrDGCqIDstuJtFMpTwmONwfbyvjuYlmQqGrbdIvU=" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js" integrity="sha384-DiiFfHfhDxu0xkE6YqjCCg8qzQUKT6CDPAhnp7K7hmFXhxLnw/M5TnuhAo0I+feU" crossorigin="anonymous"></script>
     <script>
         var algoliaClient = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
         var algoliaIndex = algoliaClient.initIndex('<%= config.algolia.indexName %>');
