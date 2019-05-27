@@ -8,7 +8,6 @@
     '#?(?:[.!\\/\\w]*))|^[A-Za-z0-9_\\/-]+\\.\\w{2,4})');
   var rClass = /^[_a-zA-Z0-9-]+$/;
   var rSize = /^\d+(?:|\.\d+)(?:px|%)?$/;
-  var rFigClass = /(^fig-\d{2,3}$)/;
   var captionClass = 'caption';
   var noCaptionClass = 'nocaption';
   var clearClass = 'clear';
@@ -24,7 +23,7 @@
     loopClass,
     mutedClass,
     noControlsClass
-  ]
+  ];
   /**
    * Video tag
    *
@@ -95,13 +94,13 @@
     // remove all video-related classes to only have style-related classes
     videoClasses.forEach(function(videoClass) {
       if (classes.includes(videoClass)) {
-        classes.splice(classes.indexOf(videoClass), 1)
+        classes.splice(classes.indexOf(videoClass), 1);
       }
-    })
+    });
 
     // Build HTML structure
-    html += '<div class="' + figureClass + ' ' + classes.join(' ') + '" '
-    html += width ? 'style="width:' + width + '"; ' : ''
+    html += '<div class="' + figureClass + ' ' + classes.join(' ') + '" ';
+    html += width ? 'style="width:' + width + '"; ' : '';
     html += '>\n';
     html += video;
 
@@ -116,7 +115,6 @@
 
     // add `clear` div if previously specified
     html += clear;
-    console.log("TCL: html", html)
     return html;
   });
 })();
