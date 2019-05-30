@@ -70,7 +70,7 @@ post:
     comment: "Leave a comment"
     share: "Share this post"
     gallery: "Gallery"
-    wordcount: "%s words"
+    word_count: "%s words"
     minutes_to_read: "%d mins to read"
     image:
         one: "image"

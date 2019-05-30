@@ -181,8 +181,9 @@ image_gallery: true
 archive_pagination: true
 category_pagination: true
 tag_pagination: true
-# Show a simple wordcount & the number minutes to read
-wordcount: true
+# Show some stats about the post in the post's metadata
+word_count: true
+reading_time: true
 
 # ---------------
 # Comment systems

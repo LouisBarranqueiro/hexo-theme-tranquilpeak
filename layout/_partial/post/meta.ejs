@@ -10,7 +10,13 @@
         <span><%= __('post.categorized_in')  %> </span>
         <%- partial('category', {categories: post.categories})%>
     <% } %>
-    <% if (theme.wordcount) { %>
-        - <%- _p('post.minutes_to_read', parseInt(min2read(post.content))) %> (<%=  _p('post.wordcount', wordcount(post.content) )%>)
+    <% if (theme.word_count || theme.reading_time) { %>
+        -
+        <% if (theme.reading_time) { %>
+            <%- _p('post.minutes_to_read', min2read(post.content)) %>
+        <% } %>
+        <% if (theme.word_count) { %>
+            (<%=  _p('post.word_count', wordcount(post.content) )%>)
+        <% } %>
     <% } %>
 </div>
