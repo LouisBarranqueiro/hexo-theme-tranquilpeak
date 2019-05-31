@@ -40,12 +40,13 @@
 
 <!-- Algolia search -->
 <% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js" integrity="sha256-S6pRrDGCqIDstuJtFMpTwmONwfbyvjuYlmQqGrbdIvU=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js" integrity="sha384-DiiFfHfhDxu0xkE6YqjCCg8qzQUKT6CDPAhnp7K7hmFXhxLnw/M5TnuhAo0I+feU" crossorigin="anonymous"></script>
     <script>
-        const algoliaSearch = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
-        const algoliaIndex = algoliaSearch.initIndex('<%= config.algolia.indexName %>')
+        let algoliaLoaded = function() {
+            algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>').initIndex('<%= config.algolia.indexName %>');
+        }
     </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js" integrity="sha256-S6pRrDGCqIDstuJtFMpTwmONwfbyvjuYlmQqGrbdIvU=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js" integrity="sha384-DiiFfHfhDxu0xkE6YqjCCg8qzQUKT6CDPAhnp7K7hmFXhxLnw/M5TnuhAo0I+feU" crossorigin="anonymous" onload="algoliaLoaded()"></script>
 <% } %>
 
 <!-- Analytics -->
