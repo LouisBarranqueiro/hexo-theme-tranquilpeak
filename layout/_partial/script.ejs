@@ -66,7 +66,7 @@
                       admin: ['<%= theme.gitalk.owner %>'],
                       id: '<%= post.title %>',
                       language: '<%= theme.gitalk.options.language %>',
-                      perPage: '<%= theme.gitalk.options.perPage %>',
+                      perPage: <%= theme.gitalk.options.perPage %>,
                       distractionFreeMode: <%= theme.gitalk.options.distractionFreeMode %>,
                       pagerDirection: '<%= theme.gitalk.options.pagerDirection %>',
                       createIssueManually: <%= theme.gitalk.options.createIssueManually %>,
