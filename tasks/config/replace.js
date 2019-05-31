@@ -4,8 +4,7 @@ module.exports = function(grunt) {
     linker: {
       overwrite: true,
       src: [
-        'layout/_partial/head.ejs',
-        'layout/_partial/script.ejs'
+        'layout/_partial/head.ejs'
       ],
       replacements: [{
         from: 'EJS_ENDTAG',
