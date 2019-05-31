@@ -32,7 +32,7 @@
                     }
                 }).render('disqus_thread');
             }
-      </script>
+        </script>
         <script defer type="text/javascript" src="https://imsun.github.io/gitment/dist/gitment.browser.js" integrity="sha384-WNhyO7j8gxdziV+Xr9lmQU2uZTQfy9nBFm/UnCJgkyLIv0d68cssSgWPfF1fGsWx" crossorigin="anonymous" charset="UTF-8" onload="renderComments()"></script>
         <link href="https://imsun.github.io/gitment/style/default.css" type="text/css" rel="stylesheet" media="screen,print" integrity="sha384-6bey3OzoNK5+hxn3NeCVMY3+HP9NwnZ5QDjD/gp01pTVgWvnCq0hmPinLlVTtHVu" crossorigin="anonymous">
     <% } %>
@@ -40,17 +40,18 @@
 
 <!-- Algolia search -->
 <% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js" integrity="sha256-S6pRrDGCqIDstuJtFMpTwmONwfbyvjuYlmQqGrbdIvU=" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js" integrity="sha384-DiiFfHfhDxu0xkE6YqjCCg8qzQUKT6CDPAhnp7K7hmFXhxLnw/M5TnuhAo0I+feU" crossorigin="anonymous"></script>
     <script>
-        var algoliaClient = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
-        var algoliaIndex = algoliaClient.initIndex('<%= config.algolia.indexName %>');
+        let algoliaLoaded = function() {
+            algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>').initIndex('<%= config.algolia.indexName %>');
+        }
     </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js" integrity="sha256-S6pRrDGCqIDstuJtFMpTwmONwfbyvjuYlmQqGrbdIvU=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js" integrity="sha384-DiiFfHfhDxu0xkE6YqjCCg8qzQUKT6CDPAhnp7K7hmFXhxLnw/M5TnuhAo0I+feU" crossorigin="anonymous" onload="algoliaLoaded()"></script>
 <% } %>
 
 <!-- Analytics -->
 <% if (theme.google_analytics_id) { %>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics_id %>"></script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics_id %>"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
