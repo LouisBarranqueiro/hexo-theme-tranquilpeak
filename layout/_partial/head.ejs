@@ -159,9 +159,12 @@
         <% }) %>
     <% } %>
 
-    <!--VENDOR-->
-    <%- partial('vendor', {post: page}) %>
-    <!--VENDOR END-->
+    <!--STYLES-->
+    <%- css('assets/css/all.css') %>
+    <%- css('assets/css/jquery.fancybox.css') %>
+    <%- css('assets/css/thumbs.css') %>
+    <%- css('assets/css/tranquilpeak.css') %>
+    <!--STYLES END-->
 
     <!--SCRIPTS-->
     <%- js('assets/js/jquery.js') %>
@@ -170,10 +173,7 @@
     <%- js('assets/js/tranquilpeak.js') %>
     <!--SCRIPTS END-->
 
-    <!--STYLES-->
-    <%- css('assets/css/all.css') %>
-    <%- css('assets/css/jquery.fancybox.css') %>
-    <%- css('assets/css/thumbs.css') %>
-    <%- css('assets/css/tranquilpeak.css') %>
-    <!--STYLES END-->
+    <!--VENDOR-->
+    <%- partial('vendor', {post: page}) %>
+    <!--VENDOR END-->
 </head>
