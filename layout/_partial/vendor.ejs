@@ -40,8 +40,8 @@
 
 <!-- Algolia search -->
 <% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js" integrity="sha256-S6pRrDGCqIDstuJtFMpTwmONwfbyvjuYlmQqGrbdIvU=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js" integrity="sha384-DiiFfHfhDxu0xkE6YqjCCg8qzQUKT6CDPAhnp7K7hmFXhxLnw/M5TnuhAo0I+feU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment-with-locales.min.js" integrity="sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.33.0/dist/algoliasearch.min.js" integrity="sha256-QynuWpCv2O4N4X31gbirq+VZE1L48AAebkaYp01uXOM=" crossorigin="anonymous"></script>
     <script>
         const algoliaSearch = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
         const algoliaIndex = algoliaSearch.initIndex('<%= config.algolia.indexName %>')
