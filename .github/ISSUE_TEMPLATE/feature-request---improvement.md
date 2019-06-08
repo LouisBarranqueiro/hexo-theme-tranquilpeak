@@ -8,12 +8,12 @@ assignees: LouisBarranqueiro
 ---
 
 ### Description
-<!-- A clear and concise description of what you want to happen. -->
+<!-- Clearly describe what you want to happen. -->
 
 
 ### Explanation / motivation
-<!-- A clear and concise description of why you need this feature / improvement -->
+<!-- Clearly describe why you need this feature / improvement. -->
 
 
 ### Additional information
-- [ ] Could you implement this feature / improvement?
+- [ ] I can and want to implement this feature/improvement <!-- Check this box if you can work on it and create a pull request -->

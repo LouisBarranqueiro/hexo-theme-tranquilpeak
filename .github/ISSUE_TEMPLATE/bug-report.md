@@ -8,14 +8,11 @@ assignees: LouisBarranqueiro
 ---
 
 ### Description
-<!-- A clear and concise description of what the bug is. -->
+<!-- Clearly describe the bug. -->
 
 
-### Expected behavior(s)
-<!-- A clear and concise description of what you expected to happen. -->
-
-
-### Screenshots
+### Expected behavior
+<!-- Clearly describe what you expected to happen. -->
 <!-- If applicable, add screenshots to help explain your problem. -->
 
 
@@ -29,6 +26,9 @@ assignees: LouisBarranqueiro
  - **Hexo version**: 
  - **Hexo-cli version**: 
  - **Tranquilpeak version**: <!-- Does the theme is original or modified? -->
- - **Site configuration file**: <!-- If applicable -->
- - **Theme configuration file**: <!-- If applicable -->
- - **Hexo plugin**: <!--If applicable: run `npm ls --depth 0` at the root of your blog -->
+ - **Site configuration file**: <!-- If applicable: format your config file -->
+ - **Theme configuration file**: <!-- If applicable: format your config file -->
+ - **Hexo plugin**: <!-- If applicable: run `npm ls --depth 0` at the root of your blog -->
+
+### Additional information
+- [ ] I can and want to fix this bug <!-- Check this box if you can work on it and create a pull request -->
