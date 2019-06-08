@@ -31,4 +31,4 @@ assignees: LouisBarranqueiro
  - **Hexo plugin**: <!-- If applicable: run `npm ls --depth 0` at the root of your blog -->
 
 ### Additional information
-- [ ] I can and want to fix this bug <!-- Check this box if you can work on it and create a pull request -->
+- [ ] I can fix this bug <!-- Check this box if you can work on it and create a pull request -->

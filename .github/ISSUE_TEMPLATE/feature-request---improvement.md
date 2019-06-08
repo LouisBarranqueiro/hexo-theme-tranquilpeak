@@ -16,4 +16,4 @@ assignees: LouisBarranqueiro
 
 
 ### Additional information
-- [ ] I can and want to implement this feature/improvement <!-- Check this box if you can work on it and create a pull request -->
+- [ ] I can implement this feature / improvement <!-- Check this box if you can work on it and create a pull request -->
