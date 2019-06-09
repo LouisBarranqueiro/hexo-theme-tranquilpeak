@@ -52,6 +52,7 @@ A gorgeous responsive theme for Hexo blog framework
 - Algolia
 - Facebook Insights
 - Gitment
+- Gitalk
  
 ## Quick start
 
