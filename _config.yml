@@ -221,6 +221,7 @@ gitalk:
         perPage: 10
         distractionFreeMode: false
         enableHotKey: true
+        pagerDirection: "first"
 
 # -------------------
 # Integrated services
