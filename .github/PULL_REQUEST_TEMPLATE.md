@@ -12,6 +12,7 @@
 ### Checklist
 - [ ] I checked the code style with `npm run lint` 
 - [ ] I updated the README or the documentation <!-- if applicable -->
+- [ ] I tested my changes with the current recommended Node LTS version: <!-- Specify the version you used -->
 - [ ] I tested my changes on all desktop browsers listed below (with their latest versions): <!-- if applicable -->
   - [ ] Chrome, Firefox and Opera
   - [ ] Safari
