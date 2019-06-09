@@ -51,10 +51,10 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "3.5.7",
-    "@fortawesome/fontawesome-free": "5.8.2",
+    "@fortawesome/fontawesome-free": "5.9.0",
     "hexo-util": "0.6.3",
     "jquery": "3.4.1",
-    "jsdom": "15.1.0",
+    "jsdom": "15.1.1",
     "strip-indent": "3.0.0"
   },
   "engines": {
