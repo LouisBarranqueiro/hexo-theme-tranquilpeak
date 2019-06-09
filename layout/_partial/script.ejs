@@ -4,6 +4,7 @@
 <%- js('assets/js/thumbs.js') %>
 <%- js('assets/js/tranquilpeak.js') %>
 <!--SCRIPTS END-->
+
 <% if (post.comments) { %>
     <% if (theme.disqus_shortname) { %>
         <script>
@@ -53,6 +54,35 @@
                 document.querySelector('head').appendChild(gcs);
             })();
 	    </script>
+    <% } else if (theme.gitalk.enable) { %>
+        <script type="text/javascript">
+            (function() {
+                function render() {
+                    new Gitalk({
+                      clientID: '<%= theme.gitalk.client_id %>',
+                      clientSecret: '<%= theme.gitalk.client_secret %>',
+                      repo: '<%= theme.gitalk.repo %>',
+                      owner: '<%= theme.gitalk.owner %>',
+                      admin: ['<%= theme.gitalk.owner %>'],
+                      id: '<%= post.path %>',
+                      ...<%- JSON.stringify(theme.gitalk.options) %>
+                    }).render('gitalk')
+                }
+                var gc = document.createElement('script');
+                gc.type = 'text/javascript';
+                gc.src = '//cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js';
+                gc.charset = 'UTF-8';
+                gc.onload = render;
+                gc.async = true;
+                document.querySelector('body').appendChild(gc);
+                var gcs = document.createElement('link');
+                gcs.href = '//cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css';
+                gcs.type = 'text/css';
+                gcs.rel = 'stylesheet';
+                gcs.media = 'screen,print';
+                document.querySelector('head').appendChild(gcs);
+            })();
+        </script>
     <% } %>
 <% } %>
 <% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>

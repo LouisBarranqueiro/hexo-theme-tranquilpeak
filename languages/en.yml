@@ -43,7 +43,7 @@ global:
         other: "{n} posts found"
     categories_found:
         zero: "no category found"
-        one: "1 cartegory found"
+        one: "1 category found"
         other: "{n} categories found"
     tags_found:
         zero: "no tag found"
