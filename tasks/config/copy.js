@@ -5,6 +5,8 @@ var fontsDestFolder = './source/assets/fonts/';
 var fancyboxPath = './node_modules/@fancyapps/fancybox';
 var fontAwesomePath = './node_modules/@fortawesome/fontawesome-free';
 var jqueryPath = './node_modules/jquery';
+var gitmentPath = './node_modules/gitment';
+var gitalkPath = './node_modules/gitalk';
 
 module.exports = function(grunt) {
   grunt.config.set('copy', {
@@ -52,9 +54,25 @@ module.exports = function(grunt) {
         // jquery
         {
           src: jqueryPath + '/dist/jquery.js',
-          dest: jsDestFolder,
-          flatten: true,
-          expand: true
+          dest: jsDestFolder  + 'jquery.js'
+        },
+        // gitment
+        {
+          src: gitmentPath + '/dist/gitment.browser.js',
+          dest: jsDestFolder + 'gitment.js',
+        },
+        {
+          src: gitmentPath + '/style/default.css',
+          dest: cssDestFolder + 'gitment.css',
+        },
+        // gitalk
+        {
+          src: gitalkPath + '/dist/gitalk.js',
+          dest: jsDestFolder + 'gitalk.js'
+        },
+        {
+          src: gitalkPath + '/dist/gitalk.css',
+          dest: cssDestFolder + 'gitalk.css',
         }
       ]
     }
