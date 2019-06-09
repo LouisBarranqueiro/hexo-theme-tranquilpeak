@@ -1,114 +1,114 @@
 <%
-    var title = '';
-    var title_suffix = ' - ' + config.title;
-    var fb_admin_ids = [];
-    var keywords = '';
-    var photos = [];
-    var publisher = '';
+var title = '';
+var title_suffix = ' - ' + config.title;
+var fb_admin_ids = [];
+var keywords = '';
+var photos = [];
+var publisher = '';
 
-    /**
-     * Separate fb admin ids
-     */
-    (function() {
-        if (theme.fb_admin_ids) {
-            fb_admin_ids = String(theme.fb_admin_ids).split(',');
+/**
+ * Separate fb admin ids
+ */
+(function() {
+    if (theme.fb_admin_ids) {
+        fb_admin_ids = String(theme.fb_admin_ids).split(',');
+    }
+})();
+
+/**
+ * Pick publisher G+ profile
+ */
+(function() {
+    if (theme.author.google_plus_business) {
+        publisher = theme.author.google_plus_business;
+    }
+    else if (theme.author.google_plus) {
+        publisher = theme.author.google_plus;
+    }
+})();
+
+/**
+ * Generate page title
+ */
+(function() {
+    if (is_home()) {
+        title += config.title;
+    }
+    else if (is_archive()) {
+        title += __('global.archives');
+
+        if (is_month()) {
+            title += ': ' + page.year + '/' + page.month;
         }
-    })();
-
-    /**
-     * Pick publisher G+ profile
-     */
-    (function() {
-        if (theme.author.google_plus_business) {
-            publisher = theme.author.google_plus_business;
+        else if (is_year()) {
+            title += ': ' + page.year;
         }
-        else if (theme.author.google_plus) {
-            publisher = theme.author.google_plus;
-        }
-    })();
 
-    /**
-     * Generate page title
-     */
-    (function() {
-        if (is_home()) {
-            title += config.title;
-        }
-        else if (is_archive()){
-            title += __('global.archives');
-
-            if (is_month()) {
-                title += ': ' + page.year + '/' + page.month;
-            }
-            else if (is_year()) {
-                title += ': ' + page.year;
-            }
-
-            title += title_suffix;
-        }
-        else if (is_tag()) {
-            if (page.tag) {
-                title += __('global.tag') + ': ' + page.tag;
-            }
-            else {
-                title += __('global.tags');
-            }
-
-            title += title_suffix;
-        }
-        else if (is_category()) {
-            if (page.category) {
-                title += __('global.category') + ': ' + page.category;
-            }
-            else {
-                title += __('global.categories');
-            }
-
-            title += title_suffix;
+        title += title_suffix;
+    }
+    else if (is_tag()) {
+        if (page.tag) {
+            title += __('global.tag') + ': ' + page.tag;
         }
         else {
-            title += page.title + title_suffix;
+            title += __('global.tags');
         }
-    })();
 
+        title += title_suffix;
+    }
+    else if (is_category()) {
+        if (page.category) {
+            title += __('global.category') + ': ' + page.category;
+        }
+        else {
+            title += __('global.categories');
+        }
+
+        title += title_suffix;
+    }
+    else {
+        title += page.title + title_suffix;
+    }
+})();
+
+/**
+ * Get global and page keywords
+ */
+(function() {
+    if (config.keywords) {
+        keywords += config.keywords;
+        keywords += ',';
+    }
+    if (page.keywords) {
+        keywords += page.keywords;
+    }
+})();
+
+/**
+ * Extract original url of page photos and store it
+ * to add them in open graph and swiftype meta tag
+ */
+(function() {
     /**
-     * Get global and page keywords
+     * Extract original url of a photo and store it
      */
-    (function() {
-        if (config.keywords) {
-            keywords += config.keywords;
-            keywords += ',';
-        }
-        if (page.keywords) {
-            keywords += page.keywords;
-        }
-    })();
+    function processImage(img) {
+        var rPhoto = /([\w:\-\/._#]+)(?:\s+([\w:\-\/._#]+))*(?:\s*["|'](.+)["|'])*/;
+        match = img.match(rPhoto);
+        photos.push(resolve_asset_url(page.path, match[1]));
+    }
 
-    /**
-     * Extract original url of page photos and store it
-     * to add them in open graph and swiftype meta tag
-     */
-    (function() {
-        /**
-         * Extract original url of a photo and store it
-         */
-        function processImage(img) {
-            var rPhoto = /([\w:\-\/._#]+)(?:\s+([\w:\-\/._#]+))*(?:\s*["|'](.+)["|'])*/;
-            match = img.match(rPhoto);
-            photos.push(resolve_asset_url(page.path, match[1]));
-        }
-
-        if (page.gallery && page.gallery.length) {
-            page.gallery.forEach(function(photo) {
-                processImage(photo)
-            });
-        }
-        else if (page.photos && page.photos.length) {
-            page.photos.forEach(function(photo) {
-                processImage(photo);
-            });
-        }
-    })();
+    if (page.gallery && page.gallery.length) {
+        page.gallery.forEach(function(photo) {
+            processImage(photo)
+        });
+    }
+    else if (page.photos && page.photos.length) {
+        page.photos.forEach(function(photo) {
+            processImage(photo);
+        });
+    }
+})();
 %>
 <head>
     <meta charset="UTF-8">
@@ -136,7 +136,7 @@
     <% } %>
     <% if (typeof fb_admin_ids !== 'undefined') { %>
         <% fb_admin_ids.forEach(function(fb_admin_id) { %>
-            <meta property="fb:admins" content="<%= fb_admin_id %>" />
+            <meta property="fb:admins" content="<%= fb_admin_id %>"/>
         <% }) %>
     <% } %>
     <% if (theme.gravatar_email) { %>
@@ -146,16 +146,16 @@
     <% } %>
     <% if (page.thumbnailImage && page.thumbnailImage.length) { %>
         <meta property="og:image" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>" />
+        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>"/>
     <% } %>
     <% if (page.coverImage && page.coverImage.length) { %>
         <meta property="og:image" content="<%= resolve_asset_url(page.path, page.coverImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.coverImage) %>" />
+        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.coverImage) %>"/>
     <% } %>
     <% if (photos && photos.length) { %>
         <% photos.forEach(function(photo) { %>
-            <meta property="og:image" content="<%= photo %>" />
-            <meta class="swiftype" name="image" data-type="enum" content="<%= photo %>" />
+            <meta property="og:image" content="<%= photo %>"/>
+            <meta class="swiftype" name="image" data-type="enum" content="<%= photo %>"/>
         <% }) %>
     <% } %>
     <!--STYLES-->
@@ -166,4 +166,12 @@
     <!--STYLES END-->
     <%- partial('google-analytics') %>
     <%- partial('baidu-analytics') %>
+
+    <% if (page.comments) { %>
+        <% if (theme.gitment.enable) { %>
+            <%- css('assets/css/gitment.css') %>
+        <% } else if (theme.gitalk.enable) { %>
+            <%- css('assets/css/gitalk.css') %>
+        <% } %>
+    <% } %>
 </head>
