@@ -217,7 +217,7 @@ gitalk:
     repo:
     # See all options: https://github.com/gitalk/gitalk#options
     options:
-        language: 'en'
+        language: "en"
         perPage: 10
         distractionFreeMode: false
         enableHotKey: true
