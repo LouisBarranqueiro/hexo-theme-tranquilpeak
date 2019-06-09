@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/travis/LouisBarranqueiro/hexo-theme-tranquilpeak/master.svg?style=flat-square)](https://travis-ci.org/LouisBarranqueiro/hexo-theme-tranquilpeak)
 [![Slack](https://img.shields.io/badge/slack-join-cf0e5b.svg?style=flat-square)](https://now-examples-slackin-stlpermtzi.now.sh)
 
-A gorgeous responsive theme for Hexo blog framework 
+A gorgeous responsive theme for Hexo blog framework
 
 [![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v2.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
 
@@ -18,7 +18,7 @@ A gorgeous responsive theme for Hexo blog framework
 
 ## Features
 
-**General features :**  
+**General features :**
 
 - Fully responsive
 - Optimized for tablets & mobiles
@@ -29,8 +29,8 @@ A gorgeous responsive theme for Hexo blog framework
 - Support Open Graph protocol
 - Support internationalization (i18n)
 - Easily customizable (fonts, colors, layout elements, code coloration, etc...)
-  
-**Posts features :**  
+
+**Posts features :**
 
 - Thumbnail image
 - Cover image
@@ -40,9 +40,9 @@ A gorgeous responsive theme for Hexo blog framework
 - GitHub theme for code highlighting (customizable)
 - Image gallery
 - Tags for images (FancyBox, wide images, tabbed code blocks, highlighted text, alerts)
-- Table of contents  
-  
-**Integrated services :**  
+- Table of contents
+
+**Integrated services :**
 
 - Disqus
 - Duoshuo
@@ -52,11 +52,12 @@ A gorgeous responsive theme for Hexo blog framework
 - Algolia
 - Facebook Insights
 - Gitment
- 
+- Gitalk
+
 ## Quick start
 
 1. Download the latest version built and ready for production here : [releases](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases)
-2. Read [documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/DOCUMENTATION.md) to install and configure the theme.  
+2. Read [documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/DOCUMENTATION.md) to install and configure the theme.
 
 ## Demo
 
