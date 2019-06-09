@@ -215,19 +215,11 @@ gitalk:
     owner:
     # The repo to store comments:
     repo:
-    # Optionals (no need to change for gitalk to work)
+    # See all options: https://github.com/gitalk/gitalk#options
     options:
         language: 'en'
         perPage: 10
         distractionFreeMode: false
-        pagerDirection: 'last'
-        createIssueManually: false
-        proxy: ''
-        flipMoveOptions:
-            staggerDelayBy: 150
-            appearAnimation: 'accordionVertical'
-            enterAnimation: 'accordionVertical'
-            leaveAnimation: 'accordionVertical'
         enableHotKey: true
 
 # -------------------

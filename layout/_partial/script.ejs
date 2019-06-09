@@ -64,19 +64,8 @@
                       repo: '<%= theme.gitalk.repo %>',
                       owner: '<%= theme.gitalk.owner %>',
                       admin: ['<%= theme.gitalk.owner %>'],
-                      id: '<%= post.title %>',
-                      language: '<%= theme.gitalk.options.language %>',
-                      perPage: <%= theme.gitalk.options.perPage %>,
-                      distractionFreeMode: <%= theme.gitalk.options.distractionFreeMode %>,
-                      pagerDirection: '<%= theme.gitalk.options.pagerDirection %>',
-                      createIssueManually: <%= theme.gitalk.options.createIssueManually %>,
-                      enableHotKey: <%= theme.gitalk.options.enableHotKey %>,
-                      flipMoveOptions: {
-                        staggerDelayBy: <%= theme.gitalk.options.flipMoveOptions.staggerDelayBy %>,
-                        appearAnimation: '<%= theme.gitalk.options.flipMoveOptions.appearAnimation %>',
-                        enterAnimation: '<%= theme.gitalk.options.flipMoveOptions.enterAnimation %>',
-                        leaveAnimation: '<%= theme.gitalk.options.flipMoveOptions.leaveAnimation %>'
-                      }
+                      id: '<%= post.path %>',
+                      ...<%- JSON.stringify(theme.gitalk.options) %>
                     }).render('gitalk')
                 }
                 var gc = document.createElement('script');
