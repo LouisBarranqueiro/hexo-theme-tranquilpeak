@@ -202,6 +202,27 @@ gitment:
     # Your client secret:
     client_secret:
 
+# Your Gitalk information
+# Read https://github.com/gitalk/gitalk#options to set up Gitalk
+gitalk:
+    # Switch
+    enable: false
+    # Your client ID:
+    client_id:
+    # Your client secret:
+    client_secret:
+    # Your Github ID (Github username):
+    owner:
+    # The repo to store comments:
+    repo:
+    # See all options: https://github.com/gitalk/gitalk#options
+    options:
+        language: "en"
+        perPage: 10
+        distractionFreeMode: false
+        enableHotKey: true
+        pagerDirection: "first"
+
 # -------------------
 # Integrated services
 # -------------------
