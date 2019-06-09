@@ -1,12 +1,23 @@
-<!-- your changes must be compatible with the latest version of Tranquilpeak -->
-### Configuration
+### Related issues: <!-- Reference any related issues. E.g: #4515 (if applicable) --> 
+### Changes
+<!-- Describe and explain the changes you made. --> 
+<!-- Add some screenshots to explain your changes. (if applicable) --> 
 
- - **Operating system with version** : 
- - **Node version** : 
- - **Hexo version** : 
- - **Hexo-cli version** : 
- 
-### Changes proposed
 
- - 
- -
+### Testing guide
+<!-- Describe the steps to test the changes proposed. --> 
+
+
+<!-- IMPORTANT: Make sure you've done all the things listed below before creating a pull request --> 
+### Checklist
+- [ ] I checked the code style with `npm run lint` 
+- [ ] I updated the README or the documentation <!-- if applicable -->
+- [ ] I tested my changes on all desktop browsers listed below (with their latest versions): <!-- if applicable -->
+  - [ ] Chrome, Firefox and Opera
+  - [ ] Safari
+  - [ ] Edge
+  - [ ] IE 10+
+- [ ] I tested my changes on all mobile browsers listed below (with their latest versions): <!-- if applicable -->
+  - [ ] Chrome, Firefox and Opera
+  - [ ] Safari
+  - [ ] Edge
