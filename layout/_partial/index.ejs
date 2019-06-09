@@ -31,9 +31,9 @@
     <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>">
         <div class="postShorten-wrap">
             <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "top") { %>
-                <a href="<%- url_for(post.path) %>" aria-label="<%= post.title %>">
+                <a href="<%- url_for(post.path) %>" aria-label="Open the article: <%= post.title %>">
                     <div class="postShorten-thumbnailimg">
-                        <img alt="<%= post.title %>" src="<%= thumbnailImageUrl %>"/>
+                        <img alt="Thumbnail image of the article: <%= post.title %>" src="<%= thumbnailImageUrl %>"/>
                     </div>
                 </a>
                 <% thumbnailImageUrl = null; %>
