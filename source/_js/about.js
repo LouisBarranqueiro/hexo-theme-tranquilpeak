@@ -38,6 +38,10 @@
         e.preventDefault();
         self.playBack();
       });
+      // Deny closing the about page when users click on the card
+      self.$aboutCard.click(function(event) {
+        event.stopPropagation();
+      });
     },
 
     /**
