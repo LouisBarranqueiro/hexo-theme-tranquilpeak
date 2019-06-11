@@ -10,6 +10,7 @@
     line-height: 100%;
     overflow-y:  auto;
     overflow-x:  hidden;
+    cursor:      pointer;
     z-index:     map-get($z-indexes, l-about);
 
     #about-card {
@@ -22,6 +23,7 @@
         margin:        15px auto;
         border-radius: 3px;
         padding:       30px 0;
+        cursor:        initial;
         @include prefix(box-shadow, 0 0 5px rgba(0, 0, 0, 0.50), 'webkit' 'moz');
 
         #about-btn-close {
