@@ -18,6 +18,10 @@
         float:  right;
         margin: 2px;
     }
+    .fig-video {
+        width: 100%;
+        height: auto;
+    }
     &.fig-20 {
         @extend .left;
         width: calc(20% - 4px);
