@@ -1,7 +1,13 @@
 <div class="post-header main-content-wrap <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>">
     <% if (post.link) { %>
         <h1>
-            <a class="link" href="<%- url_for(post.link) %>" target="_blank" rel="noopener">
+            <a
+                class="link"
+                href="<%- url_for(post.link) %>"
+                target="_blank"
+                rel="noopener"
+                aria-label="<% __('global.open_link') %>: <%- url_for(post.link) %>"
+            >
                 <%= post.title || '(' + __('post.no_title') + ')' %>
             </a>
         </h1>

@@ -31,7 +31,10 @@
     <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>">
         <div class="postShorten-wrap">
             <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "top") { %>
-                <a href="<%- url_for(post.path) %>">
+                <a
+                    href="<%- url_for(post.path) %>"
+                    aria-label="<% __('global.open_post') %>: <%= post.title %>"
+                >
                     <div class="postShorten-thumbnailimg">
                         <img alt="" src="<%= thumbnailImageUrl %>"/>
                     </div>
@@ -41,11 +44,19 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     <% if (post.link) { %>
-                        <a class="link-unstyled" href="<%- url_for(post.link) %>">
+                        <a
+                            class="link-unstyled"
+                            href="<%- url_for(post.link) %>"
+                            aria-label="<% __('global.open_post') %>: <%= post.title %>"
+                        >
                             <%= post.title || '(' + __('post.no_title') + ')' %>
                         </a>
                     <% } else { %>
-                        <a class="link-unstyled" href="<%- url_for(post.path) %>">
+                        <a
+                            class="link-unstyled"
+                            href="<%- url_for(post.path) %>"
+                            aria-label="<% __('global.open_post') %>: <%= post.title %>"
+                        >
                             <%= post.title || '(' + __('post.no_title') + ')' %>
                         </a>
                     <% } %>
@@ -56,11 +67,20 @@
                 <div class="postShorten-excerpt">
                     <%- post.excerpt %>
                     <% if (post.link && _('post.go_to_website')) { %>
-                        <a href="<%- url_for(post.link) %>" target="new" class="postShorten-excerpt_link link">
+                        <a
+                            href="<%- url_for(post.link) %>"
+                            target="new"
+                            class="postShorten-excerpt_link link"
+                            aria-label="<% __('global.open_link') %>: <%= post.title %>"
+                        >
                             <%= __('post.go_to_website') %>
                         </a>
                     <% } else if (__('post.read_more')) { %>
-                        <a href="<%- url_for(post.path) %>" class="postShorten-excerpt_link link">
+                        <a
+                            href="<%- url_for(post.path) %>"
+                            class="postShorten-excerpt_link link"
+                            aria-label="<% __('global.open_post') %>: <%= post.title %>"
+                        >
                             <%- __('post.read_more') %>
                         </a>
                         <% if (post.readingtime) { %>
@@ -78,7 +98,11 @@
                     <% } %>
                     <% if (__('post.comment_and_share')) { %>
                         <p>
-                            <a href="<%- url_for(post.path + '#post-footer') %>" class="postShorten-excerpt_link link">
+                            <a
+                                href="<%- url_for(post.path + '#post-footer') %>"
+                                class="postShorten-excerpt_link link"
+                                aria-label="<% __('post.comment_and_share') %>"
+                            >
                                 <%- __('post.comment_and_share') %>
                             </a>
                         </p>
@@ -87,7 +111,10 @@
             <% } %>
         </div>
         <% if (thumbnailImageUrl !== null && thumbnailImagePosition !== "top") { %>
-            <a href="<%- url_for(post.path) %>">
+            <a
+                href="<%- url_for(post.path) %>"
+                aria-label="<% __('global.open_post') %>: <%= post.title %>"
+            >
                 <div class="postShorten-thumbnailimg">
                     <img alt="" src="<%= thumbnailImageUrl %>"/>
                 </div>

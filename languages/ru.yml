@@ -43,6 +43,11 @@ global:
         zero: "Теги не найдены"
         one: "Найден 1 тег"
         other: "Тегов найдено: {n}"
+    read_more_about_author: "Узнайте больше об авторе"
+    zoom_in_on_picture: "Увеличить картинку"
+    go_to_homepage: "Вернуться на домашнюю страницу"
+    open_link: "открыть ссылку"
+    open_post: "открой пост"
 
 pagination:
     page: "Страница %d"

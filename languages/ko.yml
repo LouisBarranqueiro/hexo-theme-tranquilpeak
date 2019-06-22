@@ -49,6 +49,11 @@ global:
         zero: "태그가 없습니다."
         one: "1 개의 태그가 있습니다."
         other: "{n} 개의 태그가 있습니다."
+    read_more_about_author: "저자에 대해 더 알아보기"
+    zoom_in_on_picture: "사진 확대"
+    go_to_homepage: "홈페이지로 이동하기"
+    open_link: "링크 열기"
+    open_post: "소식 열기"
 
 pagination:
     page: "page %d"

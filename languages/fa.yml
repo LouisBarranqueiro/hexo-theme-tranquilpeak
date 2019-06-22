@@ -41,6 +41,11 @@ global:
         zero: "هیچ برچسبی یافت نشد :("
         one: "۱ برچسب پیدا شد"
         other: "{n} برچسب پیدا شد"
+    read_more_about_author: "درباره نویسنده بیشتر بخوانید"
+    zoom_in_on_picture: "بر روی تصویر زوم کنید"
+    go_to_homepage: "برو به صفحه اصلی"
+    open_link: "پیوند را باز کنید"
+    open_post: "پست را باز کنید"
 
 pagination:
     page: "صفحه %d"

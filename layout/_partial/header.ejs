@@ -14,15 +14,29 @@
 <header id="header" data-behavior="<%= sidebarBehavior %>">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
-        <a class="header-title-link" href="<%- url_for(' ') %>"><%= config.title %></a>
+        <a
+            class="header-title-link"
+            href="<%- url_for(' ') %>"
+            aria-label="<% __('global.go_to_homepage') %>"
+        >
+            <%= config.title %>
+        </a>
     </div>
     <% if (theme.header && theme.header.right_link) { %>
         <% if (theme.header.right_link.url && url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
-            <a  class="<%= (theme.header.right_link.icon ? 'header-right-icon ' : 'header-right-picture ') %><% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
-                href="<%- url_for(theme.header.right_link.url) %>" target="_blank" rel="noopener">
+            <a
+                class="<%= (theme.header.right_link.icon ? 'header-right-icon ' : 'header-right-picture ') %><% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
+                href="<%- url_for(theme.header.right_link.url) %>"
+                target="_blank"
+                rel="noopener"
+                aria-label="<%= __('global.open_link') %>: <%- url_for(theme.header.right_link.url) %>"
+            >
         <% } else if (theme.header.right_link.url) { %>
-            <a  class="<%= (theme.header.right_link.icon ? 'header-right-icon ' : 'header-right-picture ') %><% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
-                href="<% if (theme.header.right_link.url.indexOf("/") === 0) { %><%- url_for(theme.header.right_link.url.substr(1)) %><% } else { %><%- url_for(theme.header.right_link.url) %><% } %>">
+            <a
+                class="<%= (theme.header.right_link.icon ? 'header-right-icon ' : 'header-right-picture ') %><% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
+                href="<% if (theme.header.right_link.url.indexOf("/") === 0) { %><%- url_for(theme.header.right_link.url.substr(1)) %><% } else { %><%- url_for(theme.header.right_link.url) %><% } %>"
+                aria-label="<%= __('global.open_link') %>: <%- url_for(theme.header.right_link.url) %>"
+            >
         <% } %>
         <% if (theme.header.right_link.icon) { %>
             <i class="<%= theme.header.right_link.icon %> fa-lg"></i>

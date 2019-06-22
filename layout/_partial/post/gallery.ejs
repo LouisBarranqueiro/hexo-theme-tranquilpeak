@@ -40,6 +40,7 @@
                     data-caption="<%= photo.title %>"
                     title="<%= photo.title %>"
                     href="<%= (photo.original || photo.thumbnail) %>"
+                    aria-label="<% __('global.zoom_in_on_picture') %>"
                 >
                     <% if (photoIndex < GALLERY_IMAGES_DISPLAYED_LIMIT) {%>
 

@@ -43,6 +43,11 @@ global:
         zero: "não foram encontrados tag"
         one: "1 tag encontrados"
         other: "{n} tags encontrados"
+    read_more_about_author: "Leia mais sobre o autor"
+    zoom_in_on_picture: "Ampliar a imagem"
+    go_to_homepage: "Vá para a página inicial"
+    open_link: "Abra o link"
+    open_post: "Abra o post"
 
 pagination:
     page: "página %d"
