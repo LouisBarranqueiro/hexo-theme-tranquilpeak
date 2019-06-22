@@ -43,6 +43,11 @@ global:
         zero: "見つかりませんでした。"
         one: "1件のタグが見つかりました。"
         other: "{n} 件のタグが見つかりました。"
+    read_more_about_author: "著者についてもっと読む"
+    zoom_in_on_picture: "写真を拡大する"
+    go_to_homepage: "ホームページへ"
+    open_link: "リンクを開く"
+    open_post: "投稿を開く"
 
 pagination:
     page: "page %d"

@@ -43,6 +43,11 @@ global:
         zero: "沒有找到標籤"
         one: "找到 1 個標籤"
         other: "找到 {n} 個標籤"
+    read_more_about_author: "閱讀有關作者的更多信息"
+    zoom_in_on_picture: "放大圖片"
+    go_to_homepage: "去首頁"
+    open_link: "打開鏈接"
+    open_post: "打開帖子"
 
 pagination:
     page: "第 %d 頁"

@@ -43,6 +43,11 @@ global:
         zero: "no se encontraron etiquetas"
         one: "1 etiqueta encontrada"
         other: "{n} etiquetas encontradas"
+    read_more_about_author: "Leer más sobre el autor."
+    zoom_in_on_picture: "Acercar a la imagen"
+    go_to_homepage: "Ir a la página de inicio"
+    open_link: "Abre el enlace"
+    open_post: "Abre el post"
 
 pagination:
     page: "página %d"

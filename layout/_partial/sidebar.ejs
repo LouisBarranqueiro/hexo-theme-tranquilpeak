@@ -13,7 +13,10 @@
     <div class="sidebar-container">
         <% if (authorPicture) { %>
             <div class="sidebar-profile">
-                <a href="<%- url_for('/#about') %>">
+                <a
+                    href="<%- url_for('/#about') %>"
+                    aria-label="<%= __('global.read_more_about_author') %>"
+                >
                     <img class="sidebar-profile-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
                 </a>
                 <h4 class="sidebar-profile-name"><%= config.author %></h4>

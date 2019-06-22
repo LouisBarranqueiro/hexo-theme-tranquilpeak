@@ -6,7 +6,12 @@
                 <% var icon = theme.sharing_options[option].icon %>
                 <% var url = generate_sharing_link(post, theme.sharing_options[option].url) %>
                 <li class="share-option">
-                    <a class="share-option-btn" target="new" href="<%= url %>">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="<%= url %>"
+                        aria-label="<%= __('global.share_on_' + option) %>"
+                    >
                         <i class="<%= icon %>" aria-hidden="true"></i><span><%= __('global.share_on_' + option) %></span>
                     </a>
                 </li>

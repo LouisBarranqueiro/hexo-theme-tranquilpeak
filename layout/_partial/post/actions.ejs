@@ -4,38 +4,63 @@
             <li class="post-action">
                 <% if (post.prev) { %>
                     <% var previousPostTitle = post.prev.title || '(' + __('post.no_title') + ')' %>
-                    <a class="post-action-btn btn btn--default tooltip--top" href="<%- url_for(post.prev.path) %>" data-tooltip="<%= previousPostTitle %>" aria-label="<%= __('pagination.previous') + ': ' + previousPostTitle %>">
-                <% } else { %>
-                    <a class="post-action-btn btn btn--disabled">
-                <% } %>
-                    <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml"><%= __('pagination.previous') %></span>
-                </a>
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="<%- url_for(post.prev.path) %>"
+                    data-tooltip="<%= previousPostTitle %>"
+                    aria-label="<%= __('pagination.previous') + ': ' + previousPostTitle %>"
+                >
+                    <% } else { %>
+                    <a
+                        class="post-action-btn btn btn--disabled"
+                        aria-hidden="true"
+                    >
+                        <% } %>
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml"><%= __('pagination.previous') %></span>
+                    </a>
             </li>
             <li class="post-action">
                 <% if (post.next) { %>
                     <% var nextPostTitle = post.next.title || '(' + __('post.no_title') + ')' %>
-                    <a class="post-action-btn btn btn--default tooltip--top" href="<%- url_for(post.next.path) %>" data-tooltip="<%= nextPostTitle %>" aria-label="<%= __('pagination.next') + ': ' +  nextPostTitle %>">
-                <% } else { %>
-                    <a class="post-action-btn btn btn--disabled">
-                <% } %>
-                    <span class="hide-xs hide-sm text-small icon-mr"><%= __('pagination.next') %></span>
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </a>
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="<%- url_for(post.next.path) %>"
+                    data-tooltip="<%= nextPostTitle %>"
+                    aria-label="<%= __('pagination.next') + ': ' + nextPostTitle %>"
+                >
+                    <% } else { %>
+                    <a
+                        class="post-action-btn btn btn--disabled"
+                        aria-hidden="true"
+                    >
+                        <% } %>
+                        <span class="hide-xs hide-sm text-small icon-mr"><%= __('pagination.next') %></span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
             </li>
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="<%= __('post.share') %>">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="<%= __('post.share') %>"
+            >
                 <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
-        <% for(var option in theme.sharing_options)  {%>
+        <% for(var option in theme.sharing_options)  { %>
             <% var icon = theme.sharing_options[option].icon %>
             <% var url = generate_sharing_link(post, theme.sharing_options[option].url) %>
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="<%= url %>" title="<%= __('global.share_on_' + option) %>">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="<%= url %>"
+                    title="<%= __('global.share_on_' + option) %>"
+                    aria-label="<%= __('global.share_on_' + option) %>"
+                >
                     <i class="<%= icon %>" aria-hidden="true"></i>
                 </a>
             </li>
@@ -43,19 +68,31 @@
         <% if (post.comments) { %>
             <% if (theme.gitment.enable) { %>
                 <li class="post-action">
-                    <a class="post-action-btn btn btn--default" href="#gitment">
-                         <i class="fa fa-comment"></i>
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#gitment"
+                        aria-label="<%= __('post.comment') %>"
+                    >
+                        <i class="fa fa-comment"></i>
                     </a>
                 </li>
             <% } else if (theme.gitalk.enable) { %>
                 <li class="post-action">
-                    <a class="post-action-btn btn btn--default" href="#gitalk">
-                         <i class="fa fa-comment"></i>
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#gitalk"
+                        aria-label="<%= __('post.comment') %>"
+                    >
+                        <i class="fa fa-comment"></i>
                     </a>
                 </li>
             <% } else if (theme.disqus_shortname) { %>
                 <li class="post-action">
-                    <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="<%= __('post.comment') %>"
+                    >
                         <i class="fa fa-comment"></i>
                     </a>
                 </li>
