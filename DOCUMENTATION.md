@@ -10,9 +10,10 @@
 
 ## Installation
 
-1. Download the latest version built and ready for production here : [releases](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases)
+1. Download the latest [version](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/archive/master.zip)
 2. Rename the folder in `tranquilpeak` and place it in the `themes` folder of your Hexo blog
 3. Modify the theme in Hexo configuration file (`_config.yml`) by setting `theme` variable to `tranquilpeak`
+4. Go to the `tranquilpeak` folder and run `npm install && npm run prod`
 
 ## Hexo configuration
 
