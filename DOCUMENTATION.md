@@ -183,6 +183,15 @@ Follow these steps, to add new filter :
 7. Select **Custom filter**, **Filter Field** : `Hostname`, **Filter Pattern** :  `(.*?localhost.*?)`
 8. Click on **Save** button
 
+#### Configure optout evaluation
+
+When setting the following setting to true and with having `google_analytics_id` set, your site will disable tracking, if the official optout cookie is set. This is required e.g. in the EU by the Cookie Directive. This also give you the possibility to add a required opt-out function to your privacy policy by using the gaOptout() js function, available when you activate this setting.
+
+```yaml
+google_analytics_optout:
+    enable: true
+```
+
 ## Modifying the theme
 
 1. Run `npm install` to install dependencies
