@@ -40,7 +40,7 @@
     "grunt-contrib-uglify": "4.0.1",
     "grunt-contrib-watch": "1.1.0",
     "grunt-sails-linker": "1.0.4",
-    "grunt-sass": "3.0.2",
+    "grunt-sass": "3.1.0",
     "grunt-sync": "0.8.1",
     "grunt-text-replace": "0.4.0",
     "hexo-renderer-marked": "1.0.1",
