@@ -25,7 +25,7 @@
         li.post-action {
             float:     left;
             // Fix a bug on Firefox. the right part of button `previous` fall down without this `min-width`
-            min-width: 42px;
+            min-width: 45px;
 
             &:last-child {
                 .post-action-btn {
