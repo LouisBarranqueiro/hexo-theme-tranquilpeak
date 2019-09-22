@@ -1,41 +1,35 @@
 (function($) {
   'use strict';
 
-  // Animate tabs of tabbed code blocks
-
   /**
-   * TabbedCodeBlock
-   * @param {String} elems
-   * @constructor
+   * Animate tabs and tab contents of tabbed codeblocks
+   * @param {Object} $tabbedCodeblocks
+   * @return {undefined}
    */
-  var TabbedCodeBlock = function(elems) {
-    this.$tabbedCodeBlocs = $(elems);
-  };
+  function animateTabbedCodeBlocks($tabbedCodeblocks) {
+    $tabbedCodeblocks.find('.tab').click(function() {
+      var $currentTabButton = $(this);
+      var $currentTabbedCodeblock = $currentTabButton.parent().parent().parent();
+      var $codeblocks = $currentTabbedCodeblock.find('.tabs-content').children('pre, .highlight');
+      var $activeCodeblock = $codeblocks.eq($currentTabButton.index());
+      var $tabButtons = $currentTabButton.siblings();
 
-  TabbedCodeBlock.prototype = {
-    /**
-     * Run TabbedCodeBlock feature
-     * @return {void}
-     */
-    run: function() {
-      var self = this;
-      self.$tabbedCodeBlocs.find('.tab').click(function() {
-        var $codeblock = $(this).parent().parent().parent();
-        var $tabsContent = $codeblock.find('.tabs-content').children('pre, .highlight');
-        // remove `active` css class on all tabs
-        $(this).siblings().removeClass('active');
-        // add `active` css class on the clicked tab
-        $(this).addClass('active');
-        // hide all tab contents
-        $tabsContent.hide();
-        // show only the right one
-        $tabsContent.eq($(this).index()).show();
-      });
-    }
-  };
+      $tabButtons.removeClass('active');
+      $currentTabButton.addClass('active');
+      $codeblocks.hide();
+      $activeCodeblock.show();
+
+      // Resize the active codeblock according to the width of the window.
+      var $gutter = $activeCodeblock.find('.gutter');
+      var $code = $activeCodeblock.find('.code');
+      var codePaddings = $code.width() - $code.innerWidth();
+      var width = $activeCodeblock.outerWidth() - $gutter.outerWidth() + codePaddings;
+      $code.css('width', width);
+      $code.children('pre').css('width', width);
+    });
+  }
 
   $(document).ready(function() {
-    var tabbedCodeBlocks = new TabbedCodeBlock('.codeblock--tabbed');
-    tabbedCodeBlocks.run();
+    animateTabbedCodeBlocks($('.codeblock--tabbed'));
   });
 })(jQuery);
