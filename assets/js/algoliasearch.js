@@ -1,4 +1,4 @@
-/*! algoliasearch 3.33.0 | © 2014, 2015 Algolia SAS | github.com/algolia/algoliasearch-client-js */
+/*! algoliasearch 3.35.0 | © 2014, 2015 Algolia SAS | github.com/algolia/algoliasearch-client-js */
 (function(f){var g;if(typeof window!=='undefined'){g=window}else if(typeof self!=='undefined'){g=self}g.ALGOLIA_MIGRATION_LAYER=f()})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
 module.exports = function load (src, opts, cb) {
@@ -3356,6 +3356,31 @@ AlgoliaSearch.prototype.assignUserID = function(data, callback) {
 };
 
 /**
+ * Assign a array of userIDs to a cluster.
+ *
+ * @param {Array} data.userIDs The array of userIDs to assign to a new cluster
+ * @param {string} data.cluster The cluster to assign the user to
+ * @return {Promise|undefined} Returns a promise if no callback given
+ * @example
+ * client.assignUserIDs({ cluster: 'c1-test', userIDs: ['some-user-1', 'some-user-2'] });
+ */
+AlgoliaSearch.prototype.assignUserIDs = function(data, callback) {
+  if (!data.userIDs || !data.cluster) {
+    throw new errors.AlgoliaSearchError('You have to provide both an array of userIDs and cluster', data);
+  }
+  return this._jsonRequest({
+    method: 'POST',
+    url: '/1/clusters/mapping/batch',
+    hostType: 'write',
+    body: {
+      cluster: data.cluster,
+      users: data.userIDs
+    },
+    callback: callback
+  });
+};
+
+/**
  * Get the top userIDs
  *
  * (the callback is the second argument)
@@ -3541,6 +3566,7 @@ AlgoliaSearch.prototype.disableRateLimitForward = notImplemented;
 AlgoliaSearch.prototype.useSecuredAPIKey = notImplemented;
 AlgoliaSearch.prototype.disableSecuredAPIKey = notImplemented;
 AlgoliaSearch.prototype.generateSecuredApiKey = notImplemented;
+AlgoliaSearch.prototype.getSecuredApiKeyRemainingValidity = notImplemented;
 
 function notImplemented() {
   var message = 'Not implemented in this environment.\n' +
@@ -5425,6 +5451,91 @@ Index.prototype.batchRules = function(rules, opts, callback) {
   });
 };
 
+Index.prototype.exists = function(callback) {
+  var result = this.getSettings().then(function() {
+    return true;
+  }).catch(function(err) {
+    if (err instanceof errors.AlgoliaSearchError && err.statusCode === 404) {
+      return false;
+    }
+
+    throw err;
+  });
+
+  if (typeof callback !== 'function') {
+    return result;
+  }
+
+  result.then(function(res) {
+    callback(null, res);
+  }).catch(function(err) {
+    callback(err);
+  });
+};
+
+Index.prototype.findObject = function(findCallback, requestOptions, callback) {
+  requestOptions = requestOptions === undefined ? {} : requestOptions;
+  var paginate = requestOptions.paginate !== undefined ? requestOptions.paginate : true;
+  var query = requestOptions.query !== undefined ? requestOptions.query : '';
+
+  var that = this;
+  var page = 0;
+
+  var paginateLoop = function() {
+    requestOptions.page = page;
+
+    return that.search(query, requestOptions).then(function(result) {
+      var hits = result.hits;
+
+      for (var position = 0; position < hits.length; position++) {
+        var hit = hits[position];
+        if (findCallback(hit)) {
+          return {
+            object: hit,
+            position: position,
+            page: page
+          };
+        }
+      }
+
+      page += 1;
+
+      // paginate if option was set and has next page
+      if (!paginate || page >= result.nbPages) {
+        throw new errors.ObjectNotFound('Object not found');
+      }
+
+      return paginateLoop();
+    });
+  };
+
+  var promise = paginateLoop(page);
+
+  if (callback === undefined) {
+    return promise;
+  }
+
+  promise
+    .then(function(res) {
+      callback(null, res);
+    })
+    .catch(function(err) {
+      callback(err);
+    });
+};
+
+Index.prototype.getObjectPosition = function(result, objectID) {
+  var hits = result.hits;
+
+  for (var position = 0; position < hits.length; position++) {
+    if (hits[position].objectID === objectID) {
+      return position;
+    }
+  }
+
+  return -1;
+};
+
 /*
 * Set settings for this index
 *
@@ -6854,9 +6965,17 @@ module.exports = {
     'JSONPScriptFail',
     '<script> was loaded but did not call our provided callback'
   ),
+  ValidUntilNotFound: createCustomError(
+    'ValidUntilNotFound',
+    'The SecuredAPIKey does not have a validUntil parameter.'
+  ),
   JSONPScriptError: createCustomError(
     'JSONPScriptError',
     '<script> unable to load due to an `error` event on it'
+  ),
+  ObjectNotFound: createCustomError(
+    'ObjectNotFound',
+    'Object not found'
   ),
   Unknown: createCustomError(
     'Unknown',
@@ -7065,7 +7184,7 @@ function cleanup() {
 },{"1":1}],37:[function(require,module,exports){
 'use strict';
 
-module.exports = '3.33.0';
+module.exports = '3.35.0';
 
 },{}]},{},[21])(21)
 });

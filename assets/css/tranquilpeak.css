@@ -1972,7 +1972,7 @@ a.fancybox {
     z-index: 42; }
     .post-actions-wrap ul.post-action-nav li.post-action {
       float: left;
-      min-width: 42px; }
+      min-width: 45px; }
       .post-actions-wrap ul.post-action-nav li.post-action:last-child .post-action-btn {
         margin-left: 15px; }
   .post-actions-wrap ul.post-action-share {
