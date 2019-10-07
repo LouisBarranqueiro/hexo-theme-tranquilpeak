@@ -10,7 +10,7 @@ global:
     archives: "Архив"
     search: "Поиск"
     about: "Об авторе"
-    author_picture: "Авторская фотография"
+    author_picture: "Фотография автора"
     github: "GitHub"
     stack_overflow: "Stack Overflow"
     twitter: "Twitter"
@@ -47,7 +47,7 @@ global:
     zoom_in_on_picture: "Увеличить картинку"
     go_to_homepage: "Вернуться на домашнюю страницу"
     open_link: "открыть ссылку"
-    open_post: "открой пост"
+    open_post: "открыть пост"
 
 pagination:
     page: "Страница %d"
