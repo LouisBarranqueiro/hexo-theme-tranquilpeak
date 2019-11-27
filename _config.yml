@@ -278,7 +278,14 @@ sharing_options:
     google_plus:
         icon: "fab fa-google-plus"
         url: "https://plus.google.com/share?url={{post.permalink}}"
-    # Asian social networks
+# Business Social Networks       
+#    linkedin:
+#        icon: "fab fa-linkedin"
+#        url: "https://www.linkedin.com/shareArticle?mini=true&url={{post.permalink}}"
+#    xing:
+#        icon: "fab fa-xing"
+#        url: "https://www.xing.com/spi/shares/new?url={{post.permalink}}"
+# Asian social networks
 #    weibo:
 #        title: "Weibo"
 #        icon: "fab fa-weibo"
@@ -295,7 +302,7 @@ sharing_options:
 #        title: "Renren"
 #        icon: "fab fa-renren"
 #        url: "http://widget.renren.com/dialog/share?resourceUrl={{post.permalink}}"
-    # Russian social networks
+# Russian social networks
 #    vk:
 #        title: "VK"
 #        icon: "fab fa-vk"
