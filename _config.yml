@@ -48,13 +48,13 @@ sidebar:
             icon: fa fa-archive
         search:
             title: global.search
-            url: /#search
+            url: "#search"
             icon: fa fa-search
             # `open-algolia-search` classes are used to open algolia search modal
             class: open-algolia-search
         about:
             title: global.about
-            url: /#about
+            url: "#about"
             icon: fa fa-question
     author_links:
         github:

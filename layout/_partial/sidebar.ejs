@@ -25,22 +25,28 @@
                 <% } %>
             </div>
         <% } %>
-        <% for (var i in theme.sidebar) { %>
+        <% for (var menuName in theme.sidebar) { %>
             <ul class="sidebar-buttons">
-            <% for (var n in theme.sidebar[i]) { %>
+            <% for (var linkName in theme.sidebar[menuName]) { %>
                 <li class="sidebar-button">
-                    <% if (url_for(theme.sidebar[i][n].url).indexOf(config.url) < 0 && url_for(theme.sidebar[i][n].url).indexOf(':') >= 0) { %>
-                        <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank" rel="noopener" title="<%= __(theme.sidebar[i][n].title) %>">
-                    <% } else { %>
-                        <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>"
-                            <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %> href="<%- url_for(' ') %>"
-                            <% } else if (theme.sidebar[i][n].url.indexOf("/") === 0) { %> href="<%- url_for(theme.sidebar[i][n].url.substr(1)) %>"
-                            <% } else { %> href="<%- url_for(theme.sidebar[i][n].url) %>"<% } %>
-                            title="<%= __(theme.sidebar[i][n].title) %>"
+                    <%
+                        var link = Object.assign({}, theme.sidebar[menuName][linkName])
+                        link.class = link.class || ''
+                        // TODO: do not re-write URLs starting with `/#` in the next major version.
+                        link.url = link.url.startsWith("/#") ? link.url.substr(1) : link.url
+                        link.url = url_for(link.url)
+                    %>
+                        <a
+                            class="sidebar-button-link <%= link.class %>"
+                            href="<%- link.url %>"
+                            <% if (!link.url.startsWith(config.url) && link.url.includes(':')) { %>
+                                target="_blank"
+                            <% } %>
+                            rel="noopener"
+                            title="<%= __(link.title) %>"
                         >
-                    <% } %>
-                        <i class="sidebar-button-icon <%= theme.sidebar[i][n].icon %>" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc"><%= __(theme.sidebar[i][n].title) %></span>
+                        <i class="sidebar-button-icon <%= link.icon %>" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc"><%= __(link.title) %></span>
                     </a>
             </li>
             <% } %>
