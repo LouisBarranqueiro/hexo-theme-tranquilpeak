@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "3.5.7",
-    "@fortawesome/fontawesome-free": "5.11.2",
+    "@fortawesome/fontawesome-free": "5.12.0",
     "algoliasearch": "3.35.1",
     "gitalk": "1.5.0",
     "gitment": "0.0.3",
