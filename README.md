@@ -1,6 +1,6 @@
 # Tranquilpeak
 
-[![Build Status](https://img.shields.io/travis/LouisBarranqueiro/hexo-theme-tranquilpeak/master.svg?style=flat-square)](https://travis-ci.com/LouisBarranqueiro/hexo-theme-tranquilpeak)
+[![Build Status](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/workflows/Node%20CI/badge.svg?branch=master)](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/actions)
 [![gitter chat](https://img.shields.io/gitter/room/LouisBarranqueiro/hexo-theme-tranquilpeak.svg?style=flat-square)](https://gitter.im/LouisBarranqueiro/hexo-theme-tranquilpeak)
 
 A gorgeous responsive theme for Hexo blog framework
