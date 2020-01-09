@@ -64,12 +64,12 @@ If you are new to Hexo and internationalization (i18n), please read [Hexo docume
 
 Currently, the theme is delivered with:
 
-- Chinese (zh-CN)
-- Chinese Traditional (zh-TW)
+- Chinese (zh-cn)
+- Chinese Traditional (zh-tw)
 - English (en)
-- French (fr-FR)
+- French (fr-fr)
 - Japanese (ja)
-- Portuguese (pt-BR)
+- Portuguese (pt-br)
 - Russian (ru)
 - Spanish (es)
 
