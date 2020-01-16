@@ -46,7 +46,7 @@
     "hexo-renderer-marked": "2.0.0",
     "include-all": "4.0.3",
     "load-grunt-tasks": "5.1.0",
-    "node-sass": "4.13.0",
+    "node-sass": "4.13.1",
     "rand-token": "0.4.0"
   },
   "dependencies": {
