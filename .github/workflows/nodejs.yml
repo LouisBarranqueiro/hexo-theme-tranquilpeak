@@ -14,8 +14,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: install deps
       run: npm install
-    - name: audit deps
-      run: npm audit --audit-level=high
     - name: lint
       run: npm run lint
     - name: build theme
