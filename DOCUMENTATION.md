@@ -93,7 +93,7 @@ Complete `theme/tranquilpeak/_config.yml` with your information by following gui
 
 The search modal of the theme works with Algolia API to search in your posts. To enable this features, follow these steps:
 1. Create an account on Algolia
-2. Install and configure [hexo-algoliaseach](https://github.com/LouisBarranqueiro/hexo-algoliasearch) plugin
+2. Install and configure [hexo-algoliasearch](https://github.com/LouisBarranqueiro/hexo-algoliasearch) plugin
 3. Index your posts before deploying your blog. Here are the required fields:
 ``` yaml
   fields:
