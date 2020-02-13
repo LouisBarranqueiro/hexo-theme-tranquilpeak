@@ -64,14 +64,18 @@ If you are new to Hexo and internationalization (i18n), please read [Hexo docume
 
 Currently, the theme is delivered with:
 
-- Chinese (zh-CN)
-- Chinese Traditional (zh-TW)
+- German - Germany (de-DE)
 - English (en)
-- French (fr-FR)
-- Japanese (ja)
-- Portuguese (pt-BR)
-- Russian (ru)
 - Spanish (es)
+- Farsi (fa)
+- French - France (fr-FR)
+- Italian - Italy (it-IT)
+- Japanese (ja)
+- Korean (ko)
+- Brazilian Portuguese (pt-br)
+- Russian (ru)
+- Chinese (zh-cn)
+- Chinese Traditional (zh-tw)
 
 If your language is not available, follow this guidelines (E.g : add russian language (ru) :  
 
