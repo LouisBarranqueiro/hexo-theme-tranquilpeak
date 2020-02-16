@@ -53,7 +53,7 @@
     "@fancyapps/fancybox": "3.5.7",
     "@fortawesome/fontawesome-free": "5.12.1",
     "algoliasearch": "3.35.1",
-    "gitalk": "1.5.2",
+    "gitalk": "1.6.0",
     "gitment": "0.0.3",
     "hexo-util": "1.8.1",
     "jquery": "3.4.1",
