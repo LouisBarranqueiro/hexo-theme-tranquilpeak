@@ -47,7 +47,7 @@
     "include-all": "4.0.3",
     "load-grunt-tasks": "5.1.0",
     "node-sass": "4.13.1",
-    "rand-token": "0.4.0"
+    "rand-token": "1.0.1"
   },
   "dependencies": {
     "@fancyapps/fancybox": "3.5.7",
