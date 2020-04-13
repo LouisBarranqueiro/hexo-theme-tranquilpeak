@@ -1,13 +1,35 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "baseBranches": ["dev"],
-  "assignees": ["LouisBarranqueiro"],
-  "separateMinorPatch": true,
-  "packageRules": [{
-    "updateTypes": ["patch"],
-    "automerge": true,
-    "automergeType": "branch"
-  }]
+    "extends": [
+        "config:base"
+    ],
+    "baseBranches": [
+        "dev"
+    ],
+    "assignees": [
+        "LouisBarranqueiro"
+    ],
+    "separateMinorPatch": true,
+    "reviewers": [
+        "LouisBarranqueiro"
+    ],
+    "packageRules": [
+        {
+            "updateTypes": [
+                "patch"
+            ],
+            "automerge": true,
+            "automergeType": "branch"
+        },
+        {
+            "packagePatterns": [
+                "eslint",
+                "^jest$",
+                "^@babel/",
+                "^babel-",
+                "^@types/"
+            ],
+            "automerge": true,
+            "automergeType": "branch"
+        }
+    ]
 }
