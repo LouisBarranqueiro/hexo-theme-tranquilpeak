@@ -58,7 +58,7 @@
     "hexo-util": "2.0.0",
     "jquery": "3.5.1",
     "jsdom": "16.2.2",
-    "moment": "2.26.0",
+    "moment": "2.27.0",
     "strip-indent": "3.0.0"
   },
   "engines": {
