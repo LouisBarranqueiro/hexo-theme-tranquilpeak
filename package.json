@@ -43,7 +43,7 @@
     "grunt-sass": "3.1.0",
     "grunt-sync": "0.8.2",
     "grunt-text-replace": "0.4.0",
-    "hexo-renderer-marked": "2.0.0",
+    "hexo-renderer-marked": "3.0.0",
     "include-all": "4.0.3",
     "load-grunt-tasks": "5.1.0",
     "node-sass": "4.14.1",
