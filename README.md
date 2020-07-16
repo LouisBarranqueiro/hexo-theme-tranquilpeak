@@ -3,6 +3,8 @@
 [![Build Status](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/workflows/Node%20CI/badge.svg?branch=master)](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/actions)
 [![gitter chat](https://img.shields.io/gitter/room/LouisBarranqueiro/hexo-theme-tranquilpeak.svg?style=flat-square)](https://gitter.im/LouisBarranqueiro/hexo-theme-tranquilpeak)
 
+<a title="Chinese" href="README_cn.md">简体中文</a>
+
 A gorgeous responsive theme for Hexo blog framework
 
 [![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v2.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
