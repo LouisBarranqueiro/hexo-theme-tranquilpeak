@@ -69,6 +69,7 @@ Currently, the theme is delivered with:
 - Spanish (es)
 - Farsi (fa)
 - French - France (fr-FR)
+- Indonesian (id)
 - Italian - Italy (it-IT)
 - Japanese (ja)
 - Korean (ko)
