@@ -278,7 +278,7 @@ sharing_options:
     google_plus:
         icon: "fab fa-google-plus"
         url: "https://plus.google.com/share?url={{post.permalink}}"
-# Business Social Networks       
+# Business Social Networks
 #    linkedin:
 #        icon: "fab fa-linkedin"
 #        url: "https://www.linkedin.com/shareArticle?mini=true&url={{post.permalink}}"
