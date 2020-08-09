@@ -56,7 +56,7 @@
     "gitalk": "1.5.2",
     "gitment": "0.0.3",
     "hexo-util": "1.8.0",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "jsdom": "16.1.0",
     "moment": "2.24.0",
     "strip-indent": "3.0.0"
