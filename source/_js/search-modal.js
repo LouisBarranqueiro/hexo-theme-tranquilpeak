@@ -97,11 +97,9 @@
      */
     search: function(search) {
       var self = this;
-      this.algolia.search(search, function(err, content) {
-        if (!err) {
-          self.showResults(content.hits);
-          self.showResultsCount(content.nbHits);
-        }
+      this.algolia.search(search).then(function(content) {
+        self.showResults(content.hits);
+        self.showResultsCount(content.nbHits);
       });
     },
 

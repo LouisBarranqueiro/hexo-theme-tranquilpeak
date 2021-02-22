@@ -79,7 +79,7 @@ module.exports = function(grunt) {
           dest: jsDestFolder + 'moment-with-locales.js'
         },
         {
-          src: './node_modules/algoliasearch/dist/algoliasearch.js',
+          src: './node_modules/algoliasearch/dist/algoliasearch.umd.js',
           dest: jsDestFolder + 'algoliasearch.js'
         }
       ]
