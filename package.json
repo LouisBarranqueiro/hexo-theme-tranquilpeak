@@ -58,7 +58,7 @@
     "jquery": "3.6.0",
     "jsdom": "16.5.3",
     "moment": "2.29.1",
-    "strip-indent": "3.0.0"
+    "strip-indent": "4.0.0"
   },
   "engines": {
     "node": ">=10"
