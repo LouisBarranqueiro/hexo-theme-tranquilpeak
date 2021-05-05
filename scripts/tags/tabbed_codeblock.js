@@ -2,7 +2,6 @@
 
 var util = require('hexo-util');
 var highlight = util.highlight;
-var stripIndent = require('strip-indent');
 var JSDOM = require('jsdom').JSDOM;
 var rCaptionUrl = /(\S[\S\s]*)\s+(https?:\/\/)(\S+)/i;
 var rCaption = /(\S[\S\s]*)/;
@@ -37,7 +36,7 @@ function tabbedCodeBlock(args, content) {
     var code = matches[i + 1];
     var $code;
     // trim code
-    code = stripIndent(code).trim();
+    code = util.stripIndent(code).trim();
 
     if (config.enable) {
       // highlight code
