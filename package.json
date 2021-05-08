@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak",
   "devDependencies": {
-    "eslint": "7.25.0",
+    "eslint": "7.26.0",
     "eslint-config-google": "0.14.0",
     "grunt": "1.4.0",
     "grunt-cli": "1.4.2",
