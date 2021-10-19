@@ -15,6 +15,7 @@
     "packageRules": [
         {
             "updateTypes": [
+                "minor",
                 "patch"
             ],
             "automerge": true,
