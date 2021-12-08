@@ -45,7 +45,7 @@
     "grunt-text-replace": "0.4.0",
     "include-all": "4.0.3",
     "load-grunt-tasks": "5.1.0",
-    "node-sass": "6.0.1",
+    "node-sass": "7.0.0",
     "rand-token": "1.0.1"
   },
   "dependencies": {
