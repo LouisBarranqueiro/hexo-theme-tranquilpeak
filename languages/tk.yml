@@ -1,0 +1,77 @@
+# blogda ulanylýan wagt formaty
+date_format: "DD MMMM YYYY"
+
+global:
+    home: "Baş sahypa"
+    categories: "Bölümler"
+    category: "Bölüm"
+    tags: "Tegler"
+    tag: "Teg"
+    archives: "Arhiw"
+    search: "Gözleg"
+    about: "Awtor hakynda"
+    author_picture: "Awtoryň suraty"
+    github: "GitHub"
+    stack_overflow: "Stack Overflow"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    google_plus: "Google Plus"
+    linkedin: "LinkedIn"
+    mail: "Mail"
+    rss: "RSS"
+    share_on_facebook: "Facebookda paýlaşmak"
+    share_on_twitter: "Twitterde paýlaşmak"
+    share_on_google_plus: "Google+da paýlaşmak"
+    share_on_weibo: "Weiboda paýlaşmak"
+    share_on_qq: "QQde paýlaşmak"
+    share_on_qzone: "Qzoneda paýlaşmak"
+    share_on_renren: "Renrende paýlaşmak"
+    share_on_vk: "VKda paýlaşmak"
+    share_on_odnoklassniki: "Odnoklassnikide paýlaşmak"
+    search_category: "Bölüme görä gözle"
+    search_tag: "Tega görä gözle"
+    search_date: "Wagta görä gözle (DD/MM/YYYY)"
+    posts_found:
+        zero: "Makala tapylmady"
+        one: "1 makala tapyldy"
+        other: "{n} sany tapyldy"
+    categories_found:
+        zero: "Bölüm tapylmady"
+        one: "1 bölüm tapyldy"
+        other: "{n} sany bölüm tapyldy"
+    tags_found:
+        zero: "Teg tapylmady"
+        one: "1 teg tapyldy"
+        other: "{n} sany teg tapyldy"
+    read_more_about_author: "Awtor hakynda ýene öwreniň"
+    zoom_in_on_picture: "Suraty ulalt"
+    go_to_homepage: "Baş sahypa dolan"
+    open_link: "salgylanmany aç"
+    open_post: "makalany aç"
+
+pagination:
+    page: "Sahypa %d"
+    of: "%d sahypadan"
+    newer_posts: "Täze makalalar"
+    older_posts: "Öňki makalalar"
+    previous: "Öňki"
+    next: "Indiki"
+
+post:
+    no_title : "Atsyz"
+    categorized_in: "bölümde"
+    tagged_in: "Tegler:"
+    toc: "Mazmuny"
+    read_more: "Dowamyny oka"
+    go_to_website: "Saýta gir"
+    comment_and_share: "Kommentirle we paýlaş"
+    gallery: "Galereýa"
+    image:
+        one: "surat"
+        other: "%d surat"
+
+author:
+    # Özüňiz barada aýdyň (Markdown we HTML formatlary goldanýar)
+    bio: ""
+    # Öz işiňiz barada gysgaça
+    job: ""
