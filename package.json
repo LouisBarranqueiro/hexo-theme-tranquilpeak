@@ -54,7 +54,7 @@
     "algoliasearch": "4.13.0",
     "gitalk": "1.7.2",
     "gitment": "0.0.3",
-    "hexo-util": "2.6.0",
+    "hexo-util": "2.6.1",
     "jquery": "3.6.0",
     "jsdom": "19.0.0",
     "moment": "2.29.3"
