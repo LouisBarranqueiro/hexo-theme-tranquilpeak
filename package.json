@@ -57,7 +57,7 @@
     "hexo-util": "2.6.1",
     "jquery": "3.6.0",
     "jsdom": "20.0.0",
-    "moment": "2.29.3"
+    "moment": "2.29.4"
   },
   "engines": {
     "node": ">=16"
