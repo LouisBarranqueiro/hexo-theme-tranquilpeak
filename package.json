@@ -55,7 +55,7 @@
     "gitalk": "1.8.0",
     "gitment": "0.0.3",
     "hexo-util": "3.0.1",
-    "jquery": "3.6.1",
+    "jquery": "3.6.2",
     "jsdom": "20.0.3",
     "moment": "2.29.4"
   },
