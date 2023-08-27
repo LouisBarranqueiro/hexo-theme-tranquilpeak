@@ -1,8 +1,5 @@
 # Tranquilpeak
 
-[![Build Status](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/workflows/Node%20CI/badge.svg?branch=master)](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/actions)
-[![gitter chat](https://img.shields.io/gitter/room/LouisBarranqueiro/hexo-theme-tranquilpeak.svg?style=flat-square)](https://gitter.im/LouisBarranqueiro/hexo-theme-tranquilpeak)
-
 A gorgeous responsive theme for Hexo blog framework
 
 [![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v2.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
@@ -55,11 +52,11 @@ A gorgeous responsive theme for Hexo blog framework
 
 ## Quick start
 
-1. Download the latest [version](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/archive/master.zip)
+1. Download the latest [version](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/archive/main.zip)
 2. Rename the folder in `tranquilpeak` and place it in the `themes` folder of your Hexo blog
 3. Modify the theme in Hexo configuration file (`_config.yml`) by setting `theme` variable to `tranquilpeak`
 4. Go to the `tranquilpeak` folder and run `npm install && npm run prod`
-5. Read [documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/DOCUMENTATION.md) to configure the theme.
+5. Read [documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/main/DOCUMENTATION.md) to configure the theme.
 
 ## Demo
 
@@ -69,8 +66,8 @@ Check out [Tranquilpeak theme demo](https://louisbarranqueiro.github.io/hexo-the
 
 All kinds of contributions (enhancements, features, documentation & code improvements, bugs reporting) are welcome.
 
-Read [guidelines for contributing](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/.github/CONTRIBUTING.md) for more information.
+Read [guidelines for contributing](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/main/.github/CONTRIBUTING.md) for more information.
 
 ## License
 
-hexo-theme-tranquilpeak is released under the terms of the [GNU General Public License v3.0](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/LICENSE)
+hexo-theme-tranquilpeak is released under the terms of the [GNU General Public License v3.0](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/main/LICENSE)
