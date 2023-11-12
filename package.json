@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak",
   "devDependencies": {
-    "eslint": "8.48.0",
+    "eslint": "8.53.0",
     "eslint-config-google": "0.14.0",
     "grunt": "1.6.1",
     "grunt-cli": "1.4.3",
@@ -51,11 +51,11 @@
   "dependencies": {
     "@fancyapps/fancybox": "3.5.7",
     "@fortawesome/fontawesome-free": "5.15.4",
-    "algoliasearch": "4.19.1",
+    "algoliasearch": "4.20.0",
     "gitalk": "1.8.0",
     "gitment": "0.0.3",
     "hexo-util": "3.1.0",
-    "jquery": "3.7.0",
+    "jquery": "3.7.1",
     "jsdom": "22.1.0",
     "moment": "2.29.4"
   },
