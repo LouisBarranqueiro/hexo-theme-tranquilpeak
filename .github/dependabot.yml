@@ -9,5 +9,7 @@ updates:
     groups:
       production-dependencies:
         dependency-type: "production"
+        exclude-patterns:
+          - "@fortawesome/fontawesome-free"
       development-dependencies:
         dependency-type: "development"
